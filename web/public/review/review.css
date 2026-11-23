@@ -1,12 +1,12 @@
 @font-face {
   font-family: "Astraia CJK Supplemental"; font-style: normal; font-weight: 400; font-display: swap;
-  src: url("../fonts/astraia-cjk-supplement-400.woff2") format("woff2");
-  unicode-range: U+5AD7, U+5C6D, U+6BAE, U+7296, U+733B, U+750C, U+7670, U+7BED, U+7D02, U+7D3F, U+7F48, U+7FC2, U+807B, U+8784, U+89ED, U+9124, U+9301, U+9B1B, U+9B29, U+9C5F, U+9CAA, U+9D06, U+9EFF, U+F9C4;
+  src: url("../fonts/astraia-cjk-supplement-400.woff2?v=225") format("woff2");
+  unicode-range: U+5AD7, U+5C6D, U+6BAE, U+7296, U+733B, U+750C, U+7670, U+7BED, U+7D02, U+7D3F, U+7F48, U+7FC2, U+807B, U+8784, U+89ED, U+9124, U+9301, U+9B1B, U+9B29, U+9C5F, U+9CAA, U+9D06, U+9EFF, U+F9C4, U+8407, U+8CFE;
 }
 @font-face {
   font-family: "Astraia CJK Supplemental"; font-style: normal; font-weight: 600; font-display: swap;
-  src: url("../fonts/astraia-cjk-supplement-600.woff2") format("woff2");
-  unicode-range: U+5AD7, U+5C6D, U+6BAE, U+7296, U+733B, U+750C, U+7670, U+7BED, U+7D02, U+7D3F, U+7F48, U+7FC2, U+807B, U+8784, U+89ED, U+9124, U+9301, U+9B1B, U+9B29, U+9C5F, U+9CAA, U+9D06, U+9EFF, U+F9C4;
+  src: url("../fonts/astraia-cjk-supplement-600.woff2?v=225") format("woff2");
+  unicode-range: U+5AD7, U+5C6D, U+6BAE, U+7296, U+733B, U+750C, U+7670, U+7BED, U+7D02, U+7D3F, U+7F48, U+7FC2, U+807B, U+8784, U+89ED, U+9124, U+9301, U+9B1B, U+9B29, U+9C5F, U+9CAA, U+9D06, U+9EFF, U+F9C4, U+8407, U+8CFE;
 }
 @font-face {
   font-family: "Noto Sans Khmer";
