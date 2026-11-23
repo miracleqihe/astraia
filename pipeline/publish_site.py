@@ -58,7 +58,9 @@ def deploy(vault: Path, code_table: Path, *, reviewed_only: bool = False) -> Non
         env['VITE_PUBLIC_DEMO'] = '1'
         npm = 'npm.cmd' if os.name == 'nt' else 'npm'
         run([npm, 'run', 'build', '--', '--base=/astraia/', '--outDir', str(built), '--emptyOutDir'], root / 'web', env=env)
-        for name in ('index.html', 'ui-review/index.html', 'assets', 'fonts', 'knowledge/data.json', 'knowledge/handbook.pdf'):
+        for name in ('index.html', 'ui-review/index.html', 'assets', 'fonts', 'knowledge/data.json',
+                     'knowledge/handbook.pdf', 'knowledge/inline-figures/manifest.json',
+                     'knowledge/figures/font-report.json'):
             if not (built / name).exists():
                 raise ValueError(f'网页构建缺少 {name}。')
 
@@ -72,6 +74,11 @@ def deploy(vault: Path, code_table: Path, *, reviewed_only: bool = False) -> Non
         (site / 'data/graph_data.json').write_text(json.dumps(graph, ensure_ascii=False, sort_keys=True,
             separators=(',', ':'), allow_nan=False) + '\n', encoding='utf-8', newline='\n')
         publish_graph(site / 'data/asia_coverage.json', coverage, 'json')
+        # A Windows checkout may otherwise normalize SVG newlines when staging,
+        # breaking the image hashes and embedded-font verification on Pages.
+        (site / '.gitattributes').write_text(
+            '# Preserve the exact bytes of generated assets and their manifests.\n* -text\n',
+            encoding='utf-8', newline='\n')
         if (site / 'review').exists():
             raise ValueError('公开构建包含本地复核目录。')
         run(['git', 'add', '--', PUBLIC_PATH], checkout)
