@@ -1,72 +1,20 @@
 import { greatCircle } from '@turf/great-circle';
-import { Map as GlobeMap, Marker, type GeoJSONSource, type StyleSpecification } from 'maplibre-gl';
+import { LngLat, Map as GlobeMap, Marker, ScaleControl, type GeoJSONSource, type MapMouseEvent } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { feature } from 'topojson-client';
-import type { GeometryCollection, Topology } from 'topojson-specification';
 import type { FeatureCollection, LineString, MultiLineString, Point } from 'geojson';
-import atlas from 'world-atlas/countries-110m.json';
-import { coordinatesOf, nodeColor, shortNodeLabel, type Coordinates, type GraphIndex, type GraphNode, type ViewSelection } from '../graph';
+import { coordinatesOf, isFiction, isModernReading, locationPrecision, mapLabel, READING_LABELS,
+  type Coordinates, type GraphIndex, type GraphNode, type ViewSelection } from '../graph';
+import { addStreetDetail, loadOverviewMapFonts, mapStyle } from './geoStyle';
 import { motionDuration, ViewControls } from './ViewControls';
 
 const DEFAULT_CENTER: Coordinates = [105, 30];
+const EAST_ASIA_CENTER: Coordinates = [111, 34];
 const MAX_CONTEXT_ARCS = 14;
-const COUNTRIES = feature(atlas as unknown as Topology<{ countries: GeometryCollection }>,
-  atlas.objects.countries as unknown as GeometryCollection);
-
-function graticule(): FeatureCollection<LineString> {
-  const features: FeatureCollection<LineString>['features'] = [];
-  for (let longitude = -180; longitude < 180; longitude += 30) {
-    features.push({ type: 'Feature', properties: {}, geometry: {
-      type: 'LineString',
-      coordinates: Array.from({ length: 57 }, (_, index) => [longitude, -84 + 3 * index]),
-    } });
-  }
-  for (let latitude = -60; latitude <= 60; latitude += 30) {
-    features.push({ type: 'Feature', properties: {}, geometry: {
-      type: 'LineString',
-      coordinates: Array.from({ length: 121 }, (_, index) => [-180 + 3 * index, latitude]),
-    } });
-  }
-  return { type: 'FeatureCollection', features };
-}
-
-function mapStyle(): StyleSpecification {
-  return {
-    version: 8,
-    projection: { type: 'globe' },
-    sky: {
-      'sky-color': '#101722',
-      'horizon-color': '#101722',
-      'atmosphere-blend': 0,
-    },
-    sources: {
-      land: { type: 'geojson', data: COUNTRIES },
-      grid: { type: 'geojson', data: graticule() },
-      context: { type: 'geojson', data: { type: 'FeatureCollection', features: [] } },
-      records: { type: 'geojson', data: { type: 'FeatureCollection', features: [] }, cluster: true, clusterRadius: 34, clusterMaxZoom: 8 },
-    },
-    layers: [
-      { id: 'oceans', type: 'background', paint: { 'background-color': '#162231' } },
-      { id: 'land', type: 'fill', source: 'land', paint: { 'fill-color': '#253346', 'fill-outline-color': '#706e69' } },
-      { id: 'grid', type: 'line', source: 'grid', paint: { 'line-color': '#EFECE6', 'line-opacity': 0.12, 'line-width': 0.75 } },
-      { id: 'context', type: 'line', source: 'context', paint: {
-        'line-color': '#C29D59', 'line-opacity': 0.82, 'line-width': 1.25, 'line-dasharray': [2, 3.5],
-      } },
-      { id: 'record-clusters', type: 'circle', source: 'records', filter: ['has', 'point_count'], paint: {
-        'circle-color': '#C29D59', 'circle-opacity': 0.72,
-        'circle-radius': ['step', ['get', 'point_count'], 8, 25, 11, 100, 15],
-        'circle-stroke-color': '#EFECE6', 'circle-stroke-width': 1,
-      } },
-      { id: 'record-points', type: 'circle', source: 'records', filter: ['!', ['has', 'point_count']], paint: {
-        'circle-color': ['case', ['boolean', ['get', 'highlight'], false], '#89AD9D', '#C29D59'], 'circle-opacity': 0.9, 'circle-radius': 5,
-        'circle-stroke-width': 1, 'circle-stroke-color': '#101722',
-      } },
-    ],
-  };
-}
 
 interface MappedNode { node: GraphNode; coordinates: Coordinates }
+interface Place { key: string; coordinates: Coordinates; nodes: GraphNode[] }
+interface PlaceList { title: string; nodes: string[] }
 
 function mappedNodes(graph: GraphIndex): MappedNode[] {
   return graph.nodes.flatMap((node) => {
@@ -110,9 +58,30 @@ function connectPoints(anchor: Coordinates | null, points: MappedNode[], maxArcs
   return { type: 'FeatureCollection', features };
 }
 
-function pointFeatures(points: MappedNode[], highlighted: ReadonlySet<string>): FeatureCollection<Point> {
-  return { type: 'FeatureCollection', features: points.map(({ node, coordinates }) => ({
-    type: 'Feature', properties: { nodeId: node.id, highlight: highlighted.has(node.id) }, geometry: { type: 'Point', coordinates },
+function placeKey(coordinates: Coordinates): string {
+  return coordinates.map((value) => value.toFixed(6)).join(',');
+}
+
+function groupPlaces(points: MappedNode[]): Map<string, Place> {
+  const groups = new Map<string, Place>();
+  for (const { coordinates, node } of points) {
+    const key = placeKey(coordinates);
+    const place = groups.get(key);
+    if (place) place.nodes.push(node);
+    else groups.set(key, { key, coordinates, nodes: [node] });
+  }
+  return groups;
+}
+
+function pointFeatures(places: Map<string, Place>, highlighted: ReadonlySet<string>): FeatureCollection<Point> {
+  return { type: 'FeatureCollection', features: [...places.values()].map(({ key, nodes, coordinates }) => ({
+    type: 'Feature',
+    properties: {
+      key, records: nodes.length, highlight: nodes.some((node) => highlighted.has(node.id)),
+      precise: nodes.some((node) => node.spatial?.precision === 'exact'),
+      fiction: nodes.every(isFiction),
+    },
+    geometry: { type: 'Point', coordinates },
   })) };
 }
 
@@ -121,24 +90,32 @@ function zoomFor(element: HTMLElement): number {
   return Math.max(0, Math.min(2.2, Math.log2(diameter * Math.PI / 512)));
 }
 
-function mapMarker(node: GraphNode, onSelect: (id: string, compare?: boolean) => void): HTMLButtonElement {
+function zoomForPoint(node: GraphNode): number {
+  if (node.spatial?.precision === 'exact') return 15.3;
+  if (node.spatial?.precision === 'city') return 10.8;
+  return node.spatial?.precision === 'province' ? 6.6 : 4.7;
+}
+
+function mapMarker(node: GraphNode, place: Place | undefined, open: (event: MouseEvent) => void): HTMLButtonElement {
   const element = document.createElement('button');
   element.type = 'button';
   element.className = 'atlas-marker';
-  element.setAttribute('aria-label', `地图节点 ${node.title}`);
+  element.setAttribute('aria-label', place && place.nodes.length > 1
+    ? `查看${mapLabel(node)}的 ${place.nodes.length} 条资料` : `地图节点 ${node.title}`);
   element.dataset.nodeId = node.id;
-  element.style.setProperty('--node-color', nodeColor(node));
+  element.dataset.emphasis = 'selected';
+  element.dataset.precision = node.spatial?.precision;
   const dot = document.createElement('span');
   dot.className = 'atlas-dot';
   const label = document.createElement('span');
   label.className = 'atlas-marker-label';
-  label.textContent = shortNodeLabel(node.spatial?.location_name ?? node.title, 14);
+  label.textContent = mapLabel(node);
   dot.setAttribute('aria-hidden', 'true');
   label.setAttribute('aria-hidden', 'true');
   element.append(dot, label);
   element.onclick = (event) => {
     event.stopPropagation();
-    onSelect(node.id, event.shiftKey);
+    open(event);
   };
   return element;
 }
@@ -147,6 +124,7 @@ interface Props {
   graph: GraphIndex;
   selection: ViewSelection;
   codeIds: ReadonlySet<string>;
+  focus: { id: string } | null;
   onSelect: (id: string, compare?: boolean) => void;
   onOpenGraph: () => void;
 }
@@ -179,14 +157,18 @@ function relatedArcs(graph: GraphIndex, selection: ViewSelection): HubArc[] {
   return arcs;
 }
 
-export default function GeoView({ graph, selection, codeIds, onSelect, onOpenGraph }: Props) {
+export default function GeoView({ graph, selection, codeIds, focus, onSelect, onOpenGraph }: Props) {
   const hostRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<GlobeMap | null>(null);
-  const markerRef = useRef(new Map<string, Marker>());
+  const clusterRequest = useRef(0);
   const [ready, setReady] = useState(false);
   const [error, setError] = useState(false);
   const [arcPaths, setArcPaths] = useState<ArcPath[]>([]);
   const [tooltip, setTooltip] = useState<{ x: number; y: number; arc: HubArc } | null>(null);
+  const [placeTooltip, setPlaceTooltip] = useState<{ x: number; y: number; label: string; count: number } | null>(null);
+  const [placeList, setPlaceList] = useState<PlaceList | null>(null);
+  const [tilted, setTilted] = useState(false);
+  const [streetLevel, setStreetLevel] = useState(false);
   const selectedId = selection.node?.id ?? null;
   const points = useMemo(() => mappedNodes(graph), [graph]);
   const regionIds = useMemo(() => new Set((graph.adjacency.get(selectedId ?? '') ?? [])
@@ -195,6 +177,7 @@ export default function GeoView({ graph, selection, codeIds, onSelect, onOpenGra
   const regionDistribution = regionIds.size > 0;
   const visiblePoints = useMemo(() => regionDistribution ? points.filter(({ node }) => regionIds.has(node.id)) : points,
     [points, regionDistribution, regionIds]);
+  const places = useMemo(() => groupPlaces(visiblePoints), [visiblePoints]);
   const context = useMemo(() => visiblePoints.filter(({ node }) => selection.neighbors.has(node.id)), [visiblePoints, selection]);
   const hubArcs = useMemo(() => relatedArcs(graph, selection), [graph, selection]);
   const anchor = useMemo(() => selection.node ? coordinatesOf(selection.node) : null, [selection.node]);
@@ -202,91 +185,171 @@ export default function GeoView({ graph, selection, codeIds, onSelect, onOpenGra
     const [longitude, latitude] = anchor ?? centerOf(context);
     return [longitude, regionDistribution ? Math.max(-36, Math.min(36, latitude)) : latitude];
   }, [anchor, context, regionDistribution]);
-  const clustered = visiblePoints.length > 160;
-  const [initialCenter] = useState(viewCenter);
+  const [regionalOverview] = useState(() => !focus && !!selection.node && isModernReading(selection.node));
+  const [initialCenter] = useState(() => regionalOverview ? EAST_ASIA_CENTER : viewCenter);
   const lastFocusedId = useRef(selectedId);
+  const lastFocus = useRef<Props['focus']>(null);
   const linkAnchor = anchor ?? (selection.node?.z_layer === 3 && context.length > 1 ? context[0].coordinates : null);
 
   useEffect(() => {
     const host = hostRef.current;
     if (!host) return;
-    let map: GlobeMap;
-    try {
-      map = new GlobeMap({
-        container: host,
-        style: mapStyle(),
-        center: initialCenter,
-        zoom: zoomFor(host),
-        minZoom: 0,
-        maxZoom: 15,
-        maxPitch: 60,
-        attributionControl: false,
-        renderWorldCopies: false,
-        fadeDuration: 0,
-      });
-    } catch (reason) {
-      console.warn('Unable to initialize the globe', reason);
-      setError(true);
-      return;
-    }
-    mapRef.current = map;
-    map.getCanvas().setAttribute('aria-label', '可拖动与缩放的 3D 地球');
-    map.once('load', () => setReady(true));
-    const observer = new ResizeObserver(() => map.resize());
-    observer.observe(host);
+    let active = true;
+    let observer: ResizeObserver | undefined;
+    void loadOverviewMapFonts().then(() => {
+      if (!active) return;
+      try {
+        const map = new GlobeMap({
+          container: host,
+          style: mapStyle(),
+          center: initialCenter,
+          zoom: zoomFor(host) + (regionalOverview ? 1.3 : 0),
+          minZoom: 0,
+          maxZoom: 17,
+          maxPitch: 60,
+          attributionControl: false,
+          renderWorldCopies: false,
+          fadeDuration: 0,
+        });
+        mapRef.current = map;
+        map.getCanvas().setAttribute('aria-label', '可拖动与缩放的 3D 地球');
+        map.addControl(new ScaleControl({ unit: 'metric', maxWidth: 88 }), 'bottom-left');
+        map.once('load', () => {
+          setReady(true);
+          const addDetail = () => {
+            if (map.getZoom() < 5.8) return;
+            addStreetDetail(map);
+            map.off('zoom', addDetail);
+          };
+          map.on('zoom', addDetail);
+          addDetail();
+        });
+        map.on('pitchend', () => setTilted(map.getPitch() > 15));
+        map.on('zoomend', () => setStreetLevel(map.getZoom() >= 10));
+        observer = new ResizeObserver(() => map.resize());
+        observer.observe(host);
+      } catch (reason) {
+        console.warn('Unable to initialize the globe', reason);
+        setError(true);
+      }
+    });
     return () => {
-      observer.disconnect();
-      map.remove();
+      active = false;
+      observer?.disconnect();
+      mapRef.current?.remove();
       mapRef.current = null;
     };
-  }, [initialCenter]);
+  }, [initialCenter, regionalOverview]);
 
   useEffect(() => {
     const map = mapRef.current;
     if (!ready || !map) return;
-    const markers = markerRef.current;
-    const pins = clustered ? visiblePoints.filter(({ node }) => node.id === selectedId) : visiblePoints;
-    const records = map.getSource<GeoJSONSource>('records');
-    records?.setData(pointFeatures(clustered ? visiblePoints : [], codeIds));
-    for (const { node, coordinates } of pins) {
-      const element = mapMarker(node, onSelect);
-      const marker = new Marker({ element, anchor: 'center', opacityWhenCovered: 0 })
-        .setLngLat(coordinates).addTo(map);
-      markers.set(node.id, marker);
-    }
-    return () => {
-      for (const marker of markers.values()) marker.remove();
-      markers.clear();
+    map.getSource<GeoJSONSource>('records')?.setData(pointFeatures(places, codeIds));
+    return () => { clusterRequest.current++; };
+  }, [ready, places, codeIds]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!ready || !map) return;
+    const markers = [selection.node, selection.compareNode].flatMap((node) => {
+      if (!node) return [];
+      const coordinates = coordinatesOf(node);
+      const place = coordinates ? places.get(placeKey(coordinates)) : undefined;
+      if (!coordinates || !place) return [];
+      const element = mapMarker(node, place, (event) => {
+        if (place.nodes.length > 1 && !event.shiftKey) {
+          setPlaceList({ title: mapLabel(node), nodes: place.nodes.map((item) => item.id) });
+        } else {
+          onSelect(node.id, event.shiftKey);
+        }
+      });
+      element.setAttribute('aria-pressed', 'true');
+      return [new Marker({ element, anchor: 'center', opacityWhenCovered: 0 }).setLngLat(coordinates).addTo(map)];
+    });
+    return () => { for (const marker of markers) marker.remove(); };
+  }, [ready, selection.node, selection.compareNode, places, onSelect]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!ready || !map) return;
+    const hit = (event: MapMouseEvent, tolerance: number) => {
+      const { x, y } = event.point;
+      return map.queryRenderedFeatures([[x - tolerance, y - tolerance], [x + tolerance, y + tolerance]], {
+        layers: ['record-clusters', 'record-points'],
+      })[0];
     };
-  }, [clustered, onSelect, ready, selectedId, visiblePoints, codeIds]);
-
-  useEffect(() => {
-    const map = mapRef.current;
-    if (!ready || !map || !clustered) return;
-    const pointClick = map.on('click', 'record-points', (event) => {
-      const id = event.features?.[0]?.properties.nodeId;
-      if (typeof id === 'string') onSelect(id, event.originalEvent.shiftKey);
-    });
-    const clusterClick = map.on('click', 'record-clusters', (event) => {
-      const feature = event.features?.[0];
-      if (feature?.geometry.type !== 'Point') return;
-      const center = feature.geometry.coordinates.slice(0, 2) as Coordinates;
+    const click = (event: MapMouseEvent) => {
+      const request = ++clusterRequest.current;
+      const feature = hit(event, 8);
+      if (!feature) {
+        const city = map.queryRenderedFeatures(event.point, { layers: ['overview-cities', 'street-city-names']
+          .filter((layer) => map.getLayer(layer)) })[0];
+        if (city?.geometry.type === 'Point') {
+          map.easeTo({ center: city.geometry.coordinates as Coordinates, zoom: 10.2, duration: motionDuration(520) });
+        }
+        setPlaceList(null);
+        return;
+      }
+      if (feature.geometry.type !== 'Point') return;
+      if (!feature.properties.cluster) {
+        const place = places.get(String(feature.properties.key));
+        if (!place) return;
+        if (place.nodes.length === 1) {
+          setPlaceList(null);
+          onSelect(place.nodes[0].id, event.originalEvent.shiftKey);
+        } else {
+          setPlaceList({ title: mapLabel(place.nodes[0]), nodes: place.nodes.map((node) => node.id) });
+        }
+        return;
+      }
+      const source = map.getSource<GeoJSONSource>('records');
+      if (!source) return;
+      const center = feature.geometry.coordinates as Coordinates;
       const clusterId = Number(feature.properties.cluster_id);
-      void map.getSource<GeoJSONSource>('records')?.getClusterExpansionZoom(clusterId)
-        .then((zoom) => map.easeTo({ center, zoom, duration: motionDuration(400) })).catch(() => {});
-    });
-    return () => { pointClick.unsubscribe(); clusterClick.unsubscribe(); };
-  }, [clustered, onSelect, ready]);
+      void Promise.all([
+        source.getClusterExpansionZoom(clusterId),
+        source.getClusterLeaves(clusterId, Number(feature.properties.point_count), 0),
+      ]).then(([zoom, leaves]) => {
+        if (clusterRequest.current !== request) return;
+        setPlaceList({ title: '区域资料', nodes: leaves.flatMap((leaf) => (
+          places.get(String(leaf.properties?.key))?.nodes.map((node) => node.id) ?? []
+        )) });
+        map.easeTo({ center, zoom: Math.min(zoom + .2, 14), duration: motionDuration(480) });
+      }).catch(() => {});
+    };
+    const hover = (event: MapMouseEvent) => {
+      if (map.isMoving()) return;
+      const feature = hit(event, 4);
+      map.getCanvas().style.cursor = feature ? 'pointer' : '';
+      if (!feature) {
+        setPlaceTooltip(null);
+        return;
+      }
+      const first = places.get(String(feature.properties.key))?.nodes[0];
+      setPlaceTooltip({ x: event.point.x, y: event.point.y, label: first ? mapLabel(first) : '区域资料',
+        count: Number(feature.properties.records_total ?? feature.properties.records) });
+    };
+    function clearTooltip() { setPlaceTooltip(null); map?.getCanvas().style.removeProperty('cursor'); }
+    map.on('click', click); map.on('mousemove', hover); map.on('movestart', clearTooltip);
+    map.getCanvas().addEventListener('mouseleave', clearTooltip);
+    return () => {
+      clusterRequest.current++;
+      map.off('click', click); map.off('mousemove', hover); map.off('movestart', clearTooltip);
+      map.getCanvas().removeEventListener('mouseleave', clearTooltip);
+    };
+  }, [ready, onSelect, places]);
 
   useEffect(() => {
     const map = mapRef.current;
     if (!ready || !map) return;
-    for (const [id, marker] of markerRef.current) {
-      const element = marker.getElement();
-      const related = selection.neighbors.has(id);
-      element.dataset.emphasis = id === selectedId || id === selection.compareNode?.id ? 'selected'
-        : codeIds.has(id) ? 'code' : related ? 'related' : 'normal';
-      element.setAttribute('aria-pressed', String(id === selectedId));
+    const target = focus && graph.byId.get(focus.id);
+    const targetCoordinates = target ? coordinatesOf(target) : null;
+    if (focus && lastFocus.current !== focus && target && targetCoordinates) {
+      lastFocus.current = focus;
+      lastFocusedId.current = selectedId;
+      clusterRequest.current++;
+      setPlaceList(null);
+      map.easeTo({ center: targetCoordinates, zoom: zoomForPoint(target), pitch: 0, bearing: 0, duration: motionDuration(740) });
     }
     const source = map.getSource<GeoJSONSource>('context');
     source?.setData(connectPoints(linkAnchor, context, regionDistribution ? context.length : MAX_CONTEXT_ARCS));
@@ -299,15 +362,24 @@ export default function GeoView({ graph, selection, codeIds, onSelect, onOpenGra
         map.easeTo({ center, zoom, pitch: anchor ? map.getPitch() : 0, duration: motionDuration(680) });
       }
     }
-  }, [anchor, context, linkAnchor, ready, regionDistribution, selectedId, selection, viewCenter, codeIds]);
+  }, [anchor, context, focus, graph.byId, linkAnchor, ready, regionDistribution, selectedId, viewCenter]);
 
   useEffect(() => {
     const map = mapRef.current;
     if (!ready || !map) return;
+    if (!hubArcs.length) {
+      setArcPaths([]);
+      return;
+    }
     let frame = 0;
     const update = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
+        if (map.getZoom() >= 10) {
+          setArcPaths((previous) => previous.length ? [] : previous);
+          setTooltip(null);
+          return;
+        }
         const center = map.getCenter(), radians = Math.PI / 180;
         const visible = ([lon, lat]: Coordinates) => Math.sin(lat * radians) * Math.sin(center.lat * radians)
           + Math.cos(lat * radians) * Math.cos(center.lat * radians) * Math.cos((lon - center.lng) * radians) > 0;
@@ -325,14 +397,33 @@ export default function GeoView({ graph, selection, codeIds, onSelect, onOpenGra
 
   function reset() {
     const host = hostRef.current;
-    if (host) mapRef.current?.easeTo({ center: viewCenter, zoom: zoomFor(host),
+    setPlaceList(null);
+    if (host) mapRef.current?.easeTo({ center: regionalOverview ? EAST_ASIA_CENTER : viewCenter,
+      zoom: zoomFor(host) + (regionalOverview ? 1.3 : 0),
       bearing: 0, pitch: 0, duration: motionDuration(520) });
   }
+  function showVisiblePlaces() {
+    if (placeList) { setPlaceList(null); clusterRequest.current++; return; }
+    const map = mapRef.current;
+    if (!map) return;
+    const bounds = map.getBounds();
+    const center = map.getCenter();
+    const inView = visiblePoints.filter(({ coordinates }) => bounds.contains(coordinates))
+      .map(({ node, coordinates }) => ({ id: node.id, distance: center.distanceTo(LngLat.convert(coordinates)) }))
+      .sort((left, right) => left.distance - right.distance);
+    setPlaceList({ title: '视野内资料', nodes: inView.map(({ id }) => id) });
+  }
+  const placeNodes = useMemo(() => placeList?.nodes.flatMap((id) => {
+    const node = graph.byId.get(id);
+    if (!node) return [];
+    if (regionDistribution && !regionIds.has(id)) return [];
+    return [node];
+  }) ?? [], [placeList, graph.byId, regionDistribution, regionIds]);
 
   return (
     <>
       <div className="scene-viewport geo-viewport" ref={hostRef} data-ready={ready} data-distribution={regionDistribution}
-        data-show-labels={visiblePoints.length <= 8} data-point-count={visiblePoints.length} />
+        data-point-count={visiblePoints.length} data-location-count={places.size} />
       {ready && arcPaths.length > 0 && <svg className="geo-arcs" aria-label="共同母题或机制连接">
         {arcPaths.map((arc, index) => <g key={`${arc.hubId}-${index}`}>
           <path className="arc-visible" d={arc.d} data-layer={arc.layer} data-type={arc.type} />
@@ -345,6 +436,9 @@ export default function GeoView({ graph, selection, codeIds, onSelect, onOpenGra
       </svg>}
       {tooltip && <div className="geo-arc-tooltip" style={{ left: tooltip.x + 12, top: tooltip.y + 12 }}>
         共享 L{tooltip.arc.layer} · {tooltip.arc.name}</div>}
+      {placeTooltip && !tooltip && <div className="geo-arc-tooltip" role="tooltip"
+        style={{ left: Math.min(placeTooltip.x + 12, (hostRef.current?.clientWidth ?? 300) - 145), top: placeTooltip.y + 12 }}>
+        {placeTooltip.label}{placeTooltip.count > 1 && ` · ${placeTooltip.count} 条`}</div>}
       {!ready && !error && <div className="stage-message" role="status">正在加载本地底图…</div>}
       {error && <div className="stage-message" role="alert">无法启动 3D 地图。请在支持 WebGL 的浏览器中打开。</div>}
       {ready && !error && (
@@ -352,7 +446,21 @@ export default function GeoView({ graph, selection, codeIds, onSelect, onOpenGra
           <ViewControls onReset={reset} onZoom={(direction) => {
             const map = mapRef.current;
             if (map) map.zoomTo(map.getZoom() + direction * 0.62, { duration: motionDuration(310) });
-          }} />
+          }} onTilt={() => mapRef.current?.easeTo({ pitch: tilted ? 0 : 45, duration: motionDuration(390) })} tilted={tilted} />
+          <button type="button" className="geo-list-toggle" aria-expanded={!!placeList}
+            onClick={showVisiblePlaces}>此处条目</button>
+          {placeList && <section className="geo-place-list" aria-label={placeList.title}>
+            <header><h2>{placeList.title} <span>{placeNodes.length}</span></h2>
+              <button type="button" aria-label="关闭地点列表" onClick={() => { setPlaceList(null); clusterRequest.current++; }}>×</button></header>
+            {placeNodes.length ? <ul>{placeNodes.map((node) => <li key={node.id}>
+              <button type="button" aria-current={node.id === selectedId ? 'true' : undefined}
+                onClick={(event) => onSelect(node.id, event.shiftKey)}>
+                <strong>{node.title}</strong>
+                <small>{mapLabel(node)} · {node.reading && isModernReading(node)
+                  ? READING_LABELS[node.reading.kind] : locationPrecision(node)}</small>
+              </button>
+            </li>)}</ul> : <p role="status">当前视野内没有条目。</p>}
+          </section>}
           {selection.node && !anchor && (
             <div className="geo-context-note" role="status">
               {regionDistribution ? `母题共现 · ${context.length} 个研究地区`
@@ -361,11 +469,15 @@ export default function GeoView({ graph, selection, codeIds, onSelect, onOpenGra
             </div>
           )}
           <div className="scene-footer">
-            <span>{visiblePoints.length} 个地点 · 点击标点查看</span>
+            <span>{places.size} 处标点</span>
             <span className="geo-legend">
-              {linkAnchor && context.length > 1 && <span><i />{regionDistribution ? '研究地区共现'
-                : context.length > MAX_CONTEXT_ARCS + 1 ? '两跳内关联（部分）' : '两跳内关联'}</span>}
-              <span>底图 Natural Earth</span>
+              {!streetLevel && linkAnchor && context.length > 1 && <span><i />{regionDistribution ? '研究地区共现'
+                : context.length > MAX_CONTEXT_ARCS + 1 ? '关联地点（部分）' : '关联地点'}</span>}
+              <span className="geo-attribution">
+                <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth</a>
+                <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap</a>
+                <a href="https://www.openmaptiles.org/" target="_blank" rel="noopener noreferrer">© OpenMapTiles</a>
+              </span>
             </span>
           </div>
         </>

@@ -1,6 +1,8 @@
-export function ViewControls({ onZoom, onReset }: {
+export function ViewControls({ onZoom, onReset, onTilt, tilted }: {
   onZoom: (direction: -1 | 1) => void;
   onReset: () => void;
+  onTilt?: () => void;
+  tilted?: boolean;
 }) {
   return (
     <div className="scene-controls" aria-label="视角控制" role="group">
@@ -9,6 +11,8 @@ export function ViewControls({ onZoom, onReset }: {
       </button>
       <button type="button" aria-label="放大" title="放大" onClick={() => onZoom(1)}>+</button>
       <button type="button" aria-label="缩小" title="缩小" onClick={() => onZoom(-1)}>−</button>
+      {onTilt && <button type="button" className="pitch-button" aria-label="倾斜视角" title="倾斜视角"
+        aria-pressed={tilted} onClick={onTilt}><span aria-hidden="true" /></button>}
     </div>
   );
 }

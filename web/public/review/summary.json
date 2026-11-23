@@ -1,5 +1,5 @@
 {
-  "records": 10608,
+  "records": 10617,
   "collections": {
     "scottish": 3421,
     "berezkin": 2524,
@@ -7,7 +7,7 @@
     "duchas": 21,
     "regional": 12,
     "research": 14,
-    "asia": 4421
+    "asia": 4430
   },
   "flags": {
     "ocm_batch_assignment": 3421,
@@ -93,6 +93,8 @@
     "minyag_codes_unassigned": 35,
     "minyag_comparison_unverified": 2,
     "minyag_name_variant": 1,
+    "source_hash_missing": 112,
+    "source_remote_uncached": 112,
     "japhug_recording_not_story": 550,
     "japhug_nonrepresentative": 550,
     "japhug_audio_not_copied": 550,
@@ -130,8 +132,6 @@
     "pangloss_na_context_not_story": 41,
     "pangloss_credits_conflict": 1,
     "pangloss_na_context_sichuan_recording": 1,
-    "source_hash_missing": 81,
-    "source_remote_uncached": 81,
     "na_tone_new_not_story": 3,
     "na_tone_new_details_missing": 3,
     "na_tone_new_place": 3,

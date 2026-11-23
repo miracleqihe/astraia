@@ -1,0 +1,269 @@
+# Original reading notes keyed by vault ID. Source numbers follow the card's
+# citations, followed by any additional public references below.
+case_cn_forbidden_city_palace_shadows:
+  kind: legend
+  map_label: 故宫
+  location_note: 紫禁城建筑群内的故宫博物院地标，传闻无具体宫墙位置。
+  source_numbers: [1, 2]
+  paragraphs:
+    - 流传的一个版本说，雷雨中的故宫红墙上突然映出一队宫女，身影转瞬消失。后来的讲述常把这次目击安在 1992 年，也有人把红墙说成能存下并重现影像的天然“录像带”。
+    - “墙上出现宫女”的说法至少在 1981 年就已有公开回应。《人民日报》当年转述故宫办公室来信，称工作人员调查与查档均未找到支持。2023 年，故宫研究馆员周乾被问到 1992 年版时也指出，缺乏可信材料证明那次目击。
+
+case_cn_harbin_cat_faced_granny:
+  kind: legend
+  map_label: 哈尔滨道外
+  location_note: 道外区一带是流传版本所提及的范围，点位为城区参考。
+  source_numbers: [1, 2, 4]
+  paragraphs:
+    - 哈尔滨流传的版本说，一位住在道外的老太太买菜回家时倒地，一只猫从她身上跃过。她再站起来时，半边脸已变成猫脸。故事又说她会在天黑后出没，专找落单的孩子。
+    - 报刊回述把传闻与 20 世纪 90 年代哈尔滨儿童结伴回家、腕上系红绳的说法联系起来。第十三层的讨论还留下了“猫从守灵中的遗体上跳过”的变体。1995 年是回述所给的年代。
+
+case_cn_duxi_forest_1994:
+  kind: report
+  map_label: 贵阳都拉营
+  location_note: 都拉营附近为报道涉及区域的参考点。
+  source_numbers: [1, 2, 3]
+  paragraphs:
+    - 1994 年末，贵阳北郊都溪林场大片松树折断，附近都拉营车辆厂也有设施受损。记者后来到林场回访。有守夜人员和居民回忆，受损之前听到了类似列车的巨响，还有人看见强光划过，于是出现了“空中怪车”的叫法。
+    - 央视与《瞭望东方周刊》的回访把事发日分别记为 11 月 30 日和 12 月 1 日。曾参与调查的高登义提出伴有强雷电的陆龙卷解释，其他受访者仍对成因有分歧。
+
+case_cn_shanghai_dragon_pillar:
+  kind: legend
+  map_label: 延安高架龙柱
+  location_note: 延安高架与南北高架交汇位置。
+  source_numbers: [1, 2]
+  paragraphs:
+    - 上海两条高架交汇处，有一根饰着盘龙的巨大桥柱。市民流传的故事把打桩困难归因于触动地下的龙，讲述者说施工方请僧人到场，后来在墩柱上加了龙纹。
+    - Yuting Cai 的论文记录了家人讲述的版本，工程刊物也记录了桥柱及施工困难。两处材料提到的寺院名称不同，留下了同一传说在口述中变形的痕迹。
+
+case_cn_chaonei_81:
+  kind: legend
+  map_label: 朝内 81 号
+  source_numbers: [1, 2]
+  paragraphs:
+    - 朝阳门内大街 81 号曾有两幢长期闲置的洋楼。一种流传说法把其中一座楼同一位军官的太太联系起来，称她在楼里身亡，后来有人听到响动。记者在 2013 年夜访时，记录的是这类故事围绕空楼传播的情形。
+    - 2016 年的实地报道记录了院落修缮与房屋权属。这些建筑史线索和恐怖片《京城 81 号》的情节，可以分别对读。
+
+case_cn_beijing_ghost_bus:
+  kind: legend
+  map_label: 北京
+  location_note: 城市传播地参考点，各版本所称线路和站点不同。
+  source_numbers: [1, 2]
+  paragraphs:
+    - 北京高校里流传过一个末班公交的故事：深夜最后一趟车驶出后，车与售票员一同消失。有人把它说成 375 路，也有人讲成 330 路、347 路或 333 路，故事随着讲述者换了线路。
+    - 一篇清华校友访谈回忆，类似传说在 20 世纪 90 年代已经流传。车次和地点会变，但“晚归者身边的一辆寻常公交忽然失踪”始终是故事的核心。
+
+case_cn_beixinqiao_dragon_well:
+  kind: legend
+  map_label: 北新桥
+  location_note: 标记当代北新桥路口及地铁站一带。
+  source_numbers: [1, 2, 3]
+  paragraphs:
+    - 老北京传说里，姚广孝把兴风作浪的龙锁进井中，答应等桥旧了再放它出来。桥便叫了“北新桥”，在故事里一直“新”下去。另一段口述说，牵动井中沉重的铁链，就会听到井底发出轰鸣。
+    - 东城区采访里的老居民把长辈所说的方位指向今天的地铁站 B 口附近。报刊调查另外记录了这一带的旧桥和发掘出的水井。
+
+case_cn_hk_high_street_haunted_house:
+  kind: legend
+  map_label: 西营盘高街
+  source_numbers: [1, 2]
+  paragraphs:
+    - 香港西营盘高街 2 号的花岗石拱廊，原属一座医护人员宿舍，后来纳入精神科医疗设施。建筑空置多年后，附近流传起夜里有哭喊声和异响的故事，“高街鬼屋”逐渐成了它的绰号。
+    - 古物古迹办事处记载，旧楼曾改作女病房和日间门诊，随后重建成社区综合大楼，保留的花岗石立面于 2015 年列为法定古迹。
+
+case_cn_tw_minxiong_liu_mansion:
+  kind: legend
+  map_label: 民雄刘家古厝
+  source_numbers: [1, 2, 3]
+  paragraphs:
+    - 嘉义民雄的刘家古厝在主人搬离后逐渐荒废。围绕这幢红砖楼，流传过婢女投井、士兵鬼魂夜间出现等不同故事。两种讲法都把荒废的院落变成了地方怪谈的舞台。
+    - 中央社走访时，受访者谈到游客如何来打听这些故事。公视后续采访又记录了影视改编给古厝带来的关注。
+
+case_zibuyu_li_tongpan:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 李通判早逝，老仆想让主人还阳，愿按道士的要求拿自己的性命交换。一个赤脚僧人暗中交给他纸包，他才在开棺之夜躲过两个小鬼，并从假通判的声音里认出了要夺财色的道士。雷声响过，棺木恢复原状，作法的道士死在坛上。
+
+case_cn_zibuyu_v01_s002:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 杭州北关门外的宅子传闻有鬼，蔡书生却执意买下。半夜，一名女子来到梁下示范如何把脖子套进绳圈，又招手让他照做。蔡偏伸了一只脚进去，反问她自己犯过的错为何还要让别人重演。女子哭着拜别，从此这屋里再没出现怪事。
+
+case_cn_zibuyu_v01_s003:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 南昌两个读书人同住寺里，年长者回家后猝死，又深夜赶回来托友人照顾家人、刊刻遗稿并还笔债。话说完，他却变成一具追人不止的尸身。年轻人翻墙才脱险，天亮被路人救起。袁枚借识者之口用“魂”与“魄”解释他从旧友变成怪物的转折。
+
+case_cn_zibuyu_v01_s004:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 曾虚舟举止像个疯人，却常一语道中旁人的心事。罢官归来的王子坚听人说祖坟风水有问题，想请他决断。还没能挤到跟前，曾虚舟便隔着人群喝止，说他打的是动祖先尸骨的主意。王子坚受惊而归，故事以他的儿子后来做了御史收尾。
+
+case_cn_zibuyu_v01_s005:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 常熟教书人钟孝廉梦见自己被带进一座衙门。阴司的神不追究他自以为严重的过错，却让他照见上一世谋财害友的事。梦里他惊觉自己已经变作菜叶上的小虫，醒来后忙命人准备丧具，三天后果然暴亡。
+
+case_cn_zibuyu_v01_s006:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 陈秀才在庙中梦见一句难解的预言，还是随表弟去了广西。官署花园里有一老人夜夜来谈诗，后来竟索要大量檀香，声称否则要取陈的心肺。陈回乡向亲友求救，众人从梦里的“南山顽石”猜到老人的来历，决计将它引往庙里。
+
+case_cn_zibuyu_v01_s007:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 酆都人把纸钱投井，唯恐停缴所谓的阴间钱粮就会引来瘟疫。新任知县与幕客缒绳下井，请阎罗包公免除这笔负担。包公同意，幕客却又因席间鲁莽问话冒犯关帝，回到县城便死去，连棺木也遭雷火。
+
+case_cn_zibuyu_v01_s008:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 常熟人孙君寿出游时捉弄荒坟里的骷髅，竟听见它开口回答。骷髅一路滚着追他，到了桥边才停下。孙虽逃回家，随即生病，反复说着当时嘲弄骷髅的话，几天后死去。
+
+case_cn_zibuyu_v01_s009:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 杭州一群朋友在酷暑中下棋，姓孙的棋手移去东厢小睡。床席从背后一寸寸凉下来，他低头一看，竟有骷髅在床下朝他吹气，吓得昏倒。醒后有人主张掘地查找，主人家却怕惹祸，把东厢锁了起来。
+
+case_cn_zibuyu_v01_s010:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 赵良栋经过成都，坚持住进一座久已锁闭的衙门。深夜闯来一个白衣大腹的怪物，挨过几次追刺竟还悄悄跟在他背后。赵最终用长戟刺中它，墙上只剩两只发光的金眼，众人再打，金眼散作火星。天亮后依然没人说得出怪物是什么。
+
+case_cn_zibuyu_v01_s011:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 总督夜读时，一名读书人从窗缝挤进来，自称是在此借住百年的狐仙。它说狐也得参加泰山娘娘主持的考试，合格才能继续修仙，还得苦学各地的鸟语才学得人声。总督听罢愿意让出西楼，事后却懊悔没问狐仙试卷上出了什么题。
+
+case_cn_zibuyu_v01_s012:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 淮安一名女子不肯避开亡夫头七，等到红发鬼差牵丈夫回来。鬼差忙着吃祭品，她趁机召来儿女，把丈夫的魂裹回棺中。丈夫活了二十多年，妻子却在城隍庙再次遇到因失职戴枷的鬼差，回家后便去世。
+
+case_cn_zibuyu_v01_s013:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 参将张士贵不信房子闹鬼，夜里持弓守候，射中从梁上垂下的怪物。怪物逃走前扬言要灭他一家，隔天他的妻儿果然相继倒下。一个多月后，他从夹墙里找回活着的两人，开棺才发现里面早已空了。
+
+case_cn_zibuyu_v01_s014:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 杜工部续娶当晚，见一个小人要吹灭婚烛，又指着四周说到处都是人头，随即暴亡。之后妻子每次进食都觉得喉咙被扼住，又听见他哭着说舍不得。老同年周煌当面责问亡者，哭声断绝，她的病也好了。
+
+case_cn_zibuyu_v01_s015:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 方苞在武英殿修书，他的仆人胡求夜宿浴德堂，被两个身影从床上抬到阶下。两边各站着一名高大的红袍神，竟把胡求当成球踢来踢去，直到鸡鸣才消失。第二天，胡求浑身青肿，在故事里养病数月才好。
+
+case_asia_liaozhai_huapi:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 太原王生把一名自称逃难的女子带回家。道士提醒他有邪物，他悄悄窥看，才发现那是一只鬼，正在给一张人皮描画面容。鬼害死王生后，他的妻子奔走求助，最后以乞者教她的方法救回丈夫。
+
+case_asia_liaozhai_kaochenghuang:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 蒲松龄写宋焘病中忽被请去赶考，到了衙署才发现考官是诸神。文章得到赞许，他被选去做河南一地的城隍，却请求等到侍奉老母终年。诸神准他回去九年，另派同场的张生暂代。九年后母亲去世，他安葬完毕，也从人世辞去。
+
+case_asia_liaozhai_qingfeng:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 耿去病闯入久已荒废的宅院，看见一户狐家正举席饮酒，席间与青凤相互动心。青凤受长辈责备，二人一度分开。后来耿在外救下受犬追逐的小狐狸，又与青凤相见。故事最后，她也请耿援救她曾经惧怕的长辈。
+
+corpus_cn_ich_2006_06:
+  kind: story
+  source_numbers: [1, 2]
+  additional_sources:
+    - citation: 中国非物质文化遗产数字博物馆，白蛇传传说（杭州）。
+      type: institutional_account
+      url: https://www.ihchina.cn/project_details/12185.html
+      locator: 历代文本与杭州、镇江的流传范围
+  paragraphs:
+    - 在广为流传的故事里，白蛇化作白娘子，在西湖一带结识许仙，与他成婚。法海要拆散二人，故事经过端午现形、水漫金山等情节，最终把白娘子同雷峰塔联系在一起。不同的文本和戏曲对她是否重获自由有不同写法。
+    - 杭州和镇江同列首批申报名录。明代《白娘子永镇雷峰塔》已写出这段故事较完整的早期形态，后来的演出又塑造了多个版本。
+
+corpus_cn_ich_2006_07:
+  kind: story
+  source_numbers: [1, 2]
+  additional_sources:
+    - citation: 中国非物质文化遗产数字博物馆，梁祝传说。
+      type: institutional_account
+      url: https://www.ihchina.cn/project_details/12187/
+      locator: 国家级项目条目及其口头传统
+  paragraphs:
+    - 祝英台女扮男装外出求学，与梁山伯同窗。分别后，梁山伯才明白祝英台的心意，赶去求婚时她已经另有婚约。梁去世后，祝英台经过他的墓地，墓穴裂开将她接入。流传很广的结尾里，两人化蝶相伴。
+
+corpus_cn_ich_2006_08:
+  kind: story
+  source_numbers: [1, 2]
+  additional_sources:
+    - citation: 中国非物质文化遗产数字博物馆，孟姜女传说（博山）。
+      type: institutional_account
+      url: https://www.ihchina.cn/project_details/12192/
+      locator: 博山传唱及齐国杞梁妻向秦长城传说的演变
+  paragraphs:
+    - 常见的传说说，孟姜女为被征去修筑长城的丈夫送寒衣，到时却只得知他的死讯。她悲哭不止，令城墙坍塌，终于得见丈夫遗骨。博山的唱本还保留了地方传唱的印记，同一人物在早期讲法中则与春秋齐国的杞梁妻相连。
+
+case_asia_korea_grateful_ghost:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 高丽时代，一名赶考的书生在山路上听见草丛里有人打喷嚏。仆人挖开树根才发现，藤蔓从一具骷髅的鼻孔穿过。书生将骨头洗净包好，依旧葬在山坡上。受了照顾的鬼魂随后前来答谢，这也是篇名“感恩的鬼”的缘由。
+
+case_nichibun_0640018:
+  kind: story
+  source_numbers: [1]
+  paragraphs:
+    - 岩手远野的讲法里，一户人家的主人答应河童，只要它改了河道便把独女嫁给它。河水果然改道，主人却把正在洗衣的女仆推下河。女仆在水中诅咒这家的男子，此后家里的男孩据说都活不过二十岁。
+
+case_asia_philippines_lumawig:
+  kind: story
+  source_numbers: [1, 2]
+  paragraphs:
+    - 天上的卢马维格看见两姐妹采豆，下来用一只豆荚装满整筐。他又让这家人的鸡和猪顷刻长大，并选了妹妹富坎作妻子。连襟讥笑婚宴没有食物时，他用少量米装满几口锅，从林中召出猎物，备成宴席。
+
+case_thai_sac_1:
+  kind: story
+  source_numbers: [1, 2]
+  paragraphs:
+    - 六个盲人分别摸到大象的不同部位，于是说大象像扫帚、粮仓的墙、风箱、簸箕、水蛭或钩刀柄。他们歇在树下争执，一人被熟果砸中便以为同伴打他，一场关于大象长相的争论最终变成了混战。
+
+case_thai_sac_36:
+  kind: story
+  source_numbers: [1, 2]
+  paragraphs:
+    - 诗琳通人类学中心所藏版本中，帕登想娶伊姑娘，却在火箭比赛中落败。水下龙王之子化成松鼠到城里，结果被猎人抓走，全城居民分食了它。龙王得讯，带众掀起洪水淹城，帕登骑马来救姑娘，姑娘仍被拖入水下。最后帝释天出面，才让死后再战的帕登与龙族休兵。
+
+case_china_soulstealers_1768:
+  kind: history
+  source_numbers: [1]
+  paragraphs:
+    - 乾隆三十三年，长江下游一带出现借剪辫、名字或符咒夺人魂魄的指控，一些僧人、乞丐和外地人被怀疑施术。随着地方审讯和呈报，乾隆下令扩查，使原来的地方恐慌波及多个省份。孔飞力以清代档案追索了朝廷与地方官员如何处理这些指控。
+
+case_salem_1692:
+  kind: history
+  source_numbers: [1]
+  paragraphs:
+    - 1692 年，塞勒姆一带几名少女表现异常，指称有人以巫术伤害她们。嫌疑人从个别邻人扩大到不同社区，法庭在争议重重的证词中审判并处决了多人。存下来的讯问和诉讼文书让人能追踪一则指控如何从邻里纠纷变成案件。
+
+case_spr_borley_rectory:
+  kind: history
+  source_numbers: [1, 2]
+  paragraphs:
+    - 英格兰博利村一座牧师住宅被报刊冠以闹鬼之名，流传的故事包括游荡的修女身影、响铃和墙上的字迹。调查者哈里·普赖斯将多年来的说法汇成报告，1956 年英国心灵研究学会刊出的复查则逐项质疑证词的可靠性与传闻形成过程。

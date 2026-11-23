@@ -1,0 +1,33 @@
+{
+  "catalogue": {
+    "records": 10629,
+    "links": 39008,
+    "editorial_reading_notes": 38,
+    "modern_records": 9,
+    "fixed_revision_zibuyu_transcriptions": 745,
+    "derived_archive_summaries": 5870,
+    "records_with_coordinates": 522,
+    "distinct_locations": 207
+  },
+  "checks": {
+    "typescript_and_vite": "passed",
+    "python_existing_suite": 187,
+    "python_transcription_integrity": 1,
+    "browser_channels": ["Chrome", "Microsoft Edge"],
+    "chromium_flows": [
+      "站内阅读、出处导航及猫脸太太异名搜索",
+      "街区定位、底图瓦片、倾斜视角与标点分组",
+      "日文研同一标点展开五条资料",
+      "从现代异闻目录选择事件后地图与卷宗联动",
+      "切换语义星图并打开只有目录字段的条目",
+      "移动端宽度、街区加载与排版",
+      "街区瓦片不可用时保留本地概览、标点和卷宗"
+    ],
+    "palace_map_scale": { "overview": "500 km", "landmark": "100 m" },
+    "chinese_font_cmaps": {
+      "han_characters_checked": 5073,
+      "missing": 0,
+      "supplement_glyphs_rendered_in_browser_per_weight": 223
+    }
+  }
+}

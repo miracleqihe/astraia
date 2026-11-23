@@ -1,9 +1,9 @@
 import { lazy, Suspense, useCallback, useEffect, useMemo, useState, type CSSProperties, type Dispatch, type SetStateAction } from 'react';
-import { NodeDirectory } from './NodeDirectory';
+import { NodeDirectory, type DirectoryScope } from './NodeDirectory';
 import { NodeInspector } from './NodeInspector';
 import { Chronology, ControlRail, QuickSearch, ViewportFrame } from './WorkbenchControls';
 import {
-  coordinatesOf, evidenceGroup, firstSelection, indexGraph, loadSnapshot, otherEnd, relatedNodes,
+  coordinatesOf, evidenceGroup, firstSelection, indexGraph, isFiction, isModernReading, loadSnapshot, otherEnd, relatedNodes,
   type CodeFocus, type EvidenceGroup, type GraphNode, type GraphSnapshot, type Layer, type Tier, type ViewMode,
 } from './graph';
 
@@ -39,8 +39,17 @@ function CompareSummary({ left, right, graph }: { left: GraphNode; right: GraphN
 }
 
 function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
-  const [mode, setMode] = useState<ViewMode>('graph');
+  const [entry] = useState(() => {
+    const url = new URL(window.location.href);
+    const requested = snapshot.nodes.find((node) => node.id === url.searchParams.get('story'));
+    const view = url.searchParams.get('view');
+    const mode: ViewMode = view === 'map' ? 'geo' : view === 'graph' ? 'graph'
+      : snapshot.nodes.some(isModernReading) ? 'geo' : 'graph';
+    return { mode, selectedId: requested?.id ?? firstSelection(snapshot.nodes), focus: requested && coordinatesOf(requested) ? { id: requested.id } : null };
+  });
+  const [mode, setMode] = useState<ViewMode>(entry.mode);
   const [directoryOpen, setDirectoryOpen] = useState(false);
+  const [directoryScope, setDirectoryScope] = useState<DirectoryScope>('all');
   const [searchOpen, setSearchOpen] = useState(false);
   const [tiers, setTiers] = useState(() => new Set<Tier>(ALL_TIERS));
   const [layers, setLayers] = useState(() => new Set<Layer>(ALL_LAYERS));
@@ -48,7 +57,8 @@ function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
   const [activeLayer, setActiveLayer] = useState<Layer | null>(null);
   const [soloLayer, setSoloLayer] = useState<Layer | null>(null);
   const [spread, setSpread] = useState(120);
-  const [selectedId, setSelectedId] = useState(() => firstSelection(snapshot.nodes));
+  const [selectedId, setSelectedId] = useState(entry.selectedId);
+  const [mapFocus, setMapFocus] = useState(entry.focus);
   const [compareId, setCompareId] = useState<string | null>(null);
   const [comparePicking, setComparePicking] = useState(false);
   const [drawer, setDrawer] = useState<'collapsed' | 'single' | 'compare'>('single');
@@ -107,14 +117,20 @@ function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
     return new Set([...left.keys()].filter((id) => right.has(id) && (graph.byId.get(id)?.z_layer ?? 0) >= 3));
   }, [graph, selected, activeComparison]);
   const mappedCount = useMemo(() => graph.nodes.filter(coordinatesOf).length, [graph]);
+  const modernCount = useMemo(() => graph.nodes.filter(isModernReading).length, [graph]);
+  const searchableNodes = useMemo(() => tiers.has('F') ? snapshot.nodes : snapshot.nodes.filter((node) => !isFiction(node)),
+    [snapshot.nodes, tiers]);
 
   const selectNode = useCallback((id: string, asCompare = false) => {
     if (!graph.byId.has(id)) return;
+    if (id !== selectedId) setMapFocus(null);
     if ((asCompare || comparePicking) && selectedId && id !== selectedId) {
       setCompareId(id); setComparePicking(false); setDrawer('compare');
     } else { setSelectedId(id); if (drawer === 'collapsed') setDrawer('single'); }
     setHoveredId(null);
-    if (window.matchMedia('(max-width: 760px)').matches) window.requestAnimationFrame(() => document.getElementById('node-inspector')?.scrollIntoView({ block: 'start' }));
+    if (window.matchMedia('(max-width: 760px)').matches) {
+      window.requestAnimationFrame(() => document.getElementById('node-inspector')?.scrollIntoView({ block: 'start' }));
+    }
   }, [graph.byId, comparePicking, selectedId, drawer]);
 
   useEffect(() => {
@@ -129,6 +145,17 @@ function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
     setter((old) => { const next = new Set(old); if (next.has(value)) next.delete(value); else next.add(value); return next; });
   }
   function toggleSolo(layer: Layer) { setActiveLayer(layer); setSoloLayer((previous) => previous === layer ? null : layer); }
+  function openDirectory(scope: DirectoryScope) {
+    setDirectoryOpen(!directoryOpen || directoryScope !== scope);
+    setDirectoryScope(scope);
+  }
+  function locate(id: string) {
+    setMapFocus({ id });
+    setMode('geo');
+    if (window.matchMedia('(max-width: 760px)').matches) {
+      window.requestAnimationFrame(() => document.getElementById('visual-stage')?.scrollIntoView({ block: 'start' }));
+    }
+  }
   const width = drawer === 'collapsed' || !selected ? 40 : drawer === 'compare' ? 680 : 420;
 
   return <div className="app-shell">
@@ -140,7 +167,8 @@ function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
       </nav>
       <div className="top-actions">
         {!publicSite && <a className="review-link" href={`${import.meta.env.BASE_URL}review/index.html`}>资料复核</a>}
-        <button className="directory-toggle" type="button" aria-expanded={directoryOpen} onClick={() => setDirectoryOpen((open) => !open)}>节点目录 <span>{graph.nodes.length}</span></button>
+        <button className="directory-toggle" type="button" aria-expanded={directoryOpen && directoryScope !== 'modern'}
+          onClick={() => openDirectory('all')}>节点目录 <span>{graph.nodes.length}</span></button>
         <button className="fiction-switch" type="button" role="switch" aria-checked={!tiers.has('F')} onClick={() => toggle<Tier>(setTiers, 'F')}>
           <span>隐藏 F 级虚构</span><span className="switch-track" aria-hidden="true" /></button>
       </div>
@@ -148,14 +176,17 @@ function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
     <div className="workspace workbench" style={{ '--drawer-width': `${width}px` } as CSSProperties}>
       <main id="visual-stage" className="visual-stage" aria-label="图谱主视图">
         <ViewportFrame />
-        <div className="stage-heading"><h1>{mode === 'geo' ? '全球地理分布' : '四层语义星图'}</h1>
-          <p>{mode === 'geo' ? `${mappedCount.toLocaleString()} 个地点` : `${graph.nodes.length.toLocaleString()} 个节点 · ${graph.links.length.toLocaleString()} 条关系`}</p></div>
+        <div className="stage-heading"><h1>{mode === 'geo' ? '地点与故事' : '四层语义星图'}</h1>
+          <p>{mode === 'geo' ? `${mappedCount.toLocaleString()} 条有坐标的资料` : `${graph.nodes.length.toLocaleString()} 个节点 · ${graph.links.length.toLocaleString()} 条关系`}</p></div>
+        {modernCount > 0 && <button type="button" className="modern-shortcut"
+          aria-expanded={directoryOpen && directoryScope === 'modern'} onClick={() => openDirectory('modern')}>现代异闻 <span>{modernCount}</span></button>}
         <ControlRail mode={mode} layers={layers} tiers={tiers} activeLayer={activeLayer} soloLayer={soloLayer} spread={spread}
           onLayer={(layer) => setActiveLayer((previous) => previous === layer ? null : layer)} onToggleLayer={(layer) => toggle(setLayers, layer)}
           onSolo={toggleSolo} onTier={(tier) => toggle(setTiers, tier)} onSpread={setSpread} onSearch={() => setSearchOpen(true)} />
         <Suspense fallback={<div className="stage-message" role="status">正在载入三维视图…</div>}>
           {mode === 'geo'
-            ? <GeoView graph={graph} selection={sceneSelection} codeIds={codeIds} onSelect={selectNode} onOpenGraph={() => setMode('graph')} />
+            ? <GeoView graph={graph} selection={sceneSelection} codeIds={codeIds} focus={mapFocus}
+              onSelect={selectNode} onOpenGraph={() => setMode('graph')} />
             : <ConstellationView graph={graph} allNodes={snapshot.nodes} selection={selection} sceneSelection={sceneSelection}
               hoveredId={hoveredId} spread={spread} soloLayer={soloLayer} activeLayer={activeLayer} codeIds={codeIds} commonIds={commonIds} evidence={evidence}
               onSelect={selectNode} onHover={setHoveredId} onLayer={setActiveLayer} onSolo={toggleSolo} onEvidence={(status) => toggle(setEvidence, status)} />}
@@ -163,7 +194,14 @@ function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
         <Chronology bounds={timeline.bounds} value={currentYears} ticks={timeline.ticks} onChange={setYears} />
         {drawer === 'compare' && comparePicking && <div className="compare-hint" role="status">请选择第二个节点，或 Shift + 点击节点。</div>}
         {directoryOpen && <div className="directory-drawer" onKeyDown={(event) => { if (event.key === 'Escape') setDirectoryOpen(false); }}>
-          <NodeDirectory nodes={graph.nodes} selectedId={selected?.id ?? null} onSelect={selectNode} /></div>}
+          <NodeDirectory nodes={graph.nodes} selectedId={selected?.id ?? null}
+            scope={directoryScope} onScope={setDirectoryScope} onClose={() => setDirectoryOpen(false)}
+            onSelect={(id) => {
+              const node = graph.byId.get(id);
+              selectNode(id);
+              if (mode === 'geo' && node && coordinatesOf(node)) setMapFocus({ id });
+              setDirectoryOpen(false);
+            }} /></div>}
       </main>
       {drawer === 'collapsed' || !selected ? <aside className="inspector-spine" aria-label="收起的卷宗">
         <button type="button" onClick={() => { if (!selected && graph.nodes.length) setSelectedId(graph.nodes[0].id); setDrawer('single'); }}>展开卷宗</button></aside>
@@ -175,19 +213,21 @@ function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
           </div>
           {drawer === 'compare' && comparison && <CompareSummary left={selected} right={comparison} graph={graph} />}
           <div className={`inspector-columns${drawer === 'compare' ? ' comparing' : ''}`}>
-            <NodeInspector node={selected} graph={graph} onSelect={selectNode} onClose={() => { setDrawer('collapsed'); setComparePicking(false); }}
+            <NodeInspector node={selected} graph={graph} onSelect={selectNode} onLocate={locate} onClose={() => { setDrawer('collapsed'); setComparePicking(false); }}
               onCompare={() => { setDrawer('compare'); setComparePicking(true); }} onNodeHover={setHoveredId} onCodeFocus={setCodeFocus}
               onCodePin={(code) => setPinnedCode((old) => old?.system === code.system && old.code === code.code ? null : code)} />
             {drawer === 'compare' && (comparison
-              ? <NodeInspector secondary node={comparison} graph={graph} onSelect={(id) => selectNode(id, true)} onClose={() => { setCompareId(null); setDrawer('single'); setComparePicking(false); }}
+              ? <NodeInspector secondary node={comparison} graph={graph} onSelect={(id) => selectNode(id, true)} onLocate={locate} onClose={() => { setCompareId(null); setDrawer('single'); setComparePicking(false); }}
                 onCompare={() => setComparePicking(true)} onNodeHover={setHoveredId} onCodeFocus={setCodeFocus}
                 onCodePin={(code) => setPinnedCode((old) => old?.system === code.system && old.code === code.code ? null : code)} />
               : <div className="compare-empty">请选择第二个节点。</div>)}
           </div>
         </div>}
     </div>
-    {searchOpen && <QuickSearch nodes={snapshot.nodes} onClose={() => setSearchOpen(false)} onSelect={(id) => {
-      setTiers(new Set(ALL_TIERS)); setLayers(new Set(ALL_LAYERS)); setYears(null); setHoveredId(null); setSelectedId(id); setDrawer('single'); setComparePicking(false);
+    {searchOpen && <QuickSearch nodes={searchableNodes} onClose={() => setSearchOpen(false)} onSelect={(id) => {
+      setTiers(new Set(ALL_TIERS.filter((tier) => tier !== 'F' || tiers.has('F')))); setLayers(new Set(ALL_LAYERS)); setYears(null);
+      setHoveredId(null); setSelectedId(id); setDrawer('single'); setComparePicking(false);
+      if (mode === 'geo') setMapFocus({ id });
     }} />}
   </div>;
 }

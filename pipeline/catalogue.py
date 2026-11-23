@@ -10,6 +10,7 @@ from pipeline.ingest_agent import DEFAULT_CODE_TABLE, DEFAULT_VAULT, verify_loca
 from pipeline.local_standards import load_code_table, verify_codes
 from pipeline.node_model import NodeMetadata
 from pipeline.public_fingerprint import public_content_sha256
+from pipeline.reading_notes import DEFAULT_NOTES, attach_reading
 from pipeline.vault import VaultCard, load_vault, parse_card
 from pipeline.vault_write import vault_writer
 
@@ -38,13 +39,11 @@ def build_catalogue(vault: Path, code_table: Path) -> dict:
         for source in data['sources']:
             source['local_path'] = None
         data['audit']['review_note'] = None
-        # Pending and locally reviewed records expose catalogue metadata and source links;
-        # source text is displayed only where separately cleared or already public sample content.
-        body = card.markdown if metadata.audit.public_release or metadata.audit.is_sample else (
-            '### 资料目录\n\n通过下方文献出处访问馆方原始资料。\n')
+        body = card.markdown if metadata.audit.public_release or metadata.audit.is_sample else ''
         public[key] = VaultCard(NodeMetadata.model_validate(data), f'资料目录/{key}', body)
     verify_local_sources(cleared)
-    return compile_cards(public, include_samples=True, include_drafts=True)
+    graph = compile_cards(public, include_samples=True, include_drafts=True)
+    return attach_reading(graph, cards, DEFAULT_NOTES if vault.resolve() == DEFAULT_VAULT.resolve() else None)
 
 
 def main() -> int:

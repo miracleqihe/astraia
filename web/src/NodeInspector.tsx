@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import {
-  coordinatesOf, EVIDENCE, isFiction, LAYERS, linkKey, otherEnd, RELATIONS, STANDARDS,
+  coordinatesOf, EVIDENCE, isFiction, LAYERS, linkKey, locationPrecision, mapLabel, otherEnd, READING_LABELS, RELATIONS, STANDARDS,
   type Citation, type CodeFocus, type GraphIndex, type GraphNode,
 } from './graph';
 
@@ -13,6 +13,9 @@ const SOURCE_TYPES: Record<string, string> = {
   gazetteer: '地名录', peer_reviewed: '同行评议论文', monograph: '学术专著', official_standard: '官方索引',
   research_dataset: '研究数据', user_supplied_outline: '用户提供的研究提纲',
   historical_reference: '调查库登记的史料线索',
+  newspaper_report: '报刊报道', field_report: '现场采访', interview: '人物访谈',
+  institutional_account: '机构资料', community_retelling: '网络流传版本',
+  zibuyu_revision_link: '维基文库固定版本', historical_text_transcription: '古籍转录',
   pdf: 'PDF 资料', web_page: '网页资料', plain_text: '纯文本资料',
   pangloss_na_catalogue: '馆藏目录', pangloss_na_detail: '馆方录音详情',
   pangloss_na_selection: '录音选取索引', pangloss_annotation_index: '馆方分句结构索引',
@@ -80,7 +83,7 @@ function Sources({ citations }: { citations: Citation[] }) {
       {citations.map((source, index) => {
         const url = webUrl(source.url) ?? webUrl(source.doi ? `https://doi.org/${source.doi}` : null);
         return (
-          <li key={`${source.citation}-${index}`}>
+          <li key={`${source.citation}-${index}`} data-source-number={index + 1}>
             <span className="source-type">{SOURCE_TYPES[source.type] ?? source.type}</span>
             <p>{source.citation}</p>
             {source.locator && <p className="source-locator">{source.locator}</p>}
@@ -93,6 +96,32 @@ function Sources({ citations }: { citations: Citation[] }) {
   );
 }
 
+function CatalogueOverview({ node }: { node: GraphNode }) {
+  const source = node.sources[0];
+  const place = node.spatial?.location_name.replace(/\s+/g, ' ');
+  if (!source && !place) return null;
+  return <section className="reading-section" data-section="reading">
+    <h4>目录提要</h4>
+    {place && <p>{place}</p>}
+    {source && <p className="catalogue-source">{source.citation}{source.locator && <> · {source.locator}</>}</p>}
+  </section>;
+}
+
+function Edition({ node }: { node: GraphNode }) {
+  const edition = node.reading?.edition;
+  if (!edition) return null;
+  const url = webUrl(node.sources[edition.source_number - 1]?.url);
+  return <section data-section="text" className="inspector-section">
+    <h4>古籍正文</h4>
+    <article className="classical-reading" lang="zh-Hant">
+      {edition.text.split(/\n{2,}/u).map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+    </article>
+    <p className="edition-credit">袁枚《子不语》 · {url && <a href={url} target="_blank" rel="noopener noreferrer">维基文库贡献者转录</a>}
+      {' · '}<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
+    </p>
+  </section>;
+}
+
 interface Props {
   node: GraphNode;
   graph: GraphIndex;
@@ -102,16 +131,23 @@ interface Props {
   onNodeHover: (id: string | null) => void;
   onCodeFocus: (code: CodeFocus | null) => void;
   onCodePin: (code: CodeFocus) => void;
+  onLocate: (id: string) => void;
   secondary?: boolean;
 }
 
-export function NodeInspector({ node, graph, onSelect, onClose, onCompare, onNodeHover, onCodeFocus, onCodePin, secondary = false }: Props) {
+export function NodeInspector({ node, graph, onSelect, onClose, onCompare, onNodeHover, onCodeFocus, onCodePin, onLocate, secondary = false }: Props) {
   const [relationLimit, setRelationLimit] = useState(RELATION_PAGE_SIZE);
   const contentRef = useRef<HTMLDivElement>(null);
   const links = graph.adjacency.get(node.id) ?? [];
   const layer = LAYERS[node.z_layer];
   const yearSuffix = node.title.match(/（\d{4}(?:[–-]\d{4})?）$/)?.[0];
   const coordinates = coordinatesOf(node);
+  const reading = node.reading;
+  const paragraphs = reading?.paragraphs ?? [];
+  const hasEdition = !!reading?.edition;
+  const hasMarkdown = !!node.markdown.trim() && !node.markdown.startsWith('### 资料目录');
+  const hasText = hasEdition || hasMarkdown;
+  const hasOverview = paragraphs.length > 0 || (!hasText && (!!node.spatial || node.sources.length > 0));
   const codes = Object.entries(STANDARDS).flatMap(([key, label]) => (
     node.standards[key as keyof GraphNode['standards']].map((code) => ({ system: key, code, label: `${label} ${code}` }))
   ));
@@ -125,7 +161,9 @@ export function NodeInspector({ node, graph, onSelect, onClose, onCompare, onNod
     const b = graph.byId.get(otherEnd(right, node.id))?.z_layer === 4 ? 0 : 1;
     return a - b;
   });
-  const jump = (id: string) => contentRef.current?.querySelector(`[data-section="${id}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const jump = (section: string) => contentRef.current?.querySelector(section)?.scrollIntoView({
+    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start',
+  });
 
   return (
     <aside id={secondary ? undefined : 'node-inspector'} className="inspector" aria-label={secondary ? '对比节点详情' : '节点详情'}>
@@ -145,32 +183,65 @@ export function NodeInspector({ node, graph, onSelect, onClose, onCompare, onNod
           ? <>{node.title.slice(0, -yearSuffix.length)}<wbr /><span className="record-year">{yearSuffix}</span></>
           : node.title}</h3>
         {node.aliases[0] && node.aliases[0] !== node.title && <p className="record-alias">{node.aliases[0]}</p>}
-        {codes.length > 0 && <div className="code-plates" aria-label="标准码">{codes.map((code) => <button key={`${code.system}-${code.code}`}
-          type="button" onMouseEnter={() => onCodeFocus(code)} onMouseLeave={() => onCodeFocus(null)}
-          onFocus={() => onCodeFocus(code)} onBlur={() => onCodeFocus(null)} onClick={() => onCodePin(code)}>{code.label}</button>)}</div>}
+        {coordinates && <div className="record-location">
+          <span title={node.spatial?.location_name}>{mapLabel(node)}</span>
+          <button type="button" onClick={() => onLocate(node.id)}>在地图定位 <span aria-hidden="true">↗</span></button>
+        </div>}
       </div>
 
       <nav className="inspector-nav" aria-label="节点详情分区">
-        <button type="button" onClick={() => jump('facts')}>概况</button>
-        <button type="button" onClick={() => jump('relations')}>关联 <span>{links.length}</span></button>
-        <button type="button" onClick={() => jump('text')}>原文</button>
-        <button type="button" onClick={() => jump('sources')}>出处 <span>{node.sources.length}</span></button>
+        {hasOverview && <button type="button" onClick={() => jump('[data-section="reading"]')}>阅读</button>}
+        {hasText && <button type="button" onClick={() => jump('[data-section="text"]')}>原文</button>}
+        <button type="button" onClick={() => jump('[data-section="facts"]')}>概况</button>
+        <button type="button" onClick={() => jump('[data-section="sources"]')}>出处 <span>{node.sources.length}</span></button>
+        {links.length > 0 && <button type="button" onClick={() => jump('[data-section="relations"]')}>关联 <span>{links.length}</span></button>}
       </nav>
 
       <div className="inspector-content" ref={contentRef}>
+        {reading && paragraphs.length > 0
+          ? <section className="reading-section" data-section="reading" data-reading-kind={reading.kind}>
+            <h4>{READING_LABELS[reading.kind]}</h4>
+            {paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+            <div className="reading-citations" aria-label="提要出处">
+              <span>出处</span>
+              {reading.source_numbers.map((number) => <button key={number} type="button" aria-label={`查看出处 ${number}`}
+                onClick={() => jump(`[data-source-number="${number}"]`)}>{number}</button>)}
+            </div>
+          </section>
+          : !hasText && <CatalogueOverview node={node} />}
+        {hasEdition && <Edition node={node} />}
+        {!hasEdition && hasMarkdown && <section data-section="text" className="inspector-section"><h4>资料正文</h4>
+          <article className="markdown-body" aria-label="Markdown 原文">
+            <Markdown skipHtml remarkPlugins={[remarkGfm]} components={{
+              a: ({ href, children }) => {
+                const url = webUrl(href);
+                return url ? <a href={url} target="_blank" rel="noopener noreferrer">{children}</a> : <span>{children}</span>;
+              },
+              img: ({ alt, src }) => {
+                const url = webUrl(typeof src === 'string' ? src : undefined);
+                return url ? <a href={url} target="_blank" rel="noopener noreferrer">{alt || '查看原图'}</a>
+                  : <span>{alt || '本地图片'}</span>;
+              },
+            }}>{node.markdown}</Markdown>
+          </article>
+        </section>}
         <dl className="record-facts" data-section="facts">
           {node.spatial && <div><dt>地点</dt><dd>{node.spatial.location_name}</dd></div>}
-          {coordinates && <div><dt>坐标</dt><dd className="numeric">{coordinates[1].toFixed(2)}°, {coordinates[0].toFixed(2)}°
-            {node.spatial?.precision === 'culture_region' ? ' · 区域参考点' : node.spatial?.precision === 'city' ? ' · 城市参考点' : ''}</dd></div>}
+          {coordinates && <div><dt>点位</dt><dd><span className="numeric">{coordinates[1].toFixed(node.spatial?.precision === 'exact' ? 5 : 2)}°, {coordinates[0].toFixed(node.spatial?.precision === 'exact' ? 5 : 2)}°</span>
+            {' · '}{locationPrecision(node)}{reading?.location_note && <small>{reading.location_note}</small>}</dd></div>}
           {node.temporal && <div><dt>时间</dt><dd title={node.temporal.uncertainty_note ?? undefined}>{temporalLabel(node.temporal)}</dd></div>}
           {!node.audit.reviewed_by_human && <div><dt>复核</dt><dd>待人工复核{node.audit.is_sample ? ' · 样例' : ''}</dd></div>}
           {node.audit.reviewed_by_human && node.audit.reviewer && <div><dt>复核人</dt><dd>{node.audit.reviewer}</dd></div>}
           {node.audit.review_note && <div><dt>复核说明</dt><dd>{node.audit.review_note}</dd></div>}
           {node.audit.public_release && node.audit.public_rights_note && <div><dt>公开依据</dt><dd>{node.audit.public_rights_note}</dd></div>}
         </dl>
-        <section data-section="relations" className="inspector-section">
+        {codes.length > 0 && <div className="code-plates" aria-label="标准码">{codes.map((code) => <button key={`${code.system}-${code.code}`}
+          type="button" onMouseEnter={() => onCodeFocus(code)} onMouseLeave={() => onCodeFocus(null)}
+          onFocus={() => onCodeFocus(code)} onBlur={() => onCodeFocus(null)} onClick={() => onCodePin(code)}>{code.label}</button>)}</div>}
+        <section data-section="sources" className="inspector-section"><h4>文献出处</h4><Sources citations={node.sources} /></section>
+        {links.length > 0 && <section data-section="relations" className="inspector-section">
           <h4>机制核验与跨层关联</h4>
-          {links.length ? <ul className="relation-list">
+          <ul className="relation-list">
             {orderedLinks.slice(0, relationLimit).map((link) => {
               const related = graph.byId.get(otherEnd(link, node.id));
               if (!related) return null;
@@ -187,27 +258,10 @@ export function NodeInspector({ node, graph, onSelect, onClose, onCompare, onNod
             })}
             {links.length > relationLimit && <li><button type="button" className="relation-node"
               onClick={() => setRelationLimit((limit) => limit + RELATION_PAGE_SIZE)}>显示更多关联（{relationLimit} / {links.length}）</button></li>}
-          </ul> : <p className="inspector-empty">暂无关联。</p>}
-        </section>
-        <section data-section="text" className="inspector-section"><h4>资料正文</h4>
-          <article className="markdown-body" aria-label="Markdown 原文">
-            <Markdown skipHtml remarkPlugins={[remarkGfm]} components={{
-              a: ({ href, children }) => {
-                const url = webUrl(href);
-                return url ? <a href={url} target="_blank" rel="noopener noreferrer">{children}</a> : <span>{children}</span>;
-              },
-              img: ({ alt, src }) => {
-                const url = webUrl(typeof src === 'string' ? src : undefined);
-                return url ? <a href={url} target="_blank" rel="noopener noreferrer">{alt || '查看原图'}</a>
-                  : <span>{alt || '本地图片'}</span>;
-              },
-            }}>{node.markdown}</Markdown>
-          </article>
-        </section>
-        <section data-section="sources" className="inspector-section"><h4>文献出处</h4><Sources citations={node.sources} /></section>
+          </ul>
+        </section>}
       </div>
-
-      <div className="inspector-footer" title={`vault/${node.source_path}`}>vault/{node.source_path}</div>
+      {node.sources.some((source) => source.local_path) && <div className="inspector-footer" title={`vault/${node.source_path}`}>vault/{node.source_path}</div>}
     </aside>
   );
 }

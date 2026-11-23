@@ -3,6 +3,16 @@ export type Tier = 'S' | 'A' | 'B' | 'C' | 'F';
 export type ViewMode = 'geo' | 'graph';
 export type Coordinates = [longitude: number, latitude: number];
 export type EvidenceStatus = 'confirmed' | 'contested' | 'unverified' | 'refuted';
+export type ReadingKind = 'story' | 'legend' | 'report' | 'history' | 'research' | 'archive' | 'edition';
+
+export interface ReadingNote {
+  kind: ReadingKind;
+  paragraphs: string[];
+  source_numbers: number[];
+  map_label?: string;
+  location_note?: string;
+  edition?: { text: string; source_number: number };
+}
 
 export interface Citation {
   citation: string;
@@ -47,6 +57,7 @@ export interface GraphNode {
     public_rights_note?: string | null };
   markdown: string;
   source_path: string;
+  reading?: ReadingNote;
 }
 
 export interface GraphLink {
@@ -101,6 +112,19 @@ export const EVIDENCE: Record<EvidenceStatus, { label: string; color: string }> 
   refuted: { label: '已驳回', color: '#B84E4F' },
 };
 
+export const READING_LABELS: Record<ReadingKind, string> = {
+  story: '故事梗概', legend: '都市传说', report: '事件报道', history: '历史个案',
+  research: '研究提要', archive: '档案提要', edition: '古籍正文',
+};
+
+export function isModernReading(node: GraphNode): boolean {
+  return node.reading?.kind === 'legend' || node.reading?.kind === 'report';
+}
+
+export function isEditorialReading(node: GraphNode): boolean {
+  return !!node.reading?.paragraphs.length && node.reading.kind !== 'archive';
+}
+
 export const RELATIONS: Record<string, string> = {
   INSTANCE_OF: '归属',
   HAS_MOTIF: '共享母题',
@@ -135,6 +159,20 @@ export function shortNodeLabel(title: string, limit = 18): string {
   const cleaned = title.replace(/\s*[（(][^（）()]*[）)]\s*$/u, '').trim();
   const chars = [...(cleaned || title)];
   return chars.length > limit ? `${chars.slice(0, limit).join('')}…` : chars.join('');
+}
+
+export function mapLabel(node: GraphNode): string {
+  const place = node.reading?.map_label ?? node.spatial?.location_name;
+  return shortNodeLabel(place?.split(/[：:]/u).at(-1)?.trim() || node.title, 16);
+}
+
+export function locationPrecision(node: GraphNode): string {
+  switch (node.spatial?.precision) {
+    case 'exact': return '地标';
+    case 'city': return '城区参考点';
+    case 'province': return '省域参考点';
+    default: return '区域参考点';
+  }
 }
 
 export function coordinatesOf(node: GraphNode): Coordinates | null {
@@ -204,7 +242,8 @@ export function relatedNodes(graph: GraphIndex, node: GraphNode | null, depthLim
 
 export function firstSelection(nodes: readonly GraphNode[]): string | null {
   const available = nodes.filter((node) => !isFiction(node));
-  return (nodes.length > 72 ? available.find((node) => node.id === 'case_cn_yongning_na_0004341')?.id : undefined)
+  return available.find((node) => node.id === 'case_cn_forbidden_city_palace_shadows')?.id
+    ?? (nodes.length > 72 ? available.find((node) => node.id === 'case_cn_yongning_na_0004341')?.id : undefined)
     ?? available.find((node) => node.id === 'case_salem_1692')?.id
     ?? available.find((node) => coordinatesOf(node))?.id
     ?? available[0]?.id ?? null;
@@ -218,6 +257,7 @@ export function matchesQuery(node: GraphNode, query: string): boolean {
     return Array.isArray(values) ? values.map((code) => `${label} ${code}`) : [];
   });
   const fields = [node.title, node.id, ...node.aliases, node.spatial?.location_name,
+    node.reading?.map_label, node.reading ? READING_LABELS[node.reading.kind] : undefined,
     node.temporal?.era_label, node.temporal?.year_start, node.temporal?.year_end,
     ...Object.values(node.standards).flat(), ...formattedCodes,
     ...node.sources.flatMap(({ citation, locator, doi }) => [citation, locator, doi])];

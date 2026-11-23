@@ -1,17 +1,28 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
-import { isFiction, LAYERS, LAYER_ORDER, matchesQuery, nodeColor, type GraphNode } from './graph';
+import { coordinatesOf, isEditorialReading, isFiction, isModernReading, LAYERS, LAYER_ORDER, mapLabel, matchesQuery,
+  nodeColor, READING_LABELS, type GraphNode } from './graph';
+
+export type DirectoryScope = 'all' | 'stories' | 'modern';
+const SCOPES: ReadonlyArray<[DirectoryScope, string]> = [
+  ['all', '全部'], ['stories', '可读故事'], ['modern', '现代异闻'],
+];
 
 interface Props {
   nodes: GraphNode[];
   selectedId: string | null;
+  scope: DirectoryScope;
+  onScope: (scope: DirectoryScope) => void;
+  onClose: () => void;
   onSelect: (id: string) => void;
 }
 
-export function NodeDirectory({ nodes, selectedId, onSelect }: Props) {
+export function NodeDirectory({ nodes, selectedId, scope, onScope, onClose, onSelect }: Props) {
   const [query, setQuery] = useState('');
   const listRef = useRef<HTMLDivElement>(null);
   const selectedRef = useRef<HTMLButtonElement>(null);
-  const matching = useMemo(() => nodes.filter((node) => matchesQuery(node, query)), [nodes, query]);
+  const scoped = useMemo(() => scope === 'modern' ? nodes.filter(isModernReading)
+    : scope === 'stories' ? nodes.filter((node) => isEditorialReading(node) || node.reading?.edition) : nodes, [nodes, scope]);
+  const matching = useMemo(() => scoped.filter((node) => matchesQuery(node, query)), [scoped, query]);
 
   useEffect(() => {
     const list = listRef.current;
@@ -28,7 +39,12 @@ export function NodeDirectory({ nodes, selectedId, onSelect }: Props) {
       <div className="directory-header">
         <div className="panel-heading">
           <h2>节点目录</h2>
-          <span className="record-count" aria-live="polite">{matching.length}{query.trim() ? ` / ${nodes.length}` : ''}</span>
+          <span className="record-count" aria-live="polite">{matching.length}{query.trim() ? ` / ${scoped.length}` : ''}</span>
+          <button type="button" className="directory-close" aria-label="关闭节点目录" onClick={onClose}>×</button>
+        </div>
+        <div className="directory-scopes" aria-label="阅读范围">
+          {SCOPES.map(([value, label]) => <button type="button" key={value}
+            aria-pressed={scope === value} onClick={() => { onScope(value); if (listRef.current) listRef.current.scrollTop = 0; }}>{label}</button>)}
         </div>
         <label className="directory-search">
           <span className="search-icon" aria-hidden="true" />
@@ -47,7 +63,7 @@ export function NodeDirectory({ nodes, selectedId, onSelect }: Props) {
           if (!group.length) return null;
           return (
             <section className="directory-group" key={layer} aria-label={`L${layer} ${LAYERS[layer].name}`}>
-              <h3><span className="layer-code">L{layer}</span>{LAYERS[layer].name} · {all.length}</h3>
+              {scope !== 'modern' && <h3><span className="layer-code">L{layer}</span>{LAYERS[layer].name} · {all.length}</h3>}
               <ul>
                 {group.map((node) => {
                   const selected = node.id === selectedId;
@@ -57,7 +73,12 @@ export function NodeDirectory({ nodes, selectedId, onSelect }: Props) {
                         ref={selected ? selectedRef : undefined} onClick={() => onSelect(node.id)}
                         style={{ '--node-color': nodeColor(node) } as CSSProperties}>
                         <span className={`node-shape shape-${layer}`} aria-hidden="true" />
-                        <span className="directory-title">{node.title}</span>
+                        <span className="directory-title">{node.title}
+                          {scope !== 'all' && node.reading && <span className="directory-preview">
+                            <small>{READING_LABELS[node.reading.kind]}{coordinatesOf(node) ? ` · ${mapLabel(node)}` : ''}</small>
+                            {node.reading.paragraphs[0] && <span>{node.reading.paragraphs[0]}</span>}
+                          </span>}
+                        </span>
                         {isFiction(node) && <span className="fiction-code" aria-label="F 级虚构">F</span>}
                       </button>
                     </li>
@@ -70,7 +91,6 @@ export function NodeDirectory({ nodes, selectedId, onSelect }: Props) {
         })}
       </div>
 
-      <div className="directory-footer"><span className="local-indicator" aria-hidden="true" />本地图谱快照</div>
     </aside>
   );
 }
