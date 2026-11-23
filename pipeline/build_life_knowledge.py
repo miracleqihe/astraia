@@ -52,6 +52,7 @@ def build(source: Path, pdf: Path, pdftotext: str) -> dict:
 
     headings = list(HEADINGS.finditer(text))
     volumes, subjects, rows = [], {}, []
+    anchor_owners, raw_by_id = {}, {}
     volume = subject = None
     entry_by_start = {m.start(): m for m in entries}
     for i, heading in enumerate(headings):
@@ -75,24 +76,39 @@ def build(source: Path, pdf: Path, pdftotext: str) -> dict:
             title = re.sub(r'\s*〔[^〕]+〕\s*$', '', title)
             end = headings[i + 1].start() if i + 1 < len(headings) else len(text)
             raw = text[m.end():end].strip()
+            raw_by_id[m[1]] = raw
+            for anchor in re.findall(r'\{#([a-z0-9-]+)\}', raw):
+                if anchor in anchor_owners and anchor_owners[anchor] != m[1]:
+                    raise ValueError(f'手册锚点重复：{anchor}')
+                anchor_owners[anchor] = m[1]
             links = list(dict.fromkeys(ref.upper() for ref in ENTRY_LINK.findall(raw)))
             if any(ref not in ids for ref in links):
                 raise ValueError(f'手册交叉链接缺少目标：{m[1]}')
             readable = TYPST.sub('\n\n**原书图表及其说明**：请打开下方的原书图文。\n\n', raw)
-            readable = re.sub(r'\[\]\{#[^}]+\}', '', readable)
+            readable = re.sub(r'(?m)^(#{4,6}\s+.*?)\s*\{#([a-z0-9-]+)\}\s*$',
+                              lambda h: f'{h[1]} ⟦anchor:{h[2]}⟧', readable)
+            readable = re.sub(r'(?m)^\[\]\{#([a-z0-9-]+)\}\s*$',
+                              lambda a: f'⟦anchor:{a[1]}⟧', readable)
             readable = re.sub(r'\s*\{(?:#[^}]+|width=[^}]+)\}', '', readable)
             rows.append({'id': m[1], 'title': title, 'topic': topic, 'subject': subject,
                          'volume': volume, 'page': pages_by_id[m[1]], 'links': links, 'body': readable})
 
-            # Separate UTF-8 drafts let the user edit or export every entry individually.
-            path = ROOT / 'knowledge/entries' / subject / (m[1] + '.md')
-            path.parent.mkdir(parents=True, exist_ok=True)
-            metadata = {k: rows[-1][k] for k in ('id', 'title', 'topic', 'subject', 'volume', 'page', 'links')}
-            metadata['source'] = '格物识微_全书增绘_20261121.pdf'
-            path.write_text('---\n' + yaml.safe_dump(metadata, allow_unicode=True, sort_keys=False)
-                            + '---\n\n' + raw + '\n', encoding='utf-8', newline='\n')
     if len(rows) != 2266 or len(subjects) != 20:
         raise ValueError('提取后的条目或学科数量不正确。')
+    for row in rows:
+        for anchor in re.findall(r'\]\(#(?!entry-)([a-z0-9-]+)\)', row['body']):
+            target = anchor_owners.get(anchor)
+            if not target:
+                raise ValueError(f'手册内部锚点缺少目标：{anchor}')
+            if target != row['id'] and target not in row['links']:
+                row['links'].append(target)
+        # Separate UTF-8 drafts keep original text and the same resolved cross-references.
+        path = ROOT / 'knowledge/entries' / row['subject'] / (row['id'] + '.md')
+        path.parent.mkdir(parents=True, exist_ok=True)
+        metadata = {k: row[k] for k in ('id', 'title', 'topic', 'subject', 'volume', 'page', 'links')}
+        metadata['source'] = '格物识微_全书增绘_20261121.pdf'
+        path.write_text('---\n' + yaml.safe_dump(metadata, allow_unicode=True, sort_keys=False)
+                        + '---\n\n' + raw_by_id[row['id']] + '\n', encoding='utf-8', newline='\n')
     counts = Counter(row['subject'] for row in rows)
     for key, value in subjects.items():
         value['count'] = counts[key]
@@ -119,7 +135,8 @@ def build(source: Path, pdf: Path, pdftotext: str) -> dict:
     if source.resolve() != saved_source.resolve():
         shutil.copy2(source, saved_source)
     data = {'title': '格物识微', 'edition': '全书增绘版 · 2026-11-21',
-            'source_sha256': sha256(pdf.read_bytes()).hexdigest(), 'subjects': list(subjects.values()), 'entries': rows}
+            'source_sha256': sha256(pdf.read_bytes()).hexdigest(), 'subjects': list(subjects.values()),
+            'anchors': anchor_owners, 'entries': rows}
     (public / 'data.json').write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
     return {'entries': len(rows), 'subjects': len(subjects), 'volumes': len({r['volume'] for r in rows}),
             'explicit_links': sum(len(r['links']) for r in rows), 'figures': len(set(FIGURES.findall(text))),

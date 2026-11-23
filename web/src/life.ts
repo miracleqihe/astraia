@@ -20,6 +20,7 @@ export interface LifeBook {
   title: string;
   edition: string;
   source_sha256: string;
+  anchors: Record<string, string>;
   subjects: LifeSubject[];
   entries: LifeEntry[];
 }

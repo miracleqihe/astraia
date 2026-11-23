@@ -13,6 +13,7 @@ links:
 - LIF-REPAIR-0020
 - GEO-METHOD-0002
 - SCR-6-0001
+- MTH-NUMB-0003
 source: 格物识微_全书增绘_20261121.pdf
 ---
 

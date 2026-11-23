@@ -48,6 +48,8 @@
 .life-prose { font: 15px/1.9 var(--font-grotesk); overflow-wrap: anywhere; }
 .life-prose p, .life-prose ul, .life-prose ol, .life-prose blockquote { margin: 1.1em 0; }
 .life-prose h4, .life-prose h5, .life-prose h6 { margin: 1.7em 0 .5em; font: 600 19px/1.45 var(--font-editorial); }
+.life-prose h4, .life-prose h5, .life-prose h6, .life-anchor { scroll-margin-top: 120px; }
+.life-anchor { display: block; height: 1px; }
 .life-prose a { color: #1f5e4b; text-decoration: underline; text-underline-offset: 3px; }
 .life-prose img { max-width: 100%; height: auto; display: block; margin: 18px auto; }
 .life-prose pre { overflow-x: auto; padding: 10px; background: #e5e0d5; font-size: 12px; }

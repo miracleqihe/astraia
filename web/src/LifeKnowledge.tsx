@@ -1,4 +1,4 @@
-import { lazy, Suspense, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
+import { Children, lazy, Suspense, useDeferredValue, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { ViewportFrame } from './WorkbenchControls';
@@ -7,6 +7,14 @@ import './life.css';
 
 const LifeScene = lazy(() => import('./views/LifeScene'));
 const base = import.meta.env.BASE_URL;
+
+function headingParts(children: ReactNode) {
+  const parts = Children.toArray(children);
+  const last = parts[parts.length - 1];
+  const match = typeof last === 'string' ? last.match(/\s*⟦anchor:([a-z0-9-]+)⟧\s*$/) : null;
+  if (match && typeof last === 'string') parts[parts.length - 1] = last.slice(0, match.index);
+  return { id: match?.[1], parts };
+}
 
 export default function LifeKnowledge() {
   const [book, setBook] = useState<LifeBook | null>(null);
@@ -41,6 +49,13 @@ export default function LifeKnowledge() {
   }, []);
   const byId = useMemo(() => new Map((book?.entries ?? []).map((entry) => [entry.id, entry])), [book]);
   const selected = selectedId ? byId.get(selectedId) : undefined;
+  useEffect(() => {
+    const anchor = window.location.hash.slice(1);
+    if (selected && anchor && book?.anchors[anchor] === selected.id) {
+      const timer = window.setTimeout(() => document.getElementById(anchor)?.scrollIntoView({ block: 'start' }), 100);
+      return () => window.clearTimeout(timer);
+    }
+  }, [book, selected]);
   const results = useMemo(() => (book?.entries ?? []).filter((entry) => {
     if (subject && entry.subject !== subject) return false;
     if (!deferredQuery) return true;
@@ -53,20 +68,23 @@ export default function LifeKnowledge() {
     return [...ids].flatMap((id) => byId.get(id) ?? []);
   }, [book, byId, selected]);
 
-  function choose(id: string) {
+  function choose(id: string, anchor?: string) {
     if (!byId.has(id)) return;
     setSelectedId(id); setShowPdf(false);
     const url = new URL(window.location.href);
     url.searchParams.set('view', 'life'); url.searchParams.set('entry', id);
+    url.hash = anchor ?? '';
     window.history.replaceState({}, '', url);
     if (inspectorRef.current) inspectorRef.current.scrollTop = 0;
     if (window.matchMedia('(max-width: 760px)').matches) {
       requestAnimationFrame(() => inspectorRef.current?.scrollIntoView({ block: 'start', behavior: 'smooth' }));
     }
+    if (anchor) window.setTimeout(() => document.getElementById(anchor)?.scrollIntoView({ block: 'start' }), 100);
   }
   function chooseSubject(id: string | null) {
     setSubject(id); setSelectedId(null); setLimit(40); setShowPdf(false);
     const url = new URL(window.location.href); url.searchParams.delete('entry');
+    url.hash = '';
     window.history.replaceState({}, '', url);
   }
   if (error) return <div className="life-status" role="alert">知识星图加载失败：{error}</div>;
@@ -115,9 +133,23 @@ export default function LifeKnowledge() {
                 if (byId.has(id)) { event.preventDefault(); choose(id); }
               }}>{children}</a>;
             }
+            if (href?.startsWith('#')) {
+              const anchor = href.slice(1), owner = book.anchors[anchor];
+              if (owner) return <a href={`?view=life&entry=${encodeURIComponent(owner)}#${anchor}`} onClick={(event) => {
+                event.preventDefault(); choose(owner, anchor);
+              }}>{children}</a>;
+            }
             return <a href={href} target={href?.startsWith('http') ? '_blank' : undefined} rel="noreferrer">{children}</a>;
           },
           img: ({ src, alt }) => <img src={src?.startsWith('figures/') ? `${base}knowledge/${src}` : src} alt={alt ?? ''} loading="lazy" />,
+          p: ({ children }) => {
+            const parts = Children.toArray(children);
+            const marker = parts.length === 1 && typeof parts[0] === 'string' ? parts[0].match(/^⟦anchor:([a-z0-9-]+)⟧$/) : null;
+            return marker ? <span className="life-anchor" id={marker[1]} /> : <p>{children}</p>;
+          },
+          h4: ({ children }) => { const h = headingParts(children); return <h4 id={h.id}>{h.parts}</h4>; },
+          h5: ({ children }) => { const h = headingParts(children); return <h5 id={h.id}>{h.parts}</h5>; },
+          h6: ({ children }) => { const h = headingParts(children); return <h6 id={h.id}>{h.parts}</h6>; },
         }}>{selected.body}</ReactMarkdown></div>
         {related.length > 0 && <section className="life-related"><h3>原书交叉索引</h3>
           <p>以下连接来自手册原有的条目引用。</p>

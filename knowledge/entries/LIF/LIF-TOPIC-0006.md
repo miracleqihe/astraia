@@ -5,7 +5,8 @@ topic: 出行与户外
 subject: LIF
 volume: 生存卷
 page: 22
-links: []
+links:
+- LIF-TOPIC-0008
 source: 格物识微_全书增绘_20261121.pdf
 ---
 
