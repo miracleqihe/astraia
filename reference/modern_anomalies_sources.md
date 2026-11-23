@@ -15,3 +15,9 @@
 中国条目采用地方档案研究、在地采访、民俗画典藏及口述剧本等来源。日本校园怪谈按日文研记录号建档，韩国校园传闻采用 KCI 刊载研究；东南亚采用当地报道、机构资料与民族志。 [无为县“水鬼毛人”档案研究](https://www.opentimes.cn/html/Abstract/20773.html) [日文研校园口述 2470047](https://www.nichibun.ac.jp/cgi-bin/YoukaiDB3/youkai_card.cgi?ID=2470047) [老挝南部村民口述](https://www.mekongwatch.org/PDF/Booklet_PeopleStory.pdf) [柬埔寨塞桑河田野研究](https://doi.org/10.1017/S0026749X24000258)
 
 地图点位分别对应采录地、传播地或故事借用的现实地标。日本《如月车站》以 F 级归档，标在叙述开头的新滨松一带，卷宗保留铁路公司所列数字原生版本的出处。 [远州铁道说明](https://train.entetsu.co.jp/kisaragieki)
+
+## 地方怪谈续编
+
+续编收录 23 则现代异闻及 2 篇研究导读。中国 9 则，日本、韩国各 2 则，东南亚 9 则，英国 1 则。校园、山野和营房的传闻分别以田野采录、作者亲闻和报道标注年代。所有卷宗提供中文梗概和出处编号，地图标注到来源所支持的地理范围。 [凉山美姑田野手记](https://www.ihchina.cn/Article/Index/detail?id=8251) [湄公河流域口述集](https://www.mekongwatch.org/PDF/Booklet_PeopleStory.pdf)
+
+马星宇的校园传说论文和权宪益的战后民族志各有独立导读，由济南、美莱的故事卷宗联入语义星图。奉天洞网络漫画与犬鸣村网络故事均标为 F 级，地图以作品所借用的地区作参照。 [马星宇论文](https://m.fx361.com/news/2016/1130/16458455.html) [权宪益专著节选](https://assets.cambridge.org/97805218/80619/excerpt/9780521880619_excerpt.htm) [奉天洞作者访谈](https://news.sbs.co.kr/news/endPage.do?news_id=N1000987143) [犬鸣村传播研究](https://doi.org/10.15017/1932037)
