@@ -4,6 +4,9 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   base: './',
   plugins: [react()],
+  build: {
+    rollupOptions: { input: ['index.html', 'ui-review/index.html'] },
+  },
   // The review index is regenerated atomically by Python. On Windows a file
   // watcher can keep the large data file open and prevent that replacement.
   // Review data is loaded on page refresh, so it does not need HMR watching.

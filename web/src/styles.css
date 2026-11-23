@@ -1,3 +1,5 @@
+@import './palette.css';
+
 @font-face {
   font-family: "Astraia CJK Supplemental"; font-style: normal; font-weight: 400; font-display: swap;
   src: url("/fonts/astraia-cjk-supplement-400.woff2?v=225") format("woff2");
@@ -124,23 +126,6 @@
 }
 
 :root {
-  --plate-bg: #101722;
-  --plate-grid: rgba(239, 236, 230, 0.12);
-  --vellum-sheet: rgba(239, 236, 230, 0.16);
-  --vellum-edge: rgba(239, 236, 230, 0.55);
-  --constellation-line: #EAE5D9;
-  --brass-tick: #C29D59;
-
-  --folio-paper: #EFECE6;
-  --folio-paper-alt: #E5E0D5;
-  --ink-prussian: #1B2A4A;
-  --ink-muted: #5A6578;
-  --ink-vermilion: #9E2A2B;
-  --ink-verified: #1F5E4B;
-
-  --radius-none: 0px;
-  --border-crisp: 1px solid #1B2A4A;
-  --border-plate: 1px solid rgba(239, 236, 230, 0.24);
   --font-editorial: "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Serif Vietnamese", "Cormorant Garamond", "Noto Serif SC", "Microsoft YaHei", "Malgun Gothic", "Noto Sans Thai", "Noto Sans Lao", Georgia, serif;
   --font-grotesk: "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Sans Vietnamese", "Inter", "Noto Sans SC", "Microsoft YaHei", "Malgun Gothic", "Noto Sans Thai", "Noto Sans Lao", sans-serif;
   --font-astrometric: "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Sans Vietnamese", "JetBrains Mono", monospace;

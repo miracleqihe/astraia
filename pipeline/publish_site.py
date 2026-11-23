@@ -58,7 +58,7 @@ def deploy(vault: Path, code_table: Path, *, reviewed_only: bool = False) -> Non
         env['VITE_PUBLIC_DEMO'] = '1'
         npm = 'npm.cmd' if os.name == 'nt' else 'npm'
         run([npm, 'run', 'build', '--', '--base=/astraia/', '--outDir', str(built), '--emptyOutDir'], root / 'web', env=env)
-        for name in ('index.html', 'assets', 'fonts'):
+        for name in ('index.html', 'ui-review/index.html', 'assets', 'fonts'):
             if not (built / name).exists():
                 raise ValueError(f'网页构建缺少 {name}。')
 
@@ -66,7 +66,7 @@ def deploy(vault: Path, code_table: Path, *, reviewed_only: bool = False) -> Non
         run(['git', 'rm', '-rq', '--', PUBLIC_PATH], checkout)
         site.mkdir()
         shutil.copy2(built / 'index.html', site / 'index.html')
-        for name in ('assets', 'fonts'):
+        for name in ('assets', 'fonts', 'ui-review'):
             shutil.copytree(built / name, site / name)
         (site / 'data').mkdir()
         (site / 'data/graph_data.json').write_text(json.dumps(graph, ensure_ascii=False, sort_keys=True,

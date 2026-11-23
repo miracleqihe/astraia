@@ -1,0 +1,19 @@
+:root {
+  --plate-bg: #101722;
+  --plate-grid: rgba(239, 236, 230, 0.12);
+  --vellum-sheet: rgba(239, 236, 230, 0.16);
+  --vellum-edge: rgba(239, 236, 230, 0.55);
+  --constellation-line: #EAE5D9;
+  --brass-tick: #C29D59;
+
+  --folio-paper: #EFECE6;
+  --folio-paper-alt: #E5E0D5;
+  --ink-prussian: #1B2A4A;
+  --ink-muted: #5A6578;
+  --ink-vermilion: #9E2A2B;
+  --ink-verified: #1F5E4B;
+
+  --radius-none: 0px;
+  --border-crisp: 1px solid #1B2A4A;
+  --border-plate: 1px solid rgba(239, 236, 230, 0.24);
+}
