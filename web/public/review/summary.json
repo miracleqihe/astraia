@@ -1,12 +1,12 @@
 {
-  "records": 10617,
+  "records": 10658,
   "collections": {
     "scottish": 3421,
     "berezkin": 2524,
     "nichibun": 195,
     "duchas": 21,
-    "regional": 12,
-    "research": 14,
+    "regional": 10,
+    "research": 57,
     "asia": 4430
   },
   "flags": {
@@ -14,7 +14,7 @@
     "name_only_location": 230,
     "person_not_in_map_export": 65,
     "identity_linked_candidate_unverified": 1897,
-    "coordinate_missing": 7587,
+    "coordinate_missing": 7585,
     "incomplete_grid": 53,
     "coordinate_cross_source_disagreement": 30,
     "coordinate_conflict_withheld": 30,
@@ -32,7 +32,7 @@
     "city_reference": 17,
     "genre_unclassified": 4632,
     "school_reference": 19,
-    "source_locator_missing": 20,
+    "source_locator_missing": 13,
     "zibuyu_edition_unchecked": 770,
     "zibuyu_citation_license": 770,
     "zibuyu_literary_scope": 770,

@@ -18,6 +18,17 @@
     },
     {
       "is_fictional_quarantine": false,
+      "matched_codes": [],
+      "note": "对读受访者的事后描述与实验中同步测到的发作。",
+      "origin": "explicit",
+      "source": "case_egypt_jinn_sleep_paralysis",
+      "status": null,
+      "target": "case_sleep_paralysis_lab_1992",
+      "type": "COMPARED_WITH",
+      "weight": 1.0
+    },
+    {
+      "is_fictional_quarantine": false,
       "matched_codes": [
         {
           "code": "776",
@@ -35,7 +46,7 @@
     {
       "is_fictional_quarantine": false,
       "matched_codes": [],
-      "note": "文章以受访者回忆和问卷记录发作为依据，个别发作缺少同步睡眠生理记录。",
+      "note": "访谈参与者描述睡眠瘫痪及其解释，所回忆的单次发作没有同步睡眠生理记录。",
       "origin": "mechanism",
       "source": "case_egypt_jinn_sleep_paralysis",
       "status": "unverified",
@@ -127,7 +138,7 @@
     {
       "is_fictional_quarantine": false,
       "matched_codes": [],
-      "note": "Spanos 与 Gottlieb 重审了症状及档案证据，指出原假说的证据选择无法支持其对塞勒姆案的归因。",
+      "note": "1976 年 Spanos 与 Gottlieb 检查症状、证词及分布，指出材料不支持麦角中毒作为这批指控的共同病因。",
       "origin": "mechanism",
       "source": "case_salem_1692",
       "status": "refuted",
@@ -138,7 +149,7 @@
     {
       "is_fictional_quarantine": false,
       "matched_codes": [],
-      "note": "实验中记录的发作显示觉醒相关的脑电活动与肌张力抑制可以同时出现。结论适用于记录到的发作。",
+      "note": "研究直接获取发作时的多导睡眠记录，支持觉醒体验与肌张力抑制在受检发作中重叠。",
       "origin": "mechanism",
       "source": "case_sleep_paralysis_lab_1992",
       "status": "confirmed",
@@ -189,7 +200,13 @@
         "ai_confidence": null,
         "created_at": "2026-11-22",
         "is_sample": true,
-        "reviewed_by_human": false
+        "public_content_sha256": null,
+        "public_release": false,
+        "public_rights_note": null,
+        "review_note": null,
+        "reviewed_at": null,
+        "reviewed_by_human": false,
+        "reviewer": null
       },
       "credibility_tier": "A",
       "credibility_weight": 0.85,
@@ -209,7 +226,10 @@
       "sources": [
         {
           "citation": "Kuhn, P. A. (1990). Soulstealers: The Chinese Sorcery Scare of 1768. Harvard University Press.",
+          "content_sha256": null,
           "doi": null,
+          "local_path": null,
+          "locator": null,
           "type": "monograph",
           "url": "https://www.jstor.org/stable/j.ctv125js8t"
         }
@@ -248,17 +268,23 @@
         "ai_confidence": null,
         "created_at": "2026-11-22",
         "is_sample": true,
-        "reviewed_by_human": false
+        "public_content_sha256": null,
+        "public_release": false,
+        "public_rights_note": null,
+        "review_note": null,
+        "reviewed_at": null,
+        "reviewed_by_human": false,
+        "reviewer": null
       },
       "credibility_tier": "S",
       "credibility_weight": 1.0,
       "genre": "memorate",
       "id": "case_egypt_jinn_sleep_paralysis",
       "is_fictional_quarantine": false,
-      "markdown": "\n## 访谈记录\n\n研究比较了开罗普通受访者、开罗美国大学学生和哥本哈根受访者对睡眠瘫痪的解释。部分开罗普通受访者用伊斯兰传统中的精灵（jinn）来理解自己的经历。\n\n## 标引范围\n\nOCM 776 指向口述中的精灵形象。问卷记录提供了受访者的解释，可与实验研究中直接记录的发作状态对读。\n",
+      "markdown": "\n## 研究方法与结果\n\n半醒时动不了身体，又觉得房里出现了什么。一些开罗普通受访者用伊斯兰传统中的精灵解释这类体验。研究也访问了开罗美国大学的学生和丹麦的居民，比较各组如何命名和理解发作。\n\n三组受访者的解释有差异，问卷和访谈保存的是当事人的回忆。图谱还连接香港“鬼压床”、阿布鲁佐 Pandafeche 和睡眠实验，便于对照叙述与可同步观察的生理过程。\n",
       "mechanisms": [
         {
-          "evidence_note": "文章以受访者回忆和问卷记录发作为依据，个别发作缺少同步睡眠生理记录。",
+          "evidence_note": "访谈参与者描述睡眠瘫痪及其解释，所回忆的单次发作没有同步睡眠生理记录。",
           "status": "unverified",
           "target_id": "mech_sleep_paralysis"
         }
@@ -266,17 +292,28 @@
       "metrics": {
         "betweenness": 0.0,
         "in_degree": 0,
-        "out_degree": 2
+        "out_degree": 3
       },
       "node_type": "case",
-      "relations": [],
+      "relations": [
+        {
+          "note": "对读受访者的事后描述与实验中同步测到的发作。",
+          "status": null,
+          "target": "case_sleep_paralysis_lab_1992",
+          "type": "COMPARED_WITH",
+          "weight": 1.0
+        }
+      ],
       "source_path": "01_cases/case_egypt_jinn_sleep_paralysis.md",
       "sources": [
         {
-          "citation": "Jalal, B., Simons-Rudolph, J., Jalal, B., & Hinton, D. E. (2014). Explanations of sleep paralysis among Egyptian college students and the general population in Egypt and Denmark. Transcultural Psychiatry, 51(2), 158–175.",
+          "citation": "Jalal, B., et al. (2014). Explanations of sleep paralysis among Egyptian college students and the general population in Egypt and Denmark. Transcultural Psychiatry 51(2), 158–175.",
+          "content_sha256": null,
           "doi": "10.1177/1363461513503378",
+          "local_path": null,
+          "locator": "埃及与丹麦样本的解释差异",
           "type": "peer_reviewed",
-          "url": "https://journals.sagepub.com/doi/abs/10.1177/1363461513503378"
+          "url": "https://doi.org/10.1177/1363461513503378"
         }
       ],
       "spatial": {
@@ -297,8 +334,8 @@
       },
       "temporal": {
         "era_label": "当代访谈研究",
-        "uncertainty_note": "论文发表于 2014 年，受访者回忆的发作时间各异。",
-        "year_end": null,
+        "uncertainty_note": "2014 年为论文出版年，个别发作时间各异。",
+        "year_end": 2014,
         "year_start": null
       },
       "title": "开罗睡眠瘫痪访谈中的精灵解释",
@@ -314,7 +351,13 @@
         "ai_confidence": null,
         "created_at": "2026-11-22",
         "is_sample": true,
-        "reviewed_by_human": false
+        "public_content_sha256": null,
+        "public_release": false,
+        "public_rights_note": null,
+        "review_note": null,
+        "reviewed_at": null,
+        "reviewed_by_human": false,
+        "reviewer": null
       },
       "credibility_tier": "A",
       "credibility_weight": 0.85,
@@ -342,19 +385,28 @@
       "sources": [
         {
           "citation": "University of Edinburgh. The Survey of Scottish Witchcraft, 1563–1736. About the project.",
+          "content_sha256": null,
           "doi": null,
+          "local_path": null,
+          "locator": null,
           "type": "scholarly_database",
           "url": "https://witches.hca.ed.ac.uk/about/"
         },
         {
           "citation": "University of Edinburgh. The Survey of Scottish Witchcraft. List of sources.",
+          "content_sha256": null,
           "doi": null,
+          "local_path": null,
+          "locator": null,
           "type": "archival_catalogue",
           "url": "https://witches.hca.ed.ac.uk/sources/"
         },
         {
           "citation": "Gazetteer of British Place Names. North Berwick, East Lothian.",
+          "content_sha256": null,
           "doi": null,
+          "local_path": null,
+          "locator": null,
           "type": "gazetteer",
           "url": "https://gazetteer.org.uk/place/North_Berwick%2C_East_Lothian_32990"
         }
@@ -394,7 +446,13 @@
         "ai_confidence": null,
         "created_at": "2026-11-22",
         "is_sample": true,
-        "reviewed_by_human": false
+        "public_content_sha256": null,
+        "public_release": false,
+        "public_rights_note": null,
+        "review_note": null,
+        "reviewed_at": null,
+        "reviewed_by_human": false,
+        "reviewer": null
       },
       "credibility_tier": "S",
       "credibility_weight": 1.0,
@@ -404,7 +462,7 @@
       "markdown": "\n## 司法档案\n\n弗吉尼亚大学图书馆的项目收录了塞勒姆猎巫事件的司法文书、转录和历史地图。第 125 号案卷记载了蒂图芭在讯问中对魔鬼等超自然角色的陈述，可据此分别索引巫术指控和证词中的超自然角色。\n\n## 地图锚点\n\n坐标以今日塞勒姆市作参考。查找个别询问、居住或拘禁地点时，可用案卷和档案项目的历史地图继续定位。地图筛选中的年代覆盖审理过程。\n",
       "mechanisms": [
         {
-          "evidence_note": "Spanos 与 Gottlieb 重审了症状及档案证据，指出原假说的证据选择无法支持其对塞勒姆案的归因。",
+          "evidence_note": "1976 年 Spanos 与 Gottlieb 检查症状、证词及分布，指出材料不支持麦角中毒作为这批指控的共同病因。",
           "status": "refuted",
           "target_id": "mech_salem_ergotism"
         }
@@ -429,25 +487,41 @@
           "target": "case_china_soulstealers_1768",
           "type": "COMPARED_WITH",
           "weight": 1.0
+        },
+        {
+          "note": "与台湾田野的社会分类和清代妖术恐慌并读，比较不同背景中的陌生人与指控。",
+          "status": null,
+          "target": "motif_wolf_stranger_ghosts",
+          "type": "COMPARED_WITH",
+          "weight": 1.0
         }
       ],
       "source_path": "01_cases/case_salem_1692.md",
       "sources": [
         {
           "citation": "University of Virginia Library. Salem Witch Trials Documentary Archive and Transcription Project.",
+          "content_sha256": null,
           "doi": null,
+          "local_path": null,
+          "locator": null,
           "type": "primary_archive",
           "url": "https://salem.lib.virginia.edu/home.html"
         },
         {
           "citation": "The Salem Witchcraft Papers, No. 125: Tituba. University of Virginia Library.",
+          "content_sha256": null,
           "doi": null,
+          "local_path": null,
+          "locator": null,
           "type": "primary_archive",
           "url": "https://salem.lib.virginia.edu/n125.html"
         },
         {
           "citation": "Spanos, N. P., & Gottlieb, J. (1976). Ergotism and the Salem Village witch trials. Science, 194(4272), 1390–1394.",
+          "content_sha256": null,
           "doi": "10.1126/science.795029",
+          "local_path": null,
+          "locator": null,
           "type": "peer_reviewed",
           "url": "https://pubmed.ncbi.nlm.nih.gov/795029/"
         }
@@ -487,24 +561,30 @@
         "ai_confidence": null,
         "created_at": "2026-11-22",
         "is_sample": true,
-        "reviewed_by_human": false
+        "public_content_sha256": null,
+        "public_release": false,
+        "public_rights_note": null,
+        "review_note": null,
+        "reviewed_at": null,
+        "reviewed_by_human": false,
+        "reviewer": null
       },
       "credibility_tier": "A",
       "credibility_weight": 0.85,
       "genre": "academic_model",
       "id": "case_sleep_paralysis_lab_1992",
       "is_fictional_quarantine": false,
-      "markdown": "\n## 实验记录\n\n研究团队采用睡眠中断方案诱发孤立性睡眠瘫痪，记录参与者的主观体验及发作过程中的多导睡眠图。两类记录可以对照，观察运动能力恢复前的清醒感与肌张力变化。\n\n## 关联范围\n\n这张卡连接到实验所支持的睡眠生理机制。它为比较访谈中的发作回忆和实验中同步观察到的发作提供了参照。\n",
+      "markdown": "\n## 研究方法与结果\n\n研究让 16 名志愿者在实验夜里经历计划中的短暂唤醒，再把重新入睡时发生的体验同多导睡眠图一起记录。研究人员取得六次孤立性睡眠瘫痪记录，有五次出现在重新入睡后的快速眼动期。\n\n几名参与者记得自己躺在实验室里，也同时感到无法移动。记录帮助判断快速眼动期肌张力抑制与醒转体验的重叠。病例与香港和开罗的自述调查提供不同层次的证据。\n\n## 地图锚点\n\n东京为第一作者的早稻田大学所在地。\n",
       "mechanisms": [
         {
-          "evidence_note": "实验中记录的发作显示觉醒相关的脑电活动与肌张力抑制可以同时出现。结论适用于记录到的发作。",
+          "evidence_note": "研究直接获取发作时的多导睡眠记录，支持觉醒体验与肌张力抑制在受检发作中重叠。",
           "status": "confirmed",
           "target_id": "mech_sleep_paralysis"
         }
       ],
       "metrics": {
         "betweenness": 0.0,
-        "in_degree": 0,
+        "in_degree": 1,
         "out_degree": 1
       },
       "node_type": "case",
@@ -512,13 +592,22 @@
       "source_path": "01_cases/case_sleep_paralysis_lab_1992.md",
       "sources": [
         {
-          "citation": "Takeuchi, T., Miyasita, A., Sasaki, Y., Inugami, M., & Fukuda, K. (1992). Isolated sleep paralysis elicited by sleep interruption. Sleep, 15(3), 217–225.",
+          "citation": "Takeuchi, T., et al. (1992). Isolated sleep paralysis elicited by sleep interruption. Sleep 15(3), 217–225.",
+          "content_sha256": null,
           "doi": "10.1093/sleep/15.3.217",
+          "local_path": null,
+          "locator": "睡眠中断与多导睡眠记录",
           "type": "peer_reviewed",
           "url": "https://pubmed.ncbi.nlm.nih.gov/1621022/"
         }
       ],
-      "spatial": null,
+      "spatial": {
+        "culture_region": "东亚 · 日本",
+        "lat": 35.709,
+        "lng": 139.719,
+        "location_name": "日本东京（牵头作者机构）",
+        "precision": "city"
+      },
       "standards": {
         "atu_types": [],
         "berezkin_codes": [],
@@ -527,8 +616,8 @@
         "thompson_motifs": []
       },
       "temporal": {
-        "era_label": "当代实验研究",
-        "uncertainty_note": "年份指论文发表时间。",
+        "era_label": "1992 年实验论文",
+        "uncertainty_note": "发表年份；论文公开书目给出第一作者单位。",
         "year_end": 1992,
         "year_start": 1992
       },
@@ -539,39 +628,74 @@
     {
       "aliases": [
         "Slender Man",
-        "瘦长人"
+        "瘦长鬼影",
+        "瘦长人",
+        "Slender Man（2009 年网络共创起点）"
       ],
       "audit": {
         "ai_confidence": null,
         "created_at": "2026-11-22",
         "is_sample": true,
-        "reviewed_by_human": false
+        "public_content_sha256": null,
+        "public_release": false,
+        "public_rights_note": null,
+        "review_note": null,
+        "reviewed_at": null,
+        "reviewed_by_human": false,
+        "reviewer": null
       },
       "credibility_tier": "F",
       "credibility_weight": 0.0,
       "genre": "creepypasta_ostension",
       "id": "case_slender_man_2009",
       "is_fictional_quarantine": true,
-      "markdown": "\n## 虚构作品的来历\n\n2009 年，使用 Victor Surge 网名的创作者在 Something Awful 论坛发表配有故事的合成图像。其他用户随后参与续写和改编。Tolbert 据此讨论了网络社群如何借用传说的讲述方式共同塑造虚构角色。\n",
+      "markdown": "\n## 故事梗概\n\n2009 年，网名 Victor Surge 的创作者把无脸、四肢细长的人形放进合成照片，用类似报刊剪影的说明营造失踪谜案的感觉。Something Awful 论坛的参与者续写新材料，角色逐渐从单个作者的照片变成共享故事。\n\n民俗学者托尔伯特以此说明“反向展演”：创作者先模仿既有传说在现实中留下痕迹的方式，再经集体写作让新角色像一则流传已久的传说。\n\n## 地图锚点\n\n坐标表示作品发源或流传的国别参考区，故事发生在数字原生空间。\n",
       "mechanisms": [],
       "metrics": null,
       "node_type": "case",
-      "relations": [],
+      "relations": [
+        {
+          "note": "托尔伯特用合成照片及论坛续写分析反向展演。",
+          "status": null,
+          "target": "motif_urban_ostension_liminal",
+          "type": "OSTENSION_OF",
+          "weight": 1.0
+        },
+        {
+          "note": "可与反直觉角色的记忆研究对读，后者未检验本角色的传播。",
+          "status": null,
+          "target": "theory_mci_recall_experiments",
+          "type": "COMPARED_WITH",
+          "weight": 1.0
+        }
+      ],
       "source_path": "05_quarantine_fiction/case_slender_man_2009.md",
       "sources": [
         {
-          "citation": "Tolbert, J. A. (2013). “The Sort of Story That Has You Covering Your Mirrors”: The Case of Slender Man. Semiotic Review, 2.",
+          "citation": "Tolbert, J. A. (2013). The Case of Slender Man. Semiotic Review 2.",
+          "content_sha256": null,
           "doi": "10.71743/g5pn4v44",
+          "local_path": null,
+          "locator": "创作史与 reverse ostension",
           "type": "peer_reviewed",
           "url": "https://doi.org/10.71743/g5pn4v44"
+        },
+        {
+          "citation": "Something Awful. Create Paranormal Images, thread 3150591 (2009).",
+          "content_sha256": null,
+          "doi": null,
+          "local_path": null,
+          "locator": "Victor Surge 的首批作品及同帖创作",
+          "type": "community_retelling",
+          "url": "https://forums.somethingawful.com/showthread.php?threadid=3150591"
         }
       ],
       "spatial": {
-        "culture_region": null,
-        "lat": null,
-        "lng": null,
-        "location_name": "Something Awful 网络论坛",
-        "precision": "global"
+        "culture_region": "北美 · 英语互联网",
+        "lat": 39.8283,
+        "lng": -98.5795,
+        "location_name": "美国 · 数字原生空间（国别参考点）",
+        "precision": "culture_region"
       },
       "standards": {
         "atu_types": [],
@@ -581,12 +705,12 @@
         "thompson_motifs": []
       },
       "temporal": {
-        "era_label": "互联网民俗",
-        "uncertainty_note": "年份指最早一批创作帖的发布时间。",
+        "era_label": "2009 年 Something Awful 共创",
+        "uncertainty_note": "标记论坛首发年份。",
         "year_end": 2009,
         "year_start": 2009
       },
-      "title": "Slender Man（2009 年网络共创起点）",
+      "title": "Slender Man：照片中的瘦长人",
       "z": 0,
       "z_layer": 1
     },
@@ -598,7 +722,13 @@
         "ai_confidence": null,
         "created_at": "2026-11-22",
         "is_sample": true,
-        "reviewed_by_human": false
+        "public_content_sha256": null,
+        "public_release": false,
+        "public_rights_note": null,
+        "review_note": null,
+        "reviewed_at": null,
+        "reviewed_by_human": false,
+        "reviewer": null
       },
       "credibility_tier": "A",
       "credibility_weight": 0.85,
@@ -618,13 +748,19 @@
       "sources": [
         {
           "citation": "University of Edinburgh. The Survey of Scottish Witchcraft, 1563–1736.",
+          "content_sha256": null,
           "doi": null,
+          "local_path": null,
+          "locator": null,
           "type": "scholarly_database",
           "url": "https://witches.hca.ed.ac.uk/about/"
         },
         {
           "citation": "University of Virginia Library. Salem Witch Trials Documentary Archive and Transcription Project.",
+          "content_sha256": null,
           "doi": null,
+          "local_path": null,
+          "locator": null,
           "type": "primary_archive",
           "url": "https://salem.lib.virginia.edu/home.html"
         }
@@ -659,7 +795,13 @@
         "ai_confidence": null,
         "created_at": "2026-11-22",
         "is_sample": true,
-        "reviewed_by_human": false
+        "public_content_sha256": null,
+        "public_release": false,
+        "public_rights_note": null,
+        "review_note": null,
+        "reviewed_at": null,
+        "reviewed_by_human": false,
+        "reviewer": null
       },
       "credibility_tier": "A",
       "credibility_weight": 0.85,
@@ -679,13 +821,19 @@
       "sources": [
         {
           "citation": "Newberry Library. Popol Vuh research guide. Francisco Ximénez transcription and collection history.",
+          "content_sha256": null,
           "doi": null,
+          "local_path": null,
+          "locator": null,
           "type": "archival_catalogue",
           "url": "https://www.newberry.org/collection/research-guide/popol-vuh"
         },
         {
           "citation": "University of North Texas Digital Library. Chichicastenango place record.",
+          "content_sha256": null,
           "doi": null,
+          "local_path": null,
+          "locator": null,
           "type": "gazetteer",
           "url": "https://digital.library.unt.edu/explore/locations/p09996/"
         }
@@ -725,7 +873,13 @@
         "ai_confidence": null,
         "created_at": "2026-11-22",
         "is_sample": true,
-        "reviewed_by_human": false
+        "public_content_sha256": null,
+        "public_release": false,
+        "public_rights_note": null,
+        "review_note": null,
+        "reviewed_at": null,
+        "reviewed_by_human": false,
+        "reviewer": null
       },
       "credibility_tier": "A",
       "credibility_weight": 0.85,
@@ -747,7 +901,10 @@
       "sources": [
         {
           "citation": "Human Relations Area Files, Yale University. Outline of Cultural Materials 754: Sorcery.",
+          "content_sha256": null,
           "doi": null,
+          "local_path": null,
+          "locator": null,
           "type": "official_standard",
           "url": "https://hraf.yale.edu/ocm/terms/754"
         }
@@ -776,7 +933,13 @@
         "ai_confidence": null,
         "created_at": "2026-11-22",
         "is_sample": true,
-        "reviewed_by_human": false
+        "public_content_sha256": null,
+        "public_release": false,
+        "public_rights_note": null,
+        "review_note": null,
+        "reviewed_at": null,
+        "reviewed_by_human": false,
+        "reviewer": null
       },
       "credibility_tier": "A",
       "credibility_weight": 0.85,
@@ -798,7 +961,10 @@
       "sources": [
         {
           "citation": "Human Relations Area Files, Yale University. Outline of Cultural Materials 776: Spirits and Gods.",
+          "content_sha256": null,
           "doi": null,
+          "local_path": null,
+          "locator": null,
           "type": "official_standard",
           "url": "https://hraf.yale.edu/ocm/terms/776"
         }
@@ -820,20 +986,29 @@
     },
     {
       "aliases": [
-        "Ergotism hypothesis for Salem"
+        "Salem ergotism",
+        "mech_ergotism_salem",
+        "Ergotism hypothesis for Salem",
+        "塞勒姆案的麦角中毒假说"
       ],
       "audit": {
         "ai_confidence": null,
         "created_at": "2026-11-22",
         "is_sample": true,
-        "reviewed_by_human": false
+        "public_content_sha256": null,
+        "public_release": false,
+        "public_rights_note": null,
+        "review_note": null,
+        "reviewed_at": null,
+        "reviewed_by_human": false,
+        "reviewer": null
       },
       "credibility_tier": "A",
       "credibility_weight": 0.85,
       "genre": "academic_model",
       "id": "mech_salem_ergotism",
       "is_fictional_quarantine": false,
-      "markdown": "\n## 假说与反驳\n\nCaporael 提出，麦角污染可能解释塞勒姆猎巫案中记录的部分症状。Spanos 与 Gottlieb 随后重审历史材料，质疑症状和其他档案观察对该归因的支持。\n\n图谱把反驳状态挂在该假说与塞勒姆个案之间的边上，以便回看两份论文提出的论据。\n",
+      "markdown": "\n## 研究方法与结果\n\n卡波雷尔提出，受污染的黑麦可能导致痉挛等症状，并尝试以此解释 1692 年塞勒姆的部分证词。它是一项从历史档案推回临床病因的假说。\n\n斯帕诺斯和戈特利布检查历史资料里的发作形态、人口分布和证词，指出可靠信息与预期的中毒模式不符。塞勒姆卷宗保留反驳的文献和司法档案，便于分别查看。\n",
       "mechanisms": [],
       "metrics": {
         "betweenness": 0.0,
@@ -845,14 +1020,20 @@
       "source_path": "04_mechanisms_theories/mech_salem_ergotism.md",
       "sources": [
         {
-          "citation": "Caporael, L. R. (1976). Ergotism: The satan loosed in Salem? Science, 192(4234), 21–26.",
+          "citation": "Linnda R. Caporael (1976). Ergotism: The Satan Loosed in Salem? Science 192(4234), 21–26.",
+          "content_sha256": null,
           "doi": "10.1126/science.769159",
+          "local_path": null,
+          "locator": "麦角归因的提案",
           "type": "peer_reviewed",
           "url": "https://pubmed.ncbi.nlm.nih.gov/769159/"
         },
         {
-          "citation": "Spanos, N. P., & Gottlieb, J. (1976). Ergotism and the Salem Village witch trials. Science, 194(4272), 1390–1394.",
+          "citation": "Spanos, N. P., & Gottlieb, J. (1976). Ergotism and the Salem Village Witch Trials. Science 194(4272), 1390–1394.",
+          "content_sha256": null,
           "doi": "10.1126/science.795029",
+          "local_path": null,
+          "locator": "临床和档案反驳",
           "type": "peer_reviewed",
           "url": "https://pubmed.ncbi.nlm.nih.gov/795029/"
         }
@@ -866,32 +1047,43 @@
         "thompson_motifs": []
       },
       "temporal": {
-        "era_label": "当代史学争论",
-        "uncertainty_note": "年份指假说与反驳的发表时间。",
+        "era_label": "1976 年《科学》论文与反驳",
+        "uncertainty_note": "年代指假说与反驳同年发表。",
         "year_end": 1976,
         "year_start": 1976
       },
-      "title": "塞勒姆案的麦角中毒假说",
+      "title": "塞勒姆案的麦角中毒假说及档案反证",
       "z": 360,
       "z_layer": 4
     },
     {
       "aliases": [
+        "REM atonia",
+        "鬼压床",
+        "睡眠麻痹",
+        "mech_sleep_paralysis_loop",
         "Sleep paralysis",
-        "REM atonia during sleep–wake transitions"
+        "REM atonia during sleep–wake transitions",
+        "睡眠瘫痪中的肌张力抑制"
       ],
       "audit": {
         "ai_confidence": null,
         "created_at": "2026-11-22",
         "is_sample": true,
-        "reviewed_by_human": false
+        "public_content_sha256": null,
+        "public_release": false,
+        "public_rights_note": null,
+        "review_note": null,
+        "reviewed_at": null,
+        "reviewed_by_human": false,
+        "reviewer": null
       },
-      "credibility_tier": "A",
-      "credibility_weight": 0.85,
+      "credibility_tier": "S",
+      "credibility_weight": 1.0,
       "genre": "academic_model",
       "id": "mech_sleep_paralysis",
       "is_fictional_quarantine": false,
-      "markdown": "\n## 可观察的机制\n\n睡眠瘫痪可发生在入睡或醒来的过渡期。人在产生清醒感时仍暂时难以自主活动，多导睡眠记录可用来观察脑电活动和肌张力抑制的并存状态。\n\n## 证据状态\n\n关系状态随个案材料而定。有同步记录的实验与仅有事后回忆的访谈分别标注，便于追溯每条解释所依赖的证据。\n",
+      "markdown": "\n## 研究方法与结果\n\n快速眼动睡眠时，许多骨骼肌的活动暂时受到抑制。人在入睡或醒转的过渡期可能察觉环境、却还不能像平时那样移动。睡眠中断实验采到的发作可直接比较脑电和肌电记录。\n\n胸口压迫和身旁有人的体验在不同地方被讲成老妇、精灵、鬼压床等故事。访谈留下受访者对经历的解释，实验留下的则是睡眠生理过程，两类出处可以一起读。\n",
       "mechanisms": [],
       "metrics": {
         "betweenness": 0.0,
@@ -903,16 +1095,40 @@
       "source_path": "04_mechanisms_theories/mech_sleep_paralysis.md",
       "sources": [
         {
-          "citation": "Takeuchi, T., Miyasita, A., Sasaki, Y., Inugami, M., & Fukuda, K. (1992). Isolated sleep paralysis elicited by sleep interruption. Sleep, 15(3), 217–225.",
+          "citation": "Takeuchi, T., et al. (1992). Isolated sleep paralysis elicited by sleep interruption. Sleep 15(3), 217–225.",
+          "content_sha256": null,
           "doi": "10.1093/sleep/15.3.217",
+          "local_path": null,
+          "locator": "睡眠中断与多导睡眠记录",
           "type": "peer_reviewed",
           "url": "https://pubmed.ncbi.nlm.nih.gov/1621022/"
         },
         {
           "citation": "Mainieri, G., et al. (2021). Are sleep paralysis and false awakenings different from REM sleep and from lucid REM sleep? A spectral EEG analysis. Journal of Clinical Sleep Medicine, 17(4), 719–727.",
+          "content_sha256": null,
           "doi": "10.5664/jcsm.9056",
+          "local_path": null,
+          "locator": null,
           "type": "peer_reviewed",
           "url": "https://doi.org/10.5664/jcsm.9056"
+        },
+        {
+          "citation": "Jalal, B., et al. (2014). Explanations of sleep paralysis among Egyptian college students and the general population in Egypt and Denmark. Transcultural Psychiatry 51(2), 158–175.",
+          "content_sha256": null,
+          "doi": "10.1177/1363461513503378",
+          "local_path": null,
+          "locator": "埃及与丹麦样本的解释差异",
+          "type": "peer_reviewed",
+          "url": "https://doi.org/10.1177/1363461513503378"
+        },
+        {
+          "citation": "Sharpless, B. A., & Barber, J. P. Lifetime prevalence rates of sleep paralysis: a systematic review. Sleep Medicine Reviews (2011).",
+          "content_sha256": null,
+          "doi": null,
+          "local_path": null,
+          "locator": "睡眠瘫痪流行率与样本差异",
+          "type": "peer_reviewed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21571556/"
         }
       ],
       "spatial": null,
@@ -923,24 +1139,29 @@
         "ocm_codes": [],
         "thompson_motifs": []
       },
-      "temporal": null,
-      "title": "睡眠瘫痪中的肌张力抑制",
+      "temporal": {
+        "era_label": "睡眠生理、访谈与跨文化比较",
+        "uncertainty_note": "1992 年为本库关联的实验发表年。",
+        "year_end": null,
+        "year_start": 1992
+      },
+      "title": "睡眠瘫痪：快速眼动期肌张力与文化解释",
       "z": 360,
       "z_layer": 4
     }
   ],
   "schema_version": 1,
-  "snapshot_id": "56bd537f1651980d4f9bfe2f75ac7df0520c78fb1d2e09e3d46d9179a2b69a0f",
+  "snapshot_id": "a744e9c91e1de98ef84807125a04932d61734078743f0c9507734a55734a9dcf",
   "stats": {
     "betweenness_sample_size": null,
-    "excluded_drafts": 0,
+    "excluded_drafts": 50,
     "excluded_fiction": 0,
     "isolated_node_ids": [
       "case_slender_man_2009"
     ],
     "unmatched_standard_codes": [],
-    "vault_cards": 12,
-    "visible_links": 13,
+    "vault_cards": 62,
+    "visible_links": 14,
     "visible_nodes": 12
   },
   "visibility": {

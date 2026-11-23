@@ -91,6 +91,29 @@ class ReviewApprovalTests(unittest.TestCase):
         self.assertEqual(case["genre"], "fabulate")
         self.assertEqual(case["audit"]["reviewer"], "测试复核人")
 
+    def test_catalogued_pending_card_is_reviewed_in_place(self):
+        decisions = [self.decision("test_case"), self.decision("test_corpus")]
+        draft = self.vault / "00_drafts" / "test_case.md"
+        path = self.vault / "01_cases" / draft.name
+        path.parent.mkdir()
+        draft.rename(path)
+        original = path.read_bytes()
+        self.run_review(decisions, "--check")
+        self.assertEqual(path.read_bytes(), original)
+
+        self.output.mkdir()
+        self.run_review(decisions, success=False)
+        self.assertEqual(path.read_bytes(), original)
+        self.assertFalse((self.vault / "02_myth_corpora" / "test_corpus.md").exists())
+        self.output.rmdir()
+
+        self.run_review(decisions)
+        card, _ = parse_card(path.read_text(encoding="utf-8"))
+        self.assertEqual(card.audit.reviewer, "测试复核人")
+        self.assertFalse(draft.exists())
+        graph = json.loads(self.output.read_text(encoding="utf-8"))
+        self.assertEqual({node["id"] for node in graph["nodes"]}, {"test_case", "test_corpus"})
+
     def test_changed_or_missing_local_source_cannot_be_signed(self):
         source_path = self.root / "原始资料.txt"
         source_path.write_text("原始资料", encoding="utf-8")

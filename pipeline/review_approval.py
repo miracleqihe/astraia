@@ -60,8 +60,15 @@ def prepare_selection(vault: Path, decisions: dict[str, dict], include_samples: 
         if path.stem in pending:
             raise ValueError(f"存在同名草稿，不能定位复核记录。{path.stem}")
         pending[path.stem] = path
-    published = {node_id for node_id, card in load_vault(vault).items()
+    canonical = load_vault(vault)
+    published = {node_id for node_id, card in canonical.items()
                  if card.metadata.audit.reviewed_by_human or (include_samples and card.metadata.audit.is_sample)}
+    for node_id, card in canonical.items():
+        if card.metadata.audit.reviewed_by_human or card.metadata.audit.is_sample:
+            continue
+        if node_id in pending:
+            raise ValueError(f"正式目录和待审目录含有同名卡片。{node_id}")
+        pending[node_id] = vault / card.source_path
     candidates = {}
     for card_id, decision in decisions.items():
         if decision["status"] != "reviewed" or card_id in published:

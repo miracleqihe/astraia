@@ -2254,13 +2254,20 @@ def other_records(vault: Path, table_path: Path) -> list[dict]:
     table = load_code_table(table_path)
     records = []
     zibuyu_hashes, zibuyu_cache = {}, {}
-    for folder, collection in (("regional_sources", "regional"), ("research_report", "research")):
-        for path in sorted((vault / "00_drafts" / folder).glob("*.md")):
+    inputs = [(collection, sorted((vault / "00_drafts" / folder).glob("*.md")))
+              for folder, collection in (("regional_sources", "regional"), ("research_report", "research"))]
+    catalogue = [vault / card.source_path for card in load_vault(vault).values()
+                 if not (card.metadata.audit.reviewed_by_human or card.metadata.audit.is_sample)]
+    inputs.append(("research", catalogue))
+    for collection, paths in inputs:
+        for path in paths:
             if path.stem in REGIONAL_HUBS.values():
                 continue
             record, metadata = base_record(path, vault, collection)
-            if folder == "regional_sources" and path.stem.startswith("case_duchas_") and len(duchas_cited_story_ids(metadata)) == 1:
+            if collection == "regional" and path.stem.startswith("case_duchas_") and len(duchas_cited_story_ids(metadata)) == 1:
                 continue
+            if path.relative_to(vault).parts[0] != "00_drafts":
+                record["batch"] = "research_report"
             records.append(record)
             if metadata.sources and not any(source.locator for source in metadata.sources):
                 record["issues"].append(issue("source", "source_locator_missing", "未单独登记来源定位符，可核对书目中的卷页或记录号。"))

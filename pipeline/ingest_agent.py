@@ -25,8 +25,8 @@ from pipeline.local_standards import (
 )
 from pipeline.node_model import CredibilityTier, Genre, LAYER_BY_TYPE, NodeMetadata, NodeType, Standards
 from pipeline.public_fingerprint import public_content_sha256
-from pipeline.vault import VaultCard, card_directory, load_vault, parse_card
-from pipeline.vault_write import create_card, vault_writer
+from pipeline.vault import FICTION_DIRECTORY, LAYER_DIRECTORIES, VaultCard, card_directory, load_vault, parse_card
+from pipeline.vault_write import create_card, replace_card, vault_writer
 
 DEFAULT_VAULT = PROJECT_ROOT / "vault"
 DEFAULT_CODE_TABLE = PROJECT_ROOT / "reference" / "standards.json"
@@ -262,15 +262,16 @@ def verify_local_sources(cards: list[VaultCard]) -> None:
 
 def approve(args: argparse.Namespace, vault: Path, table: dict[tuple[str, str], CodeEntry],
             *, selected_paths: list[Path] | None = None) -> int:
+    queue = (vault / DRAFT_DIRECTORY).resolve()
     if selected_paths is not None:
-        queue = (vault / DRAFT_DIRECTORY).resolve()
+        directories = (queue, *(vault / name for name in (*LAYER_DIRECTORIES.values(), FICTION_DIRECTORY)))
         paths = [path.resolve() for path in selected_paths]
-        if any(not path.is_relative_to(queue) or path.suffix != ".md" for path in paths):
-            raise IntakeError("复核记录须指向待审目录中的 Markdown 草稿。")
+        if any(path.suffix != ".md" or not any(path.is_relative_to(directory) for directory in directories)
+               for path in paths):
+            raise IntakeError("复核记录须指向知识库中的待审卡片。")
     elif args.command == "approve":
         paths = [draft_path(vault, args.draft)]
     else:
-        queue = (vault / DRAFT_DIRECTORY).resolve()
         paths = []
         for name in dict.fromkeys(args.batch):
             batch = (queue / name).resolve()
@@ -300,10 +301,14 @@ def approve(args: argparse.Namespace, vault: Path, table: dict[tuple[str, str], 
             except (ValueError, yaml.YAMLError) as error:
                 raise IntakeError(f"{path.name}\n{error}") from error
             previous = cards.get(candidate.metadata.id)
-            if previous is not None and previous != candidate:
+            in_catalogue = not path.is_relative_to(queue)
+            if in_catalogue and not (expected and previous and path == vault / previous.source_path
+                                     and not previous.metadata.audit.reviewed_by_human and not previous.metadata.audit.is_sample):
+                raise IntakeError(f"正式目录中的卡片须凭匹配的人工复核记录签核。{path}")
+            if previous is not None and previous != candidate and not in_catalogue:
                 raise IntakeError(f"正式目录已有不同内容的同名卡片，已保留原卡。{previous.source_path}")
             cards[candidate.metadata.id] = candidate
-            planned.append((path, original, candidate, previous is None))
+            planned.append((path, original, candidate, previous is None or in_catalogue))
         verify_local_sources([candidate for _, _, candidate, _ in planned])
         graph = compile_cards(cards, **export_policy(output, args))
         totals = f"{len(planned)} 张卡片。快照可见 {len(graph['nodes'])} 个节点、{len(graph['links'])} 条关系。"
@@ -314,22 +319,38 @@ def approve(args: argparse.Namespace, vault: Path, table: dict[tuple[str, str], 
             raise IntakeError("草稿在校验期间已修改。请核对新内容后再次签核。")
         verify_local_sources([candidate for _, _, candidate, _ in planned])
 
-        created = []
+        written = []
+        moved = {}
         try:
-            for _, _, candidate, is_new in planned:
-                if is_new:
-                    destination = vault / candidate.source_path
-                    content = serialize_card(candidate.metadata, candidate.markdown)
+            for path, original, candidate, needs_write in planned:
+                if not needs_write:
+                    continue
+                destination = vault / candidate.source_path
+                content = serialize_card(candidate.metadata, candidate.markdown)
+                if destination == path:
+                    replace_card(destination, content)
+                    written.append((destination, content, original))
+                else:
                     create_card(destination, content)
-                    created.append((destination, content))
+                    written.append((destination, content, None))
+                    if not path.is_relative_to(queue):
+                        path.unlink()
+                        moved[path] = original
             publish_graph(output, graph, "json")
         except (ValueError, OSError):
-            for destination, content in created:
+            for destination, content, original in reversed(written):
                 if destination.exists() and destination.read_bytes() == content:
-                    destination.unlink()
+                    if original is None:
+                        destination.unlink()
+                    else:
+                        replace_card(destination, original)
+            for path, original in moved.items():
+                create_card(path, original)
             raise
 
-        for path, original, _, _ in planned:
+        for path, original, candidate, _ in planned:
+            if path == vault / candidate.source_path or path in moved:
+                continue
             try:
                 if path.read_bytes() == original:
                     path.unlink()

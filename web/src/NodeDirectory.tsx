@@ -2,9 +2,9 @@ import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
 import { coordinatesOf, isEditorialReading, isFiction, isModernReading, LAYERS, LAYER_ORDER, mapLabel, matchesQuery,
   nodeColor, READING_LABELS, type GraphNode } from './graph';
 
-export type DirectoryScope = 'all' | 'stories' | 'modern';
+export type DirectoryScope = 'all' | 'stories' | 'modern' | 'research';
 const SCOPES: ReadonlyArray<[DirectoryScope, string]> = [
-  ['all', '全部'], ['stories', '可读故事'], ['modern', '现代异闻'],
+  ['all', '全部'], ['stories', '站内阅读'], ['modern', '现代异闻'], ['research', '学术研究'],
 ];
 
 interface Props {
@@ -20,8 +20,12 @@ export function NodeDirectory({ nodes, selectedId, scope, onScope, onClose, onSe
   const [query, setQuery] = useState('');
   const listRef = useRef<HTMLDivElement>(null);
   const selectedRef = useRef<HTMLButtonElement>(null);
-  const scoped = useMemo(() => scope === 'modern' ? nodes.filter(isModernReading)
-    : scope === 'stories' ? nodes.filter((node) => isEditorialReading(node) || node.reading?.edition) : nodes, [nodes, scope]);
+  const scoped = useMemo(() => {
+    if (scope === 'modern') return nodes.filter(isModernReading);
+    if (scope === 'stories') return nodes.filter((node) => isEditorialReading(node) || node.reading?.edition);
+    if (scope === 'research') return nodes.filter((node) => node.reading?.kind === 'research');
+    return nodes;
+  }, [nodes, scope]);
   const matching = useMemo(() => scoped.filter((node) => matchesQuery(node, query)), [scoped, query]);
 
   useEffect(() => {
