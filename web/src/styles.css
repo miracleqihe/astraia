@@ -374,7 +374,7 @@ h1, h2, h3, p, dl, dd { margin: 0; }
   translate: 0 -50%;
   pointer-events: none;
 }
-.atlas-marker-label { opacity: 0; }
+.atlas-marker-label { opacity: 0; font-family: var(--font-grotesk); }
 .atlas-marker:is(:hover, :focus-visible, [data-emphasis='selected']) .atlas-marker-label { opacity: 1; }
 .geo-viewport[data-distribution='true'] .atlas-marker:not(:hover, :focus-visible) .atlas-marker-label { opacity: 0; }
 .atlas-marker[data-emphasis='selected'], .atlas-marker:hover { z-index: 4; }
