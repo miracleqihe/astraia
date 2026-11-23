@@ -11,6 +11,7 @@ import {
 
 const GeoView = lazy(() => import('./views/GeoView'));
 const ConstellationView = lazy(() => import('./views/ConstellationView'));
+const LifeKnowledge = lazy(() => import('./LifeKnowledge'));
 const publicSite = import.meta.env.VITE_PUBLIC_DEMO === '1';
 const ALL_TIERS: Tier[] = ['S', 'A', 'B', 'C', 'F'];
 const ALL_LAYERS: Layer[] = [1, 2, 3, 4];
@@ -34,6 +35,7 @@ function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
       focus: requested && coordinatesOf(requested) ? { id: requested.id } : null };
   });
   const [mode, setMode] = useState<ViewMode>(entry.mode);
+  const [lifeMode, setLifeMode] = useState(() => new URL(window.location.href).searchParams.get('view') === 'life');
   const [directoryOpen, setDirectoryOpen] = useState(false);
   const [directoryScope, setDirectoryScope] = useState<DirectoryScope>('all');
   const [searchOpen, setSearchOpen] = useState(false);
@@ -151,11 +153,11 @@ function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
 
   useEffect(() => {
     const key = (event: KeyboardEvent) => {
-      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); setSearchOpen(true); }
+      if (!lifeMode && (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); setSearchOpen(true); }
     };
     window.addEventListener('keydown', key);
     return () => window.removeEventListener('keydown', key);
-  }, []);
+  }, [lifeMode]);
 
   function toggle<T>(setter: Dispatch<SetStateAction<Set<T>>>, value: T) {
     setter((old) => { const next = new Set(old); if (next.has(value)) next.delete(value); else next.add(value); return next; });
@@ -187,23 +189,32 @@ function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
     onPin: (code: CodeFocus) => setPinnedCode((current) => current && codeKey(current) === codeKey(code) ? null : code),
   };
   const width = drawer === 'collapsed' || (!selected && !showGuide) ? 40 : drawer === 'compare' ? 680 : 420;
+  function switchView(next: 'geo' | 'graph' | 'life') {
+    setLifeMode(next === 'life'); setSearchOpen(false);
+    if (next !== 'life') setMode(next);
+    const url = new URL(window.location.href);
+    url.searchParams.set('view', next === 'geo' ? 'map' : next);
+    if (next !== 'life') url.searchParams.delete('entry');
+    window.history.replaceState({}, '', url);
+  }
 
   return <div className="app-shell">
     <header className="topbar">
       <Brand />
       <nav className="view-switch" aria-label="图谱视图">
-        <button type="button" aria-pressed={mode === 'geo'} onClick={() => setMode('geo')}><span className="mode-icon globe-icon" aria-hidden="true" />3D 地图</button>
-        <button type="button" aria-pressed={mode === 'graph'} onClick={() => setMode('graph')}><span className="mode-icon constellation-icon" aria-hidden="true" />语义星图</button>
+        <button type="button" aria-pressed={!lifeMode && mode === 'geo'} onClick={() => switchView('geo')}><span className="mode-icon globe-icon" aria-hidden="true" />3D 地图</button>
+        <button type="button" aria-pressed={!lifeMode && mode === 'graph'} onClick={() => switchView('graph')}><span className="mode-icon constellation-icon" aria-hidden="true" />语义星图</button>
+        <button type="button" aria-pressed={lifeMode} onClick={() => switchView('life')}><span className="mode-icon constellation-icon" aria-hidden="true" />Life and Knowledge</button>
       </nav>
-      <div className="top-actions">
+      {!lifeMode && <div className="top-actions">
         {!publicSite && <a className="review-link" href={`${import.meta.env.BASE_URL}review/index.html`}>资料复核</a>}
         <button className="directory-toggle" type="button" aria-expanded={directoryOpen && directoryScope !== 'modern'}
           onClick={() => openDirectory('all')}>节点目录 <span>{graph.nodes.length}</span></button>
         <button className="fiction-switch" type="button" role="switch" aria-checked={!tiers.has('F')} onClick={() => toggle<Tier>(setTiers, 'F')}>
           <span>隐藏 F 级虚构</span><span className="switch-track" aria-hidden="true" /></button>
-      </div>
+      </div>}
     </header>
-    <div className="workspace workbench" style={{ '--drawer-width': `${width}px` } as CSSProperties}>
+    {lifeMode ? <Suspense fallback={<div className="life-status">正在载入知识星图…</div>}><LifeKnowledge /></Suspense> : <div className="workspace workbench" style={{ '--drawer-width': `${width}px` } as CSSProperties}>
       <main id="visual-stage" className="visual-stage" aria-label="图谱主视图">
         <ViewportFrame />
         <div className="stage-heading"><h1>{mode === 'geo' ? '地点与故事' : '四层语义星图'}</h1>
@@ -254,8 +265,8 @@ function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
               {drawer === 'compare' && <div className="compare-empty">请选择第二个节点。</div>}
             </div>}
         </div>}
-    </div>
-    {searchOpen && <QuickSearch nodes={searchableNodes} onClose={() => setSearchOpen(false)} onSelect={(id) => {
+    </div>}
+    {!lifeMode && searchOpen && <QuickSearch nodes={searchableNodes} onClose={() => setSearchOpen(false)} onSelect={(id) => {
       setTiers(new Set(ALL_TIERS.filter((tier) => tier !== 'F' || tiers.has('F')))); setLayers(new Set(ALL_LAYERS)); setYears(null);
       if (comparePicking && selected && id !== selected.id) {
         setCompareId(id); setDrawer('compare');

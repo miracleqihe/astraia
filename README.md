@@ -34,6 +34,16 @@ npm.cmd run build
 npm.cmd run preview
 ```
 
+## Life and Knowledge 知识星图
+
+顶部第三个视图收录《格物识微》增绘版的五卷、二十门及 2,266 个条目。左侧可按学科浏览，右侧支持检索、阅读正文及打开对应 PDF 页面；星图连线依据原书已有的交叉引用。原书中的图表和图注保留在 PDF 中，手册原文注明急救、化学暴露与法医学专题为尚未经持证专业人员逐项审签的教学草稿。
+
+原始 QMD 保存在 `knowledge/handbook.qmd`，逐条文字稿在 `knowledge/entries/`，网页数据、正文图像与原版 PDF 在 `web/public/knowledge/`。更新手册源稿后可使用 Poppler 的 `pdftotext` 重新生成（输入 PDF 须对应同一版源稿）：
+
+```powershell
+.\.venv\Scripts\python.exe -X utf8 -m pipeline.build_life_knowledge --source knowledge/handbook.qmd --pdf web/public/knowledge/handbook.pdf --pdftotext 'pdftotext'
+```
+
 ## 编译样例库
 
 在项目根目录运行以下 PowerShell 命令。首次安装依赖需要联网，之后编译在本机完成。项目需要 Python 3.11 或更高版本。

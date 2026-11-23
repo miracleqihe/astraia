@@ -5,7 +5,7 @@ import { codeKey, dossierCodes, EVIDENCE, isFiction, LAYERS, linkKey, mapLabel, 
   type GraphIndex, type GraphNode } from './graph';
 
 const GENRES: Record<string, string> = {
-  memorate: '个人经历', fabulate: '定型传说', folktale: '民间故事', myth: '神话',
+  memorate: '个人经历', fabulate: '定型传说', folktale: '民间故事', urban_legend: '都市传说', myth: '神话',
   historical_archive: '历史档案', academic_model: '学术研究', creepypasta_ostension: '数字虚构展演',
 };
 

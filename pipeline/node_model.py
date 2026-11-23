@@ -8,7 +8,7 @@ from pydantic import field_validator, model_validator
 
 NodeType = Literal["case", "myth_corpus", "motif_index", "mechanism", "theory"]
 Genre = Literal[
-    "myth", "fabulate", "memorate", "folktale", "creepypasta_ostension",
+    "myth", "fabulate", "memorate", "folktale", "urban_legend", "creepypasta_ostension",
     "historical_archive", "academic_model", "unclassified",
 ]
 CredibilityTier = Literal["S", "A", "B", "C", "F"]

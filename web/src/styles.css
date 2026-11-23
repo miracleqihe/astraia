@@ -1,6 +1,17 @@
 @import './palette.css';
 
 @font-face {
+  font-family: 'Astraia Handbook Glyphs'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('/fonts/astraia-handbook-400.woff2') format('woff2');
+  unicode-range: U+44EC, U+68AB, U+7B65, U+9FEB;
+}
+@font-face {
+  font-family: 'Astraia Handbook Glyphs'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('/fonts/astraia-handbook-600.woff2') format('woff2');
+  unicode-range: U+44EC, U+68AB, U+7B65, U+9FEB;
+}
+
+@font-face {
   font-family: "Astraia CJK Supplemental"; font-style: normal; font-weight: 400; font-display: swap;
   src: url("/fonts/astraia-cjk-supplement-400.woff2?v=225") format("woff2");
   unicode-range: U+3AFB, U+4CDF, U+5000, U+50AA, U+50B4, U+50C2, U+50C9, U+513B, U+5244, U+5268, U+526E, U+527A, U+5488,
@@ -126,9 +137,9 @@
 }
 
 :root {
-  --font-editorial: "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Serif Vietnamese", "Cormorant Garamond", "Noto Serif SC", "Microsoft YaHei", "Malgun Gothic", "Noto Sans Thai", "Noto Sans Lao", Georgia, serif;
-  --font-grotesk: "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Sans Vietnamese", "Inter", "Noto Sans SC", "Microsoft YaHei", "Malgun Gothic", "Noto Sans Thai", "Noto Sans Lao", sans-serif;
-  --font-astrometric: "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Sans Vietnamese", "JetBrains Mono", monospace;
+  --font-editorial: "Astraia Handbook Glyphs", "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Serif Vietnamese", "Cormorant Garamond", "Noto Serif SC", "Microsoft YaHei", "Malgun Gothic", "Noto Sans Thai", "Noto Sans Lao", Georgia, serif;
+  --font-grotesk: "Astraia Handbook Glyphs", "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Sans Vietnamese", "Inter", "Noto Sans SC", "Microsoft YaHei", "Malgun Gothic", "Noto Sans Thai", "Noto Sans Lao", sans-serif;
+  --font-astrometric: "Astraia Handbook Glyphs", "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Sans Vietnamese", "JetBrains Mono", monospace;
 
   color-scheme: dark;
   background: var(--plate-bg);

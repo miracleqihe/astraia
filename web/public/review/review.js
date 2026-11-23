@@ -16,7 +16,7 @@
   const collectionLabels = {scottish:'苏格兰猎巫', berezkin:'别列兹金母题', nichibun:'日文研馆藏',
     duchas:'Dúchas 馆藏', regional:'其他区域资料', research:'研究报告资料',
     asia:'中国与东亚、东南亚', intake:'本地入库草稿'};
-  const genres = {unclassified:'待确认', myth:'神话', fabulate:'传说', memorate:'亲历叙事',
+  const genres = {unclassified:'待确认', myth:'神话', fabulate:'传说', memorate:'亲历叙事', urban_legend:'都市传说',
     folktale:'民间故事', creepypasta_ostension:'网络虚构', historical_archive:'历史档案', academic_model:'学术资料'};
   const standardNames = {atu_types:'ATU', thompson_motifs:'汤普森', berezkin_codes:'别列兹金', ocm_codes:'OCM'};
   const precisionLabels = {exact:'精确位置', city:'城市参考', province:'省级参考', culture_region:'文化区域', global:'全球'};

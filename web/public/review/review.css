@@ -1,4 +1,12 @@
 @font-face {
+  font-family: 'Astraia Handbook Glyphs'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('../fonts/astraia-handbook-400.woff2') format('woff2'); unicode-range: U+44EC, U+68AB, U+7B65, U+9FEB;
+}
+@font-face {
+  font-family: 'Astraia Handbook Glyphs'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('../fonts/astraia-handbook-600.woff2') format('woff2'); unicode-range: U+44EC, U+68AB, U+7B65, U+9FEB;
+}
+@font-face {
   font-family: "Astraia CJK Supplemental"; font-style: normal; font-weight: 400; font-display: swap;
   src: url("../fonts/astraia-cjk-supplement-400.woff2?v=225") format("woff2");
   unicode-range: U+5AD7, U+5C6D, U+6BAE, U+7296, U+733B, U+750C, U+7670, U+7BED, U+7D02, U+7D3F, U+7F48, U+7FC2, U+807B, U+8784, U+89ED, U+9124, U+9301, U+9B1B, U+9B29, U+9C5F, U+9CAA, U+9D06, U+9EFF, U+F9C4, U+8407, U+8CFE;
@@ -103,7 +111,7 @@
   --vermilion: #9e2a2b;
   --verified: #1f5e4b;
   --brass: #c29d59;
-  font-family: "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Sans Vietnamese", "Astraia CJK", "Astraia Korean", "Noto Sans SC", "Noto Sans Thai", "Noto Sans Lao", sans-serif;
+  font-family: "Astraia Handbook Glyphs", "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Sans Vietnamese", "Astraia CJK", "Astraia Korean", "Noto Sans SC", "Noto Sans Thai", "Noto Sans Lao", sans-serif;
   color: var(--ink);
   font-variant-numeric: tabular-nums;
 }
@@ -147,7 +155,7 @@ h1 { font-size: 23px; margin-bottom: 6px; }
 .pagination button { color: var(--paper); background: none; border: 1px solid #75808c; padding: 5px 9px; }
 .pagination button:disabled { opacity: .4; }
 .detail { overflow: auto; background: var(--paper); min-height: 0; padding: 25px 28px 36px; }
-.detail h2 { font-family: "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Sans Vietnamese", Georgia, "Astraia CJK", "Astraia Korean", "Noto Sans Thai", "Noto Sans Lao", serif; font-size: 25px; line-height: 1.35; margin-bottom: 8px; }
+.detail h2 { font-family: "Astraia Handbook Glyphs", "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Sans Vietnamese", Georgia, "Astraia CJK", "Astraia Korean", "Noto Sans Thai", "Noto Sans Lao", serif; font-size: 25px; line-height: 1.35; margin-bottom: 8px; }
 .detail h3 { font-size: 15px; margin: 23px 0 8px; border-bottom: 1px solid var(--ink); padding-bottom: 6px; }
 .detail .metadata, .detail .muted { color: var(--muted); font-size: 12px; }
 .detail dl { margin: 0; }
