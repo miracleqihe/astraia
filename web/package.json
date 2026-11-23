@@ -1,0 +1,41 @@
+{
+  "name": "astraia-atlas",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1 --strictPort"
+  },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.2.0",
+    "@fontsource/inter": "^5.2.0",
+    "@fontsource/jetbrains-mono": "^5.2.0",
+    "@fontsource/noto-sans-buginese": "^5.3.0",
+    "@fontsource/noto-sans-khmer": "^5.3.0",
+    "@fontsource/noto-sans-lao": "^5.2.0",
+    "@fontsource/noto-sans-sc": "^5.2.0",
+    "@fontsource/noto-sans-thai": "^5.3.0",
+    "@fontsource/noto-serif-sc": "^5.2.0",
+    "@turf/great-circle": "^7.2.0",
+    "maplibre-gl": "^5.7.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "three": "^0.181.0",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/geojson": "^7946.0.16",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@types/three": "^0.181.0",
+    "@types/topojson-client": "^3.1.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.0.0"
+  }
+}

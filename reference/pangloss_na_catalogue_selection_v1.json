@@ -1,0 +1,197 @@
+{
+  "version": 1,
+  "corpus_url": "https://pangloss.cnrs.fr/corpus/Yongning_Na",
+  "catalogue_sha256": "85f6c91212d4ca5d7ae29bc1e3caa6a35d248911d0173811055f38409295dbaf",
+  "first_selection_sha256": "1f88f1a229052fc6308be72cd2e6a051c0e5b038a70afb51a9c2d75bbb6dac5d",
+  "context_selection_sha256": "6285b44f64d1d688887e57fbc03510e4eb4c572a91f6bede92ed2790e95ee5cb",
+  "method": "人工按目录题名选择仪式、口述背景和已有条目的版本候选；未读取或自动分类音频。",
+  "limits": "题名及版本字样仅是对照线索，不证明题材、独立演述、同一来源或传播。",
+  "choices": [
+    {
+      "id": "0004532",
+      "title": "Les aînés (version 3): l’installation de la famille Latami dans la plaine de Yongning",
+      "reason": "家族口述题名的版本候选",
+      "compare_id": "0004551"
+    },
+    {
+      "id": "0004884",
+      "title": "Les aînés (version 6): récits au sujet de la famille Latami",
+      "reason": "家族口述题名的版本候选",
+      "compare_id": "0004551"
+    },
+    {
+      "id": "0004891",
+      "title": "Funérailles : comment se déroulaient autrefois les rites funéraires (version 2)",
+      "reason": "葬仪访谈题名的版本候选",
+      "compare_id": "0004571"
+    },
+    {
+      "id": "0004892",
+      "title": "Funérailles : comment se déroulaient autrefois les rites funéraires (version 3)",
+      "reason": "葬仪访谈题名的版本候选",
+      "compare_id": "0004571"
+    },
+    {
+      "id": "0004593",
+      "title": "Daba: the priest of the local religion (version 1)",
+      "reason": "宗教角色和仪式背景",
+      "compare_id": null
+    },
+    {
+      "id": "0004594",
+      "title": "Daba: the priest of the local religion (version 2)",
+      "reason": "宗教角色题名的版本候选",
+      "compare_id": "0004593"
+    },
+    {
+      "id": "0004603",
+      "title": "Dumb children: how people used to conduct rites for children who did not yet speak at age two",
+      "reason": "儿童与仪式背景",
+      "compare_id": null
+    },
+    {
+      "id": "0004630",
+      "title": "Terrestrial branches: properties associated with one's year of birth",
+      "reason": "生年与地方观念",
+      "compare_id": null
+    },
+    {
+      "id": "0004872",
+      "title": "Decease: about a person's end of life, funeral, and family's mourning.",
+      "reason": "死亡及丧葬背景",
+      "compare_id": null
+    },
+    {
+      "id": "0004898",
+      "title": "Historical situation: the narrator reflects on her situation as a consultant providing knowledge about the Na language and Na traditions.",
+      "reason": "讲述者对记录情境的反思",
+      "compare_id": null
+    },
+    {
+      "id": "0004899",
+      "title": "Historical situation, part 2: this is a sort of sequel to the narrative 'Historical situation'",
+      "reason": "记录情境反思的续篇候选",
+      "compare_id": "0004898"
+    },
+    {
+      "id": "0004925",
+      "title": "Names: how names are given to children (version 2)",
+      "reason": "姓名与命名背景",
+      "compare_id": null
+    },
+    {
+      "id": "0004623",
+      "title": "Singing: a conversational account of how and when the Na used to sing",
+      "reason": "歌曲的使用情境",
+      "compare_id": null
+    },
+    {
+      "id": "0004936",
+      "title": "Singing (version 2): a conversational account of how and when the Na used to sing, emphasizing how songs served as a means of expression",
+      "reason": "歌曲使用情境的版本候选",
+      "compare_id": "0004623"
+    },
+    {
+      "id": "0004937",
+      "title": "Singing: this short passage was recorded immediately after Singing2",
+      "reason": "歌曲使用情境的前后录音线索",
+      "compare_id": "0004936"
+    },
+    {
+      "id": "0004896",
+      "title": "Hail and storms",
+      "reason": "天气与地方知识背景",
+      "compare_id": null
+    },
+    {
+      "id": "0004908",
+      "title": "Lake and Plain: how the Lake was perceived from the Plain",
+      "reason": "湖与平原的地方观念",
+      "compare_id": null
+    },
+    {
+      "id": "0004913",
+      "title": "Marriage customs: how marriages took place in the narrator's youth",
+      "reason": "婚俗背景",
+      "compare_id": null
+    },
+    {
+      "id": "0004616",
+      "title": "Les champignons de Yongning: habitudes culinaires, pratiques médicinales et connotations culturelles",
+      "reason": "植物知识与文化背景",
+      "compare_id": null
+    },
+    {
+      "id": "0004905",
+      "title": "Jewels: about jewels in the old time.",
+      "reason": "器物及宗教文化背景",
+      "compare_id": null
+    },
+    {
+      "id": "0004906",
+      "title": "Jewels (sequel): this is a short addition to the narrative JEWELS, explaining how Buddhist statues were made, incorporating donations.",
+      "reason": "器物和佛像题名的续篇候选",
+      "compare_id": "0004905"
+    },
+    {
+      "id": "0004611",
+      "title": "Introduction: A message to listeners of the recordings placed online for public access",
+      "reason": "讲述者面向听众的录音介绍",
+      "compare_id": null
+    },
+    {
+      "id": "0004617",
+      "title": "Na society",
+      "reason": "社会与口述背景",
+      "compare_id": null
+    },
+    {
+      "id": "0004625",
+      "title": "Streamers: a description of the Buddhist streamers hung on houses",
+      "reason": "佛教饰物及家庭空间背景",
+      "compare_id": null
+    },
+    {
+      "id": "0004530",
+      "title": "Caravanes",
+      "reason": "商队与地方生活背景",
+      "compare_id": null
+    },
+    {
+      "id": "0004863",
+      "title": "Caravanes (version 2)",
+      "reason": "商队题名的版本候选",
+      "compare_id": "0004530"
+    },
+    {
+      "id": "0004888",
+      "title": "Fine talker: about a proverb concerning fine talkers",
+      "reason": "谚语题名候选",
+      "compare_id": null
+    },
+    {
+      "id": "0004942",
+      "title": "Size: about a saying concerning people's body size.",
+      "reason": "俗语题名候选",
+      "compare_id": null
+    },
+    {
+      "id": "0004901",
+      "title": "Hospitality: how important guests used to be, and how they were honoured",
+      "reason": "待客与地方习俗背景",
+      "compare_id": null
+    },
+    {
+      "id": "0004582",
+      "title": "Bienveillance",
+      "reason": "尊老与待客主题候选",
+      "compare_id": null
+    },
+    {
+      "id": "0007684",
+      "title": "Bienveillance : au sujet des coutumes Na de respect des anciens, d'hospitalité et d'affection envers les jeunes. Version 2. (Enregistrement vidéo.)",
+      "reason": "尊老与待客题名的版本候选",
+      "compare_id": "0004582"
+    }
+  ]
+}

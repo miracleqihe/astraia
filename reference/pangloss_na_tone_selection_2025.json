@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "crosswalk_sha256": "40f17c4f59fd30fadbd455b12a31aff52a506daac88d69b026660b667d6204ef",
+  "catalogue_sha256": "85f6c91212d4ca5d7ae29bc1e3caa6a35d248911d0173811055f38409295dbaf",
+  "first_sha256": "1f88f1a229052fc6308be72cd2e6a051c0e5b038a70afb51a9c2d75bbb6dac5d",
+  "context_sha256": "6285b44f64d1d688887e57fbc03510e4eb4c572a91f6bede92ed2790e95ee5cb",
+  "prior_sha256": "5387e2aaf01d8cce3df0bcad01a48e6cd59b9d26dba9b2d2525fb590bc9cef78",
+  "first_path": "reference/pangloss_na_selection_v1.json",
+  "context_path": "reference/pangloss_na_context_selection_v1.json",
+  "prior_path": "reference/pangloss_na_catalogue_selection_v1.json",
+  "ids": [
+    "0004440",
+    "0004448",
+    "0004549"
+  ],
+  "method": "专著叙事目录明确列出、馆方录音目录存在且此前三次未选取的录音。",
+  "limits": "本批包含生产生活背景，不自动判为民间故事；录音详情、原文、许可及社区要求待核。"
+}

@@ -1,0 +1,322 @@
+version: 1
+cards:
+  - id: index_berezkin_a37b
+    title: 别列兹金–杜瓦金 a37b · 射手失去拇指
+    aliases: [Shooter’s thumb cut off]
+    node_type: motif_index
+    genre: academic_model
+    credibility_tier: A
+    standards: {berezkin_codes: [a37b]}
+    sources:
+      - citation: Yu. E. Berezkin and E. N. Duvakin. Analytical catalogue, A37B.
+        type: official_standard
+        url: https://www.ruthenia.ru/folklore/berezkin/a37b.html
+      - citation: Liu, Rosenberg & Greenbaum (2022), Cambridge Core, Supplementary Data Files.
+        type: research_dataset
+        locator: 附件 3 / myth_motifs.csv / motif_code=a37b
+        doi: 10.1017/ehs.2022.15
+        url: https://www.cambridge.org/core/journals/evolutionary-human-sciences/article/extracting-hierarchical-features-of-cultural-variation-using-networkbased-clustering/96BE95B7F1DB7A4E022644B71B088CE1#supplementary-materials
+    markdown: |
+      ## 母题与目录范围
+
+      编目关联试图射击天体或飞鸟、失去拇指等叙事要素。目录列出雷布查人、塔尔巴哈台哈萨克人、图瓦人、阿尔泰人、捷连吉特人、外贝加尔布里亚特人、喀尔喀蒙古人和卫拉特人八组记录。Liu 等在研究附件中将此条编码至两个文化分析区。
+
+  - id: case_a37b_lepcha
+    title: 雷布查叙事中的射日与惩罚
+    aliases: [Lepcha, A37B]
+    node_type: case
+    genre: myth
+    credibility_tier: A
+    spatial: {lat: 27.33, lng: 88.61, precision: culture_region, location_name: '喜马拉雅东段雷布查文化区（以甘托克作地域参考）', culture_region: 'Asia · Eastern Himalaya'}
+    standards: {berezkin_codes: [a37b]}
+    sources:
+      - citation: Berezkin and Duvakin, A37B, Lepcha item, citing Stocks (1925), No. IX, pp. 363–365.
+        type: scholarly_database
+        url: https://www.ruthenia.ru/folklore/berezkin/a37b.html
+      - citation: GeoNames. Gangtok, India, place 1271631.
+        type: gazetteer
+        url: https://www.geonames.org/1271631/gangtok.html
+    markdown: |
+      ## 条目摘要
+
+      雷布查版本把太阳兄弟与蟾蜍射手放在同一则叙事中。射手受到惩处的情节是目录列入 a37b 的线索。坐标用作文化区参照，出处保留目录引向的原采录版本及页码。
+
+  - id: case_a37b_khalkha
+    title: 喀尔喀蒙古的多日与射手叙事
+    aliases: [Khalkha Mongols, Urga, A37B]
+    node_type: case
+    genre: myth
+    credibility_tier: A
+    spatial: {lat: 47.91, lng: 106.88, precision: culture_region, location_name: '蒙古乌兰巴托（库伦文献地名参照）', culture_region: 'Asia · Mongolia'}
+    standards: {berezkin_codes: [a37b]}
+    sources:
+      - citation: Berezkin and Duvakin, A37B, Khalkha items, citing Potanin (1883 and 1893).
+        type: scholarly_database
+        url: https://www.ruthenia.ru/folklore/berezkin/a37b.html
+      - citation: GeoNames. Ulan Bator, Mongolia, place 2028462.
+        type: gazetteer
+        url: https://www.geonames.org/2028462/ulan-bator.html
+    markdown: |
+      ## 条目摘要
+
+      目录在喀尔喀部分汇编多日与射手的不同版本。其中一则采录资料关联库伦地名，地图以对应的今天城市作粗略参照。不同版本的情节与年代可各自回到波塔宁的采录核对。
+
+  - id: index_berezkin_b3a
+    title: 别列兹金–杜瓦金 b3a · 本初之水
+    aliases: [Primordial waters, Первичные воды]
+    node_type: motif_index
+    genre: academic_model
+    credibility_tier: A
+    standards: {berezkin_codes: [b3a]}
+    sources:
+      - &b3a_source
+        citation: Yu. E. Berezkin and E. N. Duvakin. Analytical catalogue, B3A, regional incidence and references.
+        type: official_standard
+        url: https://www.ruthenia.ru/folklore/berezkin/b3a.html
+      - citation: Liu, Rosenberg & Greenbaum (2022), Cambridge Core, Supplementary Data Files.
+        type: research_dataset
+        locator: 附件 3 / myth_motifs.csv / motif_code=b3a
+        doi: 10.1017/ehs.2022.15
+        url: https://www.cambridge.org/core/journals/evolutionary-human-sciences/article/extracting-hierarchical-features-of-cultural-variation-using-networkbased-clustering/96BE95B7F1DB7A4E022644B71B088CE1#supplementary-materials
+    markdown: |
+      ## 母题与目录范围
+
+      条目关注天地开辟叙事中的初始水域。目录在西非、日本和中部美洲等地收录了这一母题的不同文本。星图用共同编目连接各地材料，地图以 Liu 等附件的文化分析区显示母题分布。
+
+  - id: case_b3a_kiche_waters
+    title: 基切玛雅《波波尔·乌》的本初之水
+    aliases: [Kʼicheʼ Maya, Popol Wuj, B3A]
+    node_type: case
+    genre: myth
+    credibility_tier: A
+    spatial: {lat: 14.94, lng: -91.11, precision: city, location_name: '危地马拉奇奇卡斯特南戈（抄本转录地点）', culture_region: 'Mesoamerica · Kʼicheʼ Maya'}
+    temporal: {era_label: 神话时代, uncertainty_note: 地图定位抄本转录地，叙事情节年代未定。}
+    standards: {berezkin_codes: [b3a]}
+    sources:
+      - citation: Berezkin and Duvakin, B3A, Mesoamerica, Kʼicheʼ entry, citing Popol Vuh, part 1, chapter 1.
+        type: scholarly_database
+        url: https://www.ruthenia.ru/folklore/berezkin/b3a.html
+      - citation: Newberry Library. Popol Vuh research guide.
+        type: archival_catalogue
+        url: https://www.newberry.org/collection/research-guide/popol-vuh
+      - citation: University of North Texas Digital Library. Chichicastenango place record.
+        type: gazetteer
+        url: https://digital.library.unt.edu/explore/locations/p09996/
+    markdown: |
+      ## 条目摘要
+
+      目录在中部美洲部分引《波波尔·乌》开篇，记录创世前的大水及其后陆地的出现。所用坐标是纽伯里图书馆所藏抄本的转录地，原文版本信息可循馆藏指南回查。
+
+  - id: case_b3a_yoruba_waters
+    title: 约鲁巴创世叙事中的水域与陆地
+    aliases: [Yoruba, Obatala, B3A]
+    node_type: case
+    genre: myth
+    credibility_tier: A
+    spatial: {precision: culture_region, location_name: 西非约鲁巴文化区, culture_region: 'Africa · Yoruba'}
+    standards: {berezkin_codes: [b3a]}
+    sources: [*b3a_source]
+    markdown: |
+      ## 条目摘要
+
+      目录在西非部分的约鲁巴记录指出，海水在陆地出现前已经存在。该条目引用 Belcher 2005 第 310–313 页和 Frobenius 1913 的不同版本，供复核同一母题的不同叙事安排。
+
+  - id: case_b3a_kojiki_waters
+    title: 《古事记》卷首的海水与岛屿生成
+    aliases: [Kojiki, B3A]
+    node_type: case
+    genre: myth
+    credibility_tier: A
+    spatial: {precision: culture_region, location_name: 日本, culture_region: 'Asia · Japan'}
+    standards: {berezkin_codes: [b3a]}
+    sources: [*b3a_source]
+    markdown: |
+      ## 条目摘要
+
+      目录在日本部分引用《古事记》第 3 章，归录由海水生成岛屿的叙事。该条同目录中的阿伊努资料分别对应各自出处。文本传承的地点与叙事空间需要分开标注。
+
+  - id: case_nichibun_kappa_0570064
+    title: 熊本河童传承 · 日文研 0570064
+    aliases: [河童, カッパ, 山にのぼる河童]
+    node_type: case
+    genre: fabulate
+    credibility_tier: A
+    spatial: {lat: 32.81, lng: 130.69, precision: province, location_name: '日本熊本县（县域参考点）', culture_region: 'Asia · Kyushu'}
+    temporal: {era_label: 地方传承, uncertainty_note: 资料条目所引刊本的发行时间为 1985 年，传说年代未定。}
+    sources:
+      - citation: 国际日本文化研究中心，怪異・妖怪伝承データベース，0570064，山にのぼる河童。
+        type: archival_catalogue
+        locator: 记录 0570064
+        url: https://www.nichibun.ac.jp/YoukaiCard/0570064.html
+      - citation: GeoNames. Kumamoto, Japan, place 1858421.
+        type: gazetteer
+        url: https://www.geonames.org/1858421/kumamoto.html
+    markdown: |
+      ## 档案线索
+
+      日文研将该条归于熊本县，引用《熊本県民俗事典》一类资料。记录描述当地如何以出生时辰解释河童在叙事中对某些人的态度。地图位置采用县域参照，便于与其他地区河童档案对读。
+
+  - id: case_duchas_tullaroan_fairy_forts
+    title: 爱尔兰图拉罗恩采录的仙丘传说
+    aliases: [Fairy Forts, Tullaroan, Remeen]
+    node_type: case
+    genre: fabulate
+    credibility_tier: A
+    spatial: {lat: 52.66292, lng: -7.43830, precision: city, location_name: '爱尔兰基尔肯尼郡图拉罗恩（学校登记地点参照）', culture_region: 'Europe · Ireland'}
+    temporal: {year_start: 1938, year_end: 1938, era_label: 学校采录, uncertainty_note: 馆藏故事元数据登记日期为 1938-02-16，叙事发生时间未定。}
+    standards: {ocm_codes: ['776']}
+    sources:
+      - citation: Folklore data by Dúchas © National Folklore Collection, UCD. Fairy Forts, Tullaroan (B.), Schools’ Collection. CC BY-NC 4.0.
+        type: primary_archive
+        locator: 4933196 / 4756313 / 4933261
+        url: https://www.duchas.ie/en/cbes/4933196/4756313/4933261
+      - citation: Irish Archaeological Excavations Database. Tullaroan, Kilkenny, 2006:1099.
+        type: gazetteer
+        url: https://excavations.ie/report/2006/Kilkenny/0015843/
+      - citation: Folklore data by Dúchas © National Folklore Collection, UCD. Tullaroan (B.) school metadata. CC BY-NC 4.0.
+        type: archival_catalogue
+        locator: 学校 4933196 / schoolLocation 1412365
+        url: https://www.duchas.ie/xml/cbes/4933196
+        local_path: .local/import-sources/duchas-school-4933196.xml
+        content_sha256: ac116b8dadd436a669bd8231e1a9f655aec0ce26b3e7ea7810f83827e7732db8
+      - citation: Folklore data by Dúchas © National Folklore Collection, UCD. Fairy Forts story metadata. CC BY-NC 4.0.
+        type: archival_catalogue
+        locator: 故事 4933261 / 日期、采录者与受访者
+        url: https://www.duchas.ie/xml/cbes/4933196/4756313/4933261
+        local_path: .local/import-sources/duchas-story-4933261.xml
+        content_sha256: 8df7cf238bf0d7c667ac5d930ab6c9503e9b6719c749bf8a36054f278ef0da3c
+      - citation: Folklore data by Dúchas © National Folklore Collection, UCD. Volume 0867, page 071. CC BY-NC 4.0.
+        type: primary_archive
+        locator: 馆藏页 4756313 / 印页 071 / 故事 4933261
+        url: https://www.duchas.ie/xml/cbes/4933196/4756313
+        local_path: .local/import-sources/duchas/page-4933196-4756313.xml
+        content_sha256: 89771036dabbf18ca4112bfd47b2c2cbd7955116e2f9bac33badcd3b6bbea4f3
+    markdown: |
+      ## 采录线索
+
+      Dúchas 学校采录馆藏以 Fairy Forts 登记该项，元数据记载日期为 1938 年 2 月 16 日，采录者为 John Walton，受访者为 Mr S. Walton。卷宗可循学校、页码和手稿图像追溯。地图坐标采用馆藏元数据中的学校登记地点参照，受访者登记的 Remeen 地址是另一地点。OCM 776 标引材料中的精灵观念及形象。
+
+      ## 馆藏第 071 页转录摘录
+
+      > There were severay forts or raths around here in olden times. The fairies were supposed to dwell in all those
+
+  - id: case_spr_borley_rectory
+    title: 博利牧师住宅传闻与 SPR 重审
+    aliases: [Borley Rectory, Borley]
+    node_type: case
+    genre: historical_archive
+    credibility_tier: C
+    spatial: {lat: 52.05516, lng: 0.69329, precision: city, location_name: '英国埃塞克斯郡博利（村落教堂参照）', culture_region: 'Europe · England'}
+    temporal: {year_start: 1930, year_end: 1956, era_label: 近现代调查史, uncertainty_note: 此范围从 Foyster 家庭居住阶段至调查报告刊登。}
+    sources:
+      - citation: Society for Psychical Research. Psi Encyclopedia, Borley Rectory.
+        type: scholarly_database
+        locator: SPR Investigation
+        url: https://psi-encyclopedia.spr.ac.uk/articles/borley-rectory/
+      - citation: "Dingwall, E. J., Goldney, K. M., & Hall, T. H. (1956). The Haunting of Borley Rectory. Proceedings of the Society for Psychical Research 51, 1–181."
+        type: peer_reviewed
+        locator: 报告书目见 SPR 条目
+      - citation: Historic England. Parish Church, Borley, listing 1169675. National Grid TL 84754 43065.
+        type: gazetteer
+        url: https://historicengland.org.uk/listing/the-list/list-entry/1169675
+    markdown: |
+      ## 材料与调查
+
+      SPR 的 1956 年报告重审了 Price 等人流传的住宅传闻，质疑部分记录的可靠性，并讨论误认、记忆变化与夸张报道等可能来源。个案保留调查过程和文献争议，教堂坐标供定位博利村。
+
+  - id: corpus_spr_census_hallucinations
+    title: SPR 十九世纪幻觉普查
+    aliases: [Report on the Census of Hallucinations, Henry Sidgwick]
+    node_type: myth_corpus
+    genre: academic_model
+    credibility_tier: A
+    temporal: {year_start: 1894, year_end: 1894, era_label: 十九世纪调查史, uncertainty_note: 年份为报告发表时间。}
+    sources:
+      - citation: Sidgwick, H., et al. (1894). Report on the Census of Hallucinations. Proceedings of the Society for Psychical Research 10.
+        type: scholarly_database
+        locator: 书目与项目背景
+        url: https://psi-encyclopedia.spr.ac.uk/articles/henry-sidgwick/
+    markdown: |
+      ## 调查档案
+
+      Sidgwick 参与领导这项以访谈和问卷收集自报体验的调查。卷宗将调查方案与各项假说分开记录，便于比较样本选择、调查时点和报告中不同解释的证据范围。
+
+  - id: corpus_chinese_tale_catalogues
+    title: 中国民间故事类型研究书目
+    aliases: [丁乃通, 刘守华, 金荣华, Nai-Tung Ting]
+    node_type: myth_corpus
+    genre: academic_model
+    credibility_tier: A
+    spatial: {precision: culture_region, location_name: 华语民间故事资料, culture_region: 'Asia · Chinese textual traditions'}
+    sources:
+      - citation: Nai-Tung Ting. (1978). A Type Index of Chinese Folktales in the Oral Tradition and Major Works of Non-Religious Classical Literature. FFC 223.
+        type: monograph
+        url: https://www.folklorefellows.fi/ffc-catalogue/
+      - citation: 刘守华主编，《中国民间故事类型研究》，华中师范大学出版社。
+        type: monograph
+        url: https://press.ccnu.edu.cn/info/1006/2176.htm
+      - citation: 金榮華，《中國民間故事集成類型索引》，臺灣國家圖書館出版參考工具書書目。
+        type: archival_catalogue
+        url: https://isbn.ncl.edu.tw/NEW_ISBNNet/C00_index.php?KeepThis=true&Pfile=2899&TB_iframe=true&height=650&width=900
+    markdown: |
+      ## 版本与标引
+
+      分别登记丁乃通、刘守华和金荣华的研究与索引，以便复核三者的收录范围和版本。新增故事型记录时，可在草稿中逐条填入所用版本和页码。地方索引与其他国际码表的对照需要有明确依据。
+
+  - id: corpus_chinese_three_collections
+    title: 中国民间文学三套集成 · 项目目录
+    aliases: [中国民间故事集成, 中国歌谣集成, 中国谚语集成]
+    node_type: myth_corpus
+    genre: historical_archive
+    credibility_tier: A
+    spatial: {precision: culture_region, location_name: 中国, culture_region: 'Asia · China'}
+    sources:
+      - citation: 中国非物质文化遗产网，《中国民间文学大系》出版工程全面启动。
+        type: archival_catalogue
+        url: https://www.ihchina.cn/Article/Index/detail?id=467
+      - citation: 中国非物质文化遗产网，《中国民间文学大系》总序。
+        type: archival_catalogue
+        locator: 三套集成编纂经过及省卷统计
+        url: https://www.ihchina.cn/project_details/20803/
+      - citation: 中国民间文艺家协会，中国口头文学遗产数据库建设资料。
+        type: archival_catalogue
+        locator: 1984 至 1990 年各地三套集成县卷本与乡镇卷本
+        url: https://www.cflas.com.cn/mx/MXDT/8a814da24e0b197b014e24ab54c91994.html
+    markdown: |
+      ## 工程导览
+
+      三套集成包括民间故事、歌谣和谚语。《中国民间文学大系》总序记载，30 个省级地区共编成 90 卷、102 册。中国民间文艺家协会还记录了县卷本和乡镇卷本的数字化来源。县域记录以实际取得的卷册、采录地点与页码逐条纳入。
+
+  - id: case_zibuyu_li_tongpan
+    title: 《子不语》卷一 · 李通判
+    aliases: [袁枚, 子不語, 李通判]
+    node_type: case
+    genre: fabulate
+    credibility_tier: A
+    spatial: {precision: province, location_name: 广西（原文所述籍地范围）, culture_region: 'Asia · South China'}
+    temporal: {era_label: 清代志怪文本, uncertainty_note: 此字段指文本所属时代，故事时间待考。}
+    sources:
+      - citation: 袁枚，《子不語》卷一，李通判。维基文库数字转录；底本与转录条款待核。
+        type: primary_archive
+        locator: 卷一首篇
+        url: https://zh.wikisource.org/wiki/%E5%AD%90%E4%B8%8D%E8%AA%9E/%E5%8D%B71#%E2%97%8B%E6%9D%8E%E9%80%9A%E5%88%A4
+    markdown: |
+      ## 文言材料
+
+      卷一开篇以广西李通判为叙事对象，书中人物围绕逝者返魂展开行动。原文给出的是广西这一范围。目前按志怪文本收录，便于将作品的叙述地点与史料中的行政地点分别核对。
+
+  - id: case_scp_cn_1971_transit
+    title: SCP-CN-1971 · 广州地铁题材网络虚构
+    aliases: [SCP-CN-1971, 体育西路站]
+    node_type: case
+    genre: creepypasta_ostension
+    credibility_tier: F
+    spatial: {precision: city, location_name: 广州市（作品设定）, culture_region: 'Asia · Chinese internet fiction'}
+    sources:
+      - citation: SCP基金会中文站，SCP-CN-1971，作品页。
+        type: web_page
+        url: https://scp-wiki-cn.wikidot.com/scp-cn-1971
+    markdown: |
+      ## 创作现象
+
+      作品借用广州地铁地名，以拟档案方式叙述异常现象。收录用于比较网络虚构如何借助日常城市设施构造怪谈，出处为作品原始发布页面。

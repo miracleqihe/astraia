@@ -1,0 +1,12 @@
+version: 1
+scope: 此清单记录先前已导入 Dúchas 待审批次的四条故事，用于补齐其跨页来源。
+license: https://creativecommons.org/licenses/by-nc/4.0/
+candidates:
+  - url: https://www.duchas.ie/en/cbes/4649707/4649162/4652756
+    search_context: 原批次 · 4652756
+  - url: https://www.duchas.ie/en/cbes/4701735/4697295/4708114
+    search_context: 原批次 · 4708114
+  - url: https://www.duchas.ie/en/cbes/4922135/4855392/4951669
+    search_context: 原批次 · 4951669
+  - url: https://www.duchas.ie/en/cbes/4922228/4862657/5021084
+    search_context: 原批次 · 5021084

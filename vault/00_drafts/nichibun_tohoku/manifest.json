@@ -1,0 +1,27 @@
+{
+  "batch": "nichibun_tohoku",
+  "review_state": "pending",
+  "source": {
+    "catalogue_search": "https://www.nichibun.ac.jp/cgi-bin/YoukaiDB3/ksearch.cgi?Area=%E5%8C%97%E6%B5%B7%E9%81%93%E3%83%BB%E6%9D%B1%E5%8C%97&Name=%E3%82%AB%E3%83%83%E3%83%91&Pref=",
+    "rights": "国际日本文化研究中心保留权利",
+    "snapshots": [
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\nichibun\\0640018.html",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\nichibun\\0640038_001.html",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\nichibun\\0640038_003.html",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\nichibun\\0690181.html",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\nichibun\\0690185.html",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\nichibun\\2181263_002.html",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\nichibun\\2260024.html",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\nichibun\\2360783.html",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\nichibun\\C0410487-000.html",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\nichibun\\C0411189-000.html"
+    ]
+  },
+  "counts": {
+    "records": 12,
+    "with_coordinates": 6,
+    "with_years": 10,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "batch": "regional_sources",
+  "review_state": "pending",
+  "source": {
+    "register": "D:\\新建文件夹\\astraia\\reference\\regional_records.yaml"
+  },
+  "counts": {
+    "records": 15,
+    "with_coordinates": 6,
+    "with_years": 3,
+    "fiction": 1,
+    "indexed": 8
+  }
+}

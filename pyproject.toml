@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "astraia-folklore-map"
+version = "0.1.0"
+description = "Local Markdown-to-graph compiler for the Astraia folklore atlas"
+requires-python = ">=3.11"
+dependencies = [
+    "beautifulsoup4==4.14.3",
+    "networkx==3.6.1",
+    "pydantic==2.12.5",
+    "pypdf==7.1.1",
+    "PyYAML==6.0.3",
+]
+
+[project.optional-dependencies]
+datasets = ["pyproj==3.7.2", "pypdfium2==5.15.2"]
+
+[tool.setuptools]
+packages = ["pipeline"]

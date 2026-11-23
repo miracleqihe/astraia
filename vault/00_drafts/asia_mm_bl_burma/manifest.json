@@ -1,0 +1,17 @@
+{
+  "batch": "asia_mm_bl_burma",
+  "review_state": "pending",
+  "source": {
+    "catalogue": "https://searcharchives.bl.uk/catalog/037-000091137",
+    "manifest_sha256": "0041b0a5e050b581f25f0c94f6ba9a473165d26ddf308575280bccf0bb57fa87",
+    "dsal_manifest_sha256": "7f2eab5ce8c02e8a61ed95001389e45a509e22c45b34c663f23d8bb0b2f78ddc",
+    "scope": "35 件唱片目录与编号或半号文字候选；非故事计数；未保存音频或转写，权利及社区要求逐件复核。"
+  },
+  "counts": {
+    "records": 36,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

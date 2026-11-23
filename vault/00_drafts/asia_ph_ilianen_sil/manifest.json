@@ -1,0 +1,17 @@
+{
+  "batch": "asia_ph_ilianen_sil",
+  "review_state": "pending",
+  "source": {
+    "catalogue": "https://philippines.sil.org/resources/audio_and_video/ilianen_manobo_oral_narrative_recordings",
+    "snapshot": "D:\\新建文件夹\\astraia\\.local\\import-sources\\philippines-ilianen-sil-2026-11-22\\catalogue.html",
+    "sha256": "ea1a8554c245e6b409db4579efb0f3ea0d5c2c7cdcba685cd4ae6cb8552d9613",
+    "scope": "两个口述录音样本的馆方目录；未复制音频或转写正文；再利用条件待核"
+  },
+  "counts": {
+    "records": 3,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

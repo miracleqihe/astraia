@@ -1,0 +1,19 @@
+{
+  "batch": "asia_chinese_heritage_2021",
+  "review_state": "pending",
+  "source": {
+    "url": "https://www.gov.cn/gbgl/92e7fad3d97742f1b1b2beb1fda9c049/files/8525ced0638e4480a1368790d9433924.pdf",
+    "pdf": "D:\\新建文件夹\\astraia\\.local\\import-sources\\asia-china-ich-2021-gov-gazette-2026-11-22.pdf",
+    "pdf_sha256": "0d19730eed29099ee4f33e1521715e1bf35d2ad376f8fbeaf846e5e6bcf018e6",
+    "index": "D:\\新建文件夹\\astraia\\.local\\import-sources\\asia-china-ich-2021-field-index-2026-11-22.json",
+    "index_sha256": "f3214d1c541bf73b500c6100fd9c5736590dcdde292c940f671abafa350f6b77",
+    "scope": "2021 年民间文学项目与扩展项目；PDF 字体映射及逐行原表须复核"
+  },
+  "counts": {
+    "records": 21,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

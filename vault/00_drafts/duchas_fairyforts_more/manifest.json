@@ -1,0 +1,33 @@
+{
+  "batch": "duchas_fairyforts_more",
+  "review_state": "pending",
+  "source": {
+    "collection": "https://www.duchas.ie/en/info/cbe-collections",
+    "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "snapshots": [
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\duchas\\story-4428188-4384865-4510696.xml",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\duchas\\story-4493695-4411763-4525553.xml",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\duchas\\story-4493726-4414382-4528489.xml",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\duchas\\story-4613674-4607321-4625965.xml",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\duchas\\story-4649691-4647677-4658606.xml",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\duchas\\story-4742166-4741291-4783583.xml",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\duchas\\story-4798668-4788780-5215546.xml",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\duchas\\story-4798776-4797862-5151930.xml",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\duchas\\story-4811591-4799956-4931711.xml",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\duchas\\story-4921755-4903753-5166490.xml",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\duchas\\story-5009064-4982733-5119786.xml",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\duchas\\story-5009298-5005618-5133402.xml",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\duchas\\story-5215784-5209729-5277745.xml",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\duchas\\story-5236102-5232074-5240382.xml"
+    ],
+    "selection_register": "D:\\新建文件夹\\astraia\\reference\\duchas_fairyfort_candidates.yaml",
+    "selection_sha256": "8fce2a5c10d98932a4b208035f2a0cf8c4f807b635f25898da919c2e5da7be85"
+  },
+  "counts": {
+    "records": 14,
+    "with_coordinates": 14,
+    "with_years": 14,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

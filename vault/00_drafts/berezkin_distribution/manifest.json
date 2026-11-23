@@ -1,0 +1,40 @@
+{
+  "batch": "berezkin_distribution",
+  "review_state": "pending",
+  "source": {
+    "study": "https://doi.org/10.1017/ehs.2022.15",
+    "supplement": "https://static.cambridge.org/content/id/urn:cambridge.org:id:article:S2513843X22000159/resource/name/S2513843X22000159sup003.zip",
+    "supplement_sha256": "8ac0c71be023452b6817cab9b3b5100c199daf2713f3b0dc54140d6f00f9c7bf",
+    "catalogue": "https://www.ruthenia.ru/folklore/berezkin/eng.html",
+    "motifs": 2459,
+    "regions": 65,
+    "distinct_motif_region_links": 27412,
+    "unknown_region_ids": {
+      "g16": [
+        2
+      ],
+      "i16": [
+        -41
+      ],
+      "m63": [
+        -50
+      ]
+    },
+    "duplicate_region_assignments": 4,
+    "standard_codes_unmatched": [
+      "k56b",
+      "l108"
+    ],
+    "shared_pending_cards": [
+      "index_berezkin_a37b",
+      "index_berezkin_b3a"
+    ]
+  },
+  "counts": {
+    "records": 2522,
+    "with_coordinates": 60,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 2455
+  }
+}

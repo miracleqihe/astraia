@@ -1,0 +1,20 @@
+{
+  "batch": "asia_cn_pangloss_na_context",
+  "review_state": "pending",
+  "source": {
+    "catalogue": "https://pangloss.cnrs.fr/corpus/Yongning_Na",
+    "catalogue_sha256": "85f6c91212d4ca5d7ae29bc1e3caa6a35d248911d0173811055f38409295dbaf",
+    "previous_selection_sha256": "1f88f1a229052fc6308be72cd2e6a051c0e5b038a70afb51a9c2d75bbb6dac5d",
+    "selection_sha256": "6285b44f64d1d688887e57fbc03510e4eb4c572a91f6bede92ed2790e95ee5cb",
+    "detail_manifest": "D:\\新建文件夹\\astraia\\.local\\import-sources\\pangloss-yongning-context-2026-11-23-v1\\manifest.json",
+    "manifest_sha256": "7d591ad65c66b9584798b0272701091d4f6e5b91fffe1349caa0a72fb2f6ae0d",
+    "scope": "目的性选取的仪式、口述背景与歌曲；未复制音视频及转写，不自动判为民间故事"
+  },
+  "counts": {
+    "records": 41,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

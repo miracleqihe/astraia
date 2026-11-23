@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.local/
+/web/public/data/graph_data.json
+/web/node_modules/
+/web/dist/
+/vault/.obsidian/
+/vault/.astraia.lock
+

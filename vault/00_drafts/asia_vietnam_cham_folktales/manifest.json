@@ -1,0 +1,17 @@
+{
+  "batch": "asia_vietnam_cham_folktales",
+  "review_state": "pending",
+  "source": {
+    "catalogue": "https://www.digitizingvietnam.com/en/our-collections/vietnamese-folk-literature/truyen-co-dan-gian-cham?muc=loi-gioi-thieu",
+    "manifest": "D:\\新建文件夹\\astraia\\.local\\import-sources\\vietnam-cham-folktales-v2\\manifest.json",
+    "manifest_sha256": "60c8a312776309f6f55b76791fe3049399a5c0a21ee023c16326b62083a48aaa",
+    "scope": "越南文选集索引；教育研究用途，禁止商业使用；未复制正文"
+  },
+  "counts": {
+    "records": 59,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

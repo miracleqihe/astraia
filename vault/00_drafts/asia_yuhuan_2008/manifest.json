@@ -1,0 +1,19 @@
+{
+  "batch": "asia_yuhuan_2008",
+  "review_state": "pending",
+  "source": {
+    "pdf": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web3203/site/attach/0/c01efe56afef4430947d9d12885257c3.pdf",
+    "snapshot": "D:\\新建文件夹\\astraia\\.local\\import-sources\\china-yuhuan\\yuhuan-oral-literature-2008.pdf",
+    "sha256": "a771284e485d28ce8987cce775af53794663e497eb109408f346d48aa8b4c5eb",
+    "index": "D:\\新建文件夹\\astraia\\reference\\yuhuan_2008_story_index.json",
+    "index_sha256": "012b61f3e5a47def2c2bdb5957819a6a8278e035a14748b62e11e14fd4b6232c",
+    "scope": "传说故事篇目录；正文扫描未转录，出版物再利用许可待核"
+  },
+  "counts": {
+    "records": 48,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

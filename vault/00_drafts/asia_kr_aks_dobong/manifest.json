@@ -1,0 +1,19 @@
+{
+  "batch": "asia_kr_aks_dobong",
+  "review_state": "pending",
+  "source": {
+    "catalogue": "https://www.data.go.kr/data/15070383/fileData.do",
+    "archive_sha256": "d600398e3da896acaa388d190efebc6fd8392c3cb2b51e293895d71bbf369d68",
+    "search_manifest_sha256": "00892974cb6e5624ff7542124a3f005e599e279d20e2b397e5022e8051ba3436",
+    "detail_manifest_sha256": "bbe02f8e76de8fd22383ac4188a5b6259cfdf8a8cce20b20e87fd3d8baddcb60",
+    "crosswalk_sha256": "698263e776654508ffdc75f85108d15d26ddd6a82e5b348c1848f8a5927d4f33",
+    "scope": "开放目录行及待核馆方来源候选；未复制转写、音视频或馆方网页原响应；许可与社区要求逐条核对"
+  },
+  "counts": {
+    "records": 173,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>韩国道峰区来源对照 · Astraia</title>
+  <link rel="stylesheet" href="./korea-inventory.css">
+  <link rel="stylesheet" href="./korea-crosswalk.css">
+</head>
+<body>
+  <header class="masthead"><a href="./index.html">ASTRAIA / 资料复核</a><span>来源对照 · KOREA</span></header>
+  <main>
+    <div class="heading"><div><p class="eyebrow">AKS / SEOUL · DOBONG / SOURCE COMPARISON</p><h1>韩国道峰区来源对照</h1></div><a class="download" id="download" href="./korea_aks_dobong_detail_review_2026-11-23.csv" download>下载详情对照清单 ↓</a></div>
+    <p class="description">对照馆方检索结果、单条详情字段与开放目录中的道峰区记录，保留题名、讲述者和地点原字段。候选仅供人工核对，不代表同一次演述或已经签核。<a href="./korea_aks_dobong_crosswalk_2026-11-23.csv" download>下载初版对照</a></p>
+    <p class="description">目录题名的规范化一致或相似度只是筛查线索；录音采录地、调查日期不是故事发生时空。<a href="./korea-inventory.html">返回韩国目录筛查 →</a> · <a href="https://kdp.aks.ac.kr/inde/search?itemId=14&pageIndex=1&pageUnit=20" target="_blank" rel="noopener noreferrer">馆方检索页 ↗</a></p>
+    <div class="controls">
+      <label>搜索题名、讲述者或馆方编号<input id="search" type="search" autocomplete="off" placeholder="输入韩文或编号"></label>
+      <label>筛查问题<select id="filter"><option value="all">全部对照行</option><option value="candidate">有来源候选</option><option value="unmatched">未找到候选</option><option value="similar">题名相似待核</option><option value="ambiguous">存在多个候选</option><option value="place">采录地点待核</option></select></label>
+    </div>
+    <div class="bar"><span id="status" role="status" aria-live="polite">正在检查字体与对照快照……</span><div><button id="previous" type="button" disabled>上一页</button><span id="page">—</span><button id="next" type="button" disabled>下一页</button></div></div>
+    <div class="table-wrap"><table class="crosswalk"><thead><tr><th>目录题名</th><th>馆方检索题名</th><th>讲述者</th><th>目录采录地</th><th>馆方详情采录地</th><th>调查日期</th><th>待核问题</th><th>单条候选</th></tr></thead><tbody id="rows"></tbody></table></div>
+    <p class="footnote">一条目录记录可能对应多个候选，因此对照行数可多于目录行数。未找到候选不代表馆方不存在该记录；浏览和下载不会记录人工签核。</p>
+  </main>
+  <script src="./korea-crosswalk.js" defer></script>
+</body>
+</html>

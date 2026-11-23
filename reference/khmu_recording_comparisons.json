@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "corpus_url": "https://pangloss.cnrs.fr/corpus/Khmu",
+  "catalogue_sha256": "392ee320fd8fce58fd67d4fa65eb085d2d90a0b23b0bf26c63feb2e2188065ee",
+  "scope": "按目录题名、署名及日期选出的待复核关系；不证明同一演述、母题类型、传播或真实事件。",
+  "groups": [
+    {
+      "id": "sin_xay_parts",
+      "label": "Sin Xay：目录中的两段候选",
+      "note": "题名含同一名称及结束标记，目录讲述者和录音月份相同；是否同次连续演述须回听。",
+      "members": [
+        {
+          "id": "0002048",
+          "title": "Histoire de Sin Xay",
+          "speakers": "Thao May (from Xieng Khouang)",
+          "recorded": "1968-11",
+          "doi": "https://doi.org/10.24397/pangloss-0002048",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-568a5728-114b-30d4-be2d-d24e37513219&corpus=Khmu"
+        },
+        {
+          "id": "0002049",
+          "title": "Histoire de Sin Xay (Fin)",
+          "speakers": "Thao May (from Xieng Khouang)",
+          "recorded": "1968-11",
+          "doi": "https://doi.org/10.24397/pangloss-0002049",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-c4a4a17c-e2c9-3f19-a6cf-7a60feec8c1d&corpus=Khmu"
+        }
+      ]
+    },
+    {
+      "id": "sithon_parts",
+      "label": "Sithon 与 Manola：目录中的三段候选",
+      "note": "题名含相同名称和续集标记，目录讲述者及录音月份相同；末段标为未完成，具体边界须回听。",
+      "members": [
+        {
+          "id": "0002050",
+          "title": "Histoire de Sithon et Manola",
+          "speakers": "Thao May (from Xieng Khouang)",
+          "recorded": "1968-11",
+          "doi": "https://doi.org/10.24397/pangloss-0002050",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-9273a013-de7c-3066-9a80-d0c31c178eba&corpus=Khmu"
+        },
+        {
+          "id": "0002051",
+          "title": "Histoire de Sithon et Manola (suite)",
+          "speakers": "Thao May (from Xieng Khouang)",
+          "recorded": "1968-11",
+          "doi": "https://doi.org/10.24397/pangloss-0002051",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-043b8dc5-2fc9-357f-b492-c6c4e6d3554b&corpus=Khmu"
+        },
+        {
+          "id": "0002052",
+          "title": "Histoire de Sithon et Manola (suite; inachevé)",
+          "speakers": "Thao May (from Xieng Khouang)",
+          "recorded": "1968-11",
+          "doi": "https://doi.org/10.24397/pangloss-0002052",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-b54b1400-9f25-3429-a302-567739fbc0cf&corpus=Khmu"
+        }
+      ]
+    },
+    {
+      "id": "record_19_parts",
+      "label": "第 19 号叙事：目录中的两段候选",
+      "note": "题名显示同一编号及分段；第二条还包含其他叙事，且列出另一名讲述者，具体边界须回听。",
+      "members": [
+        {
+          "id": "0002105",
+          "title": "Histoire khamoue 19, partie 1",
+          "speakers": "Ta' Séén",
+          "recorded": "1970-07-25",
+          "doi": "https://doi.org/10.24397/pangloss-0002105",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-51830db9-2885-3adc-aa60-2e4873ed704e&corpus=Khmu"
+        },
+        {
+          "id": "0002106",
+          "title": "Histoire khamoue 19, part 2 et autres récits",
+          "speakers": "Ta' Séén — Ta' Sèèn Phôm",
+          "recorded": "1970-07-25",
+          "doi": "https://doi.org/10.24397/pangloss-0002106",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-c05bfadd-501d-3186-991f-63e6a4185819&corpus=Khmu"
+        }
+      ]
+    },
+    {
+      "id": "record_25_parts",
+      "label": "第 25 号叙事：目录中的两段候选",
+      "note": "题名显示同一编号及分段；第二条还包含其他叙事，是否连续须回听。",
+      "members": [
+        {
+          "id": "0002118",
+          "title": "Histoire khamoue 25, partie 1",
+          "speakers": "Thao Sing",
+          "recorded": "1970-09-07",
+          "doi": "https://doi.org/10.24397/pangloss-0002118",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-94e8f5a8-c292-33d1-9653-c68d1329bd9b&corpus=Khmu"
+        },
+        {
+          "id": "0002119",
+          "title": "Histoire khamoue 25, partie 2 et autres récits",
+          "speakers": "Thao Sing",
+          "recorded": "1970-09-07",
+          "doi": "https://doi.org/10.24397/pangloss-0002119",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-acb7d452-7f17-346b-8d3a-c152b3b4a8c6&corpus=Khmu"
+        }
+      ]
+    },
+    {
+      "id": "chicken_cage_versions",
+      "label": "鸡笼氏族题名：完整版本候选",
+      "note": "同一目录讲述者、日期和相近题名；其中一条标为完整版本，是否来自同次演述须回听。",
+      "members": [
+        {
+          "id": "0002068",
+          "title": "Histoire khamoue du clan de la cage à poulets",
+          "speakers": "Ta' Pom",
+          "recorded": "1970-02-15",
+          "doi": "https://doi.org/10.24397/pangloss-0002068",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-19fdfca2-7ff9-3d8f-a324-8dda58c3a138&corpus=Khmu"
+        },
+        {
+          "id": "0002072",
+          "title": "Histoire khamoue du clan de la cage à poulets (version complète)",
+          "speakers": "Ta' Pom",
+          "recorded": "1970-02-15",
+          "doi": "https://doi.org/10.24397/pangloss-0002072",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-b1c80f5c-c9b8-37e6-b5ff-781ee6a8ab8d&corpus=Khmu"
+        }
+      ]
+    },
+    {
+      "id": "yuan_song_parts",
+      "label": "Khmu Yuan 歌唱：两段候选",
+      "note": "目录题名显示 1 和 2，日期相同但讲述者未知；是否连续及具体角色须回查。",
+      "members": [
+        {
+          "id": "0002140",
+          "title": "Chants des Khamous Yuan 1",
+          "speakers": "unknown",
+          "recorded": "1976-11",
+          "doi": "https://doi.org/10.24397/pangloss-0002140",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-4e18927b-2247-35d4-bc2d-d64c21d28647&corpus=Khmu"
+        },
+        {
+          "id": "0002141",
+          "title": "Chants des Khamous Yuan 2",
+          "speakers": "unknown",
+          "recorded": "1976-11",
+          "doi": "https://doi.org/10.24397/pangloss-0002141",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-90346b9c-bc13-34ae-b8e7-96c104c05388&corpus=Khmu"
+        }
+      ]
+    },
+    {
+      "id": "viang_song_parts",
+      "label": "Viang Pou Kha 与 Pak Bèng 歌唱：两段候选",
+      "note": "目录题名显示 1 和 2，日期及署名字段相同；是否连续须回听。",
+      "members": [
+        {
+          "id": "0002145",
+          "title": "Chants khamous, Viang Pou Kha and Pak Bèng 1",
+          "speakers": "Ay Nhouan — Ay Leuan — Ay man — Ay 'mèèng — Ay Ko",
+          "recorded": "1965-12-25",
+          "doi": "https://doi.org/10.24397/pangloss-0002145",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-d8b51ec6-7b1f-389d-96ec-c906e80ac10b&corpus=Khmu"
+        },
+        {
+          "id": "0002146",
+          "title": "Chants khamous, Viang Pou Kha and Pak Bèng 2",
+          "speakers": "Ay Nhouan — Ay Leuan — Ay man — Ay 'mèèng — Ay Ko",
+          "recorded": "1965-12-25",
+          "doi": "https://doi.org/10.24397/pangloss-0002146",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-bd54f00d-6d66-3af1-b7f3-8d11df1290c0&corpus=Khmu"
+        }
+      ]
+    },
+    {
+      "id": "flood_title",
+      "label": "洪水题名：跨录音对照候选",
+      "note": "目录题名均涉及洪水，不同讲述者及日期分别保留；不证明同一故事或历史洪水。",
+      "members": [
+        {
+          "id": "0002035",
+          "title": "L'histoire du Déluge",
+          "speakers": "Pho Bun Can",
+          "recorded": "1968-11-05",
+          "doi": "https://doi.org/10.24397/pangloss-0002035",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-3588262e-3a93-3e7c-8a19-1e19275fe1b9&corpus=Khmu"
+        },
+        {
+          "id": "0002053",
+          "title": "L'histoire du Déluge",
+          "speakers": "Kong Kham Mi (Kasak)",
+          "recorded": "1968-12",
+          "doi": "https://doi.org/10.24397/pangloss-0002053",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-435ebd28-7072-321e-a9dd-a12f5cad4f03&corpus=Khmu"
+        },
+        {
+          "id": "0002077",
+          "title": "Récit khamou du déluge",
+          "speakers": "Ma' Mouan",
+          "recorded": "1970-06-06",
+          "doi": "https://doi.org/10.24397/pangloss-0002077",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-ec4636af-8ab9-31b6-bb75-3d537bc3b107&corpus=Khmu"
+        }
+      ]
+    },
+    {
+      "id": "tiger_clan_title",
+      "label": "虎氏族题名：跨录音对照候选",
+      "note": "目录题名均涉及虎氏族，录音日期、角色和具体叙事须分别核对；不证明同源或传播。",
+      "members": [
+        {
+          "id": "0001998",
+          "title": "Histoire du Clan du Tigre",
+          "speakers": "Sèn Boun",
+          "recorded": "1965-06-01",
+          "doi": "https://doi.org/10.24397/pangloss-0001998",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-3e746621-439c-3cc0-98e3-eaabf97f1aa7&corpus=Khmu"
+        },
+        {
+          "id": "0002045",
+          "title": "Légende du Clan du Tigre",
+          "speakers": "Nay Thong Di (from Xieng Khouang)",
+          "recorded": "1968-11",
+          "doi": "https://doi.org/10.24397/pangloss-0002045",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-0ea3e232-88a3-3407-b9f6-c6adb69daf62&corpus=Khmu"
+        },
+        {
+          "id": "0002078",
+          "title": "Histoire khamoue du clan du tigre",
+          "speakers": "Ma' Mouan",
+          "recorded": "1970-06-06",
+          "doi": "https://doi.org/10.24397/pangloss-0002078",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-3226cdb9-afaa-3b6d-89fe-7c48c060e126&corpus=Khmu"
+        },
+        {
+          "id": "0002079",
+          "title": "Histoire khamoue du clan du tigre 2",
+          "speakers": "Ma' Mouan",
+          "recorded": "1970-06-06",
+          "doi": "https://doi.org/10.24397/pangloss-0002079",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-8424e522-9972-3715-add5-03e0a61697bc&corpus=Khmu"
+        },
+        {
+          "id": "0002133",
+          "title": "Histoire khamoue du clan du tigre 3",
+          "speakers": "Ta' Seu",
+          "recorded": "start=1971-08-14; end=1971-08-15",
+          "doi": "https://doi.org/10.24397/pangloss-0002133",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-f4cb2e8f-09b7-3b40-b9ee-d58e4bb12d4e&corpus=Khmu"
+        },
+        {
+          "id": "0002156",
+          "title": "Histoire khamoue du clan du tigre 4",
+          "speakers": "Boua Phan Heuang Praseuth",
+          "recorded": "1978-09-02",
+          "doi": "https://doi.org/10.24397/pangloss-0002156",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-c6226418-8848-38ae-b5a5-ee080d1a7687&corpus=Khmu"
+        },
+        {
+          "id": "0002157",
+          "title": "Histoire khamoue du clan du tigre 5",
+          "speakers": "Boua Phan Heuang Praseuth",
+          "recorded": "1978-09-02",
+          "doi": "https://doi.org/10.24397/pangloss-0002157",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-d86a70a3-3279-30ce-89c6-6f515e1798c8&corpus=Khmu"
+        },
+        {
+          "id": "0002158",
+          "title": "Histoire khamoue du clan du tigre 6",
+          "speakers": "Boua Phan Heuang Praseuth",
+          "recorded": "1978-09-02",
+          "doi": "https://doi.org/10.24397/pangloss-0002158",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-3ddc8233-3097-3672-9885-3c3f3bfd56bf&corpus=Khmu"
+        }
+      ]
+    },
+    {
+      "id": "civet_clan_title",
+      "label": "麝猫氏族题名：跨录音对照候选",
+      "note": "目录题名均涉及麝猫氏族；一条还涉及鸟氏族，录音边界和版本须分别核对。",
+      "members": [
+        {
+          "id": "0002001",
+          "title": "Histoire du Clan de la Civette",
+          "speakers": "Aay Phuy",
+          "recorded": "1965-06-01",
+          "doi": "https://doi.org/10.24397/pangloss-0002001",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-1fe3527f-8a08-3a60-97d3-44f5e0dd12dd&corpus=Khmu"
+        },
+        {
+          "id": "0002036",
+          "title": "Légende du Clan de la Civette",
+          "speakers": "Pho Bun Can",
+          "recorded": "1968-11-05",
+          "doi": "https://doi.org/10.24397/pangloss-0002036",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-21a59cab-dac6-3990-ab34-63e3349c6c0b&corpus=Khmu"
+        },
+        {
+          "id": "0002046",
+          "title": "Légende du Clan de la Civette",
+          "speakers": "Sao May (from Xieng Khouang)",
+          "recorded": "1968-11",
+          "doi": "https://doi.org/10.24397/pangloss-0002046",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-23dacfa8-cf82-389e-84e0-5f7ca9675aa1&corpus=Khmu"
+        },
+        {
+          "id": "0002075",
+          "title": "Histoire khamoue du clan de la civette",
+          "speakers": "Thao Mi",
+          "recorded": "1970-06-06",
+          "doi": "https://doi.org/10.24397/pangloss-0002075",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-81ec32ca-8122-3934-9340-4be91b95f27c&corpus=Khmu"
+        },
+        {
+          "id": "0002116",
+          "title": "Histoires khamoues des clan de la civette et de l'oiseau",
+          "speakers": "Ta' Séén",
+          "recorded": "1970-07-28",
+          "doi": "https://doi.org/10.24397/pangloss-0002116",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-003fd903-e089-37c7-bf5a-5772e4e63126&corpus=Khmu"
+        },
+        {
+          "id": "0002159",
+          "title": "Histoire khamoue du clan de la civette 2",
+          "speakers": "Boua Phan Heuang Praseuth",
+          "recorded": "1978-09-02",
+          "doi": "https://doi.org/10.24397/pangloss-0002159",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-12165135-4c9b-3d1b-8507-7bb69a38732a&corpus=Khmu"
+        }
+      ]
+    },
+    {
+      "id": "chuang_topic",
+      "label": "Chuang / Cheuang：题名主题对照候选",
+      "note": "目录题名涉及 Chuang 或 Cheuang，但包含叙事、访谈和问答等不同材料；不能视为同一故事或历史事件。",
+      "members": [
+        {
+          "id": "0001986",
+          "title": "Histoire de Chuang aux pouvoirs magnifiques",
+          "speakers": "unknown",
+          "recorded": "1965",
+          "doi": "https://doi.org/10.24397/pangloss-0001986",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-81b0152c-646d-30cf-a9fa-c85402f14687&corpus=Khmu"
+        },
+        {
+          "id": "0002058",
+          "title": "Histoire de Chuang",
+          "speakers": "Kham Mi",
+          "recorded": "1967-07-03",
+          "doi": "https://doi.org/10.24397/pangloss-0002058",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-b2bacfa9-b3eb-32f8-838b-8efe9439ba04&corpus=Khmu"
+        },
+        {
+          "id": "0002059",
+          "title": "Questionnaire sur l'Histoire de Chuang (fin)",
+          "speakers": "Kham Mi",
+          "recorded": "1967-07-03",
+          "doi": "https://doi.org/10.24397/pangloss-0002059",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-daf17b88-fb7b-3477-8568-cb1837c6c7f4&corpus=Khmu"
+        },
+        {
+          "id": "0002085",
+          "title": "Histoire khamoue des jarres du Chuang",
+          "speakers": "Ma' Mouan",
+          "recorded": "1970-06-07",
+          "doi": "https://doi.org/10.24397/pangloss-0002085",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-f97a42a4-c292-30b2-9d87-dcba9cc6eb38&corpus=Khmu"
+        },
+        {
+          "id": "0002103",
+          "title": "Entretien sur le mouvement messianique Chuang",
+          "speakers": "Cha Khoun",
+          "recorded": "1970-08",
+          "doi": "https://doi.org/10.24397/pangloss-0002103",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-9bbc0895-c4af-36ab-9a99-48f1ab4ab955&corpus=Khmu"
+        },
+        {
+          "id": "0002128",
+          "title": "Histoire khamoue des amulettes Chuang",
+          "speakers": "Cha Khoun",
+          "recorded": "1970-09-07",
+          "doi": "https://doi.org/10.24397/pangloss-0002128",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-2e7bea87-4625-32b7-965d-1b66b1781a5a&corpus=Khmu"
+        },
+        {
+          "id": "0002161",
+          "title": "Questionnaire sur les rites de Cheuang",
+          "speakers": "unknown",
+          "recorded": "1970",
+          "doi": "https://doi.org/10.24397/pangloss-0002161",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-13f1349f-58df-34c1-9a42-e8bc5b3d3af9&corpus=Khmu"
+        },
+        {
+          "id": "0002162",
+          "title": "Histoire khamoue de Cheuang",
+          "speakers": "A local erudite",
+          "recorded": "1970",
+          "doi": "https://doi.org/10.24397/pangloss-0002162",
+          "url": "https://pangloss.cnrs.fr/corpus/show?oai_primary=cocoon-7507cc66-05cc-3c73-b5c1-b9af23e2b716&corpus=Khmu"
+        }
+      ]
+    }
+  ]
+}

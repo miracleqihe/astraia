@@ -1,0 +1,10 @@
+table.crosswalk { min-width:1200px; }
+table.crosswalk th:nth-child(1),table.crosswalk th:nth-child(2) { width:15%; }
+table.crosswalk th:nth-child(3) { width:8%; }
+table.crosswalk th:nth-child(4),table.crosswalk th:nth-child(5) { width:13%; }
+table.crosswalk th:nth-child(6) { width:8%; }
+table.crosswalk th:nth-child(7) { width:22%; }
+table.crosswalk th:nth-child(8) { width:6%; }
+table.crosswalk td:nth-child(5) { color:inherit; font-size:inherit; }
+table.crosswalk td:nth-child(7) { color:var(--muted); font-size:13px; }
+@media (max-width:700px) { table.crosswalk { min-width:0; } }

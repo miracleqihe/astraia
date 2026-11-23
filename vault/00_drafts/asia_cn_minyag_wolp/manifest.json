@@ -1,0 +1,18 @@
+{
+  "batch": "asia_cn_minyag_wolp",
+  "review_state": "pending",
+  "source": {
+    "catalogue": "https://www.oralliterature.org/collections/bkrashis001.html",
+    "manifest": "D:\\新建文件夹\\astraia\\.local\\source-snapshots\\minyag-wolp-20261123\\manifest.json",
+    "manifest_sha256": "e3789aa47afc8df86a809477d2be86b1395295e4f11c8e9fbba0887114d0034f",
+    "scope": "本地个人或内部非商业目录筛查；未获取录音和转写，单条权利另核。",
+    "current_manifest_sha256": "a88500a99d48138ac97479e0cf523ec54cd2fa7812b8392f8baf191ae0a05d1a"
+  },
+  "counts": {
+    "records": 35,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "version": 1,
+  "selection_sha256": "32cfab596ef53c2a18ec18c9ce8cea38f216f7b3feaedf900739b9dcb82fb080",
+  "robots_status": "404",
+  "metadata_license": "CC0 1.0",
+  "records": [
+    {
+      "id": "0004341",
+      "path": "records/0004341.json",
+      "status": 200,
+      "sha256": "132da8af421e3a4a20a491996bd9fe412da81846b87ed14887fe4db5af1d5913"
+    },
+    {
+      "id": "0004342",
+      "path": "records/0004342.json",
+      "status": 200,
+      "sha256": "2980fcbd641e0cbff6e0ca99f0cd5d4440004bd7cffc31fbc2aba3e54221e1fd"
+    },
+    {
+      "id": "0004344",
+      "path": "records/0004344.json",
+      "status": 200,
+      "sha256": "f97ce10877116a34edbef7f3350e6d5d8df14a29f6c6d739765f3337f8698459"
+    },
+    {
+      "id": "0004348",
+      "path": "records/0004348.json",
+      "status": 200,
+      "sha256": "cd8e41d3e0b40112867b76fa0963eec54a510b5043febdfac5c2b7e2b122e912"
+    },
+    {
+      "id": "0004350",
+      "path": "records/0004350.json",
+      "status": 200,
+      "sha256": "b676421bb383d30c2cc2d6ed0e7ad45767a8efe12ee4a96e6be4192a0b4072e1"
+    },
+    {
+      "id": "0004440",
+      "path": "records/0004440.json",
+      "status": 200,
+      "sha256": "cf2ffdec750e77139c72bb2000494556847aa87d8d48f8b77ff35b758aba466e"
+    },
+    {
+      "id": "0004442",
+      "path": "records/0004442.json",
+      "status": 200,
+      "sha256": "cecde74cdb3af1a063e03e888e62ac15567a9c6269e8fd4e3cb8b0020ff0164a"
+    },
+    {
+      "id": "0004444",
+      "path": "records/0004444.json",
+      "status": 200,
+      "sha256": "54e0c003a8315296ad588b774a41fd454a43c4c11b017782b75e081120a86203"
+    },
+    {
+      "id": "0004446",
+      "path": "records/0004446.json",
+      "status": 200,
+      "sha256": "3e6de2fc96c9f5c49e728c6224c601542fee659d4626e19d2b7686cae3395c91"
+    },
+    {
+      "id": "0004447",
+      "path": "records/0004447.json",
+      "status": 200,
+      "sha256": "a9f236621eba10b7bccc4e6bad1b685c57e2d57745c0b96dcbea98e0dda54f15"
+    },
+    {
+      "id": "0004448",
+      "path": "records/0004448.json",
+      "status": 200,
+      "sha256": "032177ce3a51b45057bf83019c6504fefb6371ba01871ff61261310ab15f3314"
+    },
+    {
+      "id": "0004451",
+      "path": "records/0004451.json",
+      "status": 200,
+      "sha256": "9ba5abc2a33f52f6d7bfeab6bc931cda4e29bc7741c0d13cfefd9c6d0c01e0d2"
+    },
+    {
+      "id": "0004463",
+      "path": "records/0004463.json",
+      "status": 200,
+      "sha256": "3179870e83f9bd932acd445c1912f0d553a9da0aefb59074df42494198ad5516"
+    },
+    {
+      "id": "0004473",
+      "path": "records/0004473.json",
+      "status": 200,
+      "sha256": "e9be36a01aa70b3ec25dbe38976a261fe4bd04c336b173f1e0d1e973f516ce45"
+    },
+    {
+      "id": "0004477",
+      "path": "records/0004477.json",
+      "status": 200,
+      "sha256": "e3507f78a0c0efd241bbd5dec648a1dc2d146ee6035a4af166c41576ace8bef0"
+    },
+    {
+      "id": "0004529",
+      "path": "records/0004529.json",
+      "status": 200,
+      "sha256": "fc3ec3ff1688312079a978442c4cd6b62f48ece5193c8cd73106f753d20f748d"
+    },
+    {
+      "id": "0004530",
+      "path": "records/0004530.json",
+      "status": 200,
+      "sha256": "01372a74b43fabc5f19f6dde5064db07b24bc4cc5a58999114778f5849dcbd0e"
+    },
+    {
+      "id": "0004531",
+      "path": "records/0004531.json",
+      "status": 200,
+      "sha256": "d804970f3261ee408f23da517dab2158c3f6612fe08fb4ffc99077843f3ca7c4"
+    },
+    {
+      "id": "0004532",
+      "path": "records/0004532.json",
+      "status": 200,
+      "sha256": "383f68da6a03f6f7c62f9423ddca4d833034c9ce03da49fbf88b60fc0e99cc2c"
+    },
+    {
+      "id": "0004533",
+      "path": "records/0004533.json",
+      "status": 200,
+      "sha256": "55d54f58d6ba22f69b05efd1a403a9ef82998d61c48827ee16b02406f16f4bd8"
+    },
+    {
+      "id": "0004534",
+      "path": "records/0004534.json",
+      "status": 200,
+      "sha256": "9ae6dbfca6f90a1a03651fd940d3e9b944e6a9a82de3958a33cf50dc55203466"
+    },
+    {
+      "id": "0004536",
+      "path": "records/0004536.json",
+      "status": 200,
+      "sha256": "bd442152d45ed425f6d7bc9c03f6cf5f89566c9da4e591909ca6bd6ac4064bb3"
+    },
+    {
+      "id": "0004537",
+      "path": "records/0004537.json",
+      "status": 200,
+      "sha256": "e10dc92335159b185ce4be0860f228042bcd86af9de834a6b43728cd92a7e540"
+    },
+    {
+      "id": "0004538",
+      "path": "records/0004538.json",
+      "status": 200,
+      "sha256": "11b5cfdf1ead694e093406b5a2866680cdeaa18172f01d0210ebcb2d95454304"
+    },
+    {
+      "id": "0004539",
+      "path": "records/0004539.json",
+      "status": 200,
+      "sha256": "69703682a2580529eb11c5a5a0667861b1d80722ba58d23ff917298d4169a39e"
+    },
+    {
+      "id": "0004540",
+      "path": "records/0004540.json",
+      "status": 200,
+      "sha256": "e8abd93c5c51d3da6dcace80891737263bb293114d8798ca448001c17fa4a877"
+    },
+    {
+      "id": "0004542",
+      "path": "records/0004542.json",
+      "status": 200,
+      "sha256": "9e613936a8f039b3e5cf926ce89541235e60a463d3288b94c1b3c088bdaf8a5f"
+    },
+    {
+      "id": "0004543",
+      "path": "records/0004543.json",
+      "status": 200,
+      "sha256": "8c56ea4d9f74e95639398d6e3879f8eba7a0b05e94e0796f356c40ec32391e13"
+    },
+    {
+      "id": "0004545",
+      "path": "records/0004545.json",
+      "status": 200,
+      "sha256": "1dd2428024b6de10444c92fb87da0b360c75aae6c03d3a5c055ee87a847b600d"
+    },
+    {
+      "id": "0004547",
+      "path": "records/0004547.json",
+      "status": 200,
+      "sha256": "32a49e2de8a9b5db420f3fc328da2a42ea5209a328abbdde156a56fd92796adf"
+    },
+    {
+      "id": "0004549",
+      "path": "records/0004549.json",
+      "status": 200,
+      "sha256": "394c0c384adc48cc2d4aba6ee86c9ff740bad864500c62d324c315e6bb2b9d2d"
+    },
+    {
+      "id": "0004555",
+      "path": "records/0004555.json",
+      "status": 200,
+      "sha256": "1235c2d0541895ba7e822e18a925bdf97dd66bd53ebe89b0bbe1c2e8c0d20e0d"
+    },
+    {
+      "id": "0004557",
+      "path": "records/0004557.json",
+      "status": 200,
+      "sha256": "92bdbc17c35d3347302465a7768e71eb7270192698579942c7a49830d9bb1615"
+    },
+    {
+      "id": "0004566",
+      "path": "records/0004566.json",
+      "status": 200,
+      "sha256": "6977d9cf27844d56f29bc39039d7d0ebaacd9e170de09b28a877826ac63f10cd"
+    },
+    {
+      "id": "0004571",
+      "path": "records/0004571.json",
+      "status": 200,
+      "sha256": "93649fc5f17c833111c88d2ca29a06283876c4172e9afadaece19c9d02240ee3"
+    },
+    {
+      "id": "0004573",
+      "path": "records/0004573.json",
+      "status": 200,
+      "sha256": "eb19af386e9aac45f30aebde71436615e353076070cce861787cda854beedba8"
+    },
+    {
+      "id": "0004574",
+      "path": "records/0004574.json",
+      "status": 200,
+      "sha256": "cffb93c5c96d2c4f00944b3bd44db6b5ee1ed0ebc92ca579080db9ec32d981c4"
+    },
+    {
+      "id": "0004582",
+      "path": "records/0004582.json",
+      "status": 200,
+      "sha256": "a8cd8ea5ebb6c8504f0a7dd748dce0a675a17b30faf17b7b9178197caa2238a6"
+    },
+    {
+      "id": "0004588",
+      "path": "records/0004588.json",
+      "status": 200,
+      "sha256": "840cb52b233fe19d8b2d95b360d580b3933294399c30fb5c875cfeb2c5837c7f"
+    },
+    {
+      "id": "0004589",
+      "path": "records/0004589.json",
+      "status": 200,
+      "sha256": "ec2fca26a141212667afaaaa83c7a9f8bb3173509d0510c4813b2ccf204d5f59"
+    },
+    {
+      "id": "0004616",
+      "path": "records/0004616.json",
+      "status": 200,
+      "sha256": "8969a6195c288ba85b60b2ba472d75906bf70078c88e7dbb971dc5bb329915a5"
+    },
+    {
+      "id": "0004632",
+      "path": "records/0004632.json",
+      "status": 200,
+      "sha256": "74b960d2312d3ec066edf378f8c18159fbce11c96f1b57b0b7f2fadca3d6cd0f"
+    },
+    {
+      "id": "0004660",
+      "path": "records/0004660.json",
+      "status": 200,
+      "sha256": "0b2a3d7014e46d550ef20fe8b8530610205468e87db2209179e8eb7c2ace4737"
+    },
+    {
+      "id": "0009179",
+      "path": "records/0009179.json",
+      "status": 200,
+      "sha256": "2892353f0eadc30d50bdbbd46e0fa4298bbac5ff5b3bc21dd0ac58015179837f"
+    },
+    {
+      "id": "0009216",
+      "path": "records/0009216.json",
+      "status": 200,
+      "sha256": "6582073551be8ed7c99e2366734a052caf1ed506cbbb026c535682efc47994f4"
+    }
+  ],
+  "scope": "仅保存 DataCite 公共 DOI 注册元数据的原始响应；资源与附件权利另核。"
+}

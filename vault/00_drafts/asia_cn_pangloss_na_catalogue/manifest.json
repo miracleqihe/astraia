@@ -1,0 +1,19 @@
+{
+  "batch": "asia_cn_pangloss_na_catalogue",
+  "review_state": "pending",
+  "source": {
+    "catalogue": "https://pangloss.cnrs.fr/corpus/Yongning_Na",
+    "catalogue_sha256": "85f6c91212d4ca5d7ae29bc1e3caa6a35d248911d0173811055f38409295dbaf",
+    "first_selection_sha256": "1f88f1a229052fc6308be72cd2e6a051c0e5b038a70afb51a9c2d75bbb6dac5d",
+    "context_selection_sha256": "6285b44f64d1d688887e57fbc03510e4eb4c572a91f6bede92ed2790e95ee5cb",
+    "selection_sha256": "5387e2aaf01d8cce3df0bcad01a48e6cd59b9d26dba9b2d2525fb590bc9cef78",
+    "scope": "既有目录按题名选取的待核候选；未获取单条详情、音视频或转写；不自动分类"
+  },
+  "counts": {
+    "records": 31,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

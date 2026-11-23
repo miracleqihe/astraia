@@ -1,0 +1,19 @@
+{
+  "batch": "asia_cn_pangloss_na",
+  "review_state": "pending",
+  "source": {
+    "catalogue": "https://pangloss.cnrs.fr/corpus/Yongning_Na",
+    "catalogue_sha256": "85f6c91212d4ca5d7ae29bc1e3caa6a35d248911d0173811055f38409295dbaf",
+    "selection_sha256": "1f88f1a229052fc6308be72cd2e6a051c0e5b038a70afb51a9c2d75bbb6dac5d",
+    "detail_manifest": "D:\\新建文件夹\\astraia\\.local\\import-sources\\pangloss-yongning-na-2026-11-22\\details\\manifest.json",
+    "manifest_sha256": "63f9c7cccfcc33dcff8325100318aab7df2d87a5708490da5678abb8ea39da51",
+    "scope": "按题名目的性选取口述录音元数据；未复制音频或转写；许可证和社区要求逐条复核"
+  },
+  "counts": {
+    "records": 48,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

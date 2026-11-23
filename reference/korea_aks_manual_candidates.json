@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "archive_sha256": "d600398e3da896acaa388d190efebc6fd8392c3cb2b51e293895d71bbf369d68",
+  "member_sha256": "eb142aa4ecba414d1c3a1817fd9b8c369832546f6b3423876268c7a1e1aceede",
+  "candidates": [
+    {
+      "row": 2,
+      "title": "16대 조상의 공덕으로 부통령이 된 김성수(金性洙)",
+      "speaker": "박종철",
+      "place": "충청북도-영동군-영동군 영동",
+      "source_url": "https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.1_13",
+      "note": "题名、讲述者和地点可对应；详情题名使用兼容汉字 金。CSV 的 tsu_0721 不能据此转换为平台编号。"
+    }
+  ]
+}

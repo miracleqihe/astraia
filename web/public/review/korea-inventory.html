@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>韩国口碑目录筛查 · Astraia</title>
+  <link rel="stylesheet" href="./korea-inventory.css">
+</head>
+<body>
+  <header class="masthead"><a href="./index.html">ASTRAIA / 资料复核</a><span>目录筛查 · KOREA</span></header>
+  <main>
+    <div class="heading"><div><p class="eyebrow">ACADEMY OF KOREAN STUDIES / FILE LABEL 20201020</p><h1>韩国口碑目录筛查</h1></div><a class="download" href="./korea_aks_oral_review_inventory.csv" download>下载完整清单 ↓</a></div>
+    <p class="description">本清单保留馆方目录原字段与待核提示，尚未生成图谱卡片。录音、转写与社区使用条件须另查；目录行数不等于独立故事数。</p>
+    <p class="description">坐标和标准码均未赋值。人工候选链接仅供比对，不能把短编号直接转换为单条出处。<a href="https://www.data.go.kr/data/15070383/fileData.do" target="_blank" rel="noopener noreferrer">查看馆方数据目录 ↗</a> · <a href="./korea-crosswalk.html">浏览道峰区来源候选 →</a></p>
+    <div class="controls">
+      <label>搜索题名、讲述者或地点<input id="search" type="search" autocomplete="off" placeholder="输入韩文或目录内容"></label>
+      <label>筛查问题<select id="filter"><option value="all">全部目录行</option><option value="duplicates">字段完全相同</option><option value="speaker">缺少讲述者</option><option value="text">文本字段为空</option><option value="candidate">有待核的单条候选</option><option value="unlinked">单条页面未核实</option></select></label>
+    </div>
+    <div class="bar"><span id="status" role="status" aria-live="polite">正在检查字体与目录快照……</span><div><button id="previous" type="button" disabled>上一页</button><span id="page">—</span><button id="next" type="button" disabled>下一页</button></div></div>
+    <div class="table-wrap"><table><thead><tr><th>目录题名</th><th>讲述者</th><th>采录地原字段</th><th>馆方类别</th><th>待核问题</th><th>单条候选</th></tr></thead><tbody id="rows"></tbody></table></div>
+    <p class="footnote">字段完全相同的行全部保留；采录地不自动作为叙事发生地。浏览与下载清单不会记录人工签核。</p>
+  </main>
+  <script src="./korea-inventory.js" defer></script>
+</body>
+</html>

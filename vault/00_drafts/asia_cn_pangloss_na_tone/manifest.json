@@ -1,0 +1,18 @@
+{
+  "batch": "asia_cn_pangloss_na_tone",
+  "review_state": "pending",
+  "source": {
+    "book_doi": "10.5281/zenodo.15275071",
+    "book_sha256": "824730384cb88091754c3918601414dd40c8b08b2c6d504dc4f8e15241a5da77",
+    "crosswalk_sha256": "40f17c4f59fd30fadbd455b12a31aff52a506daac88d69b026660b667d6204ef",
+    "selection_sha256": "ba77b0d7763ea5fc6dfc0b07c4f51dd5d37a63ab3e09272ce3f2a1ff5dc6daa4",
+    "scope": "专著目录中的此前未选背景录音；未取得单条详情、音频或转写，人工复核前不入图。"
+  },
+  "counts": {
+    "records": 3,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

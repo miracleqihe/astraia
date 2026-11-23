@@ -1,0 +1,17 @@
+{
+  "batch": "asia_tw_sinica_oral",
+  "review_state": "pending",
+  "source": {
+    "catalogue": "https://aya.ioe.sinica.edu.tw/",
+    "manifest": "D:\\新建文件夹\\astraia\\.local\\import-sources\\sinica-oral\\manifest.json",
+    "manifest_sha256": "f8a003757e680ee755fe6df6ea580948abd740b5b7ef597d9e1ddd9b85aea9b0",
+    "scope": "本地研究目录；未保存正文和录音；未经同意不得摘取内容出版"
+  },
+  "counts": {
+    "records": 566,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

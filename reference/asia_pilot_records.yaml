@@ -1,0 +1,442 @@
+version: 1
+cards:
+- id: corpus_asia_liaozhai_v1
+  title: 《聊斋志异》卷一 · 在线转录
+  aliases: []
+  node_type: myth_corpus
+  genre: unclassified
+  credibility_tier: B
+  spatial:
+    precision: culture_region
+    location_name: 中国（文学作品，具体采录地点未定）
+    culture_region: Asia
+  sources:
+  - citation: 蒲松龄，《聊斋志异》卷一，维基文库转录；底本与校注待核。
+    type: historical_text_transcription
+    url: https://zh.wikisource.org/w/index.php?title=%E8%81%8A%E9%BD%8B%E5%BF%97%E7%95%B0/%E7%AC%AC01%E5%8D%B7&oldid=7908703
+    locator: 卷一
+    local_path: .local/import-sources/asia-pilot/china_liaozhai_v1.html
+    content_sha256: 9a068477c463d0623b98d7d08309693d083a281a86d3b3357f5ac5324c6b04fe
+  markdown: '## 来源与复核
+
+
+    记录现有在线转录版本及卷次。文本中含异文与评注；底本、卷次体系及各篇采录来源仍需核对。文学叙事不能直接当作实际事件。
+
+
+    转录页面署名与许可应依来源页说明，原作和数字转录版本的权利需分别核对。
+
+    '
+- id: corpus_asia_taiwan_tongshi
+  title: 《台湾通史》卷二十二 · 宗教记述
+  aliases: []
+  node_type: myth_corpus
+  genre: unclassified
+  credibility_tier: B
+  spatial:
+    precision: culture_region
+    location_name: 中国台湾（文献讨论区域）
+    culture_region: Asia
+  sources:
+  - citation: 连横，《台湾通史》卷二十二，维基文库转录。
+    type: historical_text_transcription
+    url: https://zh.wikisource.org/w/index.php?title=%E8%87%BA%E7%81%A3%E9%80%9A%E5%8F%B2/%E5%8D%B722&oldid=2307075#道教
+    locator: 卷二十二 / 道教
+    local_path: .local/import-sources/asia-pilot/taiwan_tongshi_v22.html
+    content_sha256: fb547c70bc4bd4f218f3eac067ea510925ab999d1e9cfbcd5aaec0df80945b8d
+  markdown: '## 来源与复核
+
+
+    该书作者的分类和价值判断具有其时代语境，不能直接概括所有社区的实践。卷中讨论地域不等于具体采录地点。
+
+
+    转录页面署名与许可应依来源页说明，原作和数字转录版本的权利需分别核对。
+
+    '
+- id: corpus_asia_korean_tales_1913
+  title: 朝鲜半岛叙事 · Gale 英译本
+  aliases: []
+  node_type: myth_corpus
+  genre: unclassified
+  credibility_tier: B
+  spatial:
+    precision: culture_region
+    location_name: 朝鲜半岛（译本所涉文化区域）
+    culture_region: Asia
+  sources:
+  - citation: 'Im Bang；James S. Gale 译，Korean Folk Tales: Imps, Ghosts and Fairies，1913，第十八篇。'
+    type: historical_text_transcription
+    url: https://en.wikisource.org/w/index.php?title=Korean_Folk_Tales:_Imps,_Ghosts_and_Fairies/Chapter_18&oldid=15011711
+    locator: Chapter XVIII / The Grateful Ghost
+    local_path: .local/import-sources/asia-pilot/korea_grateful_ghost.html
+    content_sha256: 63c851c6c83ea18e45599017f547eb7ab162787975648bfd681de11f519cfbe1
+  markdown: '## 来源与复核
+
+
+    1913 年英文译本，署 Im Bang；叙事、译写、出版与采录时间彼此不同。需与朝鲜语或汉文源本核对。
+
+
+    转录页面署名与许可应依来源页说明，原作和数字转录版本的权利需分别核对。
+
+    '
+- id: corpus_asia_jade_philippines
+  title: 菲律宾叙事 · The Jade Story Book 英文改写本
+  aliases: []
+  node_type: myth_corpus
+  genre: unclassified
+  credibility_tier: B
+  spatial:
+    precision: culture_region
+    location_name: 菲律宾（所引文献范围）
+    culture_region: Asia
+  sources:
+  - citation: Penrhyn W. Coussens, The Jade Story Book, 1922, Chapter 28, “Lumawig on Earth”.
+    type: historical_text_transcription
+    url: https://en.wikisource.org/w/index.php?title=The_Jade_Story_Book/Chapter_28&oldid=12118440
+    locator: Chapter 28 / Lumawig on Earth
+    local_path: .local/import-sources/asia-pilot/philippines_lumawig.html
+    content_sha256: d45c16cc550bfd4d11ff5249110b4123f8ab259b6aa94a30a7b3a9ade03ab429
+  - citation: Penrhyn W. Coussens, The Jade Story Book, 1922, Preface；说明所收菲律宾故事使用 Mabel Cook Cole 编集材料。
+    type: historical_text_transcription
+    url: https://en.wikisource.org/w/index.php?title=The_Jade_Story_Book/Preface&oldid=12110704
+    locator: Preface / 菲律宾材料来源
+    local_path: .local/import-sources/asia-pilot/philippines_preface.html
+    content_sha256: abe51e3a53b1551ccfe4f7decd71bae5c2d141fd9cf3d466e0db3d1a0c2c94bb
+  markdown: '## 来源与复核
+
+
+    1922 年面向读者的英文汇编。前言说明所收菲律宾故事使用 Mabel Cook Cole 编集材料，不能视为未经改写的一手采录；具体族群及前代版本需逐项回查。
+
+
+    转录页面署名与许可应依来源页说明，原作和数字转录版本的权利需分别核对。
+
+    '
+- id: corpus_asia_straits_journal
+  title: 马来半岛 · 海峡皇家亚洲学会期刊记录
+  aliases: []
+  node_type: myth_corpus
+  genre: unclassified
+  credibility_tier: B
+  spatial:
+    precision: culture_region
+    location_name: 马来半岛（历史期刊记述范围）
+    culture_region: Asia
+  sources:
+  - citation: R. O. Winstedt, “A Rice Ceremony”, Journal of the Straits Branch of the Royal Asiatic Society, vol.
+      77.
+    type: historical_text_transcription
+    url: https://en.wikisource.org/w/index.php?title=Journal_of_the_Straits_Branch_of_the_Royal_Asiatic_Society/Volume_77/A_Rice_Ceremony&oldid=16354307
+    locator: A Rice Ceremony / Johol 记述
+    local_path: .local/import-sources/asia-pilot/malaya_rice_ceremony.html
+    content_sha256: f738f3c9492ce4f41ae6962da637e47c1f39ac07f111e43efc49860ec74b666d
+  - citation: “The Camphor Tree and Camphor Language of Johore”, Journal of the Straits Branch of the Royal Asiatic
+      Society, vol. 26.
+    type: historical_text_transcription
+    url: https://en.wikisource.org/w/index.php?title=Journal_of_the_Straits_Branch_of_the_Royal_Asiatic_Society/Volume_26/The_Camphor_tree_and_Camphor_language_of_Johore&oldid=13501912
+    locator: The Camphor Language of Johore / bisan
+    local_path: .local/import-sources/asia-pilot/malaya_camphor.html
+    content_sha256: a79aacb730221a9044fadbf852e938f24a5c9d700bd9ec614e6f801858fe3a2f
+  markdown: '## 来源与复核
+
+
+    两篇英文历史期刊材料的作者、语境和时代用语需要单独核验；不能据此推断今天所有社群的信仰。
+
+
+    转录页面署名与许可应依来源页说明，原作和数字转录版本的权利需分别核对。
+
+    '
+- id: case_asia_liaozhai_kaochenghuang
+  title: 《聊斋志异》· 考城隍
+  aliases: []
+  node_type: case
+  genre: unclassified
+  credibility_tier: B
+  spatial:
+    precision: culture_region
+    location_name: 中国（文学叙事，采录地点待核）
+    culture_region: Asia
+  sources:
+  - citation: 蒲松龄，《聊斋志异》卷一，维基文库转录；底本与校注待核。
+    type: historical_text_transcription
+    url: https://zh.wikisource.org/w/index.php?title=%E8%81%8A%E9%BD%8B%E5%BF%97%E7%95%B0/%E7%AC%AC01%E5%8D%B7&oldid=7908703#考城隍
+    locator: 卷一 / 考城隍
+    local_path: .local/import-sources/asia-pilot/china_liaozhai_v1.html
+    content_sha256: 9a068477c463d0623b98d7d08309693d083a281a86d3b3357f5ac5324c6b04fe
+  relations:
+  - type: PART_OF_MACRO_TREND
+    target: corpus_asia_liaozhai_v1
+    note: 该文本属于所标明的文献资料组；不表示共同采录地点或传播关系。
+  markdown: '## 原文摘录
+
+
+    > 有心為善，雖善不賞
+
+
+    ## 来源与复核
+
+
+    卷一故事。原文含校注，不能由情节推断真实案件或坐标。
+
+
+    转录页面署名与许可应依来源页说明，原作和数字转录版本的权利需分别核对。
+
+    '
+- id: case_asia_liaozhai_qingfeng
+  title: 《聊斋志异》· 青凤
+  aliases: []
+  node_type: case
+  genre: unclassified
+  credibility_tier: B
+  spatial:
+    precision: culture_region
+    location_name: 中国·太原（故事文本地名，非采录点）
+    culture_region: Asia
+  sources:
+  - citation: 蒲松龄，《聊斋志异》卷一，维基文库转录；底本与校注待核。
+    type: historical_text_transcription
+    url: https://zh.wikisource.org/w/index.php?title=%E8%81%8A%E9%BD%8B%E5%BF%97%E7%95%B0/%E7%AC%AC01%E5%8D%B7&oldid=7908703#青鳳
+    locator: 卷一 / 青鳳
+    local_path: .local/import-sources/asia-pilot/china_liaozhai_v1.html
+    content_sha256: 9a068477c463d0623b98d7d08309693d083a281a86d3b3357f5ac5324c6b04fe
+  relations:
+  - type: PART_OF_MACRO_TREND
+    target: corpus_asia_liaozhai_v1
+    note: 该文本属于所标明的文献资料组；不表示共同采录地点或传播关系。
+  markdown: '## 原文摘录
+
+
+    > 太原耿氏，故大家
+
+
+    ## 来源与复核
+
+
+    卷一故事开篇提及太原；此处只记录叙事地名，未认定采录地点。
+
+
+    转录页面署名与许可应依来源页说明，原作和数字转录版本的权利需分别核对。
+
+    '
+- id: case_asia_liaozhai_huapi
+  title: 《聊斋志异》· 画皮
+  aliases: []
+  node_type: case
+  genre: unclassified
+  credibility_tier: B
+  spatial:
+    precision: culture_region
+    location_name: 中国·太原（故事文本地名，非采录点）
+    culture_region: Asia
+  sources:
+  - citation: 蒲松龄，《聊斋志异》卷一，维基文库转录；底本与校注待核。
+    type: historical_text_transcription
+    url: https://zh.wikisource.org/w/index.php?title=%E8%81%8A%E9%BD%8B%E5%BF%97%E7%95%B0/%E7%AC%AC01%E5%8D%B7&oldid=7908703#畫皮
+    locator: 卷一 / 畫皮
+    local_path: .local/import-sources/asia-pilot/china_liaozhai_v1.html
+    content_sha256: 9a068477c463d0623b98d7d08309693d083a281a86d3b3357f5ac5324c6b04fe
+  relations:
+  - type: PART_OF_MACRO_TREND
+    target: corpus_asia_liaozhai_v1
+    note: 该文本属于所标明的文献资料组；不表示共同采录地点或传播关系。
+  markdown: '## 原文摘录
+
+
+    > 太原王生早行
+
+
+    ## 来源与复核
+
+
+    卷一故事开篇提及太原。转录保留异文和评点，需核对所依据的刊本与原页。
+
+
+    转录页面署名与许可应依来源页说明，原作和数字转录版本的权利需分别核对。
+
+    '
+- id: case_asia_taiwan_tongshi_wuxi
+  title: 《台湾通史》· 巫觋记述
+  aliases: []
+  node_type: case
+  genre: unclassified
+  credibility_tier: B
+  spatial:
+    precision: culture_region
+    location_name: 中国台湾（文献讨论区域，具体地点待核）
+    culture_region: Asia
+  sources:
+  - citation: 连横，《台湾通史》卷二十二，维基文库转录。
+    type: historical_text_transcription
+    url: https://zh.wikisource.org/w/index.php?title=%E8%87%BA%E7%81%A3%E9%80%9A%E5%8F%B2/%E5%8D%B722&oldid=2307075#道教
+    locator: 卷二十二 / 道教 / 道教
+    local_path: .local/import-sources/asia-pilot/taiwan_tongshi_v22.html
+    content_sha256: fb547c70bc4bd4f218f3eac067ea510925ab999d1e9cfbcd5aaec0df80945b8d
+  relations:
+  - type: PART_OF_MACRO_TREND
+    target: corpus_asia_taiwan_tongshi
+    note: 该文本属于所标明的文献资料组；不表示共同采录地点或传播关系。
+  markdown: '## 原文摘录
+
+
+    > 臺灣巫覡凡有數種
+
+
+    ## 来源与复核
+
+
+    作者在“道教”段中罗列类别；这里记录其历史叙述，不采纳其贬抑措辞作为项目结论。
+
+
+    转录页面署名与许可应依来源页说明，原作和数字转录版本的权利需分别核对。
+
+    '
+- id: case_asia_korea_grateful_ghost
+  title: 朝鲜半岛叙事 · The Grateful Ghost
+  aliases: []
+  node_type: case
+  genre: unclassified
+  credibility_tier: B
+  spatial:
+    precision: culture_region
+    location_name: 朝鲜半岛（故事归属，采录地待核）
+    culture_region: Asia
+  sources:
+  - citation: 'Im Bang；James S. Gale 译，Korean Folk Tales: Imps, Ghosts and Fairies，1913，第十八篇。'
+    type: historical_text_transcription
+    url: https://en.wikisource.org/w/index.php?title=Korean_Folk_Tales:_Imps,_Ghosts_and_Fairies/Chapter_18&oldid=15011711
+    locator: Chapter XVIII / The Grateful Ghost
+    local_path: .local/import-sources/asia-pilot/korea_grateful_ghost.html
+    content_sha256: 63c851c6c83ea18e45599017f547eb7ab162787975648bfd681de11f519cfbe1
+  relations:
+  - type: PART_OF_MACRO_TREND
+    target: corpus_asia_korean_tales_1913
+    note: 该文本属于所标明的文献资料组；不表示共同采录地点或传播关系。
+  markdown: '## 原文摘录
+
+
+    > The candidate felt sorry
+
+
+    ## 来源与复核
+
+
+    Gale 的英文译本第十八篇记述书生与鬼魂的故事。叙事时代、译本出版及原文采录年代分开处理。
+
+
+    转录页面署名与许可应依来源页说明，原作和数字转录版本的权利需分别核对。
+
+    '
+- id: case_asia_philippines_lumawig
+  title: 菲律宾叙事 · Lumawig on Earth
+  aliases: []
+  node_type: case
+  genre: unclassified
+  credibility_tier: B
+  spatial:
+    precision: culture_region
+    location_name: 菲律宾（书目范围，采录地与族群待核）
+    culture_region: Asia
+  sources:
+  - citation: Penrhyn W. Coussens, The Jade Story Book, 1922, Chapter 28, “Lumawig on Earth”.
+    type: historical_text_transcription
+    url: https://en.wikisource.org/w/index.php?title=The_Jade_Story_Book/Chapter_28&oldid=12118440
+    locator: Chapter 28 / Lumawig on Earth
+    local_path: .local/import-sources/asia-pilot/philippines_lumawig.html
+    content_sha256: d45c16cc550bfd4d11ff5249110b4123f8ab259b6aa94a30a7b3a9ade03ab429
+  - citation: Penrhyn W. Coussens, The Jade Story Book, 1922, Preface；说明所收菲律宾故事使用 Mabel Cook Cole 编集材料。
+    type: historical_text_transcription
+    url: https://en.wikisource.org/w/index.php?title=The_Jade_Story_Book/Preface&oldid=12110704
+    locator: Preface / 菲律宾材料来源
+    local_path: .local/import-sources/asia-pilot/philippines_preface.html
+    content_sha256: abe51e3a53b1551ccfe4f7decd71bae5c2d141fd9cf3d466e0db3d1a0c2c94bb
+  relations:
+  - type: PART_OF_MACRO_TREND
+    target: corpus_asia_jade_philippines
+    note: 该文本属于所标明的文献资料组；不表示共同采录地点或传播关系。
+  markdown: '## 原文摘录
+
+
+    > Hand me a single pod of the beans
+
+
+    ## 来源与复核
+
+
+    1922 年英文读物中的 Lumawig 叙事。前言指向 Cole 编集材料；具体对应哪一原采录及其语境需回查。
+
+
+    转录页面署名与许可应依来源页说明，原作和数字转录版本的权利需分别核对。
+
+    '
+- id: case_asia_malaya_rice_johol
+  title: Johol 稻作仪式 · 历史期刊记述
+  aliases: []
+  node_type: case
+  genre: unclassified
+  credibility_tier: B
+  spatial:
+    precision: culture_region
+    location_name: 马来半岛·Johol（作者记述地，坐标待核）
+    culture_region: Asia
+  sources:
+  - citation: R. O. Winstedt, “A Rice Ceremony”, Journal of the Straits Branch of the Royal Asiatic Society, vol.
+      77.
+    type: historical_text_transcription
+    url: https://en.wikisource.org/w/index.php?title=Journal_of_the_Straits_Branch_of_the_Royal_Asiatic_Society/Volume_77/A_Rice_Ceremony&oldid=16354307
+    locator: A Rice Ceremony / Johol 记述
+    local_path: .local/import-sources/asia-pilot/malaya_rice_ceremony.html
+    content_sha256: f738f3c9492ce4f41ae6962da637e47c1f39ac07f111e43efc49860ec74b666d
+  relations:
+  - type: PART_OF_MACRO_TREND
+    target: corpus_asia_straits_journal
+    note: 该文本属于所标明的文献资料组；不表示共同采录地点或传播关系。
+  markdown: '## 原文摘录
+
+
+    > Two years ago, I saw this combat take place at Johol.
+
+
+    ## 来源与复核
+
+
+    作者记述当地仪式并引用其他作者。描述作为历史来源保存，具体日期、当地名称与当事人视角待进一步核对。
+
+
+    转录页面署名与许可应依来源页说明，原作和数字转录版本的权利需分别核对。
+
+    '
+- id: case_asia_malaya_camphor_bisan
+  title: 柔佛樟脑采集 · bisan 记述
+  aliases: []
+  node_type: case
+  genre: unclassified
+  credibility_tier: B
+  spatial:
+    precision: culture_region
+    location_name: 马来半岛·Johore（文献记述范围，采录点待核）
+    culture_region: Asia
+  sources:
+  - citation: “The Camphor Tree and Camphor Language of Johore”, Journal of the Straits Branch of the Royal Asiatic
+      Society, vol. 26.
+    type: historical_text_transcription
+    url: https://en.wikisource.org/w/index.php?title=Journal_of_the_Straits_Branch_of_the_Royal_Asiatic_Society/Volume_26/The_Camphor_tree_and_Camphor_language_of_Johore&oldid=13501912
+    locator: The Camphor Language of Johore / bisan
+    local_path: .local/import-sources/asia-pilot/malaya_camphor.html
+    content_sha256: a79aacb730221a9044fadbf852e938f24a5c9d700bd9ec614e6f801858fe3a2f
+  relations:
+  - type: PART_OF_MACRO_TREND
+    target: corpus_asia_straits_journal
+    note: 该文本属于所标明的文献资料组；不表示共同采录地点或传播关系。
+  markdown: '## 原文摘录
+
+
+    > presides over the camphor trees
+
+
+    ## 来源与复核
+
+
+    期刊材料描述樟脑采集、语言禁忌及被称作 bisan 的灵体；作者的解释与当地人的理解应分别记录。
+
+
+    转录页面署名与许可应依来源页说明，原作和数字转录版本的权利需分别核对。
+
+    '

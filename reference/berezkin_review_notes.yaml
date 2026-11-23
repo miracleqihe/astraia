@@ -1,0 +1,35 @@
+version: 1
+checked_at: '2026-11-22'
+notes:
+  g16:
+    url: https://www.ruthenia.ru/folklore/berezkin/g16.html
+    finding: 论文附件记录地区 2、52、62。目录单页页首列出 22、52、62。
+    interpretation: 地区 2 可能对应 22，须结合两种数据版本及原目录地区定义确认。
+  i16:
+    url: https://www.ruthenia.ru/folklore/berezkin/i16.html
+    finding: 论文附件记录地区 -41。目录单页页首在 39 与 41 之间有分隔符，41 是地区号。
+    interpretation: 附件中的 -41 可能由分隔符进入数字字段所致，待与原始编码版本核对。
+  m63:
+    url: https://www.ruthenia.ru/folklore/berezkin/m63.html
+    finding: 论文附件记录地区 -50。目录单页页首在 48 和 50 之间有分隔符，50 是地区号。
+    interpretation: 附件中的 -50 可能由分隔符进入数字字段所致，待与原始编码版本核对。
+  a16:
+    url: https://www.ruthenia.ru/folklore/berezkin/a16.html
+    finding: 论文附件中的地区 20 出现两次，目录单页页首也出现两次。
+    interpretation: 导出保留了重复原值，复核时可结合采录条目确定分布关系。
+  j44:
+    url: https://www.ruthenia.ru/folklore/berezkin/j44.html
+    finding: 论文附件中的地区 74 出现两次。目录单页页首也再次列出带括号的 74。
+    interpretation: 括号中的标注含义需要结合目录版本说明核对。
+  k56b:
+    url: https://www.ruthenia.ru/folklore/berezkin/k56b.html
+    finding: 研究附件题名指向与霜交谈，目录单页采用受奖与受罚的较宽泛题名。
+    interpretation: 英文总目录中该编号还对应两个不同标题，须先核对版本与题旨。
+  l108:
+    url: https://www.ruthenia.ru/folklore/berezkin/l108.html
+    finding: 目录单页题名与研究附件中的狼和小羊主题相符，英文总目录另有同号异题。
+    interpretation: 对照目录版本后再决定标准码；页面提及的 ATU 123 尚未进入本地码表。
+  f73b:
+    url: https://www.ruthenia.ru/folklore/berezkin/f73b.html
+    finding: 研究附件、英文总目录与目录单页的题名用语不同，均涉及动物与阉割叙事。
+    interpretation: 请结合单页定义和所引版本核对题旨范围。

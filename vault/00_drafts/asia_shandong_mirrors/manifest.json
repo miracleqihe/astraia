@@ -1,0 +1,16 @@
+{
+  "batch": "asia_shandong_mirrors",
+  "review_state": "pending",
+  "source": {
+    "register": "D:\\新建文件夹\\astraia\\reference\\shandong_mirror_index_v1.json",
+    "register_sha256": "aa6f816436e674e724270f6d7e0ad24b364544f6ccd8806cf350ef71284d719c",
+    "scope": "题名与书目字段索引；方志镜像，未保存正文或原网页；原书与再利用许可待核"
+  },
+  "counts": {
+    "records": 21,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

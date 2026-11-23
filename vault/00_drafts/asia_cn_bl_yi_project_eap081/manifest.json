@@ -1,0 +1,17 @@
+{
+  "batch": "asia_cn_bl_yi_project_eap081",
+  "review_state": "pending",
+  "source": {
+    "catalogue": "https://searcharchives.bl.uk/",
+    "index_manifest_sha256": "0a5550264230ffaecd13210c3bdea7c4e2226208eb6ab1cc7a1b7b90368115fd",
+    "details_manifest_sha256": "25e128081e00c73487bbed065891adc5deeb878a02ffc77b7a88038af3aa2137",
+    "scope": "项目检索全文目录与关键词候选；馆藏和目录行不是故事数；未保存手稿影像或音视频。"
+  },
+  "counts": {
+    "records": 97,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

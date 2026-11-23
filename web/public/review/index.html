@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Astraia · 资料复核</title>
+  <link rel="stylesheet" href="./review.css">
+  <script defer src="./data.js"></script>
+  <script defer src="./review.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../">ASTRAIA</a>
+    <span class="product">资料复核</span>
+    <div class="top-actions">
+      <button type="button" id="import-button">导入复核记录</button>
+      <input type="file" id="import-file" accept=".json,application/json" hidden>
+      <button type="button" id="export-button">导出复核记录</button>
+    </div>
+  </header>
+  <main class="workspace">
+    <section class="queue" aria-labelledby="queue-heading">
+      <div class="queue-header">
+        <div class="heading"><h1 id="queue-heading">待审资料</h1><span id="total"></span></div>
+        <div id="counts" class="counts" aria-live="polite"></div>
+        <label class="field"><span>搜索</span><input type="search" id="search" placeholder="名称、档号、地点、母题码"></label>
+        <div class="filters">
+          <label class="field"><span>资料组</span><select id="collection">
+            <option value="all">全部</option>
+            <option value="scottish">苏格兰猎巫</option>
+            <option value="berezkin">别列兹金母题</option>
+            <option value="nichibun">日文研馆藏</option>
+            <option value="duchas">Dúchas 馆藏</option>
+            <option value="regional">其他区域资料</option>
+            <option value="research">研究报告资料</option>
+            <option value="asia">中国与东亚、东南亚</option>
+            <option value="intake">本地入库草稿</option>
+          </select></label>
+          <label class="field"><span>需核对</span><select id="issue">
+            <option value="all">全部</option>
+            <option value="urgent">优先核对</option>
+            <option value="source">出处</option>
+            <option value="coordinate">坐标</option>
+            <option value="standard">标准码</option>
+            <option value="classification">体裁</option>
+          </select></label>
+          <label class="field"><span>复核状态</span><select id="status">
+            <option value="all">全部</option>
+            <option value="pending">待复核</option>
+            <option value="reviewed">复核通过</option>
+            <option value="correction">需要修改</option>
+            <option value="stale">草稿已变化</option>
+          </select></label>
+        </div>
+        <div class="queue-meta"><span id="matches"></span><button type="button" id="unmatched">未关联史料索引</button></div>
+        <details class="downloads"><summary>下载复核清单 CSV</summary>
+          <div>
+            <a href="./scottish.csv" download>苏格兰猎巫</a>
+            <a href="./scottish_coordinates.csv" download>苏格兰坐标对照</a>
+            <a href="./berezkin.csv" download>别列兹金母题</a>
+            <a href="./nichibun.csv" download>日文研馆藏</a>
+            <a href="./duchas.csv" download>Dúchas 馆藏</a>
+            <a href="./regional.csv" download>其他区域资料</a>
+            <a href="./research.csv" download>研究报告资料</a>
+            <a href="./asia.csv" download>中国与东亚、东南亚</a>
+            <a href="./chinese_heritage_2011_review.csv" download>2011 年国家级民间文学项目清单</a>
+            <a href="./chinese_heritage_2008_2014_review.csv" download>2008 与 2014 年民间文学项目清单</a>
+            <a href="./chinese_heritage_2021_review.csv" download>2021 年公报民间文学项目清单</a>
+            <a href="./chinese_heritage_cross_year_review.csv" download>国家级民间文学跨年登记对照</a>
+            <a href="./lao_manuscript_review.csv" download>老挝手稿档号与馆藏地对照</a>
+            <a href="./lanna_manuscript_review.csv" download>北泰手稿逐件复核清单</a>
+            <a href="./yuhuan_story_review.csv" download>玉环传说故事逐篇清单</a>
+            <a href="./sinica_oral_review.csv" download>台湾口语资料逐条清单</a>
+            <a href="./vietnam_cham_review.csv" download>越南占族故事逐篇清单</a>
+            <a href="./shandong_mirror_review.csv" download>山东方志镜像逐篇清单</a>
+            <a href="./hmml_makassar_review.csv" download>望加锡手稿 12 册候选复核</a>
+            <a href="./hmml_makassar_inventory.csv" download>望加锡馆藏元数据筛查清单</a>
+            <a href="./philippines_ilianen_review.csv" download>菲律宾 Ilianen 录音样本清单</a>
+            <a href="./philippines_cole_1916_review.csv" download>菲律宾 1916 年选集逐条清单</a>
+            <a href="./jade_1922_review.csv" download>1922 年亚洲选集逐项清单</a>
+            <a href="./early_asia_versions_review.csv" download>1905—1922 年版本对照清单</a>
+            <a href="./korea-inventory.html">浏览韩国口碑目录筛查清单</a>
+            <a href="./korea_aks_oral_review_inventory.csv" download>韩国口碑目录筛查清单（尚未入库）</a>
+            <a href="./korea-crosswalk.html">浏览韩国道峰区来源候选</a>
+            <a href="./korea_aks_dobong_crosswalk_2026-11-23.csv" download>韩国道峰区来源对照清单（待复核）</a>
+            <a href="./korea_aks_dobong_detail_review_2026-11-23.csv" download>韩国道峰区馆方详情对照（待复核）</a>
+            <a href="./pangloss_yongning_na_review.csv" download>永宁纳语录音对照清单</a>
+            <a href="./pangloss_yongning_na_inventory.csv" download>永宁纳语馆藏完整目录筛查</a>
+            <a href="./pangloss_yongning_na_segments.csv" download>永宁纳语分句定位清单</a>
+            <a href="./pangloss_yongning_na_tone_book_links.csv" download>纳语专著 DOI 与分句对照清单</a>
+            <a href="./pangloss_japhug_review.csv" download>四川嘉绒语录音逐条清单</a>
+            <a href="./pangloss_khmu_review.csv" download>东南亚 Khmu 录音逐条清单</a>
+            <a href="./bl_khmer_folding_books_review.csv" download>柬埔寨高棉文折本逐册清单</a>
+            <a href="./bl_yi_recordings_review.csv" download>云南彝语口述录音子组清单</a>
+            <a href="./bl_yi_project_inventory.csv" download>云南彝文档案项目完整目录筛查</a>
+            <a href="./bl_dongjing_recordings_inventory.csv" download>云南洞经表演与访谈逐件清单</a>
+            <a href="./bl_burma_recordings_inventory.csv" download>缅甸多语唱片逐件目录与候选清单</a>
+            <a href="./minyag_wolp_inventory.csv" download>四川木雅语馆藏完整目录筛查</a>
+            <a href="./pumi_wolp_inventory.csv" download>云南普米语馆藏完整目录筛查</a>
+            <a href="./palue_inventory.csv" download>印尼 Palu’e 馆藏完整目录筛查</a>
+            <a href="./zibuyu_inventory.csv" download>《子不语》总目录与分卷篇目对照</a>
+            <a href="./temiar_wolp_inventory.csv" download>马来西亚 Temiar 馆藏完整目录筛查</a>
+            <a href="./lowell_sea_folktales_review.csv" download>洛厄尔东南亚社群项目逐件清单</a>
+            <a href="./lowell_sea_folktales_inventory.csv" download>洛厄尔项目资料筛查清单</a>
+            <a href="./khmer_nitean_chapter_review.csv" download>高棉文故事逐篇清单</a>
+            <a href="./intake.csv" download>本地入库草稿</a>
+          </div>
+        </details>
+      </div>
+      <div id="records" class="records" role="list" aria-label="复核条目"></div>
+      <nav class="pagination" aria-label="清单分页">
+        <button type="button" id="previous">上一页</button><span id="page-info"></span><button type="button" id="next">下一页</button>
+      </nav>
+    </section>
+    <aside id="detail" class="detail" aria-label="复核详情" tabindex="-1">
+      <p class="empty">选择条目查看出处、坐标与标准码。</p>
+    </aside>
+  </main>
+  <div id="message" class="message" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

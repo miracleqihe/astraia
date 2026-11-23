@@ -1,0 +1,35 @@
+version: 1
+selected_at: '2026-11-22'
+scope: >-
+  从 Dúchas 公开馆藏页面选取题为 Fairy Forts 的学校采录，覆盖多个郡。
+  这是可核查的增量样本，并非随机抽样或全部馆藏；故事位置与学校位置分别核对。
+license: https://creativecommons.org/licenses/by-nc/4.0/
+candidates:
+  - url: https://www.duchas.ie/en/cbes/4613674/4607321/4625965
+    search_context: Galway · Cill Cruain
+  - url: https://www.duchas.ie/en/cbes/4649691/4647677/4658606
+    search_context: Leitrim · Coill Chláir
+  - url: https://www.duchas.ie/en/cbes/4493695/4411763/4525553
+    search_context: Donegal · An Clochán
+  - url: https://www.duchas.ie/en/cbes/4493726/4414382/4528489
+    search_context: Donegal · Cloch Rua
+  - url: https://www.duchas.ie/en/cbes/4921755/4903753/5166490
+    search_context: Cork · Coiscéim
+  - url: https://www.duchas.ie/en/cbes/4798776/4797862/5151930
+    search_context: Cork · Lios Béalad
+  - url: https://www.duchas.ie/en/cbes/4798668/4788780/5215546
+    search_context: Roscommon · Baile na Mín
+  - url: https://www.duchas.ie/en/cbes/4811591/4799956/4931711
+    search_context: Roscommon · Tisrara
+  - url: https://www.duchas.ie/en/cbes/5236102/5232074/5240382
+    search_context: Kerry · Cill Cruim
+  - url: https://www.duchas.ie/en/cbes/4428188/4384865/4510696
+    search_context: Dublin · Swords
+  - url: https://www.duchas.ie/en/cbes/4742166/4741291/4783583
+    search_context: Kildare · Allenwood
+  - url: https://www.duchas.ie/en/cbes/5009064/4982733/5119786
+    search_context: Westmeath · Tyrrellspass
+  - url: https://www.duchas.ie/en/cbes/5215784/5209729/5277745
+    search_context: Mayo · Gleann an Dúin
+  - url: https://www.duchas.ie/en/cbes/5009298/5005618/5133402
+    search_context: Wexford · Kilmyshal

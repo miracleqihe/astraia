@@ -1,0 +1,17 @@
+{
+  "batch": "asia_th_lanna_folktales",
+  "review_state": "pending",
+  "source": {
+    "search": "https://iiif.crossasia.org/s/lanna/search?facets=%5B%7B%22k%22%3A%22dc%3Asubject%22%2C%22v%22%3A%22Folk%20Tale%22%7D%5D&fulltext=",
+    "manifest": "D:\\新建文件夹\\astraia\\.local\\import-sources\\lanna-folktale-2026-11-23-v1\\manifest.json",
+    "manifest_sha256": "8cb16cd16d41ada5b4e34f3f16382a07b1fed51d2c811350709865a5f235a190",
+    "scope": "北泰 Folk Tale 分类手稿目录，不含影像或转录；馆藏地不是故事发生地"
+  },
+  "counts": {
+    "records": 79,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

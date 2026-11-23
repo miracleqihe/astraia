@@ -1,0 +1,16 @@
+{
+  "batch": "scottish_witchcraft",
+  "review_state": "pending",
+  "source": {
+    "dataset": "https://doi.org/10.7488/ds/100",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "residence_index": "https://witches.is.ed.ac.uk/resources/"
+  },
+  "counts": {
+    "records": 3421,
+    "with_coordinates": 408,
+    "with_years": 3401,
+    "fiction": 0,
+    "indexed": 3421
+  }
+}

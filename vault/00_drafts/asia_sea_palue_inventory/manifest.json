@@ -1,0 +1,17 @@
+{
+  "batch": "asia_sea_palue_inventory",
+  "review_state": "pending",
+  "source": {
+    "catalogue": "https://scholarspace.manoa.hawaii.edu/collections/8e4c3ded-2f0b-44ad-98ff-6d93969f029e",
+    "manifest": "D:\\新建文件夹\\astraia\\.local\\source-snapshots\\palue-inventory-20261123\\manifest.json",
+    "manifest_sha256": "946663d33c533ddf1a1c9a2b0bf7b955938e94475598d472fb007cc38c4f793d",
+    "scope": "仅保存公开目录必要字段；未保存原始响应、叙事描述、媒体或转写，单件权利与社区要求待核。"
+  },
+  "counts": {
+    "records": 324,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

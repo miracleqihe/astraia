@@ -1,0 +1,19 @@
+{
+  "batch": "asia_hmml_makassar",
+  "review_state": "pending",
+  "source": {
+    "dataset": "https://www.vhmml.org/dataPortal/dataset",
+    "selection_manifest": "D:\\新建文件夹\\astraia\\.local\\import-sources\\hmml-makassar-2026-11-22-v1\\manifest.json",
+    "selection_manifest_sha256": "34daa292d05581407430ee5c9c31d80f1236c37bd0f9d61039e3cfd342ad04bc",
+    "legacy_index": "D:\\新建文件夹\\astraia\\reference\\hmml_makassar_legacy_candidates_v1.json",
+    "legacy_index_sha256": "57b3a35dbb5ef4a719f0483836bd3a73d1c89f637dc8efc6f03dbec65b1a9903",
+    "scope": "馆藏元数据与旧目录候选；无手稿图像或正文；人工复核前不入图"
+  },
+  "counts": {
+    "records": 13,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

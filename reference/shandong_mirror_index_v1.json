@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "method": "根据公开网页整理题名和书目字段；非网页全文快照，未经人工复核",
+  "accessed_on": "2026-11-22",
+  "access_url": "https://shandong-chorography.org/about/",
+  "access_scope": "网站自称为公开地情数据库镜像，页面用于学习、研究和检索；原文转载许可待核。",
+  "limits": "未核查纸质原书或早期刊物；未保存网页原响应或故事正文；字段索引哈希不等于网页哈希。",
+  "pages": [
+    {
+      "key": "pingyin_rose",
+      "corpus_id": "corpus_cn_sd_pingyin_rose_mirror",
+      "book": "平阴玫瑰志",
+      "section": "民间故事",
+      "county": "平阴县",
+      "url": "https://shandong-chorography.org/database/c17/section/5/article/34/",
+      "stories": [
+        {"id": "case_cn_sd_pingyin_rose_01", "title": "玫瑰花的传说", "source_category": "民间故事", "prior_source_claim": "镜像称原载1982年上海文艺出版社《故事会丛书》；具体分册和页码未核。", "author_candidate": "韩子奎", "narrator_candidate": null, "editor_candidate": null, "role_note": "镜像标注作者，不能推作口述讲述人。"},
+        {"id": "case_cn_sd_pingyin_rose_02", "title": "张生和玫瑰仙子", "source_category": "民间故事", "prior_source_claim": "镜像称原载《平阴县民间文学集成》，中国楹联出版社2008年5月出版；具体页码未核。", "author_candidate": null, "narrator_candidate": "张厚武", "narrator_as_displayed": "张 厚武", "editor_candidate": "李中", "role_note": "镜像标注讲述人和整理人；讲述人姓名的空格按页面换行归并为候选，须核纸本。", "bibliography_note": "另有论文引用1988年《平阴县民间文学集成资料本》；其与镜像所称2008年书目的关系及是否收录本篇均未核。", "bibliography_url": "https://www.lhp.sdu.edu.cn/__local/3/13/59/C68F3876E4AC23892D766B4A9A3_BA2EF4C2_3E1CF9.pdf"}
+      ]
+    },
+    {
+      "key": "qingzhou",
+      "corpus_id": "corpus_cn_sd_qingzhou_mirror",
+      "book": "青州市志",
+      "section": "第六节 民间文学",
+      "county": "青州市",
+      "url": "https://shandong-chorography.org/database/c79/section/1/article/402/",
+      "stories": [
+        {"id": "case_cn_sd_qingzhou_01", "title": "伙巷的传说", "source_category": "民间传说", "prior_source_claim": "镜像条目末尾标注《城关镇志》；版本和页码未核。", "author_candidate": null, "narrator_candidate": null, "editor_candidate": null, "role_note": "单篇未标讲述人或采录者。"},
+        {"id": "case_cn_sd_qingzhou_02", "title": "云门洞的传说", "source_category": "民间传说", "prior_source_claim": "镜像条目末尾标注《青州报》第56期，并注明收入时略有删改；报纸日期和原文未核。", "author_candidate": null, "narrator_candidate": null, "editor_candidate": null, "role_note": "单篇未标讲述人或采录者；县志收入版本有删改说明。"}
+      ]
+    },
+    {
+      "key": "yutai",
+      "corpus_id": "corpus_cn_sd_yutai_mirror",
+      "book": "鱼台县志",
+      "section": "第二节 民间文学搜集",
+      "county": "鱼台县",
+      "url": "https://shandong-chorography.org/database/c84/section/1/article/502/",
+      "stories": [
+        {"id": "case_cn_sd_yutai_01", "title": "工匠对诗", "source_category": "附录故事", "prior_source_claim": "镜像将此篇列在该节附录；未逐篇标明与《齐鲁故事集》的对应关系。", "author_candidate": null, "narrator_candidate": null, "editor_candidate": null, "role_note": "单篇未标讲述人或采录者；不能将该节汇编年份直接当作此篇采录时间。"}
+      ]
+    },
+    {
+      "key": "jiaxiang",
+      "corpus_id": "corpus_cn_sd_jiaxiang_mirror",
+      "book": "嘉祥县志",
+      "section": "第二节 民间文学搜集整理 / 附：民间传说选录",
+      "county": "嘉祥县",
+      "url": "https://shandong-chorography.org/database/c86/section/1/article/553/",
+      "stories": [
+        {"id": "case_cn_sd_jiaxiang_01", "title": "“气”治父病", "source_category": "人物传说", "prior_source_claim": null, "author_candidate": null, "narrator_candidate": null, "editor_candidate": null, "role_note": "单篇未标讲述人或采录者；叙事中的历史人物与事件须另证。"},
+        {"id": "case_cn_sd_jiaxiang_02", "title": "王禹偁幼年应对", "source_category": "人物传说", "prior_source_claim": null, "author_candidate": null, "narrator_candidate": null, "editor_candidate": null, "role_note": "单篇未标讲述人或采录者；叙事中的历史人物与事件须另证。"},
+        {"id": "case_cn_sd_jiaxiang_03", "title": "贤妻良母", "source_category": "人物传说", "prior_source_claim": null, "author_candidate": null, "narrator_candidate": null, "editor_candidate": null, "role_note": "单篇未标讲述人或采录者；叙事中的历史人物与事件须另证。"},
+        {"id": "case_cn_sd_jiaxiang_04", "title": "叶县官喝粥", "source_category": "人物传说", "prior_source_claim": null, "author_candidate": null, "narrator_candidate": null, "editor_candidate": null, "role_note": "单篇未标讲述人或采录者；叙事中的历史人物与事件须另证。"},
+        {"id": "case_cn_sd_jiaxiang_05", "title": "还比不比", "source_category": "人物传说", "prior_source_claim": null, "author_candidate": null, "narrator_candidate": null, "editor_candidate": null, "role_note": "单篇未标讲述人或采录者；叙事中的历史人物与事件须另证。"},
+        {"id": "case_cn_sd_jiaxiang_06", "title": "万张村名的传说", "source_category": "地名传说", "prior_source_claim": null, "author_candidate": null, "narrator_candidate": null, "editor_candidate": null, "role_note": "单篇未标讲述人或采录者；地名解释是叙事内容，不能直接作为考证结论。"},
+        {"id": "case_cn_sd_jiaxiang_07", "title": "磨山阙里的传说", "source_category": "地名传说", "prior_source_claim": null, "author_candidate": null, "narrator_candidate": null, "editor_candidate": null, "role_note": "单篇未标讲述人或采录者；地名解释是叙事内容，不能直接作为考证结论。"},
+        {"id": "case_cn_sd_jiaxiang_08", "title": "老史湾的传说", "source_category": "地名传说", "prior_source_claim": null, "author_candidate": null, "narrator_candidate": null, "editor_candidate": null, "role_note": "单篇未标讲述人或采录者；地名解释是叙事内容，不能直接作为考证结论。"},
+        {"id": "case_cn_sd_jiaxiang_09", "title": "龟山的传说", "source_category": "地名传说", "prior_source_claim": null, "author_candidate": null, "narrator_candidate": null, "editor_candidate": null, "role_note": "单篇未标讲述人或采录者；地名解释是叙事内容，不能直接作为考证结论。"},
+        {"id": "case_cn_sd_jiaxiang_10", "title": "秋胡戏妻", "source_category": "神话传说", "prior_source_claim": null, "author_candidate": null, "narrator_candidate": null, "editor_candidate": null, "role_note": "镜像使用‘神话传说’分组；与戏曲和早期书面版本的关系须另核。"},
+        {"id": "case_cn_sd_jiaxiang_11", "title": "石人夫妻的传说", "source_category": "神话传说", "prior_source_claim": null, "author_candidate": null, "narrator_candidate": null, "editor_candidate": null, "role_note": "镜像使用‘神话传说’分组；叙事、文物与历史事件的对应关系须另证。"},
+        {"id": "case_cn_sd_jiaxiang_12", "title": "金羊山的传说", "source_category": "神话传说", "prior_source_claim": null, "author_candidate": null, "narrator_candidate": null, "editor_candidate": null, "role_note": "镜像使用‘神话传说’分组；地名解释及具体采录地点须另核。"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "batch": "asia_kh_nitean_folktales",
+  "review_state": "pending",
+  "source": {
+    "catalogue": "https://seuksa.com/nitean/folktales/",
+    "manifest": "D:\\新建文件夹\\astraia\\.local\\import-sources\\nitean-khmer-folktales-2026-11-22\\manifest.json",
+    "manifest_sha256": "95bc73034eafd6d6eaa9b00ba68dd3859c54d6e4c4f7f58d8d39879ae5c21c2a",
+    "scope": "高棉文故事转录站逐篇目录与出处字段；不保存正文；原版与权利待核",
+    "comparison": "D:\\新建文件夹\\astraia\\.local\\import-sources\\wikisource-khmer-folktales-2026-11-22\\selection.json",
+    "comparison_sha256": "e6feb3d7cd13b13479fadb2b5960ff3859a88d83cd6b3af2b23e90d8b211216b"
+  },
+  "counts": {
+    "records": 223,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "batch": "duchas_fairyforts",
+  "review_state": "pending",
+  "source": {
+    "collection": "https://www.duchas.ie/en/info/cbe-collections",
+    "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "snapshots": [
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\duchas\\story-4649707-4649162-4652756.xml",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\duchas\\story-4701735-4697295-4708114.xml",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\duchas\\story-4922135-4855392-4951669.xml",
+      "D:\\新建文件夹\\astraia\\.local\\import-sources\\duchas\\story-4922228-4862657-5021084.xml"
+    ]
+  },
+  "counts": {
+    "records": 6,
+    "with_coordinates": 4,
+    "with_years": 4,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

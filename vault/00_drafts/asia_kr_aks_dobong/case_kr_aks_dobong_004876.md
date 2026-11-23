@@ -1,0 +1,104 @@
+---
+id: case_kr_aks_dobong_004876
+title: 韩国口碑目录 · 동서 이준경과 피서방 사위
+aliases:
+- 동서 이준경과 피서방 사위
+node_type: case
+z_layer: 1
+genre: unclassified
+credibility_tier: B
+is_fictional_quarantine: false
+spatial:
+  lat: null
+  lng: null
+  precision: culture_region
+  location_name: 韩国首尔道峰区（目录采录范围；叙事地点待核）
+  culture_region: East Asia · Korea
+temporal: null
+standards:
+  atu_types: []
+  thompson_motifs: []
+  berezkin_codes: []
+  ocm_codes: []
+  macro_phylogeny: null
+mechanisms: []
+relations:
+- type: PART_OF_MACRO_TREND
+  target: corpus_kr_aks_dobong
+  weight: 1.0
+  note: 同一开放目录筛查范围，不表示同一故事或传播关系。
+  status: null
+sources:
+- citation: 韩国公共数据门户，韩国学中央研究院声音资料目录原始压缩包。
+  type: korea_aks_catalogue
+  url: https://www.data.go.kr/data/15070383/fileData.do
+  doi: null
+  locator: 한국구비문학대계(1).csv / 数据行 4876
+  local_path: .local/import-sources/korea-aks-audio-index-2026-11-22.zip
+  content_sha256: d600398e3da896acaa388d190efebc6fd8392c3cb2b51e293895d71bbf369d68
+- citation: 项目下载凭据；目录文件许可与音视频、正文许可分别核对。
+  type: korea_aks_receipt
+  url: https://www.data.go.kr/data/15070383/fileData.do
+  doi: null
+  locator: 目录下载凭据
+  local_path: .local/import-sources/korea-aks-audio-index-2026-11-22.receipt.json
+  content_sha256: 87b107d2f1237d51af9614ef375826804261c55a50209b0c5ed168a31454d1a6
+- citation: 馆方检索字段索引清单；未保存网页原响应。
+  type: korea_aks_search_manifest
+  url: https://kdp.aks.ac.kr/inde/search?itemId=14&pageIndex=1&pageUnit=20
+  doi: null
+  locator: 道峰区检索字段索引
+  local_path: .local/import-sources/korea-aks-kdp-dobong-2026-11-23-v1/manifest.json
+  content_sha256: 00892974cb6e5624ff7542124a3f005e599e279d20e2b397e5022e8051ba3436
+- citation: 馆方单条详情字段索引清单；未复制正文或音视频。
+  type: korea_aks_detail_manifest
+  url: https://kdp.aks.ac.kr/inde/search?itemId=14&pageIndex=1&pageUnit=20
+  doi: null
+  locator: 候选详情字段索引
+  local_path: .local/import-sources/korea-aks-kdp-dobong-details-2026-11-23-v1/manifest.json
+  content_sha256: bbe02f8e76de8fd22383ac4188a5b6259cfdf8a8cce20b20e87fd3d8baddcb60
+- citation: 项目来源候选基础对照；匹配仅供人工复核。
+  type: korea_aks_crosswalk_base
+  url: https://kdp.aks.ac.kr/inde/search?itemId=14&pageIndex=1&pageUnit=20
+  doi: null
+  locator: 道峰区来源候选
+  local_path: reference/korea_aks_dobong_crosswalk_2026-11-23.csv
+  content_sha256: 07d18357cfadfffc20d680db07cfb07f187555a8adf9d22abad92aee9f81148e
+- citation: 项目来源候选及详情字段对照；响应指纹不能离线重算。
+  type: korea_aks_crosswalk_detail
+  url: https://kdp.aks.ac.kr/inde/search?itemId=14&pageIndex=1&pageUnit=20
+  doi: null
+  locator: 道峰区详情对照
+  local_path: reference/korea_aks_dobong_detail_review_2026-11-23.csv
+  content_sha256: 698263e776654508ffdc75f85108d15d26ddd6a82e5b348c1848f8a5927d4f33
+audit:
+  created_at: '2026-11-22'
+  reviewed_by_human: false
+  ai_confidence: null
+  is_sample: false
+  reviewer: null
+  reviewed_at: null
+  review_note: null
+---
+
+## 馆方目录及来源候选
+
+```
+{
+  "目录数据行序号": 4876,
+  "目录字段": {
+    "서명": "동서 이준경과 피서방 사위",
+    "구연자": "강성도",
+    "채록지": "서울시-도봉구-도봉구 수유3동",
+    "유형": "설화",
+    "텍스트": "tsu_0035"
+  },
+  "馆方候选": [],
+  "候选数": 0,
+  "范围说明": "候选来自道峰区检索字段；录音或目录行不等于独立故事，短编号不是标准码。"
+}
+```
+
+## 原文与复核
+
+本卡保留原目录字段及待核来源候选，未保存转写正文或音视频；可通过候选来源链接查看馆方单条页面。题名相似、讲述者和采录区域对应仍不证明同一次演述。馆方调查日期与采录地点不自动成为故事发生时空；具体版本、许可及相关社区要求须逐项核对。目录文本短编号不是国际标准码，标准码仅可从本地码表核定。

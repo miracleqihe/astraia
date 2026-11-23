@@ -1,0 +1,240 @@
+version: 1
+cards:
+  - id: corpus_gemini_research_outline
+    title: 全球灵异、神话与民俗研究报告 · 资料提纲
+    node_type: myth_corpus
+    genre: academic_model
+    credibility_tier: C
+    sources:
+      - citation: 用户提供的 Gemini 共享研究报告，《全球灵异、神话与民俗跨学科综合研究报告》。
+        type: user_supplied_outline
+        locator: 六章研究正文
+        local_path: .local/import-sources/gemini-report-extracted.txt
+        content_sha256: 53af7767195091b6d03613983e9110cb4d8cf952a91a3d40e15da044350a29ee
+        url: https://share.gemini.google/NMwx11uo1DW5
+    markdown: |
+      ## 研究范围
+
+      以报告的六章组织资料核验，包括网络平台与体裁、比较神话、区域档案与分类、调查史、实验机制及开放资料。本批优先为可查证的论点建立来源卡片，记录可确认的版本、地区、页码、标引和复核状态。原始研究与争议证据循各卡出处核对。
+
+  - id: theory_bascom_prose_genres
+    title: 巴斯科姆的民间散文叙事分类
+    node_type: theory
+    genre: academic_model
+    credibility_tier: A
+    temporal: {year_start: 1965, year_end: 1965, era_label: 学说发表}
+    sources:
+      - citation: Bascom, W. (1965). The Forms of Folklore. Journal of American Folklore 78(307), 3–20.
+        type: peer_reviewed
+        url: https://www.jstor.org/stable/538099
+        doi: 10.2307/538099
+    markdown: |
+      ## 分类实践
+
+      巴斯科姆用叙事在传讲群体中的信念地位等维度分析神话、传说和民间故事。项目据此在资料卡记录体裁和讲述场合，并保留地方分类与研究者分类的差异。
+
+  - id: theory_witzel_mythology_phylogeny
+    title: 维茨尔的世界神话谱系假说
+    aliases: [The Origins of the World's Mythologies, Laurasian, Gondwanan]
+    node_type: theory
+    genre: academic_model
+    credibility_tier: A
+    sources:
+      - citation: Witzel, E. J. M. The Origins of the World's Mythologies. Oxford University Press.
+        type: monograph
+        url: https://academic.oup.com/book/33090
+    markdown: |
+      ## 模型范围
+
+      该书尝试用叙事次序和主题分布提出宏观谱系。图谱将其保存在理论层。讨论早期人群传播时，应逐项给出所用的文本、年代、分布数据和备选解释。
+
+  - id: corpus_huarochiri_manuscript
+    title: 秘鲁《瓦罗奇里手稿》
+    aliases: [The Huarochirí Manuscript, Huarochiri]
+    node_type: myth_corpus
+    genre: myth
+    credibility_tier: A
+    spatial: {precision: culture_region, location_name: 秘鲁瓦罗奇里地区, culture_region: 'South America · Central Andes'}
+    temporal: {era_label: 殖民早期手稿, uncertainty_note: 记录年代与其中所述古老传统的年代分列。}
+    sources:
+      - citation: Salomon, F., & Urioste, G. L. The Huarochirí Manuscript. University of Texas Press.
+        type: monograph
+        url: https://utpress.utexas.edu/9780292730533/
+    markdown: |
+      ## 安第斯地方传统
+
+      这份克丘亚语手稿保存了殖民时期记录的地方宗教叙事与仪式。出处登记 Salomon 与 Urioste 的译注本。继续整理时可按章节标明讲述地点、对应神祇、所用译本和版本差异。
+
+  - id: corpus_hawaiian_kumulipo
+    title: 夏威夷创世谱系颂歌《库穆利波》
+    aliases: [Kumulipo, Liliʻuokalani, Martha Beckwith]
+    node_type: myth_corpus
+    genre: myth
+    credibility_tier: A
+    spatial: {precision: culture_region, location_name: 夏威夷群岛, culture_region: 'Oceania · Hawaiʻi'}
+    sources:
+      - citation: University of Hawaiʻi at Mānoa. Kumulipo research materials and annotated copy of Martha Beckwith's edition.
+        type: archival_catalogue
+        url: https://archivesspace.library.manoa.hawaii.edu/repositories/4/archival_objects/105449
+      - citation: Beckwith, M. W. The Kumulipo. A Hawaiian Creation Chant. University of Hawaiʻi Press.
+        type: monograph
+        url: https://www.degruyterbrill.com/document/doi/10.1515/9780824840389/html
+        doi: 10.1515/9780824840389
+    markdown: |
+      ## 文献与体裁
+
+      卷宗登记夏威夷创世谱系颂歌及贝克威思的研究档案。相关研究可在创世序列、谱系的社会功能和不同版本之间逐项对读。
+
+  - id: case_dogon_field_reassessment
+    title: 桑加多贡宇宙论的田野复核
+    aliases: [Dogon Restudied, Walter van Beek, Marcel Griaule]
+    node_type: case
+    genre: historical_archive
+    credibility_tier: A
+    spatial: {precision: culture_region, location_name: 马里桑加及多贡文化区, culture_region: 'Africa · Mali'}
+    temporal: {year_start: 1991, year_end: 1991, era_label: 田野复核发表, uncertainty_note: 年份为重审论文发表时间。}
+    sources:
+      - citation: "van Beek, W. E. A. (1991). Dogon Restudied: A Field Evaluation of the Work of Marcel Griaule [and Comments and Replies]. Current Anthropology 32(2), 139–167."
+        type: peer_reviewed
+        url: https://www.journals.uchicago.edu/doi/10.1086/203932
+        doi: 10.1086/203932
+    markdown: |
+      ## 田野争议
+
+      范·比克用新的田野材料重审格里奥尔所描述的宇宙论，指出部分叙事在他的访谈中未能复现。论文与同行评论一并保留，便于核对受访者范围、采录方法和结论的适用边界。
+
+  - id: mech_tpj_body_signal_integration
+    title: 颞顶区域与身体表征的整合
+    aliases: [Temporoparietal junction, TPJ]
+    node_type: mechanism
+    genre: academic_model
+    credibility_tier: A
+    sources: &tpj_sources
+      - citation: Blanke, O., et al. (2002). Stimulating illusory own-body perceptions. Nature 419, 269–270.
+        type: peer_reviewed
+        url: https://pubmed.ncbi.nlm.nih.gov/12239558/
+        doi: 10.1038/419269a
+      - citation: Arzy, S., et al. (2006). Induction of an illusory shadow person. Nature 443, 287.
+        type: peer_reviewed
+        url: https://www.nature.com/articles/443287a
+        doi: 10.1038/443287a
+      - citation: Blanke, O., et al. (2014). Neurological and robot-controlled induction of an apparition. Current Biology.
+        type: peer_reviewed
+        url: https://pubmed.ncbi.nlm.nih.gov/25447995/
+    markdown: |
+      ## 与证据对应的机制
+
+      皮层刺激和传感运动实验提供了身体表征发生局部错配的证据。不同研究分别测量体外体验、伴随者错觉或临在感。卷宗按实验方案保留差异，解释边应写明个案和条件。
+
+  - id: case_tpj_shadow_stimulation_2006
+    title: 2006 年皮层刺激诱发的伴随者错觉
+    node_type: case
+    genre: academic_model
+    credibility_tier: S
+    temporal: {year_start: 2006, year_end: 2006, era_label: 实验论文发表}
+    mechanisms:
+      - target_id: mech_tpj_body_signal_integration
+        status: confirmed
+        evidence_note: 论文报告在所研究患者中，特定颞顶区域刺激可重复诱发与身体姿势有关的伴随者感觉。确认状态限于该实验个案。
+    sources: *tpj_sources
+    markdown: |
+      ## 实验记录
+
+      刺激报告中的临在感与患者当时的身体位置相关。可由实验记录核对刺激位置、报告内容和重复条件。
+
+  - id: mech_weak_complex_field_hypothesis
+    title: 弱复杂磁场诱发临在感的假说
+    aliases: [God Helmet, Koren Helmet]
+    node_type: mechanism
+    genre: academic_model
+    credibility_tier: A
+    sources: &weak_field_sources
+      - citation: Granqvist, P., et al. (2005). Sensed presence and mystical experiences are predicted by suggestibility, not by the application of transcranial weak complex magnetic fields. Neuroscience Letters 379, 1–6.
+        type: peer_reviewed
+        url: https://pubmed.ncbi.nlm.nih.gov/15849873/
+        doi: 10.1016/j.neulet.2004.10.057
+      - citation: Persinger, M. A., & Koren, S. A. Reply to Granqvist et al. Neuroscience Letters 380.
+        type: peer_reviewed
+        url: https://pubmed.ncbi.nlm.nih.gov/15862915/
+        doi: 10.1016/j.neulet.2005.03.060
+    markdown: |
+      ## 复现争议
+
+      卷宗并列双盲实验和原团队就参数提出的回应。证据状态随具体实验条件记录，便于审计不同方案之间的差别。
+
+  - id: case_granqvist_field_replication_2005
+    title: Granqvist 团队的双盲磁场复现
+    node_type: case
+    genre: academic_model
+    credibility_tier: S
+    temporal: {year_start: 2005, year_end: 2005, era_label: 实验论文发表}
+    mechanisms:
+      - target_id: mech_weak_complex_field_hypothesis
+        status: refuted
+        evidence_note: 该双盲研究的实施条件下，磁场组和对照组的体验报告未呈现原假说预测的差异。证伪标记限于这一复现的条件。
+    sources: *weak_field_sources
+    markdown: |
+      ## 实验记录
+
+      研究比较弱磁场与对照条件，并考察个体暗示相关特征。相关性、随机条件效应与对实验参数的异议分别附有论文出处。
+
+  - id: mech_haunt_infrasound_field_hypothesis
+    title: 建筑中的次声与复杂电磁场假说
+    node_type: mechanism
+    genre: academic_model
+    credibility_tier: A
+    sources: &haunt_sources
+      - citation: 'French, C. C., et al. (2009). The “Haunt” project. Cortex 45(5), 619–629.'
+        type: peer_reviewed
+        url: https://www.sciencedirect.com/science/article/abs/pii/S0010945208001299
+    markdown: |
+      ## 检验范围
+
+      实验分别比较次声、电磁场及对照条件下的主观体验。不同研究频段、建筑场景和实际暴露情况应对应各自证据。
+
+  - id: case_french_haunt_project_2009
+    title: Cortex 2009 闹鬼空间受控实验
+    node_type: case
+    genre: academic_model
+    credibility_tier: S
+    temporal: {year_start: 2009, year_end: 2009, era_label: 实验论文发表}
+    mechanisms:
+      - target_id: mech_haunt_infrasound_field_hypothesis
+        status: refuted
+        evidence_note: 受试者在不同组均报告体验，研究未发现实验条件能解释预期的组间差异。证伪标记限于所检验的装置与条件。
+    sources: *haunt_sources
+    markdown: |
+      ## 实验记录
+
+      French 等人比较人工空间的不同条件。可从原文回查分组、测量和期望引发体验之间的联系。
+
+  - id: theory_mci_recall_experiments
+    title: 最小反直觉表征的记忆研究
+    aliases: [Minimally counterintuitive, MCI, Cognitive templates for religious concepts]
+    node_type: theory
+    genre: academic_model
+    credibility_tier: A
+    sources:
+      - citation: Boyer, P., & Ramble, C. (2001). Cognitive templates for religious concepts. Cognitive Science 25(4), 535–564.
+        type: peer_reviewed
+        url: https://onlinelibrary.wiley.com/doi/10.1207/s15516709cog2504_2
+        doi: 10.1207/s15516709cog2504_2
+    markdown: |
+      ## 理论与实验范围
+
+      论文比较受试者对不同反直觉表征的回忆。将实验结果用于口头传播、数字改编或长期留存时，需要另外考察传播环境和版本变化。
+
+  - id: corpus_isebel_belief_legends
+    title: ISEBEL 跨国信仰传说检索项目
+    aliases: [Intelligent Search Engine for Belief Legends, Meertens]
+    node_type: myth_corpus
+    genre: academic_model
+    credibility_tier: A
+    sources:
+      - citation: Meertens Institute. ISEBEL research project.
+        type: archival_catalogue
+        url: https://meertens.knaw.nl/en/meertens-onderzoek/isebel-2/
+    markdown: |
+      ## 档案入口
+
+      项目聚合多个地区的信仰传说检索入口。逐条接入时应保留分馆、作品号、原语言、可用许可和采录区域，使跨库比较可以返回原记录。

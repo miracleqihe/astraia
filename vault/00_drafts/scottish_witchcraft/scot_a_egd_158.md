@@ -1,0 +1,173 @@
+---
+id: scot_a_egd_158
+title: 苏格兰猎巫档案 · Jon Neill
+aliases:
+- Jon Neill
+- A/EGD/158
+node_type: case
+z_layer: 1
+genre: historical_archive
+credibility_tier: A
+is_fictional_quarantine: false
+spatial:
+  lat: null
+  lng: null
+  precision: culture_region
+  location_name: Tweedmouth, Berwick
+  culture_region: Europe · Scotland
+temporal:
+  year_start: 1630
+  year_end: 1631
+  era_label: 近代早期苏格兰
+  uncertainty_note: 年份来自调查或审判登记，不代表当事人的生卒时间。
+standards:
+  atu_types: []
+  thompson_motifs: []
+  berezkin_codes: []
+  ocm_codes:
+  - '754'
+  macro_phylogeny: null
+mechanisms: []
+relations:
+- type: PART_OF_MACRO_TREND
+  target: corpus_scottish_witchcraft_survey
+  weight: 1.0
+  note: 归于爱丁堡大学调查库档案组。
+  status: null
+sources:
+- citation: Goodare, J., Yeoman, L., Martin, L., & Miller, J. Survey of Scottish Witchcraft,
+    1563–1736. Edinburgh DataShare. CC BY 4.0.
+  type: scholarly_database
+  url: https://doi.org/10.7488/ds/100
+  doi: 10.7488/ds/100
+  locator: WDB_Accused · A/EGD/158
+  local_path: ".local/import-sources/scottish-witches-tables.zip"
+  content_sha256: cc56c499e9544dca8ac1b720ab2784769bb497717f5790db4a32b5b2b3c4cc7c
+- citation: 爱丁堡调查库登记的史料线索 · SJC · VI, p. 143 · Also found in the High Court Record
+    Index, no. 1 for 26/3/1631.
+  type: historical_reference
+  url: https://doi.org/10.7488/ds/100
+  doi: 10.7488/ds/100
+  locator: WDB_Reference · R/EGD/169 · 案件 C/EGD/169
+  local_path: null
+  content_sha256: cc56c499e9544dca8ac1b720ab2784769bb497717f5790db4a32b5b2b3c4cc7c
+- citation: 爱丁堡调查库登记的史料线索 · SJC · v1, p.169-171
+  type: historical_reference
+  url: https://doi.org/10.7488/ds/100
+  doi: 10.7488/ds/100
+  locator: WDB_Reference · R/LA/2627 · 案件 C/EGD/169
+  local_path: null
+  content_sha256: cc56c499e9544dca8ac1b720ab2784769bb497717f5790db4a32b5b2b3c4cc7c
+- citation: 爱丁堡调查库登记的史料线索 · RPC · 2nd S, v3 p. 443
+  type: historical_reference
+  url: https://doi.org/10.7488/ds/100
+  doi: 10.7488/ds/100
+  locator: WDB_Reference · R/LA/2672 · 案件 C/EGD/169
+  local_path: null
+  content_sha256: cc56c499e9544dca8ac1b720ab2784769bb497717f5790db4a32b5b2b3c4cc7c
+- citation: 爱丁堡调查库登记的史料线索 · RPC · 2nd S v3, p. 400, 448
+  type: historical_reference
+  url: https://doi.org/10.7488/ds/100
+  doi: 10.7488/ds/100
+  locator: WDB_Reference · R/LA/2678 · 案件 C/EGD/169
+  local_path: null
+  content_sha256: cc56c499e9544dca8ac1b720ab2784769bb497717f5790db4a32b5b2b3c4cc7c
+- citation: 爱丁堡调查库登记的史料线索 · RPC · 2nd S, v3 p. 496, 584; 2nd S, v4 p. 98,125, 164-165
+  type: historical_reference
+  url: https://doi.org/10.7488/ds/100
+  doi: 10.7488/ds/100
+  locator: WDB_Reference · R/LA/2679 · 案件 C/EGD/169
+  local_path: null
+  content_sha256: cc56c499e9544dca8ac1b720ab2784769bb497717f5790db4a32b5b2b3c4cc7c
+- citation: 爱丁堡调查库登记的史料线索 · RPC · 2nd S, v3 p. 513
+  type: historical_reference
+  url: https://doi.org/10.7488/ds/100
+  doi: 10.7488/ds/100
+  locator: WDB_Reference · R/LA/2680 · 案件 C/EGD/169
+  local_path: null
+  content_sha256: cc56c499e9544dca8ac1b720ab2784769bb497717f5790db4a32b5b2b3c4cc7c
+- citation: 爱丁堡调查库登记的史料线索 · RPC · 2nd S, v3 p. 541, 563
+  type: historical_reference
+  url: https://doi.org/10.7488/ds/100
+  doi: 10.7488/ds/100
+  locator: WDB_Reference · R/LA/2681 · 案件 C/EGD/169
+  local_path: null
+  content_sha256: cc56c499e9544dca8ac1b720ab2784769bb497717f5790db4a32b5b2b3c4cc7c
+- citation: 爱丁堡调查库登记的史料线索 · Books of Adjournal · JC2/7 fo. 1r-2r, 2v
+  type: historical_reference
+  url: https://doi.org/10.7488/ds/100
+  doi: 10.7488/ds/100
+  locator: WDB_Reference · R/LA/2684 · 案件 C/EGD/169
+  local_path: null
+  content_sha256: cc56c499e9544dca8ac1b720ab2784769bb497717f5790db4a32b5b2b3c4cc7c
+- citation: 爱丁堡调查库登记的史料线索 · RPC · 2nd S, v4 p. 56 · charges against the masters and
+    landlords in the Merse for bringing in their tenants to bear witness and to be
+    confronted with John Neill and Elie Nesbitt.
+  type: historical_reference
+  url: https://doi.org/10.7488/ds/100
+  doi: 10.7488/ds/100
+  locator: WDB_Reference · R/LA/3131 · 案件 C/EGD/169
+  local_path: null
+  content_sha256: cc56c499e9544dca8ac1b720ab2784769bb497717f5790db4a32b5b2b3c4cc7c
+- citation: 爱丁堡调查库登记的史料线索 · RPC · 2nd S, v4 p. 98, 164-165
+  type: historical_reference
+  url: https://doi.org/10.7488/ds/100
+  doi: 10.7488/ds/100
+  locator: WDB_Reference · R/LA/3135 · 案件 C/EGD/169
+  local_path: null
+  content_sha256: cc56c499e9544dca8ac1b720ab2784769bb497717f5790db4a32b5b2b3c4cc7c
+- citation: 爱丁堡调查库登记的史料线索 · Royal Letters · v2, p. 423 · Order of arrest in England
+    and to be sent back to Scotland for trial. 'The Earl of Stirling's Register of
+    Royal Letters, Relative to the Affairs of Scotland and Nova Scotia' Charles Rogers
+    (Ed.), (Edinburgh, 1885). This reference was supplied by Aonghas MacCoinnich.
+  type: historical_reference
+  url: https://doi.org/10.7488/ds/100
+  doi: 10.7488/ds/100
+  locator: WDB_Reference · R/LA/3441 · 案件 C/EGD/169
+  local_path: null
+  content_sha256: cc56c499e9544dca8ac1b720ab2784769bb497717f5790db4a32b5b2b3c4cc7c
+- citation: 爱丁堡调查库登记的史料线索 · Process Notes · JC26/10 · a bundle with 17 items about
+    his case, that includes information about other accused witches as well. His JC26
+    bundle contains a dittay, witness statements, his own statements, an interrogatory,
+    and pre-trial procedure documents (i.e. witness summonds, etc.).
+  type: historical_reference
+  url: https://doi.org/10.7488/ds/100
+  doi: 10.7488/ds/100
+  locator: WDB_Reference · R/LA/4486 · 案件 C/EGD/169
+  local_path: null
+  content_sha256: cc56c499e9544dca8ac1b720ab2784769bb497717f5790db4a32b5b2b3c4cc7c
+- citation: 爱丁堡调查库登记的史料线索 · Process Notes · JC26/10 'Alison Nisbet' bundle, item 13
+    · his sworn depositions at the end this document.
+  type: historical_reference
+  url: https://doi.org/10.7488/ds/100
+  doi: 10.7488/ds/100
+  locator: WDB_Reference · R/LA/4494 · 案件 C/EGD/169
+  local_path: null
+  content_sha256: cc56c499e9544dca8ac1b720ab2784769bb497717f5790db4a32b5b2b3c4cc7c
+- citation: Wikidata P4478 档号对照快照，CC0；爱丁堡地图导出亦来自 Wikidata，二者并非独立证据。
+  type: external_catalogue
+  url: https://www.wikidata.org/wiki/Q43402734
+  doi: null
+  locator: P4478 · A/EGD/158
+  local_path: .local/import-sources/wikidata-scottish-p4478.json
+  content_sha256: 52a14670d8696f48072d54c7c755c4e7d607b5155c37d8366d250d71aa3273a5
+audit:
+  created_at: '2026-11-22'
+  reviewed_by_human: false
+  ai_confidence: null
+  is_sample: false
+---
+
+## 原始登记
+
+- 档号 `A/EGD/158`
+- 数据表 `WDB_Accused`
+- 姓名　Jon Neill
+- 性别　Male
+- 住址　Tweedmouth
+- 郡　Berwick
+- 调查 `C/EGD/169`　22/1/1630
+- 审判 `T/LA/17`
+- 审判 `T/LA/24`　26/3/1631 · Guilty
+
+OCM 754 用于检索巫术指控及其司法语境。入库内容由原始表转写。

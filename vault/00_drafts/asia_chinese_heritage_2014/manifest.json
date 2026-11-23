@@ -1,0 +1,17 @@
+{
+  "batch": "asia_chinese_heritage_2014",
+  "review_state": "pending",
+  "source": {
+    "url": "https://www.ln.gov.cn/web/zwgkx/lnsrmzfgb/2015n/qk/2015n_dyq/gwywj/831B66689DB14A69B972FFBD5EF5169E/index.shtml",
+    "snapshot": "D:\\新建文件夹\\astraia\\.local\\import-sources\\asia-china-ich-2014-2026-11-22.html",
+    "sha256": "fe00aa1fe28381d248119119600622bc7118dce9929fd0a66cb0a84fb684ff35",
+    "scope": "2014 年民间文学新增与扩展项目；申报地不是故事采录地"
+  },
+  "counts": {
+    "records": 37,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

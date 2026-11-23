@@ -1,0 +1,19 @@
+{
+  "batch": "asia_cn_pangloss_japhug",
+  "review_state": "pending",
+  "source": {
+    "catalogue": "https://pangloss.cnrs.fr/corpus/Japhug",
+    "catalogue_sha256": "a584741bda1fe96708ade2a936d9f3c10240639905191c52099713d25860ed98",
+    "selection_sha256": "b6c03013385ae27f310abf9719693fdc4a2e09ce10dc511e0084ef1c3ec3fd40",
+    "detail_manifest": "D:\\新建文件夹\\astraia\\.local\\import-sources\\pangloss-japhug-detail-2026-11-22-v1\\manifest.json",
+    "manifest_sha256": "33932c745ed9799c69754091d71ae38626f8b12f2908ac0c8d1f83c8e5ff3a6f",
+    "scope": "馆方录音目录和选取的单条详情；录音不等于故事；未复制音频或转写；许可和社区要求逐条核对"
+  },
+  "counts": {
+    "records": 550,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

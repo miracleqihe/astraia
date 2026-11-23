@@ -1,0 +1,146 @@
+---
+id: case_ph_cole_1916_p210
+title: 菲律宾 1916 年选集 · Why Dogs Wag Their Tails
+aliases:
+- Why Dogs Wag Their Tails
+node_type: case
+z_layer: 1
+genre: unclassified
+credibility_tier: B
+is_fictional_quarantine: false
+spatial:
+  lat: null
+  lng: null
+  precision: culture_region
+  location_name: 菲律宾：书籍覆盖范围，非逐条采录点
+  culture_region: Southeast Asia · Philippines
+temporal: null
+standards:
+  atu_types: []
+  thompson_motifs: []
+  berezkin_codes: []
+  ocm_codes: []
+  macro_phylogeny: null
+mechanisms: []
+relations:
+- type: PART_OF_MACRO_TREND
+  target: corpus_ph_cole_1916
+  weight: 1.0
+  note: 同属 1916 年编选本；不表示同一采录、族群、地点或传播路线。
+  status: null
+sources:
+- citation: Mabel Cook Cole, Philippine Folk Tales, A. C. McClurg, Chicago, 1916;
+    University of Michigan copy via Internet Archive.
+  type: cole_scan_link
+  url: https://archive.org/details/afl2786.0001.001.umich.edu/page/n247/mode/1up
+  doi: null
+  locator: 目录印刷页 210 / OCR 候选扫描序号 248，需核影像
+  local_path: null
+  content_sha256: null
+- citation: 项目据原书目录和 OCR 转记的字段索引，待人工复核。
+  type: cole_toc_index
+  url: null
+  doi: null
+  locator: 目录 xi–xiii / 各条原题名与印刷页码
+  local_path: reference/philippine_cole_1916_toc.tsv
+  content_sha256: 91eb1b352a7e7fa0407ea19ffba3a40d175922c83f0676df11ea20b44d22c74f
+- citation: Mabel Cook Cole, Philippine Folk Tales, A. C. McClurg, Chicago, 1916;
+    University of Michigan copy via Internet Archive. 分页 OCR 检索文本。
+  type: cole_ocr
+  url: https://archive.org/download/afl2786.0001.001.umich.edu/afl2786.0001.001.umich.edu_hocr_searchtext.txt.gz
+  doi: null
+  locator: 按分页字符索引获得候选标题与页脚，非校对本
+  local_path: .local/source-snapshots/philippine_cole_1916/afl2786.0001.001.umich.edu_hocr_searchtext.txt.gz
+  content_sha256: 892e3f60ba4c175ade736f8034ed3775965abe9c86a834fbf0fab62b48b3b910
+- citation: Mabel Cook Cole, Philippine Folk Tales, A. C. McClurg, Chicago, 1916;
+    University of Michigan copy via Internet Archive. OCR 页边界索引。
+  type: cole_page_index
+  url: https://archive.org/download/afl2786.0001.001.umich.edu/afl2786.0001.001.umich.edu_hocr_pageindex.json.gz
+  doi: null
+  locator: 259 页字符偏移索引
+  local_path: .local/source-snapshots/philippine_cole_1916/afl2786.0001.001.umich.edu_hocr_pageindex.json.gz
+  content_sha256: daf6fec84f7d43df7f380e629b7b0294175c65f0d1685997a5a0f0046d845c6a
+- citation: 项目根据本地原始 OCR 与分页索引截取的未校对候选页面。
+  type: cole_ocr_segments
+  url: https://archive.org/details/afl2786.0001.001.umich.edu/page/n247/mode/1up
+  doi: null
+  locator: 目录印刷页 210 / 候选扫描序号 248–249
+  local_path: .local/source-snapshots/cole-ocr-segments-20261123/case_ph_cole_1916_p210.json
+  content_sha256: b44a47449333f89f8739460f5d9e2d47d46989220ad613653231d271d2b8d9e3
+- citation: 项目生成的 OCR 逐页候选范围清单；范围和文字均待人工核对。
+  type: cole_ocr_segments_manifest
+  url: https://archive.org/details/afl2786.0001.001.umich.edu
+  doi: null
+  locator: OCR 逐页范围清单
+  local_path: .local/source-snapshots/cole-ocr-segments-20261123/manifest.json
+  content_sha256: 53a5fcb029d40474e090c5cc83b9c9817f49d13a691498ce4620ead5d8154f34
+audit:
+  created_at: '2026-11-22'
+  reviewed_by_human: false
+  ai_confidence: null
+  is_sample: false
+  reviewer: null
+  reviewed_at: null
+  review_note: null
+---
+
+## 目录与候选定位
+
+```
+{
+  "目录题名": "Why Dogs Wag Their Tails",
+  "原目录主组": "The Christianized Tribes",
+  "原目录次组": "Visayan",
+  "目录印刷页": 210,
+  "OCR候选扫描序号": 248,
+  "OCR标题相似度": 0.976,
+  "OCR页脚数字吻合": true,
+  "原扫描候选链接": "https://archive.org/details/afl2786.0001.001.umich.edu/page/n247/mode/1up"
+}
+```
+
+## 复核说明
+
+这是原书目录项，不等同于独立原始口述记录。目录组别是历史文献原词，并非当代族群自称或单条采录地点；采录者、讲述者、语种和时代未确定。请打开原扫描，核对目录、起始页、脚注与书目来源。扫描页码由未校对 OCR 推断；坐标和国际标准码为空。资料的再利用范围及社区要求待核。
+
+<!-- astraia:cole-ocr-pages-v1 -->
+## 扫描分页 OCR（待校）
+
+以下保留本地扫描 OCR 的原有文字、页眉、脚注、误字及换行；OCR 不等于校对后的原文。页面范围以目录项候选起始页和下一候选起始页截取，最后一项截至后续发音表候选页；这不能证明篇章边界，须逐页核对原扫描。
+
+### 候选扫描页 248
+
+[查看该页原扫描](https://archive.org/details/afl2786.0001.001.umich.edu/page/n247/mode/1up)
+
+```
+A
+WHY  DOGS  WAG  THEIR  TAILS
+Vtsayan
+RICH  man  in  a  certain  town  once  owned  a  dog and  a  cat,  both  of  which  were  very  useful  to  him. The  dog  had  served  his  master  for  many  years  and had  become  so  old  that  he  had  lost  his  teeth  and  war unable  to  fight  any  more,  but  he  was  a  good  guide  and companion  to  the  cat  who  was  strong  and  cunning.
+The  master  had  a  daughter  who  was  attending: school  at  a  convent  some  distance  from  home,  and  verv often  he  sent  the  dog  and  the  cat  with  presents  to the  girl.
+One  day  he  called  the  faithful  animals  and  bade them  carry  a  magic  ring  to  his  daughter.
+"You  are  strong  and  brave,"  he  said  to  the  cat *'You  may  carry  the  ring,  but  you  must  be  careful  not to  drop  it."
+And  to  the  dog  he  said:  **You  must  accompany  the cat  to  guide  her  and  keep  her  from  harm."
+They  promised  to  do  their  best,  and  started  out.  All went  well  until  they  came  to  a  river.  As  there  was neither  bridge  nor  boat,  there  was  no  way  to  cross  but to  swim.
+"Let  me  take  the  magic  ring,"  said  the  dog  as  they were  about  to  plunge  into  the  water.
+"Oh,  no,"  replied  the  cat,  "the  master  gave  it  to  me to  carry."
+[210]
+
+```
+
+### 候选扫描页 249
+
+[查看该页原扫描](https://archive.org/details/afl2786.0001.001.umich.edu/page/n248/mode/1up)
+
+```
+PHILIPPINE  FOLK  TALES
+**But  you  cannot  swim  well,"  argued  the  dog.  **I am  strong  and  can  take  good  care  of  it"
+But  the  cat  refused  to  give  up  the  ring  until  finally the  dog  threatened  to  kill  her,  and  then  she  reluctantly gave  it  to  him.
+The  river  was  wide  and  the  water  so  swift  that  they grew  very  tired,  and  just  before  they  reached  the  op- posite bank  the  dog  dropped  the  ring.  They  searched carefully,  but  could  not  find  it  anywhere,  and  after  a while  they  turned  back  to  tell  their  master  of  the  sad losl:  Just  before  reaching  the  house,  however,  the  dog was  so  overcome  with  fear  that  he  turned  and  ran away  and  never  was  seen  again.
+The  cat  went  on  alone,  and  when  the  master  saw her  coming  he  called  out  to  know  why  she  had  returned so  soon  and  what  had  become  of  her  companion.  The poor  cat  was  frightened,  but  as  well  as  she  could  she explained  how  the  ring  had  been  lost  and  how  the  dog had  run  away.
+On  hearing  her  story  the  master  was  very  angry, and  commanded  that  all  his  people  should  search  for the  dog,  and  that  it  should  be  punished  by  having  its  tail cut  off.
+He  also  ordered  that  all  the  dogs  in  the  world  should join  in  the  search,  and  ever  since  when  one  dog  meets another  he  says:  '*Are  you  the  old  dog  that  lost  the magic  ring?  If  so,  your  tail  must  be  cut  off."  Then immediately  each  shows  his  teeth  and  wags  his  tail  to prove  that  he  is  not  the  guilty  one.
+Since  then,  too,  cats  have  been  afraid  of  water  and will  not  swim  across  a  river  if  they  can  avoid  it.
+[211]
+
+```

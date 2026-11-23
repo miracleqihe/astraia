@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "observed_on": "2026-11-22",
+  "method": "旧 DREAMSEA 目录被搜索引擎索引的文字线索；当次旧目录直接访问超时，未保存页面原始响应",
+  "limitations": "这些是旧目录候选字段，不等于已核验馆藏影像或当前 HMML 完整编目；请回查馆方和原件。",
+  "attribution": "HMML/DREAMSEA 旧目录；搜索缓存的具体更新时间未知",
+  "collection_title_candidate": "Ouw Pe Coa",
+  "creator_candidate": "Liem Kheng Yong",
+  "language_candidate": "Makassar; Chinese",
+  "script_candidate": "Lontarak; Hanzi",
+  "context_note": "旧目录描述其改编自中国民间传说；这是目录所记，不证明具体传播路线或同一口述版本。",
+  "entries": [
+    {"volume": 1, "project": "DS 0045 00541", "legacy_id": 7158, "native_title": "ᨕᨚᨄᨙᨌᨚᨕ - ᨔᨙᨑᨙᨊ", "roman_title": "Ouw Pe Coa – Sekrena", "native_date": "5– 6 – 2483", "gregorian_date": "1932 July 08"},
+    {"volume": 2, "project": "DS 0045 00542", "legacy_id": 7159, "native_title": "ᨕᨚᨄᨙᨌᨚᨕ - ᨑᨘᨓᨊ", "roman_title": "Ouw Pe Coa – Ruwana", "native_date": "6– 6 – 2483", "gregorian_date": "1932 July 09"},
+    {"volume": 3, "project": "DS 0045 00543", "legacy_id": 7160, "native_title": "ᨕᨚᨄᨙᨌᨚᨕ - ᨈᨒᨘᨊ", "roman_title": "Ouw Pe Coa – Talluna", "native_date": "7– 6 – 2483", "gregorian_date": "1932 July 10"},
+    {"volume": 4, "project": "DS 0045 00544", "legacy_id": 7161, "native_title": "ᨕᨚᨄᨙᨌᨚᨕ - ᨕᨄᨊ", "roman_title": "Ouw Pe Coa – Appana", "native_date": "10– 6 – 2483", "gregorian_date": "1932 July 13"},
+    {"volume": 5, "project": "DS 0045 00545", "legacy_id": 7162, "native_title": "ᨕᨚᨄᨙᨌᨚᨕ - ᨒᨗᨆᨊ", "roman_title": "Ouw Pe Coa – Limana", "native_date": "11– 6 – 2483", "gregorian_date": "1932 July 14"},
+    {"volume": 6, "project": "DS 0045 00546", "legacy_id": 7163, "native_title": "ᨕᨚᨄᨙᨌᨚᨕ - ᨕᨊᨊ", "roman_title": "Ouw Pe Coa – Annangna", "native_date": "13– 6 – 2483", "gregorian_date": "1932 July 16"},
+    {"volume": 7, "project": "DS 0045 00547", "legacy_id": 7164, "native_title": "ᨕᨚᨄᨙᨌᨚᨕ - ᨈᨘᨍᨘᨊ", "roman_title": "Ouw Pe Coa – Tujuna", "native_date": "14– 6 – 2483", "gregorian_date": "1932 July 17"},
+    {"volume": 8, "project": "DS 0045 00548", "legacy_id": 7165, "native_title": "ᨕᨚᨄᨙᨌᨚᨕ - ᨔᨂᨈᨘᨍᨘᨊ", "roman_title": "Ouw Pe Coa – Sangangtujuna", "native_date": "16 – 6 – 2483", "gregorian_date": "1932 July 19"},
+    {"volume": 9, "project": "DS 0045 00549", "legacy_id": 7166, "native_title": "ᨕᨚᨄᨙᨌᨚᨕ - ᨔᨒᨄᨊ", "roman_title": "Ouw Pe Coa – Salapangna", "native_date": "17– 6 – 2483", "gregorian_date": "1932 July 20"},
+    {"volume": 10, "project": "DS 0045 00550", "legacy_id": 7167, "native_title": "ᨕᨚᨄᨙᨌᨚᨕ - ᨔᨄᨘᨒᨚᨊ", "roman_title": "Ouw Pe Coa – Sampulona", "native_date": "18– 6 – 2483", "gregorian_date": "1932 July 21"},
+    {"volume": 11, "project": "DS 0045 00551", "legacy_id": 7168, "native_title": "ᨕᨚᨄᨙᨌᨚᨕ - ᨔᨄᨘᨒᨚᨔᨙᨑᨙ", "roman_title": "Ouw Pe Coa – Sampulo Sekre", "native_date": "21– 6 – 2483", "gregorian_date": "1932 July 24"},
+    {"volume": 12, "project": "DS 0045 00552", "legacy_id": 7169, "native_title": "ᨕᨚᨄᨙᨌᨚᨕ - ᨔᨄᨘᨒᨚᨑᨘᨓ", "roman_title": "Ouw Pe Coa – Sampulo Ruwa", "native_date": "22– 6 – 2483", "gregorian_date": "1932 July 25"}
+  ]
+}

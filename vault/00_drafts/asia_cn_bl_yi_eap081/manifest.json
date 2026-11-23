@@ -1,0 +1,17 @@
+{
+  "batch": "asia_cn_bl_yi_eap081",
+  "review_state": "pending",
+  "source": {
+    "catalogue": "https://searcharchives.bl.uk/catalog/032-001617335",
+    "manifest": "D:\\新建文件夹\\astraia\\.local\\import-sources\\bl-yi-eap081-2026-11-23\\manifest.json",
+    "manifest_sha256": "4198a4fb16f2601698e6780de30e2db8c2b614dcd9a3312955ad5a7b38ca8920",
+    "scope": "云南彝语录音馆藏组与六个子组；目录文字 CC BY 4.0，音频未下载，研究访问条件另核"
+  },
+  "counts": {
+    "records": 7,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

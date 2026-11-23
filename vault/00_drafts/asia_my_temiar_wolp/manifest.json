@@ -1,0 +1,18 @@
+{
+  "batch": "asia_my_temiar_wolp",
+  "review_state": "pending",
+  "source": {
+    "catalogue": "https://www.oralliterature.org/collections/probertson001.html",
+    "manifest": "D:\\新建文件夹\\astraia\\.local\\source-snapshots\\temiar-wolp-20261123\\manifest.json",
+    "manifest_sha256": "82e4422cb6466dcce2473ddee13b6072f740ffc53df005484649b2cac3a6a035",
+    "scope": "本地个人或内部非商业目录筛查；未获取录音、照片、信件或附件，单件权利另核。",
+    "current_manifest_sha256": "9646aaaa5527e322b5cf2850d10555ee9e7afbb4dec72ca237a6938c8db48836"
+  },
+  "counts": {
+    "records": 21,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

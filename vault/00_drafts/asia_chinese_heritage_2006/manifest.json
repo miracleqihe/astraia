@@ -1,0 +1,17 @@
+{
+  "batch": "asia_chinese_heritage_2006",
+  "review_state": "pending",
+  "source": {
+    "register": "https://zwgk.mct.gov.cn/zfxxgkml/fwzwhyc/202012/t20201206_916788.html",
+    "snapshot": "D:\\新建文件夹\\astraia\\.local\\import-sources\\asia-pilot\\china_ich_2006.html",
+    "sha256": "3d7f68443057355405a8eea45e414347866b20993abea793700ae29d3956cf8a",
+    "scope": "第一批国家级非遗名录，一、民间文学；申报地与采录地须区分"
+  },
+  "counts": {
+    "records": 31,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

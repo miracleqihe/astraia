@@ -1,0 +1,79 @@
+---
+id: case_thai_sac_74
+title: 泰国民间叙事 · ข้าวเม่าอ่อน
+aliases:
+- ข้าวเม่าอ่อน
+- SAC 74
+node_type: case
+z_layer: 1
+genre: unclassified
+credibility_tier: B
+is_fictional_quarantine: false
+spatial:
+  lat: null
+  lng: null
+  precision: culture_region
+  location_name: 馆藏原地点字段（性质待核）：ไทย,
+  culture_region: Southeast Asia · Thailand
+temporal: null
+standards:
+  atu_types: []
+  thompson_motifs: []
+  berezkin_codes: []
+  ocm_codes: []
+  macro_phylogeny: null
+mechanisms: []
+relations:
+- type: PART_OF_MACRO_TREND
+  target: corpus_thai_sac_folktales
+  weight: 1.0
+  note: 出自同一馆藏数据集；不表示共同采录地点或传播关系。
+  status: null
+sources:
+- citation: Sirindhorn Anthropology Centre, ข้อมูลนิทาน ตำนาน เรื่องเล่าพื้นบ้าน,
+    公开数据目录（标注 Creative Commons Attribution Non-Commercial；版本待核）。
+  type: thai_sac_dataset
+  url: https://sac.gdcatalog.go.th/dataset/a19af6d7-bea9-4d66-ad43-460d017fbca8/resource/9bef7577-c1cf-4e28-a57d-82e65ff46db7/download/folktales.json
+  doi: null
+  locator: JSON / result / 原记录 id=74
+  local_path: .local/import-sources/thai-sac/folktales.json
+  content_sha256: a34b9b174ba9eb29148961ce786f1f30857e5f4b10f63fe9ab85fded279c4c9c
+- citation: 诗琳通人类学中心原记录页（未自动下载，请人工回查）。
+  type: thai_sac_record_link
+  url: https://www.sac.or.th/databases/folktales/folktale-details.php?id=74
+  doi: null
+  locator: folktale id=74
+  local_path: null
+  content_sha256: null
+audit:
+  created_at: '2026-11-22'
+  reviewed_by_human: false
+  ai_confidence: null
+  is_sample: false
+  reviewer: null
+  reviewed_at: null
+  review_note: null
+---
+
+## 馆藏原字段
+
+- 泰语原题：ข้าวเม่าอ่อน
+- 馆藏原类别 type：มุขตลก
+- 馆藏原字段 creator：คำเบา แทนนา
+- 馆藏原地点 spatial：ไทย,
+- 馆藏原语言 language：ไทย
+- 馆藏原许可字段 license：สัญญาอนุญาตของครีเอทีฟคอมมอนส์
+
+## 泰语原文
+
+```
+ช่วงเดือน พฤศจิกายน ธันวาคม ของทุกปี จะเป็นช่วงลมแรงและข้าวในนาเริ่มสุกเหลืองอร่ามเต็มที่พร้อมที่จะเก็บเกี่ยว บางหมู่บ้านและบางพื้นที่ก็จะเก็บเกี่ยวข้าวก่อนที่มันจะสุกเหลืองเพือเอามาทำข้าวเม่าอ่อน ในภาคต่างๆ ของประเทศไทยจะมีการทำนาประเภทต่างๆ เช่น นาทาม, นาห้วย, นาหนอง, นาเขา
+ช่วงนี้ข้าวเหมาะที่จะเอามาทำข้าวเม่าพอดี ส่วนที่นาของนางคำกอง นางมีนาบ้านที่ข้าวยังสุกไม่ทันนาบ้านอื่นๆ ข้าวของนางคำกองยังทำข้าวเม่าไม่ได้ แต่นางคำกองก็อยากกินข้าวเม่ามาก ชาวบ้านคนอื่นๆ ในหมู่บ้านของนางคำกองก็เริ่มทำข้าวเม่ากินกันแล้วและก็กินกันอย่างสนุกสนานครื้นเครง ก็ยังเหลือแต่นางคำกอง นางก็รอให้ข้าวในนาของนางสุกพอดีก่อนแต่เห็นคนอื่นๆ ได้กินข้าวเม่ากันแล้วนางจึงรอไม่ไหวเพราะอยากกินข้าวเม่ามากนางจึงไปเกี่ยวข้าวในนาของนางมาทำข้าวเม่าอ่อนกิน พอข้าวยังสุกไม่ได้ที่นางเอามาทำข้าวเม่ากินนางจึงปวดท้อง เพราะกินไปเยอะมากพอสมควร
+เย็นวันเดียวกันนั้นนางคำกองมีนัดคุยกับผู้บ่าวจานกาน ผู้บ่าวของนางก็ถือแคน (เครื่องดนตรีเป่าของชาวอีสาน ทำจากไม้ไผ่) มาด้วยเพราะอยากมาเป่าให้นางคำกองฟัง ทั้งสองก็นั่งคุยกันจนดึกดื่นเที่ยงคืน ส่วนนางคำกองที่ท้องอืดอยู่แล้วคุยกันไปก็อยากจะผายลมไปด้วย นางก็นึกในใจว่าถ้าจะไปผายลมใส่ไหน่าจะเสียงดังเกินไป นางก็เลยไปผายลมใส่ก้นน้องสาวของนางที่นอนหลับอยู่ น้องสาวของนางตื่นมาพอดีเลยตะโกนเสียงดังโวยวายว่า
+“เอื้อยคำกองมาผายลมใส่เฮา!”
+ผู้บ่าวของนางที่นั่งรออยู่ข้างนอกระเบียงได้ยินดังนั้นจึงรีบลงจากเรือนกลับบ้านไปก่อน เพราะเกรงว่านางคำกองจะรู้สึกอับอาย
+```
+
+## 来源与复核
+
+原文来自诗琳通人类学中心的公开数据快照。目录声明署名、非商业用途；具体版本与单条权利仍需核对。原记录网页未自动抓取，可循出处链接人工查阅。creator 的含义、地点字段的性质、体裁和标准码均需人工复核；未自动填入坐标或类型码。

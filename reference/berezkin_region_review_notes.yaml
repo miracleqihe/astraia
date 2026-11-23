@@ -1,0 +1,56 @@
+version: 1
+checked_at: '2026-11-22'
+supplement_sha256: 8ac0c71be023452b6817cab9b3b5100c199daf2713f3b0dc54140d6f00f9c7bf
+method: >-
+  根据项目使用的 Natural Earth 1:110m 国家边界底图检查参考点，并与别列兹金对文化区的举例及地理文献对照。
+  现代国界和语言分布不能直接定义历史文化区，因此这里只提出坐标疑点，不推断正确位置。
+  原值来自 Liu 等研究附件 3 的 myth_regions.csv，分析区的参考点不等于原始采录地点。
+regions:
+  51:
+    name: NW Mexico
+    lat: 23.2
+    lng: -98.8
+    finding: 原参考点位于墨西哥东部附近，与“墨西哥西北部”的名称及别列兹金列举的族群之间存在地理疑点。
+    sources:
+      - title: 别列兹金对 Great Southwest 和 NW Mexico 的举例，第 7 页
+        url: https://wiki.santafe.edu/images/a/ac/PeopleMortal.pdf
+      - title: 墨西哥国家地理信息局（INEGI）塔毛利帕斯州地图
+        url: https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/nueva_estruc/889463913344.pdf
+  55:
+    name: Northern Andes
+    lat: 21.2
+    lng: -66.8
+    finding: 原参考点在波多黎各以北海域；别列兹金将北安第斯与 Yupa 等群体相联系，需核对该点为何指向加勒比地区。
+    sources:
+      - title: 别列兹金文化区及族群举例，第 6–7 页
+        url: https://wiki.santafe.edu/images/a/ac/PeopleMortal.pdf
+      - title: Urban，北安第斯语言分布中 Yupa 的位置
+        url: https://doi.org/10.1111/lnc3.12414
+  56:
+    name: Llanos
+    lat: 18.6
+    lng: -69.5
+    finding: 原参考点按底图落在多米尼加共和国；奥里诺科 Llanos 的研究地点位于哥伦比亚和委内瑞拉，需核对该差异。
+    sources:
+      - title: 别列兹金文化区及族群举例，第 6–7 页
+        url: https://wiki.santafe.edu/images/a/ac/PeopleMortal.pdf
+      - title: 奥里诺科 Llanos 古生态研究，表 1 和图 1
+        url: https://doi.org/10.3389/fevo.2022.824873
+  66:
+    name: Montana
+    lat: -25.0
+    lng: -70.2
+    finding: 原参考点按底图落在智利沿岸附近；别列兹金对 Montaña 的举例包括 Ashaninca，所举例证的地域与该点需进一步对照。
+    sources:
+      - title: 别列兹金文化区及族群举例，第 6–7 页
+        url: https://wiki.santafe.edu/images/a/ac/PeopleMortal.pdf
+      - title: Glottolog，Asháninka 语言资料和国家信息
+        url: https://glottolog.org/resource/languoid/id/asha1243
+  73:
+    name: South & Southern Atlantic Brazil
+    lat: -23.4
+    lng: -58.4
+    finding: 原参考点按底图落在巴拉圭，而巴西地理统计局的南部最西端位于更东侧；文化区可能跨越现代国界，需核对研究作者的划分。
+    sources:
+      - title: 巴西地理统计局（IBGE），2022 年各大区地理极点表
+        url: https://anuario.ibge.gov.br/images/aeb/2023/s1/2_pdf/s1t1101.pdf

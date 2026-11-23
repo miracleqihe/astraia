@@ -1,0 +1,340 @@
+{
+  "version": 1,
+  "corpus_url": "https://pangloss.cnrs.fr/corpus/Yongning_Na",
+  "catalogue_sha256": "85f6c91212d4ca5d7ae29bc1e3caa6a35d248911d0173811055f38409295dbaf",
+  "previous_selection_sha256": "1f88f1a229052fc6308be72cd2e6a051c0e5b038a70afb51a9c2d75bbb6dac5d",
+  "selection_method": "人工依据目录题名选取与永宁仪式、地方观念、口述背景及歌曲有关的资源；每条单独分组，不创建同源关系。",
+  "limits": "目的性选取并非完整目录或随机样本；仪式访谈、歌曲和口述回忆不自动视为神话或单篇故事，讲述者身份及许可须核查。",
+  "selected_titles": {
+    "0004534": "Un nom venu d'ailleurs: un ancien rite de parrainage chez les Na",
+    "0004540": "Guérison: recours rituels face à la maladie",
+    "0004551": "Les aînés (version 1): récits au sujet de la famille Latami",
+    "0004552": "Les aînés (version 2): récits au sujet de la famille Latami",
+    "0004553": "Les aînés (version 4): récits au sujet de la famille Latami",
+    "0004554": "Les aînés (version 5): récits au sujet de la famille Latami",
+    "0004571": "Funérailles : comment se déroulaient autrefois les rites funéraires",
+    "0004577": "Un rituel funéraire: «rife», «transmission de l'alcool»",
+    "0004579": "Cendres : comment les cendres sont recueillies après la crémation",
+    "0004583": "Boundaries: an account of boundaries within the Na geography",
+    "0004584": "Chicken divination: Fortune-telling by examining chicken bones",
+    "0004585": "Children: Customs and rites surrounding the birth of a child",
+    "0004586": "Choosing a Daba: on preferences in choosing a priest of the local religion to perform rituals",
+    "0004587": "Le rituel de passage à l'âge adulte",
+    "0004588": "Le rituel de passage à l'âge adulte (version 2)",
+    "0004606": "Folk etymology: Yongning as 'the restful place'",
+    "0004610": "How I learnt: an account of how the narrator learnt about the Na's traditions",
+    "0004612": "Life story: the narrator's life story",
+    "0004618": "Le nom propre, un don des dieux",
+    "0004620": "Priests",
+    "0004624": "Spirits: about two spirits in a sanctuary close to the Yongning monastery",
+    "0004627": "Sword: the symbolic value of swords and their use to ward off evil",
+    "0004628": "Taboos: an account of prohibitions in daily life",
+    "0004629": "Taking charge of rituals: how the narrator takes charge of rituals at the request of others",
+    "0004631": "Tooth: how a fake relic became a real one",
+    "0004659": "Tooth: how a fake relic became a real one. Version 2.",
+    "0004857": "Appeal to the gods to settle a quarrel",
+    "0004874": "Dice: fortune-telling by casting dice",
+    "0004917": "Mountain rites: about rites done for sacred mountains",
+    "0004918": "Mountains (version 2): about the mountains that surround the plain of Yongning. This narrative focuses on rites associated with mountains .",
+    "0004919": "Mourning: how one used to mourn the dead. This is a conversational account, with Bima Lhaco acting as respondent.",
+    "0004921": "Mourning, version 2: about family members' conduct after the death of a relative",
+    "0004932": "Proverb: explaining a proverb: “Even if we had had a thousand harvests, it would not have lasted a hundred years!”",
+    "0004943": "Taboos (version 2): how one used to deal with drunk people and mad people",
+    "0004951": "Uncle: about the importance of the mother's brothers in Na society",
+    "0007732": "Le foyer : au sujet de la symbolique du foyer dans la culture na (moso)",
+    "0007740": "L'ethnonyme 'Moso': son histoire et sa pertinence",
+    "0004837": "Coming of age: the consultant looks back on how his coming-of-age ceremony was performed",
+    "0004715": "Ahabala, song 1: A song in the traditional Na/Mosuo style 'Ahabala'",
+    "0004717": "Ahabala, song 2: A song in the traditional Na/Mosuo style 'Ahabala'",
+    "0004719": "Hinami: A passage sung in the traditional Na/Mosuo style 'Hinami': the style of the Lake"
+  },
+  "groups": [
+    {
+      "id": "context_0004534",
+      "label": "仪式、地方观念与口述背景 · 0004534",
+      "ids": [
+        "0004534"
+      ]
+    },
+    {
+      "id": "context_0004540",
+      "label": "仪式、地方观念与口述背景 · 0004540",
+      "ids": [
+        "0004540"
+      ]
+    },
+    {
+      "id": "context_0004551",
+      "label": "仪式、地方观念与口述背景 · 0004551",
+      "ids": [
+        "0004551"
+      ]
+    },
+    {
+      "id": "context_0004552",
+      "label": "仪式、地方观念与口述背景 · 0004552",
+      "ids": [
+        "0004552"
+      ]
+    },
+    {
+      "id": "context_0004553",
+      "label": "仪式、地方观念与口述背景 · 0004553",
+      "ids": [
+        "0004553"
+      ]
+    },
+    {
+      "id": "context_0004554",
+      "label": "仪式、地方观念与口述背景 · 0004554",
+      "ids": [
+        "0004554"
+      ]
+    },
+    {
+      "id": "context_0004571",
+      "label": "仪式、地方观念与口述背景 · 0004571",
+      "ids": [
+        "0004571"
+      ]
+    },
+    {
+      "id": "context_0004577",
+      "label": "仪式、地方观念与口述背景 · 0004577",
+      "ids": [
+        "0004577"
+      ]
+    },
+    {
+      "id": "context_0004579",
+      "label": "仪式、地方观念与口述背景 · 0004579",
+      "ids": [
+        "0004579"
+      ]
+    },
+    {
+      "id": "context_0004583",
+      "label": "仪式、地方观念与口述背景 · 0004583",
+      "ids": [
+        "0004583"
+      ]
+    },
+    {
+      "id": "context_0004584",
+      "label": "仪式、地方观念与口述背景 · 0004584",
+      "ids": [
+        "0004584"
+      ]
+    },
+    {
+      "id": "context_0004585",
+      "label": "仪式、地方观念与口述背景 · 0004585",
+      "ids": [
+        "0004585"
+      ]
+    },
+    {
+      "id": "context_0004586",
+      "label": "仪式、地方观念与口述背景 · 0004586",
+      "ids": [
+        "0004586"
+      ]
+    },
+    {
+      "id": "context_0004587",
+      "label": "仪式、地方观念与口述背景 · 0004587",
+      "ids": [
+        "0004587"
+      ]
+    },
+    {
+      "id": "context_0004588",
+      "label": "仪式、地方观念与口述背景 · 0004588",
+      "ids": [
+        "0004588"
+      ]
+    },
+    {
+      "id": "context_0004606",
+      "label": "仪式、地方观念与口述背景 · 0004606",
+      "ids": [
+        "0004606"
+      ]
+    },
+    {
+      "id": "context_0004610",
+      "label": "仪式、地方观念与口述背景 · 0004610",
+      "ids": [
+        "0004610"
+      ]
+    },
+    {
+      "id": "context_0004612",
+      "label": "仪式、地方观念与口述背景 · 0004612",
+      "ids": [
+        "0004612"
+      ]
+    },
+    {
+      "id": "context_0004618",
+      "label": "仪式、地方观念与口述背景 · 0004618",
+      "ids": [
+        "0004618"
+      ]
+    },
+    {
+      "id": "context_0004620",
+      "label": "仪式、地方观念与口述背景 · 0004620",
+      "ids": [
+        "0004620"
+      ]
+    },
+    {
+      "id": "context_0004624",
+      "label": "仪式、地方观念与口述背景 · 0004624",
+      "ids": [
+        "0004624"
+      ]
+    },
+    {
+      "id": "context_0004627",
+      "label": "仪式、地方观念与口述背景 · 0004627",
+      "ids": [
+        "0004627"
+      ]
+    },
+    {
+      "id": "context_0004628",
+      "label": "仪式、地方观念与口述背景 · 0004628",
+      "ids": [
+        "0004628"
+      ]
+    },
+    {
+      "id": "context_0004629",
+      "label": "仪式、地方观念与口述背景 · 0004629",
+      "ids": [
+        "0004629"
+      ]
+    },
+    {
+      "id": "context_0004631",
+      "label": "仪式、地方观念与口述背景 · 0004631",
+      "ids": [
+        "0004631"
+      ]
+    },
+    {
+      "id": "context_0004659",
+      "label": "仪式、地方观念与口述背景 · 0004659",
+      "ids": [
+        "0004659"
+      ]
+    },
+    {
+      "id": "context_0004857",
+      "label": "仪式、地方观念与口述背景 · 0004857",
+      "ids": [
+        "0004857"
+      ]
+    },
+    {
+      "id": "context_0004874",
+      "label": "仪式、地方观念与口述背景 · 0004874",
+      "ids": [
+        "0004874"
+      ]
+    },
+    {
+      "id": "context_0004917",
+      "label": "仪式、地方观念与口述背景 · 0004917",
+      "ids": [
+        "0004917"
+      ]
+    },
+    {
+      "id": "context_0004918",
+      "label": "仪式、地方观念与口述背景 · 0004918",
+      "ids": [
+        "0004918"
+      ]
+    },
+    {
+      "id": "context_0004919",
+      "label": "仪式、地方观念与口述背景 · 0004919",
+      "ids": [
+        "0004919"
+      ]
+    },
+    {
+      "id": "context_0004921",
+      "label": "仪式、地方观念与口述背景 · 0004921",
+      "ids": [
+        "0004921"
+      ]
+    },
+    {
+      "id": "context_0004932",
+      "label": "仪式、地方观念与口述背景 · 0004932",
+      "ids": [
+        "0004932"
+      ]
+    },
+    {
+      "id": "context_0004943",
+      "label": "仪式、地方观念与口述背景 · 0004943",
+      "ids": [
+        "0004943"
+      ]
+    },
+    {
+      "id": "context_0004951",
+      "label": "仪式、地方观念与口述背景 · 0004951",
+      "ids": [
+        "0004951"
+      ]
+    },
+    {
+      "id": "context_0007732",
+      "label": "仪式、地方观念与口述背景 · 0007732",
+      "ids": [
+        "0007732"
+      ]
+    },
+    {
+      "id": "context_0007740",
+      "label": "仪式、地方观念与口述背景 · 0007740",
+      "ids": [
+        "0007740"
+      ]
+    },
+    {
+      "id": "context_0004837",
+      "label": "仪式、地方观念与口述背景 · 0004837",
+      "ids": [
+        "0004837"
+      ]
+    },
+    {
+      "id": "context_0004715",
+      "label": "歌曲类背景资料 · 0004715",
+      "ids": [
+        "0004715"
+      ]
+    },
+    {
+      "id": "context_0004717",
+      "label": "歌曲类背景资料 · 0004717",
+      "ids": [
+        "0004717"
+      ]
+    },
+    {
+      "id": "context_0004719",
+      "label": "歌曲类背景资料 · 0004719",
+      "ids": [
+        "0004719"
+      ]
+    }
+  ]
+}

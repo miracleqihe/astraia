@@ -1,0 +1,101 @@
+---
+id: case_cn_zibuyu_v23_s021
+title: 《子不语》卷 23 · 天上四花園
+aliases:
+- 天上四花園
+node_type: case
+z_layer: 1
+genre: unclassified
+credibility_tier: B
+is_fictional_quarantine: false
+spatial:
+  lat: null
+  lng: null
+  precision: culture_region
+  location_name: 中国志怪文献；各篇发生地与采录地待核
+  culture_region: East Asia · China
+temporal: null
+standards:
+  atu_types: []
+  thompson_motifs: []
+  berezkin_codes: []
+  ocm_codes: []
+  macro_phylogeny: null
+mechanisms: []
+relations:
+- type: PART_OF_MACRO_TREND
+  target: corpus_cn_zibuyu_v23
+  weight: 1.0
+  note: 所列分卷篇题；与目录同题或同序的对应仍需核查。
+  status: null
+sources:
+- citation: 袁枚，《子不語》；维基文库贡献者转录修订 2157731，底本与校勘待核。
+  type: zibuyu_revision_link
+  url: https://zh.wikisource.org/w/index.php?title=%E5%AD%90%E4%B8%8D%E8%AA%9E/%E5%8D%B723&oldid=2157731#%E2%97%8B%E5%A4%A9%E4%B8%8A%E5%9B%9B%E8%8A%B1%E5%9C%92
+  doi: null
+  locator: 卷 23 / ○天上四花園 / 固定修订
+  local_path: null
+  content_sha256: null
+- citation: 维基文库对应页面的本地原网页快照；段落抽取不等于古籍底本校勘。
+  type: zibuyu_snapshot
+  url: https://zh.wikisource.org/wiki/%E5%AD%90%E4%B8%8D%E8%AA%9E/%E5%8D%B723
+  doi: null
+  locator: 卷 23 / ○天上四花園 / 本地网页快照
+  local_path: .local/source-snapshots/zibuyu-wikisource-20261123/volume-23.html
+  content_sha256: 5a3339ed02c8fd19c25cb75a726ef8012d361fad016e38741615fbcdc67f4201
+- citation: 本地总目录、分卷网页和修订号采集清单。
+  type: zibuyu_manifest
+  url: https://zh.wikisource.org/wiki/%E5%AD%90%E4%B8%8D%E8%AA%9E
+  doi: null
+  locator: 总目录与分卷快照清单
+  local_path: .local/source-snapshots/zibuyu-wikisource-20261123/manifest.json
+  content_sha256: 9e93d1fff4e822c17343ab91b2d3f48dd371bbfb6436c0992f631343be526ec1
+- citation: 维基文库总目录；同题或同序仅为待核对照。
+  type: zibuyu_index
+  url: https://zh.wikisource.org/wiki/%E5%AD%90%E4%B8%8D%E8%AA%9E
+  doi: null
+  locator: 总目录卷 23
+  local_path: .local/source-snapshots/zibuyu-wikisource-20261123/index.html
+  content_sha256: 9f58aae3fb2e0aee52d89b05584984694aee7d7d77fcff46f08b34607bbc7027
+audit:
+  created_at: '2026-11-22'
+  reviewed_by_human: false
+  ai_confidence: null
+  is_sample: false
+  reviewer: null
+  reviewed_at: null
+  review_note: null
+---
+
+## 来源字段
+
+```
+{
+  "分卷": 23,
+  "分卷篇序": 21,
+  "分卷篇名原文": "天上四花園",
+  "分卷页面实际锚点": "○天上四花園",
+  "分卷修订号": 2157731,
+  "总目录候选方式": "同题候选",
+  "总目录候选篇目": {
+    "number": 21,
+    "title": "天上四花園",
+    "anchor": "○天上四花園"
+  },
+  "锚点一致": true,
+  "段落数": 1,
+  "抽取纯文字 SHA256": "212354e63efac88a2203eb1bc378b977924ffe80d05efba4487b9acbb5a4c6b7",
+  "文字说明": "由分卷网页段落抽取纯文字；原页的版式与注标须回查，不等于已核对古籍底本。",
+  "固定修订原文链接": "https://zh.wikisource.org/w/index.php?title=%E5%AD%90%E4%B8%8D%E8%AA%9E/%E5%8D%B723&oldid=2157731#%E2%97%8B%E5%A4%A9%E4%B8%8A%E5%9B%9B%E8%8A%B1%E5%9C%92"
+}
+```
+
+## 在线转录原文（待校）
+
+```
+嘉興祝孝廉維誥為中書舍人，好扶乩，言休咎往往有應者。將死前一月，乩仙自稱：「我天上看園叟也，特來奉迎。」祝問：「天上安得有園？」叟云：「天上花園甚多，不能言其數，但我所管領者，四園三主人耳。」問：「主人為誰？」曰：「冒辟疆、張廣泗，其一則足下也。」祝問：「冒與張絕不相倫，何以共在一處？」曰：「君等三人皆隸仙籍，冒降生為公子，享福太多，現今未許復位，園尚荒蕪。張福力最大，以作經略時殺降太多，上帝怒之，將置冥獄，幸而生前已罹國法，故猶許住園。君在世無過無功，今陽數將終，可來復位。」言畢，乩盤不動。是年，祝病亡。
+```
+
+## 版本与复核
+
+本文是维基文库在线转录的段落纯文字，未对照纸本或影印底本；版式、注标及异文须回查原页。原作及数字转录版本的权利需分别核对；站点文字按 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 提供，使用时应保留贡献者、修订版本和出处。志怪文本记述不等于已证实事件，故事发生地及年代、标准码均待核。

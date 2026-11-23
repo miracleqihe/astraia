@@ -1,0 +1,20 @@
+{
+  "batch": "asia_sea_pangloss_khmu",
+  "review_state": "pending",
+  "source": {
+    "catalogue": "https://pangloss.cnrs.fr/corpus/Khmu",
+    "catalogue_sha256": "392ee320fd8fce58fd67d4fa65eb085d2d90a0b23b0bf26c63feb2e2188065ee",
+    "selection_sha256": "0bab5d7331a8fc6d9dd1a6e79cb996238a984e8941cb98ba5596f409ad6c0592",
+    "comparison_sha256": "84ebd4f33a287c9bfbe97e84ca08b007c69538772b1ba06de2f6b0b162bfe270",
+    "detail_manifest": "D:\\新建文件夹\\astraia\\.local\\import-sources\\pangloss-khmu-detail-2026-11-22-v1\\manifest.json",
+    "manifest_sha256": "f704500ae421b5146d2a76e5d707594702b15b5f02b060fc1c3138a762fa4bb3",
+    "scope": "馆方录音目录与待核对照；一条录音不等于一篇故事；未复制音频或转写，许可和社区要求逐条核对"
+  },
+  "counts": {
+    "records": 178,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

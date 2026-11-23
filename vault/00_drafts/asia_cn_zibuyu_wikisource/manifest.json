@@ -1,0 +1,18 @@
+{
+  "batch": "asia_cn_zibuyu_wikisource",
+  "review_state": "pending",
+  "source": {
+    "catalogue": "https://zh.wikisource.org/wiki/%E5%AD%90%E4%B8%8D%E8%AA%9E",
+    "manifest": "D:\\新建文件夹\\astraia\\.local\\source-snapshots\\zibuyu-wikisource-20261123\\manifest.json",
+    "manifest_sha256": "9e93d1fff4e822c17343ab91b2d3f48dd371bbfb6436c0992f631343be526ec1",
+    "talk_manifest_sha256": "c2c64d58ca94ae55cf1ac2d26322568713a2504376ad7fc8a8e163c41b9a59fa",
+    "scope": "维基文库在线转录与目录；古籍底本及单篇对应待核，保留修订及站点文字使用条款。"
+  },
+  "counts": {
+    "records": 769,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

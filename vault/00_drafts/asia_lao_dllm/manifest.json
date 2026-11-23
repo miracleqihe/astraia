@@ -1,0 +1,17 @@
+{
+  "batch": "asia_lao_dllm",
+  "review_state": "pending",
+  "source": {
+    "search": "https://iiif.crossasia.org/s/dllm",
+    "snapshot_manifest": "D:\\新建文件夹\\astraia\\.local\\import-sources\\lao-dllm\\manifest.json",
+    "manifest_sha256": "74c5da76fb3310fe2423d63de1fd3a34f15c38fd8095540dac8d4b2ff39fd8af",
+    "scope": "Folk Tale 馆藏手稿元数据；不含影像或转录正文"
+  },
+  "counts": {
+    "records": 454,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}

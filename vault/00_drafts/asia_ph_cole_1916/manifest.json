@@ -1,0 +1,17 @@
+{
+  "batch": "asia_ph_cole_1916",
+  "review_state": "pending",
+  "source": {
+    "book": "https://archive.org/details/afl2786.0001.001.umich.edu",
+    "toc": "D:\\新建文件夹\\astraia\\reference\\philippine_cole_1916_toc.tsv",
+    "toc_sha256": "91eb1b352a7e7fa0407ea19ffba3a40d175922c83f0676df11ea20b44d22c74f",
+    "scope": "1916 年选集目录项；附未校对的逐页 OCR 候选，人工复核前不入图"
+  },
+  "counts": {
+    "records": 62,
+    "with_coordinates": 0,
+    "with_years": 0,
+    "fiction": 0,
+    "indexed": 0
+  }
+}
