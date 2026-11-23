@@ -28,7 +28,11 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, on
     const element = host.current;
     if (!element) return;
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.6));
+    const gl = renderer.getContext();
+    const debug = gl.getExtension('WEBGL_debug_renderer_info');
+    const rendererName = debug ? String(gl.getParameter(debug.UNMASKED_RENDERER_WEBGL)) : '';
+    const softwareRenderer = /swiftshader|llvmpipe|software|warp/i.test(rendererName);
+    renderer.setPixelRatio(softwareRenderer ? .5 : Math.min(window.devicePixelRatio, 1.6));
     renderer.setClearColor(0x101722, 1);
     element.appendChild(renderer.domElement);
     const scene = new THREE.Scene();
@@ -88,6 +92,22 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, on
       transparent: true, opacity: .75, depthWrite: false }));
     scene.add(lines);
     let focus: THREE.Vector3 | null = null;
+    let frame = 0;
+    function scheduleRender() {
+      if (!frame) frame = requestAnimationFrame(render);
+    }
+    function render() {
+      frame = 0;
+      if (focus) {
+        const delta = focus.clone().sub(controls.target).multiplyScalar(.08);
+        camera.position.add(delta); controls.target.add(delta);
+        if (delta.lengthSq() < .001) focus = null;
+      }
+      const moving = controls.update();
+      renderer.render(scene, camera);
+      if (focus || moving) scheduleRender();
+    }
+    controls.addEventListener('change', scheduleRender);
     const color = new THREE.Color();
     drawing.current = {
       update(selected, subject) {
@@ -110,11 +130,13 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, on
         }
         lineGeometry.setFromPoints(linePoints);
         focus = origin?.clone() ?? null;
+        scheduleRender();
       },
     };
     const resize = () => {
       const width = Math.max(1, element.clientWidth), height = Math.max(1, element.clientHeight);
       camera.aspect = width / height; camera.updateProjectionMatrix(); renderer.setSize(width, height, false);
+      scheduleRender();
     };
     const observer = new ResizeObserver(resize); observer.observe(element); resize();
     const raycaster = new THREE.Raycaster();
@@ -148,19 +170,9 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, on
     renderer.domElement.addEventListener('pointerdown', pointerDown);
     renderer.domElement.addEventListener('pointerup', pointerUp);
     renderer.domElement.addEventListener('pointerleave', leave);
-    let frame = 0;
-    const animate = () => {
-      if (focus) {
-        const delta = focus.clone().sub(controls.target).multiplyScalar(.08);
-        camera.position.add(delta); controls.target.add(delta);
-        if (delta.lengthSq() < .001) focus = null;
-      }
-      controls.update(); renderer.render(scene, camera); frame = requestAnimationFrame(animate);
-    };
     drawing.current.update(selectedId, subjectId);
-    animate();
     return () => {
-      cancelAnimationFrame(frame); observer.disconnect(); controls.dispose();
+      cancelAnimationFrame(frame); observer.disconnect(); controls.removeEventListener('change', scheduleRender); controls.dispose();
       renderer.domElement.removeEventListener('pointermove', move);
       renderer.domElement.removeEventListener('pointerdown', pointerDown);
       renderer.domElement.removeEventListener('pointerup', pointerUp);
