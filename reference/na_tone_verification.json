@@ -1,0 +1,36 @@
+{
+  "baseline_drafts": 10605,
+  "unchanged_drafts": 10579,
+  "enriched_drafts": 26,
+  "new_candidates": 3,
+  "exported_records": 10608,
+  "book_evidence_records": 29,
+  "book_link_rows": 321,
+  "doi_ids": 90,
+  "recording_matches": 72,
+  "registry_records": 45,
+  "rights_discrepancies": 43,
+  "unresolved_ids": [
+    "0009179",
+    "0009216"
+  ],
+  "formal_graph_sha256": "d2dd43c2bd5ad331c04f7529f74abb73931b45f88006b1d00eae50a6c62a194c",
+  "review_export_sha256": "ebe4015fe96d257b2660a185581a5343ccc509c7dbcabdaca1bd7a1fa4959c99",
+  "book_link_csv_sha256": "59ade154250c24832d69bd6fec6d6df47530c78f87edf5c152e88a1d9bf26521",
+  "automated_tests": {
+    "python_unittest": 183,
+    "node_syntax": "pass",
+    "typescript_vite_build": "pass"
+  },
+  "browser_verification": {
+    "local_review": "pass",
+    "local_public_build": "pass",
+    "github_pages_live": "pass"
+  },
+  "font_verification": {
+    "chromium": "pass",
+    "freetype": "pass",
+    "chinese_glyphs_missing": 0,
+    "ipa_glyphs_missing": 0
+  }
+}
