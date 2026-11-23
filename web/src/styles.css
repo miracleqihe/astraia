@@ -380,9 +380,10 @@ h1, h2, h3, p, dl, dd { margin: 0; }
 .atlas-marker[data-emphasis='selected'], .atlas-marker:hover { z-index: 4; }
 .atlas-marker[data-emphasis='code'] .atlas-dot { background: #89AD9D; outline: 2px solid var(--folio-paper); }
 .geo-arcs { position: absolute; z-index: 3; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; }
-.geo-arcs .arc-visible { fill: none; stroke: var(--brass-tick); stroke-width: 2.5; stroke-dasharray: 6 3; pointer-events: none; }
+.geo-arcs[data-visible='false'], .geo-viewport:not(:has(.geo-arcs[data-visible='true'])) ~ .scene-footer .arc-legend { display: none; }
+.geo-arcs .arc-visible { fill: none; stroke: var(--brass-tick); stroke-width: 2.5; pointer-events: none; }
 .geo-arcs .arc-hit { fill: none; stroke: transparent; stroke-width: 16; pointer-events: stroke; cursor: pointer; }
-.geo-arcs path[data-layer='4'], .geo-arcs path[data-type='EXPLAINED_BY'] { stroke: #89AD9D; stroke-dasharray: none; }
+.geo-arcs path[data-layer='4'], .geo-arcs path[data-type='EXPLAINED_BY'] { stroke: #89AD9D; }
 .geo-arcs path[data-type='TAGGED_OCM'] { stroke: #EAE5D9; }
 .geo-arcs g:hover .arc-visible { stroke-width: 5; }
 .geo-arc-tooltip { position: absolute; z-index: 6; max-width: 240px; padding: 7px 9px; background: var(--folio-paper); color: var(--ink-prussian); border: var(--border-crisp); font-size: .75rem; pointer-events: none; }

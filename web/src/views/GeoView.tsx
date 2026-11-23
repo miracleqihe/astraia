@@ -2,15 +2,18 @@ import { greatCircle } from '@turf/great-circle';
 import { LngLat, Map as GlobeMap, Marker, ScaleControl, type GeoJSONSource, type MapMouseEvent } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import type { FeatureCollection, LineString, MultiLineString, Point } from 'geojson';
 import { coordinatesOf, geographicCases, isFiction, isModernReading, locationPrecision, mapLabel, READING_LABELS,
   type Coordinates, type GraphIndex, type GraphNode, type ViewSelection } from '../graph';
 import { addStreetDetail, loadOverviewMapFonts, mapStyle } from './geoStyle';
+import { arcProjector, makeArcRoute, type HubArc } from './geoArcGeometry';
 import { motionDuration, ViewControls } from './ViewControls';
 
 const DEFAULT_CENTER: Coordinates = [105, 30];
 const EAST_ASIA_CENTER: Coordinates = [111, 34];
 const MAX_CONTEXT_ARCS = 14;
+const HUB_ARC_LAYER = 'hub-arc-projection';
 
 interface MappedNode { node: GraphNode; coordinates: Coordinates }
 interface Place { key: string; coordinates: Coordinates; nodes: GraphNode[] }
@@ -165,9 +168,6 @@ interface Props {
   onOpenGraph: () => void;
 }
 
-interface HubArc { from: Coordinates; to: Coordinates; hubId: string; name: string; layer: number; type: string }
-interface ArcPath extends HubArc { d: string; x: number; y: number }
-
 function relatedArcs(graph: GraphIndex, selection: ViewSelection): HubArc[] {
   const arcs: HubArc[] = [], seen = new Set<string>();
   for (const origin of [selection.node, selection.compareNode]) {
@@ -193,13 +193,18 @@ function relatedArcs(graph: GraphIndex, selection: ViewSelection): HubArc[] {
   return arcs;
 }
 
+function arcHubAt(event: MapMouseEvent): string | undefined {
+  const target = event.originalEvent.target;
+  return target instanceof Element ? target.closest<SVGGElement>('[data-arc-hub]')?.dataset.arcHub : undefined;
+}
+
 export default function GeoView({ graph, selection, codeIds, focus, onSelect, onOpenGraph }: Props) {
   const hostRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<GlobeMap | null>(null);
+  const arcsRef = useRef<SVGSVGElement>(null);
   const clusterRequest = useRef(0);
   const [ready, setReady] = useState(false);
   const [error, setError] = useState(false);
-  const [arcPaths, setArcPaths] = useState<ArcPath[]>([]);
   const [tooltip, setTooltip] = useState<{ x: number; y: number; arc: HubArc } | null>(null);
   const [placeTooltip, setPlaceTooltip] = useState<{ x: number; y: number; label: string; count: number } | null>(null);
   const [placeList, setPlaceList] = useState<PlaceList | null>(null);
@@ -228,6 +233,7 @@ export default function GeoView({ graph, selection, codeIds, focus, onSelect, on
       name: distributionNode.title, layer: distributionNode.z_layer, type: 'DISTRIBUTION',
     }));
   }, [graph, selection, casePlaces, distributionNode]);
+  const routes = useMemo(() => hubArcs.map(makeArcRoute).filter((route) => route !== null), [hubArcs]);
   const codedPoints = useMemo(() => visiblePoints.filter(({ node }) => codeIds.has(node.id)), [visiblePoints, codeIds]);
   const highlights = useMemo(() => new Set([...codeIds, ...caseIds]), [codeIds, caseIds]);
   const anchor = useMemo(() => selection.node ? coordinatesOf(selection.node) : null, [selection.node]);
@@ -331,6 +337,13 @@ export default function GeoView({ graph, selection, codeIds, focus, onSelect, on
     };
     const click = (event: MapMouseEvent) => {
       const request = ++clusterRequest.current;
+      const arcHub = arcHubAt(event);
+      if (arcHub) {
+        setTooltip(null);
+        setPlaceList(null);
+        onSelect(arcHub);
+        return;
+      }
       const feature = hit(event, 8);
       if (!feature) {
         const city = map.queryRenderedFeatures(event.point, { layers: ['overview-cities', 'street-city-names']
@@ -369,7 +382,7 @@ export default function GeoView({ graph, selection, codeIds, focus, onSelect, on
       }).catch(() => {});
     };
     const hover = (event: MapMouseEvent) => {
-      if (map.isMoving()) return;
+      if (map.isMoving() || arcHubAt(event)) return;
       const feature = hit(event, 4);
       map.getCanvas().style.cursor = feature ? 'pointer' : '';
       if (!feature) {
@@ -434,40 +447,58 @@ export default function GeoView({ graph, selection, codeIds, focus, onSelect, on
   }, [anchor, casePlaces, codedPoints, context, focus, graph.byId, linkAnchor, ready, regionDistribution, selectedId, viewCenter]);
 
   useEffect(() => {
-    const map = mapRef.current;
-    if (!ready || !map) return;
-    if (!hubArcs.length) {
-      setArcPaths([]);
-      return;
-    }
-    let frame = 0;
-    const update = () => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        if (map.getZoom() >= 10) {
-          setArcPaths((previous) => previous.length ? [] : previous);
-          setTooltip(null);
-          return;
-        }
-        const center = map.getCenter(), radians = Math.PI / 180;
-        const flat = map.getProjection().type === 'mercator';
-        const visible = ([lon, lat]: Coordinates) => flat || Math.sin(lat * radians) * Math.sin(center.lat * radians)
-          + Math.cos(lat * radians) * Math.cos(center.lat * radians) * Math.cos((lon - center.lng) * radians) > 0;
-        const project = ([lon, lat]: Coordinates) => map.project([
-          flat ? center.lng + ((lon - center.lng + 540) % 360) - 180 : lon, lat,
-        ]);
-        setArcPaths(hubArcs.flatMap((arc) => {
-          if (!visible(arc.from) || !visible(arc.to)) return [];
-          const from = project(arc.from), to = project(arc.to);
-          const lift = Math.min(130, Math.hypot(to.x - from.x, to.y - from.y) * .28 + 16);
-          const x = (from.x + to.x) / 2, y = (from.y + to.y) / 2 - lift / 2;
-          return [{ ...arc, x, y, d: `M ${from.x} ${from.y} Q ${x} ${y - lift / 2} ${to.x} ${to.y}` }];
-        }));
-      });
+    const map = mapRef.current, svg = arcsRef.current;
+    setTooltip(null);
+    if (!ready || !map || !svg) return;
+    const elements = [...svg.querySelectorAll<SVGGElement>('[data-arc-hub]')].map((group) => ({
+      group,
+      line: group.querySelector<SVGPathElement>('.arc-visible')!,
+      hit: group.querySelector<SVGPathElement>('.arc-hit')!,
+      anchor: group.querySelector<SVGGElement>('.arc-anchor')!,
+    }));
+    const clearTooltip = () => setTooltip(null);
+    // Update the SVG on the map's own render frame so it follows every camera change.
+    map.addLayer({ id: HUB_ARC_LAYER, type: 'custom', render(_gl, input) {
+      const opacity = Math.min(1, Math.max(0, (10 - map.getZoom()) / 1.25));
+      if (opacity === 0) {
+        svg.dataset.visible = 'false';
+        return;
+      }
+      const host = map.getContainer();
+      const project = arcProjector(input, host.clientWidth, host.clientHeight,
+        map.getCenter().lng, map.getRenderWorldCopies());
+      let visible = false;
+      for (let i = 0; i < routes.length; i++) {
+        const { group, line, hit, anchor } = elements[i];
+        const route = project(routes[i]);
+        group.style.display = route.path ? '' : 'none';
+        if (!route.path) continue;
+        visible = true;
+        if (line.getAttribute('d') !== route.strokes) line.setAttribute('d', route.strokes);
+        if (hit.getAttribute('d') !== route.path) hit.setAttribute('d', route.path);
+        anchor.style.display = route.anchor ? '' : 'none';
+        if (route.anchor) anchor.setAttribute('transform', `translate(${route.anchor.join(' ')})`);
+      }
+      svg.style.opacity = String(opacity);
+      svg.dataset.visible = String(visible);
+    } });
+    map.on('movestart', clearTooltip);
+    return () => {
+      map.off('movestart', clearTooltip);
+      if (mapRef.current === map && map.getLayer(HUB_ARC_LAYER)) map.removeLayer(HUB_ARC_LAYER);
     };
-    map.on('move', update); map.on('resize', update); update();
-    return () => { cancelAnimationFrame(frame); map.off('move', update); map.off('resize', update); };
-  }, [ready, hubArcs]);
+  }, [ready, routes]);
+
+  function showArcTooltip(arc: HubArc, element: SVGElement, pointer?: { clientX: number; clientY: number }) {
+    const viewport = element.ownerSVGElement?.getBoundingClientRect();
+    if (!viewport || mapRef.current?.isMoving()) return;
+    if (pointer) {
+      setTooltip({ arc, x: pointer.clientX - viewport.left, y: pointer.clientY - viewport.top });
+    } else {
+      const rect = element.getBoundingClientRect();
+      setTooltip({ arc, x: rect.left + rect.width / 2 - viewport.left, y: rect.top + rect.height / 2 - viewport.top });
+    }
+  }
 
   function reset() {
     const host = hostRef.current;
@@ -502,24 +533,29 @@ export default function GeoView({ graph, selection, codeIds, focus, onSelect, on
     <>
       <div className="scene-viewport geo-viewport" ref={hostRef} data-ready={ready} data-distribution={regionDistribution}
         data-hub-count={casePlaces.length} data-point-count={visiblePoints.length} data-location-count={places.size} />
-      {ready && arcPaths.length > 0 && <svg className="geo-arcs" aria-label="共同母题或机制连接">
-        {arcPaths.map((arc, index) => <g key={`${arc.hubId}-${index}`}>
-          <path className="arc-visible" d={arc.d} data-layer={arc.layer} data-type={arc.type} />
-          <path className="arc-hit" d={arc.d} aria-hidden="true"
-            onMouseMove={(event) => { const rect = event.currentTarget.ownerSVGElement?.getBoundingClientRect();
-              if (rect) setTooltip({ x: event.clientX - rect.left, y: event.clientY - rect.top, arc }); }}
-            onMouseLeave={() => setTooltip(null)} onClick={() => { setTooltip(null); onSelect(arc.hubId); }} />
-          <g className="arc-anchor" transform={`translate(${arc.x} ${arc.y})`} role="button" tabIndex={0}
-            aria-label={`查看共享 L${arc.layer} ${arc.name}`}
-            onMouseEnter={() => setTooltip({ x: arc.x, y: arc.y, arc })} onMouseLeave={() => setTooltip(null)}
-            onFocus={() => setTooltip({ x: arc.x, y: arc.y, arc })} onBlur={() => setTooltip(null)}
-            onClick={() => { setTooltip(null); onSelect(arc.hubId); }}
-            onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onSelect(arc.hubId); } }}>
-            <rect x="-8" y="-8" width="16" height="16" className="arc-anchor-hit" />
-            <path d="M 0 -4 L 4 0 L 0 4 L -4 0 Z" className="arc-anchor-glyph" />
-          </g>
-        </g>)}
-      </svg>}
+      {ready && routes.length > 0 && mapRef.current && createPortal(
+        <svg className="geo-arcs" ref={arcsRef} data-visible="false" aria-label="共同母题或机制连接">
+          {routes.map(({ arc }, index) => <g key={`${arc.hubId}-${index}`} data-arc-hub={arc.hubId}>
+            <path className="arc-visible" data-layer={arc.layer} data-type={arc.type} />
+            <path className="arc-hit" aria-hidden="true"
+              onMouseMove={(event) => showArcTooltip(arc, event.currentTarget, event)}
+              onMouseLeave={() => setTooltip(null)} />
+            <g className="arc-anchor" role="button" tabIndex={0}
+              aria-label={`查看共享 L${arc.layer} ${arc.name}`}
+              onMouseEnter={(event) => showArcTooltip(arc, event.currentTarget)} onMouseLeave={() => setTooltip(null)}
+              onFocus={(event) => showArcTooltip(arc, event.currentTarget)} onBlur={() => setTooltip(null)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  setTooltip(null);
+                  onSelect(arc.hubId);
+                }
+              }}>
+              <rect x="-8" y="-8" width="16" height="16" className="arc-anchor-hit" />
+              <path d="M 0 -4 L 4 0 L 0 4 L -4 0 Z" className="arc-anchor-glyph" />
+            </g>
+          </g>)}
+        </svg>, mapRef.current.getCanvasContainer())}
       {tooltip && <div className="geo-arc-tooltip" role="tooltip" style={{ left: Math.max(14, Math.min(tooltip.x + 12,
         (hostRef.current?.clientWidth ?? 300) - 248)), top: tooltip.y + 12 }}>
         <strong>共享枢纽 · L{tooltip.arc.layer}</strong><span>{tooltip.arc.name}</span><small>点击调阅卷宗</small></div>}
@@ -559,7 +595,7 @@ export default function GeoView({ graph, selection, codeIds, focus, onSelect, on
           <div className="scene-footer">
             <span>{places.size} 处标点</span>
             <span className="geo-legend">
-              {arcPaths.length > 0 && <span className="arc-legend"><b aria-hidden="true">◇</b> 点击弧线锚标看枢纽</span>}
+              {routes.length > 0 && <span className="arc-legend"><b aria-hidden="true">◇</b> 点击弧线锚标看枢纽</span>}
               {!streetLevel && linkAnchor && context.length > 1 && <span><i />{regionDistribution ? '研究地区共现'
                 : context.length > MAX_CONTEXT_ARCS + 1 ? '关联地点（部分）' : '关联地点'}</span>}
               <span className="geo-attribution">
