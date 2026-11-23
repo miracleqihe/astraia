@@ -1,9 +1,12 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
+import { LineSegments2 } from 'three/addons/lines/LineSegments2.js';
+import { LineSegmentsGeometry } from 'three/addons/lines/LineSegmentsGeometry.js';
 import { feature } from 'topojson-client';
 import type { GeometryCollection, Topology } from 'topojson-specification';
 import atlas from 'world-atlas/countries-110m.json';
-import { EVIDENCE, LAYER_ORDER, nodeColor, type GraphIndex, type GraphLink,
+import { EVIDENCE, evidenceGroup, LAYER_ORDER, nodeColor, type EvidenceGroup, type GraphIndex, type GraphLink,
   type GraphNode, type Layer, type ViewSelection } from '../graph';
 import { motionDuration } from './ViewControls';
 
@@ -157,7 +160,37 @@ function disposeContents(group: THREE.Group) {
 
 type Layout = ReturnType<typeof constellationLayout>;
 type NodeVisual = { mesh: THREE.InstancedMesh; index: number; color: string; layer: Layer };
-type EdgeVisual = { link: GraphLink; colors: THREE.BufferAttribute; offset: number; color: string };
+type EdgeKind = EvidenceGroup | 'structure' | 'fiction';
+type EdgeVisual = { link: GraphLink; startColors: THREE.InterleavedBufferAttribute;
+  endColors: THREE.InterleavedBufferAttribute; start: number; end: number; color: string };
+
+const EDGE_STYLES: Record<EdgeKind, { color: string; width: number; pattern?: readonly number[] }> = {
+  structure: { color: LINE, width: 1 },
+  confirmed: { color: EVIDENCE.confirmed.color, width: 1.75 },
+  unverified: { color: BRASS, width: 1.25, pattern: [6, 4.5] },
+  refuted: { color: EVIDENCE.refuted.color, width: 1.5, pattern: [8, 3, 1.7, 3] },
+  fiction: { color: '#C94A6A', width: 1.25, pattern: [1.5, 7] },
+};
+
+function pushStroke(vertices: number[], from: THREE.Vector3, to: THREE.Vector3, kind: EdgeKind) {
+  const pattern = EDGE_STYLES[kind].pattern;
+  const length = from.distanceTo(to);
+  if (!pattern || length === 0) {
+    vertices.push(...from.toArray(), ...to.toArray());
+    return;
+  }
+  for (let at = 0, index = 0; at < length; index++) {
+    const end = Math.min(at + pattern[index % pattern.length], length);
+    if (index % 2 === 0) vertices.push(
+      ...from.clone().lerp(to, at / length).toArray(), ...from.clone().lerp(to, end / length).toArray(),
+    );
+    at = end;
+  }
+  if (kind === 'refuted') {
+    const { x, y, z } = from.clone().lerp(to, .5);
+    vertices.push(x - 4, y, z - 4, x + 4, y, z + 4, x + 4, y, z - 4, x - 4, y, z + 4);
+  }
+}
 
 export function mountConstellation(host: HTMLDivElement, layout: Layout, labels: Map<string, HTMLElement>) {
   const scene = new THREE.Scene();
@@ -287,31 +320,35 @@ export function mountConstellation(host: HTMLDivElement, layout: Layout, labels:
     for (const [id, label] of labels) {
       const position = layout.positions.get(id);
       if (!position) continue;
+      const isLayer = label.classList.contains('constellation-layer');
       projection.copy(position).project(camera);
-      const visible = Math.abs(projection.x) < 1.04 && Math.abs(projection.y) < 1.04 && Math.abs(projection.z) <= 1;
+      const visible = (!isLayer || !soloLayer || id === `layer:${soloLayer}`)
+        && Math.abs(projection.x) < 1.04 && Math.abs(projection.y) < 1.04 && Math.abs(projection.z) <= 1;
       label.style.visibility = visible ? 'visible' : 'hidden';
       if (visible) {
-        const x = Math.round((projection.x + 1) * width / 2);
+        const projectedX = Math.round((projection.x + 1) * width / 2);
+        const x = isLayer ? Math.max(18, Math.min(projectedX, width - label.offsetWidth - 19)) : projectedX;
         const y = Math.round((1 - projection.y) * height / 2);
         label.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-        if (label.classList.contains('constellation-node') && label.dataset.emphasis === 'selected') {
+        if (label.classList.contains('constellation-node') && label.dataset.label === 'true') {
           const child = label.querySelector<HTMLElement>('.constellation-node-label');
-          if (child) placements.push({ element: child, x, y, priority: label.dataset.emphasis === 'selected' ? 0 : 1 });
+          if (child) placements.push({ element: child, x, y, priority: Number(label.dataset.labelPriority ?? 3) });
         }
       }
     }
     const occupied = new Map<number, Array<[number, number]>>();
     placements.sort((a, b) => a.priority - b.priority);
     for (const item of placements) {
-      const estimated = Math.min(215, Math.max(55, [...(item.element.textContent ?? '')].reduce((sum, char) => sum + (char.charCodeAt(0) > 255 ? 12 : 7), 14)));
-      const shiftX = item.x + estimated + 30 > width ? -estimated - 35 : 0;
-      const left = item.x + 14 + shiftX, right = left + estimated;
+      const estimated = Math.min(180, Math.max(55, [...(item.element.textContent ?? '')].reduce((sum, char) => sum + (char.charCodeAt(0) > 255 ? 12 : 7), 14)));
+      const preferred = item.x + estimated + 30 > width ? item.x - estimated - 16 : item.x + 14;
+      const left = Math.max(16, Math.min(preferred, width - estimated - 16)), right = left + estimated;
+      const shiftX = left - (item.x + 14);
       let offset = 0;
       let available = false;
       for (let attempt = 0; attempt < 20; attempt++) {
         const delta = attempt === 0 ? 0 : Math.ceil(attempt / 2) * 24 * (attempt % 2 ? -1 : 1);
         const targetY = item.y + delta;
-        if (targetY < 20 || targetY > height - 20) continue;
+        if (targetY < 58 || targetY > height - 90) continue;
         const row = Math.round(targetY / 24);
         const overlaps = [row - 1, row, row + 1].some((key) => (occupied.get(key) ?? []).some(([a, b]) => left < b && right > a));
         if (!overlaps) { offset = delta; available = true; break; }
@@ -329,7 +366,7 @@ export function mountConstellation(host: HTMLDivElement, layout: Layout, labels:
   renderer.setAnimationLoop(render);
 
   return {
-    updateGraph(graph: GraphIndex) {
+    updateGraph(graph: GraphIndex, selected: ViewSelection) {
       dirty = true;
       disposeContents(marks);
       disposeContents(edges);
@@ -354,33 +391,35 @@ export function mountConstellation(host: HTMLDivElement, layout: Layout, labels:
         if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
         marks.add(mesh);
       }
-      const grouped: Record<'solid' | 'dashed', Array<{ link: GraphLink; from: THREE.Vector3; to: THREE.Vector3; color: string }>> = { solid: [], dashed: [] };
-      // Dense hubs can have thousands of links; keep the points and draw a readable sample.
-      const visibleLinks = graph.links.length > 96 ? graph.links.slice(0, 36) : graph.links;
+      const grouped = new Map<EdgeKind, Array<{ link: GraphLink; from: THREE.Vector3; to: THREE.Vector3 }>>();
+      const score = (link: GraphLink) =>
+        (selected.neighbors.get(link.source) === 0 || selected.neighbors.get(link.target) === 0 ? 2 : 0) + Number(!!link.status);
+      const visibleLinks = graph.links.length > 96 ? [...graph.links].sort((a, b) => score(b) - score(a)).slice(0, 96) : graph.links;
       for (const link of visibleLinks) {
         const from = layout.positions.get(link.source);
         const to = layout.positions.get(link.target);
         if (!from || !to) continue;
-        const color = link.status ? EVIDENCE[link.status].color : BRASS;
-        grouped[link.status === 'confirmed' ? 'solid' : 'dashed'].push({ link, from, to, color });
+        const kind = link.is_fictional_quarantine ? 'fiction' : evidenceGroup(link.status) ?? 'structure';
+        const items = grouped.get(kind) ?? [];
+        items.push({ link, from, to });
+        grouped.set(kind, items);
       }
-      for (const kind of ['solid', 'dashed'] as const) {
-        const items = grouped[kind];
-        if (!items.length) continue;
-        const geometry = new THREE.BufferGeometry().setFromPoints(items.flatMap((item) => [item.from, item.to]));
-        const colors = new THREE.Float32BufferAttribute(new Float32Array(items.length * 6), 3);
-        geometry.setAttribute('color', colors);
-        const options = { vertexColors: true, transparent: true, opacity: 1, depthWrite: false };
-        const material = kind === 'dashed'
-          ? new THREE.LineDashedMaterial({ ...options, dashSize: 6, gapSize: 4 })
-          : new THREE.LineBasicMaterial(options);
-        const line = new THREE.LineSegments(geometry, material);
-        if (kind === 'dashed') line.computeLineDistances();
-        edges.add(line);
-        items.forEach((item, index) => edgeVisuals.push({ link: item.link, colors, offset: index * 2, color: item.color }));
+      for (const [kind, items] of grouped) {
+        const vertices: number[] = [];
+        const spans = items.map(({ link, from, to }) => {
+          const start = vertices.length / 6;
+          pushStroke(vertices, from, to, kind);
+          return { link, start, end: vertices.length / 6 };
+        });
+        const style = EDGE_STYLES[kind];
+        const geometry = new LineSegmentsGeometry().setPositions(vertices).setColors(new Float32Array(vertices.length));
+        const startColors = geometry.getAttribute('instanceColorStart') as THREE.InterleavedBufferAttribute;
+        const endColors = geometry.getAttribute('instanceColorEnd') as THREE.InterleavedBufferAttribute;
+        edges.add(new LineSegments2(geometry, new LineMaterial({ vertexColors: true, linewidth: style.width, depthWrite: false })));
+        spans.forEach((span) => edgeVisuals.push({ ...span, startColors, endColors, color: style.color }));
       }
     },
-    highlight(selection: ViewSelection, probeId: string | null, highlightedCodes: ReadonlySet<string>, commonIds: ReadonlySet<string>, activeLayer: Layer | null) {
+    highlight(selection: ViewSelection, probeId: string | null, lockedId: string | null, highlightedCodes: ReadonlySet<string>, commonIds: ReadonlySet<string>, activeLayer: Layer | null) {
       dirty = true;
       const id = selection.node?.id;
       const updatedMeshes = new Set<THREE.InstancedMesh>();
@@ -390,13 +429,13 @@ export function mountConstellation(host: HTMLDivElement, layout: Layout, labels:
         const inActive = !activeLayer || visual.layer === activeLayer;
         const opacity = !inSolo ? 0.05 : activeLayer && !inActive ? 0.18 : highlightedCodes.size ? (highlightedCodes.has(nodeId) ? 1 : 0.18)
           : id && distance === undefined ? 0.18 : 1;
-        mixedColor.set(commonIds.has(nodeId) ? '#89AD9D' : visual.color).lerp(background, 1 - opacity);
+        mixedColor.set(commonIds.has(nodeId) ? '#B3D0BF' : visual.color).lerp(background, 1 - opacity);
         visual.mesh.setColorAt(visual.index, mixedColor);
         updatedMeshes.add(visual.mesh);
       }
       for (const mesh of updatedMeshes) if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
-      const updatedColors = new Set<THREE.BufferAttribute>();
-      for (const { link, colors, offset, color } of edgeVisuals) {
+      const updatedColors = new Set<THREE.InterleavedBuffer>();
+      for (const { link, startColors, endColors, start, end, color } of edgeVisuals) {
         const from = selection.neighbors.get(link.source);
         const to = selection.neighbors.get(link.target);
         const immediate = from === 0 || to === 0;
@@ -404,25 +443,34 @@ export function mountConstellation(host: HTMLDivElement, layout: Layout, labels:
         const inSolo = !soloLayer || (a && b && Math.abs(a.y - heightOf(soloLayer, layout.spacing)) < 1 && Math.abs(b.y - heightOf(soloLayer, layout.spacing)) < 1);
         const opacity = !inSolo ? .03 : immediate ? 0.9 : !id || (from !== undefined && to !== undefined) ? 0.48 : 0.17;
         mixedColor.set(color).lerp(background, 1 - opacity);
-        colors.setXYZ(offset, mixedColor.r, mixedColor.g, mixedColor.b);
-        colors.setXYZ(offset + 1, mixedColor.r, mixedColor.g, mixedColor.b);
-        updatedColors.add(colors);
+        for (let index = start; index < end; index++) {
+          startColors.setXYZ(index, mixedColor.r, mixedColor.g, mixedColor.b);
+          endColors.setXYZ(index, mixedColor.r, mixedColor.g, mixedColor.b);
+        }
+        updatedColors.add(startColors.data);
       }
       for (const colors of updatedColors) colors.needsUpdate = true;
       disposeContents(probe);
-      const selected = probeId ? layout.positions.get(probeId) : id ? layout.positions.get(id) : undefined;
-      if (selected) {
-        const star = mainStar();
-        star.position.copy(selected);
-        star.position.y += 12;
-        const { x, z } = selected;
+      for (const [nodeId, opacity] of [[lockedId, probeId === lockedId ? .78 : .35], [probeId === lockedId ? null : probeId, .78]] as const) {
+        const position = nodeId ? layout.positions.get(nodeId) : undefined;
+        if (!position) continue;
+        if (nodeId === lockedId) {
+          const star = mainStar();
+          star.position.copy(position);
+          star.position.y += 12;
+          probe.add(star);
+        }
+        if (soloLayer) continue;
+        const { x, z } = position;
         const vertices = [x, heightOf(1, layout.spacing) - 15, z, x, heightOf(4, layout.spacing) + 18, z];
         for (const layer of LAYER_ORDER) {
           const y = heightOf(layer, layout.spacing) + 2;
           vertices.push(x - 5, y, z, x + 5, y, z, x, y, z - 5, x, y, z + 5);
         }
-        const vertical = plateLines(vertices, LINE, 0.72);
-        probe.add(vertical, star);
+        probe.add(plateLines(vertices, LINE, opacity));
+      }
+      const selected = lockedId ? layout.positions.get(lockedId) : undefined;
+      if (selected && !soloLayer) {
         camera.updateMatrixWorld(true);
         projection.copy(selected).project(camera);
         if (!probeId && (Math.abs(projection.x) > 0.85 || Math.abs(projection.y) > 0.83)) {
@@ -443,6 +491,7 @@ export function mountConstellation(host: HTMLDivElement, layout: Layout, labels:
       soloLayer = layer;
       guides.children.forEach((group, index) => { group.visible = !layer || LAYER_ORDER[index] === layer; });
       controls.minPolarAngle = layer ? 0.001 : 0.2;
+      controls.enableRotate = !layer;
       if (layer) {
         const target = new THREE.Vector3(0, heightOf(layer, layout.spacing), 0);
         transition(target.clone().add(new THREE.Vector3(0, Math.max(680, layout.span * 1.7), 0.01)), target, 520);

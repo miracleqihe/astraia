@@ -10,5 +10,6 @@ import '@fontsource/noto-sans-thai/thai-400.css';
 import '@fontsource/noto-sans-thai/thai-600.css';
 import { App } from './App';
 import './styles.css';
+import './review-refinement.css';
 
 createRoot(document.getElementById('root')!).render(<App />);

@@ -29,20 +29,20 @@ interface RailProps {
 }
 
 export function ControlRail(props: RailProps) {
-  return <aside className="control-rail" aria-label="图层与信源筛选">
+  return <aside className="control-rail" data-layers={props.mode === 'graph'} aria-label="图层与信源筛选">
     <button type="button" className="rail-search" onClick={props.onSearch} title="搜索节点 (Ctrl/⌘ K)" aria-label="搜索节点">⌕ <small>⌘K</small></button>
     {props.mode === 'graph' && <>
-      <span className="rail-caption">LAYERS</span>
+      <span className="rail-caption">图层</span>
       {LAYERS_DESC.map((layer) => <div className="rail-layer" key={layer}>
         <button type="button" className="rail-layer-name" aria-pressed={props.activeLayer === layer || props.soloLayer === layer}
           onClick={() => props.onLayer(layer)} onDoubleClick={() => props.onSolo(layer)} title="点击聚焦，双击平铺">
           <b>L{layer}</b><span>{LAYERS[layer].short}</span></button>
         <button type="button" className="rail-layer-visibility" aria-label={`${props.layers.has(layer) ? '隐藏' : '显示'} L${layer}`}
           aria-pressed={props.layers.has(layer)} onClick={() => props.onToggleLayer(layer)}>{props.layers.has(layer) ? '■' : '□'}</button>
+        <button type="button" className="rail-flatten" aria-pressed={props.soloLayer === layer}
+          aria-label={props.soloLayer === layer ? `返回 3D · L${layer}` : `2D 平铺 L${layer} ${LAYERS[layer].short}`}
+          onClick={() => props.onSolo(layer)}>{props.soloLayer === layer ? '返回 3D' : '2D 平铺'}</button>
       </div>)}
-      <button type="button" className="rail-solo" onClick={() => props.onSolo(props.activeLayer || 1)}>
-        {props.soloLayer ? '恢复分层' : '平铺当前层'}
-      </button>
       <label className="rail-spread"><span>层距</span><input type="range" min="60" max="220" step="10" value={props.spread}
         aria-label="Z 轴层距" onChange={(event) => props.onSpread(Number(event.target.value))} /></label>
     </>}

@@ -3,7 +3,7 @@ import { LngLat, Map as GlobeMap, Marker, ScaleControl, type GeoJSONSource, type
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { FeatureCollection, LineString, MultiLineString, Point } from 'geojson';
-import { coordinatesOf, isFiction, isModernReading, locationPrecision, mapLabel, READING_LABELS,
+import { coordinatesOf, geographicCases, isFiction, isModernReading, locationPrecision, mapLabel, READING_LABELS,
   type Coordinates, type GraphIndex, type GraphNode, type ViewSelection } from '../graph';
 import { addStreetDetail, loadOverviewMapFonts, mapStyle } from './geoStyle';
 import { motionDuration, ViewControls } from './ViewControls';
@@ -73,6 +73,41 @@ function groupPlaces(points: MappedNode[]): Map<string, Place> {
   return groups;
 }
 
+function geographicBounds(places: readonly Place[]) {
+  const longitudes = places.map(({ coordinates }) => (coordinates[0] + 360) % 360).sort((a, b) => a - b);
+  let gap = -1;
+  let start = longitudes[0];
+  for (let index = 0; index < longitudes.length; index++) {
+    const current = longitudes[index];
+    const next = longitudes[index + 1] ?? longitudes[0] + 360;
+    if (next - current > gap) {
+      gap = next - current;
+      start = next;
+    }
+  }
+  const west = (start + 180) % 360 - 180;
+  const span = 360 - gap;
+  const latitudes = places.map(({ coordinates }) => coordinates[1]);
+  const south = Math.min(...latitudes), north = Math.max(...latitudes);
+  const bounds: [Coordinates, Coordinates] = [[west, south], [west + span, north]];
+  return { bounds, wide: span > 125 || north - south > 95 };
+}
+
+function frameDistribution(map: GlobeMap, places: readonly Place[]) {
+  if (places.length === 1) {
+    map.setProjection({ type: 'globe' });
+    map.setRenderWorldCopies(false);
+    map.easeTo({ center: places[0].coordinates, zoom: 5.2, bearing: 0, pitch: 0, duration: motionDuration(650) });
+    return;
+  }
+  const { bounds, wide } = geographicBounds(places);
+  map.setProjection({ type: wide ? 'mercator' : 'globe' });
+  map.setRenderWorldCopies(wide);
+  const horizontal = Math.min(map.getContainer().clientWidth / 5, 118);
+  map.fitBounds(bounds, { padding: { left: horizontal, right: horizontal / 2, top: 105, bottom: 100 },
+    bearing: 0, pitch: 0, maxZoom: 6.6, duration: motionDuration(700) });
+}
+
 function pointFeatures(places: Map<string, Place>, highlighted: ReadonlySet<string>): FeatureCollection<Point> {
   return { type: 'FeatureCollection', features: [...places.values()].map(({ key, nodes, coordinates }) => ({
     type: 'Feature',
@@ -100,6 +135,7 @@ function mapMarker(node: GraphNode, place: Place | undefined, open: (event: Mous
   const element = document.createElement('button');
   element.type = 'button';
   element.className = 'atlas-marker';
+  element.title = node.title;
   element.setAttribute('aria-label', place && place.nodes.length > 1
     ? `查看${mapLabel(node)}的 ${place.nodes.length} 条资料` : `地图节点 ${node.title}`);
   element.dataset.nodeId = node.id;
@@ -130,7 +166,7 @@ interface Props {
 }
 
 interface HubArc { from: Coordinates; to: Coordinates; hubId: string; name: string; layer: number; type: string }
-interface ArcPath extends HubArc { d: string }
+interface ArcPath extends HubArc { d: string; x: number; y: number }
 
 function relatedArcs(graph: GraphIndex, selection: ViewSelection): HubArc[] {
   const arcs: HubArc[] = [], seen = new Set<string>();
@@ -171,15 +207,29 @@ export default function GeoView({ graph, selection, codeIds, focus, onSelect, on
   const [streetLevel, setStreetLevel] = useState(false);
   const selectedId = selection.node?.id ?? null;
   const points = useMemo(() => mappedNodes(graph), [graph]);
+  const distributionNode = (focus && graph.byId.get(focus.id)) || selection.node;
+  const caseIds = useMemo(() => new Set(geographicCases(graph, distributionNode).map((node) => node.id)),
+    [graph, distributionNode]);
+  const casePoints = useMemo(() => points.filter(({ node }) => caseIds.has(node.id)), [points, caseIds]);
+  const casePlaces = useMemo(() => [...groupPlaces(casePoints).values()], [casePoints]);
   const regionIds = useMemo(() => new Set((graph.adjacency.get(selectedId ?? '') ?? [])
     .filter((link) => link.type === 'ATTESTS_MOTIF' && link.target === selectedId).map((link) => link.source)),
   [graph.adjacency, selectedId]);
-  const regionDistribution = regionIds.size > 0;
-  const visiblePoints = useMemo(() => regionDistribution ? points.filter(({ node }) => regionIds.has(node.id)) : points,
-    [points, regionDistribution, regionIds]);
+  const regionDistribution = regionIds.size > 0 && casePlaces.length === 0;
+  const visiblePoints = useMemo(() => casePlaces.length ? casePoints
+    : regionDistribution ? points.filter(({ node }) => regionIds.has(node.id)) : points,
+  [points, casePlaces.length, casePoints, regionDistribution, regionIds]);
   const places = useMemo(() => groupPlaces(visiblePoints), [visiblePoints]);
   const context = useMemo(() => visiblePoints.filter(({ node }) => selection.neighbors.has(node.id)), [visiblePoints, selection]);
-  const hubArcs = useMemo(() => relatedArcs(graph, selection), [graph, selection]);
+  const hubArcs = useMemo<HubArc[]>(() => {
+    if (!distributionNode || casePlaces.length < 2) return relatedArcs(graph, selection);
+    return casePlaces.slice(1, 31).map((place) => ({
+      from: casePlaces[0].coordinates, to: place.coordinates, hubId: distributionNode.id,
+      name: distributionNode.title, layer: distributionNode.z_layer, type: 'DISTRIBUTION',
+    }));
+  }, [graph, selection, casePlaces, distributionNode]);
+  const codedPoints = useMemo(() => visiblePoints.filter(({ node }) => codeIds.has(node.id)), [visiblePoints, codeIds]);
+  const highlights = useMemo(() => new Set([...codeIds, ...caseIds]), [codeIds, caseIds]);
   const anchor = useMemo(() => selection.node ? coordinatesOf(selection.node) : null, [selection.node]);
   const viewCenter = useMemo<Coordinates>(() => {
     const [longitude, latitude] = anchor ?? centerOf(context);
@@ -189,6 +239,7 @@ export default function GeoView({ graph, selection, codeIds, focus, onSelect, on
   const [initialCenter] = useState(() => regionalOverview ? EAST_ASIA_CENTER : viewCenter);
   const lastFocusedId = useRef(selectedId);
   const lastFocus = useRef<Props['focus']>(null);
+  const lastFramed = useRef<readonly Place[] | null>(null);
   const linkAnchor = anchor ?? (selection.node?.z_layer === 3 && context.length > 1 ? context[0].coordinates : null);
 
   useEffect(() => {
@@ -244,9 +295,9 @@ export default function GeoView({ graph, selection, codeIds, focus, onSelect, on
   useEffect(() => {
     const map = mapRef.current;
     if (!ready || !map) return;
-    map.getSource<GeoJSONSource>('records')?.setData(pointFeatures(places, codeIds));
+    map.getSource<GeoJSONSource>('records')?.setData(pointFeatures(places, highlights));
     return () => { clusterRequest.current++; };
-  }, [ready, places, codeIds]);
+  }, [ready, places, highlights]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -344,6 +395,26 @@ export default function GeoView({ graph, selection, codeIds, focus, onSelect, on
     if (!ready || !map) return;
     const target = focus && graph.byId.get(focus.id);
     const targetCoordinates = target ? coordinatesOf(target) : null;
+    const source = map.getSource<GeoJSONSource>('context');
+    source?.setData(codedPoints.length > 1
+      ? connectPoints(codedPoints[0].coordinates, codedPoints.slice(1), MAX_CONTEXT_ARCS)
+      : connectPoints(casePlaces.length ? null : linkAnchor, context, regionDistribution ? context.length : MAX_CONTEXT_ARCS));
+    if (casePlaces.length) {
+      if (lastFramed.current !== casePlaces || lastFocus.current !== focus) {
+        lastFramed.current = casePlaces;
+        lastFocus.current = focus;
+        lastFocusedId.current = selectedId;
+        clusterRequest.current++;
+        setPlaceList(null);
+        frameDistribution(map, casePlaces);
+      }
+      return;
+    }
+    if (lastFramed.current) {
+      lastFramed.current = null;
+      map.setProjection({ type: 'globe' });
+      map.setRenderWorldCopies(false);
+    }
     if (focus && lastFocus.current !== focus && target && targetCoordinates) {
       lastFocus.current = focus;
       lastFocusedId.current = selectedId;
@@ -351,8 +422,6 @@ export default function GeoView({ graph, selection, codeIds, focus, onSelect, on
       setPlaceList(null);
       map.easeTo({ center: targetCoordinates, zoom: zoomForPoint(target), pitch: 0, bearing: 0, duration: motionDuration(740) });
     }
-    const source = map.getSource<GeoJSONSource>('context');
-    source?.setData(connectPoints(linkAnchor, context, regionDistribution ? context.length : MAX_CONTEXT_ARCS));
     if (lastFocusedId.current !== selectedId) {
       lastFocusedId.current = selectedId;
       if (anchor || context.length) {
@@ -362,7 +431,7 @@ export default function GeoView({ graph, selection, codeIds, focus, onSelect, on
         map.easeTo({ center, zoom, pitch: anchor ? map.getPitch() : 0, duration: motionDuration(680) });
       }
     }
-  }, [anchor, context, focus, graph.byId, linkAnchor, ready, regionDistribution, selectedId, viewCenter]);
+  }, [anchor, casePlaces, codedPoints, context, focus, graph.byId, linkAnchor, ready, regionDistribution, selectedId, viewCenter]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -381,13 +450,18 @@ export default function GeoView({ graph, selection, codeIds, focus, onSelect, on
           return;
         }
         const center = map.getCenter(), radians = Math.PI / 180;
-        const visible = ([lon, lat]: Coordinates) => Math.sin(lat * radians) * Math.sin(center.lat * radians)
+        const flat = map.getProjection().type === 'mercator';
+        const visible = ([lon, lat]: Coordinates) => flat || Math.sin(lat * radians) * Math.sin(center.lat * radians)
           + Math.cos(lat * radians) * Math.cos(center.lat * radians) * Math.cos((lon - center.lng) * radians) > 0;
+        const project = ([lon, lat]: Coordinates) => map.project([
+          flat ? center.lng + ((lon - center.lng + 540) % 360) - 180 : lon, lat,
+        ]);
         setArcPaths(hubArcs.flatMap((arc) => {
           if (!visible(arc.from) || !visible(arc.to)) return [];
-          const from = map.project(arc.from), to = map.project(arc.to);
+          const from = project(arc.from), to = project(arc.to);
           const lift = Math.min(130, Math.hypot(to.x - from.x, to.y - from.y) * .28 + 16);
-          return [{ ...arc, d: `M ${from.x} ${from.y} Q ${(from.x + to.x) / 2} ${(from.y + to.y) / 2 - lift} ${to.x} ${to.y}` }];
+          const x = (from.x + to.x) / 2, y = (from.y + to.y) / 2 - lift / 2;
+          return [{ ...arc, x, y, d: `M ${from.x} ${from.y} Q ${x} ${y - lift / 2} ${to.x} ${to.y}` }];
         }));
       });
     };
@@ -398,6 +472,10 @@ export default function GeoView({ graph, selection, codeIds, focus, onSelect, on
   function reset() {
     const host = hostRef.current;
     setPlaceList(null);
+    if (casePlaces.length && mapRef.current) {
+      frameDistribution(mapRef.current, casePlaces);
+      return;
+    }
     if (host) mapRef.current?.easeTo({ center: regionalOverview ? EAST_ASIA_CENTER : viewCenter,
       zoom: zoomFor(host) + (regionalOverview ? 1.3 : 0),
       bearing: 0, pitch: 0, duration: motionDuration(520) });
@@ -423,19 +501,28 @@ export default function GeoView({ graph, selection, codeIds, focus, onSelect, on
   return (
     <>
       <div className="scene-viewport geo-viewport" ref={hostRef} data-ready={ready} data-distribution={regionDistribution}
-        data-point-count={visiblePoints.length} data-location-count={places.size} />
+        data-hub-count={casePlaces.length} data-point-count={visiblePoints.length} data-location-count={places.size} />
       {ready && arcPaths.length > 0 && <svg className="geo-arcs" aria-label="共同母题或机制连接">
         {arcPaths.map((arc, index) => <g key={`${arc.hubId}-${index}`}>
           <path className="arc-visible" d={arc.d} data-layer={arc.layer} data-type={arc.type} />
-          <path className="arc-hit" d={arc.d} role="button" tabIndex={0} aria-label={`查看共享 L${arc.layer} ${arc.name}`}
+          <path className="arc-hit" d={arc.d} aria-hidden="true"
             onMouseMove={(event) => { const rect = event.currentTarget.ownerSVGElement?.getBoundingClientRect();
               if (rect) setTooltip({ x: event.clientX - rect.left, y: event.clientY - rect.top, arc }); }}
-            onMouseLeave={() => setTooltip(null)} onClick={() => { setTooltip(null); onSelect(arc.hubId); }}
-            onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onSelect(arc.hubId); } }} />
+            onMouseLeave={() => setTooltip(null)} onClick={() => { setTooltip(null); onSelect(arc.hubId); }} />
+          <g className="arc-anchor" transform={`translate(${arc.x} ${arc.y})`} role="button" tabIndex={0}
+            aria-label={`查看共享 L${arc.layer} ${arc.name}`}
+            onMouseEnter={() => setTooltip({ x: arc.x, y: arc.y, arc })} onMouseLeave={() => setTooltip(null)}
+            onFocus={() => setTooltip({ x: arc.x, y: arc.y, arc })} onBlur={() => setTooltip(null)}
+            onClick={() => { setTooltip(null); onSelect(arc.hubId); }}
+            onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onSelect(arc.hubId); } }}>
+            <rect x="-8" y="-8" width="16" height="16" className="arc-anchor-hit" />
+            <path d="M 0 -4 L 4 0 L 0 4 L -4 0 Z" className="arc-anchor-glyph" />
+          </g>
         </g>)}
       </svg>}
-      {tooltip && <div className="geo-arc-tooltip" style={{ left: tooltip.x + 12, top: tooltip.y + 12 }}>
-        共享 L{tooltip.arc.layer} · {tooltip.arc.name}</div>}
+      {tooltip && <div className="geo-arc-tooltip" role="tooltip" style={{ left: Math.max(14, Math.min(tooltip.x + 12,
+        (hostRef.current?.clientWidth ?? 300) - 248)), top: tooltip.y + 12 }}>
+        <strong>共享枢纽 · L{tooltip.arc.layer}</strong><span>{tooltip.arc.name}</span><small>点击调阅卷宗</small></div>}
       {placeTooltip && !tooltip && <div className="geo-arc-tooltip" role="tooltip"
         style={{ left: Math.min(placeTooltip.x + 12, (hostRef.current?.clientWidth ?? 300) - 145), top: placeTooltip.y + 12 }}>
         {placeTooltip.label}{placeTooltip.count > 1 && ` · ${placeTooltip.count} 条`}</div>}
@@ -463,14 +550,16 @@ export default function GeoView({ graph, selection, codeIds, focus, onSelect, on
           </section>}
           {selection.node && !anchor && (
             <div className="geo-context-note" role="status">
-              {regionDistribution ? `母题共现 · ${context.length} 个研究地区`
-                : context.length ? `所选节点无坐标 · 显示 ${context.length} 个关联地点` : '所选节点暂无可显示的地点'}
-              {!context.length && <button type="button" onClick={onOpenGraph}>在星图查看</button>}
+              {casePlaces.length ? `枢纽辐射分布 · ${casePlaces.length} 个实景锚点`
+                : regionDistribution ? `母题共现 · ${context.length} 个研究地区`
+                : context.length ? `关联地点 · ${context.length} 处` : '暂无登记地点'}
+              {!context.length && !casePlaces.length && <button type="button" onClick={onOpenGraph}>在星图查看</button>}
             </div>
           )}
           <div className="scene-footer">
             <span>{places.size} 处标点</span>
             <span className="geo-legend">
+              {arcPaths.length > 0 && <span className="arc-legend"><b aria-hidden="true">◇</b> 点击弧线锚标看枢纽</span>}
               {!streetLevel && linkAnchor && context.length > 1 && <span><i />{regionDistribution ? '研究地区共现'
                 : context.length > MAX_CONTEXT_ARCS + 1 ? '关联地点（部分）' : '关联地点'}</span>}
               <span className="geo-attribution">

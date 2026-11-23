@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { DossierCodes, type CodeInteractions } from './DossierCodes';
 import {
-  coordinatesOf, EVIDENCE, isFiction, LAYERS, linkKey, locationPrecision, mapLabel, otherEnd, READING_LABELS, RELATIONS, STANDARDS,
-  type Citation, type CodeFocus, type GraphIndex, type GraphNode,
+  coordinatesOf, dossierCodes, EVIDENCE, geographicCases, isFiction, LAYERS, linkKey, locationPrecision, mapLabel, otherEnd,
+  READING_LABELS, RELATIONS, shortNodeLabel, STANDARDS, type Citation, type GraphIndex, type GraphNode,
 } from './graph';
 
 const RELATION_PAGE_SIZE = 80;
@@ -63,7 +64,7 @@ function yearLabel(year: number): string {
   return year < 0 ? `公元前 ${-year} 年` : `${year} 年`;
 }
 
-function temporalLabel(temporal: NonNullable<GraphNode['temporal']>): string {
+export function temporalLabel(temporal: NonNullable<GraphNode['temporal']>): string {
   const { year_start: start, year_end: end, era_label: era } = temporal;
   if (era === '资料出版' && start !== null && start === end) return `资料出版 · ${yearLabel(start)}`;
   if (era === '学校采录' && start !== null && end !== null) {
@@ -76,7 +77,7 @@ function temporalLabel(temporal: NonNullable<GraphNode['temporal']>): string {
   return start >= 0 ? `${start}–${end} 年` : `${yearLabel(start)}至 ${yearLabel(end)}`;
 }
 
-function Sources({ citations }: { citations: Citation[] }) {
+export function Sources({ citations }: { citations: Citation[] }) {
   if (!citations.length) return <p className="inspector-empty">这张卡片暂无出处。</p>;
   return (
     <ol className="source-list">
@@ -122,6 +123,30 @@ function Edition({ node }: { node: GraphNode }) {
   </section>;
 }
 
+export function hasOriginal(node: GraphNode) {
+  return Boolean(node.reading?.edition || (node.markdown.trim() && !node.markdown.startsWith('### 资料目录')));
+}
+
+export function DossierOriginal({ node }: { node: GraphNode }) {
+  if (node.reading?.edition) return <Edition node={node} />;
+  if (!hasOriginal(node)) return null;
+  return <section data-section="text" className="inspector-section"><h4>资料正文</h4>
+    <article className="markdown-body" aria-label="Markdown 原文">
+      <Markdown skipHtml remarkPlugins={[remarkGfm]} components={{
+        a: ({ href, children }) => {
+          const url = webUrl(href);
+          return url ? <a href={url} target="_blank" rel="noopener noreferrer">{children}</a> : <span>{children}</span>;
+        },
+        img: ({ alt, src }) => {
+          const url = webUrl(typeof src === 'string' ? src : undefined);
+          return url ? <a href={url} target="_blank" rel="noopener noreferrer">{alt || '查看原图'}</a>
+            : <span>{alt || '本地图片'}</span>;
+        },
+      }}>{node.markdown}</Markdown>
+    </article>
+  </section>;
+}
+
 interface Props {
   node: GraphNode;
   graph: GraphIndex;
@@ -129,13 +154,11 @@ interface Props {
   onClose: () => void;
   onCompare: () => void;
   onNodeHover: (id: string | null) => void;
-  onCodeFocus: (code: CodeFocus | null) => void;
-  onCodePin: (code: CodeFocus) => void;
+  codeInteraction: CodeInteractions;
   onLocate: (id: string) => void;
-  secondary?: boolean;
 }
 
-export function NodeInspector({ node, graph, onSelect, onClose, onCompare, onNodeHover, onCodeFocus, onCodePin, onLocate, secondary = false }: Props) {
+export function NodeInspector({ node, graph, onSelect, onClose, onCompare, onNodeHover, codeInteraction, onLocate }: Props) {
   const [relationLimit, setRelationLimit] = useState(RELATION_PAGE_SIZE);
   const contentRef = useRef<HTMLDivElement>(null);
   const links = graph.adjacency.get(node.id) ?? [];
@@ -144,13 +167,11 @@ export function NodeInspector({ node, graph, onSelect, onClose, onCompare, onNod
   const coordinates = coordinatesOf(node);
   const reading = node.reading;
   const paragraphs = reading?.paragraphs ?? [];
-  const hasEdition = !!reading?.edition;
-  const hasMarkdown = !!node.markdown.trim() && !node.markdown.startsWith('### 资料目录');
-  const hasText = hasEdition || hasMarkdown;
+  const hasText = hasOriginal(node);
   const hasOverview = paragraphs.length > 0 || (!hasText && (!!node.spatial || node.sources.length > 0));
-  const codes = Object.entries(STANDARDS).flatMap(([key, label]) => (
-    node.standards[key as keyof GraphNode['standards']].map((code) => ({ system: key, code, label: `${label} ${code}` }))
-  ));
+  const codes = dossierCodes(node);
+  const geographicCount = useMemo(() => new Set(geographicCases(graph, node)
+    .map((item) => coordinatesOf(item)?.join(','))).size, [graph, node]);
 
   useEffect(() => {
     if (contentRef.current) contentRef.current.scrollTop = 0;
@@ -166,7 +187,7 @@ export function NodeInspector({ node, graph, onSelect, onClose, onCompare, onNod
   });
 
   return (
-    <aside id={secondary ? undefined : 'node-inspector'} className="inspector" aria-label={secondary ? '对比节点详情' : '节点详情'}>
+    <aside id="node-inspector" className="inspector" aria-label="节点详情">
       <div className="inspector-head">
         <div className="panel-heading">
           <h2>节点卷宗</h2>
@@ -187,6 +208,9 @@ export function NodeInspector({ node, graph, onSelect, onClose, onCompare, onNod
           <span title={node.spatial?.location_name}>{mapLabel(node)}</span>
           <button type="button" onClick={() => onLocate(node.id)}>在地图定位 <span aria-hidden="true">↗</span></button>
         </div>}
+        {!coordinates && geographicCount > 0 && <div className="record-location">
+          <button type="button" onClick={() => onLocate(node.id)}>框选全球关联个案 · {geographicCount} 处 <span aria-hidden="true">↗</span></button>
+        </div>}
       </div>
 
       <nav className="inspector-nav" aria-label="节点详情分区">
@@ -198,6 +222,20 @@ export function NodeInspector({ node, graph, onSelect, onClose, onCompare, onNod
       </nav>
 
       <div className="inspector-content" ref={contentRef}>
+        {codes.length > 0 && <DossierCodes codes={codes} interaction={codeInteraction} />}
+        {orderedLinks.length > 0 && <div className="record-quick-links" aria-label="首屏关联">
+          <button type="button" className="record-quick-heading" onClick={() => jump('[data-section="relations"]')}>机制与关联 · {links.length}</button>
+          {orderedLinks.slice(0, 3).map((link) => {
+            const related = graph.byId.get(otherEnd(link, node.id));
+            return related && <button type="button" key={linkKey(link)} title={related.title}
+              aria-label={`定位关联 ${related.title}`}
+              onMouseEnter={() => onNodeHover(related.id)} onMouseLeave={() => onNodeHover(null)}
+              onClick={() => onSelect(related.id)}>
+              {link.status && <span className="evidence-stamp" data-status={link.status}>{EVIDENCE[link.status].label}</span>}
+              <span>L{related.z_layer} · {shortNodeLabel(related.title, 16)}</span>
+            </button>;
+          })}
+        </div>}
         {reading && paragraphs.length > 0
           ? <section className="reading-section" data-section="reading" data-reading-kind={reading.kind}>
             <h4>{READING_LABELS[reading.kind]}</h4>
@@ -209,22 +247,7 @@ export function NodeInspector({ node, graph, onSelect, onClose, onCompare, onNod
             </div>
           </section>
           : !hasText && <CatalogueOverview node={node} />}
-        {hasEdition && <Edition node={node} />}
-        {!hasEdition && hasMarkdown && <section data-section="text" className="inspector-section"><h4>资料正文</h4>
-          <article className="markdown-body" aria-label="Markdown 原文">
-            <Markdown skipHtml remarkPlugins={[remarkGfm]} components={{
-              a: ({ href, children }) => {
-                const url = webUrl(href);
-                return url ? <a href={url} target="_blank" rel="noopener noreferrer">{children}</a> : <span>{children}</span>;
-              },
-              img: ({ alt, src }) => {
-                const url = webUrl(typeof src === 'string' ? src : undefined);
-                return url ? <a href={url} target="_blank" rel="noopener noreferrer">{alt || '查看原图'}</a>
-                  : <span>{alt || '本地图片'}</span>;
-              },
-            }}>{node.markdown}</Markdown>
-          </article>
-        </section>}
+        <DossierOriginal node={node} />
         <dl className="record-facts" data-section="facts">
           {node.spatial && <div><dt>地点</dt><dd>{node.spatial.location_name}</dd></div>}
           {coordinates && <div><dt>点位</dt><dd><span className="numeric">{coordinates[1].toFixed(node.spatial?.precision === 'exact' ? 5 : 2)}°, {coordinates[0].toFixed(node.spatial?.precision === 'exact' ? 5 : 2)}°</span>
@@ -235,9 +258,6 @@ export function NodeInspector({ node, graph, onSelect, onClose, onCompare, onNod
           {node.audit.review_note && <div><dt>复核说明</dt><dd>{node.audit.review_note}</dd></div>}
           {node.audit.public_release && node.audit.public_rights_note && <div><dt>公开依据</dt><dd>{node.audit.public_rights_note}</dd></div>}
         </dl>
-        {codes.length > 0 && <div className="code-plates" aria-label="标准码">{codes.map((code) => <button key={`${code.system}-${code.code}`}
-          type="button" onMouseEnter={() => onCodeFocus(code)} onMouseLeave={() => onCodeFocus(null)}
-          onFocus={() => onCodeFocus(code)} onBlur={() => onCodeFocus(null)} onClick={() => onCodePin(code)}>{code.label}</button>)}</div>}
         <section data-section="sources" className="inspector-section"><h4>文献出处</h4><Sources citations={node.sources} /></section>
         {links.length > 0 && <section data-section="relations" className="inspector-section">
           <h4>机制核验与跨层关联</h4>

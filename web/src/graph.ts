@@ -92,7 +92,24 @@ export interface ViewSelection {
 
 export type EvidenceGroup = 'confirmed' | 'unverified' | 'refuted';
 export type CodeFocus = { system: string; code: string };
-export function evidenceGroup(status: EvidenceStatus | null): EvidenceGroup {
+export function codeKey({ system, code }: CodeFocus): string { return `${system}:${code}`; }
+
+export function dossierCodes(node: GraphNode) {
+  return Object.entries(STANDARDS).flatMap(([system, label]) => (
+    node.standards[system as keyof GraphNode['standards']].map((code) => ({ system, code, label: `${label} ${code}` }))
+  ));
+}
+
+export function geographicCases(graph: GraphIndex, node: GraphNode | null): GraphNode[] {
+  if (!node || node.z_layer === 1 || coordinatesOf(node)) return [];
+  return [...relatedNodes(graph, node, 2).keys()].flatMap((id) => {
+    const item = graph.byId.get(id);
+    return item?.z_layer === 1 && coordinatesOf(item) ? [item] : [];
+  });
+}
+
+export function evidenceGroup(status: EvidenceStatus | null): EvidenceGroup | null {
+  if (!status) return null;
   return status === 'confirmed' ? 'confirmed' : status === 'refuted' ? 'refuted' : 'unverified';
 }
 
@@ -106,10 +123,10 @@ export const LAYERS = {
 export const LAYER_ORDER = [1, 2, 3, 4] as const;
 
 export const EVIDENCE: Record<EvidenceStatus, { label: string; color: string }> = {
-  confirmed: { label: '已证实', color: '#89AD9D' },
+  confirmed: { label: '已证实', color: '#38B2AC' },
   contested: { label: '有争议', color: '#C29D59' },
   unverified: { label: '待核实', color: '#C29D59' },
-  refuted: { label: '已驳回', color: '#B84E4F' },
+  refuted: { label: '已驳回', color: '#D9534F' },
 };
 
 export const READING_LABELS: Record<ReadingKind, string> = {
