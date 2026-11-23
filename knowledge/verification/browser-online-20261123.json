@@ -1,0 +1,16 @@
+{
+  "softwareRenderer": true,
+  "figureVisible": true,
+  "figureZoom": true,
+  "originalFigureZoom": true,
+  "figureSources": true,
+  "dragRotates": true,
+  "subjectFiltering": true,
+  "figureTextSearch": true,
+  "deferredFolkloreGraph": true,
+  "newMapStory": true,
+  "mobileFigure": true,
+  "errors": [],
+  "base": "https://miracleqihe.github.io/astraia/",
+  "public_commit": "31218e421fd008428d72f797e96fbc946be4311d"
+}
