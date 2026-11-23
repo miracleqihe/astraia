@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { LAYERS, matchesQuery, type GraphNode, type Layer, type Tier, type ViewMode } from './graph';
 
 const TIERS: Tier[] = ['S', 'A', 'B', 'C', 'F'];
@@ -80,16 +80,24 @@ export function QuickSearch({ nodes, onClose, onSelect }: {
   nodes: GraphNode[]; onClose: () => void; onSelect: (id: string) => void;
 }) {
   const [query, setQuery] = useState('');
+  const deferredQuery = useDeferredValue(query);
   const matching = useMemo(() => {
-    const text = query.trim();
+    const text = deferredQuery.trim();
     if (!text) return nodes.slice(0, 20);
-    const result: GraphNode[] = [];
+    const result: GraphNode[] = [], fuzzy: GraphNode[] = [];
+    const needle = [...text.normalize('NFKC').toLocaleLowerCase().replace(/\s+/g, '')];
     for (const node of nodes) {
       if (matchesQuery(node, text)) result.push(node);
+      else if (needle.length >= 2 && fuzzy.length < 50) {
+        const haystack = [...node.title.normalize('NFKC').toLocaleLowerCase()];
+        let index = 0;
+        for (const character of haystack) if (character === needle[index]) index += 1;
+        if (index === needle.length) fuzzy.push(node);
+      }
       if (result.length === 50) break;
     }
-    return result;
-  }, [nodes, query]);
+    return [...result, ...fuzzy].slice(0, 50);
+  }, [nodes, deferredQuery]);
   useEffect(() => {
     const close = (event: KeyboardEvent) => { if (event.key === 'Escape') onClose(); };
     window.addEventListener('keydown', close);

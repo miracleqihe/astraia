@@ -213,9 +213,14 @@ export function firstSelection(nodes: readonly GraphNode[]): string | null {
 export function matchesQuery(node: GraphNode, query: string): boolean {
   const normalized = query.normalize('NFKC').trim().toLocaleLowerCase();
   if (!normalized) return true;
+  const formattedCodes = Object.entries(STANDARDS).flatMap(([system, label]) => {
+    const values = node.standards[system as keyof GraphNode['standards']];
+    return Array.isArray(values) ? values.map((code) => `${label} ${code}`) : [];
+  });
   const fields = [node.title, node.id, ...node.aliases, node.spatial?.location_name,
     node.temporal?.era_label, node.temporal?.year_start, node.temporal?.year_end,
-    ...Object.values(node.standards).flat(), ...node.sources.flatMap(({ citation, locator, doi }) => [citation, locator, doi])];
+    ...Object.values(node.standards).flat(), ...formattedCodes,
+    ...node.sources.flatMap(({ citation, locator, doi }) => [citation, locator, doi])];
   const text = fields.filter((field) => field != null).join(' ').normalize('NFKC').toLocaleLowerCase();
   return normalized.split(/\s+/).every((word) => text.includes(word));
 }

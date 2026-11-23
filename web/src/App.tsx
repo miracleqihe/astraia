@@ -161,7 +161,7 @@ function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
               onSelect={selectNode} onHover={setHoveredId} onLayer={setActiveLayer} onSolo={toggleSolo} onEvidence={(status) => toggle(setEvidence, status)} />}
         </Suspense>
         <Chronology bounds={timeline.bounds} value={currentYears} ticks={timeline.ticks} onChange={setYears} />
-        {comparePicking && <div className="compare-hint" role="status">请选择第二个节点，或 Shift + 点击节点。</div>}
+        {drawer === 'compare' && comparePicking && <div className="compare-hint" role="status">请选择第二个节点，或 Shift + 点击节点。</div>}
         {directoryOpen && <div className="directory-drawer" onKeyDown={(event) => { if (event.key === 'Escape') setDirectoryOpen(false); }}>
           <NodeDirectory nodes={graph.nodes} selectedId={selected?.id ?? null} onSelect={selectNode} /></div>}
       </main>
@@ -169,17 +169,17 @@ function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
         <button type="button" onClick={() => { if (!selected && graph.nodes.length) setSelectedId(graph.nodes[0].id); setDrawer('single'); }}>展开卷宗</button></aside>
         : <div className="inspector-drawer">
           <div className="drawer-modes" aria-label="卷宗宽度">
-            <button type="button" onClick={() => setDrawer('collapsed')}>收起</button>
-            <button type="button" aria-pressed={drawer === 'single'} onClick={() => setDrawer('single')}>单卷宗</button>
+            <button type="button" onClick={() => { setDrawer('collapsed'); setComparePicking(false); }}>收起</button>
+            <button type="button" aria-pressed={drawer === 'single'} onClick={() => { setDrawer('single'); setComparePicking(false); }}>单卷宗</button>
             <button type="button" aria-pressed={drawer === 'compare'} onClick={() => { setDrawer('compare'); if (!comparison) setComparePicking(true); }}>双卷宗</button>
           </div>
           {drawer === 'compare' && comparison && <CompareSummary left={selected} right={comparison} graph={graph} />}
           <div className={`inspector-columns${drawer === 'compare' ? ' comparing' : ''}`}>
-            <NodeInspector node={selected} graph={graph} onSelect={selectNode} onClose={() => setDrawer('collapsed')}
+            <NodeInspector node={selected} graph={graph} onSelect={selectNode} onClose={() => { setDrawer('collapsed'); setComparePicking(false); }}
               onCompare={() => { setDrawer('compare'); setComparePicking(true); }} onNodeHover={setHoveredId} onCodeFocus={setCodeFocus}
               onCodePin={(code) => setPinnedCode((old) => old?.system === code.system && old.code === code.code ? null : code)} />
             {drawer === 'compare' && (comparison
-              ? <NodeInspector secondary node={comparison} graph={graph} onSelect={(id) => selectNode(id, true)} onClose={() => { setCompareId(null); setDrawer('single'); }}
+              ? <NodeInspector secondary node={comparison} graph={graph} onSelect={(id) => selectNode(id, true)} onClose={() => { setCompareId(null); setDrawer('single'); setComparePicking(false); }}
                 onCompare={() => setComparePicking(true)} onNodeHover={setHoveredId} onCodeFocus={setCodeFocus}
                 onCodePin={(code) => setPinnedCode((old) => old?.system === code.system && old.code === code.code ? null : code)} />
               : <div className="compare-empty">请选择第二个节点。</div>)}
@@ -187,7 +187,7 @@ function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
         </div>}
     </div>
     {searchOpen && <QuickSearch nodes={snapshot.nodes} onClose={() => setSearchOpen(false)} onSelect={(id) => {
-      setTiers(new Set(ALL_TIERS)); setLayers(new Set(ALL_LAYERS)); setYears(null); setHoveredId(null); setSelectedId(id); setDrawer('single');
+      setTiers(new Set(ALL_TIERS)); setLayers(new Set(ALL_LAYERS)); setYears(null); setHoveredId(null); setSelectedId(id); setDrawer('single'); setComparePicking(false);
     }} />}
   </div>;
 }
