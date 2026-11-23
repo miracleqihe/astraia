@@ -24,32 +24,32 @@ relations:
 - type: COMPARED_WITH
   target: case_cn_sanya_luhuitou_deer
   weight: 1.0
-  note: 山崖与鹿女故事在三亚的山顶雕塑中得到形象。
+  note: 黎族猎手追鹿化女的传说，借 1987 年落成的山顶石雕定格为海角地标。
   status: null
 - type: COMPARED_WITH
   target: case_jp_tono_zashiki_warashi_1910
   weight: 1.0
-  note: 《远野物语》以具体旧家和路桥记录家神传说。
+  note: 1910 年初版《远野物语》以具体旧宅廊道与村桥偶遇记下家神去留。
   status: null
 - type: COMPARED_WITH
   target: case_ph_laguna_makiling_mountain_guardian
   weight: 1.0
-  note: 黎刹记录了山主人出现与离去的多种讲法。
+  note: 黎刹笔下并存着马基林山仙女现身助人与因山林受侵而退隐的多种讲法。
   status: null
 - type: COMPARED_WITH
   target: case_za_cape_town_van_hunks_tablecloth
   weight: 1.0
-  note: 桌山的云与烟斗故事反复借当日天色讲起。
+  note: 桌山平顶云层与斗烟传说随开普敦日常天色反复重提。
   status: null
 - type: COMPARED_WITH
   target: case_cn_tw_dakeng_red_girl
   weight: 1.0
-  note: 大坑地方记忆与可以重播的录像相联。
+  note: 台中大坑山林记忆借一卷可反复回放的家庭健行录像流传。
   status: null
 - type: COMPARED_WITH
   target: case_cn_hk_tat_tak_old_school
   weight: 1.0
-  note: 屏山建筑的实际沿革和附着其上的讲法都可回查。
+  note: 元朗屏山废弃校舍的真实办学沿革与后起红衣传闻可分头核查。
   status: null
 sources:
 - citation: 三亚旅游推广机构《Luhuitou Scenic Area》。
@@ -153,20 +153,20 @@ audit:
 
 ## 专题导读
 
-三亚讲一头鹿在山崖回身，1987 年完成的雕塑把这个动作留在鹿回头山顶。开普敦讲山坡上的两支烟斗熏出了桌山的“桌布”。当地人走到山边或抬头看云，就有了说起旧故事的机会。一个版本靠山顶物件被记住，另一个版本每天可以从天气讲起。
+地方传说常借一处有形地标或日常天色留在人们眼前：海南三亚流传坡鹿在断崖回身化作少女的故事，林毓豪 1987 年完成的山顶雕塑（三亚市政府网 2026 年刊文回顾）将这一幕定格在鹿回头岭上；南非开普敦则讲山坡上两支烟斗比试熏出了桌山顶上的云层“桌布”（见伊恩·科尔文约 1910 年印行的英文故事集及斯泰伦博斯大学百科所录舞台改编）。一处靠山顶石雕锚定记忆，一处随每日抬头看云重提旧话。
 
-远野的座敷童子住在具体的旧家。第十七、十八则从走廊的相逢讲到两名女孩离开旧屋，留下家运将变的征兆。菲律宾的玛丽亚也被认为会远离人们，黎刹记下的一个版本把她的离开同有人要占去山林联系起来。两处材料都给守护者留了退走的一刻。
+另一些山林与旧宅叙事则特意记下了守护者退走的一刻：柳田国男 1910 年初版《远野物语》第十七、十八则里的座敷童子原本住在具体旧家，从廊下照面讲到两名陌生女孩离屋远去，旋即留下家运将尽的征兆；何塞·黎刹写下、奥斯汀·克雷格 1918 年编印英译的菲律宾马基林山传说中，仙女玛丽亚同样渐少露面，其中一说便将她的离去同有人企图侵占山林联系起来。
 
-台湾大坑和香港屏山可以接着读。大坑的红衣小女孩随录像重播，旧校舍传闻则借一幢可查的建筑流传。旧屋、云、录像和雕塑给讲述提供了很不一样的凭借。标点把读者带到这些凭借所在之处，卷宗再指出它与原叙事的关系。
+台湾台中大坑与香港元朗屏山又呈现了近现代媒介与建筑的凭依：据 TVBS 访谈与联合新闻网 2024 年回顾，大坑“红衣小女孩”随 20 世纪 90 年代一卷家庭健行录像反复重播；屏山达德旧校舍的红衣传闻则依附于一幢有校史可查的空置建筑（见《香港 01》2017 年废墟回访及古物古迹办事处资料）。古宅、山云、录像与石雕为口耳相传提供了迥异的现实支点，地图标点指引的正是这些支点所在之处。
 
 ## 对读
 
-- 三亚鹿回头｜跑到海边的鹿。山崖与鹿女故事在三亚的山顶雕塑中得到形象。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_cn_sanya_luhuitou_deer&view=map)
-- 岩手远野｜旧屋里的座敷童子。《远野物语》以具体旧家和路桥记录家神传说。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_jp_tono_zashiki_warashi_1910&view=map)
-- 菲律宾马基林山｜隐入林中的玛丽亚。黎刹记录了山主人出现与离去的多种讲法。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_ph_laguna_makiling_mountain_guardian&view=map)
-- 开普敦桌山｜比到山顶起云的烟斗。桌山的云与烟斗故事反复借当日天色讲起。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_za_cape_town_van_hunks_tablecloth&view=map)
-- 大坑步道录像末尾的红衣小女孩。大坑地方记忆与可以重播的录像相联。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_cn_tw_dakeng_red_girl&view=map)
-- 屏山达德旧校舍的红衣传闻。屏山建筑的实际沿革和附着其上的讲法都可回查。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_cn_hk_tat_tak_old_school&view=map)
+- 三亚鹿回头｜跑到海边的鹿。黎族猎手追鹿化女的传说，借 1987 年落成的山顶石雕定格为海角地标。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_cn_sanya_luhuitou_deer&view=map)
+- 岩手远野｜旧屋里的座敷童子。1910 年初版《远野物语》以具体旧宅廊道与村桥偶遇记下家神去留。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_jp_tono_zashiki_warashi_1910&view=map)
+- 菲律宾马基林山｜隐入林中的玛丽亚。黎刹笔下并存着马基林山仙女现身助人与因山林受侵而退隐的多种讲法。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_ph_laguna_makiling_mountain_guardian&view=map)
+- 开普敦桌山｜比到山顶起云的烟斗。桌山平顶云层与斗烟传说随开普敦日常天色反复重提。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_za_cape_town_van_hunks_tablecloth&view=map)
+- 大坑步道录像末尾的红衣小女孩。台中大坑山林记忆借一卷可反复回放的家庭健行录像流传。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_cn_tw_dakeng_red_girl&view=map)
+- 屏山达德旧校舍的红衣传闻。元朗屏山废弃校舍的真实办学沿革与后起红衣传闻可分头核查。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_cn_hk_tat_tak_old_school&view=map)
 
 ## 出处
 

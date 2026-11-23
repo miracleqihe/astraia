@@ -25,42 +25,42 @@ relations:
 - type: COMPARED_WITH
   target: case_cn_yueyang_liuyi_dragon_letter
   weight: 1.0
-  note: 君山井与唐传奇社橘对读，信件让人进入水族社会。
+  note: 君山柳毅井与唐传奇社橘遥相对读，一封家书开启凡人入水府之门。
   status: null
 - type: COMPARED_WITH
   target: case_cn_hangzhou_leifeng_white_snake
   weight: 1.0
-  note: 西湖相逢的结尾系于雷峰塔，名录保留地景。
+  note: 西湖相逢终结于雷峰塔下，非遗名录保留了沿岸传承地景。
   status: null
 - type: COMPARED_WITH
   target: case_vn_hanoi_hoan_kiem_returned_sword
   weight: 1.0
-  note: 湖名保存黎太祖归还剑的动作。
+  note: 河内湖名保存了黎太祖平定战事后归还王剑的动作。
   status: null
 - type: COMPARED_WITH
   target: case_kh_sihanoukville_preah_thong_neang_neak
   weight: 1.0
-  note: 高棉婚礼重复牵着龙女披巾进入水下家门的动作。
+  note: 高棉传统婚礼代代重演牵着龙女披巾步入水下家门的礼序。
   status: null
 - type: COMPARED_WITH
   target: case_kr_jeju_yeongdeung_sea_wind
   weight: 1.0
-  note: 济州以仪式和草船组织海上时节。
+  note: 济州健入洞以迎送仪式与稻草船标定春季海上时节。
   status: null
 - type: COMPARED_WITH
   target: case_th_kumphawapi_nang_ai_white_squirrel
   weight: 1.0
-  note: 依善沉城故事把食禁和湖中高地系在一起。
+  note: 依善沉城传说将白松鼠食禁与湖中高地系在一起。
   status: null
 - type: COMPARED_WITH
   target: case_id_samosir_toba_fish_promise
   weight: 1.0
-  note: 多巴湖以破约后的涨水解释湖岛名。
+  note: 多巴湖传说借破约后的涨水解释大湖与湖心岛的名称。
   status: null
 - type: COMPARED_WITH
   target: case_my_pahang_tasik_chini_gumum
   weight: 1.0
-  note: 奇尼湖古穆姆是守湖者，沉城是当地另一个叙事。
+  note: 奇尼湖并传护湖龙“古穆姆”与湖底沉城两支地方口述。
   status: null
 sources:
 - citation: 唐·李朝威《柳毅》，见《太平广记》卷四一九“龙二”。
@@ -194,24 +194,24 @@ audit:
 
 ## 专题导读
 
-洞庭龙女请过路人送一封信，从那一刻起，水下有了一个能去求助的家。在唐传奇里，柳毅循着橘树找到门路。君山的讲法把入口留给岛上一口井。去河内还剑湖读另一份卷宗，可以看见东西沿相反的方向移动。黎利把先前得来的一把剑交出，湖名随归还的动作流传。
+洞庭龙女在郊野请过路书生捎出一封家书，水底自此成了一处凡人可登门求助的家门：唐代李朝威《柳毅》写书生循社橘入水府，岳阳君山的地方讲法与《岳阳风土记》则将入口留在岛上柳毅井；转赴越南河内还剑湖阅读另一份卷宗（见河内市文化体育部门古迹介绍与 2018 年黎太祖即位 590 周年纪念报道），信物的去向恰恰相反——黎利将战前所得神剑交还浮出水面的金龟，“还剑”的动作就此留在湖名之中。
 
-柬埔寨婚礼还保留着一个过水的动作。新郎牵住新娘的披巾才进门，像传说中的王子随公主进入那伽世界。济州健入洞的人送风婆婆离开，把草船推向海上。婚礼和迎送保存的是反复可以做出来的事情，各有自己的家族关系、季节和场地。
+在柬埔寨与韩国济州岛，水边传说化作了代代重复的礼仪动作：史密森学会 2007 年《湄公河》民俗节图录记下高棉婚礼中新郎握住新娘披巾尾端进门的规矩，重演王子随那伽公主涉水入宫的传说（2022 年 4 月西哈努克市亦揭幕两人纪念雕像）；济州市健入洞居民则在农历二月举行“灵登祭”（2009 年列入联合国教科文组织非遗代表作名录，另见《韩国民俗大百科》），迎送风婆婆并将稻草小船推入大海，各自依凭家族礼序、季风时令与海岸场地延续至今。
 
-在贡帕瓦比，白松鼠的肉决定哪些人随城沉没，湖中的高地因幸存者而有了说法。多巴湖讲的是家里守不住一个约定，随后水漫过住处，父子给湖与岛留下名字。奇尼湖流传护湖龙和沉城的说法。把它们放在一起读，可以逐地看清水边的人如何讲起准许、禁令和失约的后果。
+东南亚三处湖泊故事则围绕食禁与盟约展开：泰国贡帕瓦比湖（马哈沙拉堪大学与乌汶大学资料）以是否分食白松鼠肉决定谁随城池沉没、谁留在湖心高地；印尼多巴湖（多巴湖管理局 BPODT 与地方政府资料）讲述丈夫失言道破妻子鱼身来历，大水漫过居处后以父子之名分称湖泊与岛屿；马来西亚彭亨州奇尼湖（见《星报》2025 年 3 月 16 日与《婆罗洲邮报》2025 年 6 月 1 日文章）则并传护湖龙“古穆姆”与湖底沉城。将三湖放在一处，可逐地看清岸边社群如何讲述准许、禁令与失约的后果。
 
-也可以沿西湖走到一座塔。话本里的白娘子在西湖与许宣相遇，故事最后在雷峰塔落下。当代杭州非遗项目把断桥、西湖和雷峰塔都收入地方传承的地景，同一对人物便有了可以在岸上一段段走过的故事。
+视线回到杭州西湖岸边：明代冯梦龙编《警世通言·白娘子永镇雷峰塔》写白娘子在西湖遇许宣，几经流徙后终结于雷峰塔下；2006 年列入国家级非遗名录的杭州“白蛇传传说”项目将断桥、西湖与雷峰塔一并收入传承地景，使同一对人物的悲欢化作可沿湖岸逐段走过的风景。
 
 ## 对读
 
-- 洞庭君山｜替龙女送出一封家书。君山井与唐传奇社橘对读，信件让人进入水族社会。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_cn_yueyang_liuyi_dragon_letter&view=map)
-- 杭州西湖｜白蛇传与雷峰塔。西湖相逢的结尾系于雷峰塔，名录保留地景。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_cn_hangzhou_leifeng_white_snake&view=map)
-- 河内还剑湖｜金龟带走王剑。湖名保存黎太祖归还剑的动作。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_vn_hanoi_hoan_kiem_returned_sword&view=map)
-- 柬埔寨西哈努克｜牵着龙女的披巾。高棉婚礼重复牵着龙女披巾进入水下家门的动作。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_kh_sihanoukville_preah_thong_neang_neak&view=map)
-- 济州健入洞｜送风婆婆出海。济州以仪式和草船组织海上时节。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_kr_jeju_yeongdeung_sea_wind&view=map)
-- 泰国贡帕瓦比｜白松鼠与沉下去的城。依善沉城故事把食禁和湖中高地系在一起。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_th_kumphawapi_nang_ai_white_squirrel&view=map)
-- 苏门答腊多巴湖｜不能说出的出身。多巴湖以破约后的涨水解释湖岛名。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_id_samosir_toba_fish_promise&view=map)
-- 马来西亚奇尼湖｜古穆姆龙守着湖。奇尼湖古穆姆是守湖者，沉城是当地另一个叙事。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_my_pahang_tasik_chini_gumum&view=map)
+- 洞庭君山｜替龙女送出一封家书。君山柳毅井与唐传奇社橘遥相对读，一封家书开启凡人入水府之门。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_cn_yueyang_liuyi_dragon_letter&view=map)
+- 杭州西湖｜白蛇传与雷峰塔。西湖相逢终结于雷峰塔下，非遗名录保留了沿岸传承地景。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_cn_hangzhou_leifeng_white_snake&view=map)
+- 河内还剑湖｜金龟带走王剑。河内湖名保存了黎太祖平定战事后归还王剑的动作。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_vn_hanoi_hoan_kiem_returned_sword&view=map)
+- 柬埔寨西哈努克｜牵着龙女的披巾。高棉传统婚礼代代重演牵着龙女披巾步入水下家门的礼序。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_kh_sihanoukville_preah_thong_neang_neak&view=map)
+- 济州健入洞｜送风婆婆出海。济州健入洞以迎送仪式与稻草船标定春季海上时节。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_kr_jeju_yeongdeung_sea_wind&view=map)
+- 泰国贡帕瓦比｜白松鼠与沉下去的城。依善沉城传说将白松鼠食禁与湖中高地系在一起。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_th_kumphawapi_nang_ai_white_squirrel&view=map)
+- 苏门答腊多巴湖｜不能说出的出身。多巴湖传说借破约后的涨水解释大湖与湖心岛的名称。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_id_samosir_toba_fish_promise&view=map)
+- 马来西亚奇尼湖｜古穆姆龙守着湖。奇尼湖并传护湖龙“古穆姆”与湖底沉城两支地方口述。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_my_pahang_tasik_chini_gumum&view=map)
 
 ## 出处
 

@@ -24,37 +24,37 @@ relations:
 - type: COMPARED_WITH
   target: case_cn_beijing_ghost_bus
   weight: 1.0
-  note: 北京各讲法更换了线路号，末班车消失的结尾相通。
+  note: 北京各口述版本屡换公交线路号，深夜末班车凭空失踪的结局相通。
   status: null
 - type: COMPARED_WITH
   target: case_jp_hamamatsu_kisaragi_station_2004
   weight: 1.0
-  note: 记录网上连载式叙述如何让末班车偏离原路线。
+  note: 记录 2004 年论坛实时互动帖如何让一趟私铁末班车偏离现实路线。
   status: null
 - type: COMPARED_WITH
   target: case_jp_ishinomaki_taxi_winter_coat
   weight: 1.0
-  note: 石卷访谈从司机的回忆与灾后地点展开。
+  note: 石卷震后田野访谈从出租车司机的夜班回忆与灾后地名展开。
   status: null
 - type: COMPARED_WITH
   target: case_ph_balete_drive_white_lady
   weight: 1.0
-  note: 路边白衣女与夜班司机的素材在奎松市定点流传。
+  note: 路边白衣搭车女与夜班司机的叙事母题在奎松市老街定点流传。
   status: null
 - type: COMPARED_WITH
   target: case_us_justice_resurrection_mary
   weight: 1.0
-  note: 玛丽在阿彻大道墓园附近走下车或从座位消失。
+  note: 年轻女子在阿彻大道登车，至复活墓园附近下车或自座位消失。
   status: null
 - type: COMPARED_WITH
   target: case_ph_siquijor_tayog_ghost_ship
   weight: 1.0
-  note: 锡基霍尔的讲法让消失发生在水上。
+  note: 锡基霍尔岛拉齐沿岸的讲法将“午夜消失”的场景移至海上。
   status: null
 - type: COMPARED_WITH
   target: case_cl_ancud_caleuche_ghost_ship
   weight: 1.0
-  note: 奇洛埃的馆藏让夜航船在地方史中留下形状。
+  note: 安库德馆藏植物纤维编织船与文献手稿为奇洛埃夜航船留下有形载体。
   status: null
 sources:
 - citation: 果壳，《把你吓懵的都市传说，其实都是这么编出来的》，澎湃新闻，2023 年。
@@ -184,21 +184,21 @@ audit:
 
 ## 专题导读
 
-阿彻大道的司机载上一名年轻女子，到复活墓园边发现邻座空了。石卷灾后访谈里，也有司机记住乘客曾经说出的目的地。两条故事都从一趟看似普通的车程开始。不同的是，芝加哥回访追索已流传多年的街道传说，石卷材料保留了大地震后司机如何讲自己的经历。
+夜路怪谈往往始于一趟看似寻常的行程：在芝加哥近郊阿彻大道流传自 20 世纪 30 年代初的故事里（见 WBEZ 电台 2014 年 10 月回访及布伦范德 1981 年专著《消失的搭车人》），司机载上一名年轻女子，驶至复活墓园旁却发现邻座已空；而在日本宫城县石卷市，工藤优加 2016 年出版的震后田野调查（2024 年《Discuss Japan》亦作引述）录下了出租车司机对乘客所报灾区目的地的记忆。前者追索的是流传数代的城市道路传说，后者留存的则是大地震后幸存司机讲述自身经历的方式。
 
-也有版本让整个交通工具失去踪影。北京口述中的末班车会换成不同线路。日本如月车站在互联网的逐段留言里越过熟悉站点，到达无法在地图上查到的地方。读这类材料时，站名、线路号和写下它们的时间，是追踪后来版本怎样改动情节的线索。
+也有变体让整辆交通工具失去踪影：北京高校口述里的末班公交（见澎湃新闻 2022 年清华校友访谈与 2023 年果壳文章）随讲述人更换 375、347、330、333 等不同线路号；日本“如月车站”则在 2004 年 2channel 论坛的逐段留言里越过熟悉站点，驶入地图失载的异界车站（见国学院大学纪要研究及 ITmedia 2022 年电影改编报道）。阅读此类材料时，具体的站名、车次与发帖时间，正是追踪后续版本如何改写情节的线索。
 
-奎松市版本把白衣乘客留在同一条夜路上。锡基霍尔和奇洛埃各有一艘突然出现又隐去的船。安库德馆藏的一条编织船与米斯特拉尔手稿保留了卡莱乌切的不同载体。把乘客、司机、船和看船的人分别对读，能看到各地如何用熟悉的道路或水道讲一次难以留住的相遇。
+在菲律宾奎松市，《PhilSTAR Life》2021 年专访追查了巴莱特大道白衣女客的多种起源说法；移目海上，菲律宾锡基霍尔岛（GMA 新闻 2019 年两度走访）与智利奇洛埃群岛各有一艘骤现又隐没的夜航船——安库德区域博物馆援引 1972 年金塔纳著作展出的植物纤维编织船、智利国家图书馆 1995 年展览资料与米斯特拉尔手稿，共同保存了“卡莱乌切”的不同载体。将乘客、司机、空车与夜航船并排对读，可见各地如何借熟悉的道路或航道讲述一场留不住的暗夜相遇。
 
 ## 对读
 
-- 北京末班公交失踪传说。北京各讲法更换了线路号，末班车消失的结尾相通。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_cn_beijing_ghost_bus&view=map)
-- 如月车站：开过每一站的末班车。记录网上连载式叙述如何让末班车偏离原路线。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_jp_hamamatsu_kisaragi_station_2004&view=map)
-- 石卷站出租车的厚外套乘客。石卷访谈从司机的回忆与灾后地点展开。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_jp_ishinomaki_taxi_winter_coat&view=map)
-- 奎松市 Balete Drive 的白衣女。路边白衣女与夜班司机的素材在奎松市定点流传。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_ph_balete_drive_white_lady&view=map)
-- 芝加哥近郊｜车里消失的玛丽。玛丽在阿彻大道墓园附近走下车或从座位消失。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_us_justice_resurrection_mary&view=map)
-- 菲律宾锡基霍尔｜子夜消失的船。锡基霍尔的讲法让消失发生在水上。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_ph_siquijor_tayog_ghost_ship&view=map)
-- 智利奇洛埃｜雾里有灯火的卡莱乌切。奇洛埃的馆藏让夜航船在地方史中留下形状。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_cl_ancud_caleuche_ghost_ship&view=map)
+- 北京末班公交失踪传说。北京各口述版本屡换公交线路号，深夜末班车凭空失踪的结局相通。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_cn_beijing_ghost_bus&view=map)
+- 如月车站：开过每一站的末班车。记录 2004 年论坛实时互动帖如何让一趟私铁末班车偏离现实路线。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_jp_hamamatsu_kisaragi_station_2004&view=map)
+- 石卷站出租车的厚外套乘客。石卷震后田野访谈从出租车司机的夜班回忆与灾后地名展开。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_jp_ishinomaki_taxi_winter_coat&view=map)
+- 奎松市 Balete Drive 的白衣女。路边白衣搭车女与夜班司机的叙事母题在奎松市老街定点流传。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_ph_balete_drive_white_lady&view=map)
+- 芝加哥近郊｜车里消失的玛丽。年轻女子在阿彻大道登车，至复活墓园附近下车或自座位消失。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_us_justice_resurrection_mary&view=map)
+- 菲律宾锡基霍尔｜子夜消失的船。锡基霍尔岛拉齐沿岸的讲法将“午夜消失”的场景移至海上。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_ph_siquijor_tayog_ghost_ship&view=map)
+- 智利奇洛埃｜雾里有灯火的卡莱乌切。安库德馆藏植物纤维编织船与文献手稿为奇洛埃夜航船留下有形载体。 [卷宗](https://miracleqihe.github.io/astraia/?story=case_cl_ancud_caleuche_ghost_ship&view=map)
 
 ## 出处
 
