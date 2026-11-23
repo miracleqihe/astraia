@@ -1,0 +1,13 @@
+{
+  "catalogue_nodes": 10620,
+  "catalogue_links": 39004,
+  "nodes_with_existing_coordinates": 513,
+  "review_records_approved_automatically": 0,
+  "catalogue_scope": "目录元数据和来源链接；未经单独确认许可的正文不复制到公开目录。",
+  "python_unittest": {"count": 187, "result": "passed"},
+  "typescript_vite_build": "passed",
+  "browser_checks": ["全量节点搜索", "单卷宗与对比", "图层平铺", "3D 地图", "共享枢纽弧线悬停与点击", "移动端布局"],
+  "cjk_font_check": {"unique_han_characters": 2415, "missing_regular": 0, "missing_bold": 0, "supplemental_browser_render": "passed"},
+  "dense_scene_motion_test": {"renderer": "Chromium headless SwiftShader", "scene_nodes": 600, "observed_fps": 91.3},
+  "large_scene_rendering": {"maximum_scene_nodes": 600, "maximum_dense_links": 36, "search_and_inspector_use_full_graph": true}
+}

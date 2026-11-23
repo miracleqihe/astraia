@@ -3,10 +3,9 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import {
   coordinatesOf, EVIDENCE, isFiction, LAYERS, linkKey, otherEnd, RELATIONS, STANDARDS,
-  type Citation, type GraphIndex, type GraphNode,
+  type Citation, type CodeFocus, type GraphIndex, type GraphNode,
 } from './graph';
 
-type InspectorTab = 'text' | 'sources' | 'relations';
 const RELATION_PAGE_SIZE = 80;
 
 const SOURCE_TYPES: Record<string, string> = {
@@ -99,10 +98,14 @@ interface Props {
   graph: GraphIndex;
   onSelect: (id: string) => void;
   onClose: () => void;
+  onCompare: () => void;
+  onNodeHover: (id: string | null) => void;
+  onCodeFocus: (code: CodeFocus | null) => void;
+  onCodePin: (code: CodeFocus) => void;
+  secondary?: boolean;
 }
 
-export function NodeInspector({ node, graph, onSelect, onClose }: Props) {
-  const [tab, setTab] = useState<InspectorTab>('text');
+export function NodeInspector({ node, graph, onSelect, onClose, onCompare, onNodeHover, onCodeFocus, onCodePin, secondary = false }: Props) {
   const [relationLimit, setRelationLimit] = useState(RELATION_PAGE_SIZE);
   const contentRef = useRef<HTMLDivElement>(null);
   const links = graph.adjacency.get(node.id) ?? [];
@@ -110,20 +113,27 @@ export function NodeInspector({ node, graph, onSelect, onClose }: Props) {
   const yearSuffix = node.title.match(/（\d{4}(?:[–-]\d{4})?）$/)?.[0];
   const coordinates = coordinatesOf(node);
   const codes = Object.entries(STANDARDS).flatMap(([key, label]) => (
-    node.standards[key as keyof GraphNode['standards']].map((code) => `${label} ${code}`)
+    node.standards[key as keyof GraphNode['standards']].map((code) => ({ system: key, code, label: `${label} ${code}` }))
   ));
 
   useEffect(() => {
     if (contentRef.current) contentRef.current.scrollTop = 0;
-  }, [node.id, tab]);
+  }, [node.id]);
   useEffect(() => setRelationLimit(RELATION_PAGE_SIZE), [node.id]);
+  const orderedLinks = [...links].sort((left, right) => {
+    const a = graph.byId.get(otherEnd(left, node.id))?.z_layer === 4 ? 0 : 1;
+    const b = graph.byId.get(otherEnd(right, node.id))?.z_layer === 4 ? 0 : 1;
+    return a - b;
+  });
+  const jump = (id: string) => contentRef.current?.querySelector(`[data-section="${id}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
   return (
-    <aside id="node-inspector" className="inspector" aria-label="节点详情">
+    <aside id={secondary ? undefined : 'node-inspector'} className="inspector" aria-label={secondary ? '对比节点详情' : '节点详情'}>
       <div className="inspector-head">
         <div className="panel-heading">
           <h2>节点卷宗</h2>
-          <button type="button" className="icon-button close-inspector" aria-label="关闭节点详情" onClick={onClose}>×</button>
+          <div className="inspector-actions"><button type="button" className="compare-button" onClick={onCompare}>＋ 加入对比</button>
+            <button type="button" className="icon-button close-inspector" aria-label="关闭节点详情" onClick={onClose}>×</button></div>
         </div>
         <div className="record-meta">
           <span className={`node-shape shape-${node.z_layer}`} aria-hidden="true" />
@@ -135,25 +145,51 @@ export function NodeInspector({ node, graph, onSelect, onClose }: Props) {
           ? <>{node.title.slice(0, -yearSuffix.length)}<wbr /><span className="record-year">{yearSuffix}</span></>
           : node.title}</h3>
         {node.aliases[0] && node.aliases[0] !== node.title && <p className="record-alias">{node.aliases[0]}</p>}
-        {codes.length > 0 && <div className="code-plates" aria-label="标准码">{codes.map((code) => <span key={code}>{code}</span>)}</div>}
-        <dl className="record-facts">
+        {codes.length > 0 && <div className="code-plates" aria-label="标准码">{codes.map((code) => <button key={`${code.system}-${code.code}`}
+          type="button" onMouseEnter={() => onCodeFocus(code)} onMouseLeave={() => onCodeFocus(null)}
+          onFocus={() => onCodeFocus(code)} onBlur={() => onCodeFocus(null)} onClick={() => onCodePin(code)}>{code.label}</button>)}</div>}
+      </div>
+
+      <nav className="inspector-nav" aria-label="节点详情分区">
+        <button type="button" onClick={() => jump('facts')}>概况</button>
+        <button type="button" onClick={() => jump('relations')}>关联 <span>{links.length}</span></button>
+        <button type="button" onClick={() => jump('text')}>原文</button>
+        <button type="button" onClick={() => jump('sources')}>出处 <span>{node.sources.length}</span></button>
+      </nav>
+
+      <div className="inspector-content" ref={contentRef}>
+        <dl className="record-facts" data-section="facts">
           {node.spatial && <div><dt>地点</dt><dd>{node.spatial.location_name}</dd></div>}
-          {coordinates && <div><dt>坐标</dt><dd className="numeric">{coordinates[1].toFixed(2)}°, {coordinates[0].toFixed(2)}°</dd></div>}
+          {coordinates && <div><dt>坐标</dt><dd className="numeric">{coordinates[1].toFixed(2)}°, {coordinates[0].toFixed(2)}°
+            {node.spatial?.precision === 'culture_region' ? ' · 区域参考点' : node.spatial?.precision === 'city' ? ' · 城市参考点' : ''}</dd></div>}
           {node.temporal && <div><dt>时间</dt><dd title={node.temporal.uncertainty_note ?? undefined}>{temporalLabel(node.temporal)}</dd></div>}
           {!node.audit.reviewed_by_human && <div><dt>复核</dt><dd>待人工复核{node.audit.is_sample ? ' · 样例' : ''}</dd></div>}
           {node.audit.reviewed_by_human && node.audit.reviewer && <div><dt>复核人</dt><dd>{node.audit.reviewer}</dd></div>}
           {node.audit.review_note && <div><dt>复核说明</dt><dd>{node.audit.review_note}</dd></div>}
+          {node.audit.public_release && node.audit.public_rights_note && <div><dt>公开依据</dt><dd>{node.audit.public_rights_note}</dd></div>}
         </dl>
-      </div>
-
-      <nav className="inspector-nav" aria-label="节点详情分区">
-        <button type="button" aria-pressed={tab === 'text'} onClick={() => setTab('text')}>原文</button>
-        <button type="button" aria-pressed={tab === 'sources'} onClick={() => setTab('sources')}>出处 <span>{node.sources.length}</span></button>
-        <button type="button" aria-pressed={tab === 'relations'} onClick={() => setTab('relations')}>关联 <span>{links.length}</span></button>
-      </nav>
-
-      <div className="inspector-content" ref={contentRef}>
-        {tab === 'text' && (
+        <section data-section="relations" className="inspector-section">
+          <h4>机制核验与跨层关联</h4>
+          {links.length ? <ul className="relation-list">
+            {orderedLinks.slice(0, relationLimit).map((link) => {
+              const related = graph.byId.get(otherEnd(link, node.id));
+              if (!related) return null;
+              const evidence = link.status ? EVIDENCE[link.status] : null;
+              return <li key={linkKey(link)} data-refuted={link.status === 'refuted'}>
+                <div className="relation-meta"><span>L{related.z_layer} · {RELATIONS[link.type] ?? link.type}</span>
+                  {evidence && <span className="evidence-stamp" data-status={link.status}>{link.status === 'confirmed' ? '✓ ' : link.status === 'refuted' ? '✕ ' : '? '}{evidence.label}</span>}</div>
+                <button type="button" className="relation-node" onMouseEnter={() => onNodeHover(related.id)}
+                  onMouseLeave={() => onNodeHover(null)} onFocus={() => onNodeHover(related.id)} onBlur={() => onNodeHover(null)}
+                  onClick={() => onSelect(related.id)}>{related.title}</button>
+                {link.matched_codes.length > 0 && <p>{link.matched_codes.map(({ system, code }) => `${STANDARDS[system] ?? system} ${code}`).join(' · ')}</p>}
+                {link.note && <p>{link.note}</p>}
+              </li>;
+            })}
+            {links.length > relationLimit && <li><button type="button" className="relation-node"
+              onClick={() => setRelationLimit((limit) => limit + RELATION_PAGE_SIZE)}>显示更多关联（{relationLimit} / {links.length}）</button></li>}
+          </ul> : <p className="inspector-empty">暂无关联。</p>}
+        </section>
+        <section data-section="text" className="inspector-section"><h4>资料正文</h4>
           <article className="markdown-body" aria-label="Markdown 原文">
             <Markdown skipHtml remarkPlugins={[remarkGfm]} components={{
               a: ({ href, children }) => {
@@ -167,33 +203,8 @@ export function NodeInspector({ node, graph, onSelect, onClose }: Props) {
               },
             }}>{node.markdown}</Markdown>
           </article>
-        )}
-        {tab === 'sources' && <Sources citations={node.sources} />}
-        {tab === 'relations' && (links.length ? (
-          <ul className="relation-list">
-            {links.slice(0, relationLimit).map((link) => {
-              const related = graph.byId.get(otherEnd(link, node.id));
-              if (!related) return null;
-              const evidence = link.status ? EVIDENCE[link.status] : null;
-              return (
-                <li key={linkKey(link)}>
-                  <div className="relation-meta">
-                    <span>{RELATIONS[link.type] ?? link.type}</span>
-                    {evidence && <span className="evidence-stamp" data-status={link.status}>{link.status === 'refuted' ? 'REFUTED' : evidence.label}</span>}
-                  </div>
-                  <button type="button" className="relation-node" onClick={() => onSelect(related.id)}>{related.title}</button>
-                  {link.matched_codes.length > 0 && <p>{link.matched_codes.map(({ system, code }) => `${STANDARDS[system] ?? system} ${code}`).join(' · ')}</p>}
-                  {link.note && <p>{link.note}</p>}
-                </li>
-              );
-            })}
-            {links.length > relationLimit && <li>
-              <button type="button" className="relation-node" onClick={() => setRelationLimit((limit) => limit + RELATION_PAGE_SIZE)}>
-                显示更多关联（已显示 {relationLimit} / {links.length}）
-              </button>
-            </li>}
-          </ul>
-        ) : <p className="inspector-empty">此视图暂无关联。</p>)}
+        </section>
+        <section data-section="sources" className="inspector-section"><h4>文献出处</h4><Sources citations={node.sources} /></section>
       </div>
 
       <div className="inspector-footer" title={`vault/${node.source_path}`}>vault/{node.source_path}</div>

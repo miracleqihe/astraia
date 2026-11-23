@@ -33,6 +33,12 @@ def load_decisions(path: Path) -> dict[str, dict]:
             raise ValueError(f"复核记录的卡片重复或哈希无效。{card_id}")
         reviewer, note, reviewed_at = entry.get("reviewer"), entry.get("note", ""), entry.get("reviewed_at")
         genre = entry.get("genre")
+        public_release = entry.get("public_release", False)
+        public_rights_note = entry.get("public_rights_note")
+        if not isinstance(public_release, bool) or (public_rights_note is not None and not isinstance(public_rights_note, str)):
+            raise ValueError(f"公开许可确认格式无效。{card_id}")
+        if public_release and (entry["status"] != "reviewed" or not public_rights_note or not public_rights_note.strip()):
+            raise ValueError(f"公开发布须先通过人工复核并填写许可依据。{card_id}")
         if genre is not None and (not isinstance(genre, str) or genre not in get_args(Genre) or genre == "unclassified"):
             raise ValueError(f"复核记录中的体裁无效。{card_id}")
         if not isinstance(reviewer, str) or not reviewer.strip() or not isinstance(note, str) or not isinstance(reviewed_at, str):
@@ -41,7 +47,9 @@ def load_decisions(path: Path) -> dict[str, dict]:
         if timestamp.utcoffset() is None:
             raise ValueError(f"复核时间缺少时区。{card_id}")
         result[card_id] = {"id": card_id, "card_sha256": digest, "status": entry["status"],
-                           "reviewer": reviewer.strip(), "note": note, "reviewed_at": reviewed_at, "genre": genre}
+                           "reviewer": reviewer.strip(), "note": note, "reviewed_at": reviewed_at, "genre": genre,
+                           "public_release": public_release,
+                           "public_rights_note": public_rights_note.strip() if public_release else None}
     return result
 
 

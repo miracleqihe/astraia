@@ -5,6 +5,8 @@
   const recordsElement = document.getElementById('records');
   const search = document.getElementById('search');
   const collection = document.getElementById('collection');
+  const region = document.getElementById('region');
+  const batch = document.getElementById('batch');
   const issue = document.getElementById('issue');
   const status = document.getElementById('status');
   const storageKey = 'astraia-review-decisions-v1';
@@ -24,6 +26,8 @@
   let decisions = {};
   let koreanFonts = 'loading';
   let thaiFonts = 'loading';
+  const batchRegion = new Map();
+  const batchNames = new Map();
   const isKoreanRecord = (record) => record.id === 'corpus_kr_aks_dobong' || record.id.startsWith('case_kr_aks_dobong_');
   const isLannaRecord = (record) => record.id.startsWith('corpus_th_lanna_');
 
@@ -40,6 +44,42 @@
   }
 
   const byId = new Map(data.records.map((record) => [record.id, record]));
+  fetch('./regions.json').then((response) => {
+    if (!response.ok) throw new Error('地区目录不可用');
+    return response.json();
+  }).then((catalog) => {
+    if (catalog.version !== 1 || !Array.isArray(catalog.groups)) throw new Error('地区目录格式不符');
+    for (const group of catalog.groups) {
+      const option = el('option', group.label);
+      option.value = group.id;
+      region.append(option);
+      for (const [id, label] of Object.entries(group.batches)) {
+        if (batchRegion.has(id)) throw new Error('地区目录包含重复批次');
+        batchRegion.set(id, group.id);
+        batchNames.set(id, label);
+      }
+    }
+    region.disabled = false;
+    batch.disabled = false;
+    refreshBatchOptions();
+  }).catch(() => showMessage('地区和批次筛选未加载；请检查本地复核资料。'));
+
+  function refreshBatchOptions() {
+    const selected = batch.value;
+    const batches = [...new Set(data.records.map((record) => record.batch))]
+      .filter((id) => region.value === 'all' || batchRegion.get(id) === region.value)
+      .sort((left, right) => (batchNames.get(left) || left).localeCompare(batchNames.get(right) || right, 'zh-CN'));
+    batch.replaceChildren();
+    const all = el('option', '全部批次');
+    all.value = 'all';
+    batch.append(all);
+    for (const id of batches) {
+      const option = el('option', batchNames.get(id) || id);
+      option.value = id;
+      batch.append(option);
+    }
+    batch.value = batches.includes(selected) ? selected : 'all';
+  }
   Promise.resolve().then(async () => {
     const faces = await Promise.all([
       document.fonts.load('400 16px "Astraia CJK"', '中文'),
@@ -138,6 +178,8 @@
     const exactId = terms.length === 1 && byId.has(terms[0]) ? terms[0] : null;
     return index.filter(({record, text, urgent}) => {
       if (exactId && record.id !== exactId) return false;
+      if (region.value !== 'all' && batchRegion.get(record.batch) !== region.value) return false;
+      if (batch.value !== 'all' && record.batch !== batch.value) return false;
       if (collection.value !== 'all' && record.collection !== collection.value) return false;
       if (issue.value === 'urgent' && !urgent) return false;
       if (!['all', 'urgent'].includes(issue.value) && !record.issues.some((entry) => entry.category === issue.value)) return false;
@@ -646,7 +688,30 @@
     if (record.dependencies.length) {
       const related = el('details');
       related.append(el('summary', `关联卡片 · ${record.dependencies.length}`));
-      related.append(el('p', record.dependencies.map((id) => byId.get(id)?.title || id).join('、')));
+      related.append(el('p', '关联卡片须先完成复核，或与本条一起签核。', 'muted'));
+      const links = el('div', null, 'record-links');
+      for (const id of record.dependencies) {
+        const linked = byId.get(id);
+        if (!linked) {
+          links.append(el('span', `${id}（不在待审清单）`));
+          continue;
+        }
+        const button = el('button', linked.title);
+        button.type = 'button';
+        button.addEventListener('click', () => {
+          search.value = id;
+          for (const field of [region, batch, collection, issue, status]) field.value = 'all';
+          refreshBatchOptions();
+          selectedId = id;
+          showingUnmatched = false;
+          page = 0;
+          renderList();
+          renderDetail(linked);
+          detail.scrollIntoView({behavior:'smooth', block:'start'});
+        });
+        links.append(button);
+      }
+      related.append(links);
       detail.append(related);
     }
     detail.append(el('h3', '草稿正文'));
@@ -655,7 +720,7 @@
 
     const form = el('section', null, 'review-form');
     form.append(el('h3', '记录人工复核'));
-    form.append(el('p', '复核结果保存在本机浏览器。导出记录后可用签核命令预检并编译。', 'muted'));
+    form.append(el('p', '复核记录保存在本机浏览器。确认公开时，复核人和许可依据会随卡片展示。', 'muted'));
     const previous = decisions[record.id] || {};
     const genreLabel = el('label', '体裁');
     const genre = el('select');
@@ -677,7 +742,17 @@
     const note = el('textarea');
     note.value = previous.note || '';
     noteLabel.append(note);
-    form.append(genreLabel, reviewerLabel, noteLabel);
+    const rightsLabel = el('label', null, 'rights-confirm');
+    const rights = el('input');
+    rights.type = 'checkbox';
+    rights.checked = previous.public_release === true;
+    rightsLabel.append(rights, el('span', '已核对本卡内容及出处，可在公开网站展示'));
+    const rightsNoteLabel = el('label', '公开许可依据（会随卡片公开）');
+    const rightsNote = el('textarea');
+    rightsNote.placeholder = '填写许可名称、权利人授权或其他可追溯依据；无法确认时请留空。';
+    rightsNote.value = previous.public_rights_note || '';
+    rightsNoteLabel.append(rightsNote);
+    form.append(genreLabel, reviewerLabel, noteLabel, rightsLabel, rightsNoteLabel);
     const actions = el('div', null, 'review-actions');
     for (const [value, label, css] of [['reviewed','复核通过','approve'], ['correction','需要修改','correction'], ['pending','退回待复核','']]) {
       const button = el('button', label, css);
@@ -693,11 +768,18 @@
           genre.focus();
           return;
         }
+        if (value === 'reviewed' && rights.checked && !rightsNote.value.trim()) {
+          showMessage('公开展示前请填写可追溯的许可依据。');
+          rightsNote.focus();
+          return;
+        }
         const old = decisions[record.id];
         if (value === 'pending') delete decisions[record.id];
         else decisions[record.id] = {id:record.id, card_sha256:record.card_sha256, status:value,
           reviewer:reviewer.value.trim(), note:note.value.trim(), reviewed_at:new Date().toISOString(),
-          genre:genre.value === 'unclassified' ? null : genre.value};
+          genre:genre.value === 'unclassified' ? null : genre.value,
+          public_release:value === 'reviewed' && rights.checked,
+          public_rights_note:value === 'reviewed' && rights.checked ? rightsNote.value.trim() : null};
         if (!persist()) {
           if (old) decisions[record.id] = old;
           else delete decisions[record.id];
@@ -741,7 +823,8 @@
     detail.append(download, el('pre', JSON.stringify(data.unmatched_references, null, 2)));
   }
 
-  for (const field of [search, collection, issue, status]) field.addEventListener(field === search ? 'input' : 'change', () => {
+  region.addEventListener('change', refreshBatchOptions);
+  for (const field of [search, region, batch, collection, issue, status]) field.addEventListener(field === search ? 'input' : 'change', () => {
     page = 0;
     renderList();
   });

@@ -121,6 +121,9 @@ class Audit(StrictModel):
     reviewer: NonBlank | None = None
     reviewed_at: datetime | None = None
     review_note: str | None = None
+    public_release: bool = False
+    public_rights_note: NonBlank | None = None
+    public_content_sha256: Annotated[str, StringConstraints(pattern=r"^[a-f0-9]{64}$")] | None = None
 
     @field_validator("created_at", mode="before")
     @classmethod
@@ -140,6 +143,16 @@ class Audit(StrictModel):
         if isinstance(value, datetime) and value.utcoffset() is None:
             raise ValueError("reviewed_at 须包含时区")
         return value
+
+    @model_validator(mode="after")
+    def check_public_release(self) -> Self:
+        if self.public_release:
+            if (not self.reviewed_by_human or self.is_sample or not self.reviewer or not self.reviewed_at
+                    or not self.public_rights_note or not self.public_content_sha256):
+                raise ValueError("公开资料须由人工复核并记录许可依据及内容哈希")
+        elif self.public_rights_note or self.public_content_sha256:
+            raise ValueError("未确认公开的资料不能附带公开许可签核")
+        return self
 
 
 class NodeMetadata(StrictModel):

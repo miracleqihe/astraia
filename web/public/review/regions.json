@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "groups": [
+    {"id": "china", "label": "中国及相关资料", "batches": {
+      "asia_chinese_heritage_2006": "2006 年民间文学名录",
+      "asia_chinese_heritage_2008": "2008 年民间文学名录",
+      "asia_chinese_heritage_2011": "2011 年民间文学名录",
+      "asia_chinese_heritage_2014": "2014 年民间文学名录",
+      "asia_chinese_heritage_2021": "2021 年民间文学名录",
+      "asia_cn_bl_dongjing_eap012": "云南洞经录音",
+      "asia_cn_bl_yi_eap081": "云南彝语录音子组",
+      "asia_cn_bl_yi_project_eap081": "云南彝文档案",
+      "asia_cn_minyag_wolp": "四川木雅语馆藏",
+      "asia_cn_pangloss_japhug": "四川嘉绒语馆藏",
+      "asia_cn_pangloss_na": "永宁纳语录音",
+      "asia_cn_pangloss_na_context": "永宁纳语口述背景",
+      "asia_cn_pangloss_na_catalogue": "永宁纳语目录候选",
+      "asia_cn_pangloss_na_tone": "永宁纳语专著候选",
+      "asia_cn_pumi_wolp": "云南普米语馆藏",
+      "asia_cn_zibuyu_wikisource": "《子不语》版本目录",
+      "asia_shandong_mirrors": "山东方志镜像",
+      "asia_tw_sinica_oral": "台湾口语资料",
+      "asia_yuhuan_2008": "玉环传说故事"
+    }},
+    {"id": "east_asia", "label": "东亚其他地区", "batches": {
+      "asia_kr_aks_dobong": "韩国道峰区口碑资料",
+      "nichibun_tohoku": "日本日文研东北馆藏",
+      "nichibun_tohoku_more": "日本日文研东北馆藏补充"
+    }},
+    {"id": "southeast_asia", "label": "东南亚", "batches": {
+      "asia_hmml_makassar": "望加锡手稿",
+      "asia_kh_bl_folding_books": "柬埔寨高棉文折本",
+      "asia_kh_nitean_folktales": "高棉文故事目录",
+      "asia_lao_dllm": "老挝手稿",
+      "asia_mm_bl_burma": "缅甸多语唱片目录",
+      "asia_my_temiar_wolp": "马来西亚 Temiar 馆藏",
+      "asia_ph_cole_1916": "菲律宾 1916 年选集",
+      "asia_ph_ilianen_sil": "菲律宾 Ilianen 录音",
+      "asia_sea_palue_inventory": "印尼 Palu’e 馆藏",
+      "asia_sea_pangloss_khmu": "Khmu 录音馆藏",
+      "asia_th_lanna_folktales": "北泰手稿",
+      "asia_thai_sac": "泰国 SAC 馆藏",
+      "asia_vietnam_cham_folktales": "越南占族故事"
+    }},
+    {"id": "mixed", "label": "跨区域与海外馆藏", "batches": {
+      "asia_early_editions": "1905—1922 年亚洲选集",
+      "asia_pilot_2026": "亚洲资料试点",
+      "asia_us_lowell_sea": "洛厄尔东南亚社群项目"
+    }}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "characters": 2415,
+  "catalogue_sha256": "6fd5522550a779761ca50afe8fb0fba9e717933e31e095a947aac6f2e42d7590",
+  "missing_sans": "",
+  "missing_serif_and_sans": "",
+  "sources": {
+    "sans_regular": 13655,
+    "sans_bold": 13655,
+    "serif_bold": 13686,
+    "supplement_regular": 24,
+    "supplement_bold": 24
+  }
+}

@@ -2,17 +2,18 @@
 
 **[打开 Astraia 在线图谱](https://miracleqihe.github.io/astraia/)**
 
-线上目前展示 12 个待审核样例。纳语候选与其他待审资料请在本地复核界面查看。
+线上图谱展示已收集资料的目录、关联和来源链接。复核状态按各条记录保留；许可尚未确认的正文通过原始出处访问。
 
 Astraia 将地方档案、神话文本和研究文献整理成本地图谱。`vault/` 保存可以直接在 Obsidian 中打开的 UTF-8 Markdown 卡片。编译器读取 YAML 属性和正文，生成供浏览与查询使用的图谱快照。
 
-私有仓库包含草稿、复核导出和本次纳语对照所需的指定快照；其他 `.local/` 采集资料仍只保存在原电脑。迁移后可浏览已提交的复核导出，但重新采集或重建全部批次时，需要补齐相应的本地原始快照。公开网页仅使用明确标记的样例图谱，不包含本地复核页或待审草稿。
+私有仓库包含草稿、复核导出和本次纳语对照所需的指定快照；其他 `.local/` 采集资料仍只保存在原电脑。迁移后可浏览已提交的复核导出，但重新采集或重建全部批次时，需要补齐相应的本地原始快照。公开网页不包含本地复核页面或本地原始快照。
 
 ## 启动本地前端
 
 在项目根目录运行以下 PowerShell 命令。已有图谱快照时可以直接启动。首次安装后，前端从本机读取图谱、底图和字体。
 
 ```powershell
+.\.venv\Scripts\python.exe -X utf8 -m pipeline.catalogue --output web/public/data/catalogue_data.json
 Set-Location web
 npm.cmd ci
 npm.cmd run dev
@@ -21,6 +22,8 @@ npm.cmd run dev
 打开 [本地前端](http://127.0.0.1:5173/)。页面从四层语义星图开始，顶部可切换 3D 地图或打开节点目录。两个视图共用选中节点及虚构过滤状态。点选地图标记、星图节点或目录项，即可查看右侧卷宗中的原文、出处和关联。F 级开关会从当前视图、搜索结果和关联中隐藏对应条目。
 
 顶部的“资料复核”进入逐条清单，也可直接打开 [本地复核页面](http://127.0.0.1:5173/review/index.html)。清单覆盖全部待审批次，显示原始字段、出处、坐标依据、标准码及待核对项。筛选支持出处、坐标、标准码、体裁、优先事项和复核状态。
+
+复核页可按中国及相关资料、东亚其他地区、东南亚和跨区域馆藏筛选，再选择具体批次。公开图谱保留每条资料真实的复核状态；未确认公开许可的卡片显示目录信息和出处链接。
 
 地图使用 Natural Earth 的全球概览底图。没有坐标的卡片可通过两跳图谱邻域显示关联地点。地图虚线表示该邻域中的地点联系。 [Natural Earth 底图数据](https://github.com/topojson/world-atlas#countries-110mjson)
 
@@ -196,10 +199,19 @@ py -m venv .venv
 
 当页面的复核记录已导出，可在项目根目录用以下命令预检。把路径改为实际下载的 JSON。预检将列出尚需先复核的关联卡片。去掉 `--check` 会签核依赖齐全的“复核通过”卡片，写入复核人、时间与备注，更新前端图谱和本地复核清单。标为“需要修改”的卡片留在待审目录。
 
+若该卡可以在公开网站展示，还需由复核人勾选公开许可确认并填写可追溯的许可依据；仅完成本地复核的卡片不会进入线上发布包。确认公开后，若卡片内容或出处发生变化，发布程序会要求重新复核。标准码仍只使用本地码表；没有可靠坐标的卡片不在地图上推定标点。
+
 ```powershell
 .\.venv\Scripts\python.exe -X utf8 -m pipeline.review_approval '复核记录.json' --check
 .\.venv\Scripts\python.exe -X utf8 -m pipeline.review_approval '复核记录.json'
 .\.venv\Scripts\python.exe -X utf8 -m pipeline.review_queue
+```
+
+以下命令先检查公开范围，再构建并推送至现有 GitHub Pages 子目录。目录节点保留真实复核状态；只有复核人确认公开许可且内容未变化的卡片才附带其正文。发布不会复制复核界面或本地原始快照。如仅需发布已确认公开许可的卡片，可增加 `--reviewed-only`。
+
+```powershell
+.\.venv\Scripts\python.exe -X utf8 -m pipeline.publish_site
+.\.venv\Scripts\python.exe -X utf8 -m pipeline.publish_site --publish
 ```
 
 最后一条命令可随时按照当前草稿重建清单。对从头重新导入的苏格兰批次，可先运行 `pipeline.enrich_scottish`，从本地调查库的 `WDB_Reference` 表补充史料索引。命令在输入文件、码表和已有草稿之间保留各自的出处与哈希。

@@ -6,10 +6,10 @@ import { feature } from 'topojson-client';
 import type { GeometryCollection, Topology } from 'topojson-specification';
 import type { FeatureCollection, LineString, MultiLineString, Point } from 'geojson';
 import atlas from 'world-atlas/countries-110m.json';
-import { coordinatesOf, nodeColor, type Coordinates, type GraphIndex, type GraphNode, type ViewSelection } from '../graph';
+import { coordinatesOf, nodeColor, shortNodeLabel, type Coordinates, type GraphIndex, type GraphNode, type ViewSelection } from '../graph';
 import { motionDuration, ViewControls } from './ViewControls';
 
-const DEFAULT_CENTER: Coordinates = [-27, 26];
+const DEFAULT_CENTER: Coordinates = [105, 30];
 const MAX_CONTEXT_ARCS = 14;
 const COUNTRIES = feature(atlas as unknown as Topology<{ countries: GeometryCollection }>,
   atlas.objects.countries as unknown as GeometryCollection);
@@ -59,7 +59,7 @@ function mapStyle(): StyleSpecification {
         'circle-stroke-color': '#EFECE6', 'circle-stroke-width': 1,
       } },
       { id: 'record-points', type: 'circle', source: 'records', filter: ['!', ['has', 'point_count']], paint: {
-        'circle-color': '#C29D59', 'circle-opacity': 0.82, 'circle-radius': 4,
+        'circle-color': ['case', ['boolean', ['get', 'highlight'], false], '#89AD9D', '#C29D59'], 'circle-opacity': 0.9, 'circle-radius': 5,
         'circle-stroke-width': 1, 'circle-stroke-color': '#101722',
       } },
     ],
@@ -110,9 +110,9 @@ function connectPoints(anchor: Coordinates | null, points: MappedNode[], maxArcs
   return { type: 'FeatureCollection', features };
 }
 
-function pointFeatures(points: MappedNode[]): FeatureCollection<Point> {
+function pointFeatures(points: MappedNode[], highlighted: ReadonlySet<string>): FeatureCollection<Point> {
   return { type: 'FeatureCollection', features: points.map(({ node, coordinates }) => ({
-    type: 'Feature', properties: { nodeId: node.id }, geometry: { type: 'Point', coordinates },
+    type: 'Feature', properties: { nodeId: node.id, highlight: highlighted.has(node.id) }, geometry: { type: 'Point', coordinates },
   })) };
 }
 
@@ -121,7 +121,7 @@ function zoomFor(element: HTMLElement): number {
   return Math.max(0, Math.min(2.2, Math.log2(diameter * Math.PI / 512)));
 }
 
-function mapMarker(node: GraphNode, onSelect: (id: string) => void): HTMLButtonElement {
+function mapMarker(node: GraphNode, onSelect: (id: string, compare?: boolean) => void): HTMLButtonElement {
   const element = document.createElement('button');
   element.type = 'button';
   element.className = 'atlas-marker';
@@ -132,13 +132,13 @@ function mapMarker(node: GraphNode, onSelect: (id: string) => void): HTMLButtonE
   dot.className = 'atlas-dot';
   const label = document.createElement('span');
   label.className = 'atlas-marker-label';
-  label.textContent = node.spatial?.location_name.replace(/（[^）]*）/g, '') ?? node.title;
+  label.textContent = shortNodeLabel(node.spatial?.location_name ?? node.title, 14);
   dot.setAttribute('aria-hidden', 'true');
   label.setAttribute('aria-hidden', 'true');
   element.append(dot, label);
   element.onclick = (event) => {
     event.stopPropagation();
-    onSelect(node.id);
+    onSelect(node.id, event.shiftKey);
   };
   return element;
 }
@@ -146,16 +146,47 @@ function mapMarker(node: GraphNode, onSelect: (id: string) => void): HTMLButtonE
 interface Props {
   graph: GraphIndex;
   selection: ViewSelection;
-  onSelect: (id: string) => void;
+  codeIds: ReadonlySet<string>;
+  onSelect: (id: string, compare?: boolean) => void;
   onOpenGraph: () => void;
 }
 
-export default function GeoView({ graph, selection, onSelect, onOpenGraph }: Props) {
+interface HubArc { from: Coordinates; to: Coordinates; hubId: string; name: string; layer: number; type: string }
+interface ArcPath extends HubArc { d: string }
+
+function relatedArcs(graph: GraphIndex, selection: ViewSelection): HubArc[] {
+  const arcs: HubArc[] = [], seen = new Set<string>();
+  for (const origin of [selection.node, selection.compareNode]) {
+    if (!origin || origin.z_layer !== 1) continue;
+    const from = coordinatesOf(origin);
+    if (!from) continue;
+    for (const edge of graph.adjacency.get(origin.id) ?? []) {
+      const hubId = edge.source === origin.id ? edge.target : edge.source;
+      const hub = graph.byId.get(hubId);
+      if (!hub || hub.z_layer < 3) continue;
+      for (const connection of graph.adjacency.get(hubId) ?? []) {
+        const id = connection.source === hubId ? connection.target : connection.source;
+        const other = graph.byId.get(id), to = other && coordinatesOf(other);
+        if (!other || other.id === origin.id || other.z_layer !== 1 || !to) continue;
+        const key = [origin.id, other.id].sort().join('/') + '/' + hubId;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        arcs.push({ from, to, hubId, name: hub.title, layer: hub.z_layer, type: edge.type });
+        if (arcs.length >= 30) return arcs;
+      }
+    }
+  }
+  return arcs;
+}
+
+export default function GeoView({ graph, selection, codeIds, onSelect, onOpenGraph }: Props) {
   const hostRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<GlobeMap | null>(null);
   const markerRef = useRef(new Map<string, Marker>());
   const [ready, setReady] = useState(false);
   const [error, setError] = useState(false);
+  const [arcPaths, setArcPaths] = useState<ArcPath[]>([]);
+  const [tooltip, setTooltip] = useState<{ x: number; y: number; arc: HubArc } | null>(null);
   const selectedId = selection.node?.id ?? null;
   const points = useMemo(() => mappedNodes(graph), [graph]);
   const regionIds = useMemo(() => new Set((graph.adjacency.get(selectedId ?? '') ?? [])
@@ -165,14 +196,15 @@ export default function GeoView({ graph, selection, onSelect, onOpenGraph }: Pro
   const visiblePoints = useMemo(() => regionDistribution ? points.filter(({ node }) => regionIds.has(node.id)) : points,
     [points, regionDistribution, regionIds]);
   const context = useMemo(() => visiblePoints.filter(({ node }) => selection.neighbors.has(node.id)), [visiblePoints, selection]);
+  const hubArcs = useMemo(() => relatedArcs(graph, selection), [graph, selection]);
+  const anchor = useMemo(() => selection.node ? coordinatesOf(selection.node) : null, [selection.node]);
   const viewCenter = useMemo<Coordinates>(() => {
-    const [longitude, latitude] = centerOf(context);
+    const [longitude, latitude] = anchor ?? centerOf(context);
     return [longitude, regionDistribution ? Math.max(-36, Math.min(36, latitude)) : latitude];
-  }, [context, regionDistribution]);
+  }, [anchor, context, regionDistribution]);
   const clustered = visiblePoints.length > 160;
   const [initialCenter] = useState(viewCenter);
   const lastFocusedId = useRef(selectedId);
-  const anchor = useMemo(() => selection.node ? coordinatesOf(selection.node) : null, [selection.node]);
   const linkAnchor = anchor ?? (selection.node?.z_layer === 3 && context.length > 1 ? context[0].coordinates : null);
 
   useEffect(() => {
@@ -215,7 +247,7 @@ export default function GeoView({ graph, selection, onSelect, onOpenGraph }: Pro
     const markers = markerRef.current;
     const pins = clustered ? visiblePoints.filter(({ node }) => node.id === selectedId) : visiblePoints;
     const records = map.getSource<GeoJSONSource>('records');
-    records?.setData(pointFeatures(clustered ? visiblePoints : []));
+    records?.setData(pointFeatures(clustered ? visiblePoints : [], codeIds));
     for (const { node, coordinates } of pins) {
       const element = mapMarker(node, onSelect);
       const marker = new Marker({ element, anchor: 'center', opacityWhenCovered: 0 })
@@ -226,14 +258,14 @@ export default function GeoView({ graph, selection, onSelect, onOpenGraph }: Pro
       for (const marker of markers.values()) marker.remove();
       markers.clear();
     };
-  }, [clustered, onSelect, ready, selectedId, visiblePoints]);
+  }, [clustered, onSelect, ready, selectedId, visiblePoints, codeIds]);
 
   useEffect(() => {
     const map = mapRef.current;
     if (!ready || !map || !clustered) return;
     const pointClick = map.on('click', 'record-points', (event) => {
       const id = event.features?.[0]?.properties.nodeId;
-      if (typeof id === 'string') onSelect(id);
+      if (typeof id === 'string') onSelect(id, event.originalEvent.shiftKey);
     });
     const clusterClick = map.on('click', 'record-clusters', (event) => {
       const feature = event.features?.[0];
@@ -252,21 +284,44 @@ export default function GeoView({ graph, selection, onSelect, onOpenGraph }: Pro
     for (const [id, marker] of markerRef.current) {
       const element = marker.getElement();
       const related = selection.neighbors.has(id);
-      element.dataset.emphasis = id === selectedId ? 'selected' : related ? 'related' : 'normal';
+      element.dataset.emphasis = id === selectedId || id === selection.compareNode?.id ? 'selected'
+        : codeIds.has(id) ? 'code' : related ? 'related' : 'normal';
       element.setAttribute('aria-pressed', String(id === selectedId));
     }
     const source = map.getSource<GeoJSONSource>('context');
     source?.setData(connectPoints(linkAnchor, context, regionDistribution ? context.length : MAX_CONTEXT_ARCS));
     if (lastFocusedId.current !== selectedId) {
       lastFocusedId.current = selectedId;
-      if (context.length) {
+      if (anchor || context.length) {
         const center = anchor ?? viewCenter;
         const host = hostRef.current;
         const zoom = !anchor && host ? zoomFor(host) : map.getZoom();
         map.easeTo({ center, zoom, pitch: anchor ? map.getPitch() : 0, duration: motionDuration(680) });
       }
     }
-  }, [anchor, context, linkAnchor, ready, regionDistribution, selectedId, selection, viewCenter]);
+  }, [anchor, context, linkAnchor, ready, regionDistribution, selectedId, selection, viewCenter, codeIds]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!ready || !map) return;
+    let frame = 0;
+    const update = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const center = map.getCenter(), radians = Math.PI / 180;
+        const visible = ([lon, lat]: Coordinates) => Math.sin(lat * radians) * Math.sin(center.lat * radians)
+          + Math.cos(lat * radians) * Math.cos(center.lat * radians) * Math.cos((lon - center.lng) * radians) > 0;
+        setArcPaths(hubArcs.flatMap((arc) => {
+          if (!visible(arc.from) || !visible(arc.to)) return [];
+          const from = map.project(arc.from), to = map.project(arc.to);
+          const lift = Math.min(130, Math.hypot(to.x - from.x, to.y - from.y) * .28 + 16);
+          return [{ ...arc, d: `M ${from.x} ${from.y} Q ${(from.x + to.x) / 2} ${(from.y + to.y) / 2 - lift} ${to.x} ${to.y}` }];
+        }));
+      });
+    };
+    map.on('move', update); map.on('resize', update); update();
+    return () => { cancelAnimationFrame(frame); map.off('move', update); map.off('resize', update); };
+  }, [ready, hubArcs]);
 
   function reset() {
     const host = hostRef.current;
@@ -276,7 +331,20 @@ export default function GeoView({ graph, selection, onSelect, onOpenGraph }: Pro
 
   return (
     <>
-      <div className="scene-viewport geo-viewport" ref={hostRef} data-ready={ready} data-distribution={regionDistribution} />
+      <div className="scene-viewport geo-viewport" ref={hostRef} data-ready={ready} data-distribution={regionDistribution}
+        data-show-labels={visiblePoints.length <= 8} data-point-count={visiblePoints.length} />
+      {ready && arcPaths.length > 0 && <svg className="geo-arcs" aria-label="共同母题或机制连接">
+        {arcPaths.map((arc, index) => <g key={`${arc.hubId}-${index}`}>
+          <path className="arc-visible" d={arc.d} data-layer={arc.layer} data-type={arc.type} />
+          <path className="arc-hit" d={arc.d} role="button" tabIndex={0} aria-label={`查看共享 L${arc.layer} ${arc.name}`}
+            onMouseMove={(event) => { const rect = event.currentTarget.ownerSVGElement?.getBoundingClientRect();
+              if (rect) setTooltip({ x: event.clientX - rect.left, y: event.clientY - rect.top, arc }); }}
+            onMouseLeave={() => setTooltip(null)} onClick={() => { setTooltip(null); onSelect(arc.hubId); }}
+            onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onSelect(arc.hubId); } }} />
+        </g>)}
+      </svg>}
+      {tooltip && <div className="geo-arc-tooltip" style={{ left: tooltip.x + 12, top: tooltip.y + 12 }}>
+        共享 L{tooltip.arc.layer} · {tooltip.arc.name}</div>}
       {!ready && !error && <div className="stage-message" role="status">正在加载本地底图…</div>}
       {error && <div className="stage-message" role="alert">无法启动 3D 地图。请在支持 WebGL 的浏览器中打开。</div>}
       {ready && !error && (
@@ -293,7 +361,7 @@ export default function GeoView({ graph, selection, onSelect, onOpenGraph }: Pro
             </div>
           )}
           <div className="scene-footer">
-            <span>拖动旋转 · 滚轮缩放</span>
+            <span>{visiblePoints.length} 个地点 · 点击标点查看</span>
             <span className="geo-legend">
               {linkAnchor && context.length > 1 && <span><i />{regionDistribution ? '研究地区共现'
                 : context.length > MAX_CONTEXT_ARCS + 1 ? '两跳内关联（部分）' : '两跳内关联'}</span>}

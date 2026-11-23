@@ -1,4 +1,14 @@
 @font-face {
+  font-family: "Astraia CJK Supplemental"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("../fonts/astraia-cjk-supplement-400.woff2") format("woff2");
+  unicode-range: U+5AD7, U+5C6D, U+6BAE, U+7296, U+733B, U+750C, U+7670, U+7BED, U+7D02, U+7D3F, U+7F48, U+7FC2, U+807B, U+8784, U+89ED, U+9124, U+9301, U+9B1B, U+9B29, U+9C5F, U+9CAA, U+9D06, U+9EFF, U+F9C4;
+}
+@font-face {
+  font-family: "Astraia CJK Supplemental"; font-style: normal; font-weight: 600; font-display: swap;
+  src: url("../fonts/astraia-cjk-supplement-600.woff2") format("woff2");
+  unicode-range: U+5AD7, U+5C6D, U+6BAE, U+7296, U+733B, U+750C, U+7670, U+7BED, U+7D02, U+7D3F, U+7F48, U+7FC2, U+807B, U+8784, U+89ED, U+9124, U+9301, U+9B1B, U+9B29, U+9C5F, U+9CAA, U+9D06, U+9EFF, U+F9C4;
+}
+@font-face {
   font-family: "Noto Sans Khmer";
   font-style: normal;
   font-weight: 400;
@@ -93,7 +103,7 @@
   --vermilion: #9e2a2b;
   --verified: #1f5e4b;
   --brass: #c29d59;
-  font-family: "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Sans Vietnamese", "Astraia CJK", "Astraia Korean", "Noto Sans SC", "Noto Sans Thai", "Noto Sans Lao", sans-serif;
+  font-family: "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Sans Vietnamese", "Astraia CJK", "Astraia Korean", "Noto Sans SC", "Noto Sans Thai", "Noto Sans Lao", sans-serif;
   color: var(--ink);
   font-variant-numeric: tabular-nums;
 }
@@ -137,7 +147,7 @@ h1 { font-size: 23px; margin-bottom: 6px; }
 .pagination button { color: var(--paper); background: none; border: 1px solid #75808c; padding: 5px 9px; }
 .pagination button:disabled { opacity: .4; }
 .detail { overflow: auto; background: var(--paper); min-height: 0; padding: 25px 28px 36px; }
-.detail h2 { font-family: "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Sans Vietnamese", Georgia, "Astraia CJK", "Astraia Korean", "Noto Sans Thai", "Noto Sans Lao", serif; font-size: 25px; line-height: 1.35; margin-bottom: 8px; }
+.detail h2 { font-family: "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Sans Vietnamese", Georgia, "Astraia CJK", "Astraia Korean", "Noto Sans Thai", "Noto Sans Lao", serif; font-size: 25px; line-height: 1.35; margin-bottom: 8px; }
 .detail h3 { font-size: 15px; margin: 23px 0 8px; border-bottom: 1px solid var(--ink); padding-bottom: 6px; }
 .detail .metadata, .detail .muted { color: var(--muted); font-size: 12px; }
 .detail dl { margin: 0; }
@@ -148,6 +158,7 @@ h1 { font-size: 23px; margin-bottom: 6px; }
 .detail li { margin-bottom: 8px; font-size: 13px; line-height: 1.6; overflow-wrap: anywhere; }
 .detail a { color: var(--ink); text-underline-offset: 3px; }
 .record-links { display: flex; flex-wrap: wrap; gap: 7px 14px; font-size: 13px; }
+.record-links button { border: 0; background: none; color: var(--ink); padding: 0; text-align: left; text-decoration: underline; }
 .heritage-comparison { padding: 8px 0; border-bottom: 1px solid #c9c3b7; }
 .heritage-comparison p { margin: 4px 0; }
 .heritage-comparison button { border: 0; background: none; color: var(--ink); padding: 0; text-decoration: underline; }
@@ -159,7 +170,7 @@ h1 { font-size: 23px; margin-bottom: 6px; }
 .sentence-controls a[aria-disabled="true"] { opacity: .5; text-decoration: none; }
 .sentence-context { flex-basis: 100%; }
 .zibuyu-transcription { margin: 14px 0 22px; color: var(--ink); white-space: pre-wrap; overflow-wrap: anywhere;
-  font: 16px/1.9 "Astraia CJK", "Noto Sans SC", sans-serif; }
+  font: 16px/1.9 "Astraia CJK Supplemental", "Astraia CJK", "Noto Sans SC", sans-serif; }
 .cole-ocr-page { border-top: 1px solid var(--ink); padding: 0 0 9px; }
 .cole-ocr-page summary { cursor: pointer; color: var(--ink); font-size: 13px; line-height: 1.6; padding: 12px 0; }
 .cole-ocr-page summary:focus-visible { outline: 2px solid var(--brass); outline-offset: -2px; }
@@ -168,7 +179,7 @@ h1 { font-size: 23px; margin-bottom: 6px; }
 .na-tone-link-list summary { cursor: pointer; padding: 12px 0; font-size: 13px; line-height: 1.6; }
 .na-tone-link-list summary:focus-visible { outline: 2px solid var(--brass); outline-offset: -2px; }
 .na-tone-link-list li { margin: 8px 0; overflow-wrap: anywhere; }
-.detail pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #e5e0d5; padding: 11px; font: 12px/1.7 "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Sans Vietnamese", "Cascadia Mono", "Astraia CJK", "Astraia Korean", "Noto Sans Thai", "Noto Sans Lao", monospace; }
+.detail pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #e5e0d5; padding: 11px; font: 12px/1.7 "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Sans Vietnamese", "Cascadia Mono", "Astraia CJK", "Astraia Korean", "Noto Sans Thai", "Noto Sans Lao", monospace; }
 .issue-list { border-left: 3px solid var(--vermilion); padding-left: 12px; }
 .issue-list p { margin: 7px 0; font-size: 13px; line-height: 1.6; }
 .issue-list b { color: var(--vermilion); }
@@ -177,6 +188,8 @@ h1 { font-size: 23px; margin-bottom: 6px; }
 .review-form label { display: block; font-size: 13px; margin: 12px 0; }
 .review-form input, .review-form select, .review-form textarea { width: 100%; background: #fffdf8; border: 1px solid var(--ink); color: var(--ink); padding: 8px; margin-top: 5px; }
 .review-form textarea { resize: vertical; min-height: 76px; }
+.review-form .rights-confirm { display: flex; align-items: flex-start; gap: 9px; line-height: 1.5; }
+.review-form .rights-confirm input { width: auto; margin: 4px 0 0; flex: none; }
 .review-actions { display: flex; flex-wrap: wrap; gap: 7px; }
 .review-actions button { background: transparent; color: var(--ink); border: 1px solid var(--ink); padding: 8px 11px; }
 .review-actions .approve { color: var(--paper); background: var(--verified); border-color: var(--verified); }

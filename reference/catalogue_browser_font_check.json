@@ -1,0 +1,21 @@
+{
+  "sample": "嫗屭殮犖猻甌癰篭紂紿罈翂聻螄觭鄤錁鬛鬩鱟鲪鴆黿龍",
+  "observed": {
+    "400": [
+      {
+        "familyName": "Astraia CJK Supplemental",
+        "postScriptName": "AstraiaCJKSupplemental-Regular",
+        "isCustomFont": true,
+        "glyphCount": 24
+      }
+    ],
+    "600": [
+      {
+        "familyName": "Astraia CJK Supplemental",
+        "postScriptName": "AstraiaCJKSupplemental-Bold",
+        "isCustomFont": true,
+        "glyphCount": 24
+      }
+    ]
+  }
+}

@@ -28,13 +28,14 @@ def compile_graph(
 
 
 def compile_cards(
-    cards: dict[str, VaultCard], *, include_samples: bool = False, exclude_fiction: bool = False
+    cards: dict[str, VaultCard], *, include_samples: bool = False, exclude_fiction: bool = False,
+    include_drafts: bool = False,
 ) -> dict:
     cards = dict(sorted(cards.items()))
     explicit_links = validate_explicit_links(cards)
     approved = {
         node_id: card for node_id, card in cards.items()
-        if card.metadata.audit.reviewed_by_human
+        if include_drafts or card.metadata.audit.reviewed_by_human
         or (include_samples and card.metadata.audit.is_sample)
     }
     visible = {
@@ -64,7 +65,8 @@ def compile_cards(
 
     graph = {
         "schema_version": 1,
-        "visibility": {"include_samples": include_samples, "exclude_fiction": exclude_fiction},
+        "visibility": {"include_samples": include_samples, "exclude_fiction": exclude_fiction,
+                       **({"include_drafts": True} if include_drafts else {})},
         "stats": {
             "vault_cards": len(cards),
             "visible_nodes": len(nodes),

@@ -24,6 +24,7 @@ from pipeline.local_standards import (
     unmatched_explicit_codes, verify_codes,
 )
 from pipeline.node_model import CredibilityTier, Genre, LAYER_BY_TYPE, NodeMetadata, NodeType, Standards
+from pipeline.public_fingerprint import public_content_sha256
 from pipeline.vault import VaultCard, card_directory, load_vault, parse_card
 from pipeline.vault_write import create_card, vault_writer
 
@@ -372,6 +373,12 @@ def prepare_card(path: Path, original: bytes, args: argparse.Namespace,
         data["audit"].update(reviewer=decision["reviewer"], reviewed_at=decision["reviewed_at"],
                              review_note=decision["note"] or None)
     metadata = NodeMetadata.model_validate(data)
+    if decision and decision.get("public_release"):
+        signed = metadata.model_dump(mode="json")
+        signed["audit"].update(public_release=True, public_rights_note=decision["public_rights_note"],
+                               public_content_sha256=None)
+        signed["audit"]["public_content_sha256"] = public_content_sha256(signed, body)
+        metadata = NodeMetadata.model_validate(signed)
     if not metadata.sources:
         raise IntakeError("签核需要至少一条出处。")
     verify_codes(metadata.standards, table)

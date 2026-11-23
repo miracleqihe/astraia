@@ -42,11 +42,12 @@ export function NodeDirectory({ nodes, selectedId, onSelect }: Props) {
           {query.trim() ? '没有匹配的节点。' : '此快照暂无可见节点。'}
         </p>}
         {LAYER_ORDER.map((layer) => {
-          const group = matching.filter((node) => node.z_layer === layer);
+          const all = matching.filter((node) => node.z_layer === layer);
+          const group = all.slice(0, 200);
           if (!group.length) return null;
           return (
             <section className="directory-group" key={layer} aria-label={`L${layer} ${LAYERS[layer].name}`}>
-              <h3><span className="layer-code">L{layer}</span>{LAYERS[layer].name}</h3>
+              <h3><span className="layer-code">L{layer}</span>{LAYERS[layer].name} · {all.length}</h3>
               <ul>
                 {group.map((node) => {
                   const selected = node.id === selectedId;
@@ -63,6 +64,7 @@ export function NodeDirectory({ nodes, selectedId, onSelect }: Props) {
                   );
                 })}
               </ul>
+              {all.length > group.length && <p className="directory-empty">显示前 {group.length} 条，可用搜索定位其余节点。</p>}
             </section>
           );
         })}

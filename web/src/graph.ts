@@ -43,7 +43,8 @@ export interface GraphNode {
   };
   sources: Citation[];
   audit: { reviewed_by_human: boolean; is_sample: boolean; reviewer?: string | null;
-    reviewed_at?: string | null; review_note?: string | null };
+    reviewed_at?: string | null; review_note?: string | null; public_release?: boolean;
+    public_rights_note?: string | null };
   markdown: string;
   source_path: string;
 }
@@ -74,7 +75,14 @@ export interface GraphIndex {
 
 export interface ViewSelection {
   node: GraphNode | null;
+  compareNode?: GraphNode | null;
   neighbors: ReadonlyMap<string, number>;
+}
+
+export type EvidenceGroup = 'confirmed' | 'unverified' | 'refuted';
+export type CodeFocus = { system: string; code: string };
+export function evidenceGroup(status: EvidenceStatus | null): EvidenceGroup {
+  return status === 'confirmed' ? 'confirmed' : status === 'refuted' ? 'refuted' : 'unverified';
 }
 
 export const LAYERS = {
@@ -123,6 +131,12 @@ export function nodeColor(node: GraphNode): string {
   return isFiction(node) ? '#C5756D' : LAYERS[node.z_layer].color;
 }
 
+export function shortNodeLabel(title: string, limit = 18): string {
+  const cleaned = title.replace(/\s*[（(][^（）()]*[）)]\s*$/u, '').trim();
+  const chars = [...(cleaned || title)];
+  return chars.length > limit ? `${chars.slice(0, limit).join('')}…` : chars.join('');
+}
+
 export function coordinatesOf(node: GraphNode): Coordinates | null {
   const lat = node.spatial?.lat;
   const lng = node.spatial?.lng;
@@ -154,18 +168,25 @@ export function indexGraph(snapshot: Pick<GraphSnapshot, 'nodes' | 'links'>, hid
 
 export function constellationIndex(graph: GraphIndex, selection: ViewSelection): GraphIndex {
   if (graph.nodes.length <= 72) return graph;
-  const nodes = LAYER_ORDER.flatMap((layer) => graph.nodes.filter((node) => node.z_layer === layer)
-    .sort((left, right) => (selection.neighbors.get(left.id) ?? 3) - (selection.neighbors.get(right.id) ?? 3))
-    .slice(0, layer === 1 ? 42 : 10));
+  const focus = graph.nodes.filter((node) => (selection.neighbors.get(node.id) ?? 3) <= 1)
+    .sort((left, right) => (selection.neighbors.get(left.id) ?? 3) - (selection.neighbors.get(right.id) ?? 3));
+  const picked = new Map(focus.slice(0, 600).map((node) => [node.id, node]));
+  if (picked.size < 72) for (const layer of LAYER_ORDER) {
+    for (const node of graph.nodes.filter((item) => item.z_layer === layer).slice(0, layer === 1 ? 42 : 10)) {
+      if (picked.size >= 72) break;
+      picked.set(node.id, node);
+    }
+  }
+  const nodes = [...picked.values()];
   return indexGraph({ nodes, links: graph.links }, false);
 }
 
-export function relatedNodes(graph: GraphIndex, node: GraphNode | null): Map<string, number> {
+export function relatedNodes(graph: GraphIndex, node: GraphNode | null, depthLimit = 2): Map<string, number> {
   const distances = new Map<string, number>();
   if (!node) return distances;
   distances.set(node.id, 0);
   let frontier = [node.id];
-  for (let depth = 1; depth <= 2; depth++) {
+  for (let depth = 1; depth <= depthLimit; depth++) {
     const next: string[] = [];
     for (const id of frontier) {
       for (const link of graph.adjacency.get(id) ?? []) {
@@ -183,7 +204,8 @@ export function relatedNodes(graph: GraphIndex, node: GraphNode | null): Map<str
 
 export function firstSelection(nodes: readonly GraphNode[]): string | null {
   const available = nodes.filter((node) => !isFiction(node));
-  return available.find((node) => node.id === 'case_salem_1692')?.id
+  return (nodes.length > 72 ? available.find((node) => node.id === 'case_cn_yongning_na_0004341')?.id : undefined)
+    ?? available.find((node) => node.id === 'case_salem_1692')?.id
     ?? available.find((node) => coordinatesOf(node))?.id
     ?? available[0]?.id ?? null;
 }
@@ -199,11 +221,15 @@ export function matchesQuery(node: GraphNode, query: string): boolean {
 }
 
 export async function loadSnapshot(signal: AbortSignal): Promise<GraphSnapshot> {
-  const response = await fetch(`${import.meta.env.BASE_URL}data/graph_data.json`, {
-    signal,
-    cache: 'no-store',
-  });
-  if (!response.ok || !response.headers.get('content-type')?.includes('json')) {
+  const candidates = import.meta.env.VITE_PUBLIC_DEMO === '1'
+    ? ['graph_data.json'] : ['catalogue_data.json', 'graph_data.json'];
+  let response: Response | null = null;
+  for (const filename of candidates) {
+    const current = await fetch(`${import.meta.env.BASE_URL}data/${filename}`, { signal, cache: 'no-store' });
+    if (current.ok && current.headers.get('content-type')?.includes('json')) { response = current; break; }
+    if (!current.ok && current.status !== 404) throw new Error('读取图谱快照失败。');
+  }
+  if (!response || !response.headers.get('content-type')?.includes('json')) {
     throw new Error('找不到图谱快照。请先在项目根目录编译知识库。');
   }
   const data: unknown = await response.json();

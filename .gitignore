@@ -4,6 +4,7 @@ __pycache__/
 *.egg-info/
 .local/
 /web/public/data/graph_data.json
+/web/public/data/catalogue_data.json
 /web/node_modules/
 /web/dist/
 /vault/.obsidian/
