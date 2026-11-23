@@ -2,70 +2,61 @@ import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import type { LifeEntry, LifeSubject } from '../life';
+import { LIFE_PALETTES, lifeGalaxyLayout } from './lifeGalaxyLayout';
+import { mountLifeSoftware } from './lifeSoftware';
+import type { LifeDrawing, LifeHover } from './lifeSceneTypes';
 
 interface Props {
   entries: LifeEntry[];
   subjects: LifeSubject[];
   selectedId: string | null;
   subjectId: string | null;
+  resetSerial: number;
   onSelect: (id: string) => void;
+  onSubject: (id: string) => void;
 }
 
-interface Drawing {
-  update: (selected: string | null, subject: string | null) => void;
-}
-
-const palettes = ['#c8a86c', '#e3dbca', '#92b4aa', '#aebbc7', '#d0b69b'];
-
-export default function LifeScene({ entries, subjects, selectedId, subjectId, onSelect }: Props) {
+export default function LifeScene({ entries, subjects, selectedId, subjectId, resetSerial, onSelect, onSubject }: Props) {
   const host = useRef<HTMLDivElement>(null);
-  const drawing = useRef<Drawing | null>(null);
-  const select = useRef(onSelect);
-  const [hover, setHover] = useState<{ title: string; x: number; y: number } | null>(null);
-  select.current = onSelect;
+  const drawing = useRef<LifeDrawing | null>(null);
+  const select = useRef(onSelect), selectSubject = useRef(onSubject);
+  const [hover, setHover] = useState<LifeHover | null>(null);
+  select.current = onSelect; selectSubject.current = onSubject;
 
   useEffect(() => {
     const element = host.current;
     if (!element) return;
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    const gl = renderer.getContext();
-    const debug = gl.getExtension('WEBGL_debug_renderer_info');
-    const rendererName = debug ? String(gl.getParameter(debug.UNMASKED_RENDERER_WEBGL)) : '';
-    const softwareRenderer = /swiftshader|llvmpipe|software|warp/i.test(rendererName);
-    renderer.setPixelRatio(softwareRenderer ? .5 : Math.min(window.devicePixelRatio, 1.6));
-    renderer.setClearColor(0x101722, 1);
-    element.appendChild(renderer.domElement);
+    const layout = lifeGalaxyLayout(entries, subjects);
+    let renderer: THREE.WebGLRenderer | null = null;
+    let software = false;
+    try {
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      const gl = renderer.getContext(), debug = gl.getExtension('WEBGL_debug_renderer_info');
+      const name = debug ? String(gl.getParameter(debug.UNMASKED_RENDERER_WEBGL)) : '';
+      software = /swiftshader|llvmpipe|software|warp/i.test(name);
+    } catch { software = true; }
+    if (software || !renderer) {
+      renderer?.dispose();
+      const fallback = mountLifeSoftware(element, entries, subjects, layout,
+        (id) => select.current(id), (id) => selectSubject.current(id), setHover);
+      drawing.current = fallback; fallback.update(selectedId, subjectId);
+      return () => { fallback.dispose(); drawing.current = null; };
+    }
+
+    const webgl = renderer;
+    webgl.setPixelRatio(Math.min(window.devicePixelRatio, 1.6)); webgl.setClearColor(0x101722, 1);
+    const canvas = webgl.domElement; canvas.dataset.renderer = 'webgl'; element.appendChild(canvas);
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(44, 1, 1, 4000);
-    camera.position.set(0, -355, 1110);
-    const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = .08;
-    controls.minDistance = 110;
-    controls.maxDistance = 1800;
-    controls.enablePan = true;
+    camera.position.set(0, -620, 985);
+    const overviewDirection = camera.position.clone().normalize();
+    const controls = new OrbitControls(camera, canvas);
+    controls.enableDamping = true; controls.dampingFactor = .08;
+    controls.minDistance = 110; controls.maxDistance = 1800; controls.enablePan = true;
 
-    const positions = new Float32Array(entries.length * 3);
     const colors = new Float32Array(entries.length * 3);
-    const locations = new Map<string, THREE.Vector3>();
-    const subjectIndex = new Map(subjects.map((item, i) => [item.id, i]));
-    const subjectCounts = new Map<string, number>();
-    entries.forEach((entry, i) => {
-      const group = subjectIndex.get(entry.subject) ?? 0;
-      const inner = group < 6;
-      const angle = (inner ? group / 6 : (group - 6) / 14) * Math.PI * 2 - Math.PI / 2;
-      const ring = inner ? 165 : 365;
-      const index = subjectCounts.get(entry.subject) ?? 0;
-      subjectCounts.set(entry.subject, index + 1);
-      const spread = Math.sqrt((index + .5) / (subjects[group]?.count ?? 1)) * (inner ? 57 : 63);
-      const spiral = index * 2.399963;
-      const point = new THREE.Vector3(Math.cos(angle) * ring + Math.cos(spiral) * spread,
-        Math.sin(angle) * ring + Math.sin(spiral) * spread, Math.sin(index * 1.72 + group) * 22);
-      point.toArray(positions, i * 3);
-      locations.set(entry.id, point);
-    });
     const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('position', new THREE.BufferAttribute(layout.positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
     const dotCanvas = document.createElement('canvas'); dotCanvas.width = dotCanvas.height = 32;
     const dotContext = dotCanvas.getContext('2d');
@@ -75,14 +66,33 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, on
     const stars = new THREE.Points(geometry, new THREE.PointsMaterial({ size: 5, sizeAttenuation: false,
       map: dot, vertexColors: true, transparent: true, opacity: .94, depthWrite: false }));
     scene.add(stars);
+    const hubPositions = new Float32Array(subjects.length * 3);
+    subjects.forEach((subject, index) => layout.centers.get(subject.id)?.toArray(hubPositions, index * 3));
+    const hubGeometry = new THREE.BufferGeometry().setAttribute('position', new THREE.BufferAttribute(hubPositions, 3));
+    const hubs = new THREE.Points(hubGeometry, new THREE.PointsMaterial({ color: '#e5c082', map: dot,
+      size: 11, sizeAttenuation: false, transparent: true, depthWrite: false }));
+    scene.add(hubs);
     const rings: THREE.LineLoop[] = [];
-    for (const radius of [90, 165, 260, 365, 445]) {
+    for (const radius of [90, 200, 320, 445]) {
       const points = Array.from({ length: 192 }, (_, i) => new THREE.Vector3(
-        Math.cos(i / 192 * Math.PI * 2) * radius, Math.sin(i / 192 * Math.PI * 2) * radius, -27));
+        Math.cos(i / 192 * Math.PI * 2) * radius, Math.sin(i / 192 * Math.PI * 2) * radius, -50));
       const ring = new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(points),
         new THREE.LineBasicMaterial({ color: 0xc9b89b, transparent: true, opacity: .16 }));
       rings.push(ring); scene.add(ring);
     }
+    const arms: THREE.Line[] = [];
+    layout.volumes.forEach((volume, index) => {
+      const points = [new THREE.Vector3(), ...subjects.filter((subject) => subject.volume === volume)
+        .flatMap((subject) => layout.centers.get(subject.id) ?? [])];
+      const curve = new THREE.CatmullRomCurve3(points).getPoints(96);
+      const arm = new THREE.Line(new THREE.BufferGeometry().setFromPoints(curve),
+        new THREE.LineBasicMaterial({ color: LIFE_PALETTES[index % LIFE_PALETTES.length], transparent: true, opacity: .18 }));
+      arms.push(arm); scene.add(arm);
+    });
+    const coreGeometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3()]);
+    const core = new THREE.Points(coreGeometry, new THREE.PointsMaterial({ color: '#efece6', map: dot,
+      size: 9, sizeAttenuation: false, transparent: true, depthWrite: false }));
+    scene.add(core);
     const selectedGeometry = new THREE.BufferGeometry();
     const selectedStar = new THREE.Points(selectedGeometry, new THREE.PointsMaterial({ color: 0xffe9bd, map: dot,
       size: 12, sizeAttenuation: false, transparent: true, depthTest: false }));
@@ -91,103 +101,111 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, on
     const lines = new THREE.LineSegments(lineGeometry, new THREE.LineBasicMaterial({ color: 0xc29d59,
       transparent: true, opacity: .75, depthWrite: false }));
     scene.add(lines);
-    let focus: THREE.Vector3 | null = null;
-    let frame = 0;
-    function scheduleRender() {
-      if (!frame) frame = requestAnimationFrame(render);
+    let focus: THREE.Vector3 | null = null, focusDirection: THREE.Vector3 | null = null, focusDistance = 0, frame = 0;
+    function schedule() { if (!frame) frame = requestAnimationFrame(render); }
+    function fly(target: THREE.Vector3, distance: number, direction: THREE.Vector3 | null = null) {
+      focus = target.clone(); focusDistance = distance; focusDirection = direction; schedule();
     }
     function render() {
       frame = 0;
       if (focus) {
-        const delta = focus.clone().sub(controls.target).multiplyScalar(.08);
+        const delta = focus.clone().sub(controls.target).multiplyScalar(.10);
         camera.position.add(delta); controls.target.add(delta);
-        if (delta.lengthSq() < .001) focus = null;
+        const offset = camera.position.clone().sub(controls.target), distance = offset.length();
+        const next = distance + (focusDistance - distance) * .10;
+        const bearing = offset.multiplyScalar(1 / distance);
+        if (focusDirection) bearing.lerp(focusDirection, .10).normalize();
+        camera.position.copy(controls.target).add(bearing.clone().multiplyScalar(next));
+        if (delta.lengthSq() < .001 && Math.abs(next - focusDistance) < .1
+          && (!focusDirection || bearing.dot(focusDirection) > .99999)) { focus = null; focusDirection = null; }
       }
-      const moving = controls.update();
-      renderer.render(scene, camera);
-      if (focus || moving) scheduleRender();
+      const moving = controls.update(); webgl.render(scene, camera);
+      if (focus || moving) schedule();
     }
-    controls.addEventListener('change', scheduleRender);
+    controls.addEventListener('change', schedule);
+    const resize = () => {
+      const width = Math.max(1, element.clientWidth), height = Math.max(1, element.clientHeight);
+      camera.aspect = width / height; camera.updateProjectionMatrix(); webgl.setSize(width, height, false); schedule();
+    };
+    const observer = new ResizeObserver(resize); observer.observe(element); resize();
+    const raycaster = new THREE.Raycaster(), pointer = new THREE.Vector2();
+    const hit = (event: PointerEvent) => {
+      const box = canvas.getBoundingClientRect();
+      pointer.set((event.clientX - box.left) / box.width * 2 - 1, -(event.clientY - box.top) / box.height * 2 + 1);
+      camera.updateMatrixWorld(); raycaster.setFromCamera(pointer, camera);
+      raycaster.params.Points = { threshold: 8 }; const hub = raycaster.intersectObject(hubs)[0];
+      raycaster.params.Points = { threshold: 5 }; const node = raycaster.intersectObject(stars)[0];
+      if (hub?.index !== undefined && (hub.distanceToRay ?? Infinity) < 5) return { kind: 'hub' as const, index: hub.index };
+      if (node?.index !== undefined) return { kind: 'node' as const, index: node.index };
+      return null;
+    };
+    let hovered = '';
+    const move = (event: PointerEvent) => {
+      if (event.buttons) return;
+      const target = hit(event), key = target ? `${target.kind}:${target.index}` : '';
+      canvas.style.cursor = target ? 'pointer' : 'grab';
+      if (key !== hovered) {
+        hovered = key;
+        const title = target?.kind === 'hub' ? `学科 · ${subjects[target.index].title}`
+          : target ? entries[target.index].title : '';
+        setHover(target ? { title, x: event.offsetX, y: event.offsetY } : null);
+      }
+    };
+    let down = { x: 0, y: 0 };
+    const pointerDown = (event: PointerEvent) => { focus = null; down = { x: event.clientX, y: event.clientY }; };
+    const pointerUp = (event: PointerEvent) => {
+      if (Math.hypot(event.clientX - down.x, event.clientY - down.y) > 5) return;
+      const target = hit(event);
+      if (target?.kind === 'hub') selectSubject.current(subjects[target.index].id);
+      else if (target) select.current(entries[target.index].id);
+    };
+    const leave = () => { hovered = ''; setHover(null); };
+    canvas.addEventListener('pointermove', move); canvas.addEventListener('pointerdown', pointerDown);
+    canvas.addEventListener('pointerup', pointerUp); canvas.addEventListener('pointerleave', leave);
     const color = new THREE.Color();
-    drawing.current = {
+    const controller: LifeDrawing = {
       update(selected, subject) {
-        const chosen = entries.find((entry) => entry.id === selected);
-        const related = new Set(chosen?.links ?? []);
+        const chosen = entries.find((entry) => entry.id === selected), related = new Set(chosen?.links ?? []);
         if (chosen) for (const entry of entries) if (entry.links.includes(chosen.id)) related.add(entry.id);
         entries.forEach((entry, i) => {
-          color.set(palettes[Math.floor((subjectIndex.get(entry.subject) ?? 0) / 4) % palettes.length]);
+          color.set(LIFE_PALETTES[layout.volumes.indexOf(entry.volume) % LIFE_PALETTES.length]);
           const dim = subject && entry.subject !== subject ? .22 : selected && entry.id !== selected && !related.has(entry.id) ? .45 : 1;
           color.multiplyScalar(dim);
           (geometry.getAttribute('color') as THREE.BufferAttribute).setXYZ(i, color.r, color.g, color.b);
         });
         geometry.getAttribute('color').needsUpdate = true;
-        const origin = selected ? locations.get(selected) : undefined;
+        const origin = selected ? layout.locations.get(selected) : undefined;
         selectedGeometry.setFromPoints(origin ? [origin] : []);
         const linePoints: THREE.Vector3[] = [];
         if (origin) for (const id of related) {
-          const target = locations.get(id);
+          const target = layout.locations.get(id);
           if (target) linePoints.push(origin, target);
         }
         lineGeometry.setFromPoints(linePoints);
-        focus = origin?.clone() ?? null;
-        scheduleRender();
+        const target = origin ?? (subject ? layout.centers.get(subject) : undefined);
+        if (target) fly(target, origin ? 285 : 390); else { focus = null; schedule(); }
+      },
+      reset() { fly(new THREE.Vector3(), 1165, overviewDirection); },
+      dispose() {
+        cancelAnimationFrame(frame); observer.disconnect(); controls.removeEventListener('change', schedule); controls.dispose();
+        canvas.removeEventListener('pointermove', move); canvas.removeEventListener('pointerdown', pointerDown);
+        canvas.removeEventListener('pointerup', pointerUp); canvas.removeEventListener('pointerleave', leave);
+        geometry.dispose(); (stars.material as THREE.Material).dispose(); hubGeometry.dispose(); (hubs.material as THREE.Material).dispose();
+        selectedGeometry.dispose(); (selectedStar.material as THREE.Material).dispose(); lineGeometry.dispose(); (lines.material as THREE.Material).dispose();
+        rings.forEach((ring) => { ring.geometry.dispose(); (ring.material as THREE.Material).dispose(); });
+        arms.forEach((arm) => { arm.geometry.dispose(); (arm.material as THREE.Material).dispose(); });
+        coreGeometry.dispose(); (core.material as THREE.Material).dispose();
+        dot.dispose(); webgl.dispose(); canvas.remove();
       },
     };
-    const resize = () => {
-      const width = Math.max(1, element.clientWidth), height = Math.max(1, element.clientHeight);
-      camera.aspect = width / height; camera.updateProjectionMatrix(); renderer.setSize(width, height, false);
-      scheduleRender();
-    };
-    const observer = new ResizeObserver(resize); observer.observe(element); resize();
-    const raycaster = new THREE.Raycaster();
-    raycaster.params.Points = { threshold: 7 };
-    const pointer = new THREE.Vector2();
-    let hovered = -1;
-    const hit = (event: PointerEvent) => {
-      const box = renderer.domElement.getBoundingClientRect();
-      pointer.set((event.clientX - box.left) / box.width * 2 - 1, -(event.clientY - box.top) / box.height * 2 + 1);
-      raycaster.setFromCamera(pointer, camera);
-      return raycaster.intersectObject(stars)[0]?.index ?? -1;
-    };
-    const move = (event: PointerEvent) => {
-      if (event.buttons) return;
-      const index = hit(event);
-      renderer.domElement.style.cursor = index >= 0 ? 'pointer' : 'grab';
-      if (index !== hovered) {
-        hovered = index;
-        setHover(index < 0 ? null : { title: entries[index].title, x: event.offsetX, y: event.offsetY });
-      }
-    };
-    let down = { x: 0, y: 0 };
-    const pointerDown = (event: PointerEvent) => { down = { x: event.clientX, y: event.clientY }; };
-    const pointerUp = (event: PointerEvent) => {
-      if (Math.hypot(event.clientX - down.x, event.clientY - down.y) > 5) return;
-      const index = hit(event);
-      if (index >= 0) select.current(entries[index].id);
-    };
-    const leave = () => { hovered = -1; setHover(null); };
-    renderer.domElement.addEventListener('pointermove', move);
-    renderer.domElement.addEventListener('pointerdown', pointerDown);
-    renderer.domElement.addEventListener('pointerup', pointerUp);
-    renderer.domElement.addEventListener('pointerleave', leave);
-    drawing.current.update(selectedId, subjectId);
-    return () => {
-      cancelAnimationFrame(frame); observer.disconnect(); controls.removeEventListener('change', scheduleRender); controls.dispose();
-      renderer.domElement.removeEventListener('pointermove', move);
-      renderer.domElement.removeEventListener('pointerdown', pointerDown);
-      renderer.domElement.removeEventListener('pointerup', pointerUp);
-      renderer.domElement.removeEventListener('pointerleave', leave);
-      geometry.dispose(); (stars.material as THREE.Material).dispose();
-      selectedGeometry.dispose(); (selectedStar.material as THREE.Material).dispose();
-      lineGeometry.dispose(); (lines.material as THREE.Material).dispose();
-      rings.forEach((ring) => { ring.geometry.dispose(); (ring.material as THREE.Material).dispose(); });
-      dot.dispose(); renderer.dispose(); renderer.domElement.remove(); drawing.current = null;
-    };
-    // Selection is updated separately to avoid rebuilding the 2,266-node scene.
+    drawing.current = controller; controller.update(selectedId, subjectId);
+    return () => { controller.dispose(); drawing.current = null; };
+    // Selection changes update the existing scene without rebuilding it.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [entries, subjects]);
   useEffect(() => { drawing.current?.update(selectedId, subjectId); }, [selectedId, subjectId]);
-  return <div className="life-scene" ref={host} aria-label="知识星图：拖动旋转，滚轮缩放，点击星点阅读条目">
+  useEffect(() => { if (resetSerial) drawing.current?.reset(); }, [resetSerial]);
+  return <div className="life-scene" ref={host} aria-label="知识星图：拖动旋转，滚轮缩放，点击星点或学科星团">
     {hover && <div className="life-tooltip" style={{ left: hover.x + 12, top: hover.y + 12 }}>{hover.title}</div>}
   </div>;
 }

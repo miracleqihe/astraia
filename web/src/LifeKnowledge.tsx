@@ -23,7 +23,9 @@ export default function LifeKnowledge() {
   const [selectedId, setSelectedId] = useState(() => new URL(window.location.href).searchParams.get('entry'));
   const [query, setQuery] = useState('');
   const [limit, setLimit] = useState(40);
+  const [resetSerial, setResetSerial] = useState(0);
   const [showPdf, setShowPdf] = useState(false);
+  const [enlargedFigure, setEnlargedFigure] = useState<{ src: string; alt: string } | null>(null);
   const deferredQuery = useDeferredValue(query.trim().toLocaleLowerCase());
   const searchRef = useRef<HTMLInputElement>(null);
   const inspectorRef = useRef<HTMLElement>(null);
@@ -40,6 +42,7 @@ export default function LifeKnowledge() {
   }, []);
   useEffect(() => {
     const key = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setEnlargedFigure(null);
       if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
         event.preventDefault(); setSelectedId(null); searchRef.current?.focus();
       }
@@ -59,7 +62,8 @@ export default function LifeKnowledge() {
   const results = useMemo(() => (book?.entries ?? []).filter((entry) => {
     if (subject && entry.subject !== subject) return false;
     if (!deferredQuery) return true;
-    return `${entry.title} ${entry.id} ${entry.topic} ${entry.body}`.toLocaleLowerCase().includes(deferredQuery);
+    const figureText = (entry.figure_refs ?? []).map((name) => book?.figures?.[name]?.text ?? '').join(' ');
+    return `${entry.title} ${entry.id} ${entry.topic} ${entry.body} ${figureText}`.toLocaleLowerCase().includes(deferredQuery);
   }), [book, subject, deferredQuery]);
   const related = useMemo(() => {
     if (!selected || !book) return [];
@@ -82,7 +86,7 @@ export default function LifeKnowledge() {
     if (anchor) window.setTimeout(() => document.getElementById(anchor)?.scrollIntoView({ block: 'start' }), 100);
   }
   function chooseSubject(id: string | null) {
-    setSubject(id); setSelectedId(null); setLimit(40); setShowPdf(false);
+    setSubject(id); setSelectedId(null); setQuery(''); setLimit(40); setShowPdf(false);
     const url = new URL(window.location.href); url.searchParams.delete('entry');
     url.hash = '';
     window.history.replaceState({}, '', url);
@@ -109,10 +113,13 @@ export default function LifeKnowledge() {
       <ViewportFrame />
       <div className="life-map-heading"><span>ASTRAIA / KNOWLEDGE ATLAS</span><h1>Life and Knowledge</h1>
         <p>格物识微 · {book.entries.length.toLocaleString()} 个知识节点</p></div>
+      <button className="life-reset" type="button" onClick={() => { chooseSubject(null); setResetSerial((value) => value + 1); }}>
+        ◇ 返回星系总览</button>
       <Suspense fallback={<div className="stage-message">正在绘制知识星图…</div>}>
-        <LifeScene entries={book.entries} subjects={book.subjects} selectedId={selected?.id ?? null} subjectId={subject} onSelect={choose} />
+        <LifeScene entries={book.entries} subjects={book.subjects} selectedId={selected?.id ?? null} subjectId={subject}
+          resetSerial={resetSerial} onSelect={choose} onSubject={chooseSubject} />
       </Suspense>
-      <div className="life-map-footer"><span>✦　每颗星代表一个条目</span><span>拖动旋转 · 滚轮缩放 · 点击阅读</span></div>
+      <div className="life-map-footer"><span>✦　五卷星臂 · 明星为学科</span><span>拖动旋转 · 滚轮缩放 · 点击阅读</span></div>
     </main>
     <aside className="life-inspector" ref={inspectorRef} aria-label="知识卷宗">
       <div className="life-search"><label htmlFor="life-search">检索知识库 <span>⌘ K</span></label>
@@ -141,7 +148,30 @@ export default function LifeKnowledge() {
             }
             return <a href={href} target={href?.startsWith('http') ? '_blank' : undefined} rel="noreferrer">{children}</a>;
           },
-          img: ({ src, alt }) => <img src={src?.startsWith('figures/') ? `${base}knowledge/${src}` : src} alt={alt ?? ''} loading="lazy" />,
+          img: ({ src, alt }) => {
+            if (src?.startsWith('inline-figures/')) {
+              const figure = book.figures?.[src.slice('inline-figures/'.length)];
+              return <span className="life-figure" role="group" aria-label="原书图表及说明">
+                <button className="life-figure-open" type="button" aria-label="放大原书图表"
+                  onClick={() => setEnlargedFigure({ src, alt: alt ?? '原书图表' })}>
+                  <img src={`${base}knowledge/${src}`} alt={alt ?? '原书图表'} loading="lazy" />
+                  <span>查看大图 ↗</span>
+                </button>
+                {figure?.text && <span className="life-figure-text">{figure.text}</span>}
+                {!!figure?.links.length && <span className="life-figure-links">{figure.links.map((href, index) =>
+                  <a key={href} href={href} target="_blank" rel="noreferrer">图源与许可 {index + 1} ↗</a>)}</span>}
+              </span>;
+            }
+            if (src?.startsWith('figures/')) return <span className="life-figure" role="group" aria-label="原书图表及说明">
+              <button className="life-figure-open" type="button" aria-label="放大原书图表"
+                onClick={() => setEnlargedFigure({ src, alt: alt ?? '原书图表' })}>
+                <img src={`${base}knowledge/${src}`} alt={alt ?? ''} loading="lazy" />
+                <span>查看大图 ↗</span>
+              </button>
+              {alt && <span className="life-figure-text">{alt}</span>}
+            </span>;
+            return <img src={src} alt={alt ?? ''} loading="lazy" />;
+          },
           p: ({ children }) => {
             const parts = Children.toArray(children);
             const marker = parts.length === 1 && typeof parts[0] === 'string' ? parts[0].match(/^⟦anchor:([a-z0-9-]+)⟧$/) : null;
@@ -172,5 +202,17 @@ export default function LifeKnowledge() {
           显示更多 · 还有 {results.length - limit} 条</button>}
       </div>}
     </aside>
+    {enlargedFigure && <div className="life-zoom-backdrop" role="presentation" onClick={(event) => {
+      if (event.target === event.currentTarget) setEnlargedFigure(null);
+    }}>
+      <section className="life-zoom-sheet" role="dialog" aria-modal="true" aria-label="原书图表大图">
+        <div className="life-zoom-head"><strong>原书图表</strong>
+          <button type="button" autoFocus onClick={() => setEnlargedFigure(null)}>关闭 ×</button></div>
+        <img src={`${base}knowledge/${enlargedFigure.src}`} alt="原书图表放大图" />
+        <p>{book.figures?.[enlargedFigure.src.slice('inline-figures/'.length)]?.text ?? enlargedFigure.alt}</p>
+        <div className="life-figure-links">{book.figures?.[enlargedFigure.src.slice('inline-figures/'.length)]?.links.map((href, index) =>
+          <a key={href} href={href} target="_blank" rel="noreferrer">图源与许可 {index + 1} ↗</a>)}</div>
+      </section>
+    </div>}
   </div>;
 }

@@ -1,0 +1,14 @@
+{
+  "softwareRenderer": true,
+  "figureVisible": true,
+  "figureZoom": true,
+  "originalFigureZoom": true,
+  "figureSources": true,
+  "dragRotates": true,
+  "subjectFiltering": true,
+  "figureTextSearch": true,
+  "deferredFolkloreGraph": true,
+  "newMapStory": true,
+  "mobileFigure": true,
+  "errors": []
+}

@@ -6,6 +6,7 @@ export interface LifeEntry {
   volume: string;
   page: number;
   links: string[];
+  figure_refs: string[];
   body: string;
 }
 
@@ -21,6 +22,7 @@ export interface LifeBook {
   edition: string;
   source_sha256: string;
   anchors: Record<string, string>;
+  figures: Record<string, { text: string; links: string[] }>;
   subjects: LifeSubject[];
   entries: LifeEntry[];
 }

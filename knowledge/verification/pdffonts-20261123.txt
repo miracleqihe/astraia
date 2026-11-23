@@ -1,0 +1,20 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+IOCSWL+NotoSansSC-Thin               CID TrueType      Identity-H       yes yes yes  52341  0
+RBHEGN+NotoSansSC-Thin               CID TrueType      Identity-H       yes yes yes  52344  0
+DEQWQI+NotoSerifSC-ExtraLight        CID TrueType      Identity-H       yes yes yes  52347  0
+JGAUMD+Consolas                      CID TrueType      Identity-H       yes yes yes  52350  0
+QTVPUZ+LXGWWenKai-Regular            CID TrueType      Identity-H       yes yes yes  52353  0
+ZVOCDD+DengXian                      CID TrueType      Identity-H       yes yes yes  52356  0
+RSACJH+DengXian-Bold                 CID TrueType      Identity-H       yes yes yes  52359  0
+KXEGZV+MicrosoftYaHei-Bold           CID TrueType      Identity-H       yes yes yes  52362  0
+BDXSOI+MicrosoftYaHei                CID TrueType      Identity-H       yes yes yes  52365  0
+UJANGX+SegoeUISymbol                 CID TrueType      Identity-H       yes yes yes  52368  0
+CRNDNR+NotoSansSC-Thin               CID TrueType      Identity-H       yes yes yes  52371  0
+IQRTZF+Arial-BoldMT                  CID TrueType      Identity-H       yes yes yes  52374  0
+TOYUKX+NewCMMath-Book-Identity-H     CID Type 0C       Identity-H       yes yes yes  52377  0
+PIDJRA+Cambria                       CID TrueType      Identity-H       yes yes yes  52380  0
+XMJFAZ+Cambria-Bold                  CID TrueType      Identity-H       yes yes yes  52383  0
+KRWGBA+ArialMT                       CID TrueType      Identity-H       yes yes yes  52386  0
+RCMAAH+MicrosoftPhagsPa-Bold         CID TrueType      Identity-H       yes yes yes  52389  0
+KRARMC+NirmalaUI                     CID TrueType      Identity-H       yes yes yes  52392  0

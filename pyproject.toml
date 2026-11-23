@@ -17,6 +17,7 @@ dependencies = [
 
 [project.optional-dependencies]
 datasets = ["pyproj==3.7.2", "pypdfium2==5.15.2"]
+figures = ["typst==0.15.2", "pypdfium2==5.15.2", "fonttools[woff]==4.68.0"]
 
 [tool.setuptools]
 packages = ["pipeline"]

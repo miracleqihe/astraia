@@ -1,7 +1,7 @@
 """Index the supplied handbook without changing its original text or citations.
 
 Example: python -m pipeline.build_life_knowledge --source handbook.qmd --pdf handbook.pdf
-The PDF is indexed with Poppler; the original PDF remains the authority for figures.
+The PDF is indexed with Poppler; original figures are rendered inline as SVGs.
 """
 
 import argparse
@@ -13,6 +13,7 @@ import re
 import shutil
 import subprocess
 import tempfile
+from urllib.parse import urlsplit
 
 import yaml
 
@@ -25,8 +26,33 @@ TYPST = re.compile(r'^```\{=typst\}\s*\n[\s\S]*?^```\s*$', re.M)
 ENTRY_LINK = re.compile(r'\]\(#entry-([a-z0-9-]+)\)')
 
 
+def typst_body(raw: str) -> str:
+    return re.sub(r'^```\{=typst\}\s*\n|^```\s*$', '', raw, flags=re.M).strip()
+
+
+def is_layout_wrapper(raw: str) -> bool:
+    body = typst_body(raw)
+    return bool(body == ']' or re.fullmatch(r'#block\([^\n]*\)\[\s*(?:#set par\(justify: false\))?', body))
+
+
 def build(source: Path, pdf: Path, pdftotext: str) -> dict:
     text = source.read_text(encoding='utf-8')
+    public = ROOT / 'web/public/knowledge'
+    manifest_path = public / 'inline-figures/manifest.json'
+    if not manifest_path.is_file():
+        raise ValueError('缺少原书图表清单，请先运行 pipeline.render_life_figures。')
+    manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+    if manifest.get('version') != 1 or manifest.get('source_sha256') != sha256(text.encode('utf-8')).hexdigest():
+        raise ValueError('原书图表与 QMD 版本不匹配。')
+    figures = manifest.get('figures', {})
+    for item in figures.values():
+        if Path(item['file']).name != item['file'] or not item['file'].endswith('.svg'):
+            raise ValueError('图表清单含有不安全的文件名。')
+        if not item['text'] or any(urlsplit(url).scheme not in {'http', 'https'} for url in item['links']):
+            raise ValueError(f'图表文字或来源链接不完整：{item["file"]}')
+        path = public / 'inline-figures' / item['file']
+        if not path.is_file() or sha256(path.read_bytes()).hexdigest() != item['sha256']:
+            raise ValueError(f'原书图表缺失或校验失败：{item["file"]}')
     entries = list(ENTRY.finditer(text))
     ids = [m[1] for m in entries]
     if len(ids) != 2266 or len(set(ids)) != len(ids):
@@ -84,17 +110,32 @@ def build(source: Path, pdf: Path, pdftotext: str) -> dict:
             links = list(dict.fromkeys(ref.upper() for ref in ENTRY_LINK.findall(raw)))
             if any(ref not in ids for ref in links):
                 raise ValueError(f'手册交叉链接缺少目标：{m[1]}')
-            readable = TYPST.sub('\n\n**原书图表及其说明**：请打开下方的原书图文。\n\n', raw)
+            figure_refs = []
+            def inline_figure(match: re.Match) -> str:
+                raw_block = match.group(0)
+                if is_layout_wrapper(raw_block):
+                    return '\n'
+                digest = sha256(typst_body(raw_block).encode('utf-8')).hexdigest()
+                item = figures.get(digest)
+                if not item:
+                    raise ValueError(f'条目图表未生成：{m[1]} / {digest[:12]}')
+                figure_refs.append(item['file'])
+                return f'\n\n![原书图表](inline-figures/{item["file"]})\n\n'
+            readable = TYPST.sub(inline_figure, raw)
             readable = re.sub(r'(?m)^(#{4,6}\s+.*?)\s*\{#([a-z0-9-]+)\}\s*$',
                               lambda h: f'{h[1]} ⟦anchor:{h[2]}⟧', readable)
             readable = re.sub(r'(?m)^\[\]\{#([a-z0-9-]+)\}\s*$',
                               lambda a: f'⟦anchor:{a[1]}⟧', readable)
             readable = re.sub(r'\s*\{(?:#[^}]+|width=[^}]+)\}', '', readable)
             rows.append({'id': m[1], 'title': title, 'topic': topic, 'subject': subject,
-                         'volume': volume, 'page': pages_by_id[m[1]], 'links': links, 'body': readable})
+                         'volume': volume, 'page': pages_by_id[m[1]], 'links': links,
+                         'figure_refs': figure_refs, 'body': readable})
 
     if len(rows) != 2266 or len(subjects) != 20:
         raise ValueError('提取后的条目或学科数量不正确。')
+    assigned = [figure for row in rows for figure in row['figure_refs']]
+    if len(assigned) != manifest['figure_count'] or set(assigned) != {item['file'] for item in figures.values()}:
+        raise ValueError('原书图表未完整映射到知识条目。')
     for row in rows:
         for anchor in re.findall(r'\]\(#(?!entry-)([a-z0-9-]+)\)', row['body']):
             target = anchor_owners.get(anchor)
@@ -113,7 +154,6 @@ def build(source: Path, pdf: Path, pdftotext: str) -> dict:
     for key, value in subjects.items():
         value['count'] = counts[key]
 
-    public = ROOT / 'web/public/knowledge'
     public.mkdir(parents=True, exist_ok=True)
     for ref in set(FIGURES.findall(text)):
         if '..' in Path(ref).parts:
@@ -136,10 +176,12 @@ def build(source: Path, pdf: Path, pdftotext: str) -> dict:
         shutil.copy2(source, saved_source)
     data = {'title': '格物识微', 'edition': '全书增绘版 · 2026-11-21',
             'source_sha256': sha256(pdf.read_bytes()).hexdigest(), 'subjects': list(subjects.values()),
-            'anchors': anchor_owners, 'entries': rows}
+            'anchors': anchor_owners, 'figures': {item['file']: {'text': item['text'], 'links': item['links']}
+                                                  for item in figures.values()}, 'entries': rows}
     (public / 'data.json').write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
     return {'entries': len(rows), 'subjects': len(subjects), 'volumes': len({r['volume'] for r in rows}),
-            'explicit_links': sum(len(r['links']) for r in rows), 'figures': len(set(FIGURES.findall(text))),
+            'explicit_links': sum(len(r['links']) for r in rows), 'inline_figures': len(assigned),
+            'source_images': len(set(FIGURES.findall(text))),
             'pdf_sha256': data['source_sha256']}
 
 

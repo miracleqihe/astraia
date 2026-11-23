@@ -22,6 +22,17 @@ function Brand() {
     <span className="brand-name">Astraia</span></div>;
 }
 
+function ViewSwitch({ mode, lifeMode, onSwitch }: { mode: ViewMode; lifeMode: boolean; onSwitch: (next: ViewMode | 'life') => void }) {
+  return <nav className="view-switch" aria-label="图谱视图">
+    <button type="button" aria-pressed={!lifeMode && mode === 'geo'} onClick={() => onSwitch('geo')}><span className="mode-icon globe-icon" aria-hidden="true" />3D 地图</button>
+    <button type="button" aria-pressed={!lifeMode && mode === 'graph'} onClick={() => onSwitch('graph')}><span className="mode-icon constellation-icon" aria-hidden="true" />语义星图</button>
+    <button type="button" aria-label="Life and Knowledge" aria-pressed={lifeMode} onClick={() => onSwitch('life')}>
+      <span className="mode-icon constellation-icon" aria-hidden="true" /><span className="mode-life-full">Life and Knowledge</span>
+      <span className="mode-life-short" aria-hidden="true">知识星图</span>
+    </button>
+  </nav>;
+}
+
 function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
   const [entry] = useState(() => {
     const url = new URL(window.location.href);
@@ -201,11 +212,7 @@ function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
   return <div className="app-shell">
     <header className="topbar">
       <Brand />
-      <nav className="view-switch" aria-label="图谱视图">
-        <button type="button" aria-pressed={!lifeMode && mode === 'geo'} onClick={() => switchView('geo')}><span className="mode-icon globe-icon" aria-hidden="true" />3D 地图</button>
-        <button type="button" aria-pressed={!lifeMode && mode === 'graph'} onClick={() => switchView('graph')}><span className="mode-icon constellation-icon" aria-hidden="true" />语义星图</button>
-        <button type="button" aria-pressed={lifeMode} onClick={() => switchView('life')}><span className="mode-icon constellation-icon" aria-hidden="true" />Life and Knowledge</button>
-      </nav>
+      <ViewSwitch mode={mode} lifeMode={lifeMode} onSwitch={switchView} />
       {!lifeMode && <div className="top-actions">
         {!publicSite && <a className="review-link" href={`${import.meta.env.BASE_URL}review/index.html`}>资料复核</a>}
         <button className="directory-toggle" type="button" aria-expanded={directoryOpen && directoryScope !== 'modern'}
@@ -280,16 +287,27 @@ function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
 }
 
 export function App() {
+  const [directLife, setDirectLife] = useState(() => new URL(window.location.href).searchParams.get('view') === 'life');
   const [snapshot, setSnapshot] = useState<GraphSnapshot | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [attempt, setAttempt] = useState(0);
   useEffect(() => {
+    if (directLife) return;
     const controller = new AbortController();
     loadSnapshot(controller.signal).then(setSnapshot).catch((reason: unknown) => {
       if (!controller.signal.aborted) setError(reason instanceof Error ? reason.message : '读取图谱失败。');
     });
     return () => controller.abort();
-  }, [attempt]);
+  }, [attempt, directLife]);
+  if (directLife) return <div className="app-shell">
+    <header className="topbar"><Brand /><ViewSwitch mode="geo" lifeMode onSwitch={(next) => {
+      if (next === 'life') return;
+      const url = new URL(window.location.href);
+      url.searchParams.set('view', next === 'geo' ? 'map' : 'graph'); url.searchParams.delete('entry'); url.hash = '';
+      window.history.replaceState({}, '', url); setDirectLife(false);
+    }} /></header>
+    <Suspense fallback={<div className="life-status">正在载入知识星图…</div>}><LifeKnowledge /></Suspense>
+  </div>;
   if (snapshot) return <Atlas snapshot={snapshot} />;
   return <main className="loading-shell"><Brand /><div className="loading-message" role={error ? 'alert' : 'status'}>
     <h1>{error ? '图谱暂未加载' : '正在读取图谱'}</h1>{error && <p>{error}</p>}

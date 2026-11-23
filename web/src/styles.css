@@ -202,6 +202,7 @@ h1, h2, h3, p, dl, dd { margin: 0; }
 .view-switch button + button { border-left: var(--border-plate); }
 .view-switch button[aria-pressed='true'] { color: var(--plate-bg); background: var(--folio-paper); }
 .view-switch button[aria-pressed='false']:hover, .directory-toggle:hover { background: var(--vellum-sheet); }
+.mode-life-short { display: none; }
 .mode-icon { display: inline-block; width: 11px; height: 11px; flex: 0 0 11px; }
 .globe-icon { border: 1px solid currentColor; transform: rotate(45deg) scale(0.78); }
 .constellation-icon {
@@ -688,8 +689,10 @@ h1, h2, h3, p, dl, dd { margin: 0; }
   .directory-toggle, .fiction-switch, .review-link { font-size: 0.74rem; gap: 5px; }
   .directory-toggle { padding-inline: 5px; }
   .directory-toggle span { display: none; }
-  .view-switch { grid-row: 2; grid-column: span 2; }
-  .view-switch button { flex: 1; }
+  .view-switch { grid-row: 2; grid-column: span 2; min-width: 0; }
+  .view-switch button { flex: 1; min-width: 0; padding-inline: 6px; font-size: 12px; }
+  .mode-life-full { display: none; }
+  .mode-life-short { display: inline; }
   .workspace, .workspace.with-inspector { display: flex; flex-direction: column; gap: 10px; padding: 9px 9px 14px; }
   .workspace.workbench { display: flex; }
   .inspector-spine { min-height: 40px; }

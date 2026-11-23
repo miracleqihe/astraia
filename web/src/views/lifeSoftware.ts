@@ -1,0 +1,257 @@
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import type { LifeEntry, LifeSubject } from '../life';
+import { LIFE_PALETTES, lifeGalaxyLayout } from './lifeGalaxyLayout';
+import type { LifeDrawing, LifeHover } from './lifeSceneTypes';
+
+type Layout = ReturnType<typeof lifeGalaxyLayout>;
+
+/** CPU rasterizer for browsers without hardware WebGL; uses the same camera and node positions. */
+export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], subjects: LifeSubject[], layout: Layout,
+  onSelect: (id: string) => void, onSubject: (id: string) => void, onHover: (hover: LifeHover | null) => void): LifeDrawing {
+  const canvas = document.createElement('canvas');
+  const drawingContext = canvas.getContext('2d', { alpha: false });
+  if (!drawingContext) throw new Error('无法创建知识星图画布');
+  const ctx: CanvasRenderingContext2D = drawingContext;
+  canvas.dataset.renderer = 'software';
+  host.appendChild(canvas);
+  const camera = new THREE.PerspectiveCamera(44, 1, 1, 4000);
+  camera.position.set(0, -620, 985);
+  const overviewDirection = camera.position.clone().normalize();
+  const controls = new OrbitControls(camera, canvas);
+  controls.enableDamping = true; controls.dampingFactor = .08;
+  controls.minDistance = 110; controls.maxDistance = 1800; controls.enablePan = true;
+
+  const nodeGeometry = new THREE.BufferGeometry().setAttribute('position', new THREE.BufferAttribute(layout.positions, 3));
+  const nodeMaterial = new THREE.PointsMaterial();
+  const points = new THREE.Points(nodeGeometry, nodeMaterial);
+  points.updateMatrixWorld();
+  const hubPositions = new Float32Array(subjects.length * 3);
+  subjects.forEach((subject, index) => layout.centers.get(subject.id)?.toArray(hubPositions, index * 3));
+  const hubGeometry = new THREE.BufferGeometry().setAttribute('position', new THREE.BufferAttribute(hubPositions, 3));
+  const hubMaterial = new THREE.PointsMaterial();
+  const hubs = new THREE.Points(hubGeometry, hubMaterial);
+  hubs.updateMatrixWorld();
+  const raycaster = new THREE.Raycaster();
+  const pointer = new THREE.Vector2();
+  const projection = new THREE.Matrix4();
+  const colors = new Uint32Array(entries.length);
+  const littleEndian = new Uint8Array(new Uint32Array([0x01020304]).buffer)[0] === 4;
+  const rgb = (r: number, g: number, b: number) => littleEndian
+    ? (0xff000000 | b << 16 | g << 8 | r) >>> 0 : (r << 24 | g << 16 | b << 8 | 255) >>> 0;
+  const background = rgb(16, 23, 34), guideColor = rgb(43, 49, 56), hubColor = rgb(210, 176, 113);
+  const lineColor = rgb(174, 146, 93), selectedColor = rgb(255, 233, 189);
+  let image: ImageData | null = null;
+  let pixels = new Uint32Array();
+  let width = 1, height = 1;
+  let projectedX = 0, projectedY = 0;
+  let focus: THREE.Vector3 | null = null;
+  let focusDirection: THREE.Vector3 | null = null;
+  let focusDistance = 0;
+  let selectedPoint: THREE.Vector3 | undefined;
+  let edges: THREE.Vector3[] = [];
+  let frame = 0;
+  let interacting = false;
+  let restoreQuality = 0;
+
+  function schedule() { if (!frame) frame = requestAnimationFrame(render); }
+  function fly(target: THREE.Vector3, distance: number, direction: THREE.Vector3 | null = null) {
+    focus = target.clone(); focusDistance = distance; focusDirection = direction; schedule();
+  }
+  function project(x: number, y: number, z: number): boolean {
+    const m = projection.elements;
+    const divisor = m[3] * x + m[7] * y + m[11] * z + m[15];
+    if (divisor <= .001) return false;
+    const inverse = 1 / divisor;
+    const depth = (m[2] * x + m[6] * y + m[10] * z + m[14]) * inverse;
+    if (depth < -1 || depth > 1) return false;
+    projectedX = Math.round(((m[0] * x + m[4] * y + m[8] * z + m[12]) * inverse + 1) * width / 2);
+    projectedY = Math.round((1 - (m[1] * x + m[5] * y + m[9] * z + m[13]) * inverse) * height / 2);
+    return true;
+  }
+  function pixel(x: number, y: number, color: number) {
+    if (x >= 0 && x < width && y >= 0 && y < height) pixels[y * width + x] = color;
+  }
+  function line(x0: number, y0: number, x1: number, y1: number, color: number) {
+    // Clip first so a line crossing the camera plane never causes an enormous loop.
+    const dx0 = x1 - x0, dy0 = y1 - y0;
+    let lo = 0, hi = 1;
+    for (const [p, q] of [[-dx0, x0], [dx0, width - 1 - x0], [-dy0, y0], [dy0, height - 1 - y0]]) {
+      if (p === 0) { if (q < 0) return; continue; }
+      const t = q / p;
+      if (p < 0) lo = Math.max(lo, t); else hi = Math.min(hi, t);
+      if (lo > hi) return;
+    }
+    const endX = Math.round(x0 + hi * dx0), endY = Math.round(y0 + hi * dy0);
+    x0 = Math.round(x0 + lo * dx0); y0 = Math.round(y0 + lo * dy0);
+    const dx = Math.abs(endX - x0), sx = x0 < endX ? 1 : -1;
+    const dy = -Math.abs(endY - y0), sy = y0 < endY ? 1 : -1;
+    let error = dx + dy;
+    for (;;) {
+      pixel(x0, y0, color);
+      if (x0 === endX && y0 === endY) break;
+      const twice = error * 2;
+      if (twice >= dy) { error += dy; x0 += sx; }
+      if (twice <= dx) { error += dx; y0 += sy; }
+    }
+  }
+  function draw() {
+    if (!image) return;
+    const started = import.meta.env.DEV ? performance.now() : 0;
+    pixels.fill(background);
+    camera.updateMatrixWorld();
+    projection.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
+    for (const radius of [90, 200, 320, 445]) {
+      let lastX = 0, lastY = 0, haveLast = false;
+      for (let i = 0; i <= 128; i++) {
+        const angle = i / 128 * Math.PI * 2;
+        if (project(Math.cos(angle) * radius, Math.sin(angle) * radius, -50)) {
+          if (haveLast) line(lastX, lastY, projectedX, projectedY, guideColor);
+          lastX = projectedX; lastY = projectedY; haveLast = true;
+        } else haveLast = false;
+      }
+    }
+    for (const volume of layout.volumes) {
+      let previous = new THREE.Vector3();
+      for (const subject of subjects.filter((item) => item.volume === volume)) {
+        const next = layout.centers.get(subject.id);
+        if (!next) continue;
+        if (project(previous.x, previous.y, previous.z)) {
+          const x = projectedX, y = projectedY;
+          if (project(next.x, next.y, next.z)) line(x, y, projectedX, projectedY, guideColor);
+        }
+        previous = next;
+      }
+    }
+    if (project(0, 0, 0)) {
+      const x = projectedX, y = projectedY;
+      for (let k = -2; k <= 2; k++) { pixel(x + k, y, selectedColor); pixel(x, y + k, selectedColor); }
+    }
+    for (let i = 0; i < edges.length; i += 2) {
+      const a = edges[i], b = edges[i + 1];
+      if (!project(a.x, a.y, a.z)) continue;
+      const x = projectedX, y = projectedY;
+      if (project(b.x, b.y, b.z)) line(x, y, projectedX, projectedY, lineColor);
+    }
+    for (let i = 0; i < entries.length; i++) {
+      if (!project(layout.positions[i * 3], layout.positions[i * 3 + 1], layout.positions[i * 3 + 2])) continue;
+      const x = projectedX, y = projectedY, color = colors[i];
+      pixel(x, y, color); pixel(x + 1, y, color); pixel(x, y + 1, color); pixel(x + 1, y + 1, color);
+    }
+    for (let i = 0; i < subjects.length; i++) {
+      if (!project(hubPositions[i * 3], hubPositions[i * 3 + 1], hubPositions[i * 3 + 2])) continue;
+      const x = projectedX, y = projectedY;
+      for (let k = -3; k <= 3; k++) { pixel(x + k, y, hubColor); pixel(x, y + k, hubColor); }
+    }
+    if (selectedPoint && project(selectedPoint.x, selectedPoint.y, selectedPoint.z)) {
+      const x = projectedX, y = projectedY;
+      for (let j = -2; j <= 2; j++) for (let i = -2; i <= 2; i++) pixel(x + i, y + j, selectedColor);
+    }
+    ctx.putImageData(image, 0, 0);
+    if (import.meta.env.DEV) canvas.dataset.drawMs = String(performance.now() - started);
+  }
+  function render() {
+    frame = 0;
+    if (focus) {
+      const delta = focus.clone().sub(controls.target).multiplyScalar(.10);
+      camera.position.add(delta); controls.target.add(delta);
+      const offset = camera.position.clone().sub(controls.target);
+      const distance = offset.length();
+      const next = distance + (focusDistance - distance) * .10;
+      const bearing = offset.multiplyScalar(1 / distance);
+      if (focusDirection) bearing.lerp(focusDirection, .10).normalize();
+      camera.position.copy(controls.target).add(bearing.clone().multiplyScalar(next));
+      if (delta.lengthSq() < .001 && Math.abs(next - focusDistance) < .1
+        && (!focusDirection || bearing.dot(focusDirection) > .99999)) { focus = null; focusDirection = null; }
+    }
+    const moving = controls.update();
+    draw();
+    if (focus || moving) schedule();
+  }
+  controls.addEventListener('change', schedule);
+  const resize = () => {
+    const cssWidth = Math.max(1, host.clientWidth), cssHeight = Math.max(1, host.clientHeight);
+    // Lower the raster cost while dragging, then restore sharper stars at rest.
+    const scale = interacting ? .3 : .7;
+    width = Math.max(1, Math.round(cssWidth * scale)); height = Math.max(1, Math.round(cssHeight * scale));
+    canvas.width = width; canvas.height = height;
+    image = ctx.createImageData(width, height); pixels = new Uint32Array(image.data.buffer);
+    camera.aspect = cssWidth / cssHeight; camera.updateProjectionMatrix(); schedule();
+  };
+  const observer = new ResizeObserver(resize); observer.observe(host); resize();
+  const hit = (event: PointerEvent) => {
+    const box = canvas.getBoundingClientRect();
+    pointer.set((event.clientX - box.left) / box.width * 2 - 1, -(event.clientY - box.top) / box.height * 2 + 1);
+    camera.updateMatrixWorld(); raycaster.setFromCamera(pointer, camera);
+    raycaster.params.Points = { threshold: 8 };
+    const hub = raycaster.intersectObject(hubs)[0];
+    raycaster.params.Points = { threshold: 5 };
+    const node = raycaster.intersectObject(points)[0];
+    if (hub?.index !== undefined && (hub.distanceToRay ?? Infinity) < 5) return { kind: 'hub' as const, index: hub.index };
+    if (node?.index !== undefined) return { kind: 'node' as const, index: node.index };
+    return null;
+  };
+  let hovered = '';
+  const move = (event: PointerEvent) => {
+    if (event.buttons) return;
+    const target = hit(event), key = target ? `${target.kind}:${target.index}` : '';
+    canvas.style.cursor = target ? 'pointer' : 'grab';
+    if (key !== hovered) {
+      hovered = key;
+      const title = target?.kind === 'hub' ? `学科 · ${subjects[target.index].title}`
+        : target ? entries[target.index].title : '';
+      onHover(target ? { title, x: event.offsetX, y: event.offsetY } : null);
+    }
+  };
+  let down = { x: 0, y: 0 };
+  const pointerDown = (event: PointerEvent) => {
+    focus = null; down = { x: event.clientX, y: event.clientY };
+    window.clearTimeout(restoreQuality); interacting = true; resize();
+  };
+  const pointerUp = (event: PointerEvent) => {
+    window.clearTimeout(restoreQuality);
+    restoreQuality = window.setTimeout(() => { interacting = false; resize(); }, 180);
+    if (Math.hypot(event.clientX - down.x, event.clientY - down.y) > 5) return;
+    const target = hit(event);
+    if (target?.kind === 'hub') onSubject(subjects[target.index].id);
+    else if (target) onSelect(entries[target.index].id);
+  };
+  const pointerCancel = () => {
+    window.clearTimeout(restoreQuality); interacting = false; resize();
+  };
+  const leave = () => { hovered = ''; onHover(null); };
+  canvas.addEventListener('pointermove', move); canvas.addEventListener('pointerdown', pointerDown);
+  canvas.addEventListener('pointerup', pointerUp); canvas.addEventListener('pointercancel', pointerCancel);
+  canvas.addEventListener('pointerleave', leave);
+  const color = new THREE.Color();
+  return {
+    update(selected, subject) {
+      const chosen = entries.find((entry) => entry.id === selected);
+      const related = new Set(chosen?.links ?? []);
+      if (chosen) for (const entry of entries) if (entry.links.includes(chosen.id)) related.add(entry.id);
+      entries.forEach((entry, i) => {
+        color.set(LIFE_PALETTES[layout.volumes.indexOf(entry.volume) % LIFE_PALETTES.length]);
+        const dim = subject && entry.subject !== subject ? .22 : selected && entry.id !== selected && !related.has(entry.id) ? .45 : 1;
+        color.multiplyScalar(dim);
+        const value = color.getHex(); colors[i] = rgb(value >> 16 & 255, value >> 8 & 255, value & 255);
+      });
+      selectedPoint = selected ? layout.locations.get(selected) : undefined;
+      edges = [];
+      if (selectedPoint) for (const id of related) {
+        const target = layout.locations.get(id);
+        if (target) edges.push(selectedPoint, target);
+      }
+      const target = selectedPoint ?? (subject ? layout.centers.get(subject) : undefined);
+      if (target) fly(target, selectedPoint ? 285 : 390); else { focus = null; schedule(); }
+    },
+    reset() { fly(new THREE.Vector3(), 1165, overviewDirection); },
+    dispose() {
+      cancelAnimationFrame(frame); window.clearTimeout(restoreQuality); observer.disconnect();
+      controls.removeEventListener('change', schedule); controls.dispose();
+      canvas.removeEventListener('pointermove', move); canvas.removeEventListener('pointerdown', pointerDown);
+      canvas.removeEventListener('pointerup', pointerUp); canvas.removeEventListener('pointercancel', pointerCancel);
+      canvas.removeEventListener('pointerleave', leave);
+      nodeGeometry.dispose(); nodeMaterial.dispose(); hubGeometry.dispose(); hubMaterial.dispose(); canvas.remove();
+    },
+  };
+}

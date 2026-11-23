@@ -17,6 +17,9 @@
 .life-map-heading { position: absolute; left: 39px; top: 36px; z-index: 3; pointer-events: none; }
 .life-map-heading h1 { margin: 8px 0 5px; font: 600 clamp(26px, 2.5vw, 38px)/1.1 var(--font-editorial); letter-spacing: .015em; }
 .life-map-heading p { color: #b5b3a9; font-size: 12px; }
+.life-reset { position: absolute; z-index: 3; top: 35px; right: 38px; padding: 7px 10px; color: #e3d7c1;
+  border: 1px solid rgba(239,236,230,.35); background: rgba(16,23,34,.86); font-size: 11px; }
+.life-reset:hover { border-color: #c29d59; color: #fff; }
 .life-scene { position: absolute; inset: 0; }
 .life-scene canvas { display: block; width: 100%; height: 100%; touch-action: none; }
 .life-tooltip { position: absolute; z-index: 3; max-width: 230px; padding: 6px 9px; border: 1px solid #c29d59; color: #efece6; background: #101722; font-size: 12px; pointer-events: none; }
@@ -52,6 +55,24 @@
 .life-anchor { display: block; height: 1px; }
 .life-prose a { color: #1f5e4b; text-decoration: underline; text-underline-offset: 3px; }
 .life-prose img { max-width: 100%; height: auto; display: block; margin: 18px auto; }
+.life-figure { display: block; margin: 22px 0; padding: 0 0 12px; border-bottom: 1px solid #c9c6bf; }
+.life-figure img { width: 100%; margin: 0; }
+.life-figure-open { display: block; width: 100%; padding: 0; border: 0; text-align: right; color: #5a6578; background: transparent; }
+.life-figure-open span { display: block; margin-top: 5px; font: 11px var(--font-grotesk); }
+.life-figure-open:hover span { color: #1f5e4b; text-decoration: underline; }
+.life-figure-text { display: block; margin-top: 9px; color: #5a6578; font: 12px/1.7 var(--font-grotesk); }
+.life-figure-links { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 6px; font-size: 11px; }
+.life-zoom-backdrop { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center;
+  padding: 22px; background: rgba(7,12,19,.87); }
+.life-zoom-sheet { width: min(1120px, 100%); max-height: 92vh; overflow: auto; padding: 20px;
+  border: 1px solid #c29d59; color: #1b2a4a; background: #efece6; }
+.life-zoom-head { display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding-bottom: 12px; border-bottom: 1px solid #1b2a4a; }
+.life-zoom-head strong { font: 600 21px var(--font-editorial); }
+.life-zoom-head button { padding: 7px 10px; color: #1b2a4a; border: 1px solid #1b2a4a; background: transparent; }
+.life-zoom-sheet img { display: block; width: 100%; height: auto; margin: 18px auto; }
+.life-zoom-sheet p { color: #5a6578; font-size: 14px; line-height: 1.7; }
+.life-zoom-sheet a { color: #1f5e4b; }
 .life-prose pre { overflow-x: auto; padding: 10px; background: #e5e0d5; font-size: 12px; }
 .life-prose table { display: block; width: 100%; overflow-x: auto; border-collapse: collapse; font-size: 12px; line-height: 1.6; }
 .life-prose th, .life-prose td { padding: 6px; border: 1px solid #a9a69f; vertical-align: top; }
@@ -72,6 +93,7 @@
   .life-map { min-height: 480px; }
   .life-map-heading { left: 31px; top: 29px; }
   .life-map-heading h1 { font-size: 27px; }
+  .life-reset { top: 95px; right: 30px; }
   .life-map-footer { left: 31px; bottom: 30px; }
   .life-inspector { overflow: visible; }
   .life-search { position: static; }

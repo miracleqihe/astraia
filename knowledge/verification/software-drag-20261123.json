@@ -1,0 +1,7 @@
+{
+  "renderer": "CPU Canvas2D",
+  "frames": 120,
+  "medianMs": 12.200000000000045,
+  "p95Ms": 66.60000000000036,
+  "averageFps": 40.41492657955004
+}

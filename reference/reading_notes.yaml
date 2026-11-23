@@ -2542,3 +2542,211 @@ case_zw_mashonaland_kariba_nyaminyami:
   paragraphs:
   - 世代聚居赞比西河谷的巴通加人信奉蛇身鱼首的河神“尼亚米尼亚米”，视其为庇佑渔猎生计与水源安宁的守护神。1956 年 11 月 6 日高 128 米的卡里巴混凝土双曲拱坝在峡谷动工，并于 1959 年截流蓄水形成卡里巴湖，迫使南岸约 2.2 万名与北岸约 2.9 万名巴通加族人迁往远离河道的高地；族人预言大坝高墙将河神与居于上游赞比亚岸边的妻子强行隔绝，必招致神谴。
   - 1957 年赞比西河罕见暴涨冲毁大坝地基并卷走多名工人；1958 年更爆发千年一遇的特大洪水，一举摧毁围堰、施工便桥与初筑坝墙，十一名意大利与当地工人溺亡并永埋混凝土坝体之中，沿岸民众普遍认定这是尼亚米尼亚米逆流冲撞坝墙寻妻的复仇之举。如今库区水压诱发的轻微地颤仍被解释为河神撞坝震怒所致，当地每年 9 月均举办尼亚米尼亚米节加以祭祀。
+
+corpus_theme_ancestor_returns:
+  kind: research
+  paragraphs:
+  - 在不同地方，亡者的归来可以是恐怖故事，也可以是与祖先重聚、照料无主亡灵或向亲人表达思念的节期。中元、盂兰盆、京都送火与墨西哥亡灵节各有自己的历史和仪式，不宜看成同一个节日的简单复制。
+  - 本组把可核对的地方记录并列，供读者比较时间、地点和参与者；连线表示同题阅读，不代表已证实的传播路线。
+  source_numbers:
+  - 1
+  - 2
+corpus_theme_between_life_death:
+  kind: research
+  paragraphs:
+  - 目连戏让救母者走入幽冥，爱尔兰口述故事则让夜归人遇见不可见的存在。两者的表演环境与人物关系各不相同，但都把生者与亡者之间难以跨越的界线写成故事。
+  - 在关于战争遗骸的田野研究中，亡者还与土地、亲属关系和未完成的葬礼相连。本组保留这些不同的叙述目的，不把传说或宗教信仰当作超自然事实。
+  source_numbers:
+  - 1
+  - 2
+corpus_theme_creation_worlds:
+  kind: research
+  paragraphs:
+  - 有的叙述让天地由混沌中展开，有的讲述天空与大地的分离，也有的追问人类如何被创造。盘古、女娲、彝族史诗、基切玛雅《波波尔·乌》和毛利传承分别属于不同社群与文献传统。
+  - 这组条目按照各自的采录和传承背景阅读；相似主题可以比较，却不能仅凭相似情节推断共同起源或传播方向。
+  source_numbers:
+  - 1
+  - 2
+case_cn_qimen_mulian_opera:
+  kind: legend
+  paragraphs:
+  - 徽州目连戏讲，傅罗卜得知母亲刘氏死后受苦，历经艰险入幽冥寻母。得佛祖帮助后，他成为目犍连，最终救出母亲；戏台上的鬼脸、锣鼓和武戏，将这段跨越生死的寻亲故事演给村落观众。
+  - 祁门人郑之珍在明代万历年间综合既有戏曲、变文和传说，写成《新编目连救母劝善戏文》。当地既有真人扮演的“大目连”，也有木偶形式的“托目连”；此处依据祁门地方戏资料记述，并非所有目连故事的统一版本。
+  source_numbers:
+  - 1
+  map_label: 安徽祁门县
+  location_note: 坐标为祁门县城参考点；目连戏的演出地点因班社和场次而异。
+case_cn_zhongyuan_lantern_traditions:
+  kind: legend
+  paragraphs:
+  - 农历七月里，一些地方的人们备好饭食祭祖，也为无人祭奠的亡者举行普度。夜晚，灯盏或蜡烛安在纸制、木制的底座上，被送入水流；灯火沿江河漂远，承载对先人和逝者的思念。
+  - 中国非遗保护中心的介绍将地方习俗放在道教中元、佛教盂兰盆和民间七月祭祀长期相互影响的背景下。各地举行日期、祭仪和称呼不尽相同；广西资源等地有自己的河灯节传统。
+  source_numbers:
+  - 1
+  - 2
+  map_label: 广西桂林资源县
+  location_note: 地图用资源县城作地区参考点，水灯习俗并不只限此地。
+case_cn_qinan_nuwa_festival:
+  kind: legend
+  paragraphs:
+  - 在女娲造人、补天的流传故事之外，甘肃秦安还有围绕女娲的地方祭仪。庙会、祭祀与民众讲述将远古叙事带入每年的地方生活。
+  - 中国非遗数字博物馆记录的“秦安女娲祭典”是具体地方的民俗项目。与湖北竹山的女娲传说并读时，应分别保留各自的地点和传承方式。
+  source_numbers:
+  - 1
+  map_label: 甘肃秦安县
+  location_note: 坐标是秦安县城参考点；祭典与女娲庙位于秦安县陇城一带。
+case_cn_tw_keelung_zhongyuan:
+  kind: legend
+  paragraphs:
+  - 每逢农历七月，基隆的中元祭把轮值组织、祭祀与水灯活动连在一起。人们准备灯具和供品，迎接、祭奠亡者，也借仪式表达地方社群之间的联系。
+  - 台湾宗教文化地图记录这一地方节庆的组织与历史，台湾历史博物馆的水灯头收藏则保存了相关器物。城中祭典有自己的变迁，不能直接等同于所有地区的中元习俗。
+  source_numbers:
+  - 1
+  - 2
+  map_label: 台湾基隆市
+  location_note: 坐标为基隆市区参考点；放水灯及祭典活动分布于多处。
+case_jp_kyoto_gozan_okuribi:
+  kind: legend
+  paragraphs:
+  - 京都的盂兰盆节相信祖先的灵魂回家探望亲人。8 月 16 日夜晚，城市周围的山上依次点起五组火形，人们以送火为返家的祖灵送行。
+  - 京都市官方介绍列出“大”“妙法”、船形、左大文字和鸟居形五组火，亦指出这一习俗的确切起源并不明朗。五山不是五个可任意互换的单一点位。
+  source_numbers:
+  - 1
+  map_label: 日本京都市
+  location_note: 京都市中心参考点；送火分别在五处山体举行。
+case_vn_hcm_vu_lan:
+  kind: legend
+  paragraphs:
+  - 越南的盂兰节是纪念父母恩情的佛教节期。寺院和家庭在这一时节表达对在世父母的感恩，也追念已经去世的亲人。
+  - 越南之声对胡志明市节庆的报道记录了信众到寺院参与活动的情形。这里所写的是现代城市中的具体实践，与各地以鬼怪为主角的叙述应分开理解。
+  source_numbers:
+  - 1
+  map_label: 越南胡志明市
+  location_note: 坐标为胡志明市中心参考点，不代表单一寺院或仪式会场。
+case_kh_battambang_dead_in_land:
+  kind: history
+  paragraphs:
+  - 战后迁居的村民在土地里遇到遗骨，有人也讲述过看见亡灵的经历。面对非亲属的遗骸，村民谈论的是如何安置、安慰亡者，以及活人同这些死者之间的关系。
+  - 人类学者 Lisa J. Arensen 2017 年的研究以柬埔寨西北部一个村庄为中心，讨论战乱造成的丧葬中断与随后的生活。文章中的鬼魂叙述是受访者的经验与记忆，不能被改写成已经证实的超自然事件。
+  source_numbers:
+  - 1
+  map_label: 柬埔寨马德望省
+  location_note: 标记马德望省的省府参考点，不是文中村庄或遗骨发现地点。
+case_sg_haw_par_ten_courts:
+  kind: legend
+  paragraphs:
+  - 虎豹别墅的十殿阎罗展陈把死后审判、善恶报应和惩戒塑造成可供行走观看的场景。观众在一组组塑像之间穿行，看到的是二十世纪新加坡公共空间中对相关民间观念的再现。
+  - 新加坡国家文物局的馆藏资料将这一公园及其场景置于具体历史中。展陈是一种有时代和创作者背景的视觉叙事，不代表所有华人或佛道信众共享同一套冥界观念。
+  source_numbers:
+  - 1
+  map_label: 新加坡虎豹别墅
+  location_note: 标记虎豹别墅公园地标；这是展陈地点，不是传说事件发生点。
+case_ie_ardagh_banshee_wake:
+  kind: legend
+  paragraphs:
+  - 一次守灵夜里，男人准备独自回家。旁人提醒他提防女妖，他却说世上没有这种东西。后来他走过一处旧屋，见里面亮着灯，便进门查看；刚跨过门槛，就被看不见的人一路打回家中，随后卧床，一周后死去。
+  - 爱尔兰学校民俗档案保存了这一讲述：John Sexton 为叙述者，Thomas Sexton 为采录者，记录见第 488 册第 8 页。这里复述的是一则口述故事，不是对死亡原因的历史认定。
+  source_numbers:
+  - 1
+  map_label: 爱尔兰利默里克郡纽卡斯尔韦斯特
+  location_note: 点位是学校采录地纽卡斯尔韦斯特参考点；故事提到阿达，未给出可核实的废墟位置。
+case_ie_donegal_ghost_turnip:
+  kind: legend
+  paragraphs:
+  - 爱尔兰国家博物馆 1943 年收到一盏来自多尼戈尔郡芬敦附近的萝卜灯，并由馆方艺术家依原物制作彩绘石膏模型。萝卜灯挖空后刻出可怖面孔，放入蜡烛，用来在节期夜晚吓人。
+  - 馆方将这类灯与关于杰克的传说并置：他不能进入天堂，也不能进入地狱，只能提着灯在黑暗中游荡。地方讲法各有变化，实物则留下了节俗如何被制作与使用的线索。
+  source_numbers:
+  - 1
+  map_label: 爱尔兰多尼戈尔郡芬敦
+  location_note: 标记馆藏所记芬敦地区参考点，不指称故事发生的具体地点。
+case_mx_michoacan_day_dead:
+  kind: legend
+  paragraphs:
+  - 墨西哥许多家庭在亡灵节准备祭坛、食物、花与亲人的照片，用各自的方式迎接、记念已逝家人。它既涉及家庭记忆，也有地方社区的不同实践。
+  - 史密森尼民俗生活中心的资料讨论了祭坛传统及其变化，也记录米却肯一些地区将帝王蝶归来与亡者归来联系起来的讲述。这是一种地方性解释，不代表所有墨西哥家庭的信仰。
+  source_numbers:
+  - 1
+  - 2
+  map_label: 墨西哥米却肯州
+  location_note: 点位为米却肯州首府莫雷利亚参考点，不指称任何单一社群的祭台。
+corpus_nz_maori_rangi_papa:
+  kind: legend
+  paragraphs:
+  - 毛利创世传统的一种叙述中，天空之父 Ranginui 与大地之母 Papatūānuku 紧紧相拥，孩子们生活在他们之间的黑暗中。Tāne 将父母分开，光明进入世界，生命得以伸展。
+  - 新西兰国家博物馆 Te Papa 将这一叙述与毛利人的亲缘谱系和对世界的理解相联系。毛利社群内部有多种讲述与表达，不应把它钉在单一地点或当作过时的信仰。
+  source_numbers:
+  - 1
+corpus_norse_world_tree:
+  kind: legend
+  paragraphs:
+  - 北欧神话中的世界树 Yggdrasil 将诸多世界联系起来，诸神、巨人与其他存在居于不同领域。关于命运和世界终局的叙述，又把众神的世界置于会发生变化的时间之中。
+  - 丹麦国家博物馆介绍的材料来自维京时代宗教及其后世保存的文献传统。故事有不同文本和研究解释，这里把它作为一组宇宙叙事阅读，不指定虚构的事件坐标。
+  source_numbers:
+  - 1
+corpus_egypt_weighing_heart:
+  kind: history
+  paragraphs:
+  - 在古埃及丧葬文献所描绘的审判中，亡者的心被放上天平，与代表真理和秩序的羽毛相衡。图像和咒文共同帮助亡者面对通往来世的考验。
+  - 大英博物馆的古埃及文字展览材料介绍了奈杰梅特的《亡灵书》及称心场景。这是对具体文物与历史信仰的说明，并非可以被证实的死后经历。
+  source_numbers:
+  - 1
+corpus_cn_ich_2008_0544:
+  kind: story
+  paragraphs:
+  - 河南桐柏与泌阳的盘古神话群，不只讲开天辟地，还包含世界毁灭、婚配繁衍和身体化作万物等故事。山川、村落与节俗在长期讲述中进入神话，形成地方版本。
+  - 2008 年名录卡记录的是一项民间文学项目。补充链接提供桐柏、泌阳传承的介绍，不能据此断言所有盘古故事出自同一地点。
+  source_numbers:
+  - 2
+  additional_sources:
+  - citation: 中国非物质文化遗产保护中心，《盘古神话》。
+    type: institutional_account
+    url: https://www.ihchina.cn/project_details/12289.html
+    locator: 地方神话群
+corpus_cn_ich_2021_1375:
+  kind: story
+  paragraphs:
+  - 湖北竹山的女娲传说包含抟土造人、炼石补天，以及创造乐器等不同故事。宝丰镇女娲山一带的讲述、歌谣、祭祀和地方艺术，使这些故事与当地生活相连。
+  - 非遗项目介绍还指出，女娲传说分布于多个地区。竹山是此条记录的传承背景，不能将地方传说中的地点当成神话事件得到历史证实的现场。
+  source_numbers:
+  - 3
+  additional_sources:
+  - citation: 中国非物质文化遗产保护中心，《女娲传说》。
+    type: institutional_account
+    url: https://www.ihchina.cn/Article/Index/detail?id=23438
+    locator: 竹山传承与主要故事
+corpus_cn_ich_2008_0551:
+  kind: story
+  paragraphs:
+  - 《查姆》是云南双柏等地彝族民间创世史诗，名称意译为“万物的起源”。它以神话叙述人类与万物的起源和发展，并由通晓彝文的毕摩记录、传承。
+  - 这是一套属于具体语言和社群的知识传统；阅读时应同时注意其口传、仪式与彝文记录背景。
+  source_numbers:
+  - 2
+  additional_sources:
+  - citation: 中国非物质文化遗产保护中心，《查姆》。
+    type: institutional_account
+    url: https://www.ihchina.cn/project_details/12297/
+    locator: 史诗内容与传承
+corpus_cn_ich_2011_1065:
+  kind: story
+  paragraphs:
+  - 《阿细先基》是云南弥勒彝族阿细人的创世史诗，围绕人类和世界的起源展开，长期以地方语言和演唱形式传承。
+  - 非遗项目资料把它放在弥勒当地的传承群体和文化生活中介绍。它不是对其他彝族社群所有创世叙事的概括。
+  source_numbers:
+  - 2
+  additional_sources:
+  - citation: 中国非物质文化遗产保护中心，《阿细先基》。
+    type: institutional_account
+    url: https://www.ihchina.cn/project_details/12369/
+    locator: 史诗的地方传承
+corpus_popol_vuh:
+  kind: story
+  paragraphs:
+  - 基切玛雅《波波尔·乌》保存了创世、人类起源与英雄双生子的故事。不同篇章把天地的形成、祖先世系和人类共同体的来历编织在一起。
+  - 这部作品以拉丁字母文字记录并经后世文献保存；盖蒂研究资源提供书写与视觉传统的背景。阅读时应区分文本、较早的玛雅艺术以及各自的历史语境。
+  source_numbers:
+  - 3
+  additional_sources:
+  - citation: Getty Research Institute，Popol Vuh iconography record。
+    type: institutional_account
+    url: https://www.getty.edu/cona/CONAIconographyRecord.aspx?iconid=901001893
+    locator: 基切玛雅文本与图像背景
