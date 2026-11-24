@@ -44,6 +44,21 @@ npm.cmd run preview
 .\.venv\Scripts\python.exe -X utf8 -m pipeline.build_life_knowledge --source knowledge/handbook.qmd --pdf web/public/knowledge/handbook.pdf --pdftotext 'pdftotext'
 ```
 
+## 朔望叠影与经典图谱
+
+顶部“朔望叠影”进入另一套三维呈现，“经典图谱”返回原来的地图、四层星图或万象星枢，并保留所选条目的定位。朔望视图连接同一份完整民俗目录与《格物识微》：有真实坐标的资料显示在地球上，所有图谱节点均可在目录检索或在玄象星域中查看。没有坐标的记录只提供目录和星络入口，不指定虚构地点。隐藏 F 级虚构的开关在两套视图中均可使用。
+
+“心物桥接”提供 12 条以现有资料为基础整理的精选对读。任意民俗条目还可以通过卷宗内的“穿界星门”检索原书词条，建立一条自选对读星桥；也可以先选择知识词条，再选择民俗条目。关键词建议与人工选择只表示对读，不自动构成已证实的因果关联。浏览器地址保留一对自选条目，可用于分享；该选择不修改 `vault/`。有硬件加速时使用 WebGL，没有时使用同一数据的轻量画布投影。
+
+数据一致性与中文覆盖检查可从项目根目录运行：
+
+```powershell
+node web/scripts/check-syzygy-data.mjs
+.\.venv\Scripts\python.exe web/scripts/check-syzygy-cjk.py
+```
+
+字体检查需要先在 `web/` 安装前端依赖，并安装 Python 的 `figures` 可选依赖。
+
 ## 编译样例库
 
 在项目根目录运行以下 PowerShell 命令。首次安装依赖需要联网，之后编译在本机完成。项目需要 Python 3.11 或更高版本。

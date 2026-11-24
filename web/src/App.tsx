@@ -29,6 +29,26 @@ function Brand() {
     <span className="brand-name">Astraia</span></div>;
 }
 
+function SyzygyLink({ dimension, story, showFiction }: { dimension: 'umbra' | 'sidera' | 'omnia'; story?: string | null; showFiction?: boolean }) {
+  const query = new URLSearchParams({ dim: dimension });
+  const initialStory = dimension === 'omnia' ? null : story || new URL(window.location.href).searchParams.get('story');
+  if (initialStory) query.set('story', initialStory);
+  if (showFiction ?? new URL(window.location.href).searchParams.get('fiction') === '1') query.set('fiction', '1');
+  return <a className="syzygy-entry" href={`${import.meta.env.BASE_URL}syzygy/?${query}`} aria-label="切换到朔望叠影视图" onClick={(event) => {
+    const current = new URL(window.location.href);
+    const destination = new URL(event.currentTarget.href);
+    if (dimension === 'omnia') {
+      const entry = current.searchParams.get('entry');
+      if (entry) destination.searchParams.set('entry', entry);
+    } else {
+      const currentStory = story || current.searchParams.get('story');
+      if (currentStory) destination.searchParams.set('story', currentStory);
+    }
+    event.currentTarget.href = destination.toString();
+  }}>
+    ◐ <span className="syzygy-entry-full">朔望叠影</span><span className="syzygy-entry-short" aria-hidden="true">叠影</span></a>;
+}
+
 function ViewSwitch({ mode, lifeMode, onSwitch }: { mode: ViewMode; lifeMode: boolean; onSwitch: (next: ViewMode | 'life') => void }) {
   return <nav className="view-switch" aria-label="图谱视图">
     <button type="button" aria-label="UMBRA 坤舆异志" aria-pressed={!lifeMode && mode === 'geo'} onClick={() => onSwitch('geo')}>
@@ -54,7 +74,7 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
     const mode: ViewMode = view === 'map' ? 'geo' : view === 'graph' ? 'graph'
       : loading || snapshot.nodes.some(isModernReading) ? 'geo' : 'graph';
     return { mode, selectedId: requested?.id ?? null, compareId: compared?.id ?? null,
-      showFiction: (requested && isFiction(requested)) || (compared && isFiction(compared)),
+      showFiction: url.searchParams.get('fiction') === '1' || (requested && isFiction(requested)) || (compared && isFiction(compared)),
       focus: requested && coordinatesOf(requested) ? { id: requested.id } : null };
   });
   const [mode, setMode] = useState<ViewMode>(entry.mode);
@@ -264,13 +284,17 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
     <header className="topbar">
       <Brand />
       <ViewSwitch mode={mode} lifeMode={lifeMode} onSwitch={switchView} />
-      {!lifeMode && <div className="top-actions">
+      <div className="top-actions">
+      <SyzygyLink dimension={lifeMode ? 'omnia' : mode === 'geo' ? 'umbra' : 'sidera'} story={lifeMode ? null : selectedId} showFiction={tiers.has('F')} />
+        {lifeMode && <span className="life-header-slot" />}
+        {!lifeMode && <>
         {!publicSite && <a className="review-link" href={`${import.meta.env.BASE_URL}review/index.html`}>资料复核</a>}
         <button className="directory-toggle" type="button" disabled={loading} aria-expanded={directoryOpen && directoryScope !== 'modern'}
           onClick={() => openDirectory('all')}>资料目录 <span>{loading ? '…' : graph.nodes.length}</span></button>
-        <button className="fiction-switch" type="button" role="switch" aria-checked={!tiers.has('F')} onClick={() => toggle<Tier>(setTiers, 'F')}>
+        <button className="fiction-switch" type="button" role="switch" aria-label="隐藏 F 级虚构" aria-checked={!tiers.has('F')} onClick={() => toggle<Tier>(setTiers, 'F')}>
           <span>隐藏 F 级虚构</span><span className="switch-track" aria-hidden="true" /></button>
-      </div>}
+        </>}
+      </div>
     </header>
     {lifeMode ? <Suspense fallback={<div className="life-status">正在载入知识星图…</div>}><LifeKnowledge /></Suspense> : <div className="workspace workbench" style={{ '--drawer-width': `${width}px` } as CSSProperties}>
       <main id="visual-stage" className="visual-stage" aria-label="图谱主视图">
@@ -391,7 +415,7 @@ export function App() {
       const url = new URL(window.location.href);
       url.searchParams.set('view', next === 'geo' ? 'map' : 'graph'); url.searchParams.delete('entry'); url.hash = '';
       window.history.replaceState({}, '', url); setPendingMode(next); setDirectLife(false);
-    }} /></header>
+    }} /><div className="top-actions"><SyzygyLink dimension="omnia" /><span className="life-header-slot" /></div></header>
     <Suspense fallback={<div className="life-status">正在载入知识星图…</div>}><LifeKnowledge /></Suspense>
   </div>;
   if (snapshot || !error) return <Atlas snapshot={snapshot ?? EMPTY_SNAPSHOT} loading={!snapshot} details={details} detailsError={detailsError}
@@ -401,7 +425,7 @@ export function App() {
     if (next !== 'life') url.searchParams.delete('entry');
     window.history.replaceState({}, '', url);
     if (next === 'life') setDirectLife(true); else setPendingMode(next);
-  }} /></header><main className="loading-shell"><div className="loading-message" role={error ? 'alert' : 'status'}>
+  }} /><div className="top-actions"><SyzygyLink dimension={pendingMode === 'geo' ? 'umbra' : 'sidera'} /></div></header><main className="loading-shell"><div className="loading-message" role={error ? 'alert' : 'status'}>
     <h1>{error ? '图谱暂未加载' : '正在读取图谱'}</h1>{error && <p>{error}</p>}
     {error && <button type="button" className="quiet-button" onClick={() => { setError(null); setAttempt((value) => value + 1); }}>重试</button>}
   </div></main></div>;

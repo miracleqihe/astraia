@@ -5,7 +5,7 @@ export default defineConfig({
   base: './',
   plugins: [react()],
   build: {
-    rollupOptions: { input: ['index.html', 'ui-review/index.html'] },
+    rollupOptions: { input: ['index.html', 'ui-review/index.html', 'syzygy/index.html'] },
   },
   // The review index is regenerated atomically by Python. On Windows a file
   // watcher can keep the large data file open and prevent that replacement.

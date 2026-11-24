@@ -58,7 +58,7 @@ def deploy(vault: Path, code_table: Path, *, reviewed_only: bool = False) -> Non
         env['VITE_PUBLIC_DEMO'] = '1'
         npm = 'npm.cmd' if os.name == 'nt' else 'npm'
         run([npm, 'run', 'build', '--', '--base=/astraia/', '--outDir', str(built), '--emptyOutDir'], root / 'web', env=env)
-        for name in ('index.html', 'ui-review/index.html', 'assets', 'fonts', 'knowledge/index.json', 'knowledge/data.json',
+        for name in ('index.html', 'ui-review/index.html', 'syzygy/index.html', 'syzygy/data.json', 'assets', 'fonts', 'knowledge/index.json', 'knowledge/data.json',
                      'knowledge/handbook.pdf', 'knowledge/inline-figures/manifest.json',
                      'knowledge/figures/font-report.json'):
             if not (built / name).exists():
@@ -78,7 +78,7 @@ def deploy(vault: Path, code_table: Path, *, reviewed_only: bool = False) -> Non
         run(['git', 'rm', '-rq', '--', PUBLIC_PATH], checkout)
         site.mkdir()
         shutil.copy2(built / 'index.html', site / 'index.html')
-        for name in ('assets', 'fonts', 'ui-review', 'knowledge'):
+        for name in ('assets', 'fonts', 'ui-review', 'knowledge', 'syzygy'):
             shutil.copytree(built / name, site / name)
         if preserved_assets.is_dir():
             for old_file in preserved_assets.rglob('*'):
@@ -94,6 +94,8 @@ def deploy(vault: Path, code_table: Path, *, reviewed_only: bool = False) -> Non
         # Build the first-paint index from the exact graph just published, not
         # from a potentially older local development snapshot.
         run(['node', str(root / 'web/scripts/build-graph-index.mjs'), str(site / 'data/graph_data.json')], root)
+        run(['node', str(root / 'web/scripts/build-syzygy-data.mjs'), str(site / 'data/graph_data.json'),
+             str(site / 'syzygy/data.json')], root)
         publish_graph(site / 'data/asia_coverage.json', coverage, 'json')
         # A Windows checkout may otherwise normalize SVG newlines when staging,
         # breaking the image hashes and embedded-font verification on Pages.

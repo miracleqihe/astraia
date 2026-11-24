@@ -13,7 +13,7 @@
 
 @font-face {
   font-family: "Astraia CJK Supplemental"; font-style: normal; font-weight: 400; font-display: swap;
-  src: url("/fonts/astraia-cjk-supplement-400.woff2?v=225") format("woff2");
+  src: url("/fonts/astraia-cjk-supplement-400.woff2?v=227") format("woff2");
   unicode-range: U+3AFB, U+4CDF, U+5000, U+50AA, U+50B4, U+50C2, U+50C9, U+513B, U+5244, U+5268, U+526E, U+527A, U+5488,
     U+5536, U+55FF, U+5635, U+5680, U+56C8, U+578D, U+584B, U+58DA, U+5969, U+5A9F, U+5AA2, U+5AA7, U+5ABC,
     U+5AD7, U+5B19, U+5C5F, U+5C68, U+5C6D, U+5CD1, U+5DA0, U+5DF9, U+5E43, U+5E58, U+5EC4, U+5EE1, U+5EE9,
@@ -21,7 +21,7 @@
     U+6759, U+6913, U+6938, U+694E, U+69E8, U+6AEC, U+6B1E, U+6B5F, U+6B7F, U+6BAE, U+6BFF, U+6D79, U+6E71,
     U+6F0A, U+6F1A, U+6FBE, U+6FD8, U+7043, U+7055, U+71E1, U+7296, U+72A2, U+7319, U+733B, U+736A, U+737C,
     U+73D3, U+7454, U+74AB, U+750C, U+761E, U+7646, U+7649, U+7670, U+7715, U+78E7, U+7927, U+792C, U+7A60,
-    U+7B64, U+7BA0, U+7BED, U+7CD2, U+7D02, U+7D3C, U+7D3F, U+7D83, U+7E36, U+7E48, U+7E52, U+7E6F, U+7F48,
+    U+7B64, U+7BA0, U+7BED, U+7CD2, U+7D02, U+7D3C, U+7D3F, U+7D83, U+7DF0, U+7E36, U+7E48, U+7E52, U+7E6F, U+7F48,
     U+7FC2, U+8075, U+807B, U+8177, U+81DA, U+81E0, U+82BB, U+839D, U+83FC, U+8407, U+84B1, U+84C0, U+84F4, U+84FD,
     U+866F, U+8784, U+87BB, U+87FA, U+8806, U+8828, U+889E, U+8946, U+895D, U+896D, U+8998, U+89BF, U+89ED,
     U+8A6C, U+8A75, U+8AB6, U+8AC2, U+8AC4, U+8B04, U+8B14, U+8B16, U+8B2B, U+8B4E, U+8B56, U+8B95, U+8B96,
@@ -30,12 +30,12 @@
     U+92C3, U+92D9, U+9301, U+932E, U+9364, U+936C, U+93F9, U+9403, U+9404, U+940D, U+9436, U+9460, U+9588,
     U+95B6, U+95D0, U+95D3, U+95E5, U+9724, U+97D9, U+980E, U+9837, U+9859, U+98ED, U+9909, U+9911, U+9912,
     U+993C, U+99D9, U+99DF, U+9A2E, U+9A36, U+9A3E, U+9A64, U+9B11, U+9B16, U+9B1B, U+9B29, U+9BD7, U+9C25,
-    U+9C54, U+9C5F, U+9CAA, U+9D06, U+9D07, U+9D42, U+9DB9, U+9DC1, U+9E7A, U+9EFF, U+9F4E, U+9F58, U+9F6A,
+    U+9C52, U+9C54, U+9C5F, U+9CAA, U+9D06, U+9D07, U+9D42, U+9DB9, U+9DC1, U+9E7A, U+9EFF, U+9F4E, U+9F58, U+9F6A,
     U+9F77, U+F9C4;
 }
 @font-face {
   font-family: "Astraia CJK Supplemental"; font-style: normal; font-weight: 600; font-display: swap;
-  src: url("/fonts/astraia-cjk-supplement-600.woff2?v=225") format("woff2");
+  src: url("/fonts/astraia-cjk-supplement-600.woff2?v=227") format("woff2");
   unicode-range: U+3AFB, U+4CDF, U+5000, U+50AA, U+50B4, U+50C2, U+50C9, U+513B, U+5244, U+5268, U+526E, U+527A, U+5488,
     U+5536, U+55FF, U+5635, U+5680, U+56C8, U+578D, U+584B, U+58DA, U+5969, U+5A9F, U+5AA2, U+5AA7, U+5ABC,
     U+5AD7, U+5B19, U+5C5F, U+5C68, U+5C6D, U+5CD1, U+5DA0, U+5DF9, U+5E43, U+5E58, U+5EC4, U+5EE1, U+5EE9,
@@ -43,7 +43,7 @@
     U+6759, U+6913, U+6938, U+694E, U+69E8, U+6AEC, U+6B1E, U+6B5F, U+6B7F, U+6BAE, U+6BFF, U+6D79, U+6E71,
     U+6F0A, U+6F1A, U+6FBE, U+6FD8, U+7043, U+7055, U+71E1, U+7296, U+72A2, U+7319, U+733B, U+736A, U+737C,
     U+73D3, U+7454, U+74AB, U+750C, U+761E, U+7646, U+7649, U+7670, U+7715, U+78E7, U+7927, U+792C, U+7A60,
-    U+7B64, U+7BA0, U+7BED, U+7CD2, U+7D02, U+7D3C, U+7D3F, U+7D83, U+7E36, U+7E48, U+7E52, U+7E6F, U+7F48,
+    U+7B64, U+7BA0, U+7BED, U+7CD2, U+7D02, U+7D3C, U+7D3F, U+7D83, U+7DF0, U+7E36, U+7E48, U+7E52, U+7E6F, U+7F48,
     U+7FC2, U+8075, U+807B, U+8177, U+81DA, U+81E0, U+82BB, U+839D, U+83FC, U+8407, U+84B1, U+84C0, U+84F4, U+84FD,
     U+866F, U+8784, U+87BB, U+87FA, U+8806, U+8828, U+889E, U+8946, U+895D, U+896D, U+8998, U+89BF, U+89ED,
     U+8A6C, U+8A75, U+8AB6, U+8AC2, U+8AC4, U+8B04, U+8B14, U+8B16, U+8B2B, U+8B4E, U+8B56, U+8B95, U+8B96,
@@ -52,7 +52,7 @@
     U+92C3, U+92D9, U+9301, U+932E, U+9364, U+936C, U+93F9, U+9403, U+9404, U+940D, U+9436, U+9460, U+9588,
     U+95B6, U+95D0, U+95D3, U+95E5, U+9724, U+97D9, U+980E, U+9837, U+9859, U+98ED, U+9909, U+9911, U+9912,
     U+993C, U+99D9, U+99DF, U+9A2E, U+9A36, U+9A3E, U+9A64, U+9B11, U+9B16, U+9B1B, U+9B29, U+9BD7, U+9C25,
-    U+9C54, U+9C5F, U+9CAA, U+9D06, U+9D07, U+9D42, U+9DB9, U+9DC1, U+9E7A, U+9EFF, U+9F4E, U+9F58, U+9F6A,
+    U+9C52, U+9C54, U+9C5F, U+9CAA, U+9D06, U+9D07, U+9D42, U+9DB9, U+9DC1, U+9E7A, U+9EFF, U+9F4E, U+9F58, U+9F6A,
     U+9F77, U+F9C4;
 }
 @font-face {
@@ -210,6 +210,10 @@ h1, h2, h3, p, dl, dd { margin: 0; }
   clip-path: polygon(50% 0, 58% 38%, 100% 50%, 58% 60%, 50% 100%, 41% 60%, 0 50%, 41% 39%);
 }
 .top-actions { justify-self: end; display: flex; align-items: center; gap: 15px; }
+.syzygy-entry { display: inline-flex; align-items: center; gap: 5px; min-height: 31px; padding: 0 8px; color: #f0d6a0;
+  border: 1px solid rgba(194,157,89,.55); background: rgba(194,157,89,.08); font-size: .75rem; text-decoration: none; white-space: nowrap; }
+.syzygy-entry:hover { background: rgba(194,157,89,.2); }
+.syzygy-entry-short { display: none; }
 .review-link { color: var(--folio-paper); font-size: 0.86rem; text-decoration: none; white-space: nowrap; }
 .review-link:hover { color: var(--brass-tick); }
 .directory-toggle { border: var(--border-plate); padding: 0 10px; }
@@ -701,6 +705,7 @@ h1, h2, h3, p, dl, dd { margin: 0; }
   .directory-toggle, .fiction-switch, .review-link { font-size: 0.74rem; gap: 5px; }
   .directory-toggle { padding-inline: 5px; }
   .directory-toggle span { display: none; }
+  .syzygy-entry { min-height: 29px; padding-inline: 5px; font-size: .7rem; }
   .view-switch { grid-row: 2; grid-column: span 2; min-width: 0; }
   .view-switch button { flex: 1; min-width: 0; padding-inline: 3px; gap: 3px; font-size: clamp(8px, 2.65vw, 11px); }
   .mode-full, .mode-life-full { display: inline; }
@@ -729,6 +734,11 @@ h1, h2, h3, p, dl, dd { margin: 0; }
   .atlas-marker[data-emphasis='related'] .atlas-marker-label { opacity: 0; }
   .atlas-marker:is(:hover, :focus-visible) .atlas-marker-label { opacity: 1; }
   .constellation-node-label { max-width: 158px; }
+}
+@media (max-width: 400px) {
+  .syzygy-entry-full, .fiction-switch > span:first-child { display: none; }
+  .syzygy-entry-short { display: inline; }
+  .top-actions { gap: 5px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .switch-track::before { transition-duration: 0s; }

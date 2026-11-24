@@ -1,0 +1,14 @@
+[
+  {"id":"SYZ-01","trail":"trail1","label":"老巫婆夜访与睡眠体验","cluster":"sid_hag","case":"case_old_hag_sleep_paralysis_1982","related":"mech_sleep_paralysis","entry":"HEA-009","relation":"EMPIRICAL_EXPLAINS"},
+  {"id":"SYZ-02","trail":"trail2","label":"H 夫人住宅与一氧化碳","cluster":"sid_hag","case":"case_mrs_h_co_haunting_1921","related":"mech_co_poisoning","entry":"CHE-6-0016","relation":"EMPIRICAL_EXPLAINS"},
+  {"id":"SYZ-03","trail":"trail2","label":"次声、共振与闹鬼实验","cluster":"sid_hag","case":"case_coventry_sword_lab_1998","related":"mech_haunt_infrasound_field_hypothesis","entry":"PHY-4-0002","relation":"EMPIRICAL_EXPLAINS"},
+  {"id":"SYZ-04","trail":"trail3","label":"机器人触觉实验与在场感","cluster":"sid_hag","case":"case_blanke_robot_presence_2014","related":"mech_tpj_body_signal_integration","entry":"BIO-3-0004","relation":"EMPIRICAL_EXPLAINS"},
+  {"id":"SYZ-05","trail":"trail4","label":"乾隆叫魂案与猎巫恐慌","cluster":"sid_witch","case":"case_china_soulstealers_1768","related":"case_salem_1692","entry":"SOC-1-0009","relation":"SOCIAL_MIRROR"},
+  {"id":"SYZ-06","trail":"trail4","label":"塞勒姆与麦角中毒假说","cluster":"sid_witch","case":"case_salem_1692","related":"mech_salem_ergotism","entry":"HIS-6-0001","relation":"SOCIAL_MIRROR"},
+  {"id":"SYZ-07","trail":"trail5","label":"后室与数字叙事","cluster":"sid_liminal","case":"case_the_backrooms_2019","related":"motif_urban_ostension_liminal","entry":"LIT-2-0001","relation":"LIMINAL_SPAWNS"},
+  {"id":"SYZ-08","trail":"all","label":"沅陵赶尸与尸后变化","cluster":"sid_crypt","case":"case_cn_hunan_yuanling_corpse_inn","related":null,"entry":"FOR-3-0003","relation":"THEMATIC"},
+  {"id":"SYZ-09","trail":"all","label":"延乌郎细乌女与日月之光","cluster":"sid_myth","case":"case_kr_pohang_yeonorang","related":null,"entry":"LIF-TRAVEL-0024","relation":"THEMATIC"},
+  {"id":"SYZ-10","trail":"all","label":"安多弗异响与建筑振动","cluster":"sid_crypt","case":"case_andover_tremors_1970s","related":"motif_poltergeist_500_cluster","entry":"ARC-1-0006","relation":"THEMATIC"},
+  {"id":"SYZ-11","trail":"all","label":"昆琼雪人头皮与毛发比对","cluster":"sid_crypt","case":"case_yeti_khumjung_scalp_1960","related":null,"entry":"FOR-2-0012","relation":"THEMATIC"},
+  {"id":"SYZ-12","trail":"all","label":"昔加末传闻与口述仪式","cluster":"sid_witch","case":"case_my_segamat_oily_ritual_2002","related":null,"entry":"REL-5-0005","relation":"SOCIAL_MIRROR"}
+]

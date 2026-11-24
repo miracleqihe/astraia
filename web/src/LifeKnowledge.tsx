@@ -209,9 +209,9 @@ export default function LifeKnowledge() {
 
   return <div className="life-workspace" data-folio-open={folioOpen} data-directory-open={directoryOpen} data-folio-theme={folioTheme}
     data-low-power={renderer === 'software' ? 'true' : undefined}>
-    {document.querySelector('.app-shell-life .topbar') && createPortal(<div className="life-header-status">
+    {document.querySelector('.app-shell-life .life-header-slot') && createPortal(<div className="life-header-status">
       {sceneMode === 'astrolabe' ? 'ASTROLABE' : renderer === 'software' ? 'CANVAS 2D' : 'RETINA SHADER'} · {book.entries.length.toLocaleString()} NODES
-    </div>, document.querySelector('.app-shell-life .topbar')!)}
+    </div>, document.querySelector('.app-shell-life .life-header-slot')!)}
     <aside className="life-sidebar" aria-label="知识学科" hidden={!directoryOpen}>
       <div className="life-side-heading"><div><span>OMNIA / ATLAS</span><strong>知识目录</strong><small>五卷 · 二十门</small></div>
         <button className="life-directory-toggle" type="button" onClick={() => setDirectoryOpen(false)}>◂ 收起</button></div>

@@ -1,0 +1,81 @@
+@font-face { font-family: Cinzel; src: url('../../public/fonts/cinzel-400.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: Cinzel; src: url('../../public/fonts/cinzel-600.ttf') format('truetype'); font-weight: 600; font-display: swap; }
+.font-serif-sc, html, body { font-family: 'Astraia Handbook Glyphs', 'Astraia CJK Supplemental', 'Noto Serif SC', serif; }
+.font-cormorant { font-family: 'Astraia Handbook Glyphs', 'Astraia CJK Supplemental', 'Cormorant Garamond', 'Noto Serif SC', serif; }
+.font-cinzel { font-family: Cinzel, 'Astraia Handbook Glyphs', 'Astraia CJK Supplemental', 'Noto Serif SC', serif; }
+.font-mono-tech { font-family: 'JetBrains Mono', 'Astraia Handbook Glyphs', 'Astraia CJK Supplemental', 'Noto Serif SC', monospace; font-variant-numeric: tabular-nums; }
+.syzygy-brand { color: inherit; text-decoration: none; }
+.syzygy-brand:hover { opacity: .8; }
+.syzygy-classic { display: inline-flex; align-items: center; padding: 6px 8px; color: #d8c9a9; font-size: 11px; text-decoration: none; white-space: nowrap; }
+.syzygy-fiction { padding: 6px 9px; color: #d8c9a9; font-size: 11px; white-space: nowrap; }
+.syzygy-fiction[aria-checked='false'] { color: #d59b8d; }
+.syzygy-loading { position: fixed; z-index: 15; left: 50%; top: 49%; transform: translate(-50%,-50%); padding: 9px 12px;
+  color: #dcc9a1; background: rgba(4,6,11,.84); border: 1px solid rgba(214,182,120,.25); font-size: 12px; }
+#syzygy-card-container, #syzygy-card-container * { user-select: text; }
+.syzygy-source-list { margin: 8px 0 0; padding: 0; list-style: none; }
+.syzygy-source-list li { margin-top: 5px; color: inherit; font-size: 11px; line-height: 1.55; overflow-wrap: anywhere; }
+.syzygy-source-list a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.syzygy-read-links { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 10px; }
+.syzygy-read-links a { display: inline-flex; align-items: center; padding: 6px 9px; border: 1px solid rgba(214,182,120,.35);
+  color: inherit; font-size: 11px; text-decoration: none; }
+.syzygy-read-links a:hover { border-color: #d6b678; }
+.syzygy-reference { color: inherit; font-size: 10px; line-height: 1.5; opacity: .75; }
+.syzygy-status-context { color: #cdbd98; border: 1px solid rgba(214,182,120,.3); }
+.syzygy-full-card { padding: 12px; border: 1px solid rgba(214,182,120,.28); background: rgba(10,12,23,.9); color: #e8e0d1; }
+.mythos-pane.syzygy-full-card { border-color: rgba(182,146,246,.35); background: rgba(16,14,32,.8); }
+.physis-pane.syzygy-full-card { border-color: rgba(100,181,246,.3); background: rgba(8,19,29,.8); }
+.syzygy-full-card h3 { margin: 5px 0; font-size: 15px; font-weight: 600; line-height: 1.5; }
+.syzygy-full-card h4 { margin-top: 12px; color: #d6b678; font-size: 11px; }
+.syzygy-overline, .syzygy-directory-heading { color: #d6b678; font-size: 10px; letter-spacing: .08em; }
+.syzygy-prose { font-size: 12px; line-height: 1.85; overflow-wrap: anywhere; }
+.syzygy-prose p { margin-top: 8px; }
+.syzygy-book-body { margin-top: 9px; white-space: pre-wrap; }
+.syzygy-codes { display: flex; flex-wrap: wrap; gap: 4px; margin: 6px 0; }
+.syzygy-code { padding: 2px 5px; border: 1px solid rgba(182,146,246,.35); color: #d8b4fe; font-size: 10px; }
+.syzygy-read-links button { padding: 6px 8px; font-size: 11px; }
+.syzygy-read-links button:disabled { cursor: not-allowed; opacity: .35; }
+.syzygy-related, .syzygy-directory-row { width: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 3px; padding: 7px 8px; margin-top: 4px; text-align: left; border: 1px solid rgba(214,182,120,.14); color: inherit; font-size: 11px; }
+.syzygy-related:hover, .syzygy-directory-row:hover, .syzygy-directory-row.is-selected { border-color: rgba(214,182,120,.6); background: rgba(214,182,120,.1); }
+.syzygy-related small, .syzygy-directory-row span { color: #ad9f86; font-size: 10px; }
+.syzygy-directory-row b { font-weight: 500; line-height: 1.5; }
+.syzygy-load-more { padding: 7px; width: 100%; color: #d6b678; font-size: 11px; border: 1px solid rgba(214,182,120,.35); }
+.syzygy-portal-search { display: block; width: 100%; margin-top: 6px; padding: 7px; color: #f4ede0; background: #080d18; border: 1px solid rgba(214,182,120,.35); font-size: 11px; }
+.parchment-scroll .syzygy-portal-search { color: #1b2a4a; background: #efece6; }
+#context-banner { z-index: 15; }
+#btn-open-left, #btn-open-right, body > footer { z-index: 25; }
+.personal-portal-label { padding: 3px 7px; border: 1px solid rgba(182,146,246,.6); color: #f4eafe; background: #100e20; font-size: 10px; max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: none; }
+body[data-renderer='software'] .celestial-panel,
+body[data-renderer='software'] .vol-plaque,
+body[data-renderer='software'] #syzygy-header { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+body[data-renderer='software'] .celestial-panel { background-color: rgba(8,12,22,.96); }
+.status-confirmed { color: #72c7a2 !important; }.status-unverified { color: #e8bc6a !important; }.status-refuted { color: #eb8880 !important; text-decoration: line-through; }
+.parchment-scroll .syzygy-full-card { color: #283149; background: rgba(239,236,230,.8); border-color: rgba(27,42,74,.25); }
+.parchment-scroll .syzygy-reference, .parchment-scroll .syzygy-related small { color: #5a6578; }
+.parchment-scroll .syzygy-overline, .parchment-scroll .syzygy-full-card h4 { color: #805d29; }
+@media (max-width: 760px) {
+  #syzygy-header { display: grid; grid-template-columns: minmax(0,1fr) auto; grid-template-rows: 32px 32px; gap: 3px; height: 80px; padding: 5px 9px; }
+  #syzygy-header > nav { grid-column: 1 / -1; grid-row: 2; width: 100%; max-width: none; justify-content: stretch; }
+  #syzygy-header > nav .dim-tab { flex: 1; justify-content: center; min-width: 0; gap: 2px; padding: 5px 2px; font-size: clamp(8px,2.5vw,10px); white-space: nowrap; }
+  #syzygy-header > nav .font-cinzel { display: inline; }
+  #syzygy-header > div:last-child { grid-column: 2; grid-row: 1; }
+  .syzygy-fiction { padding: 5px 4px; font-size: 9px; }
+  #btn-syzygy-toggle, #btn-proj-toggle { padding: 5px; font-size: 10px; }
+  .astrolabe-bezel { top: 80px; }
+  .syzygy-classic { padding: 5px 4px; font-size: 9px; }
+  #context-banner { top: 112px; left: 14px; right: 14px; }
+  #context-banner h1 { font-size: 18px; }
+  #context-banner > .flex { flex-wrap: wrap; gap: 4px; }
+  #banner-desc { max-width: 85%; }
+  #left-drawer, #right-drawer { top: 123px; bottom: 78px; }
+  #btn-open-left, #btn-open-right { top: 84px; }
+  #right-drawer { width: min(412px, calc(100vw - 28px)); }
+}
+@media (max-width: 360px) {
+  #syzygy-header .syzygy-brand { gap: 4px; }
+  #syzygy-header .syzygy-brand .font-cinzel { font-size: 11px; letter-spacing: .12em; }
+  #btn-syzygy-toggle span:nth-child(2) { display: none; }
+  #btn-syzygy-toggle { min-width: 27px; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .drawer-anim, #celestial-tooltip { transition-duration: 0s; }
+}
