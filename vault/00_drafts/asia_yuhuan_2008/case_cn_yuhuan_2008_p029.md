@@ -5,14 +5,14 @@ aliases:
 - 金地枕
 node_type: case
 z_layer: 1
-genre: unclassified
+genre: folktale
 credibility_tier: B
 is_fictional_quarantine: false
 spatial:
-  lat: null
-  lng: null
-  precision: culture_region
-  location_name: 浙江玉环：选辑范围，非逐篇采录点或故事地点
+  lat: 28.08454
+  lng: 121.2737
+  precision: city
+  location_name: 浙江玉环 · 坎门地区参考
   culture_region: East Asia · China · Zhejiang
 temporal: null
 standards:
@@ -50,6 +50,13 @@ sources:
   locator: 传说故事篇 / 印刷第 30 页 / PDF 第 24 页 / 采录旁注候选
   local_path: .local/import-sources/china-yuhuan/yuhuan-oral-literature-2008.pdf
   content_sha256: a771284e485d28ce8987cce775af53794663e497eb109408f346d48aa8b4c5eb
+- citation: GeoNames，坎门地名参考。
+  type: map_reference
+  url: https://mapcarta.com/15955296
+  doi: null
+  locator: 坎门地区参考点：28.08454, 121.27370
+  local_path: null
+  content_sha256: null
 audit:
   created_at: '2026-11-22'
   reviewed_by_human: false
@@ -58,6 +65,9 @@ audit:
   reviewer: null
   reviewed_at: null
   review_note: null
+  public_release: false
+  public_rights_note: null
+  public_content_sha256: null
 ---
 
 ## 目录索引
@@ -74,4 +84,15 @@ audit:
 
 ## 原文与复核
 
-来源为双页扫描影像，本卡没有正文转录。请打开出处链接，以印刷页码定位并逐篇核对标题、旁注、早期发表版本及实际讲述背景。流传区域不等于具体采录点或故事发生地；未自动填坐标、年代或标准码。资料的再利用许可未明；人工作出复核决定前不编入正式图谱。PDF 解析器报告 630 条对象引用或结构警告；请以其他查看器核查对应页面。
+来源为双页扫描影像，本卡没有正文转录。请打开出处链接，以印刷页码定位并逐篇核对标题、旁注、早期发表版本及实际讲述背景。地图标点为所记故事背景或流传区域参考；年代和标准码未自动填写。资料的再利用许可未明；档案保留原有复核状态。PDF 解析器报告 630 条对象引用或结构警告；请以其他查看器核查对应页面。
+
+<!-- astraia:yuhuan-reading-20261123 -->
+## 故事梗概
+
+一位老人告诉三个儿子，海岛与陆地之间曾有一条沉入海底的金地枕。两个哥哥急着寻宝，先后被漩涡和海浪卷走。
+
+小儿子先学驾船，与渔人一起谋生，渐渐有了积蓄。多年后他看着金黄的鱼和银白的鱼，听同伴说他们每天都在“捞金地枕”，才明白海里的收获也是宝。
+
+## 地图参考
+
+点位是选辑所记坎门流传地区的区域参考，不是具体采录地或传说中地点。

@@ -5,14 +5,14 @@ aliases:
 - 鱼司娘娘
 node_type: case
 z_layer: 1
-genre: unclassified
+genre: folktale
 credibility_tier: B
 is_fictional_quarantine: false
 spatial:
-  lat: null
-  lng: null
-  precision: culture_region
-  location_name: 浙江玉环：选辑范围，非逐篇采录点或故事地点
+  lat: 28.09654
+  lng: 121.16279
+  precision: city
+  location_name: 浙江玉环 · 大麦屿地区参考
   culture_region: East Asia · China · Zhejiang
 temporal: null
 standards:
@@ -57,6 +57,13 @@ sources:
   locator: 传说故事篇 / 旁注印刷第 55 页 / PDF 第 36 页
   local_path: .local/import-sources/china-yuhuan/yuhuan-oral-literature-2008.pdf
   content_sha256: a771284e485d28ce8987cce775af53794663e497eb109408f346d48aa8b4c5eb
+- citation: OpenStreetMap，大麦屿街道地名参考。
+  type: map_reference
+  url: https://mapcarta.com/N4556057068
+  doi: null
+  locator: 大麦屿地区参考点：28.09654, 121.16279
+  local_path: null
+  content_sha256: null
 audit:
   created_at: '2026-11-22'
   reviewed_by_human: false
@@ -65,6 +72,9 @@ audit:
   reviewer: null
   reviewed_at: null
   review_note: null
+  public_release: false
+  public_rights_note: null
+  public_content_sha256: null
 ---
 
 ## 目录索引
@@ -79,7 +89,7 @@ audit:
 
 ## 原文与复核
 
-来源为双页扫描影像，本卡没有正文转录。请打开出处链接，以印刷页码定位并逐篇核对标题、旁注、早期发表版本及实际讲述背景。流传区域不等于具体采录点或故事发生地；未自动填坐标、年代或标准码。资料的再利用许可未明；人工作出复核决定前不编入正式图谱。PDF 解析器报告 630 条对象引用或结构警告；请以其他查看器核查对应页面。
+来源为双页扫描影像，本卡没有正文转录。请打开出处链接，以印刷页码定位并逐篇核对标题、旁注、早期发表版本及实际讲述背景。地图标点为所记故事背景或流传区域参考；年代和标准码未自动填写。资料的再利用许可未明；档案保留原有复核状态。PDF 解析器报告 630 条对象引用或结构警告；请以其他查看器核查对应页面。
 
 <!-- astraia:yuhuan-credits-v1 -->
 ## 采录与早期刊载旁注补充（印刷第 55 页，待复核）
@@ -90,3 +100,14 @@ audit:
 - 原册所列早期刊载线索（未核对该版原件）：载《中国民间文学集成·浙江省玉环县故事卷》，浙江民间文学集成编委会，1989年8月。
 
 这些是选辑旁注的转记候选，不代表已核实原始采录、早期刊物或人名；流传区域不等同于故事地点或记录地点。
+
+<!-- astraia:yuhuan-reading-20261123 -->
+## 故事梗概
+
+大麦屿一位渔翁屡次空网，织布的女儿听见渔仙指点，便坚持随父出海。她和父亲在礁边连获丰收，附近船只也满载而归。
+
+渔霸借口女子上船触犯规矩，前来索鱼并羞辱她。姑娘愤而投海，巨浪吞没了渔霸的船；此后人们以她的名字称呼海礁，并在庙中纪念鱼司娘娘。
+
+## 地图参考
+
+点位代表故事提到的大麦屿地区，不指向具体渔家、海礁或故事发生处。

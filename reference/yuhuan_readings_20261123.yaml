@@ -1,0 +1,274 @@
+version: 1
+pdf_sha256: a771284e485d28ce8987cce775af53794663e497eb109408f346d48aa8b4c5eb
+records:
+- id: case_cn_yuhuan_2008_p020
+  original_sha256: f22fbba236a9584ef8be524d40b72e99ecb8dc2f672e3f180f5acb6f0832704c
+  spatial:
+    lat: 28.2198
+    lng: 121.29325
+    precision: city
+    location_name: 浙江玉环 · 楚门镇区域参考
+    culture_region: East Asia · China · Zhejiang
+  map_label: 楚门
+  location_note: 点位是选辑所记楚门流传地区的镇区参考，不是具体采录地或传说中地点。
+  geo_sources: &id002
+  - citation: OpenStreetMap / GeoNames，楚门镇地名参考。
+    type: map_reference
+    url: https://mapcarta.com/15975258
+    locator: 楚门镇区参考点：28.21980, 121.29325
+  paragraphs:
+  - 梅溪老倌出海遇风，借住在一座孤岛。离开时，岛上的住持送他一根能平定风浪的紫竹。
+  - 返航途中，他让一位老人搭船。夜里醒来，他看到白龙托着船飞过山海，才知道客人是盐坑龙。后来他到龙潭赴约，龙又赠他一面铜锣，说旱时敲响便会有雨。
+- id: case_cn_yuhuan_2008_p029
+  original_sha256: faf67b2b618f590283bf15a41d2e0d208d0fcb0f15407c9399002222f0337aa6
+  spatial:
+    lat: 28.08454
+    lng: 121.2737
+    precision: city
+    location_name: 浙江玉环 · 坎门地区参考
+    culture_region: East Asia · China · Zhejiang
+  map_label: 坎门
+  location_note: 点位是选辑所记坎门流传地区的区域参考，不是具体采录地或传说中地点。
+  geo_sources: &id001
+  - citation: GeoNames，坎门地名参考。
+    type: map_reference
+    url: https://mapcarta.com/15955296
+    locator: 坎门地区参考点：28.08454, 121.27370
+  paragraphs:
+  - 一位老人告诉三个儿子，海岛与陆地之间曾有一条沉入海底的金地枕。两个哥哥急着寻宝，先后被漩涡和海浪卷走。
+  - 小儿子先学驾船，与渔人一起谋生，渐渐有了积蓄。多年后他看着金黄的鱼和银白的鱼，听同伴说他们每天都在“捞金地枕”，才明白海里的收获也是宝。
+- id: case_cn_yuhuan_2008_p030
+  original_sha256: 5e6c9f0e68c9d39d7b20b86ed60b5c900cd4f3e20b1ef0bbc4423b376c59add1
+  spatial:
+    lat: 28.08454
+    lng: 121.2737
+    precision: city
+    location_name: 浙江玉环 · 坎门地区参考
+    culture_region: East Asia · China · Zhejiang
+  map_label: 坎门
+  location_note: 点位是选辑所记坎门流传地区的区域参考，不是具体采录地或传说中地点。
+  geo_sources: *id001
+  paragraphs:
+  - 传说漩门湾底沉着一条金门槛。渔夫放生一只会说话的小海豚后，得知只有九兄弟同心，用足够长的石花草绳才能把它吊起来。
+  - 九个儿子忙了许久，终于把金门槛拉出水面。可每个人都开始盘算自己能分到多少，绳索越来越重，最后断开，金门槛又沉回湾底。
+  - 这则讲述最后提到后来横跨漩门的堤坝，把水下宝物与人们共同修筑的道路并置。
+- id: case_cn_yuhuan_2008_p033
+  original_sha256: e268d627f947f955ec0ca02196cb7d78c7ebccc83178541c8357879bc4b0a3ce
+  spatial:
+    lat: 28.1023
+    lng: 121.4037
+    precision: city
+    location_name: 浙江玉环 · 大鹿岛岛域参考
+    culture_region: East Asia · China · Zhejiang
+  map_label: 大鹿岛
+  location_note: 点位参考大鹿岛区域，表示传说所指的岛屿，并非故事采录地。
+  geo_sources:
+  - citation: 玉环市渔业行政执法船舶码头项目环境影响报告书。
+    type: map_reference
+    url: https://29634560.s21i.faiusr.com/61/ABUIABA9GAAgwqWxqgYonr_pxgE.pdf
+    locator: 表 2.7-1：大鹿岛旅游休闲娱乐区参考坐标
+  paragraphs:
+  - 吕洞宾听说温州叫鹿城，却没有见到城里的鹿，便想带几只鹿去。途中他找到一家三口，却发现它们是花斑鹿，而不是传说中的白鹿。
+  - 眼看天亮，仙友已先行离开，他把三只鹿推入海中，自己追了上去。鹿从水中挣出，变成大、中、小三座岛；故事说渔船经过时，风里还能听见它们的鸣叫。
+- id: case_cn_yuhuan_2008_p035
+  original_sha256: 0ae7432aec8fe42cbb4c3184fd390d60a863df7815a1ff4b8f5353414367862f
+  spatial:
+    lat: 28.09654
+    lng: 121.16279
+    precision: city
+    location_name: 浙江玉环 · 大麦屿地区参考
+    culture_region: East Asia · China · Zhejiang
+  map_label: 大麦屿
+  location_note: 点位代表故事提到的大麦屿地区，不指向具体渔家、海礁或故事发生处。
+  geo_sources: &id004
+  - &id003
+    citation: OpenStreetMap，大麦屿街道地名参考。
+    type: map_reference
+    url: https://mapcarta.com/N4556057068
+    locator: 大麦屿地区参考点：28.09654, 121.16279
+  paragraphs:
+  - 东海龙王掀起风浪，许多岛屿被淹没。传说一条大鲳鱼为了让人们有安身处，化成一座平稳的岛，后来住上了渔家。
+  - 鱼担心自己一激动岛就会摇晃，便用长索把尾鳍系在对岸山头。人们从海上望去，岛像一粒麦子，连接处像麦芒，于是有了大麦屿的名字。
+- id: case_cn_yuhuan_2008_p036
+  original_sha256: b021636c380bca3cb5a05ea8efb041c2ea4cf9989ff3dc4d5a7baf4cddfe6990
+  spatial:
+    lat: 28.2198
+    lng: 121.29325
+    precision: city
+    location_name: 浙江玉环 · 楚门镇区域参考
+    culture_region: East Asia · China · Zhejiang
+  map_label: 楚门
+  location_note: 点位是选辑所记楚门流传地区的镇区参考，不是具体采录地或传说中地点。
+  geo_sources: *id002
+  paragraphs:
+  - 漩门水急，传说李铁拐想挑两座山填住海峡，便用竹子作担，赶在天亮之前出发。
+  - 吕洞宾在鸡冠山学了一声鸡叫，惊醒了巡海的神。李铁拐一急，把两座山和扁担丢在海上。后来人们把有洞的两座小山与细长岛屿，分别讲成洞正山和冲担屿的来历。
+- id: case_cn_yuhuan_2008_p038
+  original_sha256: f53d023e5c7c69b4eaf6faa2fa40e97ed3b40a5008f4a3da74ec0cd5ef0bf054
+  spatial:
+    lat: 28.2198
+    lng: 121.29325
+    precision: city
+    location_name: 浙江玉环 · 楚门镇区域参考
+    culture_region: East Asia · China · Zhejiang
+  map_label: 楚门
+  location_note: 点位是选辑所记楚门流传地区的镇区参考，不是具体采录地或传说中地点。
+  geo_sources: *id002
+  paragraphs:
+  - 石匠石华受雇给财主雕石马。干活时，他听见山腹反复发问；一位老人告诉他，雕好的马其实可以腾空。
+  - 财主骗他说会让英妹与他成亲，却暗中将她卖走。石华骑上石马，让山塌埋住财主，随后追上运走英妹的船，两人一同飞向海岛。
+  - 讲述者把这匹石马与楚门的天马山联系起来。
+- id: case_cn_yuhuan_2008_p043
+  original_sha256: 8056c08b01c97f61b742912cd6df360b661e3e3309b5ec40606277cda456d03d
+  spatial:
+    lat: 28.09654
+    lng: 121.16279
+    precision: city
+    location_name: 浙江玉环 · 原陈屿流传地区参考
+    culture_region: East Asia · China · Zhejiang
+  map_label: 大麦屿
+  location_note: 选辑标注流传于当时的陈屿；点位使用今大麦屿街道区域参考，不是具体采录地。
+  geo_sources: &id005
+  - *id003
+  - citation: 玉环市地方志编纂委员会，《玉环县志（1989—2016）》。
+    type: map_reference
+    url: https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web3202/site/attach/0/a9253bb9ee9840efb3da7fc4010c0264.pdf
+    locator: 行政区划：2009 年陈屿办事处改设大麦屿街道
+  paragraphs:
+  - 古城附近的山岗远看像一条巨大的蜈蚣。传说一条蜈蚣精曾戏弄一位路过的女子，围观者的议论让她羞愤难当，最终失去了生命。
+  - 张必官决定除害，追着蜈蚣一直到海边。它的头卡在礁石缝里，被斩断后身子留在山岗；故事也把附近地名和岩石痕迹解释成这场追逐的遗迹。
+- id: case_cn_yuhuan_2008_p044
+  original_sha256: 7234bac8e65a7ca414ed1387c03f9c315d82073fb7489bf74afcb67c5e7236e7
+  spatial:
+    lat: 28.2198
+    lng: 121.29325
+    precision: city
+    location_name: 浙江玉环 · 楚门镇区域参考
+    culture_region: East Asia · China · Zhejiang
+  map_label: 楚门
+  location_note: 点位是选辑所记楚门流传地区的镇区参考，不是具体采录地或传说中地点。
+  geo_sources: *id002
+  paragraphs:
+  - 红岗山旁的岩石像一张朝东的龙口，原本流出的水滋养田地。传说财主听信风水之说，铸了铁人堵住水口，周围的田地便干旱了。
+  - 老人强四多次设法凿开铁人。山野中的花姑娘指点他染遍野花，他得到锤和锯，终于砸开铁人。水重新涌出，也冲走了赶来阻拦的财主。
+- id: case_cn_yuhuan_2008_p046
+  original_sha256: ae50a546a49e6dcd443e5d3fb354a29ab0e4abf7a5adad75efbcbd4457cca020
+  spatial:
+    lat: 28.2198
+    lng: 121.29325
+    precision: city
+    location_name: 浙江玉环 · 楚门镇区域参考
+    culture_region: East Asia · China · Zhejiang
+  map_label: 楚门
+  location_note: 点位是选辑所记楚门流传地区的镇区参考，不是具体采录地或传说中地点。
+  geo_sources: *id002
+  paragraphs:
+  - 一个砍柴人进山时看两位老人下棋，看完一局才动身回家。老人用树枝变出马和鞍，叮嘱他若家里人不认识他，就回来找他们。
+  - 回到家后，他才发现已过了好几代，家人把他说成骗子。他离开后，马和鞍化成两棵柏树，长大后交合如门，便有了柏树台门的故事。
+- id: case_cn_yuhuan_2008_p052
+  original_sha256: 55d0a12262469e56fd072188665805cf0bb52cc6d021cab48c0db0442e53baa1
+  spatial:
+    lat: 28.2198
+    lng: 121.29325
+    precision: city
+    location_name: 浙江玉环 · 楚门镇区域参考
+    culture_region: East Asia · China · Zhejiang
+  map_label: 楚门
+  location_note: 点位是选辑所记楚门流传地区的镇区参考，不是具体采录地或传说中地点。
+  geo_sources: *id002
+  paragraphs:
+  - 一位保护渔民的女头领常到山顶梳长发。一天听到海盗来袭，她急忙返回寨中迎战，遗落了随身的金梳。
+  - 战事结束后，她和乡亲遍寻山上也没有找到。后来人们再没见到她的队伍，便猜测她是仙人，金梳藏在山里；这座山也被称作梳头山。
+- id: case_cn_yuhuan_2008_p054
+  original_sha256: 6b3eb8d0305d7a447c2c0045403dcdba5ce8e7402a1ebf1c46f08a3cda233d69
+  spatial:
+    lat: 28.09654
+    lng: 121.16279
+    precision: city
+    location_name: 浙江玉环 · 大麦屿地区参考
+    culture_region: East Asia · China · Zhejiang
+  map_label: 大麦屿
+  location_note: 点位代表故事提到的大麦屿地区，不指向具体渔家、海礁或故事发生处。
+  geo_sources: *id004
+  paragraphs:
+  - 大麦屿一位渔翁屡次空网，织布的女儿听见渔仙指点，便坚持随父出海。她和父亲在礁边连获丰收，附近船只也满载而归。
+  - 渔霸借口女子上船触犯规矩，前来索鱼并羞辱她。姑娘愤而投海，巨浪吞没了渔霸的船；此后人们以她的名字称呼海礁，并在庙中纪念鱼司娘娘。
+- id: case_cn_yuhuan_2008_p056
+  original_sha256: 0730ef565bf2f9762f386ff06c0eb34c08ee1e9d3fec3b1dd811cffd952ffe70
+  spatial:
+    lat: 28.08454
+    lng: 121.2737
+    precision: city
+    location_name: 浙江玉环 · 坎门地区参考
+    culture_region: East Asia · China · Zhejiang
+  map_label: 坎门
+  location_note: 点位是选辑所记坎门流传地区的区域参考，不是具体采录地或传说中地点。
+  geo_sources: *id001
+  paragraphs:
+  - 渔家姑娘绢珠放生一条流泪的小鱼，擦过鱼泪后，她的眼睛竟能看清水中的鱼群和暗礁。她随父亲出海，为大家指引下网的位置。
+  - 渔霸想独占她的本领，把她关起来。绢珠将自己的眼睛交给父亲，托他安在船头；故事以此解释渔船两侧向下看的船眼。
+- id: case_cn_yuhuan_2008_p057
+  original_sha256: 7f81d6e0e72ff6c67194a2e38c330a05ef2954301b84eeada8def8f67c6bd2da
+  spatial:
+    lat: 28.08454
+    lng: 121.2737
+    precision: city
+    location_name: 浙江玉环 · 坎门地区参考
+    culture_region: East Asia · China · Zhejiang
+  map_label: 坎门
+  location_note: 点位是选辑所记坎门流传地区的区域参考，不是具体采录地或传说中地点。
+  geo_sources: *id001
+  paragraphs:
+  - 坎门渔家少年养了一条小蜈蚣，给它取名“一条龙”。后山的毒蛇因争食受伤，趁父子熟睡时潜入屋内，蜈蚣及时出来抵挡，与蛇同归于尽。
+  - 少年记念它救了家人，用彩布做成蜈蚣形的旗子，挂到渔船桅杆上。故事说，后来这种旗也成为渔船庆丰收的标记。
+- id: case_cn_yuhuan_2008_p059
+  original_sha256: 383f9bb83d8a66684534d98eb62f76eddd3dbd286f59805af02359c1372074e5
+  spatial:
+    lat: 28.08454
+    lng: 121.2737
+    precision: city
+    location_name: 浙江玉环 · 坎门地区参考
+    culture_region: East Asia · China · Zhejiang
+  map_label: 坎门
+  location_note: 点位是选辑所记坎门流传地区的区域参考，不是具体采录地或传说中地点。
+  geo_sources: *id001
+  paragraphs:
+  - 造船木匠的女儿红衫子为平息危害渔民的乌龙，驾船出海后没有再回来。父亲四处寻找，只看到海面上的一条红鱼。
+  - 红鱼带他找到岩壁上的红色海绵。木匠把它带回家，故事里人们把这看作女儿留给乡亲的帮助；选辑借此讲述渔民寻找“红鱼窝”的来历。
+- id: case_cn_yuhuan_2008_p068
+  original_sha256: 919e7ce573b2e377f22dedfc68b1cc9e5f902d4bddf7b4bad2179c8b48d260ac
+  spatial:
+    lat: 28.08454
+    lng: 121.2737
+    precision: city
+    location_name: 浙江玉环 · 坎门地区参考
+    culture_region: East Asia · China · Zhejiang
+  map_label: 坎门
+  location_note: 点位是选辑所记坎门流传地区的区域参考，不是具体采录地或传说中地点。
+  geo_sources: *id001
+  paragraphs:
+  - 玉环一处村落里，两个姓氏的家族在中元祭祀前为买肉发生争执，争吵发展成两边族人的冲突。
+  - 后来长辈出面和解，双方一起补过节。讲述者说，从此两姓分别在农历七月十三和十五过中元，以记住那次纷争与和解。
+- id: case_cn_yuhuan_2008_p083
+  original_sha256: 2bbeec74ea172577ac66a1c3dbe2015546958596de4235711fe02263ba6195d5
+  spatial:
+    lat: 28.09654
+    lng: 121.16279
+    precision: city
+    location_name: 浙江玉环 · 原陈屿流传地区参考
+    culture_region: East Asia · China · Zhejiang
+  map_label: 大麦屿
+  location_note: 选辑标注流传于当时的陈屿；点位使用今大麦屿街道区域参考，不是具体采录地。
+  geo_sources: *id005
+  paragraphs:
+  - 砍柴青年用一担柴替路人搭桥，得到许多人称赞。桥边的仙人石化成老人，许他前程；青年后来考中做官。
+  - 富贵之后，他为求更多回报，农忙时强征乡民修大石桥，引来怨恨。老人再次出现，将他变成黑驴；传说桥面上刻着驴形，正是这个故事留下的记号。
+hub:
+  id: corpus_cn_yuhuan_2008
+  kind: research
+  source_numbers:
+  - 1
+  paragraphs:
+  - 这部 2008 年选辑收录玉环沿海的地方传说、风物故事与习俗讲述，书中为许多篇目保留了讲述者、整理者和流传区域。
+  - 这一组阅读稿沿着海岸展开：海岛如何得名，龙潭与溪水怎样进入故事，渔船上的眼睛和旗帜又如何被讲述。它们来自不同讲述者，放在一起是为了比较，不代表同一次采录。
+  - 每篇保留原册页码与对应地图范围；地区点表示故事背景或记载的流传区域，不表示人物或事件的精确位置。
