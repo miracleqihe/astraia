@@ -7,6 +7,7 @@ import { createLifeMotion } from './lifeMotion';
 import { lifeStardust } from './lifeStardust';
 import { createLifeGalaxyLabels } from './lifeGalaxyLabels';
 import { createLifePortal } from './lifePortal';
+import { lifeArcPoint, sampleLifeTrace } from './lifeArcs';
 import type { LifeDrawing, LifeHover } from './lifeSceneTypes';
 
 type Layout = ReturnType<typeof lifeGalaxyLayout>;
@@ -25,14 +26,15 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   camera.position.set(0, -620, 985);
   const overviewDirection = camera.position.clone().normalize();
   const controls = new OrbitControls(camera, canvas);
-  const labels = createLifeGalaxyLabels(host, layout, onVolume);
+  const labels = createLifeGalaxyLabels(host, layout, subjects, onVolume, onSubject);
   const portal = createLifePortal(host, entries, layout, onSelect);
-  let labelsVisible = true;
+  let labelsVisible = true, labelVolume: string | null = null, labelSubject: string | null = null, labelSelected = false;
   controls.enableDamping = true; controls.dampingFactor = .08;
   controls.minDistance = 110; controls.maxDistance = 1800; controls.enablePan = true;
 
   const hubPositions = new Float32Array(subjects.length * 3);
   const dust = lifeStardust(layout, 1200);
+  const dustBase = dust.positions.slice();
   const dustColors = new Uint32Array(1200);
   subjects.forEach((subject, index) => layout.centers.get(subject.id)?.toArray(hubPositions, index * 3));
   // Reuse the screen projections from drawing for pointer hit tests.  This
@@ -91,44 +93,32 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       return rgb(value >> 16 & 255, value >> 8 & 255, value & 255);
     });
   });
+  const volumeCss = layout.volumes.map((_, index) => [1, .45, .22].map((factor) => {
+    color.set(LIFE_PALETTES[index % LIFE_PALETTES.length]).multiplyScalar(factor);
+    return `#${color.getHexString()}`;
+  }));
+  const entryVolumes = entries.map((entry) => layout.volumes.indexOf(entry.volume));
   entries.forEach((entry, i) => {
     const [full, focus, subject] = volumeColors[layout.volumes.indexOf(entry.volume)];
     fullColors[i] = full; focusColors[i] = focus; subjectColors[i] = subject;
   });
-  const background = rgb(4, 6, 12), guideColor = rgb(43, 49, 56), hubColor = rgb(210, 176, 113);
+  const nodeSize = entries.map((entry) => Math.min(2.6, 1.5 + Math.log2(1 + entry.links.length + (incoming.get(entry.id)?.length ?? 0)) * .22));
+  const background = rgb(4, 6, 12), guideColor = rgb(43, 49, 56), dimGuideColor = rgb(13, 16, 23), hubColor = rgb(210, 176, 113);
   const lineColor = rgb(174, 146, 93), selectedColor = rgb(255, 233, 189);
-  // These guides are fixed in world space; only their projection changes.
-  const rings = [90, 200, 320, 445].map((radius) => {
-    const coordinates = new Float32Array(129 * 3);
-    for (let i = 0; i <= 128; i++) {
-      const angle = i / 128 * Math.PI * 2;
-      coordinates[i * 3] = Math.cos(angle) * radius;
-      coordinates[i * 3 + 1] = Math.sin(angle) * radius;
-      coordinates[i * 3 + 2] = -50;
-    }
-    return coordinates;
-  });
-  const guideEdges: THREE.Vector3[] = [];
-  for (const volume of layout.volumes) {
-    let previous = new THREE.Vector3();
-    for (const subject of subjects) {
-      if (subject.volume !== volume) continue;
-      const next = layout.centers.get(subject.id);
-      if (next) { guideEdges.push(previous, next); previous = next; }
-    }
-  }
   let image: ImageData | null = null;
   let pixels = new Uint32Array();
   let width = 1, height = 1;
+  let pixelRatio = 1;
   let projectedX = 0, projectedY = 0;
   let focus: THREE.Vector3 | null = null;
   let focusDirection: THREE.Vector3 | null = null;
   let focusDistance = 0;
-  let selectedPoint: THREE.Vector3 | undefined;
+  let selectedPoint: THREE.Vector3 | undefined, activeVolume: string | null = null;
   let edges: THREE.Vector3[] = [];
   // Reuse the flight vectors on every frame to avoid creating temporary
   // objects during long camera animations on software-rendered devices.
   const focusDelta = new THREE.Vector3(), focusBearing = new THREE.Vector3();
+  const arcPoint = new THREE.Vector3();
   let frame = 0;
   let lastFrame = 0;
   let interacting = false;
@@ -143,7 +133,12 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     if (!motionEnabled || disposed || document.hidden) { motionLast = 0; return; }
     const now = performance.now();
     if (!dragging && !interacting && !focus && !gravity.active()) {
-      if (motionLast) { motion.advance((now - motionLast) / 1000); schedule(); }
+      if (motionLast) {
+        motion.advance((now - motionLast) / 1000);
+        motion.transformDust(dust.positions, dustBase, dust.groups);
+        subjects.forEach((subject, index) => layout.centers.get(subject.id)?.toArray(hubPositions, index * 3));
+        schedule();
+      }
       motionLast = now;
     } else motionLast = 0;
     motionTimer = window.setTimeout(ambientTick, 90);
@@ -210,8 +205,102 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       if (twice <= dx) { error += dx; y0 += sy; }
     }
   }
+  // On high-DPR software canvases, batch vector paths directly into Skia.
+  // This avoids transferring a full multi-megabyte ImageData on every drag.
+  function drawVector() {
+    ctx.fillStyle = '#04060c'; ctx.fillRect(0, 0, width, height);
+    nodeHeads.fill(-1); hubHeads.fill(-1);
+    camera.updateMatrixWorld(); projection.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
+    if (!interacting) {
+      ctx.fillStyle = 'rgba(190,190,190,.2)'; ctx.beginPath();
+      for (let i = 0; i < dustColors.length; i++) {
+        if (project(dust.positions[i * 3], dust.positions[i * 3 + 1], dust.positions[i * 3 + 2])) ctx.rect(projectedX, projectedY, 1, 1);
+      }
+      ctx.fill();
+    }
+    ctx.lineWidth = 1;
+    for (const group of layout.structuralEdges) {
+      ctx.strokeStyle = activeVolume && group.volume !== activeVolume ? 'rgba(212,175,55,.025)' : 'rgba(212,175,55,.16)';
+      ctx.beginPath();
+      for (let i = 0; i < group.points.length; i += interacting ? 4 : 2) {
+        const a = group.points[i], b = group.points[i + 1];
+        if (!project(a.x, a.y, a.z)) continue;
+        const x = projectedX, y = projectedY;
+        if (project(b.x, b.y, b.z)) { ctx.moveTo(x, y); ctx.lineTo(projectedX, projectedY); }
+      }
+      ctx.stroke();
+    }
+    ctx.strokeStyle = 'rgba(226,190,124,.7)'; ctx.beginPath();
+    for (let i = 0; i < edges.length; i += 2) {
+      const a = edges[i], b = edges[i + 1]; let haveLast = false;
+      for (let step = 0; step <= 10; step++) {
+        lifeArcPoint(a, b, step / 10, arcPoint);
+        if (project(arcPoint.x, arcPoint.y, arcPoint.z)) {
+          if (haveLast) ctx.lineTo(projectedX, projectedY); else ctx.moveTo(projectedX, projectedY);
+          haveLast = true;
+        } else haveLast = false;
+      }
+    }
+    ctx.stroke();
+    const batches = Array.from({ length: layout.volumes.length * 3 }, () => new Path2D());
+    const hardCores = new Path2D();
+    for (let i = 0; i < entries.length; i++) {
+      if (!project(layout.positions[i * 3], layout.positions[i * 3 + 1], layout.positions[i * 3 + 2])) { nodeScreen[i * 2] = NaN; continue; }
+      const x = projectedX, y = projectedY;
+      indexScreen(nodeScreen, nodeHeads, nodeNext, i, x / width, y / height);
+      if (!Number.isFinite(nodeScreen[i * 2])) continue;
+      const level = colors[i] === fullColors[i] ? 0 : colors[i] === focusColors[i] ? 1 : 2;
+      const size = Math.max(2, Math.round(nodeSize[i] * pixelRatio));
+      batches[entryVolumes[i] * 3 + level].rect(x, y, size, size);
+      if (level === 0) hardCores.rect(x + Math.floor(size / 2), y + Math.floor(size / 2), 1, 1);
+    }
+    for (let volume = 0; volume < layout.volumes.length; volume++) for (let level = 0; level < 3; level++) {
+      ctx.fillStyle = volumeCss[volume][level]; ctx.fill(batches[volume * 3 + level]);
+    }
+    ctx.fillStyle = '#fffdf7'; ctx.fill(hardCores);
+    const brightGuides = new Path2D(), dimGuides = new Path2D();
+    for (let i = 0; i < subjects.length; i++) {
+      if (!project(hubPositions[i * 3], hubPositions[i * 3 + 1], hubPositions[i * 3 + 2])) { hubScreen[i * 2] = NaN; continue; }
+      const x = projectedX, y = projectedY, r = 3 * pixelRatio;
+      indexScreen(hubScreen, hubHeads, hubNext, i, x / width, y / height);
+      const path = activeVolume && subjects[i].volume !== activeVolume ? dimGuides : brightGuides;
+      path.moveTo(x-r, y); path.lineTo(x+r, y); path.moveTo(x, y-r); path.lineTo(x, y+r);
+    }
+    for (const volume of layout.volumes) {
+      const center = layout.volumeCenters.get(volume);
+      if (!center || !project(center.x, center.y, center.z)) continue;
+      const x = projectedX, y = projectedY, r = 8 * pixelRatio;
+      const path = activeVolume && volume !== activeVolume ? dimGuides : brightGuides;
+      path.moveTo(x-r, y); path.lineTo(x+r, y); path.moveTo(x, y-r); path.lineTo(x, y+r);
+    }
+    ctx.strokeStyle = '#e2c28c'; ctx.stroke(brightGuides);
+    ctx.strokeStyle = 'rgba(226,194,140,.2)'; ctx.stroke(dimGuides);
+    ctx.fillStyle = '#fffdf7'; ctx.beginPath();
+    for (const volume of layout.volumes) {
+      const center = layout.volumeCenters.get(volume);
+      if ((!activeVolume || volume === activeVolume) && center && project(center.x, center.y, center.z))
+        ctx.rect(projectedX-pixelRatio, projectedY-pixelRatio, 2*pixelRatio, 2*pixelRatio);
+    }
+    if (selectedPoint && project(selectedPoint.x, selectedPoint.y, selectedPoint.z))
+      ctx.rect(projectedX-2*pixelRatio, projectedY-2*pixelRatio, 4*pixelRatio, 4*pixelRatio);
+    if (motionEnabled) for (let i = 0; i < edges.length; i += 2) {
+      lifeArcPoint(edges[i], edges[i+1], (performance.now() / 5200 + i * .091) % 1, arcPoint);
+      if (project(arcPoint.x, arcPoint.y, arcPoint.z)) ctx.rect(projectedX, projectedY, 2*pixelRatio, 2*pixelRatio);
+    }
+    ctx.fill();
+    finishDraw();
+  }
+  function finishDraw() {
+    labels.update(camera, labelsVisible, labelVolume, labelSubject, labelSelected);
+    const portalPoint = portal.point();
+    if (portalPoint && project(portalPoint.x, portalPoint.y, portalPoint.z))
+      portal.position(projectedX / width * host.clientWidth + 10, projectedY / height * host.clientHeight + 10,
+        projectedX >= 0 && projectedX <= width && projectedY >= 0 && projectedY <= height);
+    else portal.position(0, 0, false);
+  }
   function draw() {
     if (!image) return;
+    if (pixelRatio > 1) { drawVector(); return; }
     const started = import.meta.env.DEV ? performance.now() : 0;
     pixels.fill(background);
     nodeHeads.fill(-1); hubHeads.fill(-1);
@@ -224,29 +313,18 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       const center = layout.volumeCenters.get(volume);
       if (!center || !project(center.x, center.y, center.z)) continue;
       const x = projectedX, y = projectedY;
-      for (let k = -9; k <= 9; k++) { pixel(x + k, y, guideColor); pixel(x, y + k, guideColor); }
-      for (let k = -4; k <= 4; k++) { pixel(x + k, y, hubColor); pixel(x, y + k, hubColor); }
-      for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) pixel(x + dx, y + dy, selectedColor);
+      const dim = !!activeVolume && volume !== activeVolume;
+      for (let k = -Math.round(9 * pixelRatio); k <= Math.round(9 * pixelRatio); k++) { pixel(x + k, y, dim ? dimGuideColor : guideColor); pixel(x, y + k, dim ? dimGuideColor : guideColor); }
+      for (let k = -Math.round(4 * pixelRatio); k <= Math.round(4 * pixelRatio); k++) { pixel(x + k, y, dim ? guideColor : hubColor); pixel(x, y + k, dim ? guideColor : hubColor); }
+      const core = Math.max(1, Math.round(pixelRatio));
+      for (let dy = -core; dy <= core; dy++) for (let dx = -core; dx <= core; dx++) pixel(x + dx, y + dy, dim ? guideColor : selectedColor);
     }
-    // A 32-segment guide still reads as a smooth circle at the reduced motion
-    // resolution, and avoids projecting and clipping three quarters of the
-    // guide segments on every CPU-rendered drag or camera flight. The full
-    // 128-segment rings return automatically when the view becomes still.
-    const ringStep = interacting ? 4 : 1;
-    for (const ring of rings) {
-      let lastX = 0, lastY = 0, haveLast = false;
-      for (let i = 0; i <= 128; i += ringStep) {
-        if (project(ring[i * 3], ring[i * 3 + 1], ring[i * 3 + 2])) {
-          if (haveLast) line(lastX, lastY, projectedX, projectedY, guideColor);
-          lastX = projectedX; lastY = projectedY; haveLast = true;
-        } else haveLast = false;
-      }
-    }
-    for (let i = 0; i < guideEdges.length; i += 2) {
-      const a = guideEdges[i], b = guideEdges[i + 1];
+    for (const group of layout.structuralEdges) for (let i = 0; i < group.points.length; i += 2) {
+      const a = group.points[i], b = group.points[i + 1];
       if (!project(a.x, a.y, a.z)) continue;
       const x = projectedX, y = projectedY;
-      if (project(b.x, b.y, b.z)) line(x, y, projectedX, projectedY, guideColor);
+      if (project(b.x, b.y, b.z)) line(x, y, projectedX, projectedY,
+        activeVolume && group.volume !== activeVolume ? dimGuideColor : guideColor);
     }
     if (project(0, 0, 0)) {
       const x = projectedX, y = projectedY;
@@ -254,13 +332,19 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     }
     for (let i = 0; i < edges.length; i += 2) {
       const a = edges[i], b = edges[i + 1];
-      if (!project(a.x, a.y, a.z)) continue;
-      const x = projectedX, y = projectedY;
-      if (project(b.x, b.y, b.z)) line(x, y, projectedX, projectedY, lineColor);
+      let lastX = 0, lastY = 0, haveLast = false;
+      for (let step = 0; step <= 10; step++) {
+        lifeArcPoint(a, b, step / 10, arcPoint);
+        if (project(arcPoint.x, arcPoint.y, arcPoint.z)) {
+          if (haveLast) line(lastX, lastY, projectedX, projectedY, lineColor);
+          lastX = projectedX; lastY = projectedY; haveLast = true;
+        } else haveLast = false;
+      }
     }
     if (motionEnabled) for (let i = 0; i < edges.length; i += 2) {
       const a = edges[i], b = edges[i + 1], progress = (performance.now() / 5200 + i * .091) % 1;
-      if (project(a.x + (b.x - a.x) * progress, a.y + (b.y - a.y) * progress, a.z + (b.z - a.z) * progress)) {
+      lifeArcPoint(a, b, progress, arcPoint);
+      if (project(arcPoint.x, arcPoint.y, arcPoint.z)) {
         pixel(projectedX, projectedY, selectedColor); pixel(projectedX + 1, projectedY, selectedColor);
       }
     }
@@ -271,11 +355,9 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       }
       const x = projectedX, y = projectedY, color = colors[i];
       indexScreen(nodeScreen, nodeHeads, nodeNext, i, x / width, y / height);
-      if (x >= 0 && x < width - 1 && y >= 0 && y < height - 1) {
-        const index = y * width + x;
-        pixels[index] = color; pixels[index + 1] = color;
-        pixels[index + width] = color; pixels[index + width + 1] = color;
-      }
+      const size = Math.max(2, Math.round(nodeSize[i] * pixelRatio));
+      for (let dy = 0; dy < size; dy++) for (let dx = 0; dx < size; dx++) pixel(x + dx, y + dy, color);
+      if (color === fullColors[i]) pixel(x + Math.floor(size / 2), y + Math.floor(size / 2), selectedColor);
     }
     for (let i = 0; i < subjects.length; i++) {
       if (!project(hubPositions[i * 3], hubPositions[i * 3 + 1], hubPositions[i * 3 + 2])) {
@@ -284,19 +366,17 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       }
       const x = projectedX, y = projectedY;
       indexScreen(hubScreen, hubHeads, hubNext, i, x / width, y / height);
-      for (let k = -3; k <= 3; k++) { pixel(x + k, y, hubColor); pixel(x, y + k, hubColor); }
+      const size = Math.max(3, Math.round(3 * pixelRatio));
+      const dim = !!activeVolume && subjects[i].volume !== activeVolume;
+      for (let k = -size; k <= size; k++) { pixel(x + k, y, dim ? guideColor : hubColor); pixel(x, y + k, dim ? guideColor : hubColor); }
+      pixel(x, y, dim ? guideColor : selectedColor);
     }
     if (selectedPoint && project(selectedPoint.x, selectedPoint.y, selectedPoint.z)) {
       const x = projectedX, y = projectedY;
       for (let j = -2; j <= 2; j++) for (let i = -2; i <= 2; i++) pixel(x + i, y + j, selectedColor);
     }
     ctx.putImageData(image, 0, 0);
-    labels.update(camera, labelsVisible);
-    const portalPoint = portal.point();
-    if (portalPoint && project(portalPoint.x, portalPoint.y, portalPoint.z))
-      portal.position(projectedX / width * host.clientWidth + 10, projectedY / height * host.clientHeight + 10,
-        projectedX >= 0 && projectedX <= width && projectedY >= 0 && projectedY <= height);
-    else portal.position(0, 0, false);
+    finishDraw();
     if (import.meta.env.DEV) {
       canvas.dataset.drawMs = String(performance.now() - started);
       canvas.dataset.drawCount = String(++drawCount);
@@ -339,13 +419,9 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   const resize = () => {
     const cssWidth = Math.max(1, host.clientWidth), cssHeight = Math.max(1, host.clientHeight);
     hitMarginX = 12 / cssWidth; hitMarginY = 12 / cssHeight;
-    // Keep CPU raster and upload work bounded on large displays. A fixed scale
-    // still grows quadratically with viewport size, making the fallback several
-    // times more expensive on 4K screens. Preserve the existing quality for
-    // smaller viewports and restore a sharper image after movement stops.
-    const preferredScale = interacting ? .3 : .7;
-    const pixelBudget = interacting ? 180_000 : 1_000_000;
-    const scale = Math.min(preferredScale, Math.sqrt(pixelBudget / (cssWidth * cssHeight)));
+    // Preserve physical-pixel sharpness in both idle and interaction states.
+    const scale = Math.min(window.devicePixelRatio || 1, 2);
+    pixelRatio = scale;
     const nextWidth = Math.max(1, Math.round(cssWidth * scale));
     const nextHeight = Math.max(1, Math.round(cssHeight * scale));
     if (nextWidth !== width || nextHeight !== height || !image) {
@@ -354,7 +430,7 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       image = ctx.createImageData(width, height); pixels = new Uint32Array(image.data.buffer);
     }
     camera.aspect = cssWidth / cssHeight;
-    if (cssWidth > 760) camera.setViewOffset(cssWidth, cssHeight, cssWidth > 1100 ? 108 : 90, 0, cssWidth, cssHeight);
+    if (cssWidth > 760) camera.setViewOffset(cssWidth, cssHeight, Math.round(cssWidth * .06), 0, cssWidth, cssHeight);
     else camera.clearViewOffset();
     camera.updateProjectionMatrix(); schedule();
   };
@@ -474,9 +550,11 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   let lastFocus = '';
   return {
     update(selected, subject, highlights, connectHighlights = true, volume = null) {
-      labelsVisible = !selected && !subject && !volume && !highlights.length;
+      labelsVisible = !selected && !subject && !volume;
+      labelVolume = volume; labelSubject = subject; labelSelected = !!selected;
       portal.select(selected);
       const chosen = selected ? entryById.get(selected) : undefined;
+      activeVolume = volume ?? subjects.find((item) => item.id === subject)?.volume ?? chosen?.volume ?? null;
       const related = new Set(chosen?.links ?? []);
       const matched = new Set(highlights);
       if (chosen) for (const id of incoming.get(chosen.id) ?? []) related.add(id);
@@ -492,15 +570,16 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
         if (target) edges.push(selectedPoint, target);
       }
       if (!selectedPoint && connectHighlights && highlights.length > 1) {
-        for (let index = 1; index < highlights.length; index++) {
-          const a = layout.locations.get(highlights[index - 1]), b = layout.locations.get(highlights[index]);
+        const trace = sampleLifeTrace(entries, highlights);
+        for (let index = 1; index < trace.length; index++) {
+          const a = layout.locations.get(trace[index - 1]), b = layout.locations.get(trace[index]);
           if (a && b) edges.push(a, b);
         }
       }
       const target = selectedPoint ?? (subject ? layout.centers.get(subject) : volume ? layout.volumeCenters.get(volume) : undefined);
       const key = selected ? `entry:${selected}` : subject ? `subject:${subject}` : volume ? `volume:${volume}` : '';
       if (target && key !== lastFocus) fly(target, selectedPoint ? 285 : subject ? 390 : 590);
-      else if (!target) { focus = null; schedule(); } else schedule();
+      else if (!target && lastFocus) { focus = null; schedule(); } else schedule();
       lastFocus = key;
     },
     setMotion,

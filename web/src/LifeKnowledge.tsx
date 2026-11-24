@@ -4,9 +4,9 @@ import remarkGfm from 'remark-gfm';
 import { ViewportFrame } from './WorkbenchControls';
 import type { LifeBook, LifeEntry } from './life';
 import { lifeSearchExcerpt, OBSERVATION_KEY, rankLifeResults, readObservations } from './lifeExplore';
-import LifeTimeline from './LifeTimeline';
+import LifeResonance from './LifeResonance';
 import LifeInquiry from './LifeInquiry';
-import { LIFE_MILESTONES } from './lifeMilestones';
+import { lifeDimension, type LifeDimension } from './lifeDimensions';
 import './life.css';
 
 const LifeScene = lazy(() => import('./views/LifeScene'));
@@ -37,7 +37,8 @@ export default function LifeKnowledge() {
   const [query, setQuery] = useState('');
   const [sceneMode, setSceneMode] = useState<'galaxy' | 'astrolabe'>('galaxy');
   const [motionEnabled, setMotionEnabled] = useState(() => !window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-  const [milestoneIndex, setMilestoneIndex] = useState<number | null>(null);
+  const [dimension, setDimension] = useState<LifeDimension>('all');
+  const [folioOpen, setFolioOpen] = useState(true);
   const [inquiryIds, setInquiryIds] = useState<string[]>([]);
   const [renderer, setRenderer] = useState<'software' | 'webgl' | null>(null);
   const [observations, setObservations] = useState(readObservations);
@@ -95,9 +96,10 @@ export default function LifeKnowledge() {
       && (!observationsOnly || Object.hasOwn(observations, entry.id)));
     return rankLifeResults(scope, book, deferredQuery, searchText);
   }, [book, subject, volume, deferredQuery, searchText, observations, observationsOnly]);
-  const highlightIds = useMemo(() => milestoneIndex !== null ? [...new Set(LIFE_MILESTONES.slice(0, milestoneIndex + 1).flatMap((event) => event.entries))].filter((id) => byId.has(id))
-    : inquiryIds.length ? inquiryIds : deferredQuery || observationsOnly ? results.slice(0, 30).map((entry) => entry.id) : [],
-  [milestoneIndex, byId, inquiryIds, deferredQuery, observationsOnly, results]);
+  const highlightIds = useMemo(() => inquiryIds.length ? inquiryIds : deferredQuery || observationsOnly
+    ? results.slice(0, 30).map((entry) => entry.id) : dimension !== 'all'
+      ? (book?.entries ?? []).filter((entry) => lifeDimension(entry) === dimension).map((entry) => entry.id) : [],
+  [book, dimension, inquiryIds, deferredQuery, observationsOnly, results]);
   const related = useMemo(() => {
     if (!selected || !book) return [];
     const ids = new Set(selected.links);
@@ -108,6 +110,8 @@ export default function LifeKnowledge() {
   function choose(id: string, anchor?: string) {
     if (!byId.has(id)) return;
     const entry = byId.get(id)!;
+    if (dimension !== 'all' && lifeDimension(entry) !== dimension) setDimension('all');
+    setFolioOpen(true);
     if (subject && subject !== entry.subject) setSubject(null);
     if (volume && volume !== entry.volume) setVolume(null);
     setSelectedId(id); setShowPdf(false);
@@ -127,7 +131,7 @@ export default function LifeKnowledge() {
     window.history.replaceState({}, '', url);
   }
   function chooseSubject(id: string | null) {
-    setSubject(id); setVolume(null); setSelectedId(null); setQuery(''); setLimit(40); setShowPdf(false); setObservationsOnly(false); setMilestoneIndex(null); setInquiryIds([]);
+    setSubject(id); setVolume(null); setSelectedId(null); setQuery(''); setLimit(40); setShowPdf(false); setObservationsOnly(false); setDimension('all'); setInquiryIds([]);
     const url = new URL(window.location.href); url.searchParams.delete('entry');
     url.hash = '';
     window.history.replaceState({}, '', url);
@@ -150,7 +154,7 @@ export default function LifeKnowledge() {
     });
   }
 
-  return <div className="life-workspace" data-low-power={sceneMode === 'astrolabe' || renderer === 'software' ? 'true' : undefined}>
+  return <div className="life-workspace" data-folio-open={folioOpen} data-low-power={sceneMode === 'astrolabe' || renderer === 'software' ? 'true' : undefined}>
     <aside className="life-sidebar" aria-label="知识学科">
       <div className="life-side-heading"><span>OMNIA / KNOWLEDGE ATLAS</span><strong>知识目录</strong><small>五卷 · 二十门</small></div>
       <button className="life-subject-all" type="button" aria-pressed={!subject && !volume} onClick={() => chooseSubject(null)}>
@@ -166,6 +170,8 @@ export default function LifeKnowledge() {
       <ViewportFrame />
       <svg className="life-celestial-hud" aria-hidden="true" viewBox="0 0 600 600">
         <circle cx="300" cy="300" r="244"/><circle cx="300" cy="300" r="233" strokeDasharray="2 8"/>
+        <circle cx="300" cy="300" r="224" strokeDasharray="1 6"/>
+        <ellipse cx="300" cy="300" rx="244" ry="93" transform="rotate(23.5 300 300)" strokeDasharray="4 7"/>
         <circle cx="300" cy="300" r="160" strokeDasharray="3 11"/><circle cx="300" cy="300" r="72"/>
         <path d="M300 44v30 M300 526v30 M44 300h30 M526 300h30 M119 119l20 20 M461 461l20 20 M481 119l-20 20 M139 461l-20 20"/>
         <path d="M300 140 438 380 162 380Z M300 460 162 220 438 220Z"/>
@@ -184,21 +190,21 @@ export default function LifeKnowledge() {
       <Suspense fallback={<div className="stage-message">正在绘制知识星图…</div>}>
         {sceneMode === 'galaxy'
           ? <LifeScene entries={book.entries} subjects={book.subjects} selectedId={selected?.id ?? null} subjectId={subject} volumeId={volume}
-              highlightIds={highlightIds} connectHighlights={milestoneIndex === null} motionEnabled={motionEnabled} resetSerial={resetSerial} onSelect={choose} onSubject={chooseSubject} onVolume={chooseVolume} onRenderer={setRenderer} />
+              highlightIds={highlightIds} connectHighlights={true} motionEnabled={motionEnabled} resetSerial={resetSerial} onSelect={choose} onSubject={chooseSubject} onVolume={chooseVolume} onRenderer={setRenderer} />
           : <LifeAstrolabe entries={book.entries} subjects={book.subjects} selectedId={selected?.id ?? null} subjectId={subject}
-              volumeId={volume} highlightIds={highlightIds} connectHighlights={milestoneIndex === null} resetSerial={resetSerial} onSelect={choose} onSubject={chooseSubject} />}
+              volumeId={volume} highlightIds={highlightIds} connectHighlights={true} resetSerial={resetSerial} onSelect={choose} onSubject={chooseSubject} />}
       </Suspense>
-      <LifeTimeline index={milestoneIndex} entries={byId} onChoose={choose} onChange={(index) => {
-        setMilestoneIndex(index);
-        if (index !== null) { setSubject(null); setVolume(null); setQuery(''); setInquiryIds([]); setObservationsOnly(false); clearSelection(); }
-      }} />
-      <div className="life-map-footer"><span>{highlightIds.length ? `✦　点亮 ${highlightIds.length} 项${milestoneIndex !== null ? '延伸阅读' : observationsOnly ? '观测' : '搜索'}轨迹` : '✦　五卷星臂 · 明星为学科'}</span>
+      <LifeResonance value={dimension} onChange={(value) => { chooseSubject(null); setDimension(value); }} />
+      <div className="life-map-footer"><span>{highlightIds.length ? `✦　点亮 ${highlightIds.length} 项${dimension !== 'all' ? '维度' : observationsOnly ? '观测' : '搜索'}轨迹` : '✦　五卷异构星系 · 明星为学科'}</span>
         <span>{sceneMode === 'galaxy' ? '拖动旋转' : '拖动平移'} · 滚轮缩放 · 长按聚拢关联</span></div>
     </main>
     <aside className="life-inspector" ref={inspectorRef} aria-label="知识卷宗">
+      <button className="life-folio-toggle" type="button" aria-expanded={folioOpen} onClick={() => setFolioOpen((value) => !value)}>
+        {folioOpen ? '收起手卷 ▸' : '◂ 展开手卷'}</button>
+      <div hidden={!folioOpen}>
       <div className="life-search"><label htmlFor="life-search">检索知识库 <span>⌘ K</span></label>
         <input id="life-search" ref={searchRef} value={query} placeholder="搜索关键词、编号或问题" onChange={(event) => {
-          setQuery(event.target.value); setMilestoneIndex(null); setInquiryIds([]); clearSelection(); setLimit(40);
+          setQuery(event.target.value); setDimension('all'); setInquiryIds([]); clearSelection(); setLimit(40);
         }} />
         <div className="life-reading-modes"><button type="button" aria-pressed={!observationsOnly} onClick={() => {
           setObservationsOnly(false); clearSelection(); setLimit(40);
@@ -207,7 +213,7 @@ export default function LifeKnowledge() {
         }}>观测列表 <span>{Object.keys(observations).length}</span></button></div>
       </div>
       <LifeInquiry book={book} onChoose={choose} onEvidence={(ids) => {
-        setInquiryIds(ids); setMilestoneIndex(null); setSubject(null); setVolume(null); setQuery(''); setObservationsOnly(false); clearSelection();
+        setInquiryIds(ids); setDimension('all'); setSubject(null); setVolume(null); setQuery(''); setObservationsOnly(false); clearSelection();
       }} />
       {selected ? <article className="life-article">
         <button className="life-back" type="button" onClick={clearSelection}>← 返回条目目录</button>
@@ -294,6 +300,7 @@ export default function LifeKnowledge() {
         {limit < results.length && <button className="life-more" type="button" onClick={() => setLimit((value) => value + 60)}>
           显示更多 · 还有 {results.length - limit} 条</button>}
       </div>}
+      </div>
     </aside>
     {enlargedFigure && <div className="life-zoom-backdrop" role="presentation" onClick={(event) => {
       if (event.target === event.currentTarget) setEnlargedFigure(null);

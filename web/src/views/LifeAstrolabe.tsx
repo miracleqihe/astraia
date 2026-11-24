@@ -3,6 +3,7 @@ import type { LifeEntry, LifeSubject } from '../life';
 import { LIFE_PALETTES, lifeGalaxyLayout } from './lifeGalaxyLayout';
 import { animateLifeGravity, createLifeGravity } from './lifeGravity';
 import { createLifePortal } from './lifePortal';
+import { sampleLifeTrace } from './lifeArcs';
 import type { LifeHover } from './lifeSceneTypes';
 
 interface Props {
@@ -52,7 +53,7 @@ export default function LifeAstrolabe(props: Props) {
         y: points.reduce((sum, point) => sum + point.y, 0) / points.length };
     });
     const scale = () => Math.min(width, height) / 1040 * zoom;
-    const screenOffset = () => width > 1100 ? 108 : width > 760 ? 90 : 0;
+    const screenOffset = () => width > 760 ? Math.round(width * .06) : 0;
     const project = (x: number, y: number) => [width / 2 - screenOffset() + panX + x * scale(), height / 2 + panY - y * scale()];
     function schedule() { if (!frame) frame = requestAnimationFrame(draw); }
     function draw() {
@@ -65,19 +66,29 @@ export default function LifeAstrolabe(props: Props) {
       if (chosen) for (const entry of entries) if (entry.links.includes(chosen.id)) related.add(entry.id);
       ctx.fillStyle = '#04060c'; ctx.fillRect(0, 0, width, height);
       const [centerX, centerY] = project(0, 0);
-      ctx.strokeStyle = 'rgba(225,215,193,.12)'; ctx.lineWidth = 1;
+      ctx.strokeStyle = 'rgba(212,175,55,.12)'; ctx.lineWidth = 1 / Math.min(window.devicePixelRatio || 1, 2);
+      ctx.setLineDash([2, 7]);
       for (const radius of [90, 200, 320, 445]) {
         ctx.beginPath(); ctx.arc(centerX, centerY, radius * scale(), 0, Math.PI * 2); ctx.stroke();
       }
+      ctx.setLineDash([]);
+      const trace = sampleLifeTrace(entries, state.highlightIds);
       const edges: Array<[string, string]> = chosen
         ? [...related].map((id) => [chosen.id, id])
-        : state.connectHighlights ? state.highlightIds.slice(1).map((id, index) => [state.highlightIds[index], id]) : [];
+        : state.connectHighlights ? trace.slice(1).map((id, index) => [trace[index], id]) : [];
       ctx.strokeStyle = 'rgba(227,190,120,.66)'; ctx.lineWidth = 1;
       ctx.beginPath();
       for (const [a, b] of edges) {
         const from = layout.locations.get(a), to = layout.locations.get(b);
         if (!from || !to) continue;
         const [x1, y1] = project(from.x, from.y), [x2, y2] = project(to.x, to.y);
+        ctx.moveTo(x1, y1); ctx.quadraticCurveTo((x1 + x2) / 2, (y1 + y2) / 2 - Math.min(35, Math.hypot(x2 - x1, y2 - y1) * .1), x2, y2);
+      }
+      ctx.stroke();
+      ctx.strokeStyle = 'rgba(212,175,55,.18)';
+      ctx.beginPath();
+      for (const group of layout.structuralEdges) for (let i = 0; i < group.points.length; i += 2) {
+        const a = group.points[i], b = group.points[i + 1], [x1, y1] = project(a.x, a.y), [x2, y2] = project(b.x, b.y);
         ctx.moveTo(x1, y1); ctx.lineTo(x2, y2);
       }
       ctx.stroke();
@@ -99,13 +110,22 @@ export default function LifeAstrolabe(props: Props) {
         ctx.fill();
       }
       ctx.globalAlpha = 1;
+      ctx.fillStyle = '#fffdf7';
+      for (let i = 0; i < entries.length; i++) {
+        const entry = entries[i];
+        const faded = !!(state.subjectId && entry.subject !== state.subjectId) || !!(state.volumeId && entry.volume !== state.volumeId)
+          || !!(chosen && entry.id !== chosen.id && !related.has(entry.id)) || !!(!chosen && highlighted.size && !highlighted.has(entry.id));
+        if (faded) continue;
+        const [x, y] = project(layout.positions[i * 3], layout.positions[i * 3 + 1]);
+        if (x >= 0 && x <= width && y >= 0 && y <= height) ctx.fillRect(x, y, .75, .75);
+      }
       for (const subject of subjects) {
         const point = layout.centers.get(subject.id); if (!point) continue;
         const [x, y] = project(point.x, point.y);
         ctx.strokeStyle = '#edc989'; ctx.lineWidth = 1;
         ctx.beginPath(); ctx.moveTo(x - 5, y); ctx.lineTo(x + 5, y); ctx.moveTo(x, y - 5); ctx.lineTo(x, y + 5); ctx.stroke();
-        if (state.subjectId === subject.id) {
-          ctx.font = '12px "Noto Sans SC", sans-serif'; ctx.fillStyle = '#efece6'; ctx.fillText(subject.title, x + 9, y - 7);
+        if (state.subjectId === subject.id || state.volumeId === subject.volume) {
+          ctx.font = '12px "Noto Sans SC", sans-serif'; ctx.fillStyle = '#efece6'; ctx.fillText(`${subject.title} · ${subject.count}`, x + 9, y - 7);
         }
       }
       if (!state.subjectId && !chosen && zoom < 1.8) for (const group of volumeCenters) {
@@ -121,7 +141,7 @@ export default function LifeAstrolabe(props: Props) {
     }
     const resize = () => {
       width = Math.max(1, element.clientWidth); height = Math.max(1, element.clientHeight);
-      const ratio = Math.min(window.devicePixelRatio || 1, 1.5, Math.sqrt(1_500_000 / (width * height)));
+      const ratio = Math.min(window.devicePixelRatio || 1, 2);
       canvas.width = Math.round(width * ratio); canvas.height = Math.round(height * ratio);
       ctx.setTransform(ratio, 0, 0, ratio, 0, 0); schedule();
     };
