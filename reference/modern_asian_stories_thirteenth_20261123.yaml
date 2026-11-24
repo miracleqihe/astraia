@@ -1,0 +1,347 @@
+themes:
+- id: corpus_cn_asia_everyday_objects_2024
+  title: 日常物件里的恐怖故事｜口述材料并读
+  genre: academic_model
+  peers:
+  - case_cn_chongqing_grandfather_bear_granny_2019
+  - case_cn_qingdao_school_statue_restroom_2020
+  - case_id_jakarta_rental_dancing_calendar_2016
+  - corpus_east_asia_school_oral_accounts_2011_2026
+  paragraphs:
+  - 一双红色绣花鞋、一尊餐厅外的小丑像、一只酒店里的玩偶：在几则中文口述故事中，普通物件会突然改变人物对熟悉场所的感觉。
+  - 2024 年，Madeline Feng 在南加州大学民俗档案中记录了不同受访者从同学或亲属那里听来的故事；其中红鞋与晚自习后的归途相连，玩偶则出现在旅行和旅馆中。
+  - 雅加达的一则家庭转述里，挂历上的人物仿佛动了起来；青岛校园讲述中的雕像也成为学生议论的中心。这些记录在这里按物件与场景并读，不能据此断定故事之间有传播关系。
+  - 另一条可以对照的线索是祖辈讲给孩子听的熊家婆：重庆和四川两次记录的结局不同，保留下来的是各自的讲述，而不是单一的标准版本。
+  sources:
+  - &id002
+    citation: Madeline Feng, 2024 年口述采集集，USC Digital Folklore Archives。
+    type: oral_history
+    url: https://folklore.usc.edu/author/fengyuan/
+    locator: 作者页面可并读金花、红绣花鞋、小丑和玩偶四则记录
+  - &id001
+    citation: Madeline Feng, “Bear Grandma (熊家婆), A Chinese Little Red Riding Hood”, USC Digital Folklore Archives, 14 May 2024。
+    type: oral_history
+    url: https://folklore.usc.edu/bear-grandma-%E7%86%8A%E5%AE%B6%E5%A9%86-a-chinese-little-red-riding-hood/
+    locator: 采集者重询四川外祖母所讲的金花故事
+  - citation: Yunqian Hsu, “Bear Granny”, USC Digital Folklore Archives, interview 13 March 2019, posted 13 May 2019。
+    type: oral_history
+    url: https://folklore.usc.edu/bear-granny/
+    locator: 受访者重述重庆祖父所讲故事及结尾
+records:
+- id: case_cn_sichuan_jinhua_bear_grandma_2024
+  title: 四川｜金花与熊家婆
+  genre: folktale
+  credibility_tier: B
+  theme: corpus_cn_asia_everyday_objects_2024
+  location:
+    lat: 30.5
+    lng: 102.66667
+    precision: province
+    location_name: 中国四川 · 讲述者家族参考
+    culture_region: 中国 · 西南
+  map_label: 四川
+  location_note: 外祖母来自四川，故事没有指定山村；点位为四川省行政区域参考点。
+  temporal:
+    year_start: 2024
+    year_end: 2024
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 母亲出门后，金花独自照顾弟弟。夜里一位自称祖母的人来敲门，她让金花熄灯；来客坐坏了木凳，金花低头生火时，看见她长满毛的脚，认出是熊家婆。
+  - 金花先把弟弟带进房间安顿好，又假装要出去一会儿。熊家婆把绳子系在两人手腕上，她悄悄将绳子另一端系住，趁机逃了出去。
+  - 熊家婆追到池边，以为金花在水里，其实看见的是她躲在梨树上的倒影。树干被金花涂得滑溜溜的，熊家婆爬不上去，最后被金花用计制服。天亮后，母亲回来了。
+  - 2024 年，采集者重新向来自四川的外祖母询问童年听过的睡前故事；她记得外祖母原先用四川话讲述。
+  sources:
+  - *id001
+  - *id002
+  - citation: GeoNames, Sichuan, China, place 1794299。
+    type: gazetteer
+    url: https://www.geonames.org/1794299/sichuan.html
+    locator: 四川省行政区域参考点 30.50000, 102.66667
+  peers:
+  - case_cn_chongqing_grandfather_bear_granny_2019
+- id: case_cn_red_embroidered_shoes_2024
+  title: 中国校园｜晚自习后的红绣花鞋
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_cn_asia_everyday_objects_2024
+  location:
+    lat: 35.8617
+    lng: 104.1954
+    precision: culture_region
+    location_name: 中国 · 讲述背景范围参考
+    culture_region: 东亚 · 中国
+  map_label: 中国
+  location_note: 受访者在中国长大；原采录没有提供故事中的城市或具体地点，地图只表示讲述背景范围。
+  temporal:
+    year_start: 2024
+    year_end: 2024
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 明和宏是同班同学，也是一起走夜路回家的邻居。一天晚自习后，他们经过墓地，看见一位穿深色衣服的老妇人，脚上的红绣花鞋在暗处格外显眼。
+  - 宏请明留下陪自己过夜。第二天明却不见了；几天后，故事里传来消息，说有人在河中发现了穿红鞋的明。宏十分害怕，后来在父亲送他出门途中也消失了。
+  - 寻找的人说曾看见宏与明的母亲在墓地附近；巡夜的人又见一名少年和一位中年女子走来，两人脚上都穿着红鞋。
+  - 一位在中国长大的受访者说，她在中学时听同学讲过这则故事。采录没有给出学校、城市，也没有把情节作为新闻案件核实。
+  sources:
+  - citation: Madeline Feng, “Red Embroidered Shoes (红色绣花鞋), A Chinese Horror Story”, USC Digital Folklore Archives, 14 May 2024。
+    type: oral_history
+    url: https://folklore.usc.edu/red-embroidered-shoes-%E7%BA%A2%E8%89%B2%E7%BB%A3%E8%8A%B1%E9%9E%8B-a-chinese-horror-story/
+    locator: 一位在中国长大的受访者转述中学同学讲过的故事
+  - *id002
+- id: case_cn_restaurant_clown_after_closing_2024
+  title: 中国城市｜关门后的餐厅与小丑
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_cn_asia_everyday_objects_2024
+  location:
+    lat: 35.8617
+    lng: 104.1954
+    precision: culture_region
+    location_name: 中国 · 讲述背景范围参考
+    culture_region: 东亚 · 中国
+  map_label: 中国
+  location_note: 受访者在中国长大；原采录没有提供故事中的城市或具体地点，地图只表示讲述背景范围。
+  temporal:
+    year_start: 2024
+    year_end: 2024
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 一位下班很晚的女孩想去餐厅买吃的。店里的灯亮着，门却锁着；她隔窗望进去，没有看见店员，于是在门外长椅上等待。
+  - 等了一会儿，她觉得脖子后面一阵凉风，像有人在吹气。她回头时，身边的小丑像仿佛活了过来，张开红色的嘴笑着。
+  - 2024 年的采录写明，受访者在中学时听表姐讲过这个故事。原文提到麦当劳的小丑形象，没有给出具体门店或事件地点。
+  sources:
+  - citation: Madeline Feng, “The Clown from McDonald’s, A Chinese Urban Legend”, USC Digital Folklore Archives, 14 May 2024。
+    type: oral_history
+    url: https://folklore.usc.edu/the-clown-from-mcdonalds-a-chinese-urban-legend/
+    locator: 一位在中国长大的受访者转述中学时期听表姐讲的故事
+  - *id002
+- id: case_cn_hotel_doll_pink_dress_2024
+  title: 中国旅途｜会换衣服的玩偶
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_cn_asia_everyday_objects_2024
+  location:
+    lat: 35.8617
+    lng: 104.1954
+    precision: culture_region
+    location_name: 中国 · 讲述背景范围参考
+    culture_region: 东亚 · 中国
+  map_label: 中国
+  location_note: 受访者在中国长大；原采录没有提供故事中的城市或具体地点，地图只表示讲述背景范围。
+  temporal:
+    year_start: 2024
+    year_end: 2024
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 梅姨在旅馆房间捡到一只玩偶，想带回去送给女儿。当晚她梦见一个女孩向她借鞋；醒来后，她发现自己的鞋不见了，玩偶脚上却多了一双相似的小鞋。
+  - 她匆忙离店，把玩偶留下。后来在火车上，梅姨再次梦见孩子的声音，醒来却发现玩偶坐在膝上，身上的粉色裙子与自己箱子里丢失的一件很像。
+  - 她把玩偶扔掉，因行程变动折返时遇到一个寻找母亲的女孩，便带她去旅馆过夜。故事以梅姨次日被发现去世、身边只剩玩偶收尾；笔记本又引出她拐卖儿童的情节。
+  - 受访者说自己在小学听同学讲过这个都市故事，成年后尤其记得结尾。采录没有提供旅馆、铁路或人物的可核对身份。
+  sources:
+  - citation: Madeline Feng, “The Doll’s Revenge, A Chinese Urban Legend”, USC Digital Folklore Archives, 14 May 2024。
+    type: oral_history
+    url: https://folklore.usc.edu/the-dolls-revenge-a-chinese-urban-legend/
+    locator: 一位在中国长大的受访者转述小学同学讲过的故事
+  - *id002
+- id: case_cn_shenyang_village_white_mill_2023
+  title: 沈阳乡村｜石磨旁的小白影
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_cn_asia_everyday_objects_2024
+  location:
+    lat: 41.8057
+    lng: 123.4315
+    precision: city
+    location_name: 中国辽宁 · 沈阳地区参考
+    culture_region: 中国 · 东北
+  map_label: 沈阳
+  location_note: 档案题名指向沈阳；没有给出村庄或石磨的具体位置。
+  temporal:
+    year_start: 2023
+    year_end: 2023
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 村口有一座大家共用的石磨。祖母讲，夜里常有一个小小的白影绕着石磨跑，人们说它是小鬼。
+  - 故事里的警告是，不要靠近它：它会扑上来挠人，让人笑得喘不过气。祖母说自己曾见过白影，但并没有被它挠到。
+  - 2023 年的受访者转述祖母的讲法，还说后来再没有听见白影的消息，并把这一变化与特定历史时期联系起来；这是讲述者自己的解释。
+  sources:
+  - citation: Lingchong Hu, “Ghost Story in Chinese Village in Sheng Yang”, USC Digital Folklore Archives, 8 May 2023。
+    type: oral_history
+    url: https://folklore.usc.edu/ghost-story-in-chinese-village-in-sheng-yang/
+    locator: 祖母讲述的石磨旁白影；题名指向沈阳
+- id: case_cn_shenyang_cursed_tomb_drought_2021
+  title: 沈阳讲述｜多年不下雨的墓
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_cn_asia_everyday_objects_2024
+  location:
+    lat: 41.8057
+    lng: 123.4315
+    precision: city
+    location_name: 中国辽宁 · 受访者居住地参考
+    culture_region: 中国 · 东北
+  map_label: 沈阳讲述
+  location_note: 点位表示 2021 年受访者的居住城市；故事中的村庄和墓地未指明。
+  temporal:
+    year_start: 2021
+    year_end: 2021
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 这则讲述从一座墓开始：故事说，一名怀孕的女子去世后，腹中的孩子仍在墓中生长，墓因此带上了诅咒。
+  - 村里接连多年没有降雨，田地荒芜。讲述者把它当作一则小时候反复听过的怪谈，也猜测它可能是人们解释土地歉收的一种说法。
+  - 2021 年的采访记录了这段民间叙述；它没有指出墓在哪里，不能据受访者居住沈阳推定故事发生在沈阳。
+  sources:
+  - citation: 'Scott Gilman, “Ghost Story: Cursed Tomb”, USC Digital Folklore Archives, interview 20 April, posted 18 May 2021。'
+    type: oral_history
+    url: https://folklore.usc.edu/ghost-story-cursed-tomb/
+    locator: 受访者的讲述和他对故事的解释；受访时居住沈阳
+  - citation: 'Scott Gilman, “Ghost Story: Cursed Tomb”, USC Digital Folklore Archives 文章索引页。'
+    type: oral_history
+    url: https://folklore.usc.edu/page/787/?itemid=458260&section=item
+    locator: 索引页保留故事正文与采访背景
+- id: case_cn_taishan_two_brides_house_2012
+  title: 广东台山｜两位新娘的旧屋
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_cn_asia_everyday_objects_2024
+  location:
+    lat: 22.25135
+    lng: 112.7799
+    precision: city
+    location_name: 中国广东 · 台山地区参考
+    culture_region: 中国 · 华南
+  map_label: 台山
+  location_note: 故事来自台山附近一座未具名村庄；地图点位是台山市地名参考。
+  temporal:
+    year_start: 2012
+    year_end: 2012
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 台山附近一个村子的故事说，曾有一位在美国赚了钱的男人回乡，与一位年轻女子成婚。女子不愿这桩婚事，在婚礼当天于屋中去世。
+  - 后来，男人的儿子或另一位男性亲属也安排婚事；第二位新娘同样没有办法摆脱婚约，也在这座屋中去世。人们说，两人的身影留在屋里，村民便避开那座房子。
+  - 2012 年，一位受访者转述母亲探访外祖父家乡时听来的故事；她对第二名男子的亲属关系并不确定。
+  sources:
+  - citation: “The Suicide House”, USC Digital Folklore Archives, interview April 2012。
+    type: oral_history
+    url: https://folklore.usc.edu/the-suicide-house/
+    locator: 受访者转述母亲在台山附近村庄听到的故事
+  - citation: GeoNames, Taishan, China, place 1793700。
+    type: gazetteer
+    url: https://www.geonames.org/1793700/taishan.html
+    locator: 台山地名参考点 22.25135, 112.77990
+- id: case_la_weeping_river_market_path_2017
+  title: 老挝｜夜里从河中走出的女子
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_asian_waters_trees_night_paths_2014_2024
+  location:
+    lat: 19.8563
+    lng: 102.4955
+    precision: culture_region
+    location_name: 老挝 · 国家范围参考
+    culture_region: 东南亚 · 老挝
+  map_label: 老挝
+  location_note: 故事只说老挝一座村庄，未给村名；采录将巴色误称首都，无法据此确定村庄位置。
+  temporal:
+    year_start: 2017
+    year_end: 2017
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 在母亲讲的故事里，农人去集市要经过一座小村。半夜到凌晨三点之间，一名衣衫破旧、哭泣的女子会从附近河里走出，站在路中央。
+  - 她口中念着听不懂的话。故事说，如果路人不赶快离开，仍想从她身旁经过，就会失去意识，醒来时已经到了另一个世界。
+  - 一位学生回忆，母亲曾在全家露营时把这个故事讲给她和姐妹们听；那天夜里，她们因为害怕而一起熬着不睡。
+  - 采录称母亲出生于老挝，但提及祖父母所在地时把巴色称作首都；老挝首都是万象，因此这里仅标注国家范围。
+  sources:
+  - citation: Austen Le, “The Weeping River Lady”, USC Digital Folklore Archives, interview 9 April, posted 30 April 2017。
+    type: oral_history
+    url: https://folklore.usc.edu/the-weeping-river-lady/
+    locator: 露营时母亲讲给受访者和姐妹的故事
+  - citation: Austen Le, “The Weeping River Lady”, USC Digital Folklore Archives, Legends 第 303 页。
+    type: oral_history
+    url: https://folklore.usc.edu/category/narrative/legends/page/303/
+    locator: 索引页保留采访和故事全文；地名信息存在矛盾
+  - citation: Tourism Laos, Vientiane Capital。
+    type: institutional_account
+    url: https://www.tourismlaos.org/central-provinces/vientiane-capital/
+    locator: 老挝首都为万象，原采录将巴色误称首都
+- id: case_th_dragging_sound_temple_2013
+  title: 泰国讲述｜跟随的拖行声
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_asian_waters_trees_night_paths_2014_2024
+  location:
+    lat: 15.87
+    lng: 100.9925
+    precision: culture_region
+    location_name: 泰国 · 国家范围参考
+    culture_region: 东南亚 · 泰国
+  map_label: 泰国
+  location_note: 受访者从祖父处听来泰语故事；采录没有提供故事中的城镇。
+  temporal:
+    year_start: 2013
+    year_end: 2013
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 一个男人走路时，总听见身后传来拖行声；他停下，声音也跟着停。两周后，他在家中跌伤，住院时仍听见断断续续的声音。
+  - 出院后，他去寺院行善，声音渐渐弱了。他以为事情结束，便不再前往；约一个月后，过马路时声音又出现了，他随后遭遇车祸。
+  - 故事里，僧人把他的遭遇解释为前世行为的后果，男人决定余生留在宗教生活中。2013 年，一位泰国受访者说这是祖父讲给他的故事。
+  sources:
+  - citation: “Bad Karma”, USC Digital Folklore Archives, interview 12 November 2013。
+    type: oral_history
+    url: https://folklore.usc.edu/bad-karma/
+    locator: 泰国受访者转述祖父所讲的跟随声与寺院故事
+- id: case_kh_business_trip_hotel_top_floor_2025
+  title: 柬埔寨｜酒店顶层的家族讲述
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_asia_night_places_oral_accounts_2012_2025
+  location:
+    lat: 12.5657
+    lng: 104.991
+    precision: culture_region
+    location_name: 柬埔寨 · 国家范围参考
+    culture_region: 东南亚 · 柬埔寨
+  map_label: 柬埔寨
+  location_note: 家庭转述只提到父亲出差柬埔寨，未提供城市或酒店名称。
+  temporal:
+    year_start: 2025
+    year_end: 2025
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 一位父亲出差到柬埔寨，回酒店后辗转难眠，总觉得顶层有什么令人不安的东西。他上楼查看，发现那里是一间酒吧和餐厅。
+  - 他向家人说，自己在那里看见许多身影，便问酒保楼里是否发生过不幸。依他的转述，酒保将这座楼与柬埔寨大屠杀时期的杀害联系起来；他回房后整夜未睡。
+  - 2025 年，儿子把父亲讲过的经历转述给采集者，也表达了自己的怀疑。采访没有给出酒店名称，无法据此核对这栋楼的历史。
+  sources:
+  - citation: Xavier Siazon, “Khmer Rouge Ghost Story”, USC Digital Folklore Archives, interview 3 April, posted 1 May 2025。
+    type: oral_history
+    url: https://folklore.usc.edu/khmer-rouge-ghost-story/
+    locator: 受访者转述父亲出差柬埔寨时的酒店故事
+  - citation: Xavier Siazon, “Khmer Rouge Ghost Story”, USC Digital Folklore Archives, general 第 54 页。
+    type: oral_history
+    url: https://folklore.usc.edu/category/general/page/54/
+    locator: 索引页保留采访、家族转述与采集者意见
+existing_notes: {}
+revisions:
+  case_cn_chongqing_grandfather_bear_granny_2019:
+    path: vault/01_cases/case_cn_chongqing_grandfather_bear_granny_2019.md
+    source: *id001
+    map_label: 重庆
+    original_source_numbers:
+    - 1
+    source_numbers:
+    - 1
+    - 2
+    paragraphs:
+    - 两个孩子在树林里遇见像祖母一样的人，跟她回到家。夜深后，姐姐被咀嚼声吵醒，问她在吃什么，对方说是糖。
+    - 月光照进来，姐姐发现妹妹已经遭遇不测。她故作镇定，邀请对方吃另一种“糖”，又借炉火和热水制服了熊家婆；2019 年的采录讲出了这个结尾。
+    - 受访者说，这个睡前故事来自重庆祖父，自己还曾讲给小学同学听。故事没有指定树林或房屋，是一则家庭保存的讲述。
+    - 2024 年另一位采集者记录了四川外祖母讲的版本：金花保护弟弟，逃到梨树上制服熊家婆。两个版本的情节与结局不同，可以并读。

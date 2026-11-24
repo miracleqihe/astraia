@@ -30,7 +30,10 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, re
     let renderer: THREE.WebGLRenderer | null = null;
     let software = false;
     try {
-      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      // Let the browser reject a severely slow context even when privacy
+      // settings hide the unmasked renderer name. The Canvas2D path below is
+      // tuned for those devices and keeps the galaxy interactive.
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, failIfMajorPerformanceCaveat: true });
       const gl = renderer.getContext(), debug = gl.getExtension('WEBGL_debug_renderer_info');
       const name = debug ? String(gl.getParameter(debug.UNMASKED_RENDERER_WEBGL)) : '';
       software = /swiftshader|llvmpipe|software|warp/i.test(name);

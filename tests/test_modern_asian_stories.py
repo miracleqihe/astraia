@@ -106,7 +106,8 @@ class ModernAsianStoriesTests(unittest.TestCase):
                          'modern_asian_stories_fifth_20261123.yaml', 'modern_asian_stories_sixth_20261123.yaml',
                          'modern_asian_stories_seventh_20261123.yaml', 'modern_asian_stories_eighth_20261123.yaml',
                          'modern_asian_stories_ninth_20261123.yaml', 'modern_asian_stories_tenth_20261123.yaml',
-                         'modern_asian_stories_eleventh_20261123.yaml', 'modern_asian_stories_twelfth_20261123.yaml'):
+                         'modern_asian_stories_eleventh_20261123.yaml', 'modern_asian_stories_twelfth_20261123.yaml',
+                         'modern_asian_stories_thirteenth_20261123.yaml'):
             collection = yaml.load((ROOT / 'reference' / filename).read_text(encoding='utf-8'), Loader=FrontmatterLoader)
             records.extend(collection['records'])
             revisions.update(collection.get('revisions', {}))
@@ -182,6 +183,25 @@ class ModernAsianStoriesTests(unittest.TestCase):
                 self.assertIn(hub, {relation.target for relation in metadata.relations})
                 self.assertTrue(all(paragraph in body for paragraph in note.paragraphs))
                 self.assertFalse(metadata.audit.reviewed_by_human)
+
+    def test_bear_granny_versions_preserve_each_ending_and_are_linked(self):
+        collection = yaml.load((ROOT / 'reference/modern_asian_stories_thirteenth_20261123.yaml').read_text(encoding='utf-8'),
+                               Loader=FrontmatterLoader)
+        old_id = 'case_cn_chongqing_grandfather_bear_granny_2019'
+        new_id = 'case_cn_sichuan_jinhua_bear_grandma_2024'
+        revision = collection['revisions'][old_id]
+        old_card = read_card(ROOT / 'vault', ROOT / revision['path'])
+        new_card = read_card(ROOT / 'vault', ROOT / 'vault/01_cases' / (new_id + '.md'))
+        notes = yaml.load((ROOT / 'reference/reading_notes.yaml').read_text(encoding='utf-8'), Loader=FrontmatterLoader)
+        self.assertEqual(notes[old_id]['paragraphs'], revision['paragraphs'])
+        self.assertEqual(notes[old_id]['source_numbers'], [1, 2])
+        self.assertIn('制服了熊家婆', old_card.markdown)
+        self.assertNotIn('没有在这次访谈中讲出后续', old_card.markdown)
+        self.assertIn('先把弟弟带进房间', new_card.markdown)
+        self.assertIn(new_id, {relation.target for relation in old_card.metadata.relations})
+        self.assertIn(old_id, {relation.target for relation in new_card.metadata.relations})
+        self.assertEqual(new_card.metadata.spatial.precision, 'province')
+        self.assertFalse(old_card.metadata.audit.reviewed_by_human)
 
     def test_ubin_revision_preserves_its_source_and_reading_note(self):
         collection = yaml.load((ROOT / 'reference/modern_asian_stories_seventh_20261123.yaml').read_text(encoding='utf-8'),
