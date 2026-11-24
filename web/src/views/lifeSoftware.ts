@@ -10,7 +10,8 @@ type Layout = ReturnType<typeof lifeGalaxyLayout>;
 export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], subjects: LifeSubject[], layout: Layout,
   onSelect: (id: string) => void, onSubject: (id: string) => void, onHover: (hover: LifeHover | null) => void): LifeDrawing {
   const canvas = document.createElement('canvas');
-  const drawingContext = canvas.getContext('2d', { alpha: false });
+  // Permit low-latency canvas presentation when the browser supports it.
+  const drawingContext = canvas.getContext('2d', { alpha: false, desynchronized: true });
   if (!drawingContext) throw new Error('无法创建知识星图画布');
   const ctx: CanvasRenderingContext2D = drawingContext;
   canvas.dataset.renderer = 'software';
@@ -41,6 +42,26 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     ? (0xff000000 | b << 16 | g << 8 | r) >>> 0 : (r << 24 | g << 16 | b << 8 | 255) >>> 0;
   const background = rgb(16, 23, 34), guideColor = rgb(43, 49, 56), hubColor = rgb(210, 176, 113);
   const lineColor = rgb(174, 146, 93), selectedColor = rgb(255, 233, 189);
+  // These guides are fixed in world space; only their projection changes.
+  const rings = [90, 200, 320, 445].map((radius) => {
+    const coordinates = new Float32Array(129 * 3);
+    for (let i = 0; i <= 128; i++) {
+      const angle = i / 128 * Math.PI * 2;
+      coordinates[i * 3] = Math.cos(angle) * radius;
+      coordinates[i * 3 + 1] = Math.sin(angle) * radius;
+      coordinates[i * 3 + 2] = -50;
+    }
+    return coordinates;
+  });
+  const guideEdges: THREE.Vector3[] = [];
+  for (const volume of layout.volumes) {
+    let previous = new THREE.Vector3();
+    for (const subject of subjects) {
+      if (subject.volume !== volume) continue;
+      const next = layout.centers.get(subject.id);
+      if (next) { guideEdges.push(previous, next); previous = next; }
+    }
+  }
   let image: ImageData | null = null;
   let pixels = new Uint32Array();
   let width = 1, height = 1;
@@ -52,11 +73,24 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   let edges: THREE.Vector3[] = [];
   let frame = 0;
   let interacting = false;
+  let dragging = false;
   let restoreQuality = 0;
+  let drawCount = 0;
 
   function schedule() { if (!frame) frame = requestAnimationFrame(render); }
+  function beginMotion() {
+    window.clearTimeout(restoreQuality); restoreQuality = 0;
+    if (!interacting) { interacting = true; resize(); }
+  }
+  function restoreWhenStill() {
+    if (!interacting || dragging || focus || restoreQuality) return;
+    restoreQuality = window.setTimeout(() => {
+      restoreQuality = 0;
+      if (!dragging && !focus) { interacting = false; resize(); }
+    }, 180);
+  }
   function fly(target: THREE.Vector3, distance: number, direction: THREE.Vector3 | null = null) {
-    focus = target.clone(); focusDistance = distance; focusDirection = direction; schedule();
+    focus = target.clone(); focusDistance = distance; focusDirection = direction; beginMotion(); schedule();
   }
   function project(x: number, y: number, z: number): boolean {
     const m = projection.elements;
@@ -76,7 +110,9 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     // Clip first so a line crossing the camera plane never causes an enormous loop.
     const dx0 = x1 - x0, dy0 = y1 - y0;
     let lo = 0, hi = 1;
-    for (const [p, q] of [[-dx0, x0], [dx0, width - 1 - x0], [-dy0, y0], [dy0, height - 1 - y0]]) {
+    for (let side = 0; side < 4; side++) {
+      const p = side === 0 ? -dx0 : side === 1 ? dx0 : side === 2 ? -dy0 : dy0;
+      const q = side === 0 ? x0 : side === 1 ? width - 1 - x0 : side === 2 ? y0 : height - 1 - y0;
       if (p === 0) { if (q < 0) return; continue; }
       const t = q / p;
       if (p < 0) lo = Math.max(lo, t); else hi = Math.min(hi, t);
@@ -101,27 +137,20 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     pixels.fill(background);
     camera.updateMatrixWorld();
     projection.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
-    for (const radius of [90, 200, 320, 445]) {
+    for (const ring of rings) {
       let lastX = 0, lastY = 0, haveLast = false;
       for (let i = 0; i <= 128; i++) {
-        const angle = i / 128 * Math.PI * 2;
-        if (project(Math.cos(angle) * radius, Math.sin(angle) * radius, -50)) {
+        if (project(ring[i * 3], ring[i * 3 + 1], ring[i * 3 + 2])) {
           if (haveLast) line(lastX, lastY, projectedX, projectedY, guideColor);
           lastX = projectedX; lastY = projectedY; haveLast = true;
         } else haveLast = false;
       }
     }
-    for (const volume of layout.volumes) {
-      let previous = new THREE.Vector3();
-      for (const subject of subjects.filter((item) => item.volume === volume)) {
-        const next = layout.centers.get(subject.id);
-        if (!next) continue;
-        if (project(previous.x, previous.y, previous.z)) {
-          const x = projectedX, y = projectedY;
-          if (project(next.x, next.y, next.z)) line(x, y, projectedX, projectedY, guideColor);
-        }
-        previous = next;
-      }
+    for (let i = 0; i < guideEdges.length; i += 2) {
+      const a = guideEdges[i], b = guideEdges[i + 1];
+      if (!project(a.x, a.y, a.z)) continue;
+      const x = projectedX, y = projectedY;
+      if (project(b.x, b.y, b.z)) line(x, y, projectedX, projectedY, guideColor);
     }
     if (project(0, 0, 0)) {
       const x = projectedX, y = projectedY;
@@ -136,7 +165,11 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     for (let i = 0; i < entries.length; i++) {
       if (!project(layout.positions[i * 3], layout.positions[i * 3 + 1], layout.positions[i * 3 + 2])) continue;
       const x = projectedX, y = projectedY, color = colors[i];
-      pixel(x, y, color); pixel(x + 1, y, color); pixel(x, y + 1, color); pixel(x + 1, y + 1, color);
+      if (x >= 0 && x < width - 1 && y >= 0 && y < height - 1) {
+        const index = y * width + x;
+        pixels[index] = color; pixels[index + 1] = color;
+        pixels[index + width] = color; pixels[index + width + 1] = color;
+      }
     }
     for (let i = 0; i < subjects.length; i++) {
       if (!project(hubPositions[i * 3], hubPositions[i * 3 + 1], hubPositions[i * 3 + 2])) continue;
@@ -148,7 +181,10 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       for (let j = -2; j <= 2; j++) for (let i = -2; i <= 2; i++) pixel(x + i, y + j, selectedColor);
     }
     ctx.putImageData(image, 0, 0);
-    if (import.meta.env.DEV) canvas.dataset.drawMs = String(performance.now() - started);
+    if (import.meta.env.DEV) {
+      canvas.dataset.drawMs = String(performance.now() - started);
+      canvas.dataset.drawCount = String(++drawCount);
+    }
   }
   function render() {
     frame = 0;
@@ -166,20 +202,29 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     }
     const moving = controls.update();
     draw();
-    if (focus || moving) schedule();
+    if (focus || moving) {
+      if (restoreQuality) { window.clearTimeout(restoreQuality); restoreQuality = 0; }
+      schedule();
+    } else restoreWhenStill();
   }
   controls.addEventListener('change', schedule);
+  controls.addEventListener('start', beginMotion);
+  controls.addEventListener('end', restoreWhenStill);
   const resize = () => {
     const cssWidth = Math.max(1, host.clientWidth), cssHeight = Math.max(1, host.clientHeight);
-    // Lower the raster cost while dragging, then restore sharper stars at rest.
+    // Reduce raster cost for every kind of camera movement, then sharpen at rest.
     const scale = interacting ? .3 : .7;
-    width = Math.max(1, Math.round(cssWidth * scale)); height = Math.max(1, Math.round(cssHeight * scale));
-    canvas.width = width; canvas.height = height;
-    image = ctx.createImageData(width, height); pixels = new Uint32Array(image.data.buffer);
+    const nextWidth = Math.max(1, Math.round(cssWidth * scale));
+    const nextHeight = Math.max(1, Math.round(cssHeight * scale));
+    if (nextWidth !== width || nextHeight !== height || !image) {
+      width = nextWidth; height = nextHeight;
+      canvas.width = width; canvas.height = height;
+      image = ctx.createImageData(width, height); pixels = new Uint32Array(image.data.buffer);
+    }
     camera.aspect = cssWidth / cssHeight; camera.updateProjectionMatrix(); schedule();
   };
   const observer = new ResizeObserver(resize); observer.observe(host); resize();
-  const hit = (event: PointerEvent) => {
+  const hit = (event: Pick<PointerEvent, 'clientX' | 'clientY'>) => {
     const box = canvas.getBoundingClientRect();
     pointer.set((event.clientX - box.left) / box.width * 2 - 1, -(event.clientY - box.top) / box.height * 2 + 1);
     camera.updateMatrixWorld(); raycaster.setFromCamera(pointer, camera);
@@ -192,8 +237,12 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     return null;
   };
   let hovered = '';
-  const move = (event: PointerEvent) => {
-    if (event.buttons) return;
+  let hoverFrame = 0;
+  let pendingHover: { clientX: number; clientY: number; offsetX: number; offsetY: number } | null = null;
+  const processHover = () => {
+    hoverFrame = 0;
+    const event = pendingHover; pendingHover = null;
+    if (!event || dragging) return;
     const target = hit(event), key = target ? `${target.kind}:${target.index}` : '';
     canvas.style.cursor = target ? 'pointer' : 'grab';
     if (key !== hovered) {
@@ -203,23 +252,27 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       onHover(target ? { title, x: event.offsetX, y: event.offsetY } : null);
     }
   };
+  const move = (event: PointerEvent) => {
+    if (event.buttons) return;
+    pendingHover = { clientX: event.clientX, clientY: event.clientY, offsetX: event.offsetX, offsetY: event.offsetY };
+    if (!hoverFrame) hoverFrame = requestAnimationFrame(processHover);
+  };
   let down = { x: 0, y: 0 };
   const pointerDown = (event: PointerEvent) => {
-    focus = null; down = { x: event.clientX, y: event.clientY };
-    window.clearTimeout(restoreQuality); interacting = true; resize();
+    focus = null; dragging = true; down = { x: event.clientX, y: event.clientY };
+    pendingHover = null; beginMotion();
   };
   const pointerUp = (event: PointerEvent) => {
-    window.clearTimeout(restoreQuality);
-    restoreQuality = window.setTimeout(() => { interacting = false; resize(); }, 180);
+    dragging = false; restoreWhenStill();
     if (Math.hypot(event.clientX - down.x, event.clientY - down.y) > 5) return;
     const target = hit(event);
     if (target?.kind === 'hub') onSubject(subjects[target.index].id);
     else if (target) onSelect(entries[target.index].id);
   };
   const pointerCancel = () => {
-    window.clearTimeout(restoreQuality); interacting = false; resize();
+    dragging = false; restoreWhenStill();
   };
-  const leave = () => { hovered = ''; onHover(null); };
+  const leave = () => { pendingHover = null; hovered = ''; onHover(null); };
   canvas.addEventListener('pointermove', move); canvas.addEventListener('pointerdown', pointerDown);
   canvas.addEventListener('pointerup', pointerUp); canvas.addEventListener('pointercancel', pointerCancel);
   canvas.addEventListener('pointerleave', leave);
@@ -246,8 +299,9 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     },
     reset() { fly(new THREE.Vector3(), 1165, overviewDirection); },
     dispose() {
-      cancelAnimationFrame(frame); window.clearTimeout(restoreQuality); observer.disconnect();
+      cancelAnimationFrame(frame); cancelAnimationFrame(hoverFrame); window.clearTimeout(restoreQuality); observer.disconnect();
       controls.removeEventListener('change', schedule); controls.dispose();
+      controls.removeEventListener('start', beginMotion); controls.removeEventListener('end', restoreWhenStill);
       canvas.removeEventListener('pointermove', move); canvas.removeEventListener('pointerdown', pointerDown);
       canvas.removeEventListener('pointerup', pointerUp); canvas.removeEventListener('pointercancel', pointerCancel);
       canvas.removeEventListener('pointerleave', leave);
