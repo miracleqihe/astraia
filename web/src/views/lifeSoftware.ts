@@ -82,6 +82,7 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   let selectedPoint: THREE.Vector3 | undefined;
   let edges: THREE.Vector3[] = [];
   let frame = 0;
+  let lastFrame = 0;
   let interacting = false;
   let dragging = false;
   let restoreQuality = 0;
@@ -205,16 +206,24 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       canvas.dataset.drawCount = String(++drawCount);
     }
   }
-  function render() {
+  function render(now: number) {
     frame = 0;
+    // Keep camera motion tied to elapsed time, not to the number of frames.
+    // A software renderer may only present a few frames per second; without
+    // this adjustment a one-second flight can take ten seconds on that device.
+    const elapsed = lastFrame ? Math.min(100, Math.max(0, now - lastFrame)) : 1000 / 60;
+    lastFrame = now;
+    const frames = elapsed / (1000 / 60);
+    const easing = 1 - Math.pow(.9, frames);
+    controls.dampingFactor = 1 - Math.pow(.92, frames);
     if (focus) {
-      const delta = focus.clone().sub(controls.target).multiplyScalar(.10);
+      const delta = focus.clone().sub(controls.target).multiplyScalar(easing);
       camera.position.add(delta); controls.target.add(delta);
       const offset = camera.position.clone().sub(controls.target);
       const distance = offset.length();
-      const next = distance + (focusDistance - distance) * .10;
+      const next = distance + (focusDistance - distance) * easing;
       const bearing = offset.multiplyScalar(1 / distance);
-      if (focusDirection) bearing.lerp(focusDirection, .10).normalize();
+      if (focusDirection) bearing.lerp(focusDirection, easing).normalize();
       camera.position.copy(controls.target).add(bearing.clone().multiplyScalar(next));
       if (delta.lengthSq() < .001 && Math.abs(next - focusDistance) < .1
         && (!focusDirection || bearing.dot(focusDirection) > .99999)) { focus = null; focusDirection = null; }
@@ -224,7 +233,7 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     if (focus || moving) {
       if (restoreQuality) { window.clearTimeout(restoreQuality); restoreQuality = 0; }
       schedule();
-    } else restoreWhenStill();
+    } else { lastFrame = 0; restoreWhenStill(); }
   }
   controls.addEventListener('change', schedule);
   controls.addEventListener('start', beginMotion);

@@ -62,7 +62,8 @@ class ModernAsianStoriesTests(unittest.TestCase):
                           Loader=FrontmatterLoader)
         records = []
         for filename in ('modern_asian_stories_20261123.yaml', 'modern_asian_stories_second_20261123.yaml',
-                         'modern_asian_stories_third_20261123.yaml', 'modern_asian_stories_fourth_20261123.yaml'):
+                         'modern_asian_stories_third_20261123.yaml', 'modern_asian_stories_fourth_20261123.yaml',
+                         'modern_asian_stories_fifth_20261123.yaml'):
             collection = yaml.load((ROOT / 'reference' / filename).read_text(encoding='utf-8'), Loader=FrontmatterLoader)
             records.extend(collection['records'])
         self.assertEqual(len(records), len({item['id'] for item in records}))
