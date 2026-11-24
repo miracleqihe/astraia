@@ -150,6 +150,7 @@ export function DossierOriginal({ node }: { node: GraphNode }) {
 interface Props {
   node: GraphNode;
   graph: GraphIndex;
+  portalHref: string;
   onSelect: (id: string) => void;
   onClose: () => void;
   onCompare: () => void;
@@ -158,7 +159,7 @@ interface Props {
   onLocate: (id: string) => void;
 }
 
-export function NodeInspector({ node, graph, onSelect, onClose, onCompare, onNodeHover, codeInteraction, onLocate }: Props) {
+export function NodeInspector({ node, graph, portalHref, onSelect, onClose, onCompare, onNodeHover, codeInteraction, onLocate }: Props) {
   const [relationLimit, setRelationLimit] = useState(RELATION_PAGE_SIZE);
   const contentRef = useRef<HTMLDivElement>(null);
   const links = graph.adjacency.get(node.id) ?? [];
@@ -231,6 +232,7 @@ export function NodeInspector({ node, graph, onSelect, onClose, onCompare, onNod
       </nav>
 
       <div className="inspector-content" ref={contentRef}>
+        <a className="record-portal-link" href={portalHref}>◐ 穿界星门 · 查看知识对照 <span aria-hidden="true">↗</span></a>
         {codes.length > 0 && <DossierCodes codes={codes} interaction={codeInteraction} />}
         {orderedLinks.length > 0 && <div className="record-quick-links" aria-label="首屏关联">
           <button type="button" className="record-quick-heading" onClick={() => jump('[data-section="relations"]')}>机制与关联 · {links.length}</button>

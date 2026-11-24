@@ -1,0 +1,59 @@
+[
+  {
+    "id": "scottish-witchcraft-record",
+    "source_types": ["scholarly_database"],
+    "source_contains": "10.7488/ds/100",
+    "entry": "HIS-6-0001",
+    "reason": "资料来自苏格兰猎巫档案；可结合史料来源评估方法阅读。"
+  },
+  {
+    "id": "zibuyu-edition",
+    "source_types": ["zibuyu_revision_link"],
+    "entry": "HIS-6-0005",
+    "reason": "资料为《子不语》的数字转录；可参照历史文本转写和版本说明。"
+  },
+  {
+    "id": "lao-manuscript",
+    "source_types": ["lao_dllm_search", "lanna_search", "cole_toc_index", "yuhuan_scan", "vietnam_cham_catalogue", "jade_toc", "historical_text_transcription"],
+    "entry": "HIS-6-0005",
+    "reason": "资料来自手稿或转录馆藏目录；可参照文献转写与版本说明。"
+  },
+  {
+    "id": "language-recording-archives",
+    "source_types": ["sinica_catalogue", "pangloss_japhug_catalogue", "pangloss_na_catalogue", "pangloss_na_candidate_catalogue", "pangloss_khmu_catalogue", "palue_original", "pumi_wolp_catalogue", "minyag_wolp_catalogue", "temiar_wolp_catalogue", "bl_dongjing_series", "bl_yi_project_index", "bl_burma_series", "bl_khmer_catalogue", "lowell_sea_catalogue"],
+    "entry": "REL-5-0010",
+    "reason": "资料来自语言或口传资料档案；可参照民俗收藏与社区档案的阅读指引。"
+  },
+  {
+    "id": "folklore-archives",
+    "source_types": ["thai_sac_dataset", "nitean_chapter", "korea_aks_catalogue", "heritage_register", "heritage_register_2008", "heritage_register_2011", "heritage_register_2014", "heritage_register_2021_pdf"],
+    "entry": "REL-5-0010",
+    "reason": "资料来自民间叙事馆藏目录；可参照民俗收藏与社区档案的阅读指引。"
+  },
+  {
+    "id": "oral-interview",
+    "source_types": ["oral_history", "interview"],
+    "entry": "HIS-6-0002",
+    "reason": "资料含访谈或口述出处；可结合口述史与记忆边界的阅读方法。"
+  },
+  {
+    "id": "news-report",
+    "source_types": ["newspaper_report", "press_account", "journalism", "archival_catalogue"],
+    "entry": "HIS-6-0001",
+    "reason": "资料含报刊报道或档案目录；可结合来源与证据链的评估方法。"
+  },
+  {
+    "id": "motif-region-data",
+    "source_types": ["research_dataset"],
+    "id_prefix": "corpus_berezkin_region_",
+    "entry": "LIT-5-0004",
+    "reason": "资料为母题分布研究区索引；可结合数字资料分类方法阅读。"
+  },
+  {
+    "id": "motif-data",
+    "source_types": ["research_dataset"],
+    "id_prefix": "index_berezkin_",
+    "entry": "LIT-5-0004",
+    "reason": "资料为神话母题数据索引；可结合数字人文与资料分类方法阅读。"
+  }
+]

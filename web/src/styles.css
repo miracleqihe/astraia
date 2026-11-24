@@ -557,6 +557,8 @@ h1, h2, h3, p, dl, dd { margin: 0; }
 .inspector-nav button[aria-pressed='true'] { color: var(--ink-prussian); border-bottom-color: var(--ink-prussian); }
 .inspector-nav button span { margin-left: 3px; font: 0.78rem/1 var(--font-astrometric); }
 .inspector-content { flex: 1; min-height: 0; overflow: auto; padding: 15px 23px 20px; }
+.record-portal-link { display: block; padding: 9px 10px; margin-bottom: 14px; color: #1b2a4a; border: 1px solid rgba(27,42,74,.42); background: #e5e0d5; font-size: 12px; text-decoration: none; }
+.record-portal-link:hover { background: #d9cdb8; }
 .reading-section { border-left: 2px solid #9d7843; padding-left: 13px; }
 .reading-section h4 { margin: 0 0 8px; color: #634d2c; font: 600 .89rem/1.4 var(--font-editorial); }
 .reading-section[data-reading-kind='report'] { border-color: var(--ink-verified); }

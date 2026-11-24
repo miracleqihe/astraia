@@ -141,6 +141,7 @@
 .life-reading-modes span { margin-left: 3px; color: #8c6d37; font-family: var(--font-astrometric); }
 .life-search-context { margin: 10px 0 0; color: #657082; font-size: 11px; }
 .life-save { padding: 7px 10px; color: #72531e; border: 1px solid #b79a67; background: transparent; font-size: 12px; }
+.life-portal-link { display: inline-block; margin: 0 8px 8px 0; padding: 7px 10px; color: #72531e; border: 1px solid #b79a67; font-size: 12px; text-decoration: none; }
 .life-save[aria-pressed='true'] { color: #1f5e4b; border-color: #1f5e4b; }
 .life-observation-note { display: block; margin-top: 15px; color: #1b2a4a; font-size: 12px; }
 .life-observation-note span { float: right; color: #657082; font-size: 11px; }
@@ -429,6 +430,7 @@
 .life-workspace[data-folio-theme='dark'] .life-more,
 .life-workspace[data-folio-theme='dark'] .life-original button,
 .life-workspace[data-folio-theme='dark'] .life-save { color: #e9d6ad; border-color: rgba(222,192,132,.45); }
+.life-workspace[data-folio-theme='dark'] .life-portal-link { color: #e9d6ad; border-color: rgba(222,192,132,.45); }
 .life-workspace[data-folio-theme='dark'] .life-prose pre { background: #141a29; }
 .life-workspace[data-folio-theme='parchment'] .life-inspector { color: #1b2a4a; background: #efece6; }
 .life-workspace[data-folio-theme='parchment'] .life-folio-bar { background: #e5e0d5; border-color: #c9b99b; }

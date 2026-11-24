@@ -10,12 +10,20 @@ const sources = node => {
 };
 const paragraphs = node => (node?.reading?.paragraphs ?? []).map(p=>`<p>${esc(p)}</p>`).join('') || '<p>本条暂无站内正文。</p>';
 
-export function renderBridgeCard(bridge, { root, onJump, onSelectRelated, confidence, relation, showF }) {
+export function renderBridgeCard(bridge, { root, onJump, onSelectRelated, confidence, relation, showF, tiers }) {
   const wrap = document.getElementById('syzygy-card-container');
   if (!bridge) { wrap.innerHTML = ''; return; }
   const node = bridge.mythos, knowledge = bridge.physis;
-  const classic = view => `${root}?view=${view}&story=${encodeURIComponent(node.id)}${showF ? '&fiction=1' : ''}`;
-  const bookLink = `${root}?view=life&entry=${encodeURIComponent(knowledge.id)}`;
+  const classic = view => {
+    const query=new URLSearchParams({view,story:node.id,bridge_story:node.id,bridge_entry:knowledge.id});
+    query.set('tiers',[...tiers].join(','));
+    if (showF) query.set('fiction','1');
+    return `${root}?${query}`;
+  };
+  const bookQuery = new URLSearchParams({view:'life',entry:knowledge.id,bridge_story:node.id,bridge_entry:knowledge.id});
+  bookQuery.set('tiers',[...tiers].join(','));
+  if (showF) bookQuery.set('fiction','1');
+  const bookLink = `${root}?${bookQuery}`;
   const badge = confidence[bridge.confidence];
   const codes = node.taxonomies.map(code=>`<span class="syzygy-code">${esc(code)}</span>`).join('');
   wrap.innerHTML = `<div class="space-y-2.5">
@@ -34,6 +42,7 @@ export function renderBridgeCard(bridge, { root, onJump, onSelectRelated, confid
       <div class="syzygy-prose syzygy-book-body">${handbookText(knowledge.body)}</div>
       <div class="syzygy-read-links"><a href="${bookLink}">经典万象星枢阅读</a><a href="${root}knowledge/handbook.pdf#page=${encodeURIComponent(knowledge.page)}" target="_blank" rel="noopener">打开原书</a></div>
       <div class="syzygy-read-links"><button class="action-pill ctl-btn" data-jump="omnia">✦ 格物星点</button><button class="action-pill ctl-btn" data-jump="sidera">+ 玄象星络</button><button class="action-pill ctl-btn" data-jump="umbra" ${bridge.hasCoordinates ? '' : 'disabled title="该条目没有坐标"'}>◇ 坤舆坐标</button></div>
+      <p class="syzygy-match-heading">此材料的其他知识对照</p><div data-curated-suggestions></div>
     </section></div>`;
   wrap.querySelectorAll('[data-jump]').forEach(button => button.addEventListener('click',()=>onJump(button.dataset.jump,bridge)));
   wrap.querySelector('[data-bridge-related]')?.addEventListener('click',()=>onSelectRelated(bridge.related.id));

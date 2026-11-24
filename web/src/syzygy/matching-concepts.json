@@ -1,0 +1,14 @@
+[
+  {"id":"flood","words":["flood","floods","洪水","大洪水"],"entry":"LIF-EMERG-0004","target":"洪水"},
+  {"id":"earthquake","words":["earthquake","earthquakes","地震"],"entry":"LIF-EMERG-0003","target":"地震"},
+  {"id":"volcano","words":["volcano","volcanoes","volcanic","火山"],"entry":"GEO-VOLC-0001","target":"火山"},
+  {"id":"tsunami","words":["tsunami","tsunamis","海啸"],"entry":"GEO-QUAKE-0005","target":"海啸"},
+  {"id":"lightning","words":["thunder","lightning","雷电","閃電"],"entry":"LIF-EMERG-0005","target":"雷电"},
+  {"id":"rainbow","words":["rainbow","rainbows","彩虹"],"entry":"GEO-CLIM-0015","target":"彩虹"},
+  {"id":"sun","words":["sun","太阳","太陽"],"entry":"LIF-TRAVEL-0024","target":"太阳"},
+  {"id":"ancestors","words":["ancestor","ancestors","祖先"],"entry":"REL-5-0003","target":"祖先"},
+  {"id":"poison","words":["poison","poisoning","中毒"],"entry":"HEA-TOPIC-0002","target":"中毒"},
+  {"id":"carbon-monoxide","words":["carbon monoxide","一氧化碳"],"entry":"CHE-6-0016","target":"一氧化碳"},
+  {"id":"elevator","words":["elevator","elevators","lift","电梯","電梯"],"entry":"LIF-TRAVEL-0029","target":"电梯"},
+  {"id":"fire","words":["fire","fires","火焰","火种","火種"],"entry":"LIF-EMERG-0108","target":"火"}
+]

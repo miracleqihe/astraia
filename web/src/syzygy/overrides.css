@@ -32,6 +32,19 @@
 .syzygy-book-body { margin-top: 9px; white-space: pre-wrap; }
 .syzygy-codes { display: flex; flex-wrap: wrap; gap: 4px; margin: 6px 0; }
 .syzygy-code { padding: 2px 5px; border: 1px solid rgba(182,146,246,.35); color: #d8b4fe; font-size: 10px; }
+.syzygy-stats { grid-template-columns: repeat(4,minmax(0,1fr)); }
+.syzygy-tier-rail { display: flex; align-items: center; justify-content: space-between; gap: 4px; padding: 6px 9px; border-bottom: 1px solid rgba(214,182,120,.15); }
+.syzygy-tier-rail span { color: #a89c84; font: 9px 'JetBrains Mono',monospace; letter-spacing: .09em; }
+.syzygy-tier-rail button { min-width: 25px; padding: 3px 4px; border: 1px solid rgba(214,182,120,.18); color: #8e887d; font: 10px 'JetBrains Mono',monospace; }
+.syzygy-tier-rail button[aria-pressed='true'] { border-color: rgba(214,182,120,.55); color: #f2d9a0; background: rgba(214,182,120,.1); }
+.syzygy-mobile-results { display: none; margin-top: 7px; padding: 5px 7px; color: #f2d9a0; border: 1px solid rgba(214,182,120,.4); font-size: 11px; }
+.syzygy-mobile-results[hidden] { display: none !important; }
+.syzygy-match-heading { margin-top: 10px; color: #d6b678; font-size: 10px; letter-spacing: .04em; }
+.syzygy-match-label { color: #d7c194 !important; }
+.syzygy-match-label[data-kind='guide'] { color: #a7b6be !important; }
+.syzygy-mechanism { margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(214,182,120,.2); }
+.syzygy-mechanism p { margin-top: 5px; }
+.syzygy-evidence-link, .syzygy-inline-button { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .syzygy-read-links button { padding: 6px 8px; font-size: 11px; }
 .syzygy-read-links button:disabled { cursor: not-allowed; opacity: .35; }
 .syzygy-related, .syzygy-directory-row { width: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 3px; padding: 7px 8px; margin-top: 4px; text-align: left; border: 1px solid rgba(214,182,120,.14); color: inherit; font-size: 11px; }
@@ -52,7 +65,11 @@ body[data-renderer='software'] .celestial-panel { background-color: rgba(8,12,22
 .parchment-scroll .syzygy-full-card { color: #283149; background: rgba(239,236,230,.8); border-color: rgba(27,42,74,.25); }
 .parchment-scroll .syzygy-reference, .parchment-scroll .syzygy-related small { color: #5a6578; }
 .parchment-scroll .syzygy-overline, .parchment-scroll .syzygy-full-card h4 { color: #805d29; }
+.parchment-scroll .status-confirmed { color: #1f5e4b !important; }
+.parchment-scroll .status-unverified { color: #795416 !important; }
+.parchment-scroll .status-refuted { color: #9e2a2b !important; }
 @media (max-width: 760px) {
+  .syzygy-mobile-results:not([hidden]) { display: inline-block; }
   #syzygy-header { display: grid; grid-template-columns: minmax(0,1fr) auto; grid-template-rows: 32px 32px; gap: 3px; height: 80px; padding: 5px 9px; }
   #syzygy-header > nav { grid-column: 1 / -1; grid-row: 2; width: 100%; max-width: none; justify-content: stretch; }
   #syzygy-header > nav .dim-tab { flex: 1; justify-content: center; min-width: 0; gap: 2px; padding: 5px 2px; font-size: clamp(8px,2.5vw,10px); white-space: nowrap; }

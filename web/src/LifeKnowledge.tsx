@@ -8,6 +8,7 @@ import { lifeSearchExcerpt, OBSERVATION_KEY, rankLifeResults, readObservations }
 import LifeResonance from './LifeResonance';
 import LifeInquiry from './LifeInquiry';
 import { lifeDimension, type LifeDimension } from './lifeDimensions';
+import { portalHref } from './portalNavigation';
 import './life.css';
 
 let scenePromise: Promise<typeof import('./views/LifeScene')> | undefined;
@@ -170,6 +171,9 @@ export default function LifeKnowledge() {
     setSelectedId(id); setShowPdf(false);
     const url = new URL(window.location.href);
     url.searchParams.set('view', 'life'); url.searchParams.set('entry', id);
+    if (url.searchParams.has('bridge_entry') && url.searchParams.get('bridge_entry') !== id) {
+      url.searchParams.delete('bridge_story'); url.searchParams.delete('bridge_entry');
+    }
     url.hash = anchor ?? '';
     window.history.replaceState({}, '', url);
     if (inspectorRef.current) inspectorRef.current.scrollTop = 0;
@@ -276,6 +280,9 @@ export default function LifeKnowledge() {
         <button className="life-back" type="button" onClick={clearSelection}>← 返回条目目录</button>
         <div className="life-overline">{selected.volume} / {book.subjects.find((s) => s.id === selected.subject)?.title}</div>
         <h2>{selected.title}</h2>
+        <a className="life-portal-link" href={portalHref('omnia',undefined,selected.id)} onClick={(event)=>{
+          event.currentTarget.href=portalHref('omnia',undefined,selected.id);
+        }}>◐ 穿界星门 · 查看关联民俗 ↗</a>
         <button className="life-save" type="button" aria-pressed={isSaved} onClick={() => toggleObservation(selected.id)}>
           {isSaved ? '★ 已加入观测列表' : '☆ 加入观测列表'}</button>
         {isSaved && <label className="life-observation-note">个人笔记 <span>{storageUnavailable ? '浏览器未允许保存' : '保存在此浏览器'}</span>

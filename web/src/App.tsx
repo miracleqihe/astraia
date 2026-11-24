@@ -10,6 +10,7 @@ import {
   type CodeFocus, type EvidenceGroup, type GraphDetails, type GraphNode, type GraphSnapshot, type Layer, type Tier, type ViewMode,
 } from './graph';
 import { loadOverviewMapFonts } from './views/geoFonts';
+import { portalHref, type PortalDimension } from './portalNavigation';
 
 let geoPromise: Promise<typeof import('./views/GeoView')> | undefined;
 let constellationPromise: Promise<typeof import('./views/ConstellationView')> | undefined;
@@ -29,22 +30,9 @@ function Brand() {
     <span className="brand-name">Astraia</span></div>;
 }
 
-function SyzygyLink({ dimension, story, showFiction }: { dimension: 'umbra' | 'sidera' | 'omnia'; story?: string | null; showFiction?: boolean }) {
-  const query = new URLSearchParams({ dim: dimension });
-  const initialStory = dimension === 'omnia' ? null : story || new URL(window.location.href).searchParams.get('story');
-  if (initialStory) query.set('story', initialStory);
-  if (showFiction ?? new URL(window.location.href).searchParams.get('fiction') === '1') query.set('fiction', '1');
-  return <a className="syzygy-entry" href={`${import.meta.env.BASE_URL}syzygy/?${query}`} aria-label="切换到朔望叠影视图" onClick={(event) => {
-    const current = new URL(window.location.href);
-    const destination = new URL(event.currentTarget.href);
-    if (dimension === 'omnia') {
-      const entry = current.searchParams.get('entry');
-      if (entry) destination.searchParams.set('entry', entry);
-    } else {
-      const currentStory = story || current.searchParams.get('story');
-      if (currentStory) destination.searchParams.set('story', currentStory);
-    }
-    event.currentTarget.href = destination.toString();
+function SyzygyLink({ dimension, story, showFiction, tiers }: { dimension: PortalDimension; story?: string | null; showFiction?: boolean; tiers?: readonly string[] }) {
+  return <a className="syzygy-entry" href={portalHref(dimension,story,undefined,showFiction,tiers)} aria-label="切换到朔望叠影视图" onClick={(event) => {
+    event.currentTarget.href = portalHref(dimension,story,undefined,showFiction,tiers);
   }}>
     ◐ <span className="syzygy-entry-full">朔望叠影</span><span className="syzygy-entry-short" aria-hidden="true">叠影</span></a>;
 }
@@ -84,7 +72,11 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
   const [directoryRegion, setDirectoryRegion] = useState<Region>('all');
   const [directoryContent, setDirectoryContent] = useState<ContentGroup>('all');
   const [searchOpen, setSearchOpen] = useState(false);
-  const [tiers, setTiers] = useState(() => new Set<Tier>(ALL_TIERS.filter((tier) => tier !== 'F' || entry.showFiction)));
+  const [tiers, setTiers] = useState(() => {
+    const url = new URL(window.location.href);
+    const requested = url.searchParams.has('tiers') ? new Set(url.searchParams.get('tiers')!.split(',')) : null;
+    return new Set<Tier>(ALL_TIERS.filter(tier => requested ? requested.has(tier) : tier !== 'F' || entry.showFiction));
+  });
   const [layers, setLayers] = useState(() => new Set<Layer>(ALL_LAYERS));
   const [evidence, setEvidence] = useState(() => new Set<EvidenceGroup>(ALL_EVIDENCE));
   const [activeLayer, setActiveLayer] = useState<Layer | null>(null);
@@ -113,11 +105,24 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
       setCompareId(compared?.id ?? null);
       setDrawer(compared ? 'compare' : 'single');
       if (coordinatesOf(requested)) setMapFocus({ id: requested.id });
-      if (isFiction(requested) || (compared && isFiction(compared))) setTiers(new Set(ALL_TIERS));
+      if (isFiction(requested) || (compared && isFiction(compared))) setTiers(previous => new Set([...previous,'F']));
     }
     if (!url.searchParams.has('view') && !snapshot.nodes.some(isModernReading)) setMode('graph');
     setEntryResolved(true);
   }, [entryResolved, loading, snapshot.nodes]);
+
+  useEffect(() => {
+    if (loading || !entryResolved || lifeMode) return;
+    const url = new URL(window.location.href);
+    if (selectedId) url.searchParams.set('story',selectedId); else url.searchParams.delete('story');
+    if (compareId) url.searchParams.set('compare',compareId); else url.searchParams.delete('compare');
+    if (tiers.has('F')) url.searchParams.set('fiction','1'); else url.searchParams.delete('fiction');
+    url.searchParams.set('tiers',ALL_TIERS.filter(tier=>tiers.has(tier)).join(','));
+    if (url.searchParams.has('bridge_story') && url.searchParams.get('bridge_story') !== selectedId) {
+      url.searchParams.delete('bridge_story'); url.searchParams.delete('bridge_entry');
+    }
+    window.history.replaceState({},'',url);
+  }, [selectedId,compareId,tiers,loading,entryResolved,lifeMode]);
 
   const timeline = useMemo(() => {
     const values = snapshot.nodes.filter((node) => node.z_layer === 1 && tiers.has(node.credibility_tier))
@@ -275,6 +280,9 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
     if (next !== 'life') setMode(next);
     const url = new URL(window.location.href);
     url.searchParams.set('view', next === 'geo' ? 'map' : next);
+    if (next === 'life' && selectedId && url.searchParams.get('bridge_story') === selectedId && url.searchParams.has('bridge_entry')) {
+      url.searchParams.set('entry',url.searchParams.get('bridge_entry')!);
+    }
     if (next !== 'life') url.searchParams.delete('entry');
     window.history.replaceState({}, '', url);
     if (loading && next === 'life') onEnterLifeWhileLoading();
@@ -285,7 +293,7 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
       <Brand />
       <ViewSwitch mode={mode} lifeMode={lifeMode} onSwitch={switchView} />
       <div className="top-actions">
-      <SyzygyLink dimension={lifeMode ? 'omnia' : mode === 'geo' ? 'umbra' : 'sidera'} story={lifeMode ? null : selectedId} showFiction={tiers.has('F')} />
+      <SyzygyLink dimension={lifeMode ? 'omnia' : mode === 'geo' ? 'umbra' : 'sidera'} story={lifeMode ? null : selectedId} showFiction={tiers.has('F')} tiers={ALL_TIERS.filter(tier=>tiers.has(tier))} />
         {lifeMode && <span className="life-header-slot" />}
         {!lifeMode && <>
         {!publicSite && <a className="review-link" href={`${import.meta.env.BASE_URL}review/index.html`}>资料复核</a>}
@@ -352,7 +360,7 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
             : selectedDetail && comparisonDetail ? <DossierComparison key={`${selectedDetail.id}:${comparisonDetail.id}`} left={selectedDetail} right={comparisonDetail}
               graph={graph} hubs={commonHubs} codeInteraction={codeInteraction} onRead={readRecord} onChange={() => setComparePicking(true)} onHover={setHoveredId} />
             : selectedDetail && <div className={`inspector-columns${drawer === 'compare' ? ' comparing' : ''}`}>
-              <NodeInspector node={selectedDetail} graph={graph} onSelect={selectNode} onLocate={locate} onClose={() => { setDrawer('collapsed'); setComparePicking(false); }}
+              <NodeInspector node={selectedDetail} graph={graph} portalHref={portalHref(mode === 'geo' ? 'umbra' : 'sidera',selectedDetail.id,undefined,tiers.has('F'),ALL_TIERS.filter(tier=>tiers.has(tier)))} onSelect={selectNode} onLocate={locate} onClose={() => { setDrawer('collapsed'); setComparePicking(false); }}
                 onCompare={() => { setDrawer('compare'); setComparePicking(true); }} onNodeHover={setHoveredId} codeInteraction={codeInteraction} />
               {drawer === 'compare' && <div className="compare-empty">请选择第二个节点。</div>}
             </div>}
@@ -413,6 +421,9 @@ export function App() {
     <header className="topbar"><Brand /><ViewSwitch mode="geo" lifeMode onSwitch={(next) => {
       if (next === 'life') return;
       const url = new URL(window.location.href);
+      if (url.searchParams.get('entry') === url.searchParams.get('bridge_entry') && url.searchParams.has('bridge_story')) {
+        url.searchParams.set('story',url.searchParams.get('bridge_story')!);
+      }
       url.searchParams.set('view', next === 'geo' ? 'map' : 'graph'); url.searchParams.delete('entry'); url.hash = '';
       window.history.replaceState({}, '', url); setPendingMode(next); setDirectLife(false);
     }} /><div className="top-actions"><SyzygyLink dimension="omnia" /><span className="life-header-slot" /></div></header>
