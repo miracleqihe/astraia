@@ -495,6 +495,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     `;
 
     const starFragmentGLSL = `
+      uniform float uGlobeMode;
       varying vec3 vColor;
       varying float vSpike;
       varying float vHighlight;
@@ -513,7 +514,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
 
         // 3. Crisp 4-point astronomical diffraction spikes for hubs & anchors
         float spikes = 0.0;
-        if (vSpike > 0.04) {
+        if (vSpike > 0.04 && uGlobeMode < 0.5) {
           float sCross = exp(-abs(uv.x) * 42.0) * exp(-abs(uv.y) * 6.0)
                        + exp(-abs(uv.y) * 42.0) * exp(-abs(uv.x) * 6.0);
           spikes = sCross * vSpike * 0.95;
@@ -534,7 +535,8 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
 
     const starUniforms = {
       uTime: { value: 0 },
-      uPixelRatio: { value: Math.min(window.devicePixelRatio || 1, 2) }
+      uPixelRatio: { value: Math.min(window.devicePixelRatio || 1, 2) },
+      uGlobeMode: { value: 0 }
     };
 
     const starShaderMat = new THREE.ShaderMaterial({
@@ -665,6 +667,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     spiritualAnchorGeo.setAttribute('aPhase', new THREE.BufferAttribute(sPhaseArr, 1));
 
     const spiritualAnchorPoints = new THREE.Points(spiritualAnchorGeo, starShaderMat);
+    spiritualAnchorPoints.userData.globeAnchor = true;
     cosmosGroup.add(spiritualAnchorPoints);
 
     // Deep-Space Background Starfield (1,600 static distant stars)
@@ -829,18 +832,6 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     umbraEcliptic.rotation.set(1.15, 0.25, 0.41);
     umbraGlobeGroup.add(umbraEcliptic);
 
-    // Vertical Brass Pin Stems rising from Earth's surface to each Folklore Site Pin
-    const pinStemPts = [];
-    SYZYGY_BRIDGES.filter(b => b.hasCoordinates && initialTiers.has(b.mythos.credibility_tier) && (!b.fiction || initialShowF)).forEach(b => {
-      const surf = latLonToVec3(b.umbraGeo.lat, b.umbraGeo.lon, EARTH_RADIUS);
-      pinStemPts.push(surf, b.posUmbraPin.clone());
-    });
-    const pinStemGeometry = new THREE.BufferGeometry().setFromPoints(pinStemPts);
-    umbraGlobeGroup.add(new THREE.LineSegments(
-      pinStemGeometry,
-      new THREE.LineBasicMaterial({ color: '#f2d9a0', transparent: true, opacity: 0.55, depthWrite: false })
-    ));
-
     // 5C. SIDERA Shimmering Non-Euclidean Constellation Filaments
     const sideraFilamentGroup = new THREE.Group();
     sideraFilamentGroup.visible = false;
@@ -916,6 +907,10 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         const isTrailActive = appState.activeTrail === 'all' || bridge.trail === appState.activeTrail;
         const isSelected = personal || (appState.selectedBridge && appState.selectedBridge.id === bridge.id);
         if (appState.activeTrail !== 'all' && !isTrailActive && !isSelected) return;
+        // On the globe, an unrelated knowledge star has no geographic position.
+        // Keep only the selected bridge visible so background links do not look
+        // like line-shaped location markers or imply invented destinations.
+        if (appState.dimension === 'umbra' && !isSelected) return;
         // Keep all anchors selectable, but sample background curves in the overview
         // to avoid turning a larger collection into a dense mesh on slow devices.
         const overviewStride = Math.max(1, Math.ceil(SYZYGY_BRIDGES.length / 12));
@@ -1159,6 +1154,10 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
 
     function switchDimension(dim, skipCamera = false, preserveReturn = false) {
       appState.dimension = dim;
+      starUniforms.uGlobeMode.value = dim === 'umbra' ? 1 : 0;
+      const anchorSizes = spiritualAnchorGeo.getAttribute('aSize');
+      anchorSizes.array.fill(dim === 'umbra' ? 14 : 25);
+      anchorSizes.needsUpdate = true;
       if (!preserveReturn) appState.classicView = dim === 'umbra' ? 'map' : dim === 'sidera' ? 'graph' : 'life';
       if (dim !== 'omnia') {
         appState.is2DPlanisphere = false;
@@ -2178,13 +2177,6 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     function toggleTier(tier) {
       if (appState.tiers.has(tier)) appState.tiers.delete(tier); else appState.tiers.add(tier);
       appState.showF = appState.tiers.has('F'); syncTierButtons();
-      const coords = [];
-      SYZYGY_BRIDGES.filter(b => b.hasCoordinates && bridgeAllowed(b)).forEach(b => {
-        latLonToVec3(b.umbraGeo.lat,b.umbraGeo.lon,EARTH_RADIUS).toArray(coords,coords.length);
-        b.posUmbraPin.toArray(coords,coords.length);
-      });
-      pinStemGeometry.setAttribute('position',new THREE.Float32BufferAttribute(coords,3));
-      if (coords.length) pinStemGeometry.computeBoundingSphere();
       const selectedHidden = (appState.selectedBridge && !bridgeAllowed(appState.selectedBridge))
         || (appState.selectedGraph && (!appState.tiers.has(appState.selectedGraph.credibility_tier)
           || (!appState.showF && appState.selectedGraph.is_fictional_quarantine)));

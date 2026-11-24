@@ -41,6 +41,8 @@ function makeSoftwareRenderer() {
         const colors = object.geometry.getAttribute('aColor'), sizes = object.geometry.getAttribute('aSize');
         const spikes = object.geometry.getAttribute('aSpike'), highlights = object.geometry.getAttribute('aHighlight');
         const e = mvp.elements, arr = position.array, stride = object.userData.softwareStride ?? 1;
+        const roundGlobePoints = object.material.uniforms?.uGlobeMode?.value > .5;
+        const roundMarkers = roundGlobePoints && (object.userData.geographicMarkers || object.userData.globeAnchor);
         const localEye = object.userData.geoOcclusion ? object.worldToLocal(camera.getWorldPosition(new THREE.Vector3())) : null;
         let cache = object.userData.softwareColors;
         if (colors && (!cache || cache.version !== colors.version || cache.stride !== stride)) {
@@ -70,8 +72,10 @@ function makeSoftwareRenderer() {
           const alpha = Math.max(.07, Math.min(1,h*.82)), style = colors ? cache.styles[i] : 'rgb(230,220,205)';
           if (alpha !== lastAlpha) { ctx.globalAlpha=alpha; lastAlpha=alpha; }
           if (style !== lastStyle) { ctx.fillStyle=style; lastStyle=style; }
-          ctx.fillRect(x2-size/2, y2-size/2, size, size);
-          if ((spikes?.getX(i) ?? 0) > .6 && h > .4) {
+          if (roundMarkers && size > 1.5) {
+            ctx.beginPath(); ctx.arc(x2, y2, size / 2, 0, Math.PI * 2); ctx.fill();
+          } else ctx.fillRect(x2-size/2, y2-size/2, size, size);
+          if (!roundGlobePoints && (spikes?.getX(i) ?? 0) > .6 && h > .4) {
             ctx.globalAlpha = Math.min(1,h); ctx.fillStyle='#fff8e6'; lastAlpha=ctx.globalAlpha; lastStyle='#fff8e6';
             ctx.fillRect(x2-1,y2-4,2,8);ctx.fillRect(x2-4,y2-1,8,2);
           }

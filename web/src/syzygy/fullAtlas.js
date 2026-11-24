@@ -109,6 +109,7 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
     const points = new THREE.Points(geometry, starMaterial);
     points.userData.softwareStride = 1;
     points.userData.geoOcclusion = mode === 'geo';
+    points.userData.geographicMarkers = mode === 'geo';
     points.visible = false; cosmosGroup.add(points);
     return points;
   }
