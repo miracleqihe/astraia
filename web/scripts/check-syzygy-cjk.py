@@ -11,7 +11,9 @@ import sys
 from fontTools.ttLib import TTFont
 
 ROOT = Path(__file__).resolve().parents[2]
-DATA = (ROOT / 'web/public/data/graph_data.json', ROOT / 'web/public/knowledge/data.json')
+DATA = (ROOT / 'web/public/data/graph_data.json', ROOT / 'web/public/knowledge/data.json',
+        ROOT / 'web/src/syzygy/bridges.json', ROOT / 'web/src/syzygy/matching-rules.json',
+        ROOT / 'web/src/syzygy/matching-concepts.json')
 UI = (list((ROOT / 'web/src/syzygy').glob('*.js')) + list((ROOT / 'web/src').glob('*.tsx'))
       + [ROOT / 'web/syzygy/index.html', ROOT / 'web/src/portalNavigation.ts'])
 texts = [json.dumps(json.loads(path.read_text(encoding='utf-8')), ensure_ascii=False) for path in DATA]

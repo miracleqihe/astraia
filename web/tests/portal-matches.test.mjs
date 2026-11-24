@@ -8,7 +8,7 @@ const book = {data_sha256:'book-1',entries:[{id:'HEA-1'}]};
 const index = {schema_version:1,snapshot_id:'graph-1',handbook_sha256:'book-1',stats:{matched_nodes:3},matches:{
   'case-a':[{entry:'HEA-1',kind:'guide',reason:'来源类型'}],
   'case-b':[{entry:'HEA-1',kind:'theme',score:10,terms:[{term:'睡眠',source:'题名',target:'题名'}]}],
-  'case-c':[{entry:'HEA-1',kind:'curated',bridge_id:'SYZ-1'}],
+  'case-c':[{entry:'HEA-1',kind:'curated',bridge_id:'SYZ-1',reason:'精选阅读线索'}],
 }};
 function stub(data, hashData = data) {
   const text=JSON.stringify(data);
@@ -33,6 +33,7 @@ test('rejects altered bytes, stale snapshots and unknown ids', async()=>{
     [{...index,matches:{'missing':[{entry:'HEA-1',kind:'theme'}]}},/未知节点/],
     [{...index,matches:{'case-a':[{entry:'missing',kind:'theme'}]}},/未知条目/],
     [{...index,matches:{'case-a':[{entry:'HEA-1',kind:'confirmed'}]}},/未知条目/],
+    [{...index,matches:{'case-a':[{entry:'HEA-1',kind:'curated',bridge_id:'SYZ-1'}]}},/依据不完整/],
     [{...index,matches:{'case-a':[{entry:'HEA-1',kind:'theme',status:'confirmed',terms:[{term:'睡眠',source:'题名',target:'题名'}]}]}},/无效状态/],
     [{...index,stats:{matched_nodes:4}},/校验失败/,index],
   ]) {

@@ -18,10 +18,11 @@ const rulesBytes = await readFile(`${webRoot}/src/syzygy/matching-rules.json`);
 const rules = JSON.parse(rulesBytes.toString('utf8'));
 const conceptsBytes = await readFile(`${webRoot}/src/syzygy/matching-concepts.json`);
 const concepts = JSON.parse(conceptsBytes.toString('utf8'));
-const algorithmHash = createHash('sha256').update(await readFile(fileURLToPath(import.meta.url))).update(rulesBytes).update(conceptsBytes).digest('hex');
+const curatedBytes = await readFile(`${webRoot}/src/syzygy/bridges.json`);
+const algorithmHash = createHash('sha256').update(await readFile(fileURLToPath(import.meta.url))).update(rulesBytes).update(conceptsBytes).update(curatedBytes).digest('hex');
 const graph = JSON.parse(await readFile(graphPath, 'utf8'));
 const book = JSON.parse(bookBytes.toString('utf8'));
-const curated = JSON.parse(await readFile(`${webRoot}/src/syzygy/bridges.json`, 'utf8'));
+const curated = JSON.parse(curatedBytes.toString('utf8'));
 if (graph.schema_version !== 1 || !Array.isArray(graph.nodes) || !Array.isArray(graph.links) || !Array.isArray(book.entries)) throw new Error('Invalid matching sources.');
 const bookById = new Map(book.entries.map(entry => [entry.id,entry]));
 for (const rule of rules) if (!bookById.has(rule.entry)) throw new Error(`Unknown rule entry: ${rule.id}`);
@@ -150,7 +151,7 @@ function matchNode(node) {
   const output=[]; const seen=new Set();
   for (const bridge of curatedByNode.get(node.id) ?? []) {
     if (!bookById.has(bridge.entry)) throw new Error(`Unknown curated entry: ${bridge.id}`);
-    output.push({ entry:bridge.entry, kind:'curated', bridge_id:bridge.id }); seen.add(bridge.entry);
+    output.push({ entry:bridge.entry, kind:'curated', bridge_id:bridge.id, reason:bridge.rationale }); seen.add(bridge.entry);
   }
   for (const rule of concepts) {
     const found=conceptWord(rule,node);

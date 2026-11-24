@@ -34,8 +34,9 @@ export function renderBridgeCard(bridge, { root, onJump, onSelectRelated, confid
       <div class="syzygy-read-links"><a href="${classic('map')}">经典地图</a><a href="${classic('graph')}">经典星络</a></div>
     </section>
     <section class="prism-pane syzygy-full-card"><p class="syzygy-overline">◐ ${esc(relation[bridge.relation]?.label || '主题对读')}</p>
+      <p class="syzygy-reference">${esc(bridge.rationale)}</p>
       ${bridge.related ? `<p class="syzygy-reference"><span class="${badge.cls}">${esc(badge.badge)}</span> · 个案与下列节点的原有关系</p><button class="syzygy-related" data-bridge-related><span>${esc(bridge.related.title)}</span><small>查看节点 ↗</small></button><div class="syzygy-prose">${paragraphs(bridge.related)}</div>${sources(bridge.related)}` : '<p class="syzygy-reference">依照共同主题组织的阅读线索。</p>'}
-      <p class="syzygy-reference">下卷为主题对读；上述状态仅描述原图谱中的个案关联。</p>
+      ${bridge.related ? '<p class="syzygy-reference">下卷为主题对读；上述状态仅描述原图谱中的个案关联。</p>' : ''}
     </section>
     <section class="physis-pane syzygy-full-card"><p class="syzygy-overline">下卷 · 格物识微 / ${esc(knowledge.volLabel)}</p><h3>${esc(knowledge.title)}</h3>
       <p class="syzygy-reference">${esc(knowledge.id)} · PDF 第 ${esc(knowledge.page)} 页</p>

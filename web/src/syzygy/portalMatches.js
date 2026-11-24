@@ -22,7 +22,7 @@ export async function loadPortalMatches(root, dataset, book, graph) {
       if (!entries.has(row.entry) || !['curated','theme','guide'].includes(row.kind)) throw new Error('对照索引含未知条目。');
       if (seen.has(row.entry) || row.status !== undefined) throw new Error('对照索引含重复或无效状态。');
       if ((row.kind === 'guide' && typeof row.reason !== 'string')
-        || (row.kind === 'curated' && typeof row.bridge_id !== 'string')
+        || (row.kind === 'curated' && (typeof row.bridge_id !== 'string' || typeof row.reason !== 'string' || !row.reason.trim()))
         || (row.kind === 'theme' && (!Array.isArray(row.terms) || !row.terms.length || row.terms.some(term=>
           typeof term.term !== 'string' || typeof term.source !== 'string' || typeof term.target !== 'string')))) throw new Error('对照索引的匹配依据不完整。');
       seen.add(row.entry);

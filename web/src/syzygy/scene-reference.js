@@ -103,7 +103,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       }
     };
 
-    // 12 Flagship Cross-Dimensional Syzygy Bridges
+    // Curated cross-dimensional reading bridges.
     const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]);
     const textExcerpt = body => String(body ?? '').replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
       .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/⟦anchor:[^⟧]+⟧/g, '')
@@ -349,7 +349,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
           const colSidera = new THREE.Color(SIDERA_CLUSTERS[(vIdx + dIdx) % 5].color);
 
           // Only explicit crosswalks are linked; other stars keep their real identity.
-          const matchedBridge = SYZYGY_BRIDGES.find(b => b.physis.code === entry.id);
+          const matchedBridges = SYZYGY_BRIDGES.filter(b => b.physis.code === entry.id);
 
           const node = {
             index: starIndexCounter,
@@ -363,7 +363,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
             code: entry.id,
             title: entry.title,
             page: entry.page,
-            bridgeId: matchedBridge?.id ?? null,
+            bridgeIds: matchedBridges.map(bridge => bridge.id),
             posOmnia3D,
             posOmnia2D,
             posUmbra3D,
@@ -373,8 +373,8 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
             colUmbra,
             colSidera,
             curCol: colOmnia.clone(),
-            size: isHub || matchedBridge ? 21.0 : (s < 4 ? 9.5 : 4.2 + Math.pow(sRand(), 2.2) * 4.2),
-            spike: isHub || matchedBridge ? 1.0 : (s < 3 ? 0.38 : 0.0),
+            size: isHub || matchedBridges.length ? 21.0 : (s < 4 ? 9.5 : 4.2 + Math.pow(sRand(), 2.2) * 4.2),
+            spike: isHub || matchedBridges.length ? 1.0 : (s < 3 ? 0.38 : 0.0),
             phase: sRand() * Math.PI * 2
           };
 
@@ -386,7 +386,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       });
     });
 
-    // Attach exact 3D Anchor Coordinates to all 12 Syzygy Bridges across OMNIA, SIDERA & UMBRA
+    // Attach coordinates in all three dimensions, distributing each cluster independently.
     SYZYGY_BRIDGES.forEach((bridge, bIdx) => {
       const targetHub = PRIMARY_NODES.find(node => node.code === bridge.physis.code);
       if (!targetHub) throw new Error(`找不到关联知识条目：${bridge.physis.code}`);
@@ -406,11 +406,14 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
 
       // Exact Motif Constellation Hub in SIDERA
       const cl = SIDERA_CLUSTERS.find(c => c.id === bridge.sideraCluster) || SIDERA_CLUSTERS[0];
-      const subAng = (bIdx / 12) * Math.PI * 2;
+      const clusterBridges = SYZYGY_BRIDGES.filter(item => item.sideraCluster === bridge.sideraCluster);
+      const clusterIndex = clusterBridges.indexOf(bridge);
+      const subAng = clusterIndex / clusterBridges.length * Math.PI * 2;
+      const clusterRadius = clusterBridges.length > 8 ? 48 : 32;
       bridge.posSideraHub = cl.center.clone().add(new THREE.Vector3(
-        Math.cos(subAng) * 32,
-        Math.sin(subAng) * 26,
-        ((bIdx % 2) * 2 - 1) * 18
+        Math.cos(subAng) * clusterRadius,
+        Math.sin(subAng) * clusterRadius * .82,
+        ((clusterIndex % 2) * 2 - 1) * 18
       ));
 
       bridge.curAnchorPos = bridge.posOmniaSyzygy.clone();
@@ -626,7 +629,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     dustPoints.userData.softwareStride = 3;
     cosmosGroup.add(dustPoints);
 
-    // Build 12 Luminous Spiritual Motif Anchors (玄象母题锚点 / 坤舆异闻坐标针)
+    // Build the curated spiritual motif anchors (玄象母题锚点 / 坤舆异闻坐标针).
     const sCount = SYZYGY_BRIDGES.length;
     const sPosArr = new Float32Array(sCount * 3);
     const sColArr = new Float32Array(sCount * 3);
@@ -909,6 +912,10 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         const isTrailActive = appState.activeTrail === 'all' || bridge.trail === appState.activeTrail;
         const isSelected = personal || (appState.selectedBridge && appState.selectedBridge.id === bridge.id);
         if (appState.activeTrail !== 'all' && !isTrailActive && !isSelected) return;
+        // Keep all anchors selectable, but sample background curves in the overview
+        // to avoid turning a larger collection into a dense mesh on slow devices.
+        const overviewStride = Math.max(1, Math.ceil(SYZYGY_BRIDGES.length / 12));
+        if (appState.activeTrail === 'all' && !appState.searchQuery && !isSelected && !personal && idx % overviewStride !== 0) return;
 
         const pStart = bridge.curAnchorPos.clone();
         const pEnd = bridge.materialNode.curPos.clone();
@@ -1246,7 +1253,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         domAnchors.push({ type: 'sideraCluster', el, cl });
       });
 
-      // 3. 12 Syzygy Spiritual Motif / Umbra Site Chips
+      // 3. Curated Syzygy spiritual motif / Umbra site chips.
       SYZYGY_BRIDGES.forEach(bridge => {
         const el = document.createElement('div');
         el.className = 'world-tag';
@@ -1286,27 +1293,28 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       // Update Primary Star Brightness
       PRIMARY_NODES.forEach((n, i) => {
         let match = true;
+        const hasMatchingBridge = n.bridgeIds.some(id => matchingBridgeIds.has(id));
         if (appState.scopeTab === 'supplement' && !n.isSupplement) match = false;
-        if (appState.scopeTab === 'bridges' && !matchingBridgeIds.has(n.bridgeId)) match = false;
+        if (appState.scopeTab === 'bridges' && !hasMatchingBridge) match = false;
         if (appState.activeVolId && n.volId !== appState.activeVolId) match = false;
         if (appState.activeDiscId && n.discId !== appState.activeDiscId) match = false;
-        if (appState.activeTrail !== 'all' && !matchingBridgeIds.has(n.bridgeId)) match = false;
+        if (appState.activeTrail !== 'all' && !hasMatchingBridge) match = false;
         if (q) {
           const sHay = `${n.code} ${n.title} ${n.volName} ${n.discName}`.toLowerCase();
-          if (!sHay.includes(q) && !matchingBridgeIds.has(n.bridgeId)) match = false;
+          if (!sHay.includes(q) && !hasMatchingBridge) match = false;
         }
 
         let h = match ? 0.95 : 0.10;
         if ((appState.selectedBridge && appState.selectedBridge.materialNode.index === i) || appState.portalBridge?.materialNode.index === i || appState.selectedBook?.id === n.code) {
           h = 2.2;
-        } else if (n.isHub && matchingBridgeIds.has(n.bridgeId) && appState.syzygyOn) {
+        } else if (n.isHub && hasMatchingBridge && appState.syzygyOn) {
           h = Math.max(h, 1.55);
         }
         pHigh.array[i] = h;
       });
       pHigh.needsUpdate = true;
 
-      // Update 12 Spiritual Anchor Brightness
+      // Update spiritual anchor brightness.
       const showSpiritualPoints = appState.syzygyOn || appState.dimension !== 'omnia';
       SYZYGY_BRIDGES.forEach((b, i) => {
         if (!showSpiritualPoints || !bridgeAllowed(b) || (appState.dimension === 'umbra' && !b.hasCoordinates)) {
@@ -1348,10 +1356,19 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       if (appState.scopeTab === 'bridges') {
         const heading = document.createElement('p');
         heading.className = 'syzygy-directory-heading'; heading.textContent = '心物对读 · 已整理线索'; container.append(heading);
-        SYZYGY_BRIDGES.filter(b => bridgeAllowed(b) && (!appState.searchQuery || appState.matchingBridgeIds?.has(b.id))).forEach(b => {
-          const button = document.createElement('button'); button.className = 'syzygy-directory-row';
-          button.innerHTML = `<b>${escapeHTML(b.shortLabel)}</b><span>${escapeHTML(b.id)} · ${escapeHTML(b.physis.id)}</span>`;
-          button.addEventListener('click', () => selectSyzygyBridge(b,true)); container.append(button);
+        SIDERA_CLUSTERS.forEach(cluster => {
+          const bridges = SYZYGY_BRIDGES.filter(b => b.sideraCluster === cluster.id && bridgeAllowed(b)
+            && (!appState.searchQuery || appState.matchingBridgeIds?.has(b.id)));
+          if (!bridges.length) return;
+          const section = document.createElement('section');
+          const label = document.createElement('p'); label.className = 'syzygy-directory-heading';
+          label.textContent = `${cluster.name} · ${bridges.length}`; section.append(label);
+          bridges.forEach(b => {
+            const button = document.createElement('button'); button.className = 'syzygy-directory-row';
+            button.innerHTML = `<b>${escapeHTML(b.shortLabel)}</b><span>${escapeHTML(b.id)} · ${escapeHTML(b.physis.id)}</span>`;
+            button.addEventListener('click', () => selectSyzygyBridge(b,true)); section.append(button);
+          });
+          container.append(section);
         });
         return;
       }
@@ -1474,7 +1491,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       listEl.innerHTML = '';
 
       const visibleBridges = SYZYGY_BRIDGES.filter(b => matchingBridgeIds.has(b.id));
-      countLbl.textContent = `${visibleBridges.length} / 12 BRIDGES`;
+      countLbl.textContent = `${visibleBridges.length} / ${SYZYGY_BRIDGES.filter(bridgeAllowed).length} BRIDGES`;
 
       visibleBridges.forEach(b => {
         const isSel = appState.selectedBridge && appState.selectedBridge.id === b.id;
@@ -1628,7 +1645,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         }
       }
 
-      // The full catalogue is drawn separately from the twelve curated anchors.
+      // The full catalogue is drawn separately from the curated anchors.
       if (!hitResult) hitResult = fullAtlas.hit(raycaster);
 
       // 2. Otherwise check Primary Knowledge Stars
@@ -1636,7 +1653,9 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         const starHits = raycaster.intersectObject(primaryStarPoints);
         if (starHits.length > 0) {
           const node = PRIMARY_NODES[starHits[0].index];
-          const b = SYZYGY_BRIDGES.find(x => x.id === node.bridgeId);
+          const candidates = SYZYGY_BRIDGES.filter(bridge => node.bridgeIds.includes(bridge.id)
+            && bridgeAllowed(bridge) && (appState.matchingBridgeIds?.has(bridge.id) ?? true));
+          const b = candidates.length === 1 ? candidates[0] : null;
           hitResult = {
             kind: 'star',
             node,
@@ -1645,7 +1664,8 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
             coord: `${node.code} · P.${node.page}`,
             tag: node.volName,
             title: node.title,
-            sub: `点击关联朔望手卷：${b ? b.shortLabel : node.discName}`
+            sub: b ? `点击关联朔望手卷：${b.shortLabel}`
+              : candidates.length > 1 ? `点击查看 ${candidates.length} 道精选对读` : `点击阅读：${node.discName}`
           };
         }
       }
@@ -1968,7 +1988,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         dustGeo.getAttribute('aColor').needsUpdate = true;
       }
 
-      // Morph 12 Spiritual Motif Anchors
+      // Morph the curated spiritual motif anchors.
       let anchorsMoving = false;
       const sPos = spiritualAnchorGeo.getAttribute('position').array;
       SYZYGY_BRIDGES.forEach((b, i) => {
@@ -2054,7 +2074,8 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
           const visible = (appState.dimension !== 'omnia' || (appState.syzygyOn && !appState.is2DPlanisphere))
             && bridgeAllowed(item.bridge) && (appState.dimension !== 'umbra' || item.bridge.hasCoordinates)
             && (appState.activeTrail === 'all' || item.bridge.trail === appState.activeTrail)
-            && (!appState.searchQuery || appState.matchingBridgeIds?.has(item.bridge.id));
+            && (!appState.searchQuery || appState.matchingBridgeIds?.has(item.bridge.id))
+            && (appState.selectedBridge?.id === item.bridge.id || appState.hoveredTarget?.bridge?.id === item.bridge.id);
           if (!visible) {
             item.el.style.opacity = '0';
             item.el.style.pointerEvents = 'none';

@@ -19,6 +19,9 @@ if (graph.schema_version !== 1 || !Array.isArray(graph.nodes) || !Array.isArray(
   || !Array.isArray(book.entries) || !Array.isArray(book.subjects)) throw new Error('Syzygy sources are invalid.');
 const graphById = new Map(graph.nodes.map((node) => [node.id, node]));
 const bookById = new Map(book.entries.map((entry) => [entry.id, entry]));
+if (new Set(manifest.map(item => item.id)).size !== manifest.length
+  || new Set(manifest.map(item => `${item.case}\u0000${item.entry}`)).size !== manifest.length)
+  throw new Error('Duplicate curated bridge or story/knowledge pair.');
 const volumeIds = [...new Set(book.subjects.map((subject) => subject.volume))];
 const safeSources = (node) => (node?.sources ?? []).map(({ citation, type, url, doi, locator }) =>
   ({ citation, type, url: /^https?:\/\//i.test(url ?? '') ? url : null, doi, locator }));
@@ -32,11 +35,17 @@ const bridges = manifest.map((item) => {
   const entry = bookById.get(item.entry);
   if (!story || !entry || (item.related && !related)) throw new Error(`Missing real node for ${item.id}.`);
   if (!story.reading?.paragraphs?.length) throw new Error(`Missing narrative for ${item.id}.`);
+  if (!item.rationale?.trim() || !(story.sources ?? []).some(source => source.citation || source.url || source.doi)
+    || !entry.body?.trim()) throw new Error(`Missing reading context or source for ${item.id}.`);
+  if (!['all','trail1','trail2','trail3','trail4','trail5'].includes(item.trail)
+    || !['sid_myth','sid_hag','sid_witch','sid_crypt','sid_liminal'].includes(item.cluster)
+    || !['EMPIRICAL_EXPLAINS','MYTHIC_PROJECTION','SOCIAL_MIRROR','LIMINAL_SPAWNS','THEMATIC'].includes(item.relation))
+    throw new Error(`Invalid curated bridge classification: ${item.id}.`);
   const edge = related && graph.links.find((link) => (link.source === story.id && link.target === related.id)
     || (link.target === story.id && link.source === related.id));
   const volumeIndex = volumeIds.indexOf(entry.volume);
   if (volumeIndex < 0 || !book.subjects.some((subject) => subject.id === entry.subject)) throw new Error(`Invalid subject for ${item.id}.`);
-  return { id: item.id, trail: item.trail, shortLabel: item.label, relation: item.relation, sideraCluster: item.cluster,
+  return { id: item.id, trail: item.trail, shortLabel: item.label, rationale: item.rationale, relation: item.relation, sideraCluster: item.cluster,
     fiction: story.credibility_tier === 'F' || !!story.is_fictional_quarantine,
     mythos: compact(story), related: compact(related),
     edge: edge ? { type: edge.type, status: edge.status, note: edge.note } : null,

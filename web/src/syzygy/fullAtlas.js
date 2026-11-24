@@ -29,7 +29,7 @@ const readingText = node => {
 const matchLabel = row => ({curated:'精选对读',theme:'主题关联',guide:'阅读指引'})[row?.kind] ?? '自选对读';
 const matchReason = row => row?.kind === 'theme'
   ? `共同主题词：${(row.terms ?? []).map(item=>item.source === '题名或别名' && item.term.toLocaleLowerCase() !== item.target.toLocaleLowerCase() ? `${item.term} / ${item.target}` : item.term).join('、')}`
-  : row?.kind === 'guide' ? row.reason : row?.kind === 'curated' ? '已整理的资料对读' : '由用户选择的对读';
+  : row?.kind === 'guide' || row?.kind === 'curated' ? row.reason : '由用户选择的对读';
 
 /** The second view uses the same public catalogue as the original atlas. */
 export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starMaterial, latLonToVec3, focusNode, onSelection, onPortal, onBrowseFolklore }) {

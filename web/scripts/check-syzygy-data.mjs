@@ -65,7 +65,7 @@ for (const [nodeId, rows] of Object.entries(matchIndex.matches)) {
         assert.equal(rule.entry,row.entry);
       }
     }
-    if (row.kind === 'curated') assert.ok(portal.bridges.some(bridge=>bridge.id === row.bridge_id && bridge.mythos.id === nodeId && bridge.physis.id === row.entry));
+    if (row.kind === 'curated') assert.ok(portal.bridges.some(bridge=>bridge.id === row.bridge_id && bridge.mythos.id === nodeId && bridge.physis.id === row.entry && bridge.rationale === row.reason));
   }
 }
 assert.equal(matchIndex.stats.matched_nodes,Object.keys(matchIndex.matches).length);
@@ -93,6 +93,10 @@ for (const [id,target,status] of [
 for (const bridge of portal.bridges) {
   const story = nodes.get(bridge.mythos.id), entry = entries.get(bridge.physis.id);
   assert.ok(story && entry,`Missing real node: ${bridge.id}`);
+  assert.ok(bridge.rationale?.trim(),`Missing reading rationale: ${bridge.id}`);
+  assert.ok((matchIndex.matches[story.id] ?? []).some(row => row.kind === 'curated'
+    && row.bridge_id === bridge.id && row.entry === entry.id && row.reason === bridge.rationale),
+  `Curated bridge missing from the bidirectional index: ${bridge.id}`);
   assert.equal(bridge.mythos.title,story.title);
   assert.deepEqual(bridge.mythos.spatial,story.spatial);
   assert.deepEqual(bridge.mythos.reading,story.reading);
