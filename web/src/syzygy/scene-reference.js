@@ -11,6 +11,7 @@ import { createSyzygyRenderer } from './renderer';
 import { createFullAtlas } from './fullAtlas';
 import { genreContract, genreLabels } from './narrativeMetadata';
 import { announceViewReady } from '../viewRouter';
+import { engravingFrieze, engravingPatternForVolume, syncEngravingBeam, tierSeal } from '../engraving';
 import readingPaths from './reading-paths.json';
 import { renderBridgeCard } from './bridgeCard';
 
@@ -1504,6 +1505,9 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         `;
         vBtn.addEventListener('click', () => focusOmniaVolume(vol.id));
         sec.appendChild(vBtn);
+        const frieze=document.createElement('div'); frieze.className='engraving-volume-frieze';
+        frieze.innerHTML=engravingFrieze(engravingPatternForVolume(vol.id),`engraving-volume-${vol.id}`);
+        sec.appendChild(frieze);
 
         const dWrap = document.createElement('div');
         dWrap.className = 'mt-1 pl-2.5 space-y-0.5';
@@ -1782,6 +1786,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     btnSyzygy.addEventListener('click', () => {
       appState.syzygyOn = !appState.syzygyOn;
       btnSyzygy.classList.toggle('active', appState.syzygyOn);
+      syncEngravingBeam();
       syzygyUpperRing.visible = (appState.dimension === 'omnia' && appState.syzygyOn && !appState.is2DPlanisphere);
       userPortalMarker.visible = !!appState.portalBridge && appState.dimension === 'omnia' && appState.syzygyOn;
       updateHighlightsAndFilters();
@@ -1837,6 +1842,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         if (!appState.syzygyOn && trailId !== 'all') {
           appState.syzygyOn = true;
           btnSyzygy.classList.add('active');
+          syncEngravingBeam();
         }
 
         if (trailId !== 'all') {
@@ -1874,6 +1880,13 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     const btnOpenLeft = document.getElementById('btn-open-left');
     const btnOpenRight = document.getElementById('btn-open-right');
     const contextBanner = document.getElementById('context-banner');
+    for (const [drawer,id] of [[leftDrawer,'engraving-left-heading'],[rightDrawer,'engraving-right-heading']]) {
+      const heading=drawer.querySelector(':scope > div');
+      if (heading) {
+        heading.classList.add('engraving-panel-heading');
+        heading.insertAdjacentHTML('afterbegin',`<div class="engraving-panel-frieze">${engravingFrieze('cloud',id)}</div>`);
+      }
+    }
 
     function setLeftDrawerCollapsed(collapsed) {
       if (!collapsed && window.innerWidth < 768 && !rightDrawer.classList.contains('drawer-right-hidden')) {
@@ -1899,21 +1912,22 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     document.getElementById('btn-close-right').addEventListener('click', () => setRightDrawerCollapsed(true));
     btnOpenRight.addEventListener('click', () => setRightDrawerCollapsed(false));
 
-    // Right Scroll Dual-Theme Switcher: 深空星卷 vs 羊皮典籍
+    // The canvas and its geometry stay unchanged; the surrounding engraved UI has two palettes.
     const btnDarkTheme = document.getElementById('theme-btn-dark');
     const btnParchmentTheme = document.getElementById('theme-btn-parchment');
-
-    btnDarkTheme.addEventListener('click', () => {
-      rightDrawer.classList.remove('parchment-scroll');
-      btnDarkTheme.className = 'px-2 py-0.5 rounded-[2px] bg-[#d6b678]/25 text-[#fff4d8] font-medium transition';
-      btnParchmentTheme.className = 'px-2 py-0.5 rounded-[2px] text-[#9e9688] hover:text-white transition';
-    });
-
-    btnParchmentTheme.addEventListener('click', () => {
-      rightDrawer.classList.add('parchment-scroll');
-      btnParchmentTheme.className = 'px-2 py-0.5 rounded-[2px] bg-[#8c6218]/20 text-[#2b1d05] font-semibold transition';
-      btnDarkTheme.className = 'px-2 py-0.5 rounded-[2px] text-[#6e6658] hover:text-[#12151c] transition';
-    });
+    const applyEngravingTheme = theme => {
+      const parchment=theme === 'parchment';
+      document.body.dataset.engravingTheme=parchment ? 'parchment' : 'obsidian';
+      rightDrawer.classList.toggle('parchment-scroll',parchment);
+      btnDarkTheme.setAttribute('aria-pressed',String(!parchment));
+      btnParchmentTheme.setAttribute('aria-pressed',String(parchment));
+      try { localStorage.setItem('astraia-engraving-theme',parchment ? 'parchment' : 'obsidian'); } catch { /* Private browsing can disable storage. */ }
+    };
+    btnDarkTheme.addEventListener('click',()=>applyEngravingTheme('obsidian'));
+    btnParchmentTheme.addEventListener('click',()=>applyEngravingTheme('parchment'));
+    let storedTheme='obsidian';
+    try { storedTheme=localStorage.getItem('astraia-engraving-theme') || 'obsidian'; } catch { /* Use the default. */ }
+    applyEngravingTheme(storedTheme);
 
     // Live Search Input & Cmd+K Shortcut
     const searchInput = document.getElementById('codex-search');
@@ -2219,6 +2233,10 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     document.getElementById('stats-entries').textContent = book.entries.length.toLocaleString();
     document.getElementById('stats-subjects').textContent = book.subjects.length.toLocaleString();
     const fictionButton = document.getElementById('btn-fiction');
+    document.querySelectorAll('[data-tier]').forEach(button=>{
+      button.innerHTML=tierSeal(button.dataset.tier);
+      button.setAttribute('aria-label',`${button.dataset.tier} 级信源`);
+    });
     function syncTierButtons() {
       fictionButton.setAttribute('aria-checked', String(!appState.showF));
       document.querySelectorAll('[data-tier]').forEach(button=>button.setAttribute('aria-pressed',String(appState.tiers.has(button.dataset.tier))));

@@ -9,6 +9,7 @@ import LifeResonance from './LifeResonance';
 import LifeInquiry from './LifeInquiry';
 import { lifeDimension, type LifeDimension } from './lifeDimensions';
 import { portalHref } from './portalNavigation';
+import { engravingFrieze, engravingPatternForVolume } from './engraving';
 import './life.css';
 
 let scenePromise: Promise<typeof import('./views/LifeScene')> | undefined;
@@ -223,6 +224,7 @@ export default function LifeKnowledge() {
         <span>✦ &nbsp;全部星域条目</span><b>{book.entries.length.toLocaleString()}</b></button>
       {volumes.map((volume, index) => <div className="life-volume" key={volume} data-volume={index}>
         <button type="button" className="life-volume-name" aria-pressed={volume === subjectLabel && !subject} onClick={() => chooseVolume(volume)}>{volume} <span>↗</span></button>
+        <div className="life-volume-frieze" aria-hidden="true" dangerouslySetInnerHTML={{ __html:engravingFrieze(engravingPatternForVolume(index),`engraving-life-${index}`) }} />
         {book.subjects.filter((item) => item.volume === volume).map((item) => <button key={item.id} type="button"
           aria-pressed={subject === item.id} onClick={() => chooseSubject(item.id)}>
           <span>{item.title}</span><small>{item.count}</small></button>)}

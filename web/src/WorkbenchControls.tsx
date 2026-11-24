@@ -1,5 +1,6 @@
 import { useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { LAYERS, matchesQuery, type GraphNode, type Layer, type Tier, type ViewMode } from './graph';
+import { tierSeal } from './engraving';
 
 const TIERS: Tier[] = ['S', 'A', 'B', 'C', 'F'];
 const LAYERS_DESC: Layer[] = [4, 3, 2, 1];
@@ -48,7 +49,7 @@ export function ControlRail(props: RailProps) {
     </>}
     <span className="rail-caption">SOURCE</span>
     <div className="rail-tiers">{TIERS.map((tier) => <button key={tier} type="button" aria-label={`${tier} 级信源`}
-      aria-pressed={props.tiers.has(tier)} onClick={() => props.onTier(tier)}>{tier}</button>)}</div>
+      aria-pressed={props.tiers.has(tier)} onClick={() => props.onTier(tier)}><span className="rail-seal" dangerouslySetInnerHTML={{ __html:tierSeal(tier) }} /></button>)}</div>
   </aside>;
 }
 
