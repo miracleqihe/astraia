@@ -109,7 +109,7 @@ class ModernAsianStoriesTests(unittest.TestCase):
                          'modern_asian_stories_eleventh_20261123.yaml', 'modern_asian_stories_twelfth_20261123.yaml',
                          'modern_asian_stories_thirteenth_20261123.yaml', 'modern_asian_stories_fourteenth_20261123.yaml',
                          'modern_asian_stories_fifteenth_20261123.yaml', 'modern_asian_stories_sixteenth_20261123.yaml',
-                         'modern_asian_stories_seventeenth_20261123.yaml'):
+                         'modern_asian_stories_seventeenth_20261123.yaml', 'modern_asian_stories_eighteenth_20261123.yaml'):
             collection = yaml.load((ROOT / 'reference' / filename).read_text(encoding='utf-8'), Loader=FrontmatterLoader)
             records.extend(collection['records'])
             revisions.update(collection.get('revisions', {}))
@@ -165,6 +165,23 @@ class ModernAsianStoriesTests(unittest.TestCase):
                 self.assertTrue(all(paragraph in body for paragraph in item['note']['paragraphs']))
                 self.assertTrue(metadata.spatial and metadata.spatial.lat is not None and metadata.spatial.lng is not None)
                 self.assertFalse(metadata.audit.reviewed_by_human)
+
+    def test_cole_readings_preserve_existing_cards_and_cite_the_edition(self):
+        collection = yaml.load((ROOT / 'reference/modern_asian_stories_eighteenth_20261123.yaml').read_text(encoding='utf-8'),
+                               Loader=FrontmatterLoader)
+        notes = yaml.load((ROOT / 'reference/reading_notes.yaml').read_text(encoding='utf-8'), Loader=FrontmatterLoader)
+        for node_id, addition in collection['existing_notes'].items():
+            with self.subTest(id=node_id):
+                path = ROOT / 'vault/00_drafts/asia_ph_cole_1916' / (node_id + '.md')
+                metadata, body = parse_card(path.read_text(encoding='utf-8'))
+                note = EditorialNote.model_validate(notes[node_id])
+                self.assertEqual(note.paragraphs, addition['paragraphs'])
+                self.assertEqual(note.source_numbers, [len(metadata.sources) + 1])
+                self.assertEqual(str(note.additional_sources[0].url), addition['source']['url'])
+                self.assertIn('扫描分页 OCR（待校）', body)
+                self.assertFalse(metadata.audit.reviewed_by_human)
+                self.assertIsNone(metadata.spatial.lat)
+                self.assertIsNone(metadata.spatial.lng)
 
     def test_twelfth_batch_adds_sources_and_distinguishes_campus_versions(self):
         collection = yaml.load((ROOT / 'reference/modern_asian_stories_twelfth_20261123.yaml').read_text(encoding='utf-8'),

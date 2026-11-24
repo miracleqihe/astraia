@@ -300,7 +300,22 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     }
     camera.aspect = cssWidth / cssHeight; camera.updateProjectionMatrix(); schedule();
   };
-  const observer = new ResizeObserver(resize); observer.observe(host); resize();
+  // A moving divider or an animated browser resize can otherwise allocate and
+  // upload a full-resolution image on every resize notification. Use the
+  // same bounded raster as a camera drag while the viewport is changing,
+  // then restore the detailed image once its dimensions have settled.
+  let observedWidth = host.clientWidth, observedHeight = host.clientHeight;
+  const observer = new ResizeObserver(() => {
+    const nextWidth = host.clientWidth, nextHeight = host.clientHeight;
+    if (nextWidth === observedWidth && nextHeight === observedHeight) return;
+    observedWidth = nextWidth; observedHeight = nextHeight;
+    if (interacting) resize(); else beginMotion();
+    if (!dragging && !focus) {
+      window.clearTimeout(restoreQuality); restoreQuality = 0;
+      restoreWhenStill();
+    }
+  });
+  observer.observe(host); resize();
   const hit = (event: Pick<PointerEvent, 'clientX' | 'clientY'>) => {
     const box = canvas.getBoundingClientRect();
     if (!box.width || !box.height) return null;

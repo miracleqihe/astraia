@@ -16,6 +16,13 @@ function headingParts(children: ReactNode) {
   return { id: match?.[1], parts };
 }
 
+// Some handbook anchors are immediately followed by prose on the next line.
+// Give the marker its own Markdown paragraph so it becomes a real, invisible
+// navigation target instead of appearing as raw syntax in the text.
+function separateAnchorMarkers(body: string) {
+  return body.replace(/(^|\n)(⟦anchor:[a-z0-9-]+⟧)(?=\n|$)/g, '$1\n$2\n');
+}
+
 export default function LifeKnowledge() {
   const [book, setBook] = useState<LifeBook | null>(null);
   const [error, setError] = useState('');
@@ -51,6 +58,10 @@ export default function LifeKnowledge() {
     return () => window.removeEventListener('keydown', key);
   }, []);
   const byId = useMemo(() => new Map((book?.entries ?? []).map((entry) => [entry.id, entry])), [book]);
+  // The full handbook is searchable, including figure captions. Cache each
+  // normalized string lazily so successive keystrokes do not repeatedly join
+  // and lowercase thousands of long entries on the rendering thread.
+  const searchText = useMemo(() => new Map<string, string>(), [book]);
   const selected = selectedId ? byId.get(selectedId) : undefined;
   useEffect(() => {
     const anchor = window.location.hash.slice(1);
@@ -62,9 +73,14 @@ export default function LifeKnowledge() {
   const results = useMemo(() => (book?.entries ?? []).filter((entry) => {
     if (subject && entry.subject !== subject) return false;
     if (!deferredQuery) return true;
-    const figureText = (entry.figure_refs ?? []).map((name) => book?.figures?.[name]?.text ?? '').join(' ');
-    return `${entry.title} ${entry.id} ${entry.topic} ${entry.body} ${figureText}`.toLocaleLowerCase().includes(deferredQuery);
-  }), [book, subject, deferredQuery]);
+    let text = searchText.get(entry.id);
+    if (text === undefined) {
+      const figureText = (entry.figure_refs ?? []).map((name) => book?.figures?.[name]?.text ?? '').join(' ');
+      text = `${entry.title} ${entry.id} ${entry.topic} ${entry.body} ${figureText}`.toLocaleLowerCase();
+      searchText.set(entry.id, text);
+    }
+    return text.includes(deferredQuery);
+  }), [book, subject, deferredQuery, searchText]);
   const related = useMemo(() => {
     if (!selected || !book) return [];
     const ids = new Set(selected.links);
@@ -180,7 +196,7 @@ export default function LifeKnowledge() {
           h4: ({ children }) => { const h = headingParts(children); return <h4 id={h.id}>{h.parts}</h4>; },
           h5: ({ children }) => { const h = headingParts(children); return <h5 id={h.id}>{h.parts}</h5>; },
           h6: ({ children }) => { const h = headingParts(children); return <h6 id={h.id}>{h.parts}</h6>; },
-        }}>{selected.body}</ReactMarkdown></div>
+        }}>{separateAnchorMarkers(selected.body)}</ReactMarkdown></div>
         {related.length > 0 && <section className="life-related"><h3>原书交叉索引</h3>
           <p>以下连接来自手册原有的条目引用。</p>
           {related.map((entry: LifeEntry) => <button type="button" key={entry.id} onClick={() => choose(entry.id)}>

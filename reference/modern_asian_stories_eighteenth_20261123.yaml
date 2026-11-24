@@ -1,0 +1,369 @@
+themes:
+- id: corpus_sg_my_oily_man_press_1932_2002
+  title: 油鬼仔｜从街巷传闻到报纸与电影
+  paragraphs:
+  - 从 1930 年代的新加坡，到世纪之交的马来西亚，“油鬼仔”在不同报道中可能是夜间闯入者、令人不安的传闻，也可能是被赋予法术的身影。相同的名字，并不保证人们说的是同一件事。
+  - 2026 年一项研究比较英语、华语和马来语报刊，追踪目击、指认、巡逻以及电影中的再讲述。研究者把人物、经历和神话放在一起考察，而不是把所有报道归为一种固定的鬼怪。
+  - 这组卷宗按报道地点和时间并列：贤律一带的夜间惊扰、皇后街的围观、金文泰的巡逻，以及笨珍与昔加末的不同版本。它们之间的连线表示供读者比较，不代表同一人活动路线。
+  sources:
+  - citation: 'Esmond Chuah Meng Soh、Jin Rong Aw，Experience, person, and myth: A socio-cultural history of the ‘oily man’ in post-colonial Malaysia and Singapore，Modern Asian Studies，2026，doi:10.1017/S0026749X26102194。'
+    type: research_article
+    url: https://www.cambridge.org/core/journals/modern-asian-studies/article/experience-person-and-myth-a-sociocultural-history-of-the-oily-man-in-postcolonial-malaysia-and-singapore/B1EC978DEEDDD8614609F46B0AFBA5AE
+    locator: 摘要；Experience、Person、Myth 各节及所引当时报刊；CC BY 4.0
+  peers: []
+records:
+- id: case_cn_beijing_palace_well_online_2022
+  title: 北京故宫｜网上传来的井边故事
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_asia_night_places_oral_accounts_2012_2025
+  location:
+    lat: 39.91743
+    lng: 116.39078
+    precision: city
+    location_name: 中国北京 · 故宫建筑群参考
+    culture_region: 东亚 · 中国
+  map_label: 故宫
+  location_note: 点位表示故宫建筑群，访谈没有确定是哪一口井。
+  temporal:
+    year_start: 2022
+    year_end: 2022
+    era_label: 资料记录
+    uncertainty_note: 年份表示报道或讲述记录时间；传闻内容及事件经过并非由此证实。
+  paragraphs:
+  - 一位讲述者在短视频里听到一则故宫故事：宫里有口井，夜间会传出奇怪的声音；有人说，一位年轻女子曾在那里遭遇不幸，如今仍徘徊井边。
+  - 2022 年的访谈里，他记不清女子的身份，也没有说出井的名称。这个版本保留的是他从网络听来的故事，不能据此把传言中的人物、地点和经过当作史实。
+  - 故宫还有关于红墙影子的另一则流传故事。两者都借助宫殿空间展开，却有不同的情节与出处。
+  sources:
+  - citation: John Cabaniss, “Anti-Imperial Ghost Story”, USC Digital Folklore Archives, 2 May 2022。
+    type: oral_history
+    url: https://folklore.usc.edu/anti-imperial-ghost-story/
+    locator: 受访者从短视频听到的井边故事及其转述背景
+  - citation: UNESCO World Heritage Centre，明清故宫遗产范围图。
+    type: map_reference
+    url: https://whc.unesco.org/en/list/439/maps/
+    locator: 北京故宫建筑群范围
+  peers:
+  - case_cn_forbidden_city_palace_shadows
+- id: case_cn_tw_hengchun_fieldhouse_pressure_2018
+  title: 台湾恒春｜野外调查借住的房子
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_asia_night_places_oral_accounts_2012_2025
+  location:
+    lat: 22.00266
+    lng: 120.74469
+    precision: city
+    location_name: 中国台湾屏东 · 恒春镇参考
+    culture_region: 东亚 · 中国
+  map_label: 恒春
+  location_note: 点位是恒春镇参考位置；访谈没有公布房屋地址。
+  temporal:
+    year_start: 2018
+    year_end: 2018
+    era_label: 资料记录
+    uncertainty_note: 年份表示报道或讲述记录时间；传闻内容及事件经过并非由此证实。
+  paragraphs:
+  - 地质研究生到恒春做野外调查时，常借住同一处房子。学长之间流传过几个住客的经历：有人觉得身上压着东西，想动却动不了，于是把房子与“鬼压身”联系起来。
+  - 2018 年的受访者说，这些是他从同学和学长那里听来的。他自己也曾经历醒来时无法活动，觉得睡眠和身体的状态可能有关，但没有亲历这处房子里的说法。
+  - 故事没有提供房屋位置或逐次记录。它让我们看到一个熟悉的身体经验，如何在学生住宿和野外工作的语境里被讲成地方故事。
+  sources:
+  - citation: “Ghostly Body Press”, USC Digital Folklore Archives，2018 年 3 月访谈。
+    type: oral_history
+    url: https://folklore.usc.edu/ghostly-body-press/
+    locator: 研究生住宿传闻与受访者自身经历
+  - citation: OpenStreetMap / GeoNames：Hengchun 镇区参考点。
+    type: map_reference
+    url: https://mapcarta.com/15698162
+    locator: 恒春镇区地名点
+- id: case_sg_zion_road_oily_man_1954
+  title: 新加坡贤律｜夜间白衣身影
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_sg_my_oily_man_press_1932_2002
+  location:
+    lat: 1.29234
+    lng: 103.83119
+    precision: city
+    location_name: 新加坡 · Zion Road 一带参考
+    culture_region: 东南亚 · 马来西亚与新加坡
+  map_label: 贤律
+  location_note: 坐标是 Zion Road 公共区域参考，并非当年目击的精确地点。
+  temporal:
+    year_start: 1954
+    year_end: 1954
+    era_label: 资料记录
+    uncertainty_note: 年份表示报道或讲述记录时间；传闻内容及事件经过并非由此证实。
+  paragraphs:
+  - 1954 年，贤律一带传出夜里出现白衣身影的消息。报刊转述说，有人追赶时，对方会朝人群投掷石子；附近住户开始提早回家，晚上紧闭门窗。
+  - 不同家庭给出不同解释：有人联想到附近施工与战时埋葬，有人向神明祈求平安。后来有居民把一位老妇人的去世与传闻联系起来，这是他们当时的理解，并非事件原因的证明。
+  - 研究者对照了当年的华文与英文报纸。新闻记录了恐惧和应对方式，却无法证明目击者看到的是同一人或超自然存在。
+  sources:
+  - citation: 'Esmond Chuah Meng Soh、Jin Rong Aw，Experience, person, and myth: A socio-cultural history of the ‘oily man’ in post-colonial Malaysia and Singapore，Modern Asian Studies，2026，doi:10.1017/S0026749X26102194。'
+    type: research_article
+    url: https://www.cambridge.org/core/journals/modern-asian-studies/article/experience-person-and-myth-a-sociocultural-history-of-the-oily-man-in-postcolonial-malaysia-and-singapore/B1EC978DEEDDD8614609F46B0AFBA5AE
+    locator: Experience / Panics；1954 年 4–5 月贤律报道及注 33–38
+  - citation: OpenStreetMap：Zion Road 公共道路区域。
+    type: map_reference
+    url: https://www.openstreetmap.org/search?query=Zion%20Road%20Singapore
+    locator: 道路区域参考
+- id: case_sg_queen_street_oily_crowd_1954
+  title: 新加坡皇后街｜为看“油鬼仔”聚集的人群
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_sg_my_oily_man_press_1932_2002
+  location:
+    lat: 1.298
+    lng: 103.852
+    precision: city
+    location_name: 新加坡 · 皇后街教堂附近参考
+    culture_region: 东南亚 · 马来西亚与新加坡
+  map_label: 皇后街
+  location_note: 标点表示皇后街教堂附近的区域，并非目击位置或人物住址。
+  temporal:
+    year_start: 1954
+    year_end: 1954
+    era_label: 资料记录
+    uncertainty_note: 年份表示报道或讲述记录时间；传闻内容及事件经过并非由此证实。
+  paragraphs:
+  - 1954 年 5 月，一位住在教堂附近的妇人说自己见到一个行动迅速、身上油滑的人。她认为那可能是一个人，并不认定他是鬼；消息传开后，皇后街一连几晚都有人来守候。
+  - 报纸记下了另一幅场景：灯光一闪，年轻人就喊叫起来；警察拿着手电搜索，围观者越聚越多，商贩也来到街边。有人说身影在钟楼，有人说在教堂里，描述并不一致。
+  - 这一事件留下了关于目击、聚集与搜寻的报道。围观本身的记录，不等于证实传闻中人物的身份。
+  sources:
+  - citation: 'Esmond Chuah Meng Soh、Jin Rong Aw，Experience, person, and myth: A socio-cultural history of the ‘oily man’ in post-colonial Malaysia and Singapore，Modern Asian Studies，2026，doi:10.1017/S0026749X26102194。'
+    type: research_article
+    url: https://www.cambridge.org/core/journals/modern-asian-studies/article/experience-person-and-myth-a-sociocultural-history-of-the-oily-man-in-postcolonial-malaysia-and-singapore/B1EC978DEEDDD8614609F46B0AFBA5AE
+    locator: Experience / Panics；皇后街 1954 年报道及注 39–45
+  - citation: 新加坡市区重建局：皇后街保护区圣若瑟堂相关建筑。
+    type: map_reference
+    url: https://www.ura.gov.sg/conservation/find-a-building/conservation-portal/qnst-00005/
+    locator: 教堂位于 Victoria Street 与 Queen Street 一带
+  peers:
+  - case_sg_zion_road_oily_man_1954
+- id: case_sg_clementi_oily_patrol_1957
+  title: 新加坡金文泰｜夜里的巡逻
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_sg_my_oily_man_press_1932_2002
+  location:
+    lat: 1.31973
+    lng: 103.76622
+    precision: city
+    location_name: 新加坡 · Clementi 地区参考
+    culture_region: 东南亚 · 马来西亚与新加坡
+  map_label: 金文泰
+  location_note: 点位是 Clementi 地区参考，不指向个别家庭。
+  temporal:
+    year_start: 1957
+    year_end: 1957
+    era_label: 资料记录
+    uncertainty_note: 年份表示报道或讲述记录时间；传闻内容及事件经过并非由此证实。
+  paragraphs:
+  - 1957 年，金文泰一户人家报告了一次夜间入侵，称醒来后发现油渍。消息传开，部分妇女暂住到亲友家，家人和邻居也组织起来在夜间守望。
+  - 当时报刊中的巡逻规模和官方态度并不完全一致：研究者指出，英文与马来文报道对警员、士兵和居民各自的反应有不同描述。
+  - 在这组记载里，“油鬼仔”既是一个令人害怕的名字，也与人们对住宅安全的担忧有关；不能把各家报纸的说法拼成一个已完全查清的经过。
+  sources:
+  - citation: 'Esmond Chuah Meng Soh、Jin Rong Aw，Experience, person, and myth: A socio-cultural history of the ‘oily man’ in post-colonial Malaysia and Singapore，Modern Asian Studies，2026，doi:10.1017/S0026749X26102194。'
+    type: research_article
+    url: https://www.cambridge.org/core/journals/modern-asian-studies/article/experience-person-and-myth-a-sociocultural-history-of-the-oily-man-in-postcolonial-malaysia-and-singapore/B1EC978DEEDDD8614609F46B0AFBA5AE
+    locator: Experience / Panics；Clementi 1957 年报道及注 47–51
+  - citation: National University of Singapore, Gazetteer of Locality Names。
+    type: map_reference
+    url: https://lkcnhm.nus.edu.sg/wp-content/uploads/sites/11/app/uploads/2017/04/gazetteer_locality_names.pdf
+    locator: Clementi 位置参考
+  peers:
+  - case_sg_queen_street_oily_crowd_1954
+- id: case_my_kota_tinggi_oily_training_1978
+  title: 马来西亚哥打丁宜｜留下痕迹的人
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_sg_my_oily_man_press_1932_2002
+  location:
+    lat: 1.738
+    lng: 103.9
+    precision: city
+    location_name: 马来西亚柔佛 · Kota Tinggi 城市参考
+    culture_region: 东南亚 · 马来西亚与新加坡
+  map_label: 哥打丁宜
+  location_note: 点位为哥打丁宜城镇区域；不代表报道中甘榜的精确位置。
+  temporal:
+    year_start: 1978
+    year_end: 1978
+    era_label: 资料记录
+    uncertainty_note: 年份表示报道或讲述记录时间；传闻内容及事件经过并非由此证实。
+  paragraphs:
+  - 1978 年，哥打丁宜一带又出现有关“油鬼仔”的报道。人们说，夜里有人出没，现场还留下痕迹；报纸于是转述一种解释：练习奇术的人尚未完成修习，因此还不能完全脱身。
+  - 这种把“留下痕迹”解释成法术尚未练成的说法，后来被研究者放在电影、报刊和流言相互影响的背景下讨论。
+  - 故事反映的是当年报道中的解释。它不能证明所谓修习存在，也不能把所有夜间出没事件认作同一个人。
+  sources:
+  - citation: 'Esmond Chuah Meng Soh、Jin Rong Aw，Experience, person, and myth: A socio-cultural history of the ‘oily man’ in post-colonial Malaysia and Singapore，Modern Asian Studies，2026，doi:10.1017/S0026749X26102194。'
+    type: research_article
+    url: https://www.cambridge.org/core/journals/modern-asian-studies/article/experience-person-and-myth-a-sociocultural-history-of-the-oily-man-in-postcolonial-malaysia-and-singapore/B1EC978DEEDDD8614609F46B0AFBA5AE
+    locator: Myth / apprenticeship and pact；1978 年哥打丁宜报道及注 125
+  - citation: GeoNames：Kota Tinggi 地名记录。
+    type: map_reference
+    url: https://www.geonames.org/search.html?q=Kota%20Tinggi&country=MY
+    locator: 哥打丁宜城镇范围参考
+  peers:
+  - case_sg_clementi_oily_patrol_1957
+- id: case_my_pontian_river_water_ghost_1993
+  title: 马来西亚笨珍｜河边传来的水鬼故事
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_sg_my_oily_man_press_1932_2002
+  location:
+    lat: 1.5059
+    lng: 103.3816
+    precision: city
+    location_name: 马来西亚柔佛 · Pontian Besar 区域参考
+    culture_region: 东南亚 · 马来西亚与新加坡
+  map_label: 笨珍
+  location_note: 点位是大笨珍地区参考；报道未给出可核实的家庭地址。
+  temporal:
+    year_start: 1993
+    year_end: 1993
+    era_label: 资料记录
+    uncertainty_note: 年份表示报道或讲述记录时间；传闻内容及事件经过并非由此证实。
+  paragraphs:
+  - 1993 年，笨珍河附近流传一个令人不安的夜间故事：一位母亲说看见黑暗中有一双发亮的眼睛，邻居也提到夜里门窗晃动，以及一个湿滑的身影。
+  - 有人请当地的 bomoh 解释，将来者说成寻找替身的水鬼；另一些报道则使用“油鬼仔”等不同名称。有人说追到河边后，身影便不见了。
+  - 研究引用了《联合晚报》当年的记载。这是多种地方解释并存的一则传闻，而不是对所述身影或其目的的确认。
+  sources:
+  - citation: 'Esmond Chuah Meng Soh、Jin Rong Aw，Experience, person, and myth: A socio-cultural history of the ‘oily man’ in post-colonial Malaysia and Singapore，Modern Asian Studies，2026，doi:10.1017/S0026749X26102194。'
+    type: research_article
+    url: https://www.cambridge.org/core/journals/modern-asian-studies/article/experience-person-and-myth-a-sociocultural-history-of-the-oily-man-in-postcolonial-malaysia-and-singapore/B1EC978DEEDDD8614609F46B0AFBA5AE
+    locator: Myth / reform and expansion；《联合晚报》1993 年 8 月 19 日报道，注 128
+  - citation: GeoNames：Pontian Besar 地名记录。
+    type: map_reference
+    url: https://www.geonames.org/advanced-search.html?country=MY&q=&startRow=200
+    locator: Pontian Besar 地区参考
+  peers:
+  - case_my_kota_tinggi_oily_training_1978
+- id: case_my_raub_sempalit_oily_sightings_2001
+  title: 马来西亚劳勿｜新村里的不同解释
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_sg_my_oily_man_press_1932_2002
+  location:
+    lat: 3.79689
+    lng: 101.86739
+    precision: city
+    location_name: 马来西亚彭亨 · Kampung Sempalit 区域参考
+    culture_region: 东南亚 · 马来西亚与新加坡
+  map_label: 劳勿
+  location_note: 点位为 Sempalit 地区参考，不标私人住宅。
+  temporal:
+    year_start: 2001
+    year_end: 2001
+    era_label: 资料记录
+    uncertainty_note: 年份表示报道或讲述记录时间；传闻内容及事件经过并非由此证实。
+  paragraphs:
+  - 2001 年，彭亨州劳勿一带的新村出现关于“油鬼仔”的传闻。报道中有人说，来者在夜里骚扰居民；有关他是谁、为何出现，村民给出的说法并不相同。
+  - 村里的治安负责人把这理解为有人故意试探自己的能力；另一位受访者则用跨海来的巫术传闻解释。两种说法都出自当时报道中的人物，不能当作已证实身份。
+  - 研究者把这一段与马来语及华语报刊的不同叙述放在一起，观察一个名字如何随着讲述者和地方变化。
+  sources:
+  - citation: 'Esmond Chuah Meng Soh、Jin Rong Aw，Experience, person, and myth: A socio-cultural history of the ‘oily man’ in post-colonial Malaysia and Singapore，Modern Asian Studies，2026，doi:10.1017/S0026749X26102194。'
+    type: research_article
+    url: https://www.cambridge.org/core/journals/modern-asian-studies/article/experience-person-and-myth-a-sociocultural-history-of-the-oily-man-in-postcolonial-malaysia-and-singapore/B1EC978DEEDDD8614609F46B0AFBA5AE
+    locator: Myth / reform and expansion；《新明日报》2001 年 7 月报道及注 129–130
+  - citation: Malaysia Postcode：Kampung Sempalit, Raub。
+    type: map_reference
+    url: https://postcode.my/pahang-raub-kampung-sempalit-27600.html
+    locator: Sempalit 近似区域坐标
+  peers:
+  - case_my_pontian_river_water_ghost_1993
+- id: case_my_segamat_oily_ritual_2002
+  title: 马来西亚昔加末｜村里的驱逐仪式
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_sg_my_oily_man_press_1932_2002
+  location:
+    lat: 2.5148
+    lng: 102.8158
+    precision: city
+    location_name: 马来西亚柔佛 · Segamat 地区参考
+    culture_region: 东南亚 · 马来西亚与新加坡
+  map_label: 昔加末
+  location_note: 点位为昔加末城镇参考，原报道涉及的具体村落位置未确定。
+  temporal:
+    year_start: 2002
+    year_end: 2002
+    era_label: 资料记录
+    uncertainty_note: 年份表示报道或讲述记录时间；传闻内容及事件经过并非由此证实。
+  paragraphs:
+  - 2002 年，昔加末一带流传夜间有人骚扰年轻女子的消息。恐慌扩散后，一些家庭暂时离开，居民和志愿者也开始守夜。
+  - 几天后，一位 bomoh 在村民和记者面前举行仪式，声称已经捕获来者。报道记下有人因此安心，但关于来者的样貌和身份，之后又出现了不同版本。
+  - 研究将这一事件作为“油鬼仔”故事不断变形的例子。仪式与安心感来自报道，仪式是否捕获了任何超自然存在则没有得到证实。
+  sources:
+  - citation: 'Esmond Chuah Meng Soh、Jin Rong Aw，Experience, person, and myth: A socio-cultural history of the ‘oily man’ in post-colonial Malaysia and Singapore，Modern Asian Studies，2026，doi:10.1017/S0026749X26102194。'
+    type: research_article
+    url: https://www.cambridge.org/core/journals/modern-asian-studies/article/experience-person-and-myth-a-sociocultural-history-of-the-oily-man-in-postcolonial-malaysia-and-singapore/B1EC978DEEDDD8614609F46B0AFBA5AE
+    locator: Myth / reform and expansion；2002 年昔加末报道及注 131–133
+  - citation: Johor Tourism：Segamat 地区介绍。
+    type: map_reference
+    url: https://tourism.johor.gov.my/segamat-2/
+    locator: 昔加末位于柔佛州北部
+  peers:
+  - case_my_raub_sempalit_oily_sightings_2001
+existing_notes:
+  case_ph_cole_1916_p068:
+    paragraphs:
+    - 山里的一群猎人听见狗叫，以为它围住了鹿；跑近后却发现，它追逐的是一只会自己移动的陶罐。猎人们怎么也抓不住它，歇下时听到一个看不见的人指点他们怎样继续寻找。
+    - 罐子最终躲进山洞，被人带回。书中说它叫 Magsawi，会说话，也会独自远行去探望另一只罐子；后来罐身裂开，人们便听不清它的声音了。
+    - 1916 年选集把这个故事放在 Tinguian 目录下，并提到罐子持有者与地方名称。这里保留的是该书的讲法，不能将书中的时代称呼直接等同于所有当代社群。
+    source:
+      citation: Mabel Cook Cole, Philippine Folk Tales, A. C. McClurg, Chicago, 1916；Project Gutenberg 电子转录。
+      type: edition_link
+      url: https://www.gutenberg.org/ebooks/12814
+      locator: 1916 年版印刷页 68–70；电子转录可检索原题
+  case_ph_cole_1916_p071:
+    paragraphs:
+    - 一位猎人在山中追赶受伤的鹿，和狗一同钻进洞里。洞室一间连着一间，他循着狗叫摸索，忽然碰到一棵长着果实的小树；折下一枝时，树竟发出陌生的声音。
+    - 他慌忙奔出洞口，来到阿布拉河边，才发现枝上的“果实”是珍贵的玛瑙珠。村里人跟着他回去寻找，树却已经不见了，洞壁上只留下奇怪的刻痕。
+    - 这是 1916 年英文本中保存的一种讲述；书中提及河流，却没有给出可以准确标点的洞口。
+    source:
+      citation: Mabel Cook Cole, Philippine Folk Tales, A. C. McClurg, Chicago, 1916；Project Gutenberg 电子转录。
+      type: edition_link
+      url: https://www.gutenberg.org/ebooks/12814
+      locator: 1916 年版印刷页 71–72；电子转录可检索原题
+  case_ph_cole_1916_p073:
+    paragraphs:
+    - 三个人进山打猎，夜里各自裹着毯子睡在树下。其中一人的毯子有红黄条纹，在昏暗中像一只小野猪；他还醒着时，听见两个精灵说要把这只“野猪”吃掉。
+    - 他悄悄把自己的条纹毯换到同伴身上。精灵果然误认了毯子下面的人。1916 年选集把这个不安的结局和一条山中禁忌联系起来。
+    - 这是一则历史选集中的故事版本；书中没有标明此次讲述的采录村落。
+    source:
+      citation: Mabel Cook Cole, Philippine Folk Tales, A. C. McClurg, Chicago, 1916；Project Gutenberg 电子转录。
+      type: edition_link
+      url: https://www.gutenberg.org/ebooks/12814
+      locator: 1916 年版印刷页 73；电子转录可检索原题
+  case_ph_cole_1916_p077:
+    paragraphs:
+    - 有人走过树林，看见一群名叫 Alan 的精灵倒挂在树上。他被吓得跌倒，精灵以为他已经死去，下来为他放上金子和珠子。
+    - 他突然跳起来，想把精灵赶走；精灵只要求他归还其中一颗特别的珠子，其余都可以带走。他拒绝后，精灵生气离开，说会烧掉他的房子。后来房子果然起火了。
+    - 这个版本载于 1916 年选集，既有对陌生精灵的恐惧，也写出误会和不愿归还珠子带来的后果。
+    source:
+      citation: Mabel Cook Cole, Philippine Folk Tales, A. C. McClurg, Chicago, 1916；Project Gutenberg 电子转录。
+      type: edition_link
+      url: https://www.gutenberg.org/ebooks/12814
+      locator: 1916 年版印刷页 77–78；电子转录可检索原题
+  case_ph_cole_1916_p079:
+    paragraphs:
+    - 猎人 Sogsogot 被大鸟抓到高树上的巢里。他照顾巢中的雏鸟，等它们长大时抓住鸟腿，终于回到地面。
+    - 后来，他在路上遇见已去世的妻子。妻子让他带上一只白鸡，领他去亡者的村落，并教他用鸡羽挡住夜里前来的居民。住了两周，羽毛快用完时，他请求回家，妻子便给他路上吃的米。
+    - 回家后，他才从家人那里得知妻子已经下葬。1916 年选集将这段旅程与当时记录的亡者世界观联系起来；这是选集中的讲述，并不代表所有相关社群的看法。
+    source:
+      citation: Mabel Cook Cole, Philippine Folk Tales, A. C. McClurg, Chicago, 1916；Project Gutenberg 电子转录。
+      type: edition_link
+      url: https://www.gutenberg.org/ebooks/12814
+      locator: 1916 年版印刷页 79–81；电子转录可检索原题
+  case_ph_cole_1916_p113:
+    paragraphs:
+    - 两个兄弟每天上山捡柴，母亲总嫌他们带回来的柴不好，给的食物也很少。有一天，哥哥爬上树，说要给家里更多的柴，落下的却是一根根自己的骨头。
+    - 弟弟伤心地收起骨头，一只鹰从树上传来声音，说要陪他回家。母亲看见带回来的东西吓了一跳；哥哥已化作鹰，在空中盘旋，再也不用向她讨食物。
+    - 1916 年选集注明此故事曾由 A. E. Jenks 记录，也把它作为一种鸟的由来故事。这里保存的是该版本，而非对整片山区的概括。
+    source:
+      citation: Mabel Cook Cole, Philippine Folk Tales, A. C. McClurg, Chicago, 1916；Project Gutenberg 电子转录。
+      type: edition_link
+      url: https://www.gutenberg.org/ebooks/12814
+      locator: 1916 年版印刷页 113–114；电子转录可检索原题
+revisions: {}

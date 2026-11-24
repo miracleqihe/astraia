@@ -27,7 +27,7 @@ npm.cmd run dev
 
 地图概览使用本地 Natural Earth 1∶5000 万边界和城市坐标，放大后通过 OpenFreeMap 加载 OpenStreetMap 街区、水系和地名。地点重叠时可展开该点的资料，“此处条目”可列出视野中的记录。离线时可查看概览及图谱已有标点。地图区分地标定位与城区或区域参考点。 [Natural Earth 底图数据](https://github.com/topojson/world-atlas#countries-50mjson) [OpenFreeMap](https://openfreemap.org/)
 
-更新 `vault/` 后，在项目根目录重跑图谱编译，再刷新前端。若需要运行生产构建，在 `web/` 中执行以下命令，浏览器打开终端给出的本地地址。
+更新 `vault/` 或阅读稿后，在项目根目录重新运行上面的 `pipeline.catalogue` 命令，再刷新前端。本地前端优先读取 `catalogue_data.json`；如果这个文件存在，只更新 `graph_data.json` 不会替换它。公开站点使用发布时提供的 `graph_data.json`。若需要运行生产构建，在 `web/` 中执行以下命令，浏览器打开终端给出的本地地址。
 
 ```powershell
 npm.cmd run build
