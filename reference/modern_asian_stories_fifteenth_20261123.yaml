@@ -1,0 +1,315 @@
+themes:
+- id: corpus_cn_hk_fox_stories_fieldwork_2017
+  title: 香港狐仙｜云石传说与民间信仰
+  genre: academic_model
+  peers:
+  - case_cn_zibuyu_v01_s011
+  - corpus_cn_hk_bosco_campus_story_versions_2007
+  paragraphs:
+  - 香港的狐仙故事常从一块石头开始：有人在云石纹理里认出狐狸脸，接着有人讲起酒楼、商场或街道上的怪事。不同讲法把狐仙放在不同地点，细节也不尽相同。
+  - 香港浸会大学研究者陈康言在 2017 年的硕士论文中，整理了台湾作家罗问 1997 年书中的四则香港传说，并检索旧报刊。他在所查的 1980 年代报刊资料中未找到相关报道，追溯到的后来报道多在娱乐或专栏版面。这是对检索范围内材料的观察，并不能证明所有旧报都没有记载。
+  - 论文也访谈了供奉者，发现狐仙并不只以令人害怕的形象出现。对部分信众而言，狐仙是可以祈求帮助的神灵；作者以田野调查和台湾、山东材料对照，讨论信仰与流行故事的差别。
+  - 温莎大厦、北角酒店和传统志怪中的狐狸可以放在一起阅读；材料相似并不等于已经证实它们之间的传播路径。论文原文由大学典藏保存，站内文字是依据研究和报道重新整理的梗概。
+  sources:
+  - &id002
+    citation: 陈康言：《香港狐仙信仰研究》，香港浸会大学哲学硕士论文，2017。
+    type: academic_study
+    url: https://scholars.hkbu.edu.hk/en/studentTheses/%E9%A6%99%E6%B8%AF%E7%8B%90%E4%BB%99%E4%BF%A1%E4%BB%B0%E7%A0%94%E7%A9%B6/
+    locator: 第三章第 30–33 页；学校资料页提供论文摘要与全文入口
+  - &id003
+    citation: 陈康言：《香港狐仙信仰研究》全文，香港浸会大学机构典藏，2017。
+    type: academic_study
+    url: https://scholars.hkbu.edu.hk/files/55011968/OA-0479.pdf
+    locator: 第三章第 30–33 页；第四章田野记录；访问受学校资料库条件限制
+  - &id001
+    citation: 乔纳森：〈温莎大厦惊现狐仙〉，《香港01》，2018 年 8 月 24 日。
+    type: press_account
+    url: https://www.hk01.com/%E7%86%B1%E7%88%86%E8%A9%B1%E9%A1%8C/226641/7%E6%9C%8814%E7%9B%82%E8%98%AD%E7%AF%80-%E6%BA%AB%E8%8E%8E%E5%A4%A7%E5%BB%88%E9%A9%9A%E7%8F%BE%E7%8B%90%E4%BB%99-%E7%8B%90%E7%8B%B8%E9%A0%AD%E9%9B%B2%E7%9F%B3%E5%BC%95%E5%85%A8%E5%9F%8E%E5%93%84%E5%8B%95
+    locator: 转述铜锣湾云石与酒楼传闻
+records:
+- id: case_cn_hk_windsor_fox_marble_2018
+  title: 香港铜锣湾｜云石上的狐狸脸
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_cn_hk_fox_stories_fieldwork_2017
+  location:
+    lat: 22.28027
+    lng: 114.18652
+    precision: city
+    location_name: 中国香港 · 铜锣湾皇室大厦参考点
+    culture_region: 东亚 · 中国香港
+  map_label: 铜锣湾
+  location_note: 故事指向旧温莎公爵大厦；点位为告士打道皇室大厦参考位置，不定位当年的云石。
+  temporal:
+    year_start: 2018
+    year_end: 2018
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 铜锣湾一座大厦的云石墙上，有人看出像狐狸的纹理。传言越传越远：有人说那是一家狐仙，也有人把酒楼里一场满月宴后的不幸与它们联系起来。
+  - 《香港01》回顾的一个版本里，母亲梦见狐狸责怪宴席没有向它敬酒；醒来后，家人发现孩子出了事。不同讲述对年份、地点和后续细节并不一致。
+  - 故事还说，好奇的人前来观看，云石后来被遮盖、拆走。2017 年陈康言梳理旧报时，未在其查阅的八十年代资料中找到相关报道；论文收录的是后来的传说记录。
+  - 大厦与周边商场仍是铜锣湾日常生活的一部分。狐狸脸、梦与酒宴共同组成的是城市传说，并非已经核实的事故经过。
+  sources:
+  - *id001
+  - *id002
+  - *id003
+  - citation: 香港屋宇署：湾仔区公众地方资料，Windsor House。
+    type: map_reference
+    url: https://www.bd.gov.hk/en/resources/codes-and-references/public-open-space/HK/dedicated_areas_HK_WC.html
+    locator: 告士打道 311 号；点位为建筑参考
+- id: case_cn_hk_north_point_fox_stone_2017
+  title: 香港北角｜酒店云石上的狐影
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_cn_hk_fox_stories_fieldwork_2017
+  location:
+    lat: 22.291
+    lng: 114.2
+    precision: city
+    location_name: 中国香港 · 北角范围参考点
+    culture_region: 东亚 · 中国香港
+  map_label: 北角
+  location_note: 论文只指出北角粤华酒店；点位是北角区域参考，不标出云石或当年事故位置。
+  temporal:
+    year_start: 2017
+    year_end: 2017
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 另一个版本把狐仙放到北角。研究者转述 1997 年出版的故事集：粤华酒店的云石上被说有狐仙附着，路过的人摔倒也被归到它身上。
+  - 这个北角版本与铜锣湾的狐脸传说都围绕石纹展开，但它们不能简单合并为同一次事件。陈康言在 2017 年论文中并列介绍两者，并指出这些故事的细节和真实性仍有疑问。
+  - 香港东区的 2011 年文件也提到渣华道粤华酒店，提供的是地点线索；它不能证明传闻中发生过什么。
+  sources:
+  - *id002
+  - *id003
+  - citation: 香港东区区议会地区设施管理委员会文件第 3/11 号，2011。
+    type: map_reference
+    url: https://www.districtcouncils.gov.hk/archive/east_d/pdf/dfmc/2011/E_DFMC_2011_003_TC.pdf
+    locator: 文件提及北角渣华道粤华酒店；本节点仅定位北角范围
+  peers:
+  - case_cn_hk_windsor_fox_marble_2018
+- id: case_cn_hk_seven_sisters_shore_2024
+  title: 香港北角｜消失海岸的七姊妹石
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_asia_night_places_oral_accounts_2012_2025
+  location:
+    lat: 22.2918
+    lng: 114.204
+    precision: city
+    location_name: 中国香港 · 七姊妹道一带参考点
+    culture_region: 东亚 · 中国香港
+  map_label: 七姊妹
+  location_note: 点位表示今天七姊妹道一带；原来的海岸经填海改变，不表示礁石确切位置。
+  temporal:
+    year_start: 2024
+    year_end: 2024
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 北角七姊妹道的名字，让人想起旧海岸上一组石头。传说七位情同姊妹的女子不愿被迫分离，手牵手走向海里；退潮时，人们在岸边看见几块排列的礁石，便说她们化成了石。
+  - 不同讲法对她们投海的缘由并不一致。香港地方志中心记录地方史工作者郑宝鸿的说法：过去海旁有泳棚，七姊妹区后来填海建屋，石头也随旧海岸消失。
+  - 2024 年的社区导赏报道另从航海与地形解释这些礁石的名称。街名、旧地图和海岸变迁可以互相参照；传说则保存了人们赋予地方的另一种记忆。
+  sources:
+  - citation: 黄璇：〈香港故事｜怀缅那些年月的“七姊妹”〉，香港新闻网，2024 年 1 月 28 日。
+    type: press_account
+    url: https://hkcna.hk/docDetail.jsp?channel=2803&id=100583376
+    locator: 传说版本与社区导赏员对地方名称的解释
+  - citation: 香港地方志中心：〈掌故专家郑宝鸿电车游〉。
+    type: local_history
+    url: https://web.hkchronicles.org.hk/%E9%A6%99%E6%B8%AF%E5%BF%97/%E7%A4%BE%E6%9C%83/%E6%8E%8C%E6%95%85%E5%B0%88%E5%AE%B6%E9%84%AD%E5%AF%B6%E9%B4%BB%E9%9B%BB%E8%BB%8A%E9%81%8A-%E6%98%A5%E7%A7%A7%E8%A1%97%E8%88%87%E7%A6%8F%E5%BB%BA%E5%AF%8C%E5%95%86%E6%9C%89%E6%B7%B5%E6%BA%90
+    locator: 北角七姊妹石、泳棚和填海的地方记忆
+- id: case_cn_hk_yau_ma_tei_mahjong_hands_1953
+  title: 香港油麻地｜麻将桌上多出的手
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_asia_night_places_oral_accounts_2012_2025
+  location:
+    lat: 22.3115
+    lng: 114.1707
+    precision: city
+    location_name: 中国香港 · 油麻地弥敦道范围参考
+    culture_region: 东亚 · 中国香港
+  map_label: 油麻地
+  location_note: 报道指旧楼在弥敦道 452 号；点位仅表示油麻地区域，旧建筑与现况不可混同。
+  temporal:
+    year_start: 2018
+    year_end: 2018
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 一桌四人打麻将，牌局正进行时，桌边却仿佛多出两双手：一双伸出来摸牌，另一双向四人收钱。讲述说，四个人吓得离开房间，跑去求助。
+  - 1953 年 3 月，香港报纸刊登了油麻地的这则消息。多年后的报道翻看旧报，记录到现场曾引来围观，也记录了关于租务和传闻来源的其他猜测。
+  - 纸上留下的是当时人们如何报道、讨论这件事；多出的手从何而来，没有得到一致结论。传言在之后的叙述中又与麻将禁忌相遇，版本逐渐增多。
+  sources:
+  - citation: 林乐轩：〈弥敦道“鬼屋”四人夜晚打牌多四只鬼手〉，《香港01》，2018 年 8 月 24 日。
+    type: press_account
+    url: https://www.hk01.com/%E7%86%B1%E7%88%86%E8%A9%B1%E9%A1%8C/224871/7%E6%9C%8814%E7%9B%82%E8%98%AD%E7%AF%80-%E9%A6%99%E6%B8%AF%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%8B%81%E9%AC%A7%E9%AC%BC%E4%BA%8B%E6%95%85-%E5%BD%8C%E6%95%A6%E9%81%93-%E9%AC%BC%E5%B1%8B-4%E4%BA%BA%E6%89%93%E7%89%8C%E5%A4%9A4%E9%9A%BB%E6%89%8B
+    locator: 回顾 1953 年报纸报道、围观和不同说法
+  - &id004
+    citation: Tanner、chung：〈香港都市传说回顾：中大辫子姑娘、北角七姊妹道、西贡结界〉，《MILK》，2024 年 8 月 5 日。
+    type: press_account
+    url: https://www.milk.com.hk/hong-kong-urban-legends/
+    locator: 彩虹站第三路轨的传闻与报道转述的车厂用途
+- id: case_cn_hk_choi_hung_middle_track_2024
+  title: 香港彩虹站｜中间那条轨道
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_asia_night_places_oral_accounts_2012_2025
+  location:
+    lat: 22.3348
+    lng: 114.2092
+    precision: city
+    location_name: 中国香港 · 港铁彩虹站参考点
+    culture_region: 东亚 · 中国香港
+  map_label: 彩虹站
+  location_note: 点位为彩虹站位置；故事涉及的列车、日期和人员没有在报道中得到独立核实。
+  temporal:
+    year_start: 2024
+    year_end: 2024
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 等车时，人们可以留意彩虹站中间的一条轨道。都市传说把它说成一条不该驶入的路：有列车曾在途中失去联系，重新出现时，乘客和车长都受到惊吓。
+  - 故事还衍生出请人做法、轨道被弃用等说法。《MILK》的回顾同时转述另一种解释：这条轨道通向九龙湾车厂，服务列车运行与维护。
+  - 一处日常可见的铁路设施，为传闻提供了具体背景；看到轨道本身，并不能证实故事中的那次列车经历。
+  sources:
+  - *id004
+  - citation: 港铁：System Map。
+    type: map_reference
+    url: https://www.mtr.com.hk/en/customer/services/system_map.html
+    locator: 彩虹站位于观塘线；地图点位为车站参考
+- id: case_sg_woodneuk_grandmother_2021
+  title: 新加坡｜祖母讲的 Woodneuk 旧宅
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_asia_night_places_oral_accounts_2012_2025
+  location:
+    lat: 1.30875
+    lng: 103.812222
+    precision: city
+    location_name: 新加坡 · Istana Woodneuk 建筑参考点
+    culture_region: 东南亚 · 新加坡
+  map_label: Woodneuk
+  location_note: 点位是旧宅建筑的地图参考；此处为遗址，讲述不构成进入许可。
+  temporal:
+    year_start: 2021
+    year_end: 2021
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 荷兰路附近有一座旧宅。祖母告诉孙辈，过去人们听说这里闹鬼，很少靠近；如今倒有年轻人去拍照，她觉得他们打扰了住在故事里的旧主人。
+  - 她讲到一位苏丹和他的妻子，说妻子十分喜欢房子，离世后仍留在这里。采集者保留了祖母的讲述，也承认宅邸历史与传说的细节未必一致。
+  - 这段家庭回忆于 2021 年采录。旧宅及其所在地可以在地图上辨认；关于谁留在屋里的说法，则属于讲述者的民间故事。
+  sources:
+  - citation: Yi Lin Valerie Tan, “The Haunted Art House in Woodneuk”, USC Digital Folklore Archives, 16 May 2021。
+    type: oral_history
+    url: https://folklore.usc.edu/the-haunted-art-house-in-woodneuk/
+    locator: 采集者祖母的家庭讲述；采访于 2021 年 4 月 12 日
+  - citation: USC Digital Folklore Archives, “1950s” 条目索引。
+    type: oral_history
+    url: https://folklore.usc.edu/tag/1950s/
+    locator: 保留 Woodneuk 访谈、讲述语境及采集者意见
+  - citation: OpenStreetMap contributors, Istana Woodneuk, way 166565322。
+    type: map_reference
+    url: https://www.openstreetmap.org/way/166565322
+    locator: 建筑范围地图参考 1.308750, 103.812222
+- id: case_my_burmese_family_seventh_day_2024
+  title: 马来西亚｜第七天的告别
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_asian_personal_night_memories_2016_2025
+  location:
+    lat: 4.2105
+    lng: 101.9758
+    precision: culture_region
+    location_name: 马来西亚 · 缅甸家庭讲述范围参考
+    culture_region: 东南亚 · 马来西亚
+  map_label: 马来西亚
+  location_note: 讲述称母亲童年时一家住在马来西亚，未说明城市；点位只表示国家范围。
+  temporal:
+    year_start: 2024
+    year_end: 2024
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 女孩十岁左右时，一位姨母去世。家里按照自己的习惯，在第七天请僧人来送别；仪式中，祖母突然从椅子上起身，用另一个声音说话。
+  - 家人把那个声音认作已故的亲人，听她道别。祖母事后十分疲惫，也记不清经过。多年后，一家迁居美国，又在另一位亲人去世后讲起相似的经历。
+  - 2024 年，采集者记录母亲转述的家庭记忆。母亲说自己亲历了其中一件事；关于声音和仪式的意义，是这家人的理解，不能代表所有缅甸家庭。
+  sources:
+  - citation: vbuccell, “Burmese Ghost Story – Memorate”, USC Digital Folklore Archives, 14 May 2024。
+    type: oral_history
+    url: https://folklore.usc.edu/burmese-ghost-story-memorate/
+    locator: 母亲在马来西亚的童年回忆及家庭迁徙后的另一段讲述
+  - &id005
+    citation: USC Digital Folklore Archives, 2024 年 5 月文章索引。
+    type: oral_history
+    url: https://folklore.usc.edu/2024/05/page/3/
+    locator: 两则家庭故事与采集者的语境说明
+- id: case_mm_family_bedpost_knock_2024
+  title: 缅甸家庭｜床柱与无人应答的门
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_asian_personal_night_memories_2016_2025
+  location:
+    lat: 21.9162
+    lng: 95.956
+    precision: culture_region
+    location_name: 缅甸 · 家庭讲述背景范围参考
+    culture_region: 东南亚 · 缅甸
+  map_label: 缅甸
+  location_note: 家族背景与讲述者关联缅甸；采录没有给出经历发生的城镇或建筑位置。
+  temporal:
+    year_start: 2024
+    year_end: 2024
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 曾祖父睡在一张四柱床上。家人转述，他半夜看见一个人从床柱上爬下来，随即与对方扭打；醒后他仍觉得那比梦真实。
+  - 母亲也讲过另一处住宅：有人听见门外敲门和求医的声音，打开门却没有发现来人。她把这些故事和亲属的其他经历一起记在心里。
+  - 2024 年的采录保存了母亲从长辈那里听来的叙述。不同经历没有共同的确切地址，也不能由此判断看到或听到的是什么。
+  sources:
+  - citation: vbuccell, “Burmese Possession Story – Memorate”, USC Digital Folklore Archives, 14 May 2024。
+    type: oral_history
+    url: https://folklore.usc.edu/burmese-possession-story-memorate/
+    locator: 母亲经家人转述曾祖父的经历以及无人的敲门声
+  - *id005
+  peers:
+  - case_my_burmese_family_seventh_day_2024
+- id: case_mm_lake_house_protective_women_2021
+  title: 缅甸｜湖边高脚屋的访客
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_asian_personal_night_memories_2016_2025
+  location:
+    lat: 21.9162
+    lng: 95.956
+    precision: culture_region
+    location_name: 缅甸 · 乡镇范围未指明
+    culture_region: 东南亚 · 缅甸
+  map_label: 缅甸
+  location_note: 受访者未说出祖父任职的乡镇；点位仅代表缅甸的讲述背景。
+  temporal:
+    year_start: 2021
+    year_end: 2021
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 暑假里，女孩去乡镇陪在外工作的父亲，住进一座临水的高脚屋。一天回家时，她看见一个穿传统服装的女人走上后楼梯，赶进屋去寻找，却再也没有找到她。
+  - 夜里阳台常传来脚步声；后来兄弟姐妹来住，也讲起被人打扰的经历。父亲告诉家人，他相信有两位守护屋子与他本人的女性灵体。
+  - 故事说，父亲后来向她们许诺带她们到城里的佛塔，让她们离开；此后家人没有再遇到类似的事。
+  - 2021 年，儿子把母亲的假期回忆讲给采集者。他相信母亲确有这段经历，同时说自己无法确定其中的解释。
+  sources:
+  - citation: compy, “Burmese Protective Women”, USC Digital Folklore Archives, 4 November 2021。
+    type: oral_history
+    url: https://folklore.usc.edu/burmese-protective-women/
+    locator: 2021 年 11 月 2 日访谈；受访者转述母亲的假期经历
+  - citation: USC Digital Folklore Archives, Folk Beliefs 文章索引。
+    type: oral_history
+    url: https://folklore.usc.edu/category/beliefs/page/190/
+    locator: 同一访谈的完整条目及采集时间
+  peers:
+  - case_mm_family_bedpost_knock_2024
+existing_notes: {}
+revisions: {}
