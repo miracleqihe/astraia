@@ -3,7 +3,12 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import type { LifeEntry, LifeSubject } from '../life';
 import { LIFE_PALETTES, lifeGalaxyLayout } from './lifeGalaxyLayout';
-import { createLifeGravity } from './lifeGravity';
+import { animateLifeGravity, createLifeGravity } from './lifeGravity';
+import { createLifeMotion } from './lifeMotion';
+import { lifeStardust } from './lifeStardust';
+import { createLifeGalaxyLabels } from './lifeGalaxyLabels';
+import { createLifePortal } from './lifePortal';
+import { createLifeNebula } from './lifeNebula';
 import { mountLifeSoftware } from './lifeSoftware';
 import type { LifeDrawing, LifeHover } from './lifeSceneTypes';
 
@@ -12,19 +17,23 @@ interface Props {
   subjects: LifeSubject[];
   selectedId: string | null;
   subjectId: string | null;
+  volumeId: string | null;
   highlightIds: readonly string[];
+  connectHighlights: boolean;
+  motionEnabled: boolean;
   resetSerial: number;
   onSelect: (id: string) => void;
   onSubject: (id: string) => void;
+  onVolume: (id: string) => void;
   onRenderer: (renderer: 'software' | 'webgl') => void;
 }
 
-export default function LifeScene({ entries, subjects, selectedId, subjectId, highlightIds, resetSerial, onSelect, onSubject, onRenderer }: Props) {
+export default function LifeScene({ entries, subjects, selectedId, subjectId, volumeId, highlightIds, connectHighlights, motionEnabled, resetSerial, onSelect, onSubject, onVolume, onRenderer }: Props) {
   const host = useRef<HTMLDivElement>(null);
   const drawing = useRef<LifeDrawing | null>(null);
-  const select = useRef(onSelect), selectSubject = useRef(onSubject);
+  const select = useRef(onSelect), selectSubject = useRef(onSubject), selectVolume = useRef(onVolume);
   const [hover, setHover] = useState<LifeHover | null>(null);
-  select.current = onSelect; selectSubject.current = onSubject;
+  select.current = onSelect; selectSubject.current = onSubject; selectVolume.current = onVolume;
 
   useEffect(() => {
     const element = host.current;
@@ -45,8 +54,8 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, hi
       renderer?.dispose();
       onRenderer('software');
       const fallback = mountLifeSoftware(element, entries, subjects, layout,
-        (id) => select.current(id), (id) => selectSubject.current(id), setHover);
-      drawing.current = fallback; fallback.update(selectedId, subjectId, highlightIds);
+        (id) => select.current(id), (id) => selectSubject.current(id), (id) => selectVolume.current(id), setHover);
+      drawing.current = fallback; fallback.update(selectedId, subjectId, highlightIds, connectHighlights, volumeId); fallback.setMotion(motionEnabled);
       return () => { fallback.dispose(); drawing.current = null; };
     }
 
@@ -55,17 +64,25 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, hi
     webgl.setPixelRatio(Math.min(window.devicePixelRatio, 1.6)); webgl.setClearColor(0x04060c, 1);
     const canvas = webgl.domElement; canvas.dataset.renderer = 'webgl'; element.appendChild(canvas);
     const scene = new THREE.Scene();
+    const nebula = createLifeNebula();
     const camera = new THREE.PerspectiveCamera(44, 1, 1, 4000);
     camera.position.set(0, -620, 985);
     const overviewDirection = camera.position.clone().normalize();
     const controls = new OrbitControls(camera, canvas);
+    const labels = createLifeGalaxyLabels(element, layout, (id) => selectVolume.current(id));
+    const portal = createLifePortal(element, entries, layout, (id) => select.current(id));
+    const portalProjection = new THREE.Vector3();
     controls.enableDamping = true; controls.dampingFactor = .08;
     controls.minDistance = 110; controls.maxDistance = 1800; controls.enablePan = true;
 
     const colors = new Float32Array(entries.length * 3);
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(layout.positions, 3));
-    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    geometry.setAttribute('nodeColor', new THREE.BufferAttribute(colors, 3));
+    const degree = new Map(entries.map((entry) => [entry.id, entry.links.length]));
+    for (const entry of entries) for (const id of entry.links) if (degree.has(id)) degree.set(id, degree.get(id)! + 1);
+    const sizes = new Float32Array(entries.map((entry) => Math.min(15, 5.8 + Math.log2(1 + (degree.get(entry.id) ?? 0)) * 1.8)));
+    geometry.setAttribute('starSize', new THREE.BufferAttribute(sizes, 1));
     const dotCanvas = document.createElement('canvas'); dotCanvas.width = dotCanvas.height = 32;
     const dotContext = dotCanvas.getContext('2d');
     if (!dotContext) throw new Error('无法创建星点纹理');
@@ -74,8 +91,35 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, hi
     glow.addColorStop(1, 'rgba(255,255,255,0)');
     dotContext.fillStyle = glow; dotContext.fillRect(0, 0, 32, 32);
     const dot = new THREE.CanvasTexture(dotCanvas);
-    const stars = new THREE.Points(geometry, new THREE.PointsMaterial({ size: 7, sizeAttenuation: false,
-      map: dot, vertexColors: true, transparent: true, opacity: .94, depthWrite: false }));
+    const dustData = lifeStardust(layout, 4200);
+    const dustGeometry = new THREE.BufferGeometry();
+    dustGeometry.setAttribute('position', new THREE.BufferAttribute(dustData.positions, 3));
+    dustGeometry.setAttribute('color', new THREE.BufferAttribute(dustData.colors, 3));
+    const dust = new THREE.Points(dustGeometry, new THREE.PointsMaterial({ size: 2.5, sizeAttenuation: false,
+      map: dot, vertexColors: true, transparent: true, opacity: .8, depthWrite: false }));
+    scene.add(dust);
+    const galaxyCoreGeometry = new THREE.BufferGeometry();
+    const galaxyCorePositions = new Float32Array(layout.volumes.length * 3), galaxyCoreColors = new Float32Array(layout.volumes.length * 3);
+    layout.volumes.forEach((volume, index) => {
+      layout.volumeCenters.get(volume)?.toArray(galaxyCorePositions, index * 3);
+      new THREE.Color(LIFE_PALETTES[index % LIFE_PALETTES.length]).toArray(galaxyCoreColors, index * 3);
+    });
+    galaxyCoreGeometry.setAttribute('position', new THREE.BufferAttribute(galaxyCorePositions, 3));
+    galaxyCoreGeometry.setAttribute('color', new THREE.BufferAttribute(galaxyCoreColors, 3));
+    const galaxyCores = new THREE.Points(galaxyCoreGeometry, new THREE.PointsMaterial({ size: 35, sizeAttenuation: false,
+      map: dot, vertexColors: true, transparent: true, opacity: .68, depthWrite: false, blending: THREE.AdditiveBlending }));
+    scene.add(galaxyCores);
+    const stars = new THREE.Points(geometry, new THREE.ShaderMaterial({ transparent: true, depthWrite: false,
+      uniforms: { pixelRatio: { value: Math.min(window.devicePixelRatio, 1.6) } },
+      vertexShader: `attribute float starSize; attribute vec3 nodeColor; varying vec3 vColor; uniform float pixelRatio;
+        void main() { vColor=nodeColor; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); gl_PointSize=starSize*pixelRatio; }`,
+      fragmentShader: `varying vec3 vColor;
+        void main() { float r=length(gl_PointCoord-vec2(.5))*2.0; if(r>1.) discard;
+          float glow=pow(1.-r,1.25); float core=pow(max(0.,1.-r*3.),2.);
+          gl_FragColor=vec4(vColor*(.8+core*.5),glow*.96);
+          #include <colorspace_fragment>
+        }`,
+    }));
     scene.add(stars);
     const hubPositions = new Float32Array(subjects.length * 3);
     subjects.forEach((subject, index) => layout.centers.get(subject.id)?.toArray(hubPositions, index * 3));
@@ -112,13 +156,47 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, hi
     const lines = new THREE.LineSegments(lineGeometry, new THREE.LineBasicMaterial({ color: 0xc29d59,
       transparent: true, opacity: .75, depthWrite: false }));
     scene.add(lines);
+    const pulseGeometry = new THREE.BufferGeometry();
+    pulseGeometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(), 3));
+    const pulses = new THREE.Points(pulseGeometry, new THREE.PointsMaterial({ color: '#fff0c5', map: dot,
+      size: 7, sizeAttenuation: false, transparent: true, opacity: .9, depthWrite: false }));
+    scene.add(pulses);
+    const motion = createLifeMotion(entries, layout);
+    let movingStars = false, lastMotion = 0, pointerActive = false;
+    let liveLinePoints: THREE.Vector3[] = [], liveSelectedPoint: THREE.Vector3 | undefined, labelsVisible = true;
     let focus: THREE.Vector3 | null = null, focusDirection: THREE.Vector3 | null = null, focusDistance = 0, frame = 0;
     function schedule() { if (!frame) frame = requestAnimationFrame(render); }
     function fly(target: THREE.Vector3, distance: number, direction: THREE.Vector3 | null = null) {
       focus = target.clone(); focusDistance = distance; focusDirection = direction; schedule();
     }
-    function render() {
+    function render(now: number) {
       frame = 0;
+      if (movingStars && !pointerActive && !gravity.active() && !document.hidden) {
+        if (lastMotion) {
+          motion.advance((now - lastMotion) / 1000);
+          geometry.getAttribute('position').needsUpdate = true;
+          const linePosition = lineGeometry.getAttribute('position') as THREE.BufferAttribute | undefined;
+          if (linePosition) {
+            liveLinePoints.forEach((point, index) => linePosition.setXYZ(index, point.x, point.y, point.z));
+            linePosition.needsUpdate = true;
+          }
+          const selectedPosition = selectedGeometry.getAttribute('position') as THREE.BufferAttribute | undefined;
+          if (selectedPosition && liveSelectedPoint) {
+            selectedPosition.setXYZ(0, liveSelectedPoint.x, liveSelectedPoint.y, liveSelectedPoint.z);
+            selectedPosition.needsUpdate = true;
+          }
+        }
+        lastMotion = now;
+      } else lastMotion = 0;
+      pulses.visible = movingStars;
+      if (movingStars && liveLinePoints.length) {
+        const positions = pulseGeometry.getAttribute('position') as THREE.BufferAttribute;
+        for (let i = 0; i < liveLinePoints.length; i += 2) {
+          const a = liveLinePoints[i], b = liveLinePoints[i + 1], progress = (now / 5200 + i * .091) % 1;
+          positions.setXYZ(i / 2, a.x + (b.x - a.x) * progress, a.y + (b.y - a.y) * progress, a.z + (b.z - a.z) * progress);
+        }
+        positions.needsUpdate = true;
+      }
       if (focus) {
         const delta = focus.clone().sub(controls.target).multiplyScalar(.10);
         camera.position.add(delta); controls.target.add(delta);
@@ -130,13 +208,24 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, hi
         if (delta.lengthSq() < .001 && Math.abs(next - focusDistance) < .1
           && (!focusDirection || bearing.dot(focusDirection) > .99999)) { focus = null; focusDirection = null; }
       }
-      const moving = controls.update(); webgl.render(scene, camera);
-      if (focus || moving) schedule();
+      const moving = controls.update(); nebula.render(webgl, scene, camera, now / 1000, camera.aspect); labels.update(camera, labelsVisible);
+      const portalPoint = portal.point();
+      if (portalPoint) {
+        portalProjection.copy(portalPoint).project(camera);
+        portal.position((portalProjection.x + 1) * canvas.clientWidth / 2 + 10,
+          (1 - portalProjection.y) * canvas.clientHeight / 2 + 10, portalProjection.z < 1 && Math.abs(portalProjection.x) < .95 && Math.abs(portalProjection.y) < .95);
+      }
+      if (focus || moving || (movingStars && !document.hidden)) schedule();
     }
+    const visibility = () => { lastMotion = 0; if (!document.hidden && movingStars) schedule(); };
+    document.addEventListener('visibilitychange', visibility);
     controls.addEventListener('change', schedule);
     const resize = () => {
       const width = Math.max(1, element.clientWidth), height = Math.max(1, element.clientHeight);
-      camera.aspect = width / height; camera.updateProjectionMatrix(); webgl.setSize(width, height, false); schedule();
+      camera.aspect = width / height;
+      if (width > 760) camera.setViewOffset(width, height, width > 1100 ? 108 : 90, 0, width, height);
+      else camera.clearViewOffset();
+      camera.updateProjectionMatrix(); webgl.setSize(width, height, false); schedule();
     };
     const observer = new ResizeObserver(resize); observer.observe(element); resize();
     const raycaster = new THREE.Raycaster(), pointer = new THREE.Vector2();
@@ -153,13 +242,16 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, hi
     let hovered = '';
     let down = { x: 0, y: 0 }, gravityTimer = 0, gravityHeld = false;
     const gravity = createLifeGravity(entries, layout);
-    let lastSelected: string | null = null, lastSubject: string | null = null;
-    let lastHighlights: readonly string[] = [];
+    const gravityAnimation = animateLifeGravity(gravity, () => {
+      geometry.getAttribute('position').needsUpdate = true;
+      const linePosition = lineGeometry.getAttribute('position') as THREE.BufferAttribute | undefined;
+      if (linePosition) { liveLinePoints.forEach((point, index) => linePosition.setXYZ(index, point.x, point.y, point.z)); linePosition.needsUpdate = true; }
+      schedule();
+    });
     const restoreGravity = () => {
       window.clearTimeout(gravityTimer); gravityTimer = 0;
       if (!gravityHeld) return;
-      gravityHeld = false; gravity.clear(); geometry.getAttribute('position').needsUpdate = true;
-      controller.update(lastSelected, lastSubject, lastHighlights);
+      gravityHeld = false; gravityAnimation.release();
     };
     const move = (event: PointerEvent) => {
       if (event.buttons) {
@@ -176,14 +268,15 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, hi
       }
     };
     const pointerDown = (event: PointerEvent) => {
-      focus = null; down = { x: event.clientX, y: event.clientY };
+      focus = null; pointerActive = true; down = { x: event.clientX, y: event.clientY };
       const target = hit(event);
       if (target?.kind === 'node') gravityTimer = window.setTimeout(() => {
-        const id = entries[target.index].id; gravityHeld = true; gravity.pull(id);
+        const id = entries[target.index].id; gravityHeld = true; gravityAnimation.pull(id);
         geometry.getAttribute('position').needsUpdate = true; select.current(id); schedule();
       }, 480);
     };
     const pointerUp = (event: PointerEvent) => {
+      pointerActive = false;
       const wasHeld = gravityHeld; restoreGravity();
       if (wasHeld) return;
       if (Math.hypot(event.clientX - down.x, event.clientY - down.y) > 5) return;
@@ -194,64 +287,74 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, hi
     const leave = () => { hovered = ''; setHover(null); };
     canvas.addEventListener('pointermove', move); canvas.addEventListener('pointerdown', pointerDown);
     canvas.addEventListener('pointerup', pointerUp); canvas.addEventListener('pointerleave', leave);
-    canvas.addEventListener('pointercancel', restoreGravity);
+    const pointerCancel = () => { pointerActive = false; restoreGravity(); };
+    canvas.addEventListener('pointercancel', pointerCancel);
     const color = new THREE.Color();
     let lastFocus = '';
     const controller: LifeDrawing = {
-      update(selected, subject, highlights) {
-        lastSelected = selected; lastSubject = subject; lastHighlights = highlights;
+      update(selected, subject, highlights, connect = true, volume = null) {
+        labelsVisible = !selected && !subject && !volume && !highlights.length;
+        portal.select(selected);
         const chosen = entries.find((entry) => entry.id === selected), related = new Set(chosen?.links ?? []);
         const matched = new Set(highlights);
         if (chosen) for (const entry of entries) if (entry.links.includes(chosen.id)) related.add(entry.id);
         entries.forEach((entry, i) => {
           color.set(LIFE_PALETTES[layout.volumes.indexOf(entry.volume) % LIFE_PALETTES.length]);
-          const dim = subject && entry.subject !== subject ? .22 : selected && entry.id !== selected && !related.has(entry.id) ? .28
+          const dim = subject && entry.subject !== subject || volume && entry.volume !== volume ? .22 : selected && entry.id !== selected && !related.has(entry.id) ? .28
             : !selected && matched.size && !matched.has(entry.id) ? .22 : 1;
           color.multiplyScalar(dim);
-          (geometry.getAttribute('color') as THREE.BufferAttribute).setXYZ(i, color.r, color.g, color.b);
+          (geometry.getAttribute('nodeColor') as THREE.BufferAttribute).setXYZ(i, color.r, color.g, color.b);
         });
-        geometry.getAttribute('color').needsUpdate = true;
+        geometry.getAttribute('nodeColor').needsUpdate = true;
         const origin = selected ? layout.locations.get(selected) : undefined;
-        selectedGeometry.setFromPoints(origin ? [origin] : []);
+        liveSelectedPoint = origin; selectedGeometry.setFromPoints(origin ? [origin] : []);
         const linePoints: THREE.Vector3[] = [];
         if (origin) for (const id of related) {
           const target = layout.locations.get(id);
           if (target) linePoints.push(origin, target);
         }
-        if (!origin && highlights.length > 1) {
+        if (!origin && connect && highlights.length > 1) {
           for (let index = 1; index < highlights.length; index++) {
             const a = layout.locations.get(highlights[index - 1]), b = layout.locations.get(highlights[index]);
             if (a && b) linePoints.push(a, b);
           }
         }
-        lineGeometry.setFromPoints(linePoints);
-        const target = origin ?? (subject ? layout.centers.get(subject) : undefined);
-        const key = selected ? `entry:${selected}` : subject ? `subject:${subject}` : '';
-        if (target && key !== lastFocus) fly(target, origin ? 285 : 390);
+        liveLinePoints = linePoints; lineGeometry.setFromPoints(linePoints);
+        pulseGeometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(linePoints.length / 2 * 3), 3));
+        const target = origin ?? (subject ? layout.centers.get(subject) : volume ? layout.volumeCenters.get(volume) : undefined);
+        const key = selected ? `entry:${selected}` : subject ? `subject:${subject}` : volume ? `volume:${volume}` : '';
+        if (target && key !== lastFocus) fly(target, origin ? 285 : subject ? 390 : 590);
         else if (!target) { focus = null; schedule(); } else schedule();
         lastFocus = key;
       },
+      setMotion(enabled) { movingStars = enabled; lastMotion = 0; if (enabled && !document.hidden) schedule(); },
       reset() { fly(new THREE.Vector3(), 1165, overviewDirection); },
       dispose() {
-        window.clearTimeout(gravityTimer); gravity.clear();
+        movingStars = false; document.removeEventListener('visibilitychange', visibility);
+        labels.dispose(); portal.dispose();
+        window.clearTimeout(gravityTimer); gravityAnimation.dispose();
         cancelAnimationFrame(frame); observer.disconnect(); controls.removeEventListener('change', schedule); controls.dispose();
         canvas.removeEventListener('pointermove', move); canvas.removeEventListener('pointerdown', pointerDown);
         canvas.removeEventListener('pointerup', pointerUp); canvas.removeEventListener('pointerleave', leave);
-        canvas.removeEventListener('pointercancel', restoreGravity);
+        canvas.removeEventListener('pointercancel', pointerCancel);
         geometry.dispose(); (stars.material as THREE.Material).dispose(); hubGeometry.dispose(); (hubs.material as THREE.Material).dispose();
+        dustGeometry.dispose(); (dust.material as THREE.Material).dispose();
+        galaxyCoreGeometry.dispose(); (galaxyCores.material as THREE.Material).dispose();
         selectedGeometry.dispose(); (selectedStar.material as THREE.Material).dispose(); lineGeometry.dispose(); (lines.material as THREE.Material).dispose();
+        pulseGeometry.dispose(); (pulses.material as THREE.Material).dispose();
         rings.forEach((ring) => { ring.geometry.dispose(); (ring.material as THREE.Material).dispose(); });
         arms.forEach((arm) => { arm.geometry.dispose(); (arm.material as THREE.Material).dispose(); });
         coreGeometry.dispose(); (core.material as THREE.Material).dispose();
-        dot.dispose(); webgl.dispose(); canvas.remove();
+        nebula.dispose(); dot.dispose(); webgl.dispose(); canvas.remove();
       },
     };
-    drawing.current = controller; controller.update(selectedId, subjectId, highlightIds);
+    drawing.current = controller; controller.update(selectedId, subjectId, highlightIds, connectHighlights, volumeId); controller.setMotion(motionEnabled);
     return () => { controller.dispose(); drawing.current = null; };
     // Selection changes update the existing scene without rebuilding it.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [entries, subjects]);
-  useEffect(() => { drawing.current?.update(selectedId, subjectId, highlightIds); }, [selectedId, subjectId, highlightIds]);
+  useEffect(() => { drawing.current?.update(selectedId, subjectId, highlightIds, connectHighlights, volumeId); }, [selectedId, subjectId, highlightIds, connectHighlights, volumeId]);
+  useEffect(() => { drawing.current?.setMotion(motionEnabled); }, [motionEnabled]);
   useEffect(() => { if (resetSerial) drawing.current?.reset(); }, [resetSerial]);
   return <div className="life-scene" ref={host} aria-label="知识星图：拖动旋转，滚轮缩放，点击星点或学科星团">
     {hover && <div className="life-tooltip" style={{ left: hover.x + 12, top: hover.y + 12 }}>{hover.title}</div>}

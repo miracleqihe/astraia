@@ -4,6 +4,9 @@ import remarkGfm from 'remark-gfm';
 import { ViewportFrame } from './WorkbenchControls';
 import type { LifeBook, LifeEntry } from './life';
 import { lifeSearchExcerpt, OBSERVATION_KEY, rankLifeResults, readObservations } from './lifeExplore';
+import LifeTimeline from './LifeTimeline';
+import LifeInquiry from './LifeInquiry';
+import { LIFE_MILESTONES } from './lifeMilestones';
 import './life.css';
 
 const LifeScene = lazy(() => import('./views/LifeScene'));
@@ -29,9 +32,13 @@ export default function LifeKnowledge() {
   const [book, setBook] = useState<LifeBook | null>(null);
   const [error, setError] = useState('');
   const [subject, setSubject] = useState<string | null>(null);
+  const [volume, setVolume] = useState<string | null>(null);
   const [selectedId, setSelectedId] = useState(() => new URL(window.location.href).searchParams.get('entry'));
   const [query, setQuery] = useState('');
   const [sceneMode, setSceneMode] = useState<'galaxy' | 'astrolabe'>('galaxy');
+  const [motionEnabled, setMotionEnabled] = useState(() => !window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const [milestoneIndex, setMilestoneIndex] = useState<number | null>(null);
+  const [inquiryIds, setInquiryIds] = useState<string[]>([]);
   const [renderer, setRenderer] = useState<'software' | 'webgl' | null>(null);
   const [observations, setObservations] = useState(readObservations);
   const [observationsOnly, setObservationsOnly] = useState(false);
@@ -84,12 +91,13 @@ export default function LifeKnowledge() {
   }, [book, selected]);
   const results = useMemo(() => {
     if (!book) return [];
-    const scope = book.entries.filter((entry) => (!subject || entry.subject === subject)
+    const scope = book.entries.filter((entry) => (!subject || entry.subject === subject) && (!volume || entry.volume === volume)
       && (!observationsOnly || Object.hasOwn(observations, entry.id)));
     return rankLifeResults(scope, book, deferredQuery, searchText);
-  }, [book, subject, deferredQuery, searchText, observations, observationsOnly]);
-  const highlightIds = useMemo(() => deferredQuery || observationsOnly
-    ? results.slice(0, 30).map((entry) => entry.id) : [], [deferredQuery, observationsOnly, results]);
+  }, [book, subject, volume, deferredQuery, searchText, observations, observationsOnly]);
+  const highlightIds = useMemo(() => milestoneIndex !== null ? [...new Set(LIFE_MILESTONES.slice(0, milestoneIndex + 1).flatMap((event) => event.entries))].filter((id) => byId.has(id))
+    : inquiryIds.length ? inquiryIds : deferredQuery || observationsOnly ? results.slice(0, 30).map((entry) => entry.id) : [],
+  [milestoneIndex, byId, inquiryIds, deferredQuery, observationsOnly, results]);
   const related = useMemo(() => {
     if (!selected || !book) return [];
     const ids = new Set(selected.links);
@@ -99,6 +107,9 @@ export default function LifeKnowledge() {
 
   function choose(id: string, anchor?: string) {
     if (!byId.has(id)) return;
+    const entry = byId.get(id)!;
+    if (subject && subject !== entry.subject) setSubject(null);
+    if (volume && volume !== entry.volume) setVolume(null);
     setSelectedId(id); setShowPdf(false);
     const url = new URL(window.location.href);
     url.searchParams.set('view', 'life'); url.searchParams.set('entry', id);
@@ -116,15 +127,18 @@ export default function LifeKnowledge() {
     window.history.replaceState({}, '', url);
   }
   function chooseSubject(id: string | null) {
-    setSubject(id); setSelectedId(null); setQuery(''); setLimit(40); setShowPdf(false); setObservationsOnly(false);
+    setSubject(id); setVolume(null); setSelectedId(null); setQuery(''); setLimit(40); setShowPdf(false); setObservationsOnly(false); setMilestoneIndex(null); setInquiryIds([]);
     const url = new URL(window.location.href); url.searchParams.delete('entry');
     url.hash = '';
     window.history.replaceState({}, '', url);
   }
+  function chooseVolume(id: string) {
+    chooseSubject(null); setVolume(id);
+  }
   if (error) return <div className="life-status" role="alert">知识星图加载失败：{error}</div>;
   if (!book) return <div className="life-status" role="status">正在载入知识星图…</div>;
   const pdfUrl = `${base}knowledge/handbook.pdf#page=${selected?.page ?? 1}`;
-  const subjectLabel = book.subjects.find((item) => item.id === subject)?.title ?? '全部学科';
+  const subjectLabel = book.subjects.find((item) => item.id === subject)?.title ?? volume ?? '全部学科';
   const volumes = [...new Set(book.subjects.map((item) => item.volume))];
   const isSaved = selected ? Object.hasOwn(observations, selected.id) : false;
 
@@ -139,10 +153,10 @@ export default function LifeKnowledge() {
   return <div className="life-workspace" data-low-power={sceneMode === 'astrolabe' || renderer === 'software' ? 'true' : undefined}>
     <aside className="life-sidebar" aria-label="知识学科">
       <div className="life-side-heading"><span>OMNIA / KNOWLEDGE ATLAS</span><strong>知识目录</strong><small>五卷 · 二十门</small></div>
-      <button className="life-subject-all" type="button" aria-pressed={!subject} onClick={() => chooseSubject(null)}>
+      <button className="life-subject-all" type="button" aria-pressed={!subject && !volume} onClick={() => chooseSubject(null)}>
         <span>全部条目</span><b>{book.entries.length.toLocaleString()}</b></button>
       {volumes.map((volume) => <div className="life-volume" key={volume}>
-        <p>{volume}</p>
+        <button type="button" className="life-volume-name" aria-pressed={volume === subjectLabel && !subject} onClick={() => chooseVolume(volume)}>{volume} <span>↗</span></button>
         {book.subjects.filter((item) => item.volume === volume).map((item) => <button key={item.id} type="button"
           aria-pressed={subject === item.id} onClick={() => chooseSubject(item.id)}>
           <span>{item.title}</span><small>{item.count}</small></button>)}
@@ -150,35 +164,51 @@ export default function LifeKnowledge() {
     </aside>
     <main className="life-map" aria-label="知识星图">
       <ViewportFrame />
+      <svg className="life-celestial-hud" aria-hidden="true" viewBox="0 0 600 600">
+        <circle cx="300" cy="300" r="244"/><circle cx="300" cy="300" r="233" strokeDasharray="2 8"/>
+        <circle cx="300" cy="300" r="160" strokeDasharray="3 11"/><circle cx="300" cy="300" r="72"/>
+        <path d="M300 44v30 M300 526v30 M44 300h30 M526 300h30 M119 119l20 20 M461 461l20 20 M481 119l-20 20 M139 461l-20 20"/>
+        <path d="M300 140 438 380 162 380Z M300 460 162 220 438 220Z"/>
+        <circle cx="300" cy="300" r="5"/><path d="M286 300h28 M300 286v28"/>
+      </svg>
       <div className="life-map-heading"><span>ASTRAIA / KNOWLEDGE ATLAS</span><h1>OMNIA <small>万象星枢</small></h1>
         <p>《格物识微》 · {book.entries.length.toLocaleString()} 个知识节点</p></div>
       <div className="life-view-controls" aria-label="知识星图视角">
         <button type="button" aria-pressed={sceneMode === 'galaxy'} onClick={() => setSceneMode('galaxy')}>3D 星系</button>
         <button type="button" aria-pressed={sceneMode === 'astrolabe'} onClick={() => setSceneMode('astrolabe')}>2D 星盘</button>
+        {sceneMode === 'galaxy' && <button type="button" aria-pressed={motionEnabled} onClick={() => setMotionEnabled((value) => !value)}>
+          {motionEnabled ? '暂停星动' : '恢复星动'}</button>}
         <button type="button" className="life-reset" onClick={() => { chooseSubject(null); setResetSerial((value) => value + 1); }}>
           ◇ 总览</button>
       </div>
       <Suspense fallback={<div className="stage-message">正在绘制知识星图…</div>}>
         {sceneMode === 'galaxy'
-          ? <LifeScene entries={book.entries} subjects={book.subjects} selectedId={selected?.id ?? null} subjectId={subject}
-              highlightIds={highlightIds} resetSerial={resetSerial} onSelect={choose} onSubject={chooseSubject} onRenderer={setRenderer} />
+          ? <LifeScene entries={book.entries} subjects={book.subjects} selectedId={selected?.id ?? null} subjectId={subject} volumeId={volume}
+              highlightIds={highlightIds} connectHighlights={milestoneIndex === null} motionEnabled={motionEnabled} resetSerial={resetSerial} onSelect={choose} onSubject={chooseSubject} onVolume={chooseVolume} onRenderer={setRenderer} />
           : <LifeAstrolabe entries={book.entries} subjects={book.subjects} selectedId={selected?.id ?? null} subjectId={subject}
-              highlightIds={highlightIds} resetSerial={resetSerial} onSelect={choose} onSubject={chooseSubject} />}
+              volumeId={volume} highlightIds={highlightIds} connectHighlights={milestoneIndex === null} resetSerial={resetSerial} onSelect={choose} onSubject={chooseSubject} />}
       </Suspense>
-      <div className="life-map-footer"><span>{highlightIds.length ? `✦　点亮 ${highlightIds.length} 项${observationsOnly ? '观测' : '搜索'}轨迹` : '✦　五卷星臂 · 明星为学科'}</span>
+      <LifeTimeline index={milestoneIndex} entries={byId} onChoose={choose} onChange={(index) => {
+        setMilestoneIndex(index);
+        if (index !== null) { setSubject(null); setVolume(null); setQuery(''); setInquiryIds([]); setObservationsOnly(false); clearSelection(); }
+      }} />
+      <div className="life-map-footer"><span>{highlightIds.length ? `✦　点亮 ${highlightIds.length} 项${milestoneIndex !== null ? '延伸阅读' : observationsOnly ? '观测' : '搜索'}轨迹` : '✦　五卷星臂 · 明星为学科'}</span>
         <span>{sceneMode === 'galaxy' ? '拖动旋转' : '拖动平移'} · 滚轮缩放 · 长按聚拢关联</span></div>
     </main>
     <aside className="life-inspector" ref={inspectorRef} aria-label="知识卷宗">
       <div className="life-search"><label htmlFor="life-search">检索知识库 <span>⌘ K</span></label>
         <input id="life-search" ref={searchRef} value={query} placeholder="搜索关键词、编号或问题" onChange={(event) => {
-          setQuery(event.target.value); clearSelection(); setLimit(40);
+          setQuery(event.target.value); setMilestoneIndex(null); setInquiryIds([]); clearSelection(); setLimit(40);
         }} />
         <div className="life-reading-modes"><button type="button" aria-pressed={!observationsOnly} onClick={() => {
           setObservationsOnly(false); clearSelection(); setLimit(40);
         }}>全部知识</button><button type="button" aria-pressed={observationsOnly} onClick={() => {
-          setObservationsOnly(true); setSubject(null); setQuery(''); clearSelection(); setLimit(40);
+          setObservationsOnly(true); setSubject(null); setVolume(null); setQuery(''); clearSelection(); setLimit(40);
         }}>观测列表 <span>{Object.keys(observations).length}</span></button></div>
       </div>
+      <LifeInquiry book={book} onChoose={choose} onEvidence={(ids) => {
+        setInquiryIds(ids); setMilestoneIndex(null); setSubject(null); setVolume(null); setQuery(''); setObservationsOnly(false); clearSelection();
+      }} />
       {selected ? <article className="life-article">
         <button className="life-back" type="button" onClick={clearSelection}>← 返回条目目录</button>
         <div className="life-overline">{selected.volume} / {book.subjects.find((s) => s.id === selected.subject)?.title}</div>

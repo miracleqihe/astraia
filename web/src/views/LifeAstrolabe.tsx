@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { LifeEntry, LifeSubject } from '../life';
 import { LIFE_PALETTES, lifeGalaxyLayout } from './lifeGalaxyLayout';
-import { createLifeGravity } from './lifeGravity';
+import { animateLifeGravity, createLifeGravity } from './lifeGravity';
+import { createLifePortal } from './lifePortal';
 import type { LifeHover } from './lifeSceneTypes';
 
 interface Props {
@@ -9,7 +10,9 @@ interface Props {
   subjects: LifeSubject[];
   selectedId: string | null;
   subjectId: string | null;
+  volumeId: string | null;
   highlightIds: readonly string[];
+  connectHighlights: boolean;
   resetSerial: number;
   onSelect: (id: string) => void;
   onSubject: (id: string) => void;
@@ -17,12 +20,12 @@ interface Props {
 
 /** Flat, orthographic projection of the same precomputed positions as the 3D scene. */
 export default function LifeAstrolabe(props: Props) {
-  const { entries, subjects, selectedId, subjectId, highlightIds, resetSerial } = props;
+  const { entries, subjects, selectedId, subjectId, volumeId, highlightIds, resetSerial } = props;
   const host = useRef<HTMLDivElement>(null);
   const layout = useMemo(() => lifeGalaxyLayout(entries, subjects), [entries, subjects]);
   const current = useRef(props); current.current = props;
   const repaint = useRef<() => void>(() => {});
-  const navigate = useRef<(selected: string | null, subject: string | null) => void>(() => {});
+  const navigate = useRef<(selected: string | null, subject: string | null, volume: string | null) => void>(() => {});
   const reset = useRef<() => void>(() => {});
   const [hover, setHover] = useState<LifeHover | null>(null);
 
@@ -34,10 +37,12 @@ export default function LifeAstrolabe(props: Props) {
     if (!context) throw new Error('无法创建星盘画布');
     const ctx: CanvasRenderingContext2D = context;
     element.prepend(canvas);
+    const portal = createLifePortal(element, entries, layout, (id) => current.current.onSelect(id));
     let width = 1, height = 1, zoom = 1, panX = 0, panY = 0, frame = 0;
     let downX = 0, downY = 0, previousX = 0, previousY = 0, dragging = false, moved = false, lastHover = '';
     let gravityTimer = 0, gravityHeld = false;
     const gravity = createLifeGravity(entries, layout);
+    const gravityAnimation = animateLifeGravity(gravity, schedule);
     const byId = new Map(entries.map((entry) => [entry.id, entry]));
     const entryIndex = new Map(entries.map((entry, index) => [entry.id, index]));
     const volumeIndex = new Map(layout.volumes.map((volume, index) => [volume, index]));
@@ -47,13 +52,15 @@ export default function LifeAstrolabe(props: Props) {
         y: points.reduce((sum, point) => sum + point.y, 0) / points.length };
     });
     const scale = () => Math.min(width, height) / 1040 * zoom;
-    const project = (x: number, y: number) => [width / 2 + panX + x * scale(), height / 2 + panY - y * scale()];
+    const screenOffset = () => width > 1100 ? 108 : width > 760 ? 90 : 0;
+    const project = (x: number, y: number) => [width / 2 - screenOffset() + panX + x * scale(), height / 2 + panY - y * scale()];
     function schedule() { if (!frame) frame = requestAnimationFrame(draw); }
     function draw() {
       frame = 0;
       const state = current.current;
       const highlighted = new Set(state.highlightIds);
       const chosen = state.selectedId ? byId.get(state.selectedId) : undefined;
+      portal.select(state.selectedId);
       const related = new Set(chosen?.links ?? []);
       if (chosen) for (const entry of entries) if (entry.links.includes(chosen.id)) related.add(entry.id);
       ctx.fillStyle = '#04060c'; ctx.fillRect(0, 0, width, height);
@@ -64,7 +71,7 @@ export default function LifeAstrolabe(props: Props) {
       }
       const edges: Array<[string, string]> = chosen
         ? [...related].map((id) => [chosen.id, id])
-        : state.highlightIds.slice(1).map((id, index) => [state.highlightIds[index], id]);
+        : state.connectHighlights ? state.highlightIds.slice(1).map((id, index) => [state.highlightIds[index], id]) : [];
       ctx.strokeStyle = 'rgba(227,190,120,.66)'; ctx.lineWidth = 1;
       ctx.beginPath();
       for (const [a, b] of edges) {
@@ -82,6 +89,7 @@ export default function LifeAstrolabe(props: Props) {
         entries.forEach((entry, index) => {
           if (volumeIndex.get(entry.volume) !== volume) return;
           const faded = !!(state.subjectId && entry.subject !== state.subjectId)
+            || !!(state.volumeId && entry.volume !== state.volumeId)
             || !!(chosen && entry.id !== chosen.id && !related.has(entry.id))
             || !!(!chosen && highlighted.size && !highlighted.has(entry.id));
           if (faded !== dim) return;
@@ -108,7 +116,7 @@ export default function LifeAstrolabe(props: Props) {
       if (chosen) {
         const point = layout.locations.get(chosen.id);
         if (point) { const [x, y] = project(point.x, point.y); ctx.strokeStyle = '#fff1cf';
-          ctx.beginPath(); ctx.arc(x, y, 7, 0, Math.PI * 2); ctx.stroke(); }
+          ctx.beginPath(); ctx.arc(x, y, 7, 0, Math.PI * 2); ctx.stroke(); portal.position(x + 10, y + 10, x >= 0 && x < width && y >= 0 && y < height); }
       }
     }
     const resize = () => {
@@ -142,14 +150,14 @@ export default function LifeAstrolabe(props: Props) {
     };
     const restoreGravity = () => {
       window.clearTimeout(gravityTimer); gravityTimer = 0;
-      if (gravityHeld) { gravityHeld = false; gravity.clear(); schedule(); }
+      if (gravityHeld) { gravityHeld = false; gravityAnimation.release(); }
     };
     const pointerDown = (event: PointerEvent) => {
       dragging = true; moved = false; downX = previousX = event.clientX; downY = previousY = event.clientY;
       canvas.setPointerCapture(event.pointerId); setHover(null);
       const box = canvas.getBoundingClientRect(), target = hit(event.clientX - box.left, event.clientY - box.top);
       if (target?.kind === 'node') gravityTimer = window.setTimeout(() => {
-        const id = entries[target.index].id; gravityHeld = true; gravity.pull(id); current.current.onSelect(id); schedule();
+        const id = entries[target.index].id; gravityHeld = true; gravityAnimation.pull(id); current.current.onSelect(id); schedule();
       }, 480);
     };
     const pointerMove = (event: PointerEvent) => {
@@ -182,7 +190,7 @@ export default function LifeAstrolabe(props: Props) {
     const leave = () => { lastHover = ''; setHover(null); };
     const wheel = (event: WheelEvent) => {
       event.preventDefault();
-      const box = canvas.getBoundingClientRect(), x = event.clientX - box.left - width / 2, y = event.clientY - box.top - height / 2;
+      const box = canvas.getBoundingClientRect(), x = event.clientX - box.left - width / 2 + screenOffset(), y = event.clientY - box.top - height / 2;
       const next = Math.max(.65, Math.min(6, zoom * Math.exp(-event.deltaY * .001)));
       const factor = next / zoom; panX = x - (x - panX) * factor; panY = y - (y - panY) * factor;
       zoom = next; schedule();
@@ -191,23 +199,23 @@ export default function LifeAstrolabe(props: Props) {
     canvas.addEventListener('pointerup', pointerUp); canvas.addEventListener('pointercancel', pointerCancel);
     canvas.addEventListener('pointerleave', leave); canvas.addEventListener('wheel', wheel, { passive: false });
     repaint.current = schedule;
-    navigate.current = (selected, subject) => {
-      const point = selected ? layout.locations.get(selected) : subject ? layout.centers.get(subject) : undefined;
-      if (point) { zoom = selected ? 2.8 : 1.8; panX = -point.x * scale(); panY = point.y * scale(); }
+    navigate.current = (selected, subject, volume) => {
+      const point = selected ? layout.locations.get(selected) : subject ? layout.centers.get(subject) : volume ? layout.volumeCenters.get(volume) : undefined;
+      if (point) { zoom = selected ? 2.8 : subject ? 1.8 : 1.4; panX = -point.x * scale(); panY = point.y * scale(); }
       schedule();
     };
     reset.current = () => { zoom = 1; panX = panY = 0; schedule(); };
-    navigate.current(current.current.selectedId, current.current.subjectId);
+    navigate.current(current.current.selectedId, current.current.subjectId, current.current.volumeId);
     return () => {
-      restoreGravity(); cancelAnimationFrame(frame); observer.disconnect();
+      restoreGravity(); gravityAnimation.dispose(); portal.dispose(); cancelAnimationFrame(frame); observer.disconnect();
       canvas.removeEventListener('pointerdown', pointerDown); canvas.removeEventListener('pointermove', pointerMove);
       canvas.removeEventListener('pointerup', pointerUp); canvas.removeEventListener('pointercancel', pointerCancel);
       canvas.removeEventListener('pointerleave', leave); canvas.removeEventListener('wheel', wheel); canvas.remove();
       repaint.current = () => {}; navigate.current = () => {}; reset.current = () => {};
     };
   }, [entries, subjects, layout]);
-  useEffect(() => { navigate.current(selectedId, subjectId); }, [selectedId, subjectId]);
-  useEffect(() => { repaint.current(); }, [highlightIds, selectedId, subjectId]);
+  useEffect(() => { navigate.current(selectedId, subjectId, volumeId); }, [selectedId, subjectId, volumeId]);
+  useEffect(() => { repaint.current(); }, [highlightIds, selectedId, subjectId, volumeId]);
   useEffect(() => { if (resetSerial) reset.current(); }, [resetSerial]);
   return <div className="life-scene life-astrolabe" ref={host} aria-label="二维知识星盘：拖动平移，滚轮缩放，点击星点或学科">
     {hover && <div className="life-tooltip" style={{ left: hover.x + 12, top: hover.y + 12 }}>{hover.title}</div>}

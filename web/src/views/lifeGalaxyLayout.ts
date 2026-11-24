@@ -8,13 +8,17 @@ export function lifeGalaxyLayout(entries: LifeEntry[], subjects: LifeSubject[]) 
   const volumes = [...new Set(subjects.map((subject) => subject.volume))];
   const subjectIndex = new Map(subjects.map((subject, index) => [subject.id, index]));
   const centers = new Map<string, THREE.Vector3>();
+  const volumeCenters = new Map<string, THREE.Vector3>();
   for (const [arm, volume] of volumes.entries()) {
     const group = subjects.filter((subject) => subject.volume === volume);
+    const bearing = arm * Math.PI * 2 / volumes.length - Math.PI / 2;
+    const center = new THREE.Vector3(Math.cos(bearing) * 255, Math.sin(bearing) * 255, Math.sin(bearing * 2) * 45);
+    volumeCenters.set(volume, center);
     group.forEach((subject, index) => {
-      const radius = 125 + (index + .5) / group.length * 295;
-      const angle = arm * Math.PI * 2 / volumes.length + radius / 420 * .95 - Math.PI / 2;
-      centers.set(subject.id, new THREE.Vector3(Math.cos(angle) * radius,
-        Math.sin(angle) * radius, Math.sin(angle * 2) * 25 + (index - (group.length - 1) / 2) * 12));
+      const radius = 24 + Math.sqrt((index + .5) / group.length) * 88;
+      const angle = index * 2.399963 + bearing;
+      centers.set(subject.id, new THREE.Vector3(center.x + Math.cos(angle) * radius,
+        center.y + Math.sin(angle) * radius, center.z + Math.sin(angle * 2) * 22));
     });
   }
   const positions = new Float32Array(entries.length * 3);
@@ -25,7 +29,7 @@ export function lifeGalaxyLayout(entries: LifeEntry[], subjects: LifeSubject[]) 
     const index = counts.get(entry.subject) ?? 0;
     counts.set(entry.subject, index + 1);
     const subject = subjects[subjectIndex.get(entry.subject) ?? 0];
-    const spread = Math.sqrt((index + .5) / (subject?.count ?? 1)) * 42;
+    const spread = Math.sqrt((index + .5) / (subject?.count ?? 1)) * 41;
     const angle = index * 2.399963;
     const point = new THREE.Vector3(center.x + Math.cos(angle) * spread,
       center.y + Math.sin(angle) * spread,
@@ -33,5 +37,5 @@ export function lifeGalaxyLayout(entries: LifeEntry[], subjects: LifeSubject[]) 
     point.toArray(positions, i * 3);
     locations.set(entry.id, point);
   });
-  return { volumes, centers, positions, locations, subjectIndex };
+  return { volumes, centers, volumeCenters, positions, locations, subjectIndex };
 }

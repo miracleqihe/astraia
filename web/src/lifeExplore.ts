@@ -34,6 +34,8 @@ export function lifeSearchTerms(query: string): string[] {
 export function lifeSearchExcerpt(entry: LifeEntry, query: string): string {
   const text = entry.body.replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/⟦anchor:[^⟧]+⟧/g, '')
+    .replace(/`[^`]*`\{=typst\}/g, '').replace(/\$\$[\s\S]*?\$\$|\$[^$\n]*\$/g, '')
+    .replace(/\\([\\`*_{}\[\]()#+.!>-])/g, '$1')
     .replace(/[#*_`|>]/g, '').replace(/\s+/g, ' ').trim();
   const lowered = text.toLocaleLowerCase();
   const term = lifeSearchTerms(query).find((word) => lowered.includes(word));

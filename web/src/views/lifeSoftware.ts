@@ -2,14 +2,18 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import type { LifeEntry, LifeSubject } from '../life';
 import { LIFE_PALETTES, lifeGalaxyLayout } from './lifeGalaxyLayout';
-import { createLifeGravity } from './lifeGravity';
+import { animateLifeGravity, createLifeGravity } from './lifeGravity';
+import { createLifeMotion } from './lifeMotion';
+import { lifeStardust } from './lifeStardust';
+import { createLifeGalaxyLabels } from './lifeGalaxyLabels';
+import { createLifePortal } from './lifePortal';
 import type { LifeDrawing, LifeHover } from './lifeSceneTypes';
 
 type Layout = ReturnType<typeof lifeGalaxyLayout>;
 
 /** CPU rasterizer for browsers without hardware WebGL; uses the same camera and node positions. */
 export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], subjects: LifeSubject[], layout: Layout,
-  onSelect: (id: string) => void, onSubject: (id: string) => void, onHover: (hover: LifeHover | null) => void): LifeDrawing {
+  onSelect: (id: string) => void, onSubject: (id: string) => void, onVolume: (id: string) => void, onHover: (hover: LifeHover | null) => void): LifeDrawing {
   const canvas = document.createElement('canvas');
   // Permit low-latency canvas presentation when the browser supports it.
   const drawingContext = canvas.getContext('2d', { alpha: false, desynchronized: true });
@@ -21,10 +25,15 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   camera.position.set(0, -620, 985);
   const overviewDirection = camera.position.clone().normalize();
   const controls = new OrbitControls(camera, canvas);
+  const labels = createLifeGalaxyLabels(host, layout, onVolume);
+  const portal = createLifePortal(host, entries, layout, onSelect);
+  let labelsVisible = true;
   controls.enableDamping = true; controls.dampingFactor = .08;
   controls.minDistance = 110; controls.maxDistance = 1800; controls.enablePan = true;
 
   const hubPositions = new Float32Array(subjects.length * 3);
+  const dust = lifeStardust(layout, 1200);
+  const dustColors = new Uint32Array(1200);
   subjects.forEach((subject, index) => layout.centers.get(subject.id)?.toArray(hubPositions, index * 3));
   // Reuse the screen projections from drawing for pointer hit tests.  This
   // avoids a second 3D traversal of the entire galaxy on every mouse move.
@@ -59,6 +68,8 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   const littleEndian = new Uint8Array(new Uint32Array([0x01020304]).buffer)[0] === 4;
   const rgb = (r: number, g: number, b: number) => littleEndian
     ? (0xff000000 | b << 16 | g << 8 | r) >>> 0 : (r << 24 | g << 16 | b << 8 | 255) >>> 0;
+  for (let i = 0; i < dustColors.length; i++) dustColors[i] = rgb(
+    Math.round(dust.colors[i * 3] * 255), Math.round(dust.colors[i * 3 + 1] * 255), Math.round(dust.colors[i * 3 + 2] * 255));
   // Selection changes frequently. Build the reverse links and the three
   // possible display colors once instead of recomputing them for every star
   // whenever a dossier or subject is selected.
@@ -124,6 +135,26 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   let dragging = false;
   let restoreQuality = 0;
   let drawCount = 0;
+  const motion = createLifeMotion(entries, layout);
+  let motionEnabled = false, motionTimer = 0, motionLast = 0, disposed = false;
+
+  function ambientTick() {
+    motionTimer = 0;
+    if (!motionEnabled || disposed || document.hidden) { motionLast = 0; return; }
+    const now = performance.now();
+    if (!dragging && !interacting && !focus && !gravity.active()) {
+      if (motionLast) { motion.advance((now - motionLast) / 1000); schedule(); }
+      motionLast = now;
+    } else motionLast = 0;
+    motionTimer = window.setTimeout(ambientTick, 90);
+  }
+  function setMotion(enabled: boolean) {
+    motionEnabled = enabled; motionLast = 0;
+    window.clearTimeout(motionTimer); motionTimer = 0;
+    if (enabled && !document.hidden && !disposed) motionTimer = window.setTimeout(ambientTick, 90);
+  }
+  const visibility = () => setMotion(motionEnabled);
+  document.addEventListener('visibilitychange', visibility);
 
   function schedule() { if (!frame) frame = requestAnimationFrame(render); }
   function beginMotion() {
@@ -186,6 +217,17 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     nodeHeads.fill(-1); hubHeads.fill(-1);
     camera.updateMatrixWorld();
     projection.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
+    for (let i = 0; i < dustColors.length; i++) {
+      if (project(dust.positions[i * 3], dust.positions[i * 3 + 1], dust.positions[i * 3 + 2])) pixel(projectedX, projectedY, dustColors[i]);
+    }
+    for (const volume of layout.volumes) {
+      const center = layout.volumeCenters.get(volume);
+      if (!center || !project(center.x, center.y, center.z)) continue;
+      const x = projectedX, y = projectedY;
+      for (let k = -9; k <= 9; k++) { pixel(x + k, y, guideColor); pixel(x, y + k, guideColor); }
+      for (let k = -4; k <= 4; k++) { pixel(x + k, y, hubColor); pixel(x, y + k, hubColor); }
+      for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) pixel(x + dx, y + dy, selectedColor);
+    }
     // A 32-segment guide still reads as a smooth circle at the reduced motion
     // resolution, and avoids projecting and clipping three quarters of the
     // guide segments on every CPU-rendered drag or camera flight. The full
@@ -216,6 +258,12 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       const x = projectedX, y = projectedY;
       if (project(b.x, b.y, b.z)) line(x, y, projectedX, projectedY, lineColor);
     }
+    if (motionEnabled) for (let i = 0; i < edges.length; i += 2) {
+      const a = edges[i], b = edges[i + 1], progress = (performance.now() / 5200 + i * .091) % 1;
+      if (project(a.x + (b.x - a.x) * progress, a.y + (b.y - a.y) * progress, a.z + (b.z - a.z) * progress)) {
+        pixel(projectedX, projectedY, selectedColor); pixel(projectedX + 1, projectedY, selectedColor);
+      }
+    }
     for (let i = 0; i < entries.length; i++) {
       if (!project(layout.positions[i * 3], layout.positions[i * 3 + 1], layout.positions[i * 3 + 2])) {
         nodeScreen[i * 2] = NaN;
@@ -243,6 +291,12 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       for (let j = -2; j <= 2; j++) for (let i = -2; i <= 2; i++) pixel(x + i, y + j, selectedColor);
     }
     ctx.putImageData(image, 0, 0);
+    labels.update(camera, labelsVisible);
+    const portalPoint = portal.point();
+    if (portalPoint && project(portalPoint.x, portalPoint.y, portalPoint.z))
+      portal.position(projectedX / width * host.clientWidth + 10, projectedY / height * host.clientHeight + 10,
+        projectedX >= 0 && projectedX <= width && projectedY >= 0 && projectedY <= height);
+    else portal.position(0, 0, false);
     if (import.meta.env.DEV) {
       canvas.dataset.drawMs = String(performance.now() - started);
       canvas.dataset.drawCount = String(++drawCount);
@@ -299,7 +353,10 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       canvas.width = width; canvas.height = height;
       image = ctx.createImageData(width, height); pixels = new Uint32Array(image.data.buffer);
     }
-    camera.aspect = cssWidth / cssHeight; camera.updateProjectionMatrix(); schedule();
+    camera.aspect = cssWidth / cssHeight;
+    if (cssWidth > 760) camera.setViewOffset(cssWidth, cssHeight, cssWidth > 1100 ? 108 : 90, 0, cssWidth, cssHeight);
+    else camera.clearViewOffset();
+    camera.updateProjectionMatrix(); schedule();
   };
   // A moving divider or an animated browser resize can otherwise allocate and
   // upload a full-resolution image on every resize notification. Use the
@@ -375,10 +432,11 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     }
   };
   const gravity = createLifeGravity(entries, layout);
+  const gravityAnimation = animateLifeGravity(gravity, schedule);
   let gravityTimer = 0, gravityHeld = false;
   const restoreGravity = () => {
     window.clearTimeout(gravityTimer); gravityTimer = 0;
-    if (gravityHeld) { gravityHeld = false; gravity.clear(); schedule(); }
+    if (gravityHeld) { gravityHeld = false; gravityAnimation.release(); }
   };
   const move = (event: PointerEvent) => {
     if (event.buttons) {
@@ -394,7 +452,7 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     pendingHover = null; clearHover(); beginMotion();
     const target = hit(event);
     if (target?.kind === 'node') gravityTimer = window.setTimeout(() => {
-      const id = entries[target.index].id; gravityHeld = true; gravity.pull(id); onSelect(id); schedule();
+      const id = entries[target.index].id; gravityHeld = true; gravityAnimation.pull(id); onSelect(id); schedule();
     }, 480);
   };
   const pointerUp = (event: PointerEvent) => {
@@ -415,13 +473,15 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   canvas.addEventListener('pointerleave', leave);
   let lastFocus = '';
   return {
-    update(selected, subject, highlights) {
+    update(selected, subject, highlights, connectHighlights = true, volume = null) {
+      labelsVisible = !selected && !subject && !volume && !highlights.length;
+      portal.select(selected);
       const chosen = selected ? entryById.get(selected) : undefined;
       const related = new Set(chosen?.links ?? []);
       const matched = new Set(highlights);
       if (chosen) for (const id of incoming.get(chosen.id) ?? []) related.add(id);
       entries.forEach((entry, i) => {
-        colors[i] = subject && entry.subject !== subject ? subjectColors[i]
+        colors[i] = subject && entry.subject !== subject || volume && entry.volume !== volume ? subjectColors[i]
           : selected && entry.id !== selected && !related.has(entry.id) ? focusColors[i]
           : !selected && matched.size && !matched.has(entry.id) ? subjectColors[i] : fullColors[i];
       });
@@ -431,21 +491,24 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
         const target = layout.locations.get(id);
         if (target) edges.push(selectedPoint, target);
       }
-      if (!selectedPoint && highlights.length > 1) {
+      if (!selectedPoint && connectHighlights && highlights.length > 1) {
         for (let index = 1; index < highlights.length; index++) {
           const a = layout.locations.get(highlights[index - 1]), b = layout.locations.get(highlights[index]);
           if (a && b) edges.push(a, b);
         }
       }
-      const target = selectedPoint ?? (subject ? layout.centers.get(subject) : undefined);
-      const key = selected ? `entry:${selected}` : subject ? `subject:${subject}` : '';
-      if (target && key !== lastFocus) fly(target, selectedPoint ? 285 : 390);
+      const target = selectedPoint ?? (subject ? layout.centers.get(subject) : volume ? layout.volumeCenters.get(volume) : undefined);
+      const key = selected ? `entry:${selected}` : subject ? `subject:${subject}` : volume ? `volume:${volume}` : '';
+      if (target && key !== lastFocus) fly(target, selectedPoint ? 285 : subject ? 390 : 590);
       else if (!target) { focus = null; schedule(); } else schedule();
       lastFocus = key;
     },
+    setMotion,
     reset() { fly(new THREE.Vector3(), 1165, overviewDirection); },
     dispose() {
-      restoreGravity(); cancelAnimationFrame(frame); cancelAnimationFrame(hoverFrame); window.clearTimeout(restoreQuality);
+      disposed = true; setMotion(false); document.removeEventListener('visibilitychange', visibility);
+      labels.dispose(); portal.dispose();
+      restoreGravity(); gravityAnimation.dispose(); cancelAnimationFrame(frame); cancelAnimationFrame(hoverFrame); window.clearTimeout(restoreQuality);
       window.clearTimeout(hoverTimer); observer.disconnect();
       controls.removeEventListener('change', schedule); controls.dispose();
       controls.removeEventListener('start', beginMotion); controls.removeEventListener('end', restoreWhenStill);

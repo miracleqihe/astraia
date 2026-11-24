@@ -1,0 +1,469 @@
+themes:
+- id: corpus_asia_night_noises_and_rumors_2009_2026
+  title: 夜声、道路与误认｜亚洲地方怪谈的现场
+  paragraphs:
+  - 声音先于影像来到人面前：停车场里传来孩子的呼唤，旧庙中响起夜鸟，山路上仿佛有人摆起集市。不同的人在不同地点，把听见的东西讲成自己的经历。
+  - 有些报道保留了后来找到的物件或调查：乌日路边的是雨衣，台北停车场的声音来自宣传片，西普塔特的白衣人被商户认作街头表演者。也有些声音至今只留下受访者的回忆。
+  - 网络给旧街巷或住处起名之后，这些地方仍然是日常生活的空间。把居民的说法、媒体记录与地图上的区域参考放在一起，才能看见怪谈之外的人。
+  sources:
+  - &id001
+    citation: 葛学涛、陈咏，〈江苏扬州一古巷被恶搞为中国“最邪地”〉，《扬子晚报》，2009 年 7 月 21 日；中新网转载。
+    type: investigative_report
+    url: https://www.chinanews.com/sh/news/2009/07-21/1783405.shtml
+    locator: 网络帖、居民访谈与记者实地观察
+  - &id002
+    citation: 施协源，〈破庙夜传凄厉叫声“救伊”〉，TVBS，2023 年 9 月 6 日。
+    type: newspaper_report
+    url: https://news.tvbs.com.tw/fun/2232690
+    locator: 民众通报及新北市动物保护人员判断
+  - &id003
+    citation: 韦家齐、杨沛緰，〈社宅停车场半夜“女孩叫奶奶”〉，TVBS，2023 年 8 月 16 日。
+    type: newspaper_report
+    url: https://news.tvbs.com.tw/politics/2210700
+    locator: 停车场声音与管理单位回应
+  - &id004
+    citation: Mei Amelia R，〈Cerita Pedagang soal “Pocong” Keliling Ciputat〉，detikNews，2026 年 5 月 21 日。
+    type: interview
+    url: https://news.detik.com/berita/d-8497924/cerita-pedagang-soal-pocong-keliling-ciputat-beli-minuman-di-warung/amp
+    locator: 商户及警方采访
+  - &id005
+    citation: detikJateng，〈Awal Mula Teror Pocong dan Ketukan Pintu Misterius〉，2023 年 7 月 9 日。
+    type: interview
+    url: https://www.detik.com/jateng/berita/d-6813718/awal-mula-teror-pocong-dan-ketukan-pintu-misterius-bikin-resah-warga-lasem
+    locator: 受访居民的不同说法与警方对网传视频的核查
+  - &id006
+    citation: Rinto Heksantoro，〈Heboh Sekeluarga Hidup di Kampung Pasar Setan〉，detikJateng，2024 年 9 月 24 日。
+    type: interview
+    url: https://www.detik.com/jateng/berita/d-7555724/heboh-sekeluarga-hidup-di-kampung-pasar-setan-purworejo-begini-faktanya
+    locator: 住户与村干部访谈
+  - &id007
+    citation: 'detikJatim，〈Mitos di Gunung Lawu: Pasar Setan〉，2022 年 10 月 26 日。'
+    type: media_account
+    url: https://www.detik.com/jatim/wisata/d-6371284/mitos-di-gunung-lawu-pasar-setan
+    locator: 山路中市集声音的地方传说及研究引述
+  peers:
+  - corpus_asia_roads_houses_rumors_2002_2026
+  - text_atlas_night_travel
+records:
+- id: case_cn_yangzhou_luosijieding_2009
+  title: 扬州｜古巷里的灯与琴声
+  genre: memorate
+  reading_kind: report
+  credibility_tier: A
+  theme: corpus_asia_night_noises_and_rumors_2009_2026
+  location:
+    lat: 32.396855
+    lng: 119.407766
+    precision: city
+    location_name: 中国江苏 · 扬州城区参考
+    culture_region: 中国 · 近现代地方传闻
+  map_label: 扬州
+  location_note: 点位为扬州城区参考，不指向巷内住户。
+  temporal:
+    year_start: 2009
+    year_end: 2009
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表时间，讲述的经历可能发生于其他时间。
+  paragraphs:
+  - 一条旧巷蜿蜒很长。网络帖子说，这里一到夜里灯就熄灭，电动车也会停下；有人还听见从深处传来的琴声。巷名的来历在帖子里被写成了一段恐怖故事。
+  - 2009 年，记者白天和夜间都去过这里，骑车穿过巷子时没有遇到帖子描述的故障。住了多年的居民说，路灯曾因线路老化损坏，后来已经维修；他们也没有听到那种琴声。
+  - 另一种地方说法把巷名与旧澡堂的旋转楼梯联系起来。居民希望好奇的人记住：故事里的街巷，也是有人每天生活的地方。
+  sources:
+  - *id001
+  - citation: OpenStreetMap，区域参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/4430826
+    locator: 中国江苏 · 扬州城区参考
+  peers:
+  - case_cn_tonggu_light_reflection_2015
+- id: case_cn_shouguang_shop_knock_2010
+  title: 山东寿光｜午夜店门的敲击
+  genre: memorate
+  reading_kind: report
+  credibility_tier: A
+  theme: corpus_asia_night_noises_and_rumors_2009_2026
+  location:
+    lat: 36.876236
+    lng: 118.732255
+    precision: city
+    location_name: 中国山东 · 寿光市参考
+    culture_region: 中国 · 近现代地方传闻
+  map_label: 寿光
+  location_note: 点位为寿光市区域参考，不指向店铺或当事人住宅。
+  temporal:
+    year_start: 2010
+    year_end: 2010
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表时间，讲述的经历可能发生于其他时间。
+  paragraphs:
+  - 一间小店在深夜响起敲门声。店主人起床开门，外面却看不见人；接下来几晚，声音又一次次出现，时间常常接近午夜。
+  - 店主向派出所求助。当地民警告诉记者，他们在夜里守候，发现敲门的人是与店主认识的邻居；随后双方接受调解。
+  - 报道把这个原本被当成“鬼敲门”的经历，放回邻里纠纷和夜间生活的背景里。
+  sources:
+  - citation: 陈怀禹等，〈半夜“鬼”敲门，吓坏店主人〉，《齐鲁晚报》，2010 年 4 月 9 日；新浪转载。
+    type: newspaper_report
+    url: https://news.sina.com.cn/c/2010-04-09/075317345661s.shtml
+    locator: 报案人经历与警方调解记录
+  - citation: OpenStreetMap，地区参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/3468767
+    locator: 中国山东 · 寿光市参考
+  peers:
+  - case_cn_tonggu_light_reflection_2015
+- id: case_tw_tucheng_temple_nightjar_2023
+  title: 新北土城｜废庙里的夜叫
+  genre: memorate
+  reading_kind: report
+  credibility_tier: A
+  theme: corpus_asia_night_noises_and_rumors_2009_2026
+  location:
+    lat: 24.972201
+    lng: 121.443348
+    precision: city
+    location_name: 中国台湾 · 新北市土城区参考
+    culture_region: 东亚 · 台湾
+  map_label: 土城
+  location_note: 点位为土城区行政区域参考，不是废庙具体位置。
+  temporal:
+    year_start: 2023
+    year_end: 2023
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表时间，讲述的经历可能发生于其他时间。
+  paragraphs:
+  - 夜里，路过一座空庙的人听见尖锐的叫声。声音一遍遍从屋里传出，有人觉得像是在喊人求救，越听越不敢靠近。
+  - 2023 年，民众把声音通报给新北市动物保护人员。到场人员根据叫声与习性判断，声音来自夜行性鸟类夜鹰。
+  - 同一阵夜声，在熟悉周围生态的人耳中与初次经过的路人耳中，可以是两种截然不同的经验。
+  sources:
+  - *id002
+  - citation: OpenStreetMap，区域参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/2783614
+    locator: 中国台湾 · 新北市土城区参考
+  peers:
+  - case_cn_tonggu_light_reflection_2015
+- id: case_tw_wuri_yellow_raincoats_2011
+  title: 台中乌日｜坡道边的黄色人影
+  genre: memorate
+  reading_kind: report
+  credibility_tier: A
+  theme: corpus_asia_night_noises_and_rumors_2009_2026
+  location:
+    lat: 24.104696
+    lng: 120.623806
+    precision: city
+    location_name: 中国台湾 · 台中市乌日区参考
+    culture_region: 东亚 · 台湾
+  map_label: 乌日
+  location_note: 点位为乌日区区域参考，不标示危险路段。
+  temporal:
+    year_start: 2011
+    year_end: 2011
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表时间，讲述的经历可能发生于其他时间。
+  paragraphs:
+  - 一段通往墓园的窄路边，挂着几件黄色雨衣。风吹过时，雨衣远远看去像站着的人；夜里车灯扫过，影子更不容易辨认。
+  - 2011 年的电视报道采访了附近居民：有人把雨衣系在路边，是想提醒司机留意坡道，但在夜色中反而吓到了路人。
+  - 这是一则已经找到具体物件的误认故事：被讲述的“人影”，最后仍然留在那条需要小心行驶的道路旁。
+  sources:
+  - citation: TVBS，〈鬼月路边飘人影？黄色雨衣示警像阿飘〉，2011 年 8 月 23 日。
+    type: newspaper_report
+    url: https://news.tvbs.com.tw/life/64479
+    locator: 现场画面与路段居民访谈
+  - citation: OpenStreetMap，区域参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/2958281
+    locator: 中国台湾 · 台中市乌日区参考
+  peers:
+  - case_cn_tw_yushan_yellow_raincoats
+- id: case_tw_taipei_parking_grandma_2023
+  title: 台北｜停车场里的“奶奶”
+  genre: memorate
+  reading_kind: report
+  credibility_tier: A
+  theme: corpus_asia_night_noises_and_rumors_2009_2026
+  location:
+    lat: 25.03752
+    lng: 121.56368
+    precision: city
+    location_name: 中国台湾 · 台北市参考
+    culture_region: 东亚 · 台湾
+  map_label: 台北
+  location_note: 点位为台北市区域参考，不标示具体社宅或住户。
+  temporal:
+    year_start: 2023
+    year_end: 2023
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表时间，讲述的经历可能发生于其他时间。
+  paragraphs:
+  - 凌晨的停车场空荡荡的，忽然传来小女孩叫“奶奶”的声音。声音停一会儿又出现，附近却看不到孩子；一些停车的人因此感到害怕。
+  - 2023 年报道指出，声音来自全天循环播放的交通安全宣传影片。管理单位回应，已请业者在夜间切换静音，画面仍可继续播放。
+  - 这段声音没有走出停车场，却在那个时段被人听成了一则即将诞生的都市怪谈。
+  sources:
+  - *id003
+  - citation: OpenStreetMap，区域参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/1293250
+    locator: 中国台湾 · 台北市参考
+  peers:
+  - case_cn_tonggu_light_reflection_2015
+- id: case_tw_beiyi_fog_old_woman_2018
+  title: 北宜公路｜雾中招手的老妇
+  genre: urban_legend
+  reading_kind: legend
+  credibility_tier: C
+  theme: corpus_asia_night_noises_and_rumors_2009_2026
+  location:
+    lat: 24.937388
+    lng: 121.711185
+    precision: city
+    location_name: 中国台湾 · 新北市坪林区参考
+    culture_region: 东亚 · 台湾
+  map_label: 坪林
+  location_note: 标点为北宜公路沿线坪林区参考，不代表传闻的具体发生地点。
+  temporal:
+    year_start: 2018
+    year_end: 2018
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表时间，讲述的经历可能发生于其他时间。
+  paragraphs:
+  - 山路起雾时，驾驶者只能看见车灯照出的近处。流传的故事里，一位老妇独自站在雾中，向经过的骑士招手，希望搭一段路。
+  - 另一个网络讲述让她在车上不断询问对方的名字和住处；道路的弯、夜雾和沿途祭祀习俗，都被讲述者放进了故事。
+  - 2018 年媒体整理的是多个流传版本，没有独立证据证明搭车经过。公路本身则真实连接新北与宜兰。
+  sources:
+  - citation: 林莹真，〈冥纸、浓雾成“死亡公路”〉，TVBS，2018 年 8 月 11 日。
+    type: media_account
+    url: https://news.tvbs.com.tw/fun/971970
+    locator: 北宜公路夜行传闻
+  - citation: OpenStreetMap，区域参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/2922120
+    locator: 中国台湾 · 新北市坪林区参考
+  peers:
+  - case_sg_orchard_ride_previous_passenger_2022
+- id: case_jp_saitama_shared_dream_2020
+  title: 日本埼玉｜废村之后的梦
+  genre: memorate
+  reading_kind: report
+  credibility_tier: C
+  theme: corpus_asia_night_noises_and_rumors_2009_2026
+  location:
+    lat: 35.975417
+    lng: 139.416011
+    precision: province
+    location_name: 日本 · 埼玉县参考
+    culture_region: 东亚 · 日本
+  map_label: 埼玉县
+  location_note: 报道未公开废村名称；标点仅代表埼玉县。
+  temporal:
+    year_start: 2020
+    year_end: 2020
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表时间，讲述的经历可能发生于其他时间。
+  paragraphs:
+  - 一群人走进埼玉县一处废村，屋里还留着旧餐具和日历。离开后一周，大家再次聚在一起，其中一人说，自己做梦回到了那座村子。
+  - 梦里，他放大拍下的画面，看见树上坐着一个穿蓝色工装的人。其他同行者也讲起相似的梦：有人在井边看到那个人，有人说他坐在屋内。
+  - 这是怪谈讲述者吉田悠轨在 2020 年采访中转述的同行者经历；梦境和共同时间均来自讲述，文章没有给出可独立核验的记录。
+  sources:
+  - citation: 《周刊女性 PRIME》，〈都内屈指の「最恐スポット」に潜入〉，2020 年；Livedoor 新闻转载。
+    type: interview
+    url: https://news.livedoor.com/article/detail/18770972/
+    locator: 怪谈讲述者吉田悠轨的采访及梦境故事
+  - citation: OpenStreetMap，区域参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/1768185
+    locator: 日本 · 埼玉县参考
+  peers:
+  - case_jp_ome_fukiage_tunnel_2021
+- id: case_id_ciputat_pocong_performers_2026
+  title: 南丹格朗｜买饮料的白衣人
+  genre: memorate
+  reading_kind: report
+  credibility_tier: A
+  theme: corpus_asia_night_noises_and_rumors_2009_2026
+  location:
+    lat: -6.311078
+    lng: 106.718411
+    precision: city
+    location_name: 印度尼西亚万丹 · 西普塔特地区参考
+    culture_region: 东南亚 · 印度尼西亚
+  map_label: 西普塔特
+  location_note: 点位为西普塔特地区参考，不标示商户或住所。
+  temporal:
+    year_start: 2026
+    year_end: 2026
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表时间，讲述的经历可能发生于其他时间。
+  paragraphs:
+  - 2026 年，一些居民在社交媒体上说，夜里见到裹着白布的人在街区徘徊。有人在路边见过两三个身影，也有人说他们坐在住宅区附近。
+  - 记者和警方访问夜间营业的店主。受访者说，那些人是穿着当地“裹尸鬼”服装的街头表演者，曾在店边休息、买饮料，并没有打扰店里。
+  - 同一种白色身影，在街上传闻中是令人不安的目击，在店主的叙述中则有了停下来喝水的日常细节。
+  sources:
+  - *id004
+  - citation: OpenStreetMap，区域参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/10989408
+    locator: 印度尼西亚万丹 · 西普塔特地区参考
+  peers:
+  - case_id_lasem_night_knocking_2023
+- id: case_id_lasem_night_knocking_2023
+  title: 中爪哇拉森｜树边的白影与敲门声
+  genre: memorate
+  reading_kind: report
+  credibility_tier: A
+  theme: corpus_asia_night_noises_and_rumors_2009_2026
+  location:
+    lat: -6.692116
+    lng: 111.451562
+    precision: city
+    location_name: 印度尼西亚中爪哇 · 拉森地区参考
+    culture_region: 东南亚 · 印度尼西亚
+  map_label: 拉森
+  location_note: 点位为拉森地区参考，不指向村民家门。
+  temporal:
+    year_start: 2023
+    year_end: 2023
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表时间，讲述的经历可能发生于其他时间。
+  paragraphs:
+  - 2023 年，中爪哇拉森两处村落传出白色身影和夜里敲门的消息。一位居民说，他在邻居家附近的树旁看见身影，家人追过去时，身影朝香蕉树后跳去。
+  - 这位目击者怀疑有人故意装扮；另一户人家则说，深夜听到敲门后，因之前的传闻而不敢出去查看。居民们开始轮流守夜。
+  - 警方巡逻，并核对网上流传的视频，表示视频画面与当地地点不符。报道保留了目击、猜测和视频核查这几条不同线索。
+  sources:
+  - *id005
+  - citation: OpenStreetMap，区域参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/node/10951704914
+    locator: 印度尼西亚中爪哇 · 拉森地区参考
+  peers:
+  - case_id_ciputat_pocong_performers_2026
+- id: case_id_purworejo_video_village_2024
+  title: 普禾佐｜被视频命名的“鬼市村”
+  genre: memorate
+  reading_kind: report
+  credibility_tier: A
+  theme: corpus_asia_night_noises_and_rumors_2009_2026
+  location:
+    lat: -7.707516
+    lng: 109.966491
+    precision: city
+    location_name: 印度尼西亚中爪哇 · 普禾佐地区参考
+    culture_region: 东南亚 · 印度尼西亚
+  map_label: 普禾佐
+  location_note: 点位为普禾佐区域参考，不指向私人住宅。
+  temporal:
+    year_start: 2024
+    year_end: 2024
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表时间，讲述的经历可能发生于其他时间。
+  paragraphs:
+  - 一段视频把中爪哇一户人家的住处称为“鬼市村”，说他们住在偏僻而阴森的地方。视频传播后，更多人开始用这个名字谈论那里。
+  - 2024 年记者访问住户。她讲到夜间听见像人群交谈的声音，也讲了家人想搬去更热闹的地方，却暂时没有其他土地的现实。
+  - 她与地方负责人都表示，“鬼市村”这个称呼不是当地原有的村名，而是拍摄者带来的。住户自己的夜声记忆与视频标题，需要分开来看。
+  sources:
+  - *id006
+  - citation: OpenStreetMap，区域参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/9686809
+    locator: 印度尼西亚中爪哇 · 普禾佐地区参考
+  peers:
+  - case_id_lawu_night_market_2022
+- id: case_id_lawu_night_market_2022
+  title: 爪哇拉乌山｜山路上的无形市集
+  genre: urban_legend
+  reading_kind: legend
+  credibility_tier: B
+  theme: corpus_asia_night_noises_and_rumors_2009_2026
+  location:
+    lat: -7.627382
+    lng: 111.194316
+    precision: city
+    location_name: 印度尼西亚爪哇 · 拉乌山区域参考
+    culture_region: 东南亚 · 印度尼西亚
+  map_label: 拉乌山
+  location_note: 标点为拉乌山公共地理参考，不表示传闻的精确位置。
+  temporal:
+    year_start: 2022
+    year_end: 2022
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表时间，讲述的经历可能发生于其他时间。
+  paragraphs:
+  - 爪哇拉乌山的登山故事里，有一处被称作“鬼市”的地方。走到岩石堆附近的人，据说有时会听见像摊贩和买客交谈的声音，抬头却看不见集市。
+  - 一种版本说，山中的无形商人会向经过者兜售东西；另一些讲述则把它当成提醒人们尊重山地与登山习惯的故事。
+  - 2022 年报道引述有关地方神话的研究，记录了这种市集想象与山边居民、登山者之间的联系。
+  sources:
+  - *id007
+  - citation: OpenStreetMap，地区参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/node/1070172240
+    locator: 印度尼西亚爪哇 · 拉乌山区域参考
+  peers:
+  - case_id_purworejo_video_village_2024
+- id: case_my_penang_bertam_knocks_2025
+  title: 槟城北部｜天亮前的敲门声
+  genre: memorate
+  reading_kind: report
+  credibility_tier: B
+  theme: corpus_asia_night_noises_and_rumors_2009_2026
+  location:
+    lat: 5.516764
+    lng: 100.425531
+    precision: city
+    location_name: 马来西亚槟城 · 甲抛峇底地区参考
+    culture_region: 东南亚 · 马来西亚
+  map_label: 甲抛峇底
+  location_note: 点位为甲抛峇底地区参考，不指向任何住宅。
+  temporal:
+    year_start: 2025
+    year_end: 2025
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表时间，讲述的经历可能发生于其他时间。
+  paragraphs:
+  - 天还没亮，一位槟城居民起床准备上班，突然听见前门被重重敲响，门外似乎还有男子急促的问候声。她掀开窗帘，没看到外面有人。
+  - 2025 年报道转述当地报纸采访：附近几个住宅区也有居民讲起类似的经历。受访者听到声音时感到害怕，但文章没有确认敲门者或声音来源。
+  - 这个故事停在门内和门外之间：人们记得声音，却没有看到发出声音的人。
+  sources:
+  - citation: The Star，〈Haunted by spooky knockings on doors〉，2025 年 12 月 22 日，整理自 Kosmo!。
+    type: media_account
+    url: https://www.thestar.com.my/news/nation/2025/12/22/haunted-by-spooky-knockings-on-doors
+    locator: 槟城北部居民对敲门声的讲述
+  - citation: OpenStreetMap，区域参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/node/254074443
+    locator: 马来西亚槟城 · 甲抛峇底地区参考
+  peers:
+  - case_id_lasem_night_knocking_2023
+- id: case_vn_kontum_resettlement_night_2022
+  title: 越南昆嵩｜搬迁地榕树下的夜声
+  genre: memorate
+  reading_kind: report
+  credibility_tier: B
+  theme: corpus_asia_night_noises_and_rumors_2009_2026
+  location:
+    lat: 14.699537
+    lng: 107.932383
+    precision: province
+    location_name: 越南 · 原昆嵩省区域参考
+    culture_region: 东南亚 · 越南
+  map_label: 昆嵩
+  location_note: 点位为原昆嵩省区域参考，不指向居民家或搬迁区。
+  temporal:
+    year_start: 2022
+    year_end: 2022
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表时间，讲述的经历可能发生于其他时间。
+  paragraphs:
+  - 越南中部山区一处搬迁安置区，曾接纳因山坡滑坡风险而迁出的家庭。后来，一些居民讲起夜里从榕树方向传来的风声与类似孩子哭声的声音，并把它们与当地的恐惧联系起来。
+  - 2022 年的报道访问了居民，也访问了地方负责人：一些家庭返回旧村，恶劣天气时又会把安置区作为临时避险地点。不同受访者对搬迁经历和原因有不同理解。
+  - 这是一篇关于住宅、山地风险与地方讲述的报道；报道中的夜声属于居民回忆，声音来源没有得到独立确认。
+  sources:
+  - citation: Trần Hoá，〈Bỏ làng vì sợ con ma rừng〉，VnExpress，2022 年 11 月 13 日。
+    type: interview
+    url: https://vnexpress.net/bo-lang-vi-so-con-ma-rung-4533730.html
+    locator: 村民对夜声、搬迁的讲述及地方负责人回应
+  - citation: OpenStreetMap，地区参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/node/1531081234
+    locator: 越南 · 原昆嵩省区域参考
+  peers:
+  - case_id_purworejo_video_village_2024
+existing_notes: {}

@@ -88,9 +88,26 @@
 .life-workspace { position: relative; display: block; overflow: hidden; background: #04060c; }
 .life-map { position: absolute; inset: 0; background: #04060c; }
 .life-map::after { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: radial-gradient(ellipse 28% 28% at 40% 35%, rgba(31,75,108,.16), transparent 75%),
-    radial-gradient(ellipse 25% 30% at 60% 65%, rgba(63,30,104,.13), transparent 75%),
-    radial-gradient(ellipse 20% 25% at 53% 42%, rgba(33,105,86,.1), transparent 75%); }
+  background: radial-gradient(ellipse 27% 35% at 38% 35%, rgba(31,105,160,.34), transparent 75%),
+    radial-gradient(ellipse 26% 32% at 49% 57%, rgba(100,44,154,.28), transparent 75%),
+    radial-gradient(ellipse 23% 25% at 40% 64%, rgba(30,127,92,.23), transparent 75%),
+    radial-gradient(ellipse 65% 80% at 50% 45%, transparent 20%, rgba(7,19,36,.3) 100%); }
+.life-celestial-hud { position: absolute; z-index: 2; left: calc(50% - 108px); top: 50%; width: min(56vw, 740px); height: auto;
+  transform: translate(-50%, -50%); fill: none; stroke: #d6b878; stroke-width: .7; opacity: .12; pointer-events: none; }
+.life-galaxy-labels { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+.life-galaxy-label { position: absolute; transform: translate(-50%, -110%); padding: 4px 7px 5px; text-align: center;
+  border: 0; background: rgba(6,10,20,.64); color: #f0e5d1; pointer-events: auto; white-space: nowrap; }
+.life-galaxy-label[hidden] { display: none; }
+.life-galaxy-label small { display: block; color: #bf9c68; font: 8px var(--font-astrometric); letter-spacing: .12em; }
+.life-galaxy-label span { display: block; margin-top: 2px; font: 600 14px var(--font-editorial); }
+.life-galaxy-label:hover, .life-galaxy-label:focus-visible { outline: 1px solid #c29d59; color: white; }
+.life-portal { position: absolute; z-index: 4; max-width: 225px; padding: 7px 9px; border: 1px solid #c29d59;
+  color: #f3e4c6; background: rgba(9,13,25,.94); font: 11px/1.4 var(--font-grotesk); text-align: left; }
+.life-portal[hidden] { display: none; }
+.life-portal:hover { background: #273046; }
+.life-volume .life-volume-name { display: flex; justify-content: space-between; padding: 0 7px 8px; color: #baaa91;
+  font: 11px var(--font-astrometric); letter-spacing: .1em; }
+.life-volume-name span { color: #c29d59; }
 .life-sidebar, .life-inspector { position: absolute; z-index: 5; top: 18px; bottom: 18px;
   border: 1px solid rgba(239,236,230,.2); backdrop-filter: blur(14px); }
 .life-workspace[data-low-power='true'] .life-sidebar,
@@ -122,6 +139,47 @@
 .life-observation-note span { float: right; color: #657082; font-size: 11px; }
 .life-observation-note textarea { display: block; width: 100%; min-height: 78px; margin-top: 7px; padding: 8px;
   border: 1px solid #a9a69f; color: #1b2a4a; background: #f6f3ed; resize: vertical; }
+.life-timeline { position: absolute; z-index: 4; left: 238px; right: 445px; bottom: 65px; padding: 11px 14px 9px;
+  color: #efece6; border: 1px solid rgba(239,236,230,.28); background: rgba(10,14,26,.91); }
+.life-timeline-head, .life-timeline-ends { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.life-timeline-head { font-size: 12px; }
+.life-timeline-play { margin-left: 10px; padding: 2px 5px; border: 1px solid rgba(194,157,89,.55);
+  color: #e7d2aa; background: transparent; font-size: 10px; }
+.life-timeline-head span:last-child { color: #c29d59; font: 10px var(--font-astrometric); }
+.life-timeline-slider { width: 100%; height: 13px; margin: 8px 0 0; accent-color: #c29d59; cursor: pointer; }
+.life-timeline-track { display: flex; justify-content: space-between; margin: 0 -6px; }
+.life-timeline-track button { display: grid; place-items: center; width: 20px; height: 18px; padding: 0; border: 0; background: transparent; }
+.life-timeline-track button span { width: 5px; height: 5px; background: #b7a88f; transform: rotate(45deg); }
+.life-timeline-track button:hover span, .life-timeline-track button[aria-pressed='true'] span { width: 9px; height: 9px; background: #eac789; }
+.life-timeline-ends { color: #a9a99f; font-size: 10px; }
+.life-timeline-ends span:nth-child(2) { color: #d9c7a6; text-align: center; }
+.life-timeline-detail { position: absolute; left: 0; bottom: calc(100% + 8px); width: min(100%, 460px); max-height: 260px;
+  overflow: auto; padding: 15px 17px; border: 1px solid #a98d60; background: rgba(10,14,26,.96); }
+.life-timeline-detail small { display: block; color: #c29d59; font: 10px var(--font-astrometric); }
+.life-timeline-detail strong { display: block; margin-top: 5px; font: 600 19px/1.4 var(--font-editorial); }
+.life-timeline-detail p { margin: 7px 0; color: #d8d4cb; font-size: 12px; line-height: 1.6; }
+.life-timeline-detail a { color: #e4c58c; font-size: 11px; }
+.life-timeline-close { float: right; padding: 0 3px; border: 0; color: #e7ddce; background: none; font-size: 20px; }
+.life-timeline-reading { display: flex; flex-wrap: wrap; gap: 5px 10px; margin-top: 10px; font-size: 11px; }
+.life-timeline-reading span { color: #a8a99f; }
+.life-timeline-reading button { padding: 0; border: 0; color: #f1e0bc; background: none; text-align: left; }
+.life-inquiry { padding: 0 24px; border-bottom: 1px solid #c9c6bf; }
+.life-inquiry summary { display: flex; justify-content: space-between; gap: 8px; padding: 14px 0; cursor: pointer; font-size: 13px; font-weight: 600; }
+.life-inquiry summary span { color: #8c6d37; font: 9px var(--font-astrometric); }
+.life-inquiry form label { display: block; margin-bottom: 8px; color: #5a6578; font-size: 12px; }
+.life-question-row { display: flex; }
+.life-question-row input { min-width: 0; flex: 1; padding: 9px; border: 1px solid #1b2a4a; background: #f6f3ed; }
+.life-question-row button { padding: 0 13px; border: 1px solid #1b2a4a; color: #efece6; background: #1b2a4a; }
+.life-question-examples { display: flex; flex-wrap: wrap; gap: 6px 10px; padding: 10px 0 15px; color: #657082; font-size: 11px; }
+.life-question-examples button { padding: 0; border: 0; color: #1f5e4b; background: none; text-align: left; }
+.life-answer { padding: 5px 0 14px; font-size: 12px; line-height: 1.6; }
+.life-answer p { margin: 8px 0; color: #5a6578; }
+.life-answer-evidence { display: block; width: 100%; padding: 10px 0; border: 0; border-top: 1px solid #c9c6bf;
+  color: #1b2a4a; background: transparent; text-align: left; }
+.life-answer-evidence:hover { background: #e5e0d5; }
+.life-answer-evidence strong, .life-answer-evidence span, .life-answer-evidence em { display: block; }
+.life-answer-evidence span { margin: 3px 0; color: #8c6d37; font-size: 10px; }
+.life-answer-evidence em { color: #5a6578; font: normal 12px/1.6 var(--font-grotesk); }
 @media (prefers-reduced-motion: no-preference) {
   .life-scene { animation: life-arrive 1.8s ease-out both; }
   @keyframes life-arrive { from { opacity: .25; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
@@ -132,6 +190,8 @@
   .life-map-heading { left: 197px; }
   .life-view-controls { right: 377px; }
   .life-map-footer { left: 197px; right: 377px; }
+  .life-timeline { left: 197px; right: 377px; }
+  .life-celestial-hud { left: calc(50% - 90px); }
 }
 @media (max-width: 760px) {
   .life-workspace { display: flex; flex-direction: column; overflow: visible; }
@@ -143,6 +203,9 @@
   .life-map-heading h1 { font-size: 27px; }
   .life-view-controls { top: 104px; left: 31px; right: auto; }
   .life-map-footer { left: 31px; right: 31px; bottom: 30px; }
+  .life-timeline { left: 31px; right: 31px; bottom: 62px; }
+  .life-timeline-detail { max-height: 215px; }
+  .life-celestial-hud { left: 50%; width: 95%; }
   .life-inspector { overflow: visible; }
   .life-search { position: static; }
   .life-original iframe { min-height: 500px; }

@@ -111,7 +111,7 @@ class ModernAsianStoriesTests(unittest.TestCase):
                          'modern_asian_stories_fifteenth_20261123.yaml', 'modern_asian_stories_sixteenth_20261123.yaml',
                          'modern_asian_stories_seventeenth_20261123.yaml', 'modern_asian_stories_eighteenth_20261123.yaml',
                          'modern_asian_stories_nineteenth_20261123.yaml',
-                         'modern_asian_stories_twentieth_20261123.yaml'):
+                         'modern_asian_stories_twentieth_20261123.yaml', 'modern_asian_stories_twentyfirst_20261123.yaml'):
             collection = yaml.load((ROOT / 'reference' / filename).read_text(encoding='utf-8'), Loader=FrontmatterLoader)
             records.extend(collection['records'])
             revisions.update(collection.get('revisions', {}))
@@ -150,7 +150,7 @@ class ModernAsianStoriesTests(unittest.TestCase):
                 self.assertFalse(card.metadata.standards.ocm_codes)
 
     def test_latest_urban_stories_are_in_modern_reading_scope(self):
-        collection = yaml.load((ROOT / 'reference/modern_asian_stories_twentieth_20261123.yaml').read_text(encoding='utf-8'),
+        collection = yaml.load((ROOT / 'reference/modern_asian_stories_twentyfirst_20261123.yaml').read_text(encoding='utf-8'),
                                Loader=FrontmatterLoader)
         notes = yaml.load((ROOT / 'reference/reading_notes.yaml').read_text(encoding='utf-8'),
                           Loader=FrontmatterLoader)
