@@ -65,6 +65,14 @@ sources:
   locator: 上海受访者转述学生间的商场故事及其听闻来源
   local_path: null
   content_sha256: null
+- citation: Wendi Yin, “Shanghai Legend about a Haunted Shopping Mall”, USC Digital
+    Folklore Archives, 26 April 2019。
+  type: oral_history
+  url: https://folklore.usc.edu/shanghai-legend-about-the-ghost-shoppingmall/
+  doi: null
+  locator: 上海受访者转述徐家汇商场歌曲的另一种版本
+  local_path: null
+  content_sha256: null
 audit:
   created_at: '2026-11-23'
   reviewed_by_human: false
@@ -82,9 +90,9 @@ audit:
 
 九十年代，上海徐家汇太平洋百货总会响起同一首《宝贝对不起》。顾客逛上几个小时，往往能听见好几遍。慢慢地，大家开始猜测：为什么商场要一直放这首歌？
 
-一种传说说，商场地下曾是育婴堂，夜里保安会听见孩子哭声，却找不到人；后来有人建议用这首歌安抚他们。不同版本把故事讲得越来越长。
+一种传说说，商场地下曾是育婴堂，夜里保安会听见孩子哭声，却找不到人；后来有人建议用这首歌安抚他们。2019 年一位上海受访者也讲过徐家汇一处未具名商场的相似故事，提到玩具被弄乱和请人查看的情节。
 
-2011 年，一位来自上海的受访者向南加州大学采集者讲了自己从中学同学那里听到的版本；被追问细节时，她也说这些都是从别人那里听来的。
+2011 年另一位受访者说，自己从中学同学那里听到这个故事；2019 年的讲述者则说曾听朋友和父母提起，长大后不再相信。两次采访留下的是不同的转述。
 
 旧报纸确曾批评商场反复播放这首歌。2020 年受访的商场人员解释，整点音乐用于提醒各楼层汇总营业额；2023 年地方史采访也指出，传说中的育婴堂与百货店旧址不是同一地点。
 

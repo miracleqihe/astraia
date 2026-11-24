@@ -107,7 +107,7 @@ class ModernAsianStoriesTests(unittest.TestCase):
                          'modern_asian_stories_seventh_20261123.yaml', 'modern_asian_stories_eighth_20261123.yaml',
                          'modern_asian_stories_ninth_20261123.yaml', 'modern_asian_stories_tenth_20261123.yaml',
                          'modern_asian_stories_eleventh_20261123.yaml', 'modern_asian_stories_twelfth_20261123.yaml',
-                         'modern_asian_stories_thirteenth_20261123.yaml'):
+                         'modern_asian_stories_thirteenth_20261123.yaml', 'modern_asian_stories_fourteenth_20261123.yaml'):
             collection = yaml.load((ROOT / 'reference' / filename).read_text(encoding='utf-8'), Loader=FrontmatterLoader)
             records.extend(collection['records'])
             revisions.update(collection.get('revisions', {}))
@@ -139,7 +139,7 @@ class ModernAsianStoriesTests(unittest.TestCase):
                     self.assertEqual(note.kind, item['reading_kind'])
                 self.assertTrue(note.location_note)
                 if item.get('map_label'):
-                    self.assertEqual(note.map_label, item['map_label'])
+                    self.assertEqual(note.map_label, revisions.get(item['id'], item).get('map_label', item['map_label']))
                 self.assertFalse(card.metadata.audit.reviewed_by_human)
                 self.assertEqual(card.metadata.is_fictional_quarantine, item.get('credibility_tier', 'A') == 'F')
                 self.assertFalse(card.metadata.standards.atu_types)
@@ -239,11 +239,26 @@ class ModernAsianStoriesTests(unittest.TestCase):
             with self.subTest(id=node_id):
                 metadata, body = parse_card((ROOT / revision['path']).read_text(encoding='utf-8'))
                 note = EditorialNote.model_validate(notes[node_id])
-                self.assertEqual(note.paragraphs, revision['paragraphs'])
-                self.assertEqual(note.source_numbers, revision['source_numbers'])
-                self.assertEqual(str(metadata.sources[-1].url), revision['source']['url'])
+                self.assertTrue(set(revision['source_numbers']).issubset(note.source_numbers))
+                self.assertIn(revision['source']['url'], {str(source.url) for source in metadata.sources})
                 self.assertTrue(all(paragraph in body for paragraph in note.paragraphs))
                 self.assertFalse(metadata.audit.reviewed_by_human)
+
+    def test_new_oral_versions_preserve_earlier_sources_and_short_map_labels(self):
+        collection = yaml.load((ROOT / 'reference/modern_asian_stories_fourteenth_20261123.yaml').read_text(encoding='utf-8'),
+                               Loader=FrontmatterLoader)
+        notes = yaml.load((ROOT / 'reference/reading_notes.yaml').read_text(encoding='utf-8'), Loader=FrontmatterLoader)
+        for node_id, revision in collection['revisions'].items():
+            with self.subTest(id=node_id):
+                card = read_card(ROOT / 'vault', ROOT / revision['path'])
+                note = EditorialNote.model_validate(notes[node_id])
+                self.assertEqual(note.paragraphs, revision['paragraphs'])
+                self.assertEqual(note.source_numbers, revision['source_numbers'])
+                self.assertEqual(note.map_label, revision['map_label'])
+                self.assertEqual(str(card.metadata.sources[-1].url), revision['source']['url'])
+                self.assertTrue(set(revision['peers']).issubset({r.target for r in card.metadata.relations}))
+                self.assertTrue(all(paragraph in card.markdown for paragraph in note.paragraphs))
+                self.assertFalse(card.metadata.audit.reviewed_by_human)
 
     def test_tenth_batch_adds_versions_to_existing_cards(self):
         collection = yaml.load((ROOT / 'reference/modern_asian_stories_tenth_20261123.yaml').read_text(encoding='utf-8'),

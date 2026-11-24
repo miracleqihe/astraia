@@ -27,6 +27,11 @@ relations:
   weight: 1.0
   note: 同题并列阅读，不推断传播或共同起源。
   status: null
+- type: COMPARED_WITH
+  target: corpus_asia_campus_hidden_sight_2017_2023
+  weight: 1.0
+  note: 同题并列阅读，不推断传播或共同起源。
+  status: null
 sources:
 - citation: 杨凯杰、陈彦杰：〈方塘鉴开：大学校湖水景的政治与文化〉，《建筑与城乡研究学报》第 24 期，2024 年，第 69—119 页。
   type: peer_reviewed
@@ -40,6 +45,14 @@ sources:
   url: https://www.openstreetmap.org/relation/206483
   doi: null
   locator: 公开地图对象；坐标用于地点参考
+  local_path: null
+  content_sha256: null
+- citation: Ivan Kumamoto, “The Ghost of Drunken Moon Lake”, USC Digital Folklore
+    Archives, interview 29 April, posted 9 May 2015。
+  type: oral_history
+  url: https://folklore.usc.edu/the-ghost-of-drunken-moon-lake/
+  doi: null
+  locator: 留学生转述在校园听到的湖边讲法
   local_path: null
   content_sha256: null
 audit:
@@ -59,7 +72,9 @@ audit:
 
 醉月湖湖心有一座孤亭，学生间流传一位女子深夜在湖边问人时间。故事把她的徘徊与一段失约的感情联系起来，还衍生出亭子为什么看似断桥的不同说法。
 
-2024 年的校湖研究追溯这些版本，并引用校史资料指出：湖心亭的断桥式设计原本就存在。风景的形状与后来流传的故事，叠成了两种不同的记忆。
+2015 年，一位在台大学习的留学生转述另一种湖边警告：傍晚经过湖边时，陌生女子可能引人靠近水面，或以熟悉的身份跟随对方。她说这些片段是从不同人那里陆续听来的。
+
+2024 年的校湖研究追溯校园中的版本，并引用校史资料指出：湖心亭的断桥式设计原本就存在。风景的形状与后来流传的故事，叠成了不同的记忆。
 
 ## 地图锚点
 

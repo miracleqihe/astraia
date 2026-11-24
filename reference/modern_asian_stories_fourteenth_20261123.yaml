@@ -1,0 +1,353 @@
+themes:
+- id: corpus_asia_campus_hidden_sight_2017_2023
+  title: 校园里的遮挡与回望｜口述材料并读
+  genre: academic_model
+  peers:
+  - case_cn_tw_taipei_ntu_moon_lake
+  - case_cn_beijing_teller_hidden_b4_2023
+  - case_cn_qingdao_school_statue_restroom_2020
+  - case_my_kemaman_camp_door_fingers_2011
+  - corpus_east_asia_school_oral_accounts_2011_2026
+  paragraphs:
+  - 一张桌子、一扇门、一块布：校园故事常把看不见的部分留给听众想象。台湾的公寓故事和韩国的教室故事都让人物躲到桌下，却在最后一刻发现来者的姿态与自己预想不同。
+  - 在台北的一次童年回忆里，孩子们听说帆布下藏着可怕的东西，跑去看时却没有人敢掀开；后来露出的一角是木头。受访者没有断言最初的传闻从何而来。
+  - 新加坡一位校友回忆考试前的教室传闻；北京地下楼层和马来西亚露营厕所的故事，则由朋友、同学或家人转述。它们保留了不同人物如何讲述、相信或怀疑的线索。
+  - 这些材料放在一起，是为了比较故事怎样利用遮挡与期待制造转折。相似的情节并不能单独证明某个版本从另一个地区传来。
+  sources:
+  - &id002
+    citation: Marcus Wu, “Taiwanese Urban Ghost Story”, USC Digital Folklore Archives, 1 May 2017。
+    type: oral_history
+    url: https://folklore.usc.edu/taiwanese-urban-ghost-story/
+    locator: 台湾受访者转述姐姐讲的公寓故事
+  - &id003
+    citation: Jihyun La, “The Kong-Kong Gwishin”, USC Digital Folklore Archives, interview 30 October, posted 4 November 2021。
+    type: oral_history
+    url: https://folklore.usc.edu/the-kong-kong-gwishin/
+    locator: 受访者以韩语讲述，采集者提供英语译文
+  - &id001
+    citation: Yen Ai Tai, “The Secret under the Tarpaulin”, USC Digital Folklore Archives, 13 May 2023。
+    type: oral_history
+    url: https://folklore.usc.edu/the-secret-under-the-tarpaulin/
+    locator: 受访者回忆石牌小学同学的传闻与后来看到的木头
+  - &id004
+    citation: Koh Yuen Lin, “A Class of Its Own”, National University of Singapore, 18 April 2022。
+    type: institutional_account
+    url: https://fass.nus.edu.sg/news/2022/04/18/a-class-of-its-own/
+    locator: 1972 届校友 Victor Roger Savage 转述校园教室故事
+records:
+- id: case_cn_dorm_pen_falling_light_2020
+  title: 中国校园｜期末考试后的笔与灯
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_asia_campus_hidden_sight_2017_2023
+  location:
+    lat: 35.8617
+    lng: 104.1954
+    precision: culture_region
+    location_name: 中国 · 讲述背景范围参考
+    culture_region: 东亚 · 中国
+  map_label: 中国
+  location_note: 受访者说自己在中国读中学；采录没有给出城市或学校，点位仅表示讲述背景范围。
+  temporal:
+    year_start: 2020
+    year_end: 2020
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 期末考试结束后，几个室友在宿舍里谈起当时流行的电影《笔仙》，好奇自己的成绩，便围坐在桌边，一起握着笔等待答案。她们看见笔动了起来，纸上慢慢出现一个数字。
+  - 她们把笔留在宿舍，随后听见隔壁传来一声巨响：那间屋子的吊灯掉了下来。讲述者说，维修人员检查过吊灯，却没有解释原因。
+  - 几个学生把两件事联系起来。第二天她们把笔埋进校园花园，此后没有再遇到类似动静；这是受访者对那次经历的回忆。
+  - 2020 年，采集者通过消息向朋友询问这段中学往事。档案没有提供学校和城市，也没有保存成绩或吊灯维修记录。
+  sources:
+  - citation: siruizhu, “Bunshinsaba”, USC Digital Folklore Archives, interview 28 October, posted 19 November 2020。
+    type: oral_history
+    url: https://folklore.usc.edu/bunshinsaba/
+    locator: 受访学生回忆期末考试后的宿舍经历
+  - citation: siruizhu, “Bunshinsaba”, USC Digital Folklore Archives 作者索引。
+    type: oral_history
+    url: https://folklore.usc.edu/author/siruizhu/
+    locator: 索引保留讲述、采集情境与记录者意见
+- id: case_cn_tw_shipai_blue_tarp_2023
+  title: 台北石牌｜蓝白帆布下面
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_asia_campus_hidden_sight_2017_2023
+  location:
+    lat: 25.1154139
+    lng: 121.5124667
+    precision: city
+    location_name: 中国台湾台北 · 石牌小学参考
+    culture_region: 东亚 · 中国台湾
+  map_label: 石牌
+  location_note: 采录明确提到石牌小学；点位是校园地图参考，不能定位帆布原先所在的角落。
+  temporal:
+    year_start: 2023
+    year_end: 2023
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 三年级时，同学悄悄问她听没听说校园角落的传闻：一块蓝白相间的大帆布下面，好像藏着一具遗体。大课间，几个孩子一起跑过去看。
+  - 帆布确实隆起一团，但谁也不敢靠近。正当大家远远站着，一只松鼠跑过布面，孩子们立刻尖叫起来。
+  - 后来她又经过那里，发现盖着的东西有一角露了出来，那是一堆木头。她不确定第一次看到的是否也是这些木头，也不知道传闻是谁开始说的。
+  - 2023 年的访谈保存了她的校园回忆：先是孩子间的猜测，再是后来亲眼见到的一角，两者并不必然能互相证明。
+  sources:
+  - *id001
+  - citation: Wikimedia Commons, Taipei Municipal Shipai Elementary School。
+    type: map_reference
+    url: https://commons.wikimedia.org/wiki/Category:Taipei_Municipal_Shipai_Elementary_School
+    locator: 校园地图参考点 25.1154139, 121.5124667
+  peers:
+  - case_cn_qingdao_school_statue_restroom_2020
+- id: case_cn_tw_apartment_upside_down_2017
+  title: 台湾讲述｜桌子挡不住的目光
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_asia_campus_hidden_sight_2017_2023
+  location:
+    lat: 23.6978
+    lng: 120.9605
+    precision: province
+    location_name: 中国台湾 · 区域范围参考
+    culture_region: 东亚 · 中国台湾
+  map_label: 台湾
+  location_note: 故事只说发生在台湾一处公寓，没有给出城市或地址；点位为区域参考。
+  temporal:
+    year_start: 2017
+    year_end: 2017
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 一个学生住在公寓顶层，夜里常听见附近传来低低的声音。她请道士来查看；故事里，道士告诉她，屋里以前住过一位年轻女子，并提醒她几天后不要与来者对视。
+  - 那一夜，学生按建议藏到桌子下面。第二天道士回来，发现她已经去世。故事最后才揭开原因：来者倒着进入房间，藏在桌下的人反而先看见了她的眼睛。
+  - 2017 年，一位台湾受访者转述自己小时候听姐姐讲过的版本；采录没有提供公寓地址或可核查的人物身份。
+  sources:
+  - *id002
+  peers:
+  - case_kr_kong_kong_study_room_2021
+- id: case_kr_kong_kong_study_room_2021
+  title: 韩国校园｜走廊里的咚咚声
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_asia_campus_hidden_sight_2017_2023
+  location:
+    lat: 36.5
+    lng: 127.75
+    precision: culture_region
+    location_name: 韩国 · 国家范围参考
+    culture_region: 东亚 · 韩国
+  map_label: 韩国
+  location_note: 采录称故事流传于韩国学生之间，没有指出具体学校或城市；点位为国家范围参考。
+  temporal:
+    year_start: 2021
+    year_end: 2021
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 一个学生总是考第二名，无论怎样用功，第一名始终是身边的同学。故事说，这名学生把对方叫到楼梯口推下去，下一次考试终于得了第一。
+  - 后来，这名学生独自在教室复习，听见走廊里传来“咚、咚”的声音，还有人一间间推门说里面没有人。学生想起不能和鬼对视，连忙躲到桌子下面。
+  - 声音来到门口时，学生还是与来者对上了眼睛。讲述者最后解释：那个身影倒着移动，进门时正好朝向桌底。
+  - 一位受访者在 2021 年以韩语讲述这个 Kong-Kong Gwishin 故事，说自己最初听同学讲过，考试前也常听见类似故事。
+  sources:
+  - *id003
+  peers:
+  - case_cn_tw_apartment_upside_down_2017
+- id: case_ph_boracay_farmland_duendes_2023
+  title: 菲律宾长滩岛附近｜田边的细响
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_asian_waters_trees_night_paths_2014_2024
+  location:
+    lat: 11.9693
+    lng: 121.9227
+    precision: city
+    location_name: 菲律宾 · 长滩岛区域参考
+    culture_region: 东南亚 · 菲律宾
+  map_label: 长滩岛
+  location_note: 受访者说小时候探访长滩岛附近的亲属；点位为岛屿参考，不能定位家宅和农地。
+  temporal:
+    year_start: 2023
+    year_end: 2023
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 孩子去长滩岛附近看望祖父母。祖母常说，地下住着叫 duendes 的小人，会藏起东西，也会带走独自走远的孩子。
+  - 一天晚上，亲属在院子里聚餐。他听见农地较暗的一侧有声音，便好奇地走过去；离家人越远，声音越响，后来仿佛从几个方向传来。
+  - 他害怕地跑回去，向父母和祖母讲起听见的声音。家人把它解释为遇见了 duendes；剩下的旅途中，他不再独自走远。
+  - 这段童年回忆由受访者在 2023 年讲给采集者，声音与家人的解释都保留在原记录里。
+  sources:
+  - citation: licup, “The Duendes in the Fields”, USC Digital Folklore Archives, interview 26 November, posted 5 December 2023。
+    type: oral_history
+    url: https://folklore.usc.edu/the-duendes-in-the-fields/
+    locator: 受访者回忆探访长滩岛附近亲属时听见田边声响
+  - citation: licup, “The Duendes in the Fields”, USC Digital Folklore Archives 文章索引。
+    type: oral_history
+    url: https://folklore.usc.edu/page/447/?q=blog
+    locator: 索引保存采访与家庭讲述
+  - citation: PhilAtlas, Boracay。
+    type: gazetteer
+    url: https://www.philatlas.com/physical/islands/boracay.html
+    locator: 长滩岛区域参考点 11.9693, 121.9227
+- id: case_ph_holiday_bathroom_curtain_2023
+  title: 菲律宾探亲｜浴帘后的脚步
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_asia_night_places_oral_accounts_2012_2025
+  location:
+    lat: 12.8797
+    lng: 121.774
+    precision: culture_region
+    location_name: 菲律宾 · 国家范围参考
+    culture_region: 东南亚 · 菲律宾
+  map_label: 菲律宾
+  location_note: 受访者只说在菲律宾探亲，未给出城市或房屋位置；点位为国家范围参考。
+  temporal:
+    year_start: 2023
+    year_end: 2023
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 一次去菲律宾探亲时，女孩住在亲属家里。一天晚上她洗澡，听见浴室门被打开，又看见帘子外地面上有脚和一道人影经过。
+  - 她以为是母亲或姐姐来用浴室，没有在意；等她拉开浴帘，外面却没有人。她叫出声来，母亲赶到后说，其他家人刚才都在卧室。
+  - 2023 年的采录记录了她对十四岁左右那次经历的回忆。家人在那次旅行中还继续住了两周，房屋的城市和地址没有公开。
+  sources:
+  - citation: licup, “The Ghost in the Bathroom”, USC Digital Folklore Archives, interview 26 November, posted 5 December 2023。
+    type: oral_history
+    url: https://folklore.usc.edu/the-ghost-in-the-bathroom/
+    locator: 受访者回忆探亲期间浴室帘后的身影
+- id: case_ph_family_storage_small_figure_2011
+  title: 菲律宾家庭｜储藏室箱子上的小人
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_asia_night_places_oral_accounts_2012_2025
+  location:
+    lat: 12.8797
+    lng: 121.774
+    precision: culture_region
+    location_name: 菲律宾 · 家庭讲述范围参考
+    culture_region: 东南亚 · 菲律宾
+  map_label: 菲律宾
+  location_note: 讲述者只提供菲律宾的家庭背景；没有指定房屋所在城市。
+  temporal:
+    year_start: 2011
+    year_end: 2011
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 夜里十一点左右，母亲让女儿到楼下储藏室拿东西。女孩很快哭着跑回来，说看见一个小人坐在箱子上朝她笑。
+  - 母亲和家人下楼检查，搬开箱子，却没有发现什么。她把女儿的描述与家里流传的 duwende 小人故事联系起来。
+  - 采集者还记得自己十岁时，在同一座屋里看见窗外屋檐下有个影子来回走动；靠近窗户时，影子仿佛转了过来。他随后躲回被子里。
+  - 2011 年的记录把母亲的转述与采集者自己的童年回忆分别保存，也提到他们对这些经历可能有不同解释。
+  sources:
+  - citation: Kevin Chan, “Duwende at Home in the Philippines”, USC Digital Folklore Archives, interview 1 November, posted 20 November 2011。
+    type: oral_history
+    url: https://folklore.usc.edu/duwende-at-home-in-the-philippines/
+    locator: 母亲转述孩子在储藏室的经历及采集者自己的回忆
+  peers:
+  - case_ph_boracay_farmland_duendes_2023
+- id: case_sg_bukit_timah_floating_chairs_2022
+  title: 新加坡武吉知马｜教室里的椅子
+  genre: memorate
+  credibility_tier: A
+  theme: corpus_asia_campus_hidden_sight_2017_2023
+  location:
+    lat: 1.31935
+    lng: 103.81803
+    precision: city
+    location_name: 新加坡 · 国大武吉知马校区黄仲涵大楼
+    culture_region: 东南亚 · 新加坡
+  map_label: 武吉知马
+  location_note: 校友将故事放在黄仲涵大楼；地图采用该楼参考点，不标定具体教室。
+  temporal:
+    year_start: 2022
+    year_end: 2022
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 临近期末考试，三名法律系学生选了一间课室复习。故事说，他们抬头准备休息时，看见教室里的椅子悬在空中，三人惊叫着跑了出去。
+  - 2022 年，新加坡国大 1972 届校友 Victor Roger Savage 在校友访谈中转述了这则校园故事，并说自己听过其中一位在场者的讲述。
+  - 他把地点指向武吉知马校区的黄仲涵大楼。报道记录的是校友回忆，未给出发生年份或教室编号。
+  sources:
+  - *id004
+  - citation: OpenStreetMap contributors, Oei Tiong Ham Building, way 596129193。
+    type: map_reference
+    url: https://www.openstreetmap.org/way/596129193
+    locator: 武吉知马校区黄仲涵大楼地图参考点 1.31935, 103.81803
+  peers:
+  - corpus_malay_sg_horror_media_2017
+- id: case_my_patrol_white_guardian_2020
+  title: 马来西亚｜夜巡时转过街角的人
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_asia_night_places_oral_accounts_2012_2025
+  location:
+    lat: 4.2105
+    lng: 101.9758
+    precision: culture_region
+    location_name: 马来西亚 · 国家范围参考
+    culture_region: 东南亚 · 马来西亚
+  map_label: 马来西亚
+  location_note: 受访者在马来西亚太平成长，但没有明确这次巡逻的地点；地图只显示国家范围。
+  temporal:
+    year_start: 2020
+    year_end: 2020
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 父亲参加邻里夜巡时，凌晨看见前方路中央有一个瘦高的人，穿着一身白衣，独自往街角走。巡逻的人觉得奇怪，跟了过去。
+  - 他们转过弯，却再也没有看见那个人。女儿多年后转述父亲的经历，猜测他遇见的是当地称作 Na Tuk Kong 的守护灵。
+  - 她向采集者解释，附近有人会为这种守护灵设供奉处。2020 年的访谈保存的是家族讲述及女儿自己的解释，并未确认那个人的身份。
+  sources:
+  - citation: “Na Tuk Kong”, USC Digital Folklore Archives, interview 24 October 2020。
+    type: oral_history
+    url: https://folklore.usc.edu/na-tuk-kong/
+    locator: 受访者转述父亲夜间巡逻的经历与自己的解释
+existing_notes: {}
+revisions:
+  case_cn_tw_taipei_ntu_moon_lake:
+    path: vault/01_cases/case_cn_tw_taipei_ntu_moon_lake.md
+    source:
+      citation: Ivan Kumamoto, “The Ghost of Drunken Moon Lake”, USC Digital Folklore Archives, interview 29 April, posted 9 May 2015。
+      type: oral_history
+      url: https://folklore.usc.edu/the-ghost-of-drunken-moon-lake/
+      locator: 留学生转述在校园听到的湖边讲法
+    map_label: 醉月湖
+    original_source_numbers:
+    - 1
+    - 2
+    source_numbers:
+    - 1
+    - 2
+    - 3
+    peers:
+    - corpus_asia_campus_hidden_sight_2017_2023
+    paragraphs:
+    - 醉月湖湖心有一座孤亭，学生间流传一位女子深夜在湖边问人时间。故事把她的徘徊与一段失约的感情联系起来，还衍生出亭子为什么看似断桥的不同说法。
+    - 2015 年，一位在台大学习的留学生转述另一种湖边警告：傍晚经过湖边时，陌生女子可能引人靠近水面，或以熟悉的身份跟随对方。她说这些片段是从不同人那里陆续听来的。
+    - 2024 年的校湖研究追溯校园中的版本，并引用校史资料指出：湖心亭的断桥式设计原本就存在。风景的形状与后来流传的故事，叠成了不同的记忆。
+  case_cn_shanghai_pacific_baby_song:
+    path: vault/01_cases/case_cn_shanghai_pacific_baby_song.md
+    source:
+      citation: Wendi Yin, “Shanghai Legend about a Haunted Shopping Mall”, USC Digital Folklore Archives, 26 April 2019。
+      type: oral_history
+      url: https://folklore.usc.edu/shanghai-legend-about-the-ghost-shoppingmall/
+      locator: 上海受访者转述徐家汇商场歌曲的另一种版本
+    map_label: 徐家汇
+    original_source_numbers:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    source_numbers:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    peers: []
+    paragraphs:
+    - 九十年代，上海徐家汇太平洋百货总会响起同一首《宝贝对不起》。顾客逛上几个小时，往往能听见好几遍。慢慢地，大家开始猜测：为什么商场要一直放这首歌？
+    - 一种传说说，商场地下曾是育婴堂，夜里保安会听见孩子哭声，却找不到人；后来有人建议用这首歌安抚他们。2019 年一位上海受访者也讲过徐家汇一处未具名商场的相似故事，提到玩具被弄乱和请人查看的情节。
+    - 2011 年另一位受访者说，自己从中学同学那里听到这个故事；2019 年的讲述者则说曾听朋友和父母提起，长大后不再相信。两次采访留下的是不同的转述。
+    - 旧报纸确曾批评商场反复播放这首歌。2020 年受访的商场人员解释，整点音乐用于提醒各楼层汇总营业额；2023 年地方史采访也指出，传说中的育婴堂与百货店旧址不是同一地点。
