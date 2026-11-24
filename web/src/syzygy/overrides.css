@@ -51,6 +51,9 @@
 .syzygy-related:hover, .syzygy-directory-row:hover, .syzygy-directory-row.is-selected { border-color: rgba(214,182,120,.6); background: rgba(214,182,120,.1); }
 .syzygy-related small, .syzygy-directory-row span { color: #ad9f86; font-size: 10px; }
 .syzygy-directory-row b { font-weight: 500; line-height: 1.5; }
+.syzygy-bridge-group { margin-top: 8px; border-top: 1px solid rgba(214,182,120,.16); }
+.syzygy-bridge-group summary { padding: 8px 2px; cursor: pointer; line-height: 1.5; }
+.syzygy-bridge-group summary:focus-visible { outline: 1px solid #d6b678; outline-offset: 2px; }
 .syzygy-load-more { padding: 7px; width: 100%; color: #d6b678; font-size: 11px; border: 1px solid rgba(214,182,120,.35); }
 .syzygy-portal-search { display: block; width: 100%; margin-top: 6px; padding: 7px; color: #f4ede0; background: #080d18; border: 1px solid rgba(214,182,120,.35); font-size: 11px; }
 .parchment-scroll .syzygy-portal-search { color: #1b2a4a; background: #efece6; }

@@ -30,10 +30,17 @@ relations:
 sources:
 - citation: Jane M. Ferguson, “Terminally Haunted”, The Asia Pacific Journal of Anthropology
     15(1), 2014, 47–64。
-  type: institutional_account
+  type: peer_reviewed
+  url: https://researchportalplus.anu.edu.au/en/publications/terminally-haunted-aviation-ghosts-hybrid-buddhist-practices-and-
+  doi: 10.1080/14442213.2013.872698
+  locator: 澳洲国立大学研究门户的书目与摘要；原论文第 53—61 页为机场员工访谈与参与观察
+  local_path: null
+  content_sha256: null
+- citation: Jane M. Ferguson, “Terminally Haunted”，Academia.edu 全文页面。
+  type: peer_reviewed
   url: https://www.academia.edu/5974036/Terminally_Haunted_Aviation_Ghosts_Hybrid_Buddhist_Practices_and_Disaster_Aversion_Strategies_Amongst_Airport_Workers_in_Myanmar_and_Thailand
   doi: 10.1080/14442213.2013.872698
-  locator: 第 53—61 页，机场员工访谈与参与观察
+  locator: 第 53—61 页；访问可能需要登录
   local_path: null
   content_sha256: null
 audit:

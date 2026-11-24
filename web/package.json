@@ -9,7 +9,7 @@
     "prebuild": "node scripts/build-life-index.mjs && node scripts/build-graph-index.mjs && node scripts/build-syzygy-data.mjs && node scripts/build-portal-matches.mjs",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1 --strictPort",
-    "test:portal": "node --test tests/portal-matches.test.mjs"
+    "test:portal": "node --test tests/portal-matches.test.mjs tests/curated-urban-bridges.test.mjs"
   },
   "dependencies": {
     "@fontsource/cormorant-garamond": "^5.2.0",
