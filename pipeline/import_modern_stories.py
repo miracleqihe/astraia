@@ -73,6 +73,9 @@ def run(collection=COLLECTION, manifest=None):
         parse_card(content.decode('utf-8'))
         kind = ('research' if is_theme else 'history' if item.get('genre') == 'historical_archive'
                 else 'story' if item.get('genre') in ('folktale', 'memorate') else 'legend')
+        # A first-person account can also belong in the contemporary reports
+        # directory without changing its bibliographic genre.
+        kind = item.get('reading_kind', kind)
         note = {'kind': kind,
                 'paragraphs': item['paragraphs'], 'source_numbers': list(range(1, len(refs) + 1))}
         if item.get('location_note'):

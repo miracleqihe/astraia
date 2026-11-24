@@ -23,18 +23,28 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   controls.enableDamping = true; controls.dampingFactor = .08;
   controls.minDistance = 110; controls.maxDistance = 1800; controls.enablePan = true;
 
-  const nodeGeometry = new THREE.BufferGeometry().setAttribute('position', new THREE.BufferAttribute(layout.positions, 3));
-  const nodeMaterial = new THREE.PointsMaterial();
-  const points = new THREE.Points(nodeGeometry, nodeMaterial);
-  points.updateMatrixWorld();
   const hubPositions = new Float32Array(subjects.length * 3);
   subjects.forEach((subject, index) => layout.centers.get(subject.id)?.toArray(hubPositions, index * 3));
-  const hubGeometry = new THREE.BufferGeometry().setAttribute('position', new THREE.BufferAttribute(hubPositions, 3));
-  const hubMaterial = new THREE.PointsMaterial();
-  const hubs = new THREE.Points(hubGeometry, hubMaterial);
-  hubs.updateMatrixWorld();
-  const raycaster = new THREE.Raycaster();
-  const pointer = new THREE.Vector2();
+  // Reuse the screen projections from drawing for pointer hit tests.  This
+  // avoids a second 3D traversal of the entire galaxy on every mouse move.
+  const nodeScreen = new Float32Array(entries.length * 2);
+  const hubScreen = new Float32Array(subjects.length * 2);
+  nodeScreen.fill(NaN); hubScreen.fill(NaN);
+  const gridSize = 32;
+  const nodeHeads = new Int32Array(gridSize * gridSize), hubHeads = new Int32Array(gridSize * gridSize);
+  nodeHeads.fill(-1); hubHeads.fill(-1);
+  const nodeNext = new Int32Array(entries.length), hubNext = new Int32Array(subjects.length);
+  const gridCell = (x: number, y: number) => {
+    const col = Math.max(0, Math.min(gridSize - 1, Math.floor(x * gridSize)));
+    const row = Math.max(0, Math.min(gridSize - 1, Math.floor(y * gridSize)));
+    return row * gridSize + col;
+  };
+  const indexScreen = (positions: Float32Array, heads: Int32Array, next: Int32Array,
+    index: number, x: number, y: number) => {
+    positions[index * 2] = x; positions[index * 2 + 1] = y;
+    const cell = gridCell(x, y);
+    next[index] = heads[cell]; heads[cell] = index;
+  };
   const projection = new THREE.Matrix4();
   const colors = new Uint32Array(entries.length);
   const littleEndian = new Uint8Array(new Uint32Array([0x01020304]).buffer)[0] === 4;
@@ -135,6 +145,7 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     if (!image) return;
     const started = import.meta.env.DEV ? performance.now() : 0;
     pixels.fill(background);
+    nodeHeads.fill(-1); hubHeads.fill(-1);
     camera.updateMatrixWorld();
     projection.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
     for (const ring of rings) {
@@ -163,8 +174,12 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       if (project(b.x, b.y, b.z)) line(x, y, projectedX, projectedY, lineColor);
     }
     for (let i = 0; i < entries.length; i++) {
-      if (!project(layout.positions[i * 3], layout.positions[i * 3 + 1], layout.positions[i * 3 + 2])) continue;
+      if (!project(layout.positions[i * 3], layout.positions[i * 3 + 1], layout.positions[i * 3 + 2])) {
+        nodeScreen[i * 2] = NaN;
+        continue;
+      }
       const x = projectedX, y = projectedY, color = colors[i];
+      indexScreen(nodeScreen, nodeHeads, nodeNext, i, x / width, y / height);
       if (x >= 0 && x < width - 1 && y >= 0 && y < height - 1) {
         const index = y * width + x;
         pixels[index] = color; pixels[index + 1] = color;
@@ -172,8 +187,12 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       }
     }
     for (let i = 0; i < subjects.length; i++) {
-      if (!project(hubPositions[i * 3], hubPositions[i * 3 + 1], hubPositions[i * 3 + 2])) continue;
+      if (!project(hubPositions[i * 3], hubPositions[i * 3 + 1], hubPositions[i * 3 + 2])) {
+        hubScreen[i * 2] = NaN;
+        continue;
+      }
       const x = projectedX, y = projectedY;
+      indexScreen(hubScreen, hubHeads, hubNext, i, x / width, y / height);
       for (let k = -3; k <= 3; k++) { pixel(x + k, y, hubColor); pixel(x, y + k, hubColor); }
     }
     if (selectedPoint && project(selectedPoint.x, selectedPoint.y, selectedPoint.z)) {
@@ -226,30 +245,59 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   const observer = new ResizeObserver(resize); observer.observe(host); resize();
   const hit = (event: Pick<PointerEvent, 'clientX' | 'clientY'>) => {
     const box = canvas.getBoundingClientRect();
-    pointer.set((event.clientX - box.left) / box.width * 2 - 1, -(event.clientY - box.top) / box.height * 2 + 1);
-    camera.updateMatrixWorld(); raycaster.setFromCamera(pointer, camera);
-    raycaster.params.Points = { threshold: 8 };
-    const hub = raycaster.intersectObject(hubs)[0];
-    raycaster.params.Points = { threshold: 5 };
-    const node = raycaster.intersectObject(points)[0];
-    if (hub?.index !== undefined && (hub.distanceToRay ?? Infinity) < 5) return { kind: 'hub' as const, index: hub.index };
-    if (node?.index !== undefined) return { kind: 'node' as const, index: node.index };
+    if (!box.width || !box.height) return null;
+    const x = event.clientX - box.left, y = event.clientY - box.top;
+    const nearest = (positions: Float32Array, heads: Int32Array, next: Int32Array, radius: number) => {
+      let best = radius * radius, index = -1;
+      const minX = Math.max(0, Math.floor((x - radius) / box.width * gridSize));
+      const maxX = Math.min(gridSize - 1, Math.floor((x + radius) / box.width * gridSize));
+      const minY = Math.max(0, Math.floor((y - radius) / box.height * gridSize));
+      const maxY = Math.min(gridSize - 1, Math.floor((y + radius) / box.height * gridSize));
+      for (let row = minY; row <= maxY; row++) for (let col = minX; col <= maxX; col++) {
+        for (let i = heads[row * gridSize + col]; i >= 0; i = next[i]) {
+          const dx = positions[i * 2] * box.width - x, dy = positions[i * 2 + 1] * box.height - y;
+          const distance = dx * dx + dy * dy;
+          if (distance < best) { best = distance; index = i; }
+        }
+      }
+      return index;
+    };
+    const hub = nearest(hubScreen, hubHeads, hubNext, 10);
+    if (hub >= 0) return { kind: 'hub' as const, index: hub };
+    const node = nearest(nodeScreen, nodeHeads, nodeNext, 8);
+    if (node >= 0) return { kind: 'node' as const, index: node };
     return null;
   };
   let hovered = '';
   let hoverFrame = 0;
+  let hoverTimer = 0;
+  let tooltipVisible = false;
   let pendingHover: { clientX: number; clientY: number; offsetX: number; offsetY: number } | null = null;
+  const clearHover = () => {
+    window.clearTimeout(hoverTimer); hoverTimer = 0;
+    hovered = '';
+    if (tooltipVisible) { tooltipVisible = false; onHover(null); }
+  };
   const processHover = () => {
     hoverFrame = 0;
     const event = pendingHover; pendingHover = null;
     if (!event || dragging) return;
+    const started = import.meta.env.DEV ? performance.now() : 0;
     const target = hit(event), key = target ? `${target.kind}:${target.index}` : '';
+    if (import.meta.env.DEV) canvas.dataset.hitMs = String(performance.now() - started);
     canvas.style.cursor = target ? 'pointer' : 'grab';
     if (key !== hovered) {
+      window.clearTimeout(hoverTimer); hoverTimer = 0;
       hovered = key;
+      if (tooltipVisible) { tooltipVisible = false; onHover(null); }
       const title = target?.kind === 'hub' ? `学科 · ${subjects[target.index].title}`
         : target ? entries[target.index].title : '';
-      onHover(target ? { title, x: event.offsetX, y: event.offsetY } : null);
+      // Avoid repainting the whole software-composited canvas as the pointer
+      // races across a dense cluster; show the label once it briefly settles.
+      if (target) hoverTimer = window.setTimeout(() => {
+        hoverTimer = 0; tooltipVisible = true;
+        onHover({ title, x: event.offsetX, y: event.offsetY });
+      }, 60);
     }
   };
   const move = (event: PointerEvent) => {
@@ -260,7 +308,7 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   let down = { x: 0, y: 0 };
   const pointerDown = (event: PointerEvent) => {
     focus = null; dragging = true; down = { x: event.clientX, y: event.clientY };
-    pendingHover = null; beginMotion();
+    pendingHover = null; clearHover(); beginMotion();
   };
   const pointerUp = (event: PointerEvent) => {
     dragging = false; restoreWhenStill();
@@ -272,7 +320,7 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   const pointerCancel = () => {
     dragging = false; restoreWhenStill();
   };
-  const leave = () => { pendingHover = null; hovered = ''; onHover(null); };
+  const leave = () => { pendingHover = null; clearHover(); };
   canvas.addEventListener('pointermove', move); canvas.addEventListener('pointerdown', pointerDown);
   canvas.addEventListener('pointerup', pointerUp); canvas.addEventListener('pointercancel', pointerCancel);
   canvas.addEventListener('pointerleave', leave);
@@ -299,13 +347,14 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     },
     reset() { fly(new THREE.Vector3(), 1165, overviewDirection); },
     dispose() {
-      cancelAnimationFrame(frame); cancelAnimationFrame(hoverFrame); window.clearTimeout(restoreQuality); observer.disconnect();
+      cancelAnimationFrame(frame); cancelAnimationFrame(hoverFrame); window.clearTimeout(restoreQuality);
+      window.clearTimeout(hoverTimer); observer.disconnect();
       controls.removeEventListener('change', schedule); controls.dispose();
       controls.removeEventListener('start', beginMotion); controls.removeEventListener('end', restoreWhenStill);
       canvas.removeEventListener('pointermove', move); canvas.removeEventListener('pointerdown', pointerDown);
       canvas.removeEventListener('pointerup', pointerUp); canvas.removeEventListener('pointercancel', pointerCancel);
       canvas.removeEventListener('pointerleave', leave);
-      nodeGeometry.dispose(); nodeMaterial.dispose(); hubGeometry.dispose(); hubMaterial.dispose(); canvas.remove();
+      canvas.remove();
     },
   };
 }

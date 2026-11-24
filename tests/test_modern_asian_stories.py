@@ -28,7 +28,7 @@ class ModernAsianStoriesTests(unittest.TestCase):
             notes.write_text('{}\n', encoding='utf-8')
             collection = root / 'batch.yaml'
             collection.write_text(yaml.safe_dump({'themes': [], 'existing_notes': {}, 'records': [{
-                'id': 'case_test', 'title': '测试故事', 'genre': 'urban_legend', 'theme': 'motif_existing',
+                'id': 'case_test', 'title': '测试故事', 'genre': 'memorate', 'reading_kind': 'report', 'theme': 'motif_existing',
                 'location': {'lat': 1.0, 'lng': 2.0, 'precision': 'city', 'location_name': '参考点'},
                 'location_note': '参考坐标。', 'paragraphs': ['故事一。', '故事二。'],
                 'sources': [{'citation': '资料', 'url': 'https://example.com/story', 'locator': '正文'}],
@@ -51,6 +51,7 @@ class ModernAsianStoriesTests(unittest.TestCase):
                 import_modern_stories.run(collection, manifest)
                 self.assertTrue((vault / '01_cases/case_test.md').exists())
                 self.assertIn('case_test', manifest.read_text(encoding='utf-8'))
+                self.assertEqual(yaml.safe_load(notes.read_text(encoding='utf-8'))['case_test']['kind'], 'report')
                 before = notes.read_bytes()
                 with self.assertRaisesRegex(ValueError, '阅读提要已存在'):
                     import_modern_stories.run(collection, manifest)
@@ -60,7 +61,8 @@ class ModernAsianStoriesTests(unittest.TestCase):
         notes = yaml.load((ROOT / 'reference/reading_notes.yaml').read_text(encoding='utf-8'),
                           Loader=FrontmatterLoader)
         records = []
-        for filename in ('modern_asian_stories_20261123.yaml', 'modern_asian_stories_second_20261123.yaml'):
+        for filename in ('modern_asian_stories_20261123.yaml', 'modern_asian_stories_second_20261123.yaml',
+                         'modern_asian_stories_third_20261123.yaml'):
             collection = yaml.load((ROOT / 'reference' / filename).read_text(encoding='utf-8'), Loader=FrontmatterLoader)
             records.extend(collection['records'])
         self.assertEqual(len(records), len({item['id'] for item in records}))
@@ -78,7 +80,9 @@ class ModernAsianStoriesTests(unittest.TestCase):
                 self.assertEqual(note.source_numbers, list(range(1, len(card.metadata.sources) + 1)))
                 self.assertIsNotNone(card.metadata.spatial.lat)
                 self.assertIsNotNone(card.metadata.spatial.lng)
-                self.assertIn(card.metadata.spatial.precision, ('city', 'culture_region'))
+                self.assertIn(card.metadata.spatial.precision, ('city', 'province', 'culture_region'))
+                if item.get('reading_kind'):
+                    self.assertEqual(note.kind, item['reading_kind'])
                 self.assertTrue(note.location_note)
                 self.assertFalse(card.metadata.audit.reviewed_by_human)
                 self.assertFalse(card.metadata.standards.atu_types)
