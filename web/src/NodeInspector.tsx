@@ -66,7 +66,7 @@ function yearLabel(year: number): string {
 
 export function temporalLabel(temporal: NonNullable<GraphNode['temporal']>): string {
   const { year_start: start, year_end: end, era_label: era } = temporal;
-  if (era === '资料出版' && start !== null && start === end) return `资料出版 · ${yearLabel(start)}`;
+  if ((era === '资料出版' || era === '资料发表') && start !== null && start === end) return `${era} · ${yearLabel(start)}`;
   if (era === '学校采录' && start !== null && end !== null) {
     return start === end ? `学校采录 · ${yearLabel(start)}` : `学校采录 · ${start}–${end} 年`;
   }

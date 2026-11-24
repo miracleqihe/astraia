@@ -1,0 +1,349 @@
+themes:
+- id: corpus_cn_hk_bosco_campus_story_versions_2007
+  title: 香港校园鬼故｜讲述、变体与研究
+  genre: academic_model
+  peers:
+  - case_cn_hk_cuhk_braid
+  - case_cn_hk_polyu_pool_child
+  - case_cn_hk_hku_lotus_pool
+  - corpus_east_asia_school_oral_accounts_2011_2026
+  paragraphs:
+  - 在香港中文大学，学长学姐有时会在迎新活动中向新生讲校园鬼故：同一条路、一个水池或一间宿舍，就这样成为一届届学生记住的地点。
+  - 人类学者 Joseph Bosco 的 2007 年论文说，这项研究收集了一百多则故事：有的由学生助理口头采集，有的来自学生课程作业。论文选出辫子姑娘、牛尾汤、荷花池等版本分析。
+  - 同一个“吊汤”的故事会随着讲述者改变宿舍、汤的种类和结尾。作者提出，故事可能折射学生对学习、亲密关系和独立生活的感受；论文也记下部分学生对这种解释的不同意见。
+  - 1994 年的中大学生刊物另留下学生讲述理大泳池和中大辫子姑娘的版本。港大和中大都流传过荷花池问时间的故事，可以并读，但相似本身不能确定它们从哪里传来。
+  sources:
+  - &id001
+    citation: Joseph Bosco, “Young People’s Ghost Stories in Hong Kong”, The Journal of Popular Culture 40(5), 2007, 785–807, DOI 10.1111/j.1540-5931.2007.00454.x。
+    type: peer_reviewed
+    url: https://www.cuhk.edu.hk/ant/joseph/JPCU_454.pdf
+    locator: 作者在香港中文大学网站提供的论文全文，第 785–790、801–803 页
+  - &id002
+    citation: Margaret Liu, “Dead Zone”, Varsity, The Chinese University of Hong Kong, April 1994。
+    type: journalism
+    url: https://varsity.com.cuhk.edu.hk/varsity/9404/ghost.htm
+    locator: 学生访谈：中大和理大校园故事的不同讲述
+records:
+- id: case_cn_hk_cuhk_window_soup_2007
+  title: 香港中大｜从楼上吊下的汤
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_cn_hk_bosco_campus_story_versions_2007
+  location:
+    lat: 22.4198
+    lng: 114.2068
+    precision: city
+    location_name: 香港 · 沙田中大校园参考
+    culture_region: 东亚 · 中国香港
+  map_label: 中大
+  location_note: 地图采用中文大学校园参考点；不同版本所指的具体宿舍或地点并不一致。
+  temporal:
+    year_start: 2007
+    year_end: 2007
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 一对学生住在同一幢宿舍，女孩的房间恰好在男孩楼上。她常煮汤，用绳子从窗外吊给他。
+  - 考试将近，两人约好暂时不见面，窗外送来的汤却仍然没有断。后来男孩听说女孩已经去世，而每天傍晚，汤还是会被吊下来。
+  - Joseph Bosco 在 2007 年论文中记录了伯利衡宿舍的牛尾汤版本，也指出其他书院有不同汤品和结尾的讲法。
+  sources:
+  - *id001
+- id: case_cn_hk_cuhk_swing_little_finger_2007
+  title: 香港中大｜秋千上的女孩
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_cn_hk_bosco_campus_story_versions_2007
+  location:
+    lat: 22.4198
+    lng: 114.2068
+    precision: city
+    location_name: 香港 · 沙田中大校园参考
+    culture_region: 东亚 · 中国香港
+  map_label: 中大
+  location_note: 地图采用中文大学校园参考点；不同版本所指的具体宿舍或地点并不一致。
+  temporal:
+    year_start: 2007
+    year_end: 2007
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 一个学生总在图书馆关门后走回宿舍，路过小公园时，经常看见女孩坐在秋千上。后来他走过去与她交谈，从此每晚都会聊一会儿。
+  - 朋友听过他的描述，说她很像一名曾在交通事故中去世的教师女儿；那女孩缺了一根小指。他再次去看，发现秋千上的女孩也少了那根手指。
+  - 他吓了一跳。故事说，此后他再经过公园，就没有再见到她。这个版本见于 Bosco 的校园鬼故事研究。
+  sources:
+  - *id001
+- id: case_cn_hk_cuhk_lotus_pond_time_2007
+  title: 香港中大｜荷花池的十点钟
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_cn_hk_bosco_campus_story_versions_2007
+  location:
+    lat: 22.4198
+    lng: 114.2068
+    precision: city
+    location_name: 香港 · 沙田中大校园参考
+    culture_region: 东亚 · 中国香港
+  map_label: 中大
+  location_note: 地图采用中文大学校园参考点；此为中大版本，不能定位故事中的人物。
+  temporal:
+    year_start: 2007
+    year_end: 2007
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 一对恋人约好晚上十点在荷花池相见。女孩等了很久，男孩仍没有出现；故事说，她伤心之下走进了池中。
+  - 后来，有人夜里经过池边，会被一名陌生女孩问起时间。流传的警告说，如果回答现在是十点，她就会把回答的人拉进水里。
+  - Bosco 记录了这个中大版本；1994 年学生刊物中的讲法则把约定写成午夜。港大也流传情节相近的故事。
+  sources:
+  - *id001
+  - *id002
+  peers:
+  - case_cn_hk_hku_lotus_pool
+- id: case_cn_hk_cuhk_room_111_2007
+  title: 香港中大｜留下字条的房间
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_cn_hk_bosco_campus_story_versions_2007
+  location:
+    lat: 22.4198
+    lng: 114.2068
+    precision: city
+    location_name: 香港 · 沙田中大校园参考
+    culture_region: 东亚 · 中国香港
+  map_label: 中大
+  location_note: 地图采用中文大学校园参考点；不同版本所指的具体宿舍或地点并不一致。
+  temporal:
+    year_start: 2007
+    year_end: 2007
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 校园故事说，一名学生想探索另一重空间，后来在房间里去世。室友事先并不知道发生了什么，只看见对方前一晚留下的纸条：“我很快回来。”
+  - 2007 年论文把它收录为“111 室”的讲法；1994 年学生刊物还记下了另一种说法，把他的动机讲成一段没有结果的感情。
+  - 两份材料保存的是校园中互不相同的叙述，不能由此确认故事中的人物或事件。
+  sources:
+  - *id001
+  - *id002
+- id: case_cn_shanghai_putuo_park_border_2015
+  title: 上海普陀｜公园旁的阴阳街
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_cn_shanghai_city_lore_liu_2015
+  location:
+    lat: 31.24655
+    lng: 121.42279
+    precision: city
+    location_name: 中国上海 · 普陀公园参考点
+    culture_region: 中国 · 华东
+  map_label: 普陀
+  location_note: 点位为普陀公园地图地标，传闻中道路的具体位置未确认。
+  temporal:
+    year_start: 2015
+    year_end: 2015
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 上海一则网络传闻说，普陀公园附近有条路，长辈把它叫作“阴阳街”，也有人把这个称呼说成“阴阳界”。
+  - 转述者把名字与苏州河边旧时贫苦居民的生活、无人安葬的遗骨联系起来。故事没有留下个人姓名，也没有给出能够核对这段历史的档案。
+  - Mingming Liu 的 2015 年论文保存并翻译了这则网络讲法，作为观察城市空间叙事的材料。
+  sources:
+  - &id003
+    citation: 'Mingming Liu, Theory of the Strange: Towards the Establishment of Zhiguai as a Genre, PhD dissertation, University of California, Riverside, 2015。'
+    type: academic_thesis
+    url: https://escholarship.org/content/qt3579w43t/qt3579w43t.pdf
+    locator: 附录 VIII，第 124–130 页：上海网络传闻及作者解释
+  - &id004
+    citation: OpenStreetMap contributors, 普陀公园，way 405446775。
+    type: gazetteer
+    url: https://www.openstreetmap.org/way/405446775
+    locator: 公园地标参考点 31.24655, 121.42279
+- id: case_cn_shanghai_minhang_school_white_figure_2015
+  title: 上海闵行｜校园停电时的白影
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_cn_shanghai_city_lore_liu_2015
+  location:
+    lat: 31.10881
+    lng: 121.37471
+    precision: city
+    location_name: 中国上海 · 闵行区域参考
+    culture_region: 中国 · 华东
+  map_label: 闵行
+  location_note: 点位为闵行地名参考；论文中的学校与学生无法据此定位或核实。
+  temporal:
+    year_start: 2015
+    year_end: 2015
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 一则网络校园传闻把新楼施工、旧时遗骨和校园外的事故串在一起。故事最让人记住的一幕发生在一次停电时：有人说，宿舍楼一端出现了白色身影。
+  - 短暂的黑暗过去后，关于身影与学校的议论仍被不断转述，讲述者还给故事加上了“消息被隐瞒”的说法。
+  - Mingming Liu 在 2015 年论文中将它作为网络传闻译录，并讨论故事如何叠加不安与信息隐藏的想象。论文收录并不证明传闻中的事故。
+  sources:
+  - *id003
+  - citation: GeoNames, Minhang, China, place 1800480。
+    type: gazetteer
+    url: https://www.geonames.org/1800480/minhang.html
+    locator: 闵行地名参考点 31.10881, 121.37471
+- id: case_cn_shanghai_jiading_cold_flowerbed_2015
+  title: 上海嘉定｜夏日花坛边的寒意
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_cn_shanghai_city_lore_liu_2015
+  location:
+    lat: 31.36637
+    lng: 121.22153
+    precision: city
+    location_name: 中国上海 · 嘉定区域参考
+    culture_region: 中国 · 华东
+  map_label: 嘉定
+  location_note: 点位为嘉定区参考；原文并列旧址与嘉定校园，未给出可确认的花坛坐标。
+  temporal:
+    year_start: 2015
+    year_end: 2015
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 一位网络讲述者说，走过一处校园的八卦形花坛，即使是盛夏正午，也会觉得寒意袭来。花坛周围的树木和草生长得很茂盛。
+  - 他又转述同事的说法，称地下藏有旧时遗骨，并将它与嘉定地区的战争记忆联系起来。原文同时提到旧址和嘉定校园，没有精确定位花坛。
+  - 这则材料被收进 Mingming Liu 的 2015 年论文附录；它记录的是网络叙述，不是对地下遗址的调查。
+  sources:
+  - *id003
+  - citation: GeoNames, Jiading Qu, China, place 1806507。
+    type: gazetteer
+    url: https://www.geonames.org/1806507/jiading-qu.html
+    locator: 嘉定区参考点 31.36637, 121.22153
+- id: case_cn_shanghai_zhenping_school_explorers_2012
+  title: 上海镇坪路｜废校与凌晨三点
+  genre: urban_legend
+  credibility_tier: A
+  theme: corpus_cn_shanghai_city_lore_liu_2015
+  location:
+    lat: 31.24655
+    lng: 121.42279
+    precision: city
+    location_name: 中国上海 · 普陀公园附近参考
+    culture_region: 中国 · 华东
+  map_label: 镇坪路
+  location_note: 报道指镇坪路与宜昌路一带的旧学校；点位使用附近公园地标，不代表校址。
+  temporal:
+    year_start: 2012
+    year_end: 2012
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 2012 年，一所上海废弃学校因网络传言吸引学生相约前来。故事说，凌晨三点左右学校里会出现怪事，还有人声称拍到了照片。
+  - 记者到现场时，看见许多学生在傍晚聚集；有人翻墙入内，门卫随后驱赶。组织过小规模探访的人则说，自己此前没有听过学生们正在转述的版本。
+  - 《新闻晚报》的采访同时记录了网上的讲法、现场的行动和门卫的回应，呈现一则传闻怎样引发真实的城市探访。
+  sources:
+  - citation: 程怡、周柏伊：〈听传说找刺激 废弃地成探险园〉，《新闻晚报》，2012 年 11 月 7 日，新浪转载。
+    type: newspaper_report
+    url: https://news.sina.com.cn/o/2012-11-07/140025529737.shtml
+    locator: 记者、学生和门卫关于镇坪路废校传闻与探访的报道
+  - *id004
+  reading_kind: report
+- id: case_id_jakarta_rental_dancing_calendar_2016
+  title: 雅加达｜挂历里跳舞的人
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_asia_night_places_oral_accounts_2012_2025
+  location:
+    lat: -6.2088
+    lng: 106.8456
+    precision: city
+    location_name: 印度尼西亚雅加达 · 城市参考点
+    culture_region: 东南亚 · 印度尼西亚
+  map_label: 雅加达
+  location_note: 档案只给出雅加达，没有租住房屋的地址。
+  temporal:
+    year_start: 2016
+    year_end: 2016
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 祖父曾在雅加达工作，与朋友住进一处租屋。白天男人出门后，一位住客说自己时常听见声音，还看见厨房里有人；她的丈夫起初不相信。
+  - 有一天，丈夫睡醒后望向墙上的挂历，觉得画中的两个女孩正在跳舞。从那以后，他也开始相信妻子说的话。
+  - 2016 年，采集者的姑母转述了祖父多年前讲过的故事。关于屋下墓地和搬家后仍有动静的说法，也来自这条家族讲述。
+  sources:
+  - citation: “Haunted House in Jakarta”, USC Digital Folklore Archives, interview 24 April 2016, posted 28 April 2016。
+    type: oral_history
+    url: https://folklore.usc.edu/haunted-house-in-jakarta/
+    locator: 采集者的姑母转述祖父讲过的雅加达租屋故事
+- id: case_sg_shared_house_locked_room_2021
+  title: 新加坡｜合租屋里锁着的门
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_asia_night_places_oral_accounts_2012_2025
+  location:
+    lat: 1.3521
+    lng: 103.8198
+    precision: city
+    location_name: 新加坡 · 城市范围参考
+    culture_region: 东南亚 · 新加坡
+  map_label: 新加坡
+  location_note: 受访者只说父母当时住在新加坡，未公开合租屋地址。
+  temporal:
+    year_start: 2021
+    year_end: 2021
+    era_label: 资料发表
+    uncertainty_note: 年份为资料发表或记录时间，并非故事中事件发生时间。
+  paragraphs:
+  - 一对夫妻在新加坡与别人合租。室友去了菲律宾，房门锁着；一天午后，两人洗完碗，觉得看见一道白影沿走廊穿进那间锁住的房间。
+  - 另一晚，母亲做饭时听见大门声，看见一个影子走向室友卧室，以为室友回来了。几分钟后，真正的室友才进门，说自己刚到。
+  - 2021 年，一位菲律宾裔受访者在邮件里转述父母的回忆，并表达了自己的猜测；她并未说自己亲眼见到那两幕。
+  sources:
+  - citation: Isabelle Perez, “The House Ghost in Singapore”, USC Digital Folklore Archives, April 2021, posted 18 May 2021。
+    type: oral_history
+    url: https://folklore.usc.edu/the-house-ghost-in-singapore/
+    locator: 受访者通过邮件转述父母在新加坡合租房的经历
+existing_notes: {}
+revisions:
+  case_cn_hk_cuhk_braid:
+    path: vault/01_cases/case_cn_hk_cuhk_braid.md
+    source: *id002
+    map_label: 中大
+    original_source_numbers:
+    - 1
+    - 2
+    source_numbers:
+    - 1
+    - 2
+    - 3
+    paragraphs:
+    - 中文大学附近流传的“辫子姑娘”故事，讲一位年轻女子乘火车来到这一带，跳车时长辫被列车勾住；后来人们便说她在校园附近徘徊。
+    - 1994 年，一名学生告诉中大学生刊物：夜里有人靠近那个背影，她转过身来，脸的位置却是一片空白。Bosco 的研究也记录了另一种说法：正面出现的仍是一条辫子。
+    - 香港 01 记下它作为校园传说的流传与影像改编。不同材料保留了多个讲法，故事中人物和事故未由这些材料核实。
+  case_cn_hk_polyu_pool_child:
+    path: vault/01_cases/case_cn_hk_polyu_pool_child.md
+    source: *id002
+    map_label: 理大
+    original_source_numbers:
+    - 1
+    - 2
+    source_numbers:
+    - 1
+    - 2
+    - 3
+    paragraphs:
+    - 理工大学校园故事说，夜里有人隔着饭堂窗户，看见一个小孩从泳池爬出，缓缓朝饭堂走来，随后消失。有人把窗上的磨砂贴膜解释为遮挡视线。
+    - 1994 年中大学生刊物采访了几位理大学生：一人讲到关闭时段有人看见孩子游泳；另一人说，跟随孩子走到更衣室，却只见干燥的地面。
+    - 香港 01 后来的整理也保留了泳池与孩子的传闻。学生各自说法并不完全一样，报道没有确认故事中的溺水事件。
+  case_cn_hk_hku_lotus_pool:
+    path: vault/01_cases/case_cn_hk_hku_lotus_pool.md
+    source:
+      citation: 〈香港大學校園怪談：後山的呼喚最神秘〉，香港 01，2019 年 7 月。
+      type: journalism
+      url: https://www.hk01.com/article/353652
+      locator: 港大荷花池问时间的版本
+    map_label: 港大
+    original_source_numbers:
+    - 1
+    - 2
+    source_numbers:
+    - 1
+    - 2
+    - 3
+    paragraphs:
+    - 港大校园鬼故里，一位女生在荷花池等待约会对象，却没有等到人。故事说，她后来投进池中；此后夜里会有人在池边向路过的学生询问时间。
+    - 流传的警告说，午夜遇到她时不要回答。2019 年香港 01 的专文把赴约者写作一位男教师，保存了这个港大版本。
+    - 中文大学也流传荷花池问时间的故事：Bosco 的论文记录的版本把约定时间写成晚上十点。两处可以并读，不能据相似情节断定传播方向。

@@ -106,7 +106,7 @@ class ModernAsianStoriesTests(unittest.TestCase):
                          'modern_asian_stories_fifth_20261123.yaml', 'modern_asian_stories_sixth_20261123.yaml',
                          'modern_asian_stories_seventh_20261123.yaml', 'modern_asian_stories_eighth_20261123.yaml',
                          'modern_asian_stories_ninth_20261123.yaml', 'modern_asian_stories_tenth_20261123.yaml',
-                         'modern_asian_stories_eleventh_20261123.yaml'):
+                         'modern_asian_stories_eleventh_20261123.yaml', 'modern_asian_stories_twelfth_20261123.yaml'):
             collection = yaml.load((ROOT / 'reference' / filename).read_text(encoding='utf-8'), Loader=FrontmatterLoader)
             records.extend(collection['records'])
             revisions.update(collection.get('revisions', {}))
@@ -128,6 +128,10 @@ class ModernAsianStoriesTests(unittest.TestCase):
                 self.assertIsNotNone(card.metadata.spatial.lng)
                 self.assertIn(card.metadata.spatial.precision, ('city', 'province', 'culture_region'))
                 self.assertEqual(card.metadata.spatial.precision, item['location']['precision'])
+                if item.get('temporal'):
+                    self.assertEqual(card.metadata.temporal.year_start, item['temporal']['year_start'])
+                    self.assertEqual(card.metadata.temporal.era_label, item['temporal']['era_label'])
+                    self.assertEqual(card.metadata.temporal.uncertainty_note, item['temporal']['uncertainty_note'])
                 self.assertEqual(card.metadata.genre, item['genre'])
                 self.assertTrue(set(item.get('peers', [])).issubset({relation.target for relation in card.metadata.relations}))
                 if item.get('reading_kind'):
@@ -157,6 +161,26 @@ class ModernAsianStoriesTests(unittest.TestCase):
                 self.assertEqual(notes[item['id']], item['note'])
                 self.assertTrue(all(paragraph in body for paragraph in item['note']['paragraphs']))
                 self.assertTrue(metadata.spatial and metadata.spatial.lat is not None and metadata.spatial.lng is not None)
+                self.assertFalse(metadata.audit.reviewed_by_human)
+
+    def test_twelfth_batch_adds_sources_and_distinguishes_campus_versions(self):
+        collection = yaml.load((ROOT / 'reference/modern_asian_stories_twelfth_20261123.yaml').read_text(encoding='utf-8'),
+                               Loader=FrontmatterLoader)
+        notes = yaml.load((ROOT / 'reference/reading_notes.yaml').read_text(encoding='utf-8'), Loader=FrontmatterLoader)
+        hub = collection['themes'][0]['id']
+        for item in collection['records']:
+            self.assertEqual(item['temporal']['era_label'], '资料发表')
+            self.assertIn('并非故事中事件发生时间', item['temporal']['uncertainty_note'])
+        for node_id, revision in collection['revisions'].items():
+            with self.subTest(id=node_id):
+                metadata, body = parse_card((ROOT / revision['path']).read_text(encoding='utf-8'))
+                note = EditorialNote.model_validate(notes[node_id])
+                self.assertEqual(note.paragraphs, revision['paragraphs'])
+                self.assertEqual(note.source_numbers, revision['source_numbers'])
+                self.assertEqual(note.map_label, revision['map_label'])
+                self.assertEqual(str(metadata.sources[-1].url), revision['source']['url'])
+                self.assertIn(hub, {relation.target for relation in metadata.relations})
+                self.assertTrue(all(paragraph in body for paragraph in note.paragraphs))
                 self.assertFalse(metadata.audit.reviewed_by_human)
 
     def test_ubin_revision_preserves_its_source_and_reading_note(self):

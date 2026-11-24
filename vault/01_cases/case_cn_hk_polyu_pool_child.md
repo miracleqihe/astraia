@@ -27,6 +27,11 @@ relations:
   weight: 1.0
   note: 同题并列阅读，不推断传播或共同起源。
   status: null
+- type: COMPARED_WITH
+  target: corpus_cn_hk_bosco_campus_story_versions_2007
+  weight: 1.0
+  note: 同题并列阅读，不推断传播或共同起源。
+  status: null
 sources:
 - citation: 董欣琪：〈十二传说：香港院校鬼故〉，香港 01，2019 年，2025 年更新。
   type: journalism
@@ -41,6 +46,14 @@ sources:
   url: https://doi.org/10.1111/j.1540-5931.2007.00454.x
   doi: null
   locator: 香港年轻人鬼故事的研究背景
+  local_path: null
+  content_sha256: null
+- citation: Margaret Liu, “Dead Zone”, Varsity, The Chinese University of Hong Kong,
+    April 1994。
+  type: journalism
+  url: https://varsity.com.cuhk.edu.hk/varsity/9404/ghost.htm
+  doi: null
+  locator: 学生访谈：中大和理大校园故事的不同讲述
   local_path: null
   content_sha256: null
 audit:
@@ -58,9 +71,11 @@ audit:
 
 ## 资料梗概
 
-理工大学校园故事说，夜里有人隔着饭堂窗户，看见一个小孩从泳池爬出，缓缓朝饭堂走来，随后消失。流传的说法还把后来窗上的磨砂贴膜解释为遮挡视线。
+理工大学校园故事说，夜里有人隔着饭堂窗户，看见一个小孩从泳池爬出，缓缓朝饭堂走来，随后消失。有人把窗上的磨砂贴膜解释为遮挡视线。
 
-香港 01 的校园怪谈汇编把这个场景与孩子溺水的传闻连在一起；报道未给出可核实的事件记录，贴膜和身影的解释都保留为故事中的说法。
+1994 年中大学生刊物采访了几位理大学生：一人讲到关闭时段有人看见孩子游泳；另一人说，跟随孩子走到更衣室，却只见干燥的地面。
+
+香港 01 后来的整理也保留了泳池与孩子的传闻。学生各自说法并不完全一样，报道没有确认故事中的溺水事件。
 
 ## 地图锚点
 

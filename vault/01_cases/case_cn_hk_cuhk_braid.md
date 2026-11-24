@@ -27,6 +27,11 @@ relations:
   weight: 1.0
   note: 同题并列阅读，不推断传播或共同起源。
   status: null
+- type: COMPARED_WITH
+  target: corpus_cn_hk_bosco_campus_story_versions_2007
+  weight: 1.0
+  note: 同题并列阅读，不推断传播或共同起源。
+  status: null
 sources:
 - citation: 董欣琪：〈十二传说：香港院校鬼故〉，香港 01，2019 年，2025 年更新。
   type: journalism
@@ -41,6 +46,14 @@ sources:
   url: https://doi.org/10.1111/j.1540-5931.2007.00454.x
   doi: null
   locator: 香港年轻人鬼故事的研究背景
+  local_path: null
+  content_sha256: null
+- citation: Margaret Liu, “Dead Zone”, Varsity, The Chinese University of Hong Kong,
+    April 1994。
+  type: journalism
+  url: https://varsity.com.cuhk.edu.hk/varsity/9404/ghost.htm
+  doi: null
+  locator: 学生访谈：中大和理大校园故事的不同讲述
   local_path: null
   content_sha256: null
 audit:
@@ -58,9 +71,11 @@ audit:
 
 ## 资料梗概
 
-中文大学附近流传的“辫子姑娘”故事，讲一位年轻女子乘火车来到这一带，跳车时长辫被列车勾住，后来人们便说她在校园附近徘徊。
+中文大学附近流传的“辫子姑娘”故事，讲一位年轻女子乘火车来到这一带，跳车时长辫被列车勾住；后来人们便说她在校园附近徘徊。
 
-香港 01 将它记为自 1970 年代流传的版本，也提到影像改编。它是一则校园与铁路相连的传说，原报道没有提供可供核对的当事人和事故档案。
+1994 年，一名学生告诉中大学生刊物：夜里有人靠近那个背影，她转过身来，脸的位置却是一片空白。Bosco 的研究也记录了另一种说法：正面出现的仍是一条辫子。
+
+香港 01 记下它作为校园传说的流传与影像改编。不同材料保留了多个讲法，故事中人物和事故未由这些材料核实。
 
 ## 地图锚点
 

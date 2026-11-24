@@ -27,6 +27,16 @@ relations:
   weight: 1.0
   note: 同题并列阅读，不推断传播或共同起源。
   status: null
+- type: COMPARED_WITH
+  target: corpus_cn_hk_bosco_campus_story_versions_2007
+  weight: 1.0
+  note: 同题并列阅读，不推断传播或共同起源。
+  status: null
+- type: COMPARED_WITH
+  target: case_cn_hk_cuhk_lotus_pond_time_2007
+  weight: 1.0
+  note: 同题并列阅读，不推断传播或共同起源。
+  status: null
 sources:
 - citation: 董欣琪：〈十二传说：香港院校鬼故〉，香港 01，2019 年，2025 年更新。
   type: journalism
@@ -41,6 +51,13 @@ sources:
   url: https://doi.org/10.1111/j.1540-5931.2007.00454.x
   doi: null
   locator: 香港年轻人鬼故事的研究背景
+  local_path: null
+  content_sha256: null
+- citation: 〈香港大學校園怪談：後山的呼喚最神秘〉，香港 01，2019 年 7 月。
+  type: journalism
+  url: https://www.hk01.com/article/353652
+  doi: null
+  locator: 港大荷花池问时间的版本
   local_path: null
   content_sha256: null
 audit:
@@ -58,9 +75,11 @@ audit:
 
 ## 资料梗概
 
-港大校园鬼故里，有位女生夜里在荷花池附近徘徊，向路过的学生询问时间。故事把她的出现连到一场没有等到赴约者的约会，并提醒听故事的人：午夜遇见时不要回答。
+港大校园鬼故里，一位女生在荷花池等待约会对象，却没有等到人。故事说，她后来投进池中；此后夜里会有人在池边向路过的学生询问时间。
 
-香港 01 在 2019 年整理了这个校园流传版本。传说中的人物与过去发生的事没有独立核实；林舟对香港年轻人鬼故事的研究可作为理解校园讲述背景的延伸阅读。
+流传的警告说，午夜遇到她时不要回答。2019 年香港 01 的专文把赴约者写作一位男教师，保存了这个港大版本。
+
+中文大学也流传荷花池问时间的故事：Bosco 的论文记录的版本把约定时间写成晚上十点。两处可以并读，不能据相似情节断定传播方向。
 
 ## 地图锚点
 
