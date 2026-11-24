@@ -1,10 +1,11 @@
 ---
 id: case_nichibun_0690185
-title: 日文研 0690185 · ザシキワラシ，河童 / ザシキワラシ，カッパ
+title: 岩泉｜被石头惊动的水中来客
 aliases:
 - 0690185
 - ザシキワラシ，河童
 - ザシキワラシ，カッパ
+- 日文研 0690185 · ザシキワラシ，河童 / ザシキワラシ，カッパ
 node_type: case
 z_layer: 1
 genre: unclassified
@@ -63,6 +64,9 @@ audit:
   reviewer: null
   reviewed_at: null
   review_note: null
+  public_release: false
+  public_rights_note: null
+  public_content_sha256: null
 ---
 
 ## 馆藏与所引资料
@@ -78,3 +82,9 @@ audit:
 ## 坐标依据
 
 地图采用市镇地名录参考点，具体采录位置待核。
+
+## 馆藏摘要中文梗概
+
+一名男子在水里看见像兔子的东西，向它投了石头。当天夜里，那东西溜进他的寝室，隔着被褥压得他难受。
+
+他奋力坐起时，对方滑溜溜地逃走了。馆藏摘要记下当地把座敷童子与河童联系起来的说法；所引刊物出版于 1924 年。

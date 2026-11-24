@@ -1,10 +1,11 @@
 ---
 id: case_nichibun_2181263_002
-title: 日文研 2181263_002 · 河童 / カッパ
+title: 北秋田｜黄瓜尾端的禁忌
 aliases:
 - '2181263_002'
 - 河童
 - カッパ
+- 日文研 2181263_002 · 河童 / カッパ
 node_type: case
 z_layer: 1
 genre: unclassified
@@ -62,6 +63,9 @@ audit:
   reviewer: null
   reviewed_at: null
   review_note: null
+  public_release: false
+  public_rights_note: null
+  public_content_sha256: null
 ---
 
 ## 馆藏与所引资料
@@ -76,3 +80,9 @@ audit:
 ## 坐标依据
 
 地图采用市镇地名录参考点，具体采录位置待核。
+
+## 馆藏摘要中文梗概
+
+当地流传一种与植物有关的禁忌：吃了黄瓜的尾端，就会被河童带走。
+
+馆藏卡只保存了这一句说法，所引资料出版于 1941 年。

@@ -84,7 +84,7 @@ def run(collection=COLLECTION, manifest=None):
         note = {'kind': kind,
                 'paragraphs': item['paragraphs'], 'source_numbers': list(range(1, len(refs) + 1))}
         if item.get('location_note'):
-            note.update(map_label=item['location']['location_name'], location_note=item['location_note'])
+            note.update(map_label=item.get('map_label', item['location']['location_name']), location_note=item['location_note'])
         EditorialNote.model_validate(note)
         planned[path] = content
         new_notes[node_id] = note

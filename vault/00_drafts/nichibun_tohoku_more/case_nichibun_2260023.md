@@ -1,10 +1,11 @@
 ---
 id: case_nichibun_2260023
-title: 日文研 2260023 · 河童 / カッパ
+title: 由利本庄｜雨后的脚印
 aliases:
 - '2260023'
 - 河童
 - カッパ
+- 日文研 2260023 · 河童 / カッパ
 node_type: case
 z_layer: 1
 genre: unclassified
@@ -62,6 +63,9 @@ audit:
   reviewer: null
   reviewed_at: null
   review_note: null
+  public_release: false
+  public_rights_note: null
+  public_content_sha256: null
 ---
 
 ## 馆藏与所引资料
@@ -74,3 +78,9 @@ audit:
 国际日本文化研究中心，怪異・妖怪伝承数据库，记录 2260023，早川孝太郎，諸国河童談，民俗学，1巻3号，1929年，引用页 67。
 
 年份对应所引资料的出版时间。正文与摘要可通过馆藏链接回查。
+
+## 馆藏摘要中文梗概
+
+雨后的早晨，路上出现一串像三四岁孩子留下的脚印。同行的人说，那是河童的足迹。
+
+馆藏摘要保留了发现脚印和同行者的解释，没有进一步描述留下脚印的人或动物。所引资料出版于 1929 年。

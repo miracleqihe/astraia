@@ -57,7 +57,7 @@ class ModernAsianStoriesTests(unittest.TestCase):
                 'id': 'case_test', 'title': '测试故事', 'genre': 'memorate', 'reading_kind': 'report', 'theme': 'motif_existing',
                 'peers': ['mech_existing', 'motif_existing'],
                 'location': {'lat': 1.0, 'lng': 2.0, 'precision': 'city', 'location_name': '参考点'},
-                'location_note': '参考坐标。', 'paragraphs': ['故事一。', '故事二。'],
+                'location_note': '参考坐标。', 'map_label': '短地名', 'paragraphs': ['故事一。', '故事二。'],
                 'sources': [{'citation': '资料', 'url': 'https://example.com/story', 'locator': '正文'}],
             }]}, allow_unicode=True), encoding='utf-8')
             manifest = root / 'out/manifest.json'
@@ -90,6 +90,7 @@ class ModernAsianStoriesTests(unittest.TestCase):
                 self.assertEqual(len(card.metadata.relations), 2)
                 self.assertIn('case_test', manifest.read_text(encoding='utf-8'))
                 self.assertEqual(yaml.safe_load(notes.read_text(encoding='utf-8'))['case_test']['kind'], 'report')
+                self.assertEqual(yaml.safe_load(notes.read_text(encoding='utf-8'))['case_test']['map_label'], '短地名')
                 before = notes.read_bytes()
                 with self.assertRaisesRegex(ValueError, '阅读提要已存在'):
                     import_modern_stories.run(collection, manifest)
@@ -104,7 +105,8 @@ class ModernAsianStoriesTests(unittest.TestCase):
                          'modern_asian_stories_third_20261123.yaml', 'modern_asian_stories_fourth_20261123.yaml',
                          'modern_asian_stories_fifth_20261123.yaml', 'modern_asian_stories_sixth_20261123.yaml',
                          'modern_asian_stories_seventh_20261123.yaml', 'modern_asian_stories_eighth_20261123.yaml',
-                         'modern_asian_stories_ninth_20261123.yaml', 'modern_asian_stories_tenth_20261123.yaml'):
+                         'modern_asian_stories_ninth_20261123.yaml', 'modern_asian_stories_tenth_20261123.yaml',
+                         'modern_asian_stories_eleventh_20261123.yaml'):
             collection = yaml.load((ROOT / 'reference' / filename).read_text(encoding='utf-8'), Loader=FrontmatterLoader)
             records.extend(collection['records'])
             revisions.update(collection.get('revisions', {}))
@@ -131,10 +133,31 @@ class ModernAsianStoriesTests(unittest.TestCase):
                 if item.get('reading_kind'):
                     self.assertEqual(note.kind, item['reading_kind'])
                 self.assertTrue(note.location_note)
+                if item.get('map_label'):
+                    self.assertEqual(note.map_label, item['map_label'])
                 self.assertFalse(card.metadata.audit.reviewed_by_human)
                 self.assertEqual(card.metadata.is_fictional_quarantine, item.get('credibility_tier', 'A') == 'F')
                 self.assertFalse(card.metadata.standards.atu_types)
                 self.assertFalse(card.metadata.standards.ocm_codes)
+
+    def test_nichibun_readings_keep_catalogue_provenance_and_location(self):
+        additions = yaml.load((ROOT / 'reference/nichibun_readings_20261123.yaml').read_text(encoding='utf-8'),
+                              Loader=FrontmatterLoader)['records']
+        notes = yaml.load((ROOT / 'reference/reading_notes.yaml').read_text(encoding='utf-8'),
+                          Loader=FrontmatterLoader)
+        self.assertEqual(len(additions), 15)
+        self.assertEqual(len({item['id'] for item in additions}), len(additions))
+        for item in additions:
+            with self.subTest(id=item['id']):
+                metadata, body = parse_card((ROOT / item['path']).read_text(encoding='utf-8'))
+                self.assertEqual(metadata.id, item['id'])
+                self.assertEqual(metadata.title, item['title'])
+                self.assertIn(item['former_title'], metadata.aliases)
+                self.assertEqual(metadata.sources[0].content_sha256, item['snapshot_sha256'])
+                self.assertEqual(notes[item['id']], item['note'])
+                self.assertTrue(all(paragraph in body for paragraph in item['note']['paragraphs']))
+                self.assertTrue(metadata.spatial and metadata.spatial.lat is not None and metadata.spatial.lng is not None)
+                self.assertFalse(metadata.audit.reviewed_by_human)
 
     def test_ubin_revision_preserves_its_source_and_reading_note(self):
         collection = yaml.load((ROOT / 'reference/modern_asian_stories_seventh_20261123.yaml').read_text(encoding='utf-8'),

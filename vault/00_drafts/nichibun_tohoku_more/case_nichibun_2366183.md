@@ -1,10 +1,11 @@
 ---
 id: case_nichibun_2366183
-title: 日文研 2366183 · 河童 / カッパ
+title: 福岛茂庭｜五月的河中供物
 aliases:
 - '2366183'
 - 河童
 - カッパ
+- 日文研 2366183 · 河童 / カッパ
 node_type: case
 z_layer: 1
 genre: unclassified
@@ -63,6 +64,9 @@ audit:
   reviewer: null
   reviewed_at: null
   review_note: null
+  public_release: false
+  public_rights_note: null
+  public_content_sha256: null
 ---
 
 ## 馆藏与所引资料
@@ -74,3 +78,9 @@ audit:
 国际日本文化研究中心，怪異・妖怪伝承数据库，记录 2366183，国学院大学民俗学研究会，福島県福島市飯坂町茂庭，民俗採訪，通巻昭和59年度号，1985年，引用页 54。
 
 年份对应所引资料的出版时间。正文与摘要可通过馆藏链接回查。
+
+## 馆藏摘要中文梗概
+
+福岛中茂庭的记录说，五月四日，人们会把一个年糕送入河中，说是给河童的供物。
+
+这张馆藏卡是一条简短的习俗记录；所引资料出版于 1985 年。

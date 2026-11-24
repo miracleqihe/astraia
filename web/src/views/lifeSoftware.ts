@@ -284,8 +284,13 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   const resize = () => {
     const cssWidth = Math.max(1, host.clientWidth), cssHeight = Math.max(1, host.clientHeight);
     hitMarginX = 12 / cssWidth; hitMarginY = 12 / cssHeight;
-    // Reduce raster cost for every kind of camera movement, then sharpen at rest.
-    const scale = interacting ? .3 : .7;
+    // Keep CPU raster and upload work bounded on large displays. A fixed scale
+    // still grows quadratically with viewport size, making the fallback several
+    // times more expensive on 4K screens. Preserve the existing quality for
+    // smaller viewports and restore a sharper image after movement stops.
+    const preferredScale = interacting ? .3 : .7;
+    const pixelBudget = interacting ? 180_000 : 1_000_000;
+    const scale = Math.min(preferredScale, Math.sqrt(pixelBudget / (cssWidth * cssHeight)));
     const nextWidth = Math.max(1, Math.round(cssWidth * scale));
     const nextHeight = Math.max(1, Math.round(cssHeight * scale));
     if (nextWidth !== width || nextHeight !== height || !image) {

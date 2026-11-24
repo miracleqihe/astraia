@@ -1,0 +1,226 @@
+records:
+- id: case_nichibun_0690185
+  path: vault/00_drafts/nichibun_tohoku/case_nichibun_0690185.md
+  title: 岩泉｜被石头惊动的水中来客
+  former_title: 日文研 0690185 · ザシキワラシ，河童 / ザシキワラシ，カッパ
+  snapshot_sha256: e91ca34b247a7b6d0052f8037506bd4118d46ba27caf271ed7540b9a68021735
+  note:
+    kind: legend
+    paragraphs:
+    - 一名男子在水里看见像兔子的东西，向它投了石头。当天夜里，那东西溜进他的寝室，隔着被褥压得他难受。
+    - 他奋力坐起时，对方滑溜溜地逃走了。馆藏摘要记下当地把座敷童子与河童联系起来的说法；所引刊物出版于 1924 年。
+    map_label: 岩泉
+    location_note: 地图使用市镇地名参考点；具体采录地点未确定。出版年份不等于传说发生时间。
+    source_numbers:
+    - 1
+    - 2
+- id: case_nichibun_0690186
+  path: vault/00_drafts/nichibun_tohoku_more/case_nichibun_0690186.md
+  title: 岩泉｜粮仓里的夜宴
+  former_title: 日文研 0690186 · 河童 / カッパ
+  snapshot_sha256: a8a90e8210dbd2bdf769aed7664ebd29868049967f67dfb9f701b615b469eeec
+  note:
+    kind: legend
+    paragraphs:
+    - 一家富户仓里的鱼和酒每晚都不见了。主人暗中守候，看见一群十二三岁模样的孩子趁大家睡熟后进仓，大吃大喝。
+    - 主人喝了一声，孩子们四散逃走；其中一个没来得及跑，被发现有红脸和盘状的头。主人让这河童写下不再作恶的保证，放了它。馆藏摘要所引刊物出版于 1924 年。
+    map_label: 岩泉
+    location_note: 地图使用市镇地名参考点；具体采录地点未确定。出版年份不等于传说发生时间。
+    source_numbers:
+    - 1
+    - 2
+- id: case_nichibun_0730013
+  path: vault/00_drafts/nichibun_tohoku_more/case_nichibun_0730013.md
+  title: 岩泉｜兔子分给河童的盐
+  former_title: 日文研 0730013 · 河童 / カッパ
+  snapshot_sha256: 6502dc47d2da53ede88744c5d43a28cc892b206970e2fd0e824ef77a900f8667
+  note:
+    kind: story
+    paragraphs:
+    - 兔子利用猴子和河童，偷走了赶马车人的货物。分赃时，河童得到盐，猴子得到草席，兔子则拿了豆子。
+    - 河童的盐在河里化了，猴子又因草席打滑受了伤。兔子吃完豆子，把豆粒粘在毛上，装作自己也吃了亏。馆藏摘要所引资料出版于 1961 年。
+    map_label: 岩泉
+    location_note: 地图使用市镇地名参考点；具体采录地点未确定。出版年份不等于传说发生时间。
+    source_numbers:
+    - 1
+    - 2
+- id: case_nichibun_0730014
+  path: vault/00_drafts/nichibun_tohoku_more/case_nichibun_0730014.md
+  title: 岩泉｜河边化成家人的河童
+  former_title: 日文研 0730014 · 河童 / カッパ
+  snapshot_sha256: 996ae09fb10c365412a4240ff4a3f83db883311e378d92cb8e7ebefe4be039d8
+  note:
+    kind: legend
+    paragraphs:
+    - 馆藏摘要记载，一名女孩被称作“かあぱ”的河童拉进水里，失去了传说中的“尻子玉”。
+    - 另一段说法警告喝酒后夜行的人：河童会化成妻子的模样，把人引向河边。所引资料出版于 1961 年，摘要没有给出当事人姓名或具体地点。
+    map_label: 岩泉
+    location_note: 地图使用市镇地名参考点；具体采录地点未确定。出版年份不等于传说发生时间。
+    source_numbers:
+    - 1
+    - 2
+- id: case_nichibun_0730016
+  path: vault/00_drafts/nichibun_tohoku_more/case_nichibun_0730016.md
+  title: 岩泉｜深潭边扬起的沙
+  former_title: 日文研 0730016 · 河童 / カッパ
+  snapshot_sha256: c8485149564e97bd51e81448bc1d9c8771c5bc0a8ab9f8bf30b74ac62f366d44
+  note:
+    kind: legend
+    paragraphs:
+    - 当地人说，在大潭边曾被河童扬起的沙子打到，也有人说当年看见一只在潭里。
+    - 它看上去像孩子，望着望着就不见了；夜里会吓唬独自经过的人，但并不伤人性命。馆藏摘要所引资料出版于 1961 年。
+    map_label: 岩泉
+    location_note: 地图使用市镇地名参考点；具体采录地点未确定。出版年份不等于传说发生时间。
+    source_numbers:
+    - 1
+    - 2
+- id: case_nichibun_2181227
+  path: vault/00_drafts/nichibun_tohoku_more/case_nichibun_2181227.md
+  title: 北秋田｜“被河童带走”的说法
+  former_title: 日文研 2181227 · カッパ
+  snapshot_sha256: f39ba813254de4aec305a8358ae1343e65124f760fe5cbf225ed01dd701aa13f
+  note:
+    kind: history
+    paragraphs:
+    - 这张馆藏卡记录了一种避讳说法：不直接说一个人溺亡，而说他“被河童带走”。
+    - 它保存的是一句地方用语，并没有附带完整故事。所引资料出版于 1940 年。
+    map_label: 北秋田
+    location_note: 地图使用市镇地名参考点；具体采录地点未确定。出版年份不等于传说发生时间。
+    source_numbers:
+    - 1
+    - 2
+- id: case_nichibun_2181261
+  path: vault/00_drafts/nichibun_tohoku_more/case_nichibun_2181261.md
+  title: 北秋田｜河边的应答
+  former_title: 日文研 2181261 · カッパ
+  snapshot_sha256: 54ba77d5021c3c16b8d765a961ee258bc97961527c49c241a61fbfdd3705988e
+  note:
+    kind: history
+    paragraphs:
+    - 馆藏摘要记下河边玩水时的一种习俗：女孩小便前要向附近的人喊“河童”，对方回答“ドーヘ”，然后再念一段祈求不被带走的话。
+    - 这是一条地方习俗的记录，所引资料出版于 1941 年；摘要并未讲述某个具体人物的经历。
+    map_label: 北秋田
+    location_note: 地图使用市镇地名参考点；具体采录地点未确定。出版年份不等于传说发生时间。
+    source_numbers:
+    - 1
+    - 2
+- id: case_nichibun_2181263_002
+  path: vault/00_drafts/nichibun_tohoku/case_nichibun_2181263_002.md
+  title: 北秋田｜黄瓜尾端的禁忌
+  former_title: 日文研 2181263_002 · 河童 / カッパ
+  snapshot_sha256: b86feb083b0748f67eaffb3b48d986a7190421997fd793663b2f540ec4592d17
+  note:
+    kind: history
+    paragraphs:
+    - 当地流传一种与植物有关的禁忌：吃了黄瓜的尾端，就会被河童带走。
+    - 馆藏卡只保存了这一句说法，所引资料出版于 1941 年。
+    map_label: 北秋田
+    location_note: 地图使用市镇地名参考点；具体采录地点未确定。出版年份不等于传说发生时间。
+    source_numbers:
+    - 1
+    - 2
+- id: case_nichibun_2260023
+  path: vault/00_drafts/nichibun_tohoku_more/case_nichibun_2260023.md
+  title: 由利本庄｜雨后的脚印
+  former_title: 日文研 2260023 · 河童 / カッパ
+  snapshot_sha256: fdf009fcd2fb346fd80b6edb016db7694150c557fb7f8d3cbec4d02c99e55dd3
+  note:
+    kind: legend
+    paragraphs:
+    - 雨后的早晨，路上出现一串像三四岁孩子留下的脚印。同行的人说，那是河童的足迹。
+    - 馆藏摘要保留了发现脚印和同行者的解释，没有进一步描述留下脚印的人或动物。所引资料出版于 1929 年。
+    map_label: 由利本庄
+    location_note: 地图使用市镇地名参考点；具体采录地点未确定。出版年份不等于传说发生时间。
+    source_numbers:
+    - 1
+    - 2
+- id: case_nichibun_2260024
+  path: vault/00_drafts/nichibun_tohoku/case_nichibun_2260024.md
+  title: 由利本庄｜送鳟鱼的约定
+  former_title: 日文研 2260024 · 河童 / カッパ
+  snapshot_sha256: 5f9c5a57addb4d89235d7f4d6effebed299be4995ab6cf69176e066eb6b382cf
+  note:
+    kind: legend
+    paragraphs:
+    - 一只河童被发现缠在马的缰绳上，险些丧命。它答应每天早晨送来鳟鱼，才被放过。
+    - 有一天，女佣把镰刀挂在门锁旁的柱子上；从那以后，鳟鱼就不再送来了。馆藏摘要所引资料出版于 1929 年。
+    map_label: 由利本庄
+    location_note: 地图使用市镇地名参考点；具体采录地点未确定。出版年份不等于传说发生时间。
+    source_numbers:
+    - 1
+    - 2
+- id: case_nichibun_2360781
+  path: vault/00_drafts/nichibun_tohoku_more/case_nichibun_2360781.md
+  title: 福岛饭坂｜把糯米团送进河里
+  former_title: 日文研 2360781 · 河童，（俗信） / カッパ，（ゾクシン）
+  snapshot_sha256: 1e0fb0d17a25df6828473038ba5eaab1f149cca05c5c48828f073d3fa7f38f6d
+  note:
+    kind: history
+    paragraphs:
+    - 饭坂一带称十二月一日为“カッパレ”或“カッパリヤ”的朔日。这一天有人停下工作，把糯米团送入河中。
+    - 记录还说，孩子吃了当天供佛的糯米团，就不会被河童拖走。馆藏摘要所引资料出版于 1964 年。
+    map_label: 福岛饭坂
+    location_note: 地图使用市镇地名参考点；具体采录地点未确定。出版年份不等于传说发生时间。
+    source_numbers:
+    - 1
+    - 2
+- id: case_nichibun_2360782
+  path: vault/00_drafts/nichibun_tohoku_more/case_nichibun_2360782.md
+  title: 福岛饭坂｜河童朋友与糯米团
+  former_title: 日文研 2360782 · 河童 / カッパ
+  snapshot_sha256: 7615b79ecd89e4f9cde94244aa455cf474a82f6c56f9eac2fe7e0451f7129365
+  note:
+    kind: legend
+    paragraphs:
+    - 一个喜欢到河边玩的孩子，在十二月一日把糯米团送给河童朋友。后来河童告诉他，自己原本想取孩子的肝，给生病的父母治病。
+    - 收到糯米团后，它没能下手；父母吃了团子竟好了。当地说法把这段故事与当天吃糯米团、避免被河童拖走的习俗联系起来。馆藏摘要所引资料出版于 1964 年。
+    map_label: 福岛饭坂
+    location_note: 地图使用市镇地名参考点；具体采录地点未确定。出版年份不等于传说发生时间。
+    source_numbers:
+    - 1
+    - 2
+- id: case_nichibun_2360783
+  path: vault/00_drafts/nichibun_tohoku/case_nichibun_2360783.md
+  title: 福岛饭坂｜十三岁孩子的约定
+  former_title: 日文研 2360783 · 河童，水神，水神 / カッパ，スイジン，ミズガミ
+  snapshot_sha256: 851a8f60fa071ff9f0a0f92df439e83c6805d6c219d33432abec38e694690879
+  note:
+    kind: legend
+    paragraphs:
+    - 故事里，一名男子听观音说，一个刚出生的孩子将在十三岁那年的十二月一日被河童带走。他回家后发现，那孩子竟是自己的儿子。
+    - 十三岁那天，儿子执意去河边，父亲给他带了糯米团。河童出现后吃饱便离开，孩子平安归来；从此，人们在这天把团子送进河里。馆藏摘要所引资料出版于 1964 年。
+    map_label: 福岛饭坂
+    location_note: 地图使用市镇地名参考点；具体采录地点未确定。出版年份不等于传说发生时间。
+    source_numbers:
+    - 1
+    - 2
+- id: case_nichibun_2366183
+  path: vault/00_drafts/nichibun_tohoku_more/case_nichibun_2366183.md
+  title: 福岛茂庭｜五月的河中供物
+  former_title: 日文研 2366183 · 河童 / カッパ
+  snapshot_sha256: 1d810c5434f664639775f2f4d71d3cd70d4bbbbb670e6c0687df71236f2aacd1
+  note:
+    kind: history
+    paragraphs:
+    - 福岛中茂庭的记录说，五月四日，人们会把一个年糕送入河中，说是给河童的供物。
+    - 这张馆藏卡是一条简短的习俗记录；所引资料出版于 1985 年。
+    map_label: 福岛饭坂
+    location_note: 地图使用市镇地名参考点；具体采录地点未确定。出版年份不等于传说发生时间。
+    source_numbers:
+    - 1
+    - 2
+- id: case_nichibun_2366189
+  path: vault/00_drafts/nichibun_tohoku_more/case_nichibun_2366189.md
+  title: 福岛茂庭｜十二月的糯米团
+  former_title: 日文研 2366189 · かっぱっこ，河童 / カッパッコ，カッパ
+  snapshot_sha256: 2a67fd349bc72c122d9af1d49da5ba8edaf4724272ee775c78db444fe90499ed
+  note:
+    kind: legend
+    paragraphs:
+    - 另一则记载里，母亲担心总往海边跑的儿子被河童吃掉，便做了糯米团。儿子把团子喂给河童，让它吃饱，自己得以平安。
+    - 这个版本把吃糯米团的习俗与十二月一日的“カッパレ”联系起来。它与同地其他河童故事相似，但馆藏没有说明彼此的传播关系；所引资料出版于 1985 年。
+    map_label: 福岛饭坂
+    location_note: 地图使用市镇地名参考点；具体采录地点未确定。出版年份不等于传说发生时间。
+    source_numbers:
+    - 1
+    - 2

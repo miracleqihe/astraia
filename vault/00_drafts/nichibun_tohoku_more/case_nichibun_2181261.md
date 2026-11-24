@@ -1,9 +1,10 @@
 ---
 id: case_nichibun_2181261
-title: 日文研 2181261 · カッパ
+title: 北秋田｜河边的应答
 aliases:
 - '2181261'
 - カッパ
+- 日文研 2181261 · カッパ
 node_type: case
 z_layer: 1
 genre: unclassified
@@ -61,6 +62,9 @@ audit:
   reviewer: null
   reviewed_at: null
   review_note: null
+  public_release: false
+  public_rights_note: null
+  public_content_sha256: null
 ---
 
 ## 馆藏与所引资料
@@ -72,3 +76,9 @@ audit:
 国际日本文化研究中心，怪異・妖怪伝承数据库，记录 2181261，北林徳治，童戯，民間伝承，6巻9号，1941年，引用页 7。
 
 年份对应所引资料的出版时间。正文与摘要可通过馆藏链接回查。
+
+## 馆藏摘要中文梗概
+
+馆藏摘要记下河边玩水时的一种习俗：女孩小便前要向附近的人喊“河童”，对方回答“ドーヘ”，然后再念一段祈求不被带走的话。
+
+这是一条地方习俗的记录，所引资料出版于 1941 年；摘要并未讲述某个具体人物的经历。

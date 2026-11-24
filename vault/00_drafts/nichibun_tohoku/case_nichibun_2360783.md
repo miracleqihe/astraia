@@ -1,10 +1,11 @@
 ---
 id: case_nichibun_2360783
-title: 日文研 2360783 · 河童，水神，水神 / カッパ，スイジン，ミズガミ
+title: 福岛饭坂｜十三岁孩子的约定
 aliases:
 - '2360783'
 - 河童，水神，水神
 - カッパ，スイジン，ミズガミ
+- 日文研 2360783 · 河童，水神，水神 / カッパ，スイジン，ミズガミ
 node_type: case
 z_layer: 1
 genre: unclassified
@@ -63,6 +64,9 @@ audit:
   reviewer: null
   reviewed_at: null
   review_note: null
+  public_release: false
+  public_rights_note: null
+  public_content_sha256: null
 ---
 
 ## 馆藏与所引资料
@@ -77,3 +81,9 @@ audit:
 ## 坐标依据
 
 地图采用市镇地名录参考点，具体采录位置待核。
+
+## 馆藏摘要中文梗概
+
+故事里，一名男子听观音说，一个刚出生的孩子将在十三岁那年的十二月一日被河童带走。他回家后发现，那孩子竟是自己的儿子。
+
+十三岁那天，儿子执意去河边，父亲给他带了糯米团。河童出现后吃饱便离开，孩子平安归来；从此，人们在这天把团子送进河里。馆藏摘要所引资料出版于 1964 年。

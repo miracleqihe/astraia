@@ -1,9 +1,10 @@
 ---
 id: case_nichibun_2181227
-title: 日文研 2181227 · カッパ
+title: 北秋田｜“被河童带走”的说法
 aliases:
 - '2181227'
 - カッパ
+- 日文研 2181227 · カッパ
 node_type: case
 z_layer: 1
 genre: unclassified
@@ -61,6 +62,9 @@ audit:
   reviewer: null
   reviewed_at: null
   review_note: null
+  public_release: false
+  public_rights_note: null
+  public_content_sha256: null
 ---
 
 ## 馆藏与所引资料
@@ -72,3 +76,9 @@ audit:
 国际日本文化研究中心，怪異・妖怪伝承数据库，记录 2181227，北林徳治，複合動詞，民間伝承，6巻3号，1940年，引用页 7。
 
 年份对应所引资料的出版时间。正文与摘要可通过馆藏链接回查。
+
+## 馆藏摘要中文梗概
+
+这张馆藏卡记录了一种避讳说法：不直接说一个人溺亡，而说他“被河童带走”。
+
+它保存的是一句地方用语，并没有附带完整故事。所引资料出版于 1940 年。

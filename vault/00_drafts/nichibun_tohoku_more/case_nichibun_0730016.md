@@ -1,10 +1,11 @@
 ---
 id: case_nichibun_0730016
-title: 日文研 0730016 · 河童 / カッパ
+title: 岩泉｜深潭边扬起的沙
 aliases:
 - '0730016'
 - 河童
 - カッパ
+- 日文研 0730016 · 河童 / カッパ
 node_type: case
 z_layer: 1
 genre: unclassified
@@ -63,6 +64,9 @@ audit:
   reviewer: null
   reviewed_at: null
   review_note: null
+  public_release: false
+  public_rights_note: null
+  public_content_sha256: null
 ---
 
 ## 馆藏与所引资料
@@ -75,3 +79,9 @@ audit:
 国际日本文化研究中心，怪異・妖怪伝承数据库，记录 0730016，国学院大学説話研究会，岩手県下閉伊郡安家村大平・坂本の口承文芸，芸能，3巻8号／通巻30号，1961年，引用页 26。
 
 年份对应所引资料的出版时间。正文与摘要可通过馆藏链接回查。
+
+## 馆藏摘要中文梗概
+
+当地人说，在大潭边曾被河童扬起的沙子打到，也有人说当年看见一只在潭里。
+
+它看上去像孩子，望着望着就不见了；夜里会吓唬独自经过的人，但并不伤人性命。馆藏摘要所引资料出版于 1961 年。

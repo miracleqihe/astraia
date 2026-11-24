@@ -1,10 +1,11 @@
 ---
 id: case_nichibun_2260024
-title: 日文研 2260024 · 河童 / カッパ
+title: 由利本庄｜送鳟鱼的约定
 aliases:
 - '2260024'
 - 河童
 - カッパ
+- 日文研 2260024 · 河童 / カッパ
 node_type: case
 z_layer: 1
 genre: unclassified
@@ -62,6 +63,9 @@ audit:
   reviewer: null
   reviewed_at: null
   review_note: null
+  public_release: false
+  public_rights_note: null
+  public_content_sha256: null
 ---
 
 ## 馆藏与所引资料
@@ -76,3 +80,9 @@ audit:
 ## 坐标依据
 
 地图采用市镇地名录参考点，具体采录位置待核。
+
+## 馆藏摘要中文梗概
+
+一只河童被发现缠在马的缰绳上，险些丧命。它答应每天早晨送来鳟鱼，才被放过。
+
+有一天，女佣把镰刀挂在门锁旁的柱子上；从那以后，鳟鱼就不再送来了。馆藏摘要所引资料出版于 1929 年。
