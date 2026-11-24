@@ -39,27 +39,56 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
   const drawing = useRef<LifeDrawing | null>(null);
   const select = useRef(onSelect), selectSubject = useRef(onSubject), selectVolume = useRef(onVolume);
   const [hover, setHover] = useState<LifeHover | null>(null);
+  const [tryWebGL, setTryWebGL] = useState(false);
   select.current = onSelect; selectSubject.current = onSubject; selectVolume.current = onVolume;
+
+  useEffect(() => {
+    if (typeof Worker === 'undefined' || typeof OffscreenCanvas === 'undefined') { setTryWebGL(true); return; }
+    let active = true;
+    let worker: Worker | undefined;
+    let probeTimer = 0, startTimer = 0;
+    const finish = (result: string) => {
+      if (!active) return;
+      active = false; window.clearTimeout(probeTimer); worker?.terminate();
+      // If the worker cannot establish a reliable answer, let the main
+      // renderer try normally rather than silently disabling acceleration.
+      if (result !== 'software') setTryWebGL(true);
+    };
+    // Give the Canvas 2D preview a frame before the GPU process begins its
+    // probe, so the probe does not compete with the first drawing.
+    const frame = requestAnimationFrame(() => { startTimer = window.setTimeout(() => {
+      if (!active) return;
+      try { worker = new Worker(new URL('./lifeGpuProbe.js', import.meta.url), { type: 'module' }); }
+      catch { finish('unknown'); return; }
+      probeTimer = window.setTimeout(() => finish('unknown'), 8000);
+      worker.onmessage = (event: MessageEvent<string>) => finish(event.data);
+      worker.onerror = () => finish('unknown');
+      worker.postMessage(null);
+    }, 250); });
+    return () => { active = false; cancelAnimationFrame(frame); window.clearTimeout(startTimer); window.clearTimeout(probeTimer); worker?.terminate(); };
+  }, []);
 
   useEffect(() => {
     const element = host.current;
     if (!element) return;
     const layout = lifeGalaxyLayout(entries, subjects);
     let renderer: THREE.WebGLRenderer | null = null;
-    try {
-      // Probe only once. Three.js otherwise retries without the performance
-      // guard when the first context request fails, initializing slow software
-      // WebGL before we can switch to the much faster Canvas 2D renderer.
-      const canvas = document.createElement('canvas');
-      const options = { antialias: true, alpha: true, failIfMajorPerformanceCaveat: true };
-      const gl = canvas.getContext('webgl2', options) as WebGL2RenderingContext | null;
-      if (gl) {
-        const debug = gl.getExtension('WEBGL_debug_renderer_info');
-        const name = debug ? String(gl.getParameter(debug.UNMASKED_RENDERER_WEBGL)) : '';
-        if (/swiftshader|llvmpipe|software|warp/i.test(name)) gl.getExtension('WEBGL_lose_context')?.loseContext();
-        else renderer = new THREE.WebGLRenderer({ canvas, context: gl, ...options });
-      }
-    } catch { /* Canvas 2D remains available when WebGL is unavailable. */ }
+    if (tryWebGL) {
+      try {
+        // Probe only once. Three.js otherwise retries without the performance
+        // guard when the first context request fails, initializing slow software
+        // WebGL before we can switch to the much faster Canvas 2D renderer.
+        const canvas = document.createElement('canvas');
+        const options = { antialias: true, alpha: true, failIfMajorPerformanceCaveat: true };
+        const gl = canvas.getContext('webgl2', options) as WebGL2RenderingContext | null;
+        if (gl) {
+          const debug = gl.getExtension('WEBGL_debug_renderer_info');
+          const name = debug ? String(gl.getParameter(debug.UNMASKED_RENDERER_WEBGL)) : '';
+          if (/swiftshader|llvmpipe|software|warp/i.test(name)) gl.getExtension('WEBGL_lose_context')?.loseContext();
+          else renderer = new THREE.WebGLRenderer({ canvas, context: gl, ...options });
+        }
+      } catch { /* Canvas 2D remains available when WebGL is unavailable. */ }
+    }
     if (!renderer) {
       onRenderer('software');
       const fallback = mountLifeSoftware(element, entries, subjects, layout,
@@ -466,11 +495,11 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
         atmosphere.dispose(); nebula.dispose(); dot.dispose(); webgl.dispose(); canvas.remove();
       },
     };
-    drawing.current = controller; controller.update(selectedId, subjectId, highlightIds, connectHighlights, volumeId); controller.setMotion(motionEnabled);
+    drawing.current = controller; controller.update(selectedId, subjectId, highlightIds, connectHighlights, volumeId); controller.setMotion(motionEnabled); controller.setMode?.(mode);
     return () => { controller.dispose(); drawing.current = null; };
     // Selection changes update the existing scene without rebuilding it.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [entries, subjects]);
+  }, [entries, subjects, tryWebGL]);
   useEffect(() => { drawing.current?.update(selectedId, subjectId, highlightIds, connectHighlights, volumeId); }, [selectedId, subjectId, highlightIds, connectHighlights, volumeId]);
   useEffect(() => { drawing.current?.setMotion(motionEnabled); }, [motionEnabled]);
   useEffect(() => { drawing.current?.setMode?.(mode); }, [mode]);
