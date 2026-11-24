@@ -34,6 +34,7 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   const nodeHeads = new Int32Array(gridSize * gridSize), hubHeads = new Int32Array(gridSize * gridSize);
   nodeHeads.fill(-1); hubHeads.fill(-1);
   const nodeNext = new Int32Array(entries.length), hubNext = new Int32Array(subjects.length);
+  let hitMarginX = 1, hitMarginY = 1;
   const gridCell = (x: number, y: number) => {
     const col = Math.max(0, Math.min(gridSize - 1, Math.floor(x * gridSize)));
     const row = Math.max(0, Math.min(gridSize - 1, Math.floor(y * gridSize)));
@@ -41,6 +42,13 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   };
   const indexScreen = (positions: Float32Array, heads: Int32Array, next: Int32Array,
     index: number, x: number, y: number) => {
+    // Offscreen stars cannot be picked. Exclude them from the edge cells so
+    // zooming into a dense galaxy does not turn an edge hover into a scan of
+    // thousands of invisible stars. Keep a small margin for near-edge hits.
+    if (x < -hitMarginX || x > 1 + hitMarginX || y < -hitMarginY || y > 1 + hitMarginY) {
+      positions[index * 2] = NaN;
+      return;
+    }
     positions[index * 2] = x; positions[index * 2 + 1] = y;
     const cell = gridCell(x, y);
     next[index] = heads[cell]; heads[cell] = index;
@@ -50,6 +58,31 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   const littleEndian = new Uint8Array(new Uint32Array([0x01020304]).buffer)[0] === 4;
   const rgb = (r: number, g: number, b: number) => littleEndian
     ? (0xff000000 | b << 16 | g << 8 | r) >>> 0 : (r << 24 | g << 16 | b << 8 | 255) >>> 0;
+  // Selection changes frequently. Build the reverse links and the three
+  // possible display colors once instead of recomputing them for every star
+  // whenever a dossier or subject is selected.
+  const entryById = new Map(entries.map((entry) => [entry.id, entry]));
+  const incoming = new Map<string, string[]>();
+  for (const entry of entries) for (const target of entry.links) {
+    const sources = incoming.get(target);
+    if (sources) sources.push(entry.id); else incoming.set(target, [entry.id]);
+  }
+  const fullColors = new Uint32Array(entries.length);
+  const focusColors = new Uint32Array(entries.length);
+  const subjectColors = new Uint32Array(entries.length);
+  const color = new THREE.Color();
+  const volumeColors = layout.volumes.map((_, index) => {
+    const palette = LIFE_PALETTES[index % LIFE_PALETTES.length];
+    return [1, .45, .22].map((factor) => {
+      color.set(palette).multiplyScalar(factor);
+      const value = color.getHex();
+      return rgb(value >> 16 & 255, value >> 8 & 255, value & 255);
+    });
+  });
+  entries.forEach((entry, i) => {
+    const [full, focus, subject] = volumeColors[layout.volumes.indexOf(entry.volume)];
+    fullColors[i] = full; focusColors[i] = focus; subjectColors[i] = subject;
+  });
   const background = rgb(16, 23, 34), guideColor = rgb(43, 49, 56), hubColor = rgb(210, 176, 113);
   const lineColor = rgb(174, 146, 93), selectedColor = rgb(255, 233, 189);
   // These guides are fixed in world space; only their projection changes.
@@ -240,6 +273,7 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   controls.addEventListener('end', restoreWhenStill);
   const resize = () => {
     const cssWidth = Math.max(1, host.clientWidth), cssHeight = Math.max(1, host.clientHeight);
+    hitMarginX = 12 / cssWidth; hitMarginY = 12 / cssHeight;
     // Reduce raster cost for every kind of camera movement, then sharpen at rest.
     const scale = interacting ? .3 : .7;
     const nextWidth = Math.max(1, Math.round(cssWidth * scale));
@@ -333,17 +367,14 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   canvas.addEventListener('pointermove', move); canvas.addEventListener('pointerdown', pointerDown);
   canvas.addEventListener('pointerup', pointerUp); canvas.addEventListener('pointercancel', pointerCancel);
   canvas.addEventListener('pointerleave', leave);
-  const color = new THREE.Color();
   return {
     update(selected, subject) {
-      const chosen = entries.find((entry) => entry.id === selected);
+      const chosen = selected ? entryById.get(selected) : undefined;
       const related = new Set(chosen?.links ?? []);
-      if (chosen) for (const entry of entries) if (entry.links.includes(chosen.id)) related.add(entry.id);
+      if (chosen) for (const id of incoming.get(chosen.id) ?? []) related.add(id);
       entries.forEach((entry, i) => {
-        color.set(LIFE_PALETTES[layout.volumes.indexOf(entry.volume) % LIFE_PALETTES.length]);
-        const dim = subject && entry.subject !== subject ? .22 : selected && entry.id !== selected && !related.has(entry.id) ? .45 : 1;
-        color.multiplyScalar(dim);
-        const value = color.getHex(); colors[i] = rgb(value >> 16 & 255, value >> 8 & 255, value & 255);
+        colors[i] = subject && entry.subject !== subject ? subjectColors[i]
+          : selected && entry.id !== selected && !related.has(entry.id) ? focusColors[i] : fullColors[i];
       });
       selectedPoint = selected ? layout.locations.get(selected) : undefined;
       edges = [];

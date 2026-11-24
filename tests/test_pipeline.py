@@ -101,6 +101,9 @@ class CompilerTests(unittest.TestCase):
         publish_graph(sqlite_path, graph, "sqlite")
 
         exported = json.loads(json_path.read_text(encoding="utf-8"))
+        self.assertEqual(exported, graph)
+        self.assertLess(json_path.stat().st_size,
+                        len(json.dumps(graph, ensure_ascii=False, indent=2).encode("utf-8")))
         with closing(sqlite3.connect(sqlite_path)) as database:
             title, payload = database.execute("SELECT title, payload FROM nodes").fetchone()
             snapshot, = database.execute("SELECT value FROM metadata WHERE key = 'snapshot_id'").fetchone()

@@ -40,8 +40,9 @@ CREATE INDEX links_target ON links(target);
 """
 
 
-def graph_json(value: object, *, indent: int | None = None) -> str:
-    return json.dumps(value, sort_keys=True, ensure_ascii=False, allow_nan=False, indent=indent)
+def graph_json(value: object, *, indent: int | None = None, compact: bool = False) -> str:
+    return json.dumps(value, sort_keys=True, ensure_ascii=False, allow_nan=False, indent=indent,
+                      separators=(',', ':') if compact else None)
 
 
 def write_sqlite(path: Path, graph: dict) -> None:
@@ -86,7 +87,10 @@ def publish_graph(path: Path, graph: dict, output_format: str) -> None:
     with TemporaryDirectory(prefix=".astraia-build-", dir=path.parent) as directory:
         staged = Path(directory) / path.name
         if output_format == "json":
-            staged.write_text(graph_json(graph, indent=2) + "\n", encoding="utf-8", newline="\n")
+            # The public snapshot is fetched and parsed in browsers.  Removing
+            # formatting whitespace keeps every field while reducing download
+            # and repository size; the canonical snapshot hash stays unchanged.
+            staged.write_text(graph_json(graph, compact=True) + "\n", encoding="utf-8", newline="\n")
         else:
             write_sqlite(staged, graph)
         staged.replace(path)
