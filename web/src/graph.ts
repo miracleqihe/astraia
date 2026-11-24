@@ -286,10 +286,21 @@ export async function loadSnapshot(signal: AbortSignal): Promise<GraphSnapshot> 
   const candidates = import.meta.env.VITE_PUBLIC_DEMO === '1'
     ? ['graph_data.json'] : ['catalogue_data.json', 'graph_data.json'];
   let response: Response | null = null;
-  for (const filename of candidates) {
-    const current = await fetch(`${import.meta.env.BASE_URL}data/${filename}`, { signal, cache: 'no-store' });
+  for (let index = 0; index < candidates.length; index++) {
+    const filename = candidates[index];
+    let current: Response;
+    try {
+      current = await fetch(`${import.meta.env.BASE_URL}data/${filename}`, { signal, cache: 'no-store' });
+    } catch (error) {
+      // The optional local catalogue may not be available on a static host.
+      // An interrupted fetch, however, must not start another request.
+      if (signal.aborted || index === candidates.length - 1) throw error;
+      continue;
+    }
     if (current.ok && current.headers.get('content-type')?.includes('json')) { response = current; break; }
-    if (!current.ok && current.status !== 404) throw new Error('读取图谱快照失败。');
+    if (!current.ok && current.status !== 404 && index === candidates.length - 1) {
+      throw new Error('读取图谱快照失败。');
+    }
   }
   if (!response || !response.headers.get('content-type')?.includes('json')) {
     throw new Error('找不到图谱快照。请先在项目根目录编译知识库。');
