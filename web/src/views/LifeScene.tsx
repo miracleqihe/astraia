@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import type { LifeEntry, LifeSubject } from '../life';
 import { LIFE_PALETTES, lifeGalaxyLayout } from './lifeGalaxyLayout';
+import { createLifeGravity } from './lifeGravity';
 import { mountLifeSoftware } from './lifeSoftware';
 import type { LifeDrawing, LifeHover } from './lifeSceneTypes';
 
@@ -11,12 +12,14 @@ interface Props {
   subjects: LifeSubject[];
   selectedId: string | null;
   subjectId: string | null;
+  highlightIds: readonly string[];
   resetSerial: number;
   onSelect: (id: string) => void;
   onSubject: (id: string) => void;
+  onRenderer: (renderer: 'software' | 'webgl') => void;
 }
 
-export default function LifeScene({ entries, subjects, selectedId, subjectId, resetSerial, onSelect, onSubject }: Props) {
+export default function LifeScene({ entries, subjects, selectedId, subjectId, highlightIds, resetSerial, onSelect, onSubject, onRenderer }: Props) {
   const host = useRef<HTMLDivElement>(null);
   const drawing = useRef<LifeDrawing | null>(null);
   const select = useRef(onSelect), selectSubject = useRef(onSubject);
@@ -40,14 +43,16 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, re
     } catch { software = true; }
     if (software || !renderer) {
       renderer?.dispose();
+      onRenderer('software');
       const fallback = mountLifeSoftware(element, entries, subjects, layout,
         (id) => select.current(id), (id) => selectSubject.current(id), setHover);
-      drawing.current = fallback; fallback.update(selectedId, subjectId);
+      drawing.current = fallback; fallback.update(selectedId, subjectId, highlightIds);
       return () => { fallback.dispose(); drawing.current = null; };
     }
 
     const webgl = renderer;
-    webgl.setPixelRatio(Math.min(window.devicePixelRatio, 1.6)); webgl.setClearColor(0x101722, 1);
+    onRenderer('webgl');
+    webgl.setPixelRatio(Math.min(window.devicePixelRatio, 1.6)); webgl.setClearColor(0x04060c, 1);
     const canvas = webgl.domElement; canvas.dataset.renderer = 'webgl'; element.appendChild(canvas);
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(44, 1, 1, 4000);
@@ -64,16 +69,19 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, re
     const dotCanvas = document.createElement('canvas'); dotCanvas.width = dotCanvas.height = 32;
     const dotContext = dotCanvas.getContext('2d');
     if (!dotContext) throw new Error('无法创建星点纹理');
-    dotContext.fillStyle = '#fff'; dotContext.beginPath(); dotContext.arc(16, 16, 13, 0, Math.PI * 2); dotContext.fill();
+    const glow = dotContext.createRadialGradient(16, 16, 1, 16, 16, 15);
+    glow.addColorStop(0, '#fff'); glow.addColorStop(.35, 'rgba(255,255,255,.9)');
+    glow.addColorStop(1, 'rgba(255,255,255,0)');
+    dotContext.fillStyle = glow; dotContext.fillRect(0, 0, 32, 32);
     const dot = new THREE.CanvasTexture(dotCanvas);
-    const stars = new THREE.Points(geometry, new THREE.PointsMaterial({ size: 5, sizeAttenuation: false,
+    const stars = new THREE.Points(geometry, new THREE.PointsMaterial({ size: 7, sizeAttenuation: false,
       map: dot, vertexColors: true, transparent: true, opacity: .94, depthWrite: false }));
     scene.add(stars);
     const hubPositions = new Float32Array(subjects.length * 3);
     subjects.forEach((subject, index) => layout.centers.get(subject.id)?.toArray(hubPositions, index * 3));
     const hubGeometry = new THREE.BufferGeometry().setAttribute('position', new THREE.BufferAttribute(hubPositions, 3));
     const hubs = new THREE.Points(hubGeometry, new THREE.PointsMaterial({ color: '#e5c082', map: dot,
-      size: 11, sizeAttenuation: false, transparent: true, depthWrite: false }));
+      size: 15, sizeAttenuation: false, transparent: true, depthWrite: false }));
     scene.add(hubs);
     const rings: THREE.LineLoop[] = [];
     for (const radius of [90, 200, 320, 445]) {
@@ -143,8 +151,21 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, re
       return null;
     };
     let hovered = '';
+    let down = { x: 0, y: 0 }, gravityTimer = 0, gravityHeld = false;
+    const gravity = createLifeGravity(entries, layout);
+    let lastSelected: string | null = null, lastSubject: string | null = null;
+    let lastHighlights: readonly string[] = [];
+    const restoreGravity = () => {
+      window.clearTimeout(gravityTimer); gravityTimer = 0;
+      if (!gravityHeld) return;
+      gravityHeld = false; gravity.clear(); geometry.getAttribute('position').needsUpdate = true;
+      controller.update(lastSelected, lastSubject, lastHighlights);
+    };
     const move = (event: PointerEvent) => {
-      if (event.buttons) return;
+      if (event.buttons) {
+        if (Math.hypot(event.clientX - down.x, event.clientY - down.y) > 5) restoreGravity();
+        return;
+      }
       const target = hit(event), key = target ? `${target.kind}:${target.index}` : '';
       canvas.style.cursor = target ? 'pointer' : 'grab';
       if (key !== hovered) {
@@ -154,9 +175,17 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, re
         setHover(target ? { title, x: event.offsetX, y: event.offsetY } : null);
       }
     };
-    let down = { x: 0, y: 0 };
-    const pointerDown = (event: PointerEvent) => { focus = null; down = { x: event.clientX, y: event.clientY }; };
+    const pointerDown = (event: PointerEvent) => {
+      focus = null; down = { x: event.clientX, y: event.clientY };
+      const target = hit(event);
+      if (target?.kind === 'node') gravityTimer = window.setTimeout(() => {
+        const id = entries[target.index].id; gravityHeld = true; gravity.pull(id);
+        geometry.getAttribute('position').needsUpdate = true; select.current(id); schedule();
+      }, 480);
+    };
     const pointerUp = (event: PointerEvent) => {
+      const wasHeld = gravityHeld; restoreGravity();
+      if (wasHeld) return;
       if (Math.hypot(event.clientX - down.x, event.clientY - down.y) > 5) return;
       const target = hit(event);
       if (target?.kind === 'hub') selectSubject.current(subjects[target.index].id);
@@ -165,14 +194,19 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, re
     const leave = () => { hovered = ''; setHover(null); };
     canvas.addEventListener('pointermove', move); canvas.addEventListener('pointerdown', pointerDown);
     canvas.addEventListener('pointerup', pointerUp); canvas.addEventListener('pointerleave', leave);
+    canvas.addEventListener('pointercancel', restoreGravity);
     const color = new THREE.Color();
+    let lastFocus = '';
     const controller: LifeDrawing = {
-      update(selected, subject) {
+      update(selected, subject, highlights) {
+        lastSelected = selected; lastSubject = subject; lastHighlights = highlights;
         const chosen = entries.find((entry) => entry.id === selected), related = new Set(chosen?.links ?? []);
+        const matched = new Set(highlights);
         if (chosen) for (const entry of entries) if (entry.links.includes(chosen.id)) related.add(entry.id);
         entries.forEach((entry, i) => {
           color.set(LIFE_PALETTES[layout.volumes.indexOf(entry.volume) % LIFE_PALETTES.length]);
-          const dim = subject && entry.subject !== subject ? .22 : selected && entry.id !== selected && !related.has(entry.id) ? .45 : 1;
+          const dim = subject && entry.subject !== subject ? .22 : selected && entry.id !== selected && !related.has(entry.id) ? .28
+            : !selected && matched.size && !matched.has(entry.id) ? .22 : 1;
           color.multiplyScalar(dim);
           (geometry.getAttribute('color') as THREE.BufferAttribute).setXYZ(i, color.r, color.g, color.b);
         });
@@ -184,15 +218,26 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, re
           const target = layout.locations.get(id);
           if (target) linePoints.push(origin, target);
         }
+        if (!origin && highlights.length > 1) {
+          for (let index = 1; index < highlights.length; index++) {
+            const a = layout.locations.get(highlights[index - 1]), b = layout.locations.get(highlights[index]);
+            if (a && b) linePoints.push(a, b);
+          }
+        }
         lineGeometry.setFromPoints(linePoints);
         const target = origin ?? (subject ? layout.centers.get(subject) : undefined);
-        if (target) fly(target, origin ? 285 : 390); else { focus = null; schedule(); }
+        const key = selected ? `entry:${selected}` : subject ? `subject:${subject}` : '';
+        if (target && key !== lastFocus) fly(target, origin ? 285 : 390);
+        else if (!target) { focus = null; schedule(); } else schedule();
+        lastFocus = key;
       },
       reset() { fly(new THREE.Vector3(), 1165, overviewDirection); },
       dispose() {
+        window.clearTimeout(gravityTimer); gravity.clear();
         cancelAnimationFrame(frame); observer.disconnect(); controls.removeEventListener('change', schedule); controls.dispose();
         canvas.removeEventListener('pointermove', move); canvas.removeEventListener('pointerdown', pointerDown);
         canvas.removeEventListener('pointerup', pointerUp); canvas.removeEventListener('pointerleave', leave);
+        canvas.removeEventListener('pointercancel', restoreGravity);
         geometry.dispose(); (stars.material as THREE.Material).dispose(); hubGeometry.dispose(); (hubs.material as THREE.Material).dispose();
         selectedGeometry.dispose(); (selectedStar.material as THREE.Material).dispose(); lineGeometry.dispose(); (lines.material as THREE.Material).dispose();
         rings.forEach((ring) => { ring.geometry.dispose(); (ring.material as THREE.Material).dispose(); });
@@ -201,12 +246,12 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, re
         dot.dispose(); webgl.dispose(); canvas.remove();
       },
     };
-    drawing.current = controller; controller.update(selectedId, subjectId);
+    drawing.current = controller; controller.update(selectedId, subjectId, highlightIds);
     return () => { controller.dispose(); drawing.current = null; };
     // Selection changes update the existing scene without rebuilding it.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [entries, subjects]);
-  useEffect(() => { drawing.current?.update(selectedId, subjectId); }, [selectedId, subjectId]);
+  useEffect(() => { drawing.current?.update(selectedId, subjectId, highlightIds); }, [selectedId, subjectId, highlightIds]);
   useEffect(() => { if (resetSerial) drawing.current?.reset(); }, [resetSerial]);
   return <div className="life-scene" ref={host} aria-label="知识星图：拖动旋转，滚轮缩放，点击星点或学科星团">
     {hover && <div className="life-tooltip" style={{ left: hover.x + 12, top: hover.y + 12 }}>{hover.title}</div>}

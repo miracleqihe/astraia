@@ -40,6 +40,7 @@
 .life-result:hover, .life-related button:hover { background: #e5e0d5; }
 .life-result span, .life-related button span { display: block; font: 600 15px/1.5 var(--font-editorial); }
 .life-result small, .life-related button small { display: block; margin-top: 4px; color: #657082; font: 10px/1.4 var(--font-astrometric); }
+.life-result em { display: block; margin-top: 7px; color: #5a6578; font: normal 12px/1.65 var(--font-grotesk); }
 .life-more, .life-back, .life-original button { padding: 9px 12px; color: #1b2a4a; border: 1px solid #1b2a4a; background: transparent; }
 .life-more { margin-top: 18px; width: 100%; font-size: 12px; }
 .life-empty { padding: 25px 0; color: #657082; font-size: 13px; }
@@ -82,19 +83,66 @@
 .life-original-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 14px; font-size: 12px; }
 .life-original-actions a { color: #1b2a4a; }
 .life-original iframe { width: 100%; min-height: 650px; margin-top: 15px; border: 1px solid #1b2a4a; }
+
+/* OMNIA: the map spans the workspace; navigation and the reading folio float above it. */
+.life-workspace { position: relative; display: block; overflow: hidden; background: #04060c; }
+.life-map { position: absolute; inset: 0; background: #04060c; }
+.life-map::after { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(ellipse 28% 28% at 40% 35%, rgba(31,75,108,.16), transparent 75%),
+    radial-gradient(ellipse 25% 30% at 60% 65%, rgba(63,30,104,.13), transparent 75%),
+    radial-gradient(ellipse 20% 25% at 53% 42%, rgba(33,105,86,.1), transparent 75%); }
+.life-sidebar, .life-inspector { position: absolute; z-index: 5; top: 18px; bottom: 18px;
+  border: 1px solid rgba(239,236,230,.2); backdrop-filter: blur(14px); }
+.life-workspace[data-low-power='true'] .life-sidebar,
+.life-workspace[data-low-power='true'] .life-inspector,
+.life-workspace[data-low-power='true'] .life-view-controls { backdrop-filter: none; }
+.life-sidebar { left: 18px; width: 188px; background: rgba(10,14,26,.83); }
+.life-inspector { right: 18px; width: 405px; background: rgba(239,236,230,.97); }
+.life-map-heading { left: 238px; top: 42px; }
+.life-map-heading h1 { font-size: clamp(30px, 2.8vw, 43px); letter-spacing: .04em; }
+.life-map-heading h1 small { margin-left: 8px; font: 500 16px var(--font-editorial); letter-spacing: .02em; }
+.life-view-controls { position: absolute; z-index: 4; top: 35px; right: 445px; display: flex;
+  border: 1px solid rgba(239,236,230,.3); background: rgba(10,14,26,.8); backdrop-filter: blur(12px); }
+.life-view-controls button { padding: 8px 11px; color: #d7d2c8; border: 0; border-right: 1px solid rgba(239,236,230,.2);
+  background: transparent; font-size: 11px; }
+.life-view-controls button:last-child { border-right: 0; }
+.life-view-controls button:hover, .life-view-controls button[aria-pressed='true'] { color: #f4e6cb; background: rgba(194,157,89,.2); }
+.life-view-controls .life-reset { position: static; padding: 8px 11px; }
+.life-map-footer { left: 238px; right: 445px; bottom: 35px; }
+.life-search { background: rgba(239,236,230,.97); }
+.life-reading-modes { display: flex; gap: 14px; margin-top: 13px; }
+.life-reading-modes button { padding: 2px 0 4px; color: #5a6578; border: 0; border-bottom: 1px solid transparent;
+  background: transparent; font-size: 12px; }
+.life-reading-modes button[aria-pressed='true'] { color: #1b2a4a; border-bottom-color: #9a7131; }
+.life-reading-modes span { margin-left: 3px; color: #8c6d37; font-family: var(--font-astrometric); }
+.life-search-context { margin: 10px 0 0; color: #657082; font-size: 11px; }
+.life-save { padding: 7px 10px; color: #72531e; border: 1px solid #b79a67; background: transparent; font-size: 12px; }
+.life-save[aria-pressed='true'] { color: #1f5e4b; border-color: #1f5e4b; }
+.life-observation-note { display: block; margin-top: 15px; color: #1b2a4a; font-size: 12px; }
+.life-observation-note span { float: right; color: #657082; font-size: 11px; }
+.life-observation-note textarea { display: block; width: 100%; min-height: 78px; margin-top: 7px; padding: 8px;
+  border: 1px solid #a9a69f; color: #1b2a4a; background: #f6f3ed; resize: vertical; }
+@media (prefers-reduced-motion: no-preference) {
+  .life-scene { animation: life-arrive 1.8s ease-out both; }
+  @keyframes life-arrive { from { opacity: .25; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
+}
 @media (max-width: 1100px) and (min-width: 761px) {
-  .life-workspace { grid-template-columns: 160px minmax(0,1fr) 340px; }
-  .life-sidebar { padding-inline: 9px; }
+  .life-sidebar { width: 160px; padding-inline: 9px; }
+  .life-inspector { width: 340px; }
+  .life-map-heading { left: 197px; }
+  .life-view-controls { right: 377px; }
+  .life-map-footer { left: 197px; right: 377px; }
 }
 @media (max-width: 760px) {
-  .life-workspace { display: flex; flex-direction: column; }
+  .life-workspace { display: flex; flex-direction: column; overflow: visible; }
+  .life-sidebar, .life-inspector { position: static; width: auto; border: 0; backdrop-filter: none; }
   .life-sidebar { max-height: 230px; }
   .life-volume { display: inline-block; width: 49%; vertical-align: top; }
-  .life-map { min-height: 480px; }
+  .life-map { position: relative; min-height: 480px; }
   .life-map-heading { left: 31px; top: 29px; }
   .life-map-heading h1 { font-size: 27px; }
-  .life-reset { top: 95px; right: 30px; }
-  .life-map-footer { left: 31px; bottom: 30px; }
+  .life-view-controls { top: 104px; left: 31px; right: auto; }
+  .life-map-footer { left: 31px; right: 31px; bottom: 30px; }
   .life-inspector { overflow: visible; }
   .life-search { position: static; }
   .life-original iframe { min-height: 500px; }

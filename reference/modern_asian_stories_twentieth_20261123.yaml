@@ -1,0 +1,775 @@
+themes:
+- id: corpus_asia_roads_houses_rumors_2002_2026
+  title: 夜路、旧屋与人群｜亚洲地方怪谈的几条线索
+  paragraphs:
+  - 同一段夜路，有人记住坡道和弯，有人记住车里的乘客，还有人记住从林地深处传来的笑声。地方怪谈常把一个可辨认的地点，变成一段可以转述的经历。
+  - 在千叶富津，民俗研究者通过访谈和隧道故事分析，讨论空间气氛怎样影响人的感受；在江西铜鼓，调查人员则围绕门前光影做了现场遮挡实验。两种材料提出的问题不同，却都保留了故事发生的环境。
+  - 网络照片、夜访报道和口耳相传会让旧屋或道路获得新的名字。我们把故事、报道后续和当事人的不同说法放在一起阅读，不把相似情节直接当作传播路线或共同起源。
+  sources:
+  - &id004
+    citation: 岩埜紘史朗，〈雰囲気と怪異：トンネル怪談と心霊スポット「観音隧道」を事例として〉，《現代民俗学研究》18，2026，85–100 页。
+    type: peer_reviewed
+    url: https://www.jstage.jst.go.jp/article/slf/18/0/18_85/_article/-char/ja
+    locator: 摘要及论文第 93、95–96 页
+  - &id001
+    citation: 陈国菊、陈欣，〈“鬼火”微信传言日点击量上万 房主财产受损〉，大江网，2015 年 6 月 1 日；中新网转载。
+    type: investigative_report
+    url: https://www.chinanews.com/sh/2015/06-01/7313982.shtml
+    locator: 传闻传播、住户访谈与现场遮挡实验
+  - &id006
+    citation: Faizal Amiruddin，〈Mitos Nini Loyeh dan Jalur Gaib di Tengah Warga Pangandaran〉，detikNews，2021 年 10 月 19 日。
+    type: interview
+    url: https://news.detik.com/berita-jawa-barat/d-5773168/mitos-nini-loyeh-dan-jalur-gaib-di-tengah-warga-pangandaran
+    locator: 地方负责人及村民采访
+  - &id003
+    citation: 王朝钰，〈长发黑衣女等 3 人基隆隧道拍灵异短片〉，中央社，2025 年 11 月 20 日。
+    type: newspaper_report
+    url: https://www.cna.com.tw/news/asoc/202511200087.aspx
+    locator: 目击、警方调阅及法院裁罚
+  peers:
+  - corpus_cn_empty_buildings_2004_2008
+  - text_atlas_night_travel
+  - corpus_asia_campus_lore_spaces_2004_2024
+records:
+- id: case_cn_tonggu_light_reflection_2015
+  title: 江西铜鼓｜门前游动的光
+  genre: urban_legend
+  reading_kind: legend
+  credibility_tier: A
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 28.629317
+    lng: 114.387797
+    precision: city
+    location_name: 中国江西 · 铜鼓县参考
+    culture_region: 中国 · 近现代地方传闻
+  map_label: 铜鼓县
+  location_note: 点位是铜鼓县区域参考，不指向报道中的私人住宅。
+  temporal:
+    year_start: 2015
+    year_end: 2015
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 2015 年，江西一处村庄流传一则微信消息：夜里有亮光在一栋新房门前移动，被人叫作“鬼灯笼”。消息很快传开，赶来看热闹的人越来越多。
+  - 当地调查人员在夜间观察，并用遮光布遮住门窗：亮光随之消失；移开遮挡后，又出现了。调查组将这一现象解释为远处动态灯光经过门窗反射和折射形成的影像。
+  - 报道也记录了围观带来的影响：车辆堵住村路，住宅主人和邻居不得不反复解释。故事从一束光，变成了关于陌生人、手机消息和家庭生活的故事。
+  sources:
+  - *id001
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/3182918
+    locator: 中国江西 · 铜鼓县参考
+  peers:
+  - corpus_cn_empty_buildings_2004_2008
+- id: case_cn_hengshui_red_building_2011
+  title: 河北衡水｜半拆楼里的脚步声
+  genre: urban_legend
+  reading_kind: legend
+  credibility_tier: A
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 37.73643
+    lng: 115.667723
+    precision: city
+    location_name: 中国河北 · 衡水城区参考
+    culture_region: 中国 · 近现代地方传闻
+  map_label: 衡水
+  location_note: 点位为衡水城区参考，不标示当年的住宅或住户。
+  temporal:
+    year_start: 2011
+    year_end: 2011
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 衡水一幢商住楼被拆去一部分后，红色外墙和空荡的楼体格外显眼。附近流传着做饭时听见身后脚步声、睡在床上却在地上醒来的说法。
+  - 2011 年记者采访时，拆迁部门解释，工程停下涉及尚未签订协议的住户，以及与邻近建筑距离过近的安全问题。两位当地村民则把早年的“闹鬼”说法与搬迁纠纷联系起来。
+  - 脚步声和房屋来历有不同版本；当时能看到的半拆建筑和关于它的故事，被路人一起记住了。
+  sources:
+  - citation: 中新网，〈河北衡水一搁置建筑被传“鬼楼” 拆迁部门回应〉，2011 年 4 月 21 日；华商网转载。
+    type: investigative_report
+    url: https://news.hsw.cn/system/2011/04/21/050901861.shtml
+    locator: 居民讲述与拆迁部门回应
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/3443419
+    locator: 中国河北 · 衡水城区参考
+  peers:
+  - corpus_cn_empty_buildings_2004_2008
+- id: case_cn_danzhou_shop_rumor_2008
+  title: 海南儋州｜十五年没有租出的铺面
+  genre: urban_legend
+  reading_kind: legend
+  credibility_tier: A
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 19.516795
+    lng: 109.542428
+    precision: city
+    location_name: 中国海南 · 儋州那大镇参考
+    culture_region: 中国 · 近现代地方传闻
+  map_label: 那大镇
+  location_note: 点位为那大镇区域参考，不指向具体商铺。
+  temporal:
+    year_start: 2008
+    year_end: 2008
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 那大镇一处两层铺面，长年被人称作“鬼屋”。经过的人越讲越玄，房东想出租或出售，却很难找到愿意接手的人。
+  - 《海南日报》2008 年回访时，铺面正在装修，准备重新营业。报道说，报社前一年的调查将流言追溯到多年前的一场纠纷；随后有读者联系房东，询问租房或买房。
+  - 这条新闻留下了传闻的另一面：故事在街上流传多年，也改变了一间普通铺面的命运。
+  sources:
+  - citation: 孙乐明、郭树坤，〈“鬼屋”闲置 15 年 装修一新成旺铺〉，《海南日报》，2008 年 3 月 19 日，第 12 版。
+    type: newspaper_report
+    url: https://news.hndaily.cn/resfile/2008-03-19/012/90121205895362860.pdf
+    locator: 社会新闻版的跟踪报道
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/18320785
+    locator: 中国海南 · 儋州那大镇参考
+  peers:
+  - corpus_cn_empty_buildings_2004_2008
+- id: case_cn_beijing_tuanjiehu_building_rumor_2011
+  title: 北京团结湖｜像录像带一样的墙
+  genre: urban_legend
+  reading_kind: legend
+  credibility_tier: B
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 39.930556
+    lng: 116.457696
+    precision: city
+    location_name: 中国北京 · 团结湖街区参考
+    culture_region: 中国 · 近现代地方传闻
+  map_label: 团结湖
+  location_note: 点位为团结湖街区参考，不指向具体住户或楼层。
+  temporal:
+    year_start: 2011
+    year_end: 2011
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 北京一处公寓的空置和冷清，在网上被解释成“楼里有鬼”。有人又补上一种说法：墙面能够像录像带一样留下人影，遇到闪电时再把影子放出来。
+  - 2011 年记者访问住户和周边人士，发现不少人最初也是从网络听到这个故事；报道同时追问楼盘销售、入住和开发商等现实背景。
+  - 会“播放影像”的墙是流言中的解释，报道并没有用实验支持这种说法。
+  sources:
+  - citation: 〈紫荆豪庭捂盘拖出鬼故事〉，2011 年 10 月 28 日，新浪财经转载。
+    type: investigative_report
+    url: https://finance.sina.cn/sa/2011-10-28/detail-ikftssan7759548.d.html?wm=3049_0015
+    locator: 住户采访、房屋传闻与销售背景
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/18259904
+    locator: 中国北京 · 团结湖街区参考
+  peers:
+  - corpus_cn_empty_buildings_2004_2008
+- id: case_cn_hk_star_street_shelter_rumor_2022
+  title: 香港星街｜防空洞前的神龛
+  genre: urban_legend
+  reading_kind: legend
+  credibility_tier: A
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 22.275951
+    lng: 114.168608
+    precision: city
+    location_name: 中国香港 · 湾仔星街参考
+    culture_region: 东亚 · 香港
+  map_label: 星街
+  location_note: 点位为星街街区参考，不指向防空洞的具体入口。
+  temporal:
+    year_start: 2022
+    year_end: 2022
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 湾仔星街一带有一处旧防空洞。围绕它流传着战时遇难者和夜间身影的故事，洞口附近的土地神龛也被一些人看作社区求平安的回应。
+  - 香港地方志中心把防空洞的留存、神龛和地方传说并列记录。另一篇采访里，一位保育人士转述祖辈曾在洞内避难的经历，对洞内发生过什么提出了不同说法。
+  - 旧洞、神龛与街坊记忆共同留下了一个地点的多重讲法；它们并不自动证明传闻中的每件事。
+  sources:
+  - &id002
+    citation: 香港地方志中心，〈「猛鬼」灣仔（上）：南固臺與星街防空洞〉，2022 年。
+    type: institutional_account
+    url: https://hkchronicles.org.hk/%E9%A6%99%E6%B8%AF%E5%BF%97/%E6%96%87%E5%8C%96/%E7%8C%9B%E9%AC%BC%E7%81%A3%E4%BB%94%E4%B8%8A_%E5%8D%97%E5%9B%BA%E8%87%BA%E6%85%B0%E5%AE%89%E6%89%80%E8%AE%8A%E8%AD%89%E5%A9%9A%E5%A0%B4%E5%9C%B0_%E6%98%9F%E8%A1%97%E9%98%B2%E7%A9%BA%E6%B4%9E%E5%89%8D%E7%AB%9F%E6%9C%89%E7%A5%9E%E5%A3%87
+    locator: 南固台与星街防空洞部分
+  - citation: 香港01，〈湾仔星街一带及早期香港坟场遗迹〉，2022 年。
+    type: interview
+    url: https://www.hk01.com/%E7%A4%BE%E5%8D%80%E5%B0%88%E9%A1%8C/801985/%E9%AC%BC%E7%AF%80-%E5%B1%A2%E5%82%B3%E6%B8%AF%E5%B3%B6%E6%9C%80%E7%8C%9B%E9%AC%BC%E7%81%A3%E4%BB%94%E6%98%9F%E8%A1%97%E4%B8%80%E5%B8%B6-%E9%A6%96%E5%BA%A6%E7%99%BC%E7%8F%BE%E6%9C%AC%E6%B8%AF%E6%9C%80%E6%97%A9%E6%9C%9F%E5%A2%B3%E5%A0%B4%E9%81%BA%E8%B7%A1
+    locator: 社区保育人士的祖辈回忆及不同解释
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/way/88377335
+    locator: 中国香港 · 湾仔星街参考
+  peers:
+  - case_cn_hk_high_street_haunted_house
+- id: case_cn_hk_nam_koo_terrace_tour_2003
+  title: 香港湾仔｜夜访南固台
+  genre: urban_legend
+  reading_kind: legend
+  credibility_tier: A
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 22.279015
+    lng: 114.172483
+    precision: city
+    location_name: 中国香港 · 湾仔区参考
+    culture_region: 东亚 · 香港
+  map_label: 湾仔
+  location_note: 点位是湾仔区参考，不作为进入建筑或寻找当事人的指引。
+  temporal:
+    year_start: 2022
+    year_end: 2022
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 湾仔的南固台长期被称作“鬼屋”，红砖宅第、关闭的大门和战时传闻，使它不断出现在城市怪谈里。
+  - 香港地方志中心回顾，2003 年曾有一群年轻人夜访，部分人在现场惊叫，随后由警员送院。报道没有给这次反应确定原因。
+  - 后来社区导赏把大宅的建筑历史与鬼故事放在一起讲，听众走过的不只是传闻，也是一段不断变化的城市空间。
+  sources:
+  - *id002
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/node/490729978
+    locator: 中国香港 · 湾仔区参考
+  peers:
+  - case_cn_hk_high_street_haunted_house
+- id: case_cn_tw_daguanshan_tunnel_2022
+  title: 台湾南横｜大关山隧道的天花板
+  genre: urban_legend
+  reading_kind: legend
+  credibility_tier: B
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 23.26481
+    lng: 120.95808
+    precision: city
+    location_name: 中国台湾 · 南横大关山隧道参考
+    culture_region: 东亚 · 台湾
+  map_label: 大关山
+  location_note: 点位为公开地图中的隧道区域参考，不代表传闻所述位置。
+  temporal:
+    year_start: 2022
+    year_end: 2022
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 南横公路的大关山隧道附近常有云雾。一个广为流传的版本说，开凿时发生事故，工人被固定在隧道顶部，从此路过的人不愿抬头。
+  - 2022 年公路整修后重新开放，新闻再次介绍了这个故事，同时指出施工事故的说法只是未经证实的网络传闻。
+  - 隧道和高山道路真实存在；洞顶的故事则属于不同版本不断增添的地方传说。
+  sources:
+  - citation: 吕欣芷，〈南横公路大关山隧道传说〉，TVBS 新闻网，2022 年 5 月 6 日。
+    type: newspaper_report
+    url: https://news.tvbs.com.tw/life/1785487
+    locator: 隧道位置与流传的施工故事
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/way/1246216800
+    locator: 中国台湾 · 南横大关山隧道参考
+  peers:
+  - case_cn_tw_taipei_xinhai_taxi
+- id: case_cn_tw_keelung_zhongshan_costume_2025
+  title: 基隆｜隧道边的长发身影
+  genre: memorate
+  reading_kind: report
+  credibility_tier: A
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 25.131723
+    lng: 121.744652
+    precision: city
+    location_name: 中国台湾 · 基隆市参考
+    culture_region: 东亚 · 台湾
+  map_label: 基隆
+  location_note: 点位为基隆城市参考，不标示拍摄者或目击者的个人信息。
+  temporal:
+    year_start: 2025
+    year_end: 2025
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 2025 年 10 月，一位驾驶人经过基隆中山隧道，看到路边站着一名长发、穿黑衣的人。回程再次看见后，他拍下照片；照片随后在网上引发议论。
+  - 警方调阅监视器，查明画面中的人正在与同伴拍摄灵异短片。后续报道说，法院认定这一装扮可能惊吓用路人并危及安全，对三人作出裁罚。
+  - 这是一则有后续的现实事件：夜路上的身影、上传的照片和“隧道有鬼”的说法，在几天内连成了一条传播链。
+  sources:
+  - citation: TVBS 新闻网，〈基隆中山隧道惊现人形鬼影？〉，2025 年 10 月 30 日。
+    type: newspaper_report
+    url: https://news.tvbs.com.tw/local/3030389
+    locator: 目击者经历与警方当时的调查
+  - *id003
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/1296154
+    locator: 中国台湾 · 基隆市参考
+  peers:
+  - case_cn_tw_taipei_xinhai_taxi
+- id: case_jp_futtsu_kannon_tunnel_horn_2026
+  title: 千叶富津｜观音隧道里的喇叭
+  genre: urban_legend
+  reading_kind: legend
+  credibility_tier: A
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 35.303915
+    lng: 139.85705
+    precision: city
+    location_name: 日本千叶县 · 富津市参考
+    culture_region: 东亚 · 日本
+  map_label: 富津市
+  location_note: 点位为富津市行政区域参考，不是封闭隧道的入口。
+  temporal:
+    year_start: 2026
+    year_end: 2026
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 千叶县富津市通往山上观音像的旧隧道，流传着一个做法：夜里在隧道中鸣笛，之后便会遇到怪事。另一些讲述说，车窗会出现手印。
+  - 民俗学者岩埜紘史朗采访了 31 位附近居民，并分析 518 篇关于隧道怪谈的文本。受访者提到的版本包括现身的灵、鸣笛和车窗手印。
+  - 研究把幽暗山路、声音回响与人们预先听过的故事放在一起讨论，关心一个地点如何逐渐被体验成“怪谈现场”。
+  sources:
+  - *id004
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/2679911
+    locator: 日本千叶县 · 富津市参考
+  peers:
+  - case_jp_kyoto_kazan_tunnel_damp_shapes
+- id: case_jp_kyoto_kiyotaki_melodica_2017
+  title: 京都清泷｜口风琴停下后的笑声
+  genre: memorate
+  reading_kind: report
+  credibility_tier: B
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 35.030054
+    lng: 135.662019
+    precision: city
+    location_name: 日本京都 · 清泷山路附近参考
+    culture_region: 东亚 · 日本
+  map_label: 清泷
+  location_note: 点位为清泷附近道路参考，不是隧道内的具体位置。
+  temporal:
+    year_start: 2026
+    year_end: 2026
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 一次冬夜探访中，几位朋友轮流走进京都清泷隧道。其中一人走到里面，用口风琴吹了一段旋律；等候的人听见回响后，又听到类似笑声的声音。
+  - 走出来的朋友说，自己在演奏结束后也听见了像孩子笑声的声音。这个经过由其中一位参与者写入 2019 年出版的探访记录。
+  - 2026 年一篇民俗学论文引用了这段记录，讨论狭窄道路、弯曲的出口、回声与访客的预期如何共同形成恐怖体验。
+  sources:
+  - *id004
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/way/60628162
+    locator: 日本京都 · 清泷山路附近参考
+  peers:
+  - case_jp_kyoto_kazan_tunnel_damp_shapes
+- id: case_jp_tokyo_sangenjaya_staged_room_2024
+  title: 东京三轩茶屋｜排练室里的响声
+  genre: memorate
+  reading_kind: report
+  credibility_tier: A
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 35.64409
+    lng: 139.669032
+    precision: city
+    location_name: 日本东京 · 三轩茶屋街区参考
+    culture_region: 东亚 · 日本
+  map_label: 三轩茶屋
+  location_note: 点位为三轩茶屋地区参考，不指向排练室。
+  temporal:
+    year_start: 2024
+    year_end: 2024
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 东京一间剧团排练室因接连出现类似灵异现象的画面和声音受到关注，并成为电影《三茶的骚灵》的题材。
+  - 两名研究者在续作拍摄期间两次到场记录，结合声音频谱、红外影像和房间结构检查。论文作者认为，他们分析到的现象属于人为演出；例如部分声响被推测来自舞台下的扬声设备。
+  - 2024 年论文保留了逐项观察与推断，使这件事既是一则现代怪谈，也是一份关于表演和证据的现场记录。
+  sources:
+  - citation: 小久保秀之、児玉和俊，〈疑似心霊現象の事例調査〉，《人体科学》33(1)，2024，1–17 页。
+    type: peer_reviewed
+    url: https://www.jstage.jst.go.jp/article/jmbs/33/1/33_1/_article/-char/ja
+    locator: 摘要及第 13 页表 2
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/node/307669111
+    locator: 日本东京 · 三轩茶屋街区参考
+  peers:
+  - case_cn_kunming_camera_lens_cap_2006
+- id: case_jp_ome_fukiage_tunnel_2021
+  title: 东京青梅｜旧吹上隧道的哭声
+  genre: urban_legend
+  reading_kind: legend
+  credibility_tier: B
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 35.788053
+    lng: 139.275355
+    precision: city
+    location_name: 日本东京 · 青梅市参考
+    culture_region: 东亚 · 日本
+  map_label: 青梅
+  location_note: 点位是青梅市区域参考，不指向已封闭的旧隧道。
+  temporal:
+    year_start: 2021
+    year_end: 2021
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 东京青梅有新旧几代吹上隧道。关于旧隧道的传闻说，有时会听见孩子哭声，或看见穿白色和服的人影。
+  - 2021 年记者访问周边居民，有人说小时候把老隧道附近当作玩耍的地方，并不记得当时有这些故事；也有人谈起后来到访者的噪声与遗留物。
+  - 采访中，讲述者对与隧道相关的历史事件和网上流传的版本提出区分。隧道成名的过程，因而也留下了当地人的另一种记忆。
+  sources:
+  - citation: 《週刊女性 PRIME》，〈吹上トンネルで聞こえる幼子の泣き声と悲しい記憶〉，2021 年 4 月 4 日；Livedoor 新闻转载。
+    type: interview
+    url: https://news.livedoor.com/article/detail/19967998/
+    locator: 隧道传闻与周边居民访谈
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/1761834
+    locator: 日本东京 · 青梅市参考
+  peers:
+  - case_jp_kyoto_kazan_tunnel_damp_shapes
+- id: case_kr_yesan_salmokji_navigation_2026
+  title: 韩国礼山｜导航尽头的水库
+  genre: urban_legend
+  reading_kind: legend
+  credibility_tier: B
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 36.680899
+    lng: 126.844874
+    precision: city
+    location_name: 韩国忠清南道 · 礼山郡参考
+    culture_region: 东亚 · 韩国
+  map_label: 礼山郡
+  location_note: 点位是礼山郡行政区域参考，不是水库入口或目击位置。
+  temporal:
+    year_start: 2026
+    year_end: 2026
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 韩国一档讲述怪谈的电视节目提到礼山郡的萨尔莫吉水库：一位女子说，车辆导航带她驶向水边，差一点开进水里。节目里的经历与后续遭遇都出自讲述者。
+  - 水库后来成为恐怖电影的灵感来源。2026 年报道回顾了节目、电影和前来寻找地点的人，也提醒读者区分现实水库与电影情节。
+  - 对当地人而言，它首先是一处水库；对听过故事的人来说，导航画面的尽头又多了一层想象。
+  sources:
+  - citation: 'Woo Jae-yeon，〈Salmokji: Whispering Water brings real-life paranormal hotspot to big screen〉，韩联社，2026 年 3 月 4 日。'
+    type: interview
+    url: https://en.yna.co.kr/view/AEN20260304008200315
+    locator: 水库、传闻及导演采访
+  - citation: Korea JoongAng Daily，〈Salmokji success has fans flocking to real life reservoir〉，2026 年 4 月 17 日。
+    type: newspaper_report
+    url: https://www.koreajoongangdaily.com/entertainment/salmokji-whispering-water-success-has-fans-flocking-to-real-life-reservoir/12613177
+    locator: 电视节目中的导航故事及电影传播
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/7578859
+    locator: 韩国忠清南道 · 礼山郡参考
+  peers:
+  - case_id_bintaro_railway_stories_2024
+- id: case_sg_mount_pleasant_student_2014
+  title: 新加坡｜请绕开欢乐山的乘客
+  genre: memorate
+  reading_kind: report
+  credibility_tier: B
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 1.326593
+    lng: 103.82684
+    precision: city
+    location_name: 新加坡 · Mount Pleasant Road 区域参考
+    culture_region: 东南亚 · 新加坡
+  map_label: 欢乐山
+  location_note: 点位为 Mount Pleasant Road 一段道路参考，不代表车辆行驶的精确地点。
+  temporal:
+    year_start: 2014
+    year_end: 2014
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 一位出租车司机讲起，自己接到一名学生，对方想去宏茂桥，却请求不要经过 Mount Pleasant 一带。司机说原路线更快，继续向前开。
+  - 乘客碰了碰他的肩膀。司机回头时，后座却已经空了；他再看向前方，又把路边树影误认成人影，急忙避让。
+  - 这段故事刊于 2014 年对新加坡司机的采访整理，保留的是司机的讲述，没有独立确认车上的经过。
+  sources:
+  - &id005
+    citation: Nicole Lee，〈5 spooky tales from Singapore taxi drivers〉，Weekender Singapore 采访，2014 年 10 月 25 日；Mothership 转刊。
+    type: interview
+    url: https://mothership.sg/2014/10/8-spooky-tales-from-spores-master-storytellers-taxi-drivers/
+    locator: 司机口述故事的第 1、3 节
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/way/44839227
+    locator: 新加坡 · Mount Pleasant Road 区域参考
+  peers:
+  - case_sg_orchard_ride_previous_passenger_2022
+- id: case_sg_joo_koon_two_passengers_2014
+  title: 新加坡裕群｜一人上车，两人下车
+  genre: memorate
+  reading_kind: report
+  credibility_tier: B
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 1.3277
+    lng: 103.6782
+    precision: city
+    location_name: 新加坡 · 裕群站附近区域参考
+    culture_region: 东南亚 · 新加坡
+  map_label: 裕群
+  location_note: 点位为裕群站附近的地区参考，不是上下车的精确地点。
+  temporal:
+    year_start: 2014
+    year_end: 2014
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 凌晨，一位司机在裕廊西附近接到看起来有些醉意的年轻人。一路上乘客很安静，车开向裕群。
+  - 到了目的地，乘客递钱下车。司机后来讲述，自己确信上车的只有一个人，却看见两个人从车里离开。
+  - 这是 2014 年司机采访整理中的一则口述故事；它把普通的夜间接送，变成了一次难以解释的人数变化。
+  sources:
+  - *id005
+  - citation: OpenStreetMap / 地点目录，区域参考。
+    type: map_reference
+    url: https://mapcarta.com/N385878948
+    locator: 新加坡 · 裕群站附近区域参考
+  peers:
+  - case_sg_orchard_ride_previous_passenger_2022
+- id: case_my_driver_leaves_granny_2018
+  title: 马来西亚｜树叶车费与墓园乘客
+  genre: memorate
+  reading_kind: report
+  credibility_tier: C
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 4.569375
+    lng: 102.265682
+    precision: culture_region
+    location_name: 马来西亚 · 国家区域参考
+    culture_region: 东南亚 · 马来西亚
+  map_label: 马来西亚
+  location_note: 来源未提供城市与路线；点位只表示马来西亚区域。
+  temporal:
+    year_start: 2018
+    year_end: 2018
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 一位网约车司机的妻子在社交媒体上转述：丈夫收到一位乘客的车费后，回头发现钱包里是几片枯叶，而不是应收的钱。
+  - 她又讲起另一次接送：一位老妇要求前往墓园附近，导航把车引到一片空地。司机回头告知已经到达时，后座却没有人。
+  - 2018 年的报道整理了这些帖子与图片。两段经历来自同一位司机经家人转述的说法，文章没有公布具体路线。
+  sources:
+  - citation: Sulaiman Daud，〈M’sian lady recounts husband’s experiences while driving for Grab & Uber〉，Mothership，2018 年 11 月 12 日。
+    type: media_account
+    url: https://mothership.sg/2018/11/ghost-grab-uber-driver/
+    locator: 妻子社交媒体转述的树叶车费与墓园乘客
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/2108121
+    locator: 马来西亚 · 国家区域参考
+  peers:
+  - case_sg_orchard_ride_previous_passenger_2022
+- id: case_id_cijulang_nini_loyeh_2021
+  title: 印尼芝朱朗｜留给三位老人的窄路
+  genre: memorate
+  reading_kind: report
+  credibility_tier: B
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: -7.727244
+    lng: 108.472719
+    precision: city
+    location_name: 印度尼西亚西爪哇 · 芝朱朗地区参考
+    culture_region: 东南亚 · 印度尼西亚
+  map_label: 芝朱朗
+  location_note: 点位为芝朱朗地区参考，不指向村民住宅。
+  temporal:
+    year_start: 2021
+    year_end: 2021
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 西爪哇一处村落里，有人建房时会在相邻墙壁之间留出狭窄的空隙。当地故事说，那是三位年长女性灵体往来时各自使用的道路。
+  - 一位村民告诉记者，过去有人封住了通道，夜里便听见哭声；房屋重新留出间隔后，声音才停下。另一位地方负责人说，老一辈会提醒后人不要挡住这些路线。
+  - 2021 年的采访把巷道、住宅形制与传说一起记录下来。故事解释了空隙在当地记忆中的意义，也保留了讲述者自己的看法。
+  sources:
+  - *id006
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/node/1308715672
+    locator: 印度尼西亚西爪哇 · 芝朱朗地区参考
+  peers:
+  - case_id_pontianak_ghost_river_cannon
+- id: case_id_semarang_silayur_voice_2022
+  title: 三宝垄｜坡道上的红衣人
+  genre: memorate
+  reading_kind: report
+  credibility_tier: B
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: -6.998116
+    lng: 110.350615
+    precision: city
+    location_name: 印度尼西亚中爪哇 · 三宝垄恩加利安地区参考
+    culture_region: 东南亚 · 印度尼西亚
+  map_label: 恩加利安
+  location_note: 点位为恩加利安地区参考，不是某次交通事故的位置。
+  temporal:
+    year_start: 2022
+    year_end: 2022
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 三宝垄西侧一段坡道有弯，车辆下坡时常需要格外留意。附近居民也讲起夜里的红衣身影，以及一名司机在事故前听见女子声音的说法。
+  - 一位受访者回忆，父亲夜间经过，见有人坐在路边；几小时后回程，那个身影似乎换到了道路另一侧。父亲没有停下，故事便留在了家人的记忆里。
+  - 2022 年报道同时采访交通警方：坡道、繁忙时段、车辆状态和道路行为都是需要考虑的事故因素。路况与传闻在同一篇报道中分别出现。
+  sources:
+  - citation: detikJateng，〈Cerita Horor Tanjakan Silayur Semarang〉，2022 年 10 月 31 日。
+    type: interview
+    url: https://www.detik.com/jateng/berita/d-6380181/cerita-horor-tanjakan-silayur-semarang-sering-dikaitkan-kejadian-kecelakaan
+    locator: 居民讲述、路况及交通警方回应
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/8281491
+    locator: 印度尼西亚中爪哇 · 三宝垄恩加利安地区参考
+  peers:
+  - case_id_semarang_gombel_hill_wewe
+- id: case_id_bandung_ambulance_2016
+  title: 万隆｜总会回来的救护车
+  genre: urban_legend
+  reading_kind: legend
+  credibility_tier: B
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: -6.921846
+    lng: 107.607083
+    precision: city
+    location_name: 印度尼西亚西爪哇 · 万隆城区参考
+    culture_region: 东南亚 · 印度尼西亚
+  map_label: 万隆
+  location_note: 点位为万隆城区参考，不指向旧车、私人建筑或现有车主。
+  temporal:
+    year_start: 2016
+    year_end: 2016
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 万隆一栋旧建筑前，曾长期停着一辆老救护车。城里的故事说，它无论被带到哪里，最后都会自己回到原来的院子；另一个版本说，它会在夜里独自驶出。
+  - 2016 年记者回访，附近商户说那辆车已在两个月前被运输车带走，照片也记录了搬运过程。关于车辆来历的不同说法，仍然留在口耳相传的版本里。
+  - 这辆车还出现在恐怖电影中：一件看得见的旧物，先成为地方怪谈，后来又有了自己的银幕形象。
+  sources:
+  - citation: Erna Mardiana，〈Tamatnya Kisah Ambulans “Horor” di Bandung〉，detikNews，2016 年 5 月 16 日。
+    type: investigative_report
+    url: https://news.detik.com/berita/d-3211417/tamatnya-kisah-ambulans-horor-di-bandung-yang-pindah-ke-parung
+    locator: 传说版本及当年搬运过程
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/13290062
+    locator: 印度尼西亚西爪哇 · 万隆城区参考
+  peers:
+  - case_id_bandung_isola_window_piano_2022
+- id: case_id_bengkayang_forest_laughter_2022
+  title: 西加里曼丹｜林地深处的笑声
+  genre: memorate
+  reading_kind: report
+  credibility_tier: B
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 0.817492
+    lng: 109.480766
+    precision: city
+    location_name: 印度尼西亚西加里曼丹 · 孟加影地区参考
+    culture_region: 东南亚 · 印度尼西亚
+  map_label: 孟加影
+  location_note: 文章只给出西加里曼丹内陆行程；标点是报道地区参考，不是听到声音的地点。
+  temporal:
+    year_start: 2022
+    year_end: 2022
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 一位常走加里曼丹内陆道路的司机说，路况和天气会让短途变得漫长：他曾在泥泞道路陷车，只能和乘客步行去村里求助。
+  - 他还回忆，另一次载客经过林地，夜里从远处听见女子笑声。司机用当地熟悉的女鬼名称来讲述这段经历；采访没有说明声音来源。
+  - 2022 年的报道把夜声与司机携带食物、炊具、为偏远路段做准备的日常放在一起，呈现了夜路上的两种不安。
+  sources:
+  - citation: Dea Duta Aulia，〈Cerita Sopir Travel di Pedalaman Kalimantan〉，detikNews，2022 年 9 月 26 日。
+    type: interview
+    url: https://news.detik.com/berita/d-6312399/hiii-cerita-sopir-travel-di-pedalaman-kalimantan-diganggu-kuntilanak
+    locator: 租车司机关于林区夜声及道路的回忆
+  - citation: OpenStreetMap / 地点目录，区域参考。
+    type: map_reference
+    url: https://mapcarta.com/15644004
+    locator: 印度尼西亚西加里曼丹 · 孟加影地区参考
+  peers:
+  - case_id_pontianak_laundry_night_2014
+- id: case_vn_binhchanh_purple_villa_rumor_2005
+  title: 胡志明市平政｜紫色房子的传言
+  genre: urban_legend
+  reading_kind: legend
+  credibility_tier: A
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 10.663868
+    lng: 106.570341
+    precision: city
+    location_name: 越南胡志明市 · 平政地区参考
+    culture_region: 东南亚 · 越南
+  map_label: 平政
+  location_note: 点位为平政地区参考，不指向私人住宅。
+  temporal:
+    year_start: 2005
+    year_end: 2005
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 2004 年末，胡志明市平政一带流传起“紫色鬼屋”的故事。有人说屋里供品会消失，也有人说房主因为害怕而高价寻找看守。
+  - 人们带着供品和好奇心赶来。2005 年报道采访附近居民和地方警方：房屋平时并非家庭主要住处，当地调查没有支持流传中的那些说法。
+  - 越传越远的故事改变了一户人的生活，房主甚至不得不在门上说明自己并未招募看守。
+  sources:
+  - citation: 〈Sự thật về “ngôi nhà ma” ở huyện Bình Chánh〉，《人民劳动者报》据 CAND，2005 年 1 月 19 日；Tuổi Trẻ 转载。
+    type: investigative_report
+    url: https://tuoitre.vn/nld/phap-luat/su-that-ve-ngoi-nha-ma-o-huyen-binh-chanh-tphcm-109763.htm
+    locator: 居民与地方警方对紫色房屋传言的回应
+  - citation: OpenStreetMap，地点参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/7462674
+    locator: 越南胡志明市 · 平政地区参考
+  peers:
+  - case_vn_hcm_hua_family_crying_house_2016
+- id: case_vn_tanphu_house_rumor_2016
+  title: 胡志明市新富｜深夜敲门的人群
+  genre: memorate
+  reading_kind: report
+  credibility_tier: A
+  theme: corpus_asia_roads_houses_rumors_2002_2026
+  location:
+    lat: 10.77175
+    lng: 106.62698
+    precision: city
+    location_name: 越南胡志明市 · 富盛坊区域参考
+    culture_region: 东南亚 · 越南
+  map_label: 新富区
+  location_note: 点位为富盛坊的行政区域参考，不指向住宅或住户。
+  temporal:
+    year_start: 2016
+    year_end: 2016
+    era_label: 资料发表
+    uncertainty_note: 年份为所引资料发表时间；故事所述经过可能发生于其他时间。
+  paragraphs:
+  - 2016 年，一则关于胡志明市某处房屋“闹鬼”的消息在社交媒体上传开。房门常常关闭、外墙有些旧，成为人们反复猜测的理由。
+  - 随后有人在夜里结伴前来，敲门、照灯，要求屋主开门。屋主向记者讲述，生活因此受到干扰；地方警方表示，传闻中的“空置鬼屋”并不存在。
+  - 这次报道把镜头从屋里的想象移向门外的人群，记录一条网络传言如何进入真实社区。
+  sources:
+  - citation: Nguyễn Tân，〈Người đàn ông khốn khổ vì lời đồn ngôi nhà bị ma ám〉，Pháp Luật TP.HCM，2016 年 3 月 14 日；Tuổi Trẻ 转载。
+    type: interview
+    url: https://tuoitre.vn/plo/nguoi-dan-ong-khon-kho-vi-loi-don-ngoi-nha-bi-ma-am-109381631.htm
+    locator: 住户采访与当地警方回应
+  - citation: OpenStreetMap / 地点目录，区域参考。
+    type: map_reference
+    url: https://www.openstreetmap.org/relation/6890889
+    locator: 越南胡志明市 · 富盛坊区域参考
+  peers:
+  - case_vn_hcm_hua_family_crying_house_2016
+existing_notes: {}

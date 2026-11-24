@@ -26,9 +26,9 @@ function ViewSwitch({ mode, lifeMode, onSwitch }: { mode: ViewMode; lifeMode: bo
   return <nav className="view-switch" aria-label="图谱视图">
     <button type="button" aria-pressed={!lifeMode && mode === 'geo'} onClick={() => onSwitch('geo')}><span className="mode-icon globe-icon" aria-hidden="true" />3D 地图</button>
     <button type="button" aria-pressed={!lifeMode && mode === 'graph'} onClick={() => onSwitch('graph')}><span className="mode-icon constellation-icon" aria-hidden="true" />语义星图</button>
-    <button type="button" aria-label="Life and Knowledge" aria-pressed={lifeMode} onClick={() => onSwitch('life')}>
-      <span className="mode-icon constellation-icon" aria-hidden="true" /><span className="mode-life-full">Life and Knowledge</span>
-      <span className="mode-life-short" aria-hidden="true">知识星图</span>
+    <button type="button" aria-label="OMNIA 万象星枢" aria-pressed={lifeMode} onClick={() => onSwitch('life')}>
+      <span className="mode-icon constellation-icon" aria-hidden="true" /><span className="mode-life-full">OMNIA · 万象星枢</span>
+      <span className="mode-life-short" aria-hidden="true">OMNIA</span>
     </button>
   </nav>;
 }

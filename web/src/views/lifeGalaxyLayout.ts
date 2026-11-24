@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import type { LifeEntry, LifeSubject } from '../life';
 
-export const LIFE_PALETTES = ['#c8a86c', '#e3dbca', '#92b4aa', '#aebbc7', '#d0b69b'];
+export const LIFE_PALETTES = ['#e8bd72', '#76c9e4', '#65d4a7', '#bd9ee8', '#e1d7b0'];
 
 /** Five spiral arms follow the handbook's five volumes; only cited links are edges. */
 export function lifeGalaxyLayout(entries: LifeEntry[], subjects: LifeSubject[]) {

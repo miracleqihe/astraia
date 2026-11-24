@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import type { LifeEntry, LifeSubject } from '../life';
 import { LIFE_PALETTES, lifeGalaxyLayout } from './lifeGalaxyLayout';
+import { createLifeGravity } from './lifeGravity';
 import type { LifeDrawing, LifeHover } from './lifeSceneTypes';
 
 type Layout = ReturnType<typeof lifeGalaxyLayout>;
@@ -83,7 +84,7 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     const [full, focus, subject] = volumeColors[layout.volumes.indexOf(entry.volume)];
     fullColors[i] = full; focusColors[i] = focus; subjectColors[i] = subject;
   });
-  const background = rgb(16, 23, 34), guideColor = rgb(43, 49, 56), hubColor = rgb(210, 176, 113);
+  const background = rgb(4, 6, 12), guideColor = rgb(43, 49, 56), hubColor = rgb(210, 176, 113);
   const lineColor = rgb(174, 146, 93), selectedColor = rgb(255, 233, 189);
   // These guides are fixed in world space; only their projection changes.
   const rings = [90, 200, 320, 445].map((radius) => {
@@ -373,8 +374,17 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       }, 60);
     }
   };
+  const gravity = createLifeGravity(entries, layout);
+  let gravityTimer = 0, gravityHeld = false;
+  const restoreGravity = () => {
+    window.clearTimeout(gravityTimer); gravityTimer = 0;
+    if (gravityHeld) { gravityHeld = false; gravity.clear(); schedule(); }
+  };
   const move = (event: PointerEvent) => {
-    if (event.buttons) return;
+    if (event.buttons) {
+      if (Math.hypot(event.clientX - down.x, event.clientY - down.y) > 5) restoreGravity();
+      return;
+    }
     pendingHover = { clientX: event.clientX, clientY: event.clientY, offsetX: event.offsetX, offsetY: event.offsetY };
     if (!hoverFrame) hoverFrame = requestAnimationFrame(processHover);
   };
@@ -382,29 +392,38 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   const pointerDown = (event: PointerEvent) => {
     focus = null; dragging = true; down = { x: event.clientX, y: event.clientY };
     pendingHover = null; clearHover(); beginMotion();
+    const target = hit(event);
+    if (target?.kind === 'node') gravityTimer = window.setTimeout(() => {
+      const id = entries[target.index].id; gravityHeld = true; gravity.pull(id); onSelect(id); schedule();
+    }, 480);
   };
   const pointerUp = (event: PointerEvent) => {
     dragging = false; restoreWhenStill();
+    const wasHeld = gravityHeld; restoreGravity();
+    if (wasHeld) return;
     if (Math.hypot(event.clientX - down.x, event.clientY - down.y) > 5) return;
     const target = hit(event);
     if (target?.kind === 'hub') onSubject(subjects[target.index].id);
     else if (target) onSelect(entries[target.index].id);
   };
   const pointerCancel = () => {
-    dragging = false; restoreWhenStill();
+    dragging = false; restoreGravity(); restoreWhenStill();
   };
   const leave = () => { pendingHover = null; clearHover(); };
   canvas.addEventListener('pointermove', move); canvas.addEventListener('pointerdown', pointerDown);
   canvas.addEventListener('pointerup', pointerUp); canvas.addEventListener('pointercancel', pointerCancel);
   canvas.addEventListener('pointerleave', leave);
+  let lastFocus = '';
   return {
-    update(selected, subject) {
+    update(selected, subject, highlights) {
       const chosen = selected ? entryById.get(selected) : undefined;
       const related = new Set(chosen?.links ?? []);
+      const matched = new Set(highlights);
       if (chosen) for (const id of incoming.get(chosen.id) ?? []) related.add(id);
       entries.forEach((entry, i) => {
         colors[i] = subject && entry.subject !== subject ? subjectColors[i]
-          : selected && entry.id !== selected && !related.has(entry.id) ? focusColors[i] : fullColors[i];
+          : selected && entry.id !== selected && !related.has(entry.id) ? focusColors[i]
+          : !selected && matched.size && !matched.has(entry.id) ? subjectColors[i] : fullColors[i];
       });
       selectedPoint = selected ? layout.locations.get(selected) : undefined;
       edges = [];
@@ -412,12 +431,21 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
         const target = layout.locations.get(id);
         if (target) edges.push(selectedPoint, target);
       }
+      if (!selectedPoint && highlights.length > 1) {
+        for (let index = 1; index < highlights.length; index++) {
+          const a = layout.locations.get(highlights[index - 1]), b = layout.locations.get(highlights[index]);
+          if (a && b) edges.push(a, b);
+        }
+      }
       const target = selectedPoint ?? (subject ? layout.centers.get(subject) : undefined);
-      if (target) fly(target, selectedPoint ? 285 : 390); else { focus = null; schedule(); }
+      const key = selected ? `entry:${selected}` : subject ? `subject:${subject}` : '';
+      if (target && key !== lastFocus) fly(target, selectedPoint ? 285 : 390);
+      else if (!target) { focus = null; schedule(); } else schedule();
+      lastFocus = key;
     },
     reset() { fly(new THREE.Vector3(), 1165, overviewDirection); },
     dispose() {
-      cancelAnimationFrame(frame); cancelAnimationFrame(hoverFrame); window.clearTimeout(restoreQuality);
+      restoreGravity(); cancelAnimationFrame(frame); cancelAnimationFrame(hoverFrame); window.clearTimeout(restoreQuality);
       window.clearTimeout(hoverTimer); observer.disconnect();
       controls.removeEventListener('change', schedule); controls.dispose();
       controls.removeEventListener('start', beginMotion); controls.removeEventListener('end', restoreWhenStill);
