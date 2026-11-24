@@ -185,9 +185,14 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     nodeHeads.fill(-1); hubHeads.fill(-1);
     camera.updateMatrixWorld();
     projection.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
+    // A 32-segment guide still reads as a smooth circle at the reduced motion
+    // resolution, and avoids projecting and clipping three quarters of the
+    // guide segments on every CPU-rendered drag or camera flight. The full
+    // 128-segment rings return automatically when the view becomes still.
+    const ringStep = interacting ? 4 : 1;
     for (const ring of rings) {
       let lastX = 0, lastY = 0, haveLast = false;
-      for (let i = 0; i <= 128; i++) {
+      for (let i = 0; i <= 128; i += ringStep) {
         if (project(ring[i * 3], ring[i * 3 + 1], ring[i * 3 + 2])) {
           if (haveLast) line(lastX, lastY, projectedX, projectedY, guideColor);
           lastX = projectedX; lastY = projectedY; haveLast = true;

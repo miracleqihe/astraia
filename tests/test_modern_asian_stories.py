@@ -8,7 +8,7 @@ from unittest.mock import patch
 import yaml
 
 from pipeline.reading_notes import EditorialNote
-from pipeline.vault import FrontmatterLoader, read_card
+from pipeline.vault import FrontmatterLoader, parse_card, read_card
 from pipeline import import_modern_stories
 
 
@@ -90,7 +90,8 @@ class ModernAsianStoriesTests(unittest.TestCase):
         for filename in ('modern_asian_stories_20261123.yaml', 'modern_asian_stories_second_20261123.yaml',
                          'modern_asian_stories_third_20261123.yaml', 'modern_asian_stories_fourth_20261123.yaml',
                          'modern_asian_stories_fifth_20261123.yaml', 'modern_asian_stories_sixth_20261123.yaml',
-                         'modern_asian_stories_seventh_20261123.yaml', 'modern_asian_stories_eighth_20261123.yaml'):
+                         'modern_asian_stories_seventh_20261123.yaml', 'modern_asian_stories_eighth_20261123.yaml',
+                         'modern_asian_stories_ninth_20261123.yaml'):
             collection = yaml.load((ROOT / 'reference' / filename).read_text(encoding='utf-8'), Loader=FrontmatterLoader)
             records.extend(collection['records'])
             revisions.update(collection.get('revisions', {}))
@@ -111,6 +112,8 @@ class ModernAsianStoriesTests(unittest.TestCase):
                 self.assertIsNotNone(card.metadata.spatial.lat)
                 self.assertIsNotNone(card.metadata.spatial.lng)
                 self.assertIn(card.metadata.spatial.precision, ('city', 'province', 'culture_region'))
+                self.assertEqual(card.metadata.spatial.precision, item['location']['precision'])
+                self.assertEqual(card.metadata.genre, item['genre'])
                 if item.get('reading_kind'):
                     self.assertEqual(note.kind, item['reading_kind'])
                 self.assertTrue(note.location_note)
@@ -146,6 +149,20 @@ class ModernAsianStoriesTests(unittest.TestCase):
         self.assertEqual(str(card.metadata.sources[1].url), revision['source']['url'])
         self.assertTrue(all(paragraph in card.markdown for paragraph in note.paragraphs))
         self.assertFalse(card.metadata.audit.reviewed_by_human)
+
+    def test_ninth_batch_revisions_preserve_original_cards(self):
+        collection = yaml.load((ROOT / 'reference/modern_asian_stories_ninth_20261123.yaml').read_text(encoding='utf-8'),
+                               Loader=FrontmatterLoader)
+        notes = yaml.load((ROOT / 'reference/reading_notes.yaml').read_text(encoding='utf-8'), Loader=FrontmatterLoader)
+        for node_id, revision in collection['revisions'].items():
+            with self.subTest(id=node_id):
+                metadata, body = parse_card((ROOT / revision['path']).read_text(encoding='utf-8'))
+                note = EditorialNote.model_validate(notes[node_id])
+                self.assertEqual(note.paragraphs, revision['paragraphs'])
+                self.assertEqual(note.source_numbers, revision['source_numbers'])
+                self.assertEqual(str(metadata.sources[-1].url), revision['source']['url'])
+                self.assertTrue(all(paragraph in body for paragraph in note.paragraphs))
+                self.assertFalse(metadata.audit.reviewed_by_human)
 
 
 if __name__ == '__main__':
