@@ -6144,7 +6144,7 @@ case_kr_sejong_hongik_flickering_stairs_2024:
   map_label: 弘益大学
   location_note: 标点是世宗校区范围；故事没有提供台阶的可核对坐标。
 case_kr_kaist_ninth_floor_window_2024:
-  kind: story
+  kind: report
   paragraphs:
   - 一位 KAIST 学生回忆，考试期间经过宿舍走廊时，他从窗外看见一个人影。疲惫让他怀疑自己看错，便回去问室友。
   - 室友听完也十分吃惊，说自己见过相似的身影。让两人不安的是，宿舍在九楼，而文章没有交代窗外具体是什么空间。
@@ -6197,7 +6197,7 @@ case_id_bandung_maranatha_exam_answers_2017:
   map_label: 玛拉拿塔大学
   location_note: 点位表示大学校园范围，故事未提供实验室位置。
 case_id_bandung_unisba_night_discussion_2022:
-  kind: story
+  kind: report
   paragraphs:
   - 一位受访者回忆，约在 2014 年，他和同伴在万隆伊斯兰大学的楼内彻夜讨论哲学。到凌晨时，几名参与者出现了令在场者担忧的状态，讨论因此中断。
   - 受访者说，同伴一边照看他们一边念祷词；不同参与者后来把经过和校园里熟悉的灵异故事联系起来。2022 年的报道同时采访研究者，讨论这些说法如何在都市生活中传播。
@@ -6207,7 +6207,7 @@ case_id_bandung_unisba_night_discussion_2022:
   map_label: 万隆伊斯兰大学
   location_note: 坐标是 Tamansari 校区参考，并非文章所述房间的精确点位。
 case_my_kedah_fourth_floor_guard_2017:
-  kind: story
+  kind: report
   paragraphs:
   - 几名学生深夜在宿舍打牌，一位熟悉的保安经过窗边，提醒他们已经很晚，早点休息。他们答应后收起牌，准备睡觉。
   - 过了一会儿，其中一人才反应过来：他们的房间在四楼。2017 年的采访以化名记录了讲述者的回忆，没有公布大学或宿舍名称。
@@ -6217,7 +6217,7 @@ case_my_kedah_fourth_floor_guard_2017:
   map_label: 吉打州
   location_note: 文章只说吉打一所大学；点位借首府表示州域，不指认学校、城市或宿舍。
 case_my_lendu_art_show_dancer_2017:
-  kind: story
+  kind: report
   paragraphs:
   - 一名学生回忆，2012 年，她和同学在林都准备毕业展，隔壁一支舞蹈队则在排练。过了午夜，众人听见一声闷响，发现一位舞者倒在地上。
   - 舞者随后起身，以让在场者感到陌生的方式起舞。讲述者说他们收拾好作品后离开，并不知道后续情况；报道于 2017 年刊载了她的回忆。
@@ -6227,7 +6227,7 @@ case_my_lendu_art_show_dancer_2017:
   map_label: 林都
   location_note: 点位表示林都镇区；报道未给出展厅或学校名称。
 case_my_shah_alam_curtain_classroom_2017:
-  kind: story
+  kind: report
   paragraphs:
   - 下课后，一位学生去洗手间，朋友留在教室整理笔记。等她回来，朋友脸色苍白，两人收拾好东西便离开了大楼。
   - 午饭时，朋友才说刚才独自等候时看见窗帘大幅晃动，而窗户似乎关着。2017 年的采访同时记录了这座楼的其他传闻；窗帘为什么动，文章没有查明。
@@ -6237,7 +6237,7 @@ case_my_shah_alam_curtain_classroom_2017:
   map_label: 莎亚南
   location_note: 坐标为莎亚南城市参考；采访没有公布学校和教室名称。
 case_vn_hcm_student_village_hat_2021:
-  kind: story
+  kind: report
   paragraphs:
   - 一篇转载的越南学生回忆写道，刚住进大学城宿舍几个月，一天凌晨醒来，她看到一顶白色编织帽悬在空着的上铺床边，似乎轻轻起落；再次睁眼时，帽子已经不见。
   - 她还记得另一次独自在房间休息时，仿佛听见上铺有人说话。原文署名为网络转载，讲述者身份与经历无法独立核对；这些细节仍保留了宿舍怪谈的叙述方式。

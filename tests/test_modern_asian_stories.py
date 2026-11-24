@@ -148,6 +148,16 @@ class ModernAsianStoriesTests(unittest.TestCase):
                 self.assertFalse(card.metadata.standards.atu_types)
                 self.assertFalse(card.metadata.standards.ocm_codes)
 
+    def test_latest_urban_stories_are_in_modern_reading_scope(self):
+        collection = yaml.load((ROOT / 'reference/modern_asian_stories_nineteenth_20261123.yaml').read_text(encoding='utf-8'),
+                               Loader=FrontmatterLoader)
+        notes = yaml.load((ROOT / 'reference/reading_notes.yaml').read_text(encoding='utf-8'),
+                          Loader=FrontmatterLoader)
+        for item in collection['records']:
+            with self.subTest(id=item['id']):
+                # The frontend's modern directory includes legends and reports.
+                self.assertIn(notes[item['id']]['kind'], ('legend', 'report'))
+
     def test_nichibun_readings_keep_catalogue_provenance_and_location(self):
         additions = yaml.load((ROOT / 'reference/nichibun_readings_20261123.yaml').read_text(encoding='utf-8'),
                               Loader=FrontmatterLoader)['records']

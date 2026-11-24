@@ -215,6 +215,7 @@ records:
   genre: memorate
   credibility_tier: B
   theme: corpus_asia_campus_lore_spaces_2004_2024
+  reading_kind: report
   location:
     lat: 36.37013
     lng: 127.36261
@@ -371,6 +372,7 @@ records:
   genre: memorate
   credibility_tier: B
   theme: corpus_asia_campus_lore_spaces_2004_2024
+  reading_kind: report
   location:
     lat: -6.903646
     lng: 107.608102
@@ -400,6 +402,7 @@ records:
   genre: memorate
   credibility_tier: B
   theme: corpus_asia_campus_lore_spaces_2004_2024
+  reading_kind: report
   location:
     lat: 6.1232
     lng: 100.3684
@@ -433,6 +436,7 @@ records:
   genre: memorate
   credibility_tier: B
   theme: corpus_asia_campus_lore_spaces_2004_2024
+  reading_kind: report
   location:
     lat: 2.3561
     lng: 102.1704
@@ -462,6 +466,7 @@ records:
   genre: memorate
   credibility_tier: B
   theme: corpus_asia_campus_lore_spaces_2004_2024
+  reading_kind: report
   location:
     lat: 3.0739
     lng: 101.5185
@@ -491,6 +496,7 @@ records:
   genre: memorate
   credibility_tier: C
   theme: corpus_asia_campus_lore_spaces_2004_2024
+  reading_kind: report
   location:
     lat: 10.87534
     lng: 106.80003
