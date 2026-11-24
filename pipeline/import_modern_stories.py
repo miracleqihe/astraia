@@ -1,5 +1,6 @@
 """Import cited editorial records without inventing standard codes or review status."""
 
+import argparse
 from datetime import date
 import json
 from pathlib import Path
@@ -22,12 +23,14 @@ def sources(items):
     return [Source.model_validate({'type': 'institutional_account', **item}) for item in items]
 
 
-def run():
-    data = yaml.load(COLLECTION.read_text(encoding='utf-8'), Loader=FrontmatterLoader)
+def run(collection=COLLECTION, manifest=None):
+    data = yaml.load(collection.read_text(encoding='utf-8'), Loader=FrontmatterLoader)
     graph = json.loads((ROOT / 'web/public/data/graph_data.json').read_text(encoding='utf-8'))
     previous = {node['id']: node for node in graph['nodes']}
     original_notes = NOTES.read_text(encoding='utf-8')
-    notes = yaml.load(original_notes, Loader=FrontmatterLoader)
+    notes = yaml.load(original_notes, Loader=FrontmatterLoader) or {}
+    if not isinstance(notes, dict):
+        raise ValueError('阅读提要须按卡片编号存储。')
     all_items = data['themes'] + data['records']
     ids = [item['id'] for item in all_items]
     if len(ids) != len(set(ids)):
@@ -92,24 +95,33 @@ def run():
     collisions = [str(path) for path in planned if path.exists()]
     if collisions:
         raise ValueError(f'卡片已存在，未覆盖：{collisions}')
-    suffix = '\n' + yaml.safe_dump(new_notes, allow_unicode=True, sort_keys=False, width=1000)
+    created_manifest = {path.stem: path.relative_to(ROOT).as_posix() for path in planned}
+    output = manifest or ROOT / '.local/modern-asia-20261123/manifest.json'
+    output.parent.mkdir(parents=True, exist_ok=True)
+    suffix = yaml.safe_dump(new_notes, allow_unicode=True, sort_keys=False, width=1000)
+    updated_notes = original_notes.rstrip() + '\n\n' + suffix if notes else suffix
     created = []
+    notes_written = False
     with vault_writer(VAULT):
         try:
             for path, content in planned.items():
                 create_card(path, content)
                 created.append(path)
-            replace_card(NOTES, (original_notes.rstrip() + '\n' + suffix).encode('utf-8'))
+            replace_card(NOTES, updated_notes.encode('utf-8'))
+            notes_written = True
+            replace_card(output, (json.dumps(created_manifest, ensure_ascii=False, indent=2) + '\n').encode('utf-8'))
         except Exception:
+            if notes_written:
+                replace_card(NOTES, original_notes.encode('utf-8'))
             for path in reversed(created):
                 path.unlink(missing_ok=True)
             raise
-    manifest = {path.stem: path.relative_to(ROOT).as_posix() for path in planned}
-    output = ROOT / '.local/modern-asia-20261123/manifest.json'
-    output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(f'已创建 {len(planned)} 个节点并补充 {len(data["existing_notes"])} 个现有节点的阅读提要。')
 
 
 if __name__ == '__main__':
-    run()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--collection', type=Path, default=COLLECTION)
+    parser.add_argument('--manifest', type=Path)
+    args = parser.parse_args()
+    run(args.collection, args.manifest)
