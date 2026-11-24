@@ -108,7 +108,8 @@ class ModernAsianStoriesTests(unittest.TestCase):
                          'modern_asian_stories_ninth_20261123.yaml', 'modern_asian_stories_tenth_20261123.yaml',
                          'modern_asian_stories_eleventh_20261123.yaml', 'modern_asian_stories_twelfth_20261123.yaml',
                          'modern_asian_stories_thirteenth_20261123.yaml', 'modern_asian_stories_fourteenth_20261123.yaml',
-                         'modern_asian_stories_fifteenth_20261123.yaml', 'modern_asian_stories_sixteenth_20261123.yaml'):
+                         'modern_asian_stories_fifteenth_20261123.yaml', 'modern_asian_stories_sixteenth_20261123.yaml',
+                         'modern_asian_stories_seventeenth_20261123.yaml'):
             collection = yaml.load((ROOT / 'reference' / filename).read_text(encoding='utf-8'), Loader=FrontmatterLoader)
             records.extend(collection['records'])
             revisions.update(collection.get('revisions', {}))
@@ -278,6 +279,24 @@ class ModernAsianStoriesTests(unittest.TestCase):
         self.assertIn(old_id, {relation.target for relation in new.metadata.relations})
         self.assertEqual(new.metadata.spatial.precision, 'culture_region')
         self.assertFalse(old.metadata.audit.reviewed_by_human)
+
+    def test_neighborhood_accounts_preserve_source_and_geographic_limits(self):
+        notes = yaml.load((ROOT / 'reference/reading_notes.yaml').read_text(encoding='utf-8'), Loader=FrontmatterLoader)
+        dream = read_card(ROOT / 'vault', ROOT / 'vault/01_cases/case_cn_beijing_teller_faceless_dream_2017.md')
+        self.assertIn('童年经历的城市未指明', notes[dream.metadata.id]['location_note'])
+        self.assertIn('并不是祖父', dream.markdown)
+        delivery = read_card(ROOT / 'vault', ROOT / 'vault/01_cases/case_sg_bukit_merah_empty_delivery_2026.md')
+        self.assertIn('餐费与配送费都已经支付', delivery.markdown)
+        self.assertIn('没有得到确定答案', delivery.markdown)
+        river = read_card(ROOT / 'vault', ROOT / 'vault/01_cases/case_vn_saigon_river_binh_loi_fisherman_2016.md')
+        self.assertAlmostEqual(river.metadata.spatial.lat, 10.82473)
+        self.assertAlmostEqual(river.metadata.spatial.lng, 106.70924)
+        self.assertIn('不定位个人住处', notes[river.metadata.id]['location_note'])
+        self.assertIn('一对渔民夫妇', river.markdown)
+        self.assertTrue(any('e.vnexpress.net' in str(source.url) for source in river.metadata.sources))
+        hotel = read_card(ROOT / 'vault', ROOT / 'vault/01_cases/case_cn_shanghai_dahu_hotel_newspaper_ghost_2017.md')
+        self.assertIn('不能因此证明故事里的事件', hotel.markdown)
+        self.assertEqual(len(hotel.metadata.sources), 2)
 
     def test_tenth_batch_adds_versions_to_existing_cards(self):
         collection = yaml.load((ROOT / 'reference/modern_asian_stories_tenth_20261123.yaml').read_text(encoding='utf-8'),
