@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "predev": "node scripts/build-life-index.mjs && node scripts/build-graph-index.mjs",
     "dev": "vite --host 127.0.0.1 --strictPort",
+    "prebuild": "node scripts/build-life-index.mjs && node scripts/build-graph-index.mjs",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1 --strictPort"
   },

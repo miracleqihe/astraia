@@ -98,12 +98,24 @@
 
 .collection-guide { padding: 18px 21px; overflow: auto; }
 .collection-guide header { padding-bottom: 16px; border-bottom: var(--border-crisp); }
+.guide-overline { color: #8e6f38; font: .66rem/1.4 var(--font-astrometric); letter-spacing: .08em; }
 .collection-guide h2 { font: 600 clamp(1.65rem, 2.5vw, 2.25rem)/1.35 var(--font-editorial); }
 .collection-guide p { margin-top: 7px; font-size: .89rem; line-height: 1.75; color: var(--ink-muted); }
 .guide-layers { list-style: none; padding: 0; margin: 11px 0 0; display: flex; flex-wrap: wrap; gap: 5px 9px; color: var(--ink-prussian); font-size: 12px; }
 .guide-layers b { color: var(--ink-muted); font-family: var(--font-astrometric); font-weight: 400; }
 .collection-guide section { margin-top: 21px; }
 .collection-guide h3 { font: 600 1.08rem/1.4 var(--font-editorial); margin-bottom: 7px; }
+.guide-section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.guide-section-heading > span { color: var(--ink-muted); font: .68rem/1.3 var(--font-astrometric); }
+.guide-categories { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: var(--border-crisp); }
+.guide-categories button { display: flex; justify-content: space-between; gap: 8px; min-width: 0; padding: 10px 6px; text-align: left;
+  border: 0; border-bottom: 1px solid rgba(27, 42, 74, .24); color: var(--ink-prussian); background: transparent; }
+.guide-categories button:nth-child(odd) { border-right: 1px solid rgba(27, 42, 74, .24); }
+.guide-categories button:hover { background: var(--folio-paper-alt); }
+.guide-categories strong, .guide-categories small { display: block; }
+.guide-categories strong { font-size: .83rem; }
+.guide-categories small { margin-top: 3px; color: var(--ink-muted); font-size: .67rem; line-height: 1.4; }
+.guide-categories b { color: #8e6f38; font: .68rem/1.5 var(--font-astrometric); }
 .guide-entry {
   display: flex;
   justify-content: space-between;

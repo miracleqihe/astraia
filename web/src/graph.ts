@@ -75,6 +75,13 @@ export interface GraphSnapshot {
   snapshot_id: string;
   nodes: GraphNode[];
   links: GraphLink[];
+  details_file?: string;
+  details_sha256?: string;
+}
+
+export interface GraphDetails {
+  snapshot_id: string;
+  nodes: Array<Pick<GraphNode, 'id' | 'sources' | 'audit' | 'markdown' | 'source_path' | 'reading'>>;
 }
 
 export interface GraphIndex {
@@ -284,13 +291,15 @@ export function matchesQuery(node: GraphNode, query: string): boolean {
 
 export async function loadSnapshot(signal: AbortSignal): Promise<GraphSnapshot> {
   const candidates = import.meta.env.VITE_PUBLIC_DEMO === '1'
-    ? ['graph_data.json'] : ['catalogue_data.json', 'graph_data.json'];
+    ? ['graph_index.json', 'graph_data.json'] : ['catalogue_data.json', 'graph_data.json'];
   let response: Response | null = null;
   for (let index = 0; index < candidates.length; index++) {
     const filename = candidates[index];
     let current: Response;
     try {
-      current = await fetch(`${import.meta.env.BASE_URL}data/${filename}`, { signal, cache: 'no-store' });
+      current = await fetch(`${import.meta.env.BASE_URL}data/${filename}`, {
+        signal, cache: import.meta.env.VITE_PUBLIC_DEMO === '1' ? 'no-cache' : 'no-store',
+      });
     } catch (error) {
       // The optional local catalogue may not be available on a static host.
       // An interrupted fetch, however, must not start another request.
@@ -312,4 +321,21 @@ export async function loadSnapshot(signal: AbortSignal): Promise<GraphSnapshot> 
     throw new Error('图谱快照格式不匹配。请用当前版本重新编译。');
   }
   return data as GraphSnapshot;
+}
+
+export async function loadGraphDetails(snapshot: GraphSnapshot, signal: AbortSignal): Promise<GraphDetails> {
+  if (!snapshot.details_file || !/^(graph|catalogue)_details\.json$/.test(snapshot.details_file)
+    || !/^[a-f0-9]{64}$/.test(snapshot.details_sha256 ?? '')) throw new Error('图谱正文索引无效。');
+  const response = await fetch(`${import.meta.env.BASE_URL}data/${snapshot.details_file}?v=${snapshot.details_sha256}`, { signal, priority: 'low' });
+  if (!response.ok) throw new Error(`读取正文失败 (${response.status})。`);
+  const bytes = await response.arrayBuffer();
+  if (globalThis.crypto?.subtle) {
+    const digest = await crypto.subtle.digest('SHA-256', bytes);
+    const hash = [...new Uint8Array(digest)].map((value) => value.toString(16).padStart(2, '0')).join('');
+    if (hash !== snapshot.details_sha256) throw new Error('图谱正文和索引版本不一致，请稍后重试。');
+  }
+  const data = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes)) as GraphDetails;
+  if (data.snapshot_id !== snapshot.snapshot_id || !Array.isArray(data.nodes) || data.nodes.length !== snapshot.nodes.length
+    || data.nodes.some((node, index) => node.id !== snapshot.nodes[index].id)) throw new Error('图谱正文和索引不匹配，请稍后重试。');
+  return data;
 }

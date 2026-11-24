@@ -202,7 +202,7 @@ h1, h2, h3, p, dl, dd { margin: 0; }
 .view-switch button + button { border-left: var(--border-plate); }
 .view-switch button[aria-pressed='true'] { color: var(--plate-bg); background: var(--folio-paper); }
 .view-switch button[aria-pressed='false']:hover, .directory-toggle:hover { background: var(--vellum-sheet); }
-.mode-life-short { display: none; }
+.mode-short, .mode-life-short { display: none; }
 .mode-icon { display: inline-block; width: 11px; height: 11px; flex: 0 0 11px; }
 .globe-icon { border: 1px solid currentColor; transform: rotate(45deg) scale(0.78); }
 .constellation-icon {
@@ -248,8 +248,10 @@ h1, h2, h3, p, dl, dd { margin: 0; }
   background: var(--plate-bg);
 }
 .stage-heading { position: absolute; z-index: 3; top: 20px; left: 22px; pointer-events: none; }
+.stage-eyebrow { display: block; color: var(--brass-tick); font: .59rem/1.4 var(--font-astrometric); letter-spacing: .07em; }
 .stage-heading h1 { font: 600 clamp(1.2rem, 1.6vw, 1.58rem)/1.45 var(--font-editorial); }
-.stage-heading p { margin-top: 5px; color: var(--folio-paper-alt); font-size: 0.77rem; }
+.stage-heading p { margin-top: 2px; color: var(--folio-paper-alt); font-size: 0.77rem; }
+.stage-heading .stage-count { font-size: .69rem; opacity: .75; }
 .modern-shortcut, .geo-list-toggle {
   position: absolute;
   z-index: 5;
@@ -460,6 +462,11 @@ h1, h2, h3, p, dl, dd { margin: 0; }
 .directory-scopes { display: flex; gap: 6px; margin-top: 11px; }
 .directory-scopes button { min-height: 30px; padding: 4px 8px; color: var(--folio-paper); background: transparent; border: var(--border-plate); font-size: .77rem; }
 .directory-scopes button[aria-pressed='true'] { border-color: var(--brass-tick); color: #f3d9a2; }
+.directory-filters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; margin-top: 11px; }
+.directory-filters label { display: grid; gap: 4px; color: var(--folio-paper-alt); font-size: .68rem; }
+.directory-filters select { width: 100%; min-width: 0; min-height: 32px; padding: 4px; border: var(--border-plate); background: var(--plate-bg); color: var(--folio-paper); font-size: .72rem; }
+.directory-loading { margin: 5px 0 0; color: var(--folio-paper-alt); font-size: .7rem; }
+.directory-loading button { margin-left: 5px; color: var(--brass-tick); border: 0; background: transparent; }
 .directory-search { display: flex; align-items: center; margin-top: 13px; height: 38px; border: var(--border-plate); padding: 0 8px; }
 .directory-search:focus-within { border-color: var(--brass-tick); }
 .directory-search input { width: 100%; min-width: 0; padding: 0; outline: 0; border: 0; background: none; font-size: 0.83rem; }
@@ -494,6 +501,7 @@ h1, h2, h3, p, dl, dd { margin: 0; }
 .fiction-code { font: 0.8rem/1 var(--font-astrometric); color: #E7A89D; }
 .directory-empty, .inspector-empty { font-size: 0.88rem; line-height: 1.65; }
 .directory-empty { margin: 9px; color: var(--folio-paper-alt); }
+.directory-more { margin: 8px 7px 0; padding: 7px 10px; border: var(--border-plate); background: transparent; color: var(--folio-paper); font-size: .75rem; }
 .directory-footer { border-top: var(--border-plate); padding: 10px 13px; color: var(--folio-paper-alt); font-size: 0.75rem; }
 
 .inspector {
@@ -588,7 +596,7 @@ h1, h2, h3, p, dl, dd { margin: 0; }
 .frame-ticks-top { top: 0; }.frame-ticks-bottom { bottom: 0; }
 .frame-ticks-left, .frame-ticks-right { top: 20px; bottom: 20px; width: 5px; background: repeating-linear-gradient(0deg,var(--folio-paper) 0 1px,transparent 1px 24px); }
 .frame-ticks-left { left: 0; }.frame-ticks-right { right: 0; }
-.control-rail { position: absolute; z-index: 5; left: 27px; top: 96px; width: 86px; padding: 6px; border: var(--border-plate); background: var(--plate-bg); font-size: .72rem; }
+.control-rail { position: absolute; z-index: 5; left: 27px; top: 122px; width: 86px; padding: 6px; border: var(--border-plate); background: var(--plate-bg); font-size: .72rem; }
 .control-rail button { color: var(--folio-paper); background: none; border: 0; }
 .rail-search { width: 100%; text-align: left; padding: 5px; border-bottom: var(--border-plate) !important; }
 .rail-search small { color: var(--ink-muted); }
@@ -664,10 +672,14 @@ h1, h2, h3, p, dl, dd { margin: 0; }
   border-top: var(--border-crisp);
   font-size: 0.72rem;
 }
-.loading-shell { min-height: 100dvh; padding: 24px; background: var(--plate-bg); }
+.loading-shell { flex: 1; padding: 24px; background: var(--plate-bg); }
 .loading-message { max-width: 430px; margin: 15vh auto 0; line-height: 1.65; }
 .loading-message h1 { font: 600 1.55rem/1.5 var(--font-editorial); }
 .quiet-button { margin-top: 12px; border: var(--border-plate); background: transparent; padding: 6px 12px; }
+.inspector-loading { padding: 22px; color: var(--ink-prussian); background: var(--folio-paper); line-height: 1.7; }
+.inspector-loading h2 { font: 600 1.35rem/1.45 var(--font-editorial); }
+.inspector-loading p { margin-top: 12px; font-size: .86rem; }
+.inspector-loading .quiet-button { color: var(--ink-prussian); border-color: var(--ink-prussian); }
 
 @media (max-width: 1000px) {
   .workspace.with-inspector { grid-template-columns: minmax(0, 1fr) minmax(275px, 36%); }
@@ -690,9 +702,9 @@ h1, h2, h3, p, dl, dd { margin: 0; }
   .directory-toggle { padding-inline: 5px; }
   .directory-toggle span { display: none; }
   .view-switch { grid-row: 2; grid-column: span 2; min-width: 0; }
-  .view-switch button { flex: 1; min-width: 0; padding-inline: 6px; font-size: 12px; }
-  .mode-life-full { display: none; }
-  .mode-life-short { display: inline; }
+  .view-switch button { flex: 1; min-width: 0; padding-inline: 3px; gap: 3px; font-size: clamp(8px, 2.65vw, 11px); }
+  .mode-full, .mode-life-full { display: inline; }
+  .mode-short, .mode-life-short { display: none; }
   .workspace, .workspace.with-inspector { display: flex; flex-direction: column; gap: 10px; padding: 9px 9px 14px; }
   .workspace.workbench { display: flex; }
   .inspector-spine { min-height: 40px; }
@@ -700,7 +712,7 @@ h1, h2, h3, p, dl, dd { margin: 0; }
   .inspector-drawer { min-height: 520px; }
   .inspector-columns.comparing { flex-direction: column; }
   .inspector-columns.comparing > .inspector { min-height: 460px; }
-  .control-rail { left: 24px; top: 72px; width: 75px; }
+  .control-rail { left: 24px; top: 121px; width: 75px; }
   .rail-spread input { height: 42px; }
   .chronology { left: 105px; right: 26px; bottom: 42px; }
   .chronology-title { display: none; }

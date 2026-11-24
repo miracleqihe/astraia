@@ -41,11 +41,6 @@ const OVERVIEW_CITIES: FeatureCollection<Point> = {
   })),
 };
 
-export function loadOverviewMapFonts(): Promise<unknown> {
-  const labels = overviewPlaces.map(([name]) => name).join('') + '0123456789';
-  return document.fonts.load('400 14px "Noto Sans SC"', labels).catch(() => {});
-}
-
 export function mapStyle(): StyleSpecification {
   return {
     version: 8,

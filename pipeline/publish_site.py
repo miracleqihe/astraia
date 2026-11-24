@@ -58,7 +58,7 @@ def deploy(vault: Path, code_table: Path, *, reviewed_only: bool = False) -> Non
         env['VITE_PUBLIC_DEMO'] = '1'
         npm = 'npm.cmd' if os.name == 'nt' else 'npm'
         run([npm, 'run', 'build', '--', '--base=/astraia/', '--outDir', str(built), '--emptyOutDir'], root / 'web', env=env)
-        for name in ('index.html', 'ui-review/index.html', 'assets', 'fonts', 'knowledge/data.json',
+        for name in ('index.html', 'ui-review/index.html', 'assets', 'fonts', 'knowledge/index.json', 'knowledge/data.json',
                      'knowledge/handbook.pdf', 'knowledge/inline-figures/manifest.json',
                      'knowledge/figures/font-report.json'):
             if not (built / name).exists():
@@ -73,6 +73,9 @@ def deploy(vault: Path, code_table: Path, *, reviewed_only: bool = False) -> Non
         (site / 'data').mkdir()
         (site / 'data/graph_data.json').write_text(json.dumps(graph, ensure_ascii=False, sort_keys=True,
             separators=(',', ':'), allow_nan=False) + '\n', encoding='utf-8', newline='\n')
+        # Build the first-paint index from the exact graph just published, not
+        # from a potentially older local development snapshot.
+        run(['node', str(root / 'web/scripts/build-graph-index.mjs'), str(site / 'data/graph_data.json')], root)
         publish_graph(site / 'data/asia_coverage.json', coverage, 'json')
         # A Windows checkout may otherwise normalize SVG newlines when staging,
         # breaking the image hashes and embedded-font verification on Pages.

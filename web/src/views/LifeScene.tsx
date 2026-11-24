@@ -46,18 +46,21 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
     if (!element) return;
     const layout = lifeGalaxyLayout(entries, subjects);
     let renderer: THREE.WebGLRenderer | null = null;
-    let software = false;
     try {
-      // Let the browser reject a severely slow context even when privacy
-      // settings hide the unmasked renderer name. The Canvas2D path below is
-      // tuned for those devices and keeps the galaxy interactive.
-      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, failIfMajorPerformanceCaveat: true });
-      const gl = renderer.getContext(), debug = gl.getExtension('WEBGL_debug_renderer_info');
-      const name = debug ? String(gl.getParameter(debug.UNMASKED_RENDERER_WEBGL)) : '';
-      software = /swiftshader|llvmpipe|software|warp/i.test(name);
-    } catch { software = true; }
-    if (software || !renderer) {
-      renderer?.dispose();
+      // Probe only once. Three.js otherwise retries without the performance
+      // guard when the first context request fails, initializing slow software
+      // WebGL before we can switch to the much faster Canvas 2D renderer.
+      const canvas = document.createElement('canvas');
+      const options = { antialias: true, alpha: true, failIfMajorPerformanceCaveat: true };
+      const gl = canvas.getContext('webgl2', options) as WebGL2RenderingContext | null;
+      if (gl) {
+        const debug = gl.getExtension('WEBGL_debug_renderer_info');
+        const name = debug ? String(gl.getParameter(debug.UNMASKED_RENDERER_WEBGL)) : '';
+        if (/swiftshader|llvmpipe|software|warp/i.test(name)) gl.getExtension('WEBGL_lose_context')?.loseContext();
+        else renderer = new THREE.WebGLRenderer({ canvas, context: gl, ...options });
+      }
+    } catch { /* Canvas 2D remains available when WebGL is unavailable. */ }
+    if (!renderer) {
       onRenderer('software');
       const fallback = mountLifeSoftware(element, entries, subjects, layout,
         (id) => select.current(id), (id) => selectSubject.current(id), (id) => selectVolume.current(id), setHover);

@@ -6,7 +6,8 @@ import { createPortal } from 'react-dom';
 import type { FeatureCollection, LineString, MultiLineString, Point } from 'geojson';
 import { coordinatesOf, geographicCases, isFiction, isModernReading, locationPrecision, mapLabel, READING_LABELS,
   type Coordinates, type GraphIndex, type GraphNode, type ViewSelection } from '../graph';
-import { addStreetDetail, loadOverviewMapFonts, mapStyle } from './geoStyle';
+import { addStreetDetail, mapStyle } from './geoStyle';
+import { loadOverviewMapFonts } from './geoFonts';
 import { arcProjector, makeArcRoute, type HubArc } from './geoArcGeometry';
 import { motionDuration, ViewControls } from './ViewControls';
 

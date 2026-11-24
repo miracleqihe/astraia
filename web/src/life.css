@@ -17,6 +17,8 @@
 .life-map-heading { position: absolute; left: 39px; top: 36px; z-index: 3; pointer-events: none; }
 .life-map-heading h1 { margin: 8px 0 5px; font: 600 clamp(26px, 2.5vw, 38px)/1.1 var(--font-editorial); letter-spacing: .015em; }
 .life-map-heading p { color: #b5b3a9; font-size: 12px; }
+.life-load-status { margin: 12px 18px; color: inherit; font-size: 12px; line-height: 1.5; }
+.life-load-status button { border: 1px solid currentColor; background: transparent; color: inherit; padding: 3px 7px; }
 .life-reset { position: absolute; z-index: 3; top: 35px; right: 38px; padding: 7px 10px; color: #e3d7c1;
   border: 1px solid rgba(239,236,230,.35); background: rgba(16,23,34,.86); font-size: 11px; }
 .life-reset:hover { border-color: #c29d59; color: #fff; }
@@ -286,6 +288,9 @@
 .app-shell-life .brand-orbit span { display: none; }
 .app-shell-life .view-switch { border-color: rgba(222,192,132,.28); border-radius: 5px; overflow: hidden; }
 .app-shell-life .view-switch button { min-height: 28px; padding: 0 14px; font-size: 12px; }
+@media (max-width: 760px) {
+  .app-shell-life .view-switch button { padding: 0 3px; font-size: clamp(8px, 2.65vw, 11px); }
+}
 .life-workspace { background: #04070f; }
 .life-map::after { background: radial-gradient(ellipse at 50% 48%, transparent 38%, rgba(3,5,12,.32) 100%); }
 .life-workspace .viewport-frame { inset: 7px 0 0; border: 0; border-top: 1px solid rgba(222,192,132,.15); }

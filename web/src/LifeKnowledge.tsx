@@ -1,4 +1,4 @@
-import { Children, lazy, Suspense, useDeferredValue, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { Children, lazy, Suspense, startTransition, useDeferredValue, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -10,7 +10,9 @@ import LifeInquiry from './LifeInquiry';
 import { lifeDimension, type LifeDimension } from './lifeDimensions';
 import './life.css';
 
-const LifeScene = lazy(() => import('./views/LifeScene'));
+let scenePromise: Promise<typeof import('./views/LifeScene')> | undefined;
+function loadLifeScene() { return scenePromise ??= import('./views/LifeScene').catch((error) => { scenePromise = undefined; throw error; }); }
+const LifeScene = lazy(loadLifeScene);
 const LifeAstrolabe = lazy(() => import('./views/LifeAstrolabe'));
 const base = import.meta.env.BASE_URL;
 
@@ -30,8 +32,12 @@ function separateAnchorMarkers(body: string) {
 }
 
 export default function LifeKnowledge() {
-  const [book, setBook] = useState<LifeBook | null>(null);
+  const [indexBook, setIndexBook] = useState<LifeBook | null>(null);
+  const [fullBook, setFullBook] = useState<LifeBook | null>(null);
+  const book = fullBook ?? indexBook;
   const [error, setError] = useState('');
+  const [fullError, setFullError] = useState('');
+  const [fullAttempt, setFullAttempt] = useState(0);
   const [subject, setSubject] = useState<string | null>(null);
   const [volume, setVolume] = useState<string | null>(null);
   const [selectedId, setSelectedId] = useState(() => new URL(window.location.href).searchParams.get('entry'));
@@ -63,14 +69,56 @@ export default function LifeKnowledge() {
 
   useEffect(() => {
     const controller = new AbortController();
-    fetch(`${base}knowledge/data.json`, { signal: controller.signal }).then((response) => {
-      if (!response.ok) throw new Error(`读取失败 (${response.status})`);
-      return response.json() as Promise<LifeBook>;
-    }).then(setBook).catch((reason: unknown) => {
+    void loadLifeScene().catch(() => {});
+    async function loadIndex() {
+      try {
+        const response = await fetch(`${base}knowledge/index.json`, { signal: controller.signal, cache: 'no-cache' });
+        if (!response.ok) throw new Error(`读取索引失败 (${response.status})`);
+        const data = await response.json() as LifeBook;
+        if (!Array.isArray(data.entries) || !Array.isArray(data.subjects) || !/^[a-f0-9]{64}$/.test(data.data_sha256 ?? '')) throw new Error('知识索引格式不匹配');
+        setIndexBook(data);
+      } catch (reason) {
+        if (controller.signal.aborted) return;
+        // Old static builds may not have an index. They can still open the
+        // complete book normally until the next publication is deployed.
+        const response = await fetch(`${base}knowledge/data.json`, { signal: controller.signal, cache: 'no-cache' });
+        if (!response.ok) throw new Error(`读取失败 (${response.status})`);
+        const data = await response.json() as LifeBook;
+        if (!Array.isArray(data.entries) || !Array.isArray(data.subjects)) throw reason;
+        setIndexBook(data); setFullBook(data);
+      }
+    }
+    loadIndex().catch((reason: unknown) => {
       if (!controller.signal.aborted) setError(reason instanceof Error ? reason.message : '无法载入知识库');
     });
     return () => controller.abort();
   }, []);
+  useEffect(() => {
+    if (!indexBook || fullBook || !indexBook.data_sha256) return;
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => {
+      setFullError('');
+      void (async () => {
+        const response = await fetch(`${base}knowledge/data.json?v=${indexBook.data_sha256}`, { signal: controller.signal, priority: 'low' });
+        if (!response.ok) throw new Error(`读取失败 (${response.status})`);
+        const bytes = await response.arrayBuffer();
+        if (globalThis.crypto?.subtle) {
+          const digest = await crypto.subtle.digest('SHA-256', bytes);
+          const hash = [...new Uint8Array(digest)].map((value) => value.toString(16).padStart(2, '0')).join('');
+          if (hash !== indexBook.data_sha256) throw new Error('知识正文和索引版本不一致，请稍后重试');
+        }
+        const data = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes)) as LifeBook;
+        if (!Array.isArray(data.entries) || data.entries.length !== indexBook.entries.length
+          || data.source_sha256 !== indexBook.source_sha256 || data.entries.some((entry, index) => entry.id !== indexBook.entries[index].id)) {
+          throw new Error('知识正文和索引不匹配，请稍后重试');
+        }
+        if (!controller.signal.aborted) startTransition(() => setFullBook(data));
+      })().catch((reason: unknown) => {
+        if (!controller.signal.aborted) setFullError(reason instanceof Error ? reason.message : '无法载入知识正文');
+      });
+    }, 150);
+    return () => { window.clearTimeout(timer); controller.abort(); };
+  }, [indexBook, fullBook, fullAttempt]);
   useEffect(() => {
     const key = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setEnlargedFigure(null);
@@ -192,9 +240,9 @@ export default function LifeKnowledge() {
       </div>
       <Suspense fallback={<div className="stage-message">正在绘制知识星图…</div>}>
         {sceneMode === 'galaxy' || renderer === 'webgl'
-          ? <LifeScene entries={book.entries} subjects={book.subjects} selectedId={selected?.id ?? null} subjectId={subject} volumeId={volume}
+          ? <LifeScene entries={indexBook!.entries} subjects={indexBook!.subjects} selectedId={selected?.id ?? null} subjectId={subject} volumeId={volume}
               highlightIds={highlightIds} connectHighlights={showConnections} motionEnabled={motionEnabled} mode={sceneMode} resetSerial={resetSerial} onSelect={choose} onSubject={chooseSubject} onVolume={chooseVolume} onRenderer={setRenderer} />
-          : <LifeAstrolabe entries={book.entries} subjects={book.subjects} selectedId={selected?.id ?? null} subjectId={subject}
+          : <LifeAstrolabe entries={indexBook!.entries} subjects={indexBook!.subjects} selectedId={selected?.id ?? null} subjectId={subject}
               volumeId={volume} highlightIds={highlightIds} connectHighlights={showConnections} resetSerial={resetSerial} onSelect={choose} onSubject={chooseSubject} onVolume={chooseVolume} />}
       </Suspense>
       <LifeResonance value={dimension} onChange={(value) => { chooseSubject(null); setDimension(value); }} />
@@ -221,9 +269,9 @@ export default function LifeKnowledge() {
           setObservationsOnly(true); setSubject(null); setVolume(null); setQuery(''); clearSelection(); setLimit(40);
         }}>观测星标 <span>{Object.keys(observations).length}</span></button></div>
       </div>
-      <LifeInquiry book={book} onChoose={choose} onEvidence={(ids) => {
+      {fullBook ? <LifeInquiry book={fullBook} onChoose={choose} onEvidence={(ids) => {
         setInquiryIds(ids); setDimension('all'); setSubject(null); setVolume(null); setQuery(''); setObservationsOnly(false); clearSelection();
-      }} />
+      }} /> : <div className="life-load-status" role="status">{fullError ? <>知识正文暂未载入：{fullError} <button type="button" onClick={() => setFullAttempt((value) => value + 1)}>重试</button></> : '正在载入全文与跨章节问答…'}</div>}
       {selected ? <article className="life-article">
         <button className="life-back" type="button" onClick={clearSelection}>← 返回条目目录</button>
         <div className="life-overline">{selected.volume} / {book.subjects.find((s) => s.id === selected.subject)?.title}</div>
@@ -237,7 +285,7 @@ export default function LifeKnowledge() {
           }} /></label>}
         <div className="life-id">{selected.id} <span>{selected.topic}</span></div>
         <div className="life-source"><span>来源：《格物识微》{book.edition}</span><strong>PDF 第 {selected.page} 页</strong></div>
-        <div className="life-prose"><ReactMarkdown remarkPlugins={[remarkGfm]} components={{
+        {fullBook && <div className="life-prose"><ReactMarkdown remarkPlugins={[remarkGfm]} components={{
           a: ({ href, children }) => {
             if (href?.startsWith('#entry-')) {
               const id = href.slice(7).toUpperCase();
@@ -285,7 +333,7 @@ export default function LifeKnowledge() {
           h4: ({ children }) => { const h = headingParts(children); return <h4 id={h.id}>{h.parts}</h4>; },
           h5: ({ children }) => { const h = headingParts(children); return <h5 id={h.id}>{h.parts}</h5>; },
           h6: ({ children }) => { const h = headingParts(children); return <h6 id={h.id}>{h.parts}</h6>; },
-        }}>{separateAnchorMarkers(selected.body)}</ReactMarkdown></div>
+        }}>{separateAnchorMarkers(selected.body)}</ReactMarkdown></div>}
         {related.length > 0 && <section className="life-related"><h3>原书交叉索引</h3>
           <p>以下连接来自手册原有的条目引用。</p>
           {related.map((entry: LifeEntry) => <button type="button" key={entry.id} onClick={() => choose(entry.id)}>
@@ -301,7 +349,7 @@ export default function LifeKnowledge() {
         <p className="life-directory-intro">{observationsOnly ? '收藏的知识与个人笔记保存在此浏览器。'
           : '选择学科，或搜索、点击星点，阅读原书条目与图文。'}</p>
         <div className="life-results-heading"><span>{deferredQuery ? `搜索结果 · ${results.length}` : `条目目录 · ${results.length}`}</span><span>INDEX</span></div>
-        {!!deferredQuery && results.length > 0 && <p className="life-search-context">按原书关键词匹配 · 星图点亮前 {Math.min(results.length, 30)} 项</p>}
+        {!!deferredQuery && <p className="life-search-context">{fullBook ? `按原书关键词匹配 · 星图点亮前 ${Math.min(results.length, 30)} 项` : '正在载入全文，搜索结果将自动补全。'}</p>}
         {results.slice(0, limit).map((entry) => <button type="button" className="life-result" key={entry.id} onClick={() => choose(entry.id)}>
           <span>{entry.title}</span><small>{entry.id} · 第 {entry.page} 页 · {entry.topic || entry.volume}</small>
           {!!deferredQuery && <em>{lifeSearchExcerpt(entry, deferredQuery)}</em>}</button>)}
