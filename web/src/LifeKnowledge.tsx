@@ -1,4 +1,5 @@
 import { Children, lazy, Suspense, useDeferredValue, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { createPortal } from 'react-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { ViewportFrame } from './WorkbenchControls';
@@ -39,6 +40,9 @@ export default function LifeKnowledge() {
   const [motionEnabled, setMotionEnabled] = useState(() => !window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   const [dimension, setDimension] = useState<LifeDimension>('all');
   const [folioOpen, setFolioOpen] = useState(true);
+  const [directoryOpen, setDirectoryOpen] = useState(true);
+  const [folioTheme, setFolioTheme] = useState<'dark' | 'parchment'>('dark');
+  const [showConnections, setShowConnections] = useState(true);
   const [inquiryIds, setInquiryIds] = useState<string[]>([]);
   const [renderer, setRenderer] = useState<'software' | 'webgl' | null>(null);
   const [observations, setObservations] = useState(readObservations);
@@ -71,7 +75,8 @@ export default function LifeKnowledge() {
     const key = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setEnlargedFigure(null);
       if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
-        event.preventDefault(); setSelectedId(null); searchRef.current?.focus();
+        event.preventDefault(); setFolioOpen(true); setSelectedId(null);
+        window.requestAnimationFrame(() => searchRef.current?.focus());
       }
     };
     window.addEventListener('keydown', key);
@@ -154,63 +159,67 @@ export default function LifeKnowledge() {
     });
   }
 
-  return <div className="life-workspace" data-folio-open={folioOpen} data-low-power={sceneMode === 'astrolabe' || renderer === 'software' ? 'true' : undefined}>
-    <aside className="life-sidebar" aria-label="知识学科">
-      <div className="life-side-heading"><span>OMNIA / KNOWLEDGE ATLAS</span><strong>知识目录</strong><small>五卷 · 二十门</small></div>
+  return <div className="life-workspace" data-folio-open={folioOpen} data-directory-open={directoryOpen} data-folio-theme={folioTheme}
+    data-low-power={renderer === 'software' ? 'true' : undefined}>
+    {document.querySelector('.app-shell-life .topbar') && createPortal(<div className="life-header-status">
+      {sceneMode === 'astrolabe' ? 'ASTROLABE' : renderer === 'software' ? 'CANVAS 2D' : 'RETINA SHADER'} · {book.entries.length.toLocaleString()} NODES
+    </div>, document.querySelector('.app-shell-life .topbar')!)}
+    <aside className="life-sidebar" aria-label="知识学科" hidden={!directoryOpen}>
+      <div className="life-side-heading"><div><span>OMNIA / ATLAS</span><strong>知识目录</strong><small>五卷 · 二十门</small></div>
+        <button className="life-directory-toggle" type="button" onClick={() => setDirectoryOpen(false)}>◂ 收起</button></div>
       <button className="life-subject-all" type="button" aria-pressed={!subject && !volume} onClick={() => chooseSubject(null)}>
-        <span>全部条目</span><b>{book.entries.length.toLocaleString()}</b></button>
-      {volumes.map((volume) => <div className="life-volume" key={volume}>
+        <span>✦ &nbsp;全部星域条目</span><b>{book.entries.length.toLocaleString()}</b></button>
+      {volumes.map((volume, index) => <div className="life-volume" key={volume} data-volume={index}>
         <button type="button" className="life-volume-name" aria-pressed={volume === subjectLabel && !subject} onClick={() => chooseVolume(volume)}>{volume} <span>↗</span></button>
         {book.subjects.filter((item) => item.volume === volume).map((item) => <button key={item.id} type="button"
           aria-pressed={subject === item.id} onClick={() => chooseSubject(item.id)}>
           <span>{item.title}</span><small>{item.count}</small></button>)}
       </div>)}
     </aside>
+    {!directoryOpen && <button className="life-directory-restore" type="button" onClick={() => setDirectoryOpen(true)}>☰ 展开目录</button>}
     <main className="life-map" aria-label="知识星图">
       <ViewportFrame />
-      <svg className="life-celestial-hud" aria-hidden="true" viewBox="0 0 600 600">
-        <circle cx="300" cy="300" r="244"/><circle cx="300" cy="300" r="233" strokeDasharray="2 8"/>
-        <circle cx="300" cy="300" r="224" strokeDasharray="1 6"/>
-        <ellipse cx="300" cy="300" rx="244" ry="93" transform="rotate(23.5 300 300)" strokeDasharray="4 7"/>
-        <circle cx="300" cy="300" r="160" strokeDasharray="3 11"/><circle cx="300" cy="300" r="72"/>
-        <path d="M300 44v30 M300 526v30 M44 300h30 M526 300h30 M119 119l20 20 M461 461l20 20 M481 119l-20 20 M139 461l-20 20"/>
-        <path d="M300 140 438 380 162 380Z M300 460 162 220 438 220Z"/>
-        <circle cx="300" cy="300" r="5"/><path d="M286 300h28 M300 286v28"/>
-      </svg>
       <div className="life-map-heading"><span>ASTRAIA / KNOWLEDGE ATLAS</span><h1>OMNIA <small>万象星枢</small></h1>
-        <p>《格物识微》 · {book.entries.length.toLocaleString()} 个知识节点</p></div>
+        <p>《格物识微》· 五卷异构星系 · {book.entries.length.toLocaleString()} 个知识星点</p></div>
       <div className="life-view-controls" aria-label="知识星图视角">
-        <button type="button" aria-pressed={sceneMode === 'galaxy'} onClick={() => setSceneMode('galaxy')}>3D 星系</button>
-        <button type="button" aria-pressed={sceneMode === 'astrolabe'} onClick={() => setSceneMode('astrolabe')}>2D 星盘</button>
+        <button type="button" aria-pressed={sceneMode === 'galaxy'} onClick={() => setSceneMode('galaxy')}>3D 异构星系</button>
+        <button type="button" aria-pressed={sceneMode === 'astrolabe'} onClick={() => setSceneMode('astrolabe')}>2D 天体星盘</button>
+        <button type="button" aria-pressed={showConnections} onClick={() => setShowConnections((value) => !value)}>✦ 共鸣星弦</button>
         {sceneMode === 'galaxy' && <button type="button" aria-pressed={motionEnabled} onClick={() => setMotionEnabled((value) => !value)}>
           {motionEnabled ? '暂停星动' : '恢复星动'}</button>}
         <button type="button" className="life-reset" onClick={() => { chooseSubject(null); setResetSerial((value) => value + 1); }}>
-          ◇ 总览</button>
+          ◇ 全景总览</button>
       </div>
       <Suspense fallback={<div className="stage-message">正在绘制知识星图…</div>}>
-        {sceneMode === 'galaxy'
+        {sceneMode === 'galaxy' || renderer === 'webgl'
           ? <LifeScene entries={book.entries} subjects={book.subjects} selectedId={selected?.id ?? null} subjectId={subject} volumeId={volume}
-              highlightIds={highlightIds} connectHighlights={true} motionEnabled={motionEnabled} resetSerial={resetSerial} onSelect={choose} onSubject={chooseSubject} onVolume={chooseVolume} onRenderer={setRenderer} />
+              highlightIds={highlightIds} connectHighlights={showConnections} motionEnabled={motionEnabled} mode={sceneMode} resetSerial={resetSerial} onSelect={choose} onSubject={chooseSubject} onVolume={chooseVolume} onRenderer={setRenderer} />
           : <LifeAstrolabe entries={book.entries} subjects={book.subjects} selectedId={selected?.id ?? null} subjectId={subject}
-              volumeId={volume} highlightIds={highlightIds} connectHighlights={true} resetSerial={resetSerial} onSelect={choose} onSubject={chooseSubject} />}
+              volumeId={volume} highlightIds={highlightIds} connectHighlights={showConnections} resetSerial={resetSerial} onSelect={choose} onSubject={chooseSubject} onVolume={chooseVolume} />}
       </Suspense>
       <LifeResonance value={dimension} onChange={(value) => { chooseSubject(null); setDimension(value); }} />
       <div className="life-map-footer"><span>{highlightIds.length ? `✦　点亮 ${highlightIds.length} 项${dimension !== 'all' ? '维度' : observationsOnly ? '观测' : '搜索'}轨迹` : '✦　五卷异构星系 · 明星为学科'}</span>
         <span>{sceneMode === 'galaxy' ? '拖动旋转' : '拖动平移'} · 滚轮缩放 · 长按聚拢关联</span></div>
     </main>
     <aside className="life-inspector" ref={inspectorRef} aria-label="知识卷宗">
-      <button className="life-folio-toggle" type="button" aria-expanded={folioOpen} onClick={() => setFolioOpen((value) => !value)}>
-        {folioOpen ? '收起手卷 ▸' : '◂ 展开手卷'}</button>
+      <div className="life-folio-bar">
+        {folioOpen && <div className="life-theme-switch" role="group" aria-label="手卷主题">
+          <button type="button" aria-pressed={folioTheme === 'dark'} onClick={() => setFolioTheme('dark')}>深空星卷</button>
+          <button type="button" aria-pressed={folioTheme === 'parchment'} onClick={() => setFolioTheme('parchment')}>羊皮典籍</button>
+        </div>}
+        <button className="life-folio-toggle" type="button" aria-expanded={folioOpen} onClick={() => setFolioOpen((value) => !value)}>
+          {folioOpen ? '收起手卷 ▸' : '◂ 展开格物手卷'}</button>
+      </div>
       <div hidden={!folioOpen}>
-      <div className="life-search"><label htmlFor="life-search">检索知识库 <span>⌘ K</span></label>
+      <div className="life-search"><label htmlFor="life-search">检索知识星库 <span>⌘ K</span></label>
         <input id="life-search" ref={searchRef} value={query} placeholder="搜索关键词、编号或问题" onChange={(event) => {
           setQuery(event.target.value); setDimension('all'); setInquiryIds([]); clearSelection(); setLimit(40);
         }} />
         <div className="life-reading-modes"><button type="button" aria-pressed={!observationsOnly} onClick={() => {
           setObservationsOnly(false); clearSelection(); setLimit(40);
-        }}>全部知识</button><button type="button" aria-pressed={observationsOnly} onClick={() => {
+        }}>星卷目录</button><button type="button" aria-pressed={observationsOnly} onClick={() => {
           setObservationsOnly(true); setSubject(null); setVolume(null); setQuery(''); clearSelection(); setLimit(40);
-        }}>观测列表 <span>{Object.keys(observations).length}</span></button></div>
+        }}>观测星标 <span>{Object.keys(observations).length}</span></button></div>
       </div>
       <LifeInquiry book={book} onChoose={choose} onEvidence={(ids) => {
         setInquiryIds(ids); setDimension('all'); setSubject(null); setVolume(null); setQuery(''); setObservationsOnly(false); clearSelection();

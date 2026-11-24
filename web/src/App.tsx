@@ -209,7 +209,7 @@ function Atlas({ snapshot }: { snapshot: GraphSnapshot }) {
     window.history.replaceState({}, '', url);
   }
 
-  return <div className="app-shell">
+  return <div className={`app-shell${lifeMode ? ' app-shell-life' : ''}`}>
     <header className="topbar">
       <Brand />
       <ViewSwitch mode={mode} lifeMode={lifeMode} onSwitch={switchView} />
@@ -299,7 +299,7 @@ export function App() {
     });
     return () => controller.abort();
   }, [attempt, directLife]);
-  if (directLife) return <div className="app-shell">
+  if (directLife) return <div className="app-shell app-shell-life">
     <header className="topbar"><Brand /><ViewSwitch mode="geo" lifeMode onSwitch={(next) => {
       if (next === 'life') return;
       const url = new URL(window.location.href);

@@ -9,9 +9,13 @@ import { lifeStardust } from './lifeStardust';
 import { createLifeGalaxyLabels } from './lifeGalaxyLabels';
 import { createLifePortal } from './lifePortal';
 import { createLifeNebula } from './lifeNebula';
-import { lifeArcPoint, sampleLifeTrace } from './lifeArcs';
+import { lifeAtmosphere } from './lifeAtmosphere';
+import { lifeCelestialGuides } from './lifeCelestialGuides';
+import { lifeStarMaterial } from './lifeStarShader';
+import { lifeAmbientEdges, lifeArcPoint, sampleLifeEdges } from './lifeArcs';
 import { mountLifeSoftware } from './lifeSoftware';
 import type { LifeDrawing, LifeHover } from './lifeSceneTypes';
+import LifeStarTooltip from './LifeStarTooltip';
 
 interface Props {
   entries: LifeEntry[];
@@ -22,6 +26,7 @@ interface Props {
   highlightIds: readonly string[];
   connectHighlights: boolean;
   motionEnabled: boolean;
+  mode: 'galaxy' | 'astrolabe';
   resetSerial: number;
   onSelect: (id: string) => void;
   onSubject: (id: string) => void;
@@ -29,7 +34,7 @@ interface Props {
   onRenderer: (renderer: 'software' | 'webgl') => void;
 }
 
-export default function LifeScene({ entries, subjects, selectedId, subjectId, volumeId, highlightIds, connectHighlights, motionEnabled, resetSerial, onSelect, onSubject, onVolume, onRenderer }: Props) {
+export default function LifeScene({ entries, subjects, selectedId, subjectId, volumeId, highlightIds, connectHighlights, motionEnabled, mode, resetSerial, onSelect, onSubject, onVolume, onRenderer }: Props) {
   const host = useRef<HTMLDivElement>(null);
   const drawing = useRef<LifeDrawing | null>(null);
   const select = useRef(onSelect), selectSubject = useRef(onSubject), selectVolume = useRef(onVolume);
@@ -65,25 +70,27 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
     webgl.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2)); webgl.setClearColor(0x04060c, 1);
     const canvas = webgl.domElement; canvas.dataset.renderer = 'webgl'; element.appendChild(canvas);
     const scene = new THREE.Scene();
-    const nebula = createLifeNebula();
-    const camera = new THREE.PerspectiveCamera(44, 1, 1, 4000);
-    camera.position.set(0, -620, 985);
-    const overviewDirection = camera.position.clone().normalize();
+    const nebula = createLifeNebula(), starMaterial = lifeStarMaterial(), atmosphere = lifeAtmosphere(scene, layout, starMaterial);
+    const camera = new THREE.PerspectiveCamera(46, 1, 1, 3500);
+    camera.position.set(-18, 22, 575);
     const controls = new OrbitControls(camera, canvas);
+    const overviewTarget = new THREE.Vector3(-14,-4,0);
+    controls.target.copy(overviewTarget);
+    const overviewDirection = camera.position.clone().sub(overviewTarget).normalize();
     const labels = createLifeGalaxyLabels(element, layout, subjects, (id) => selectVolume.current(id), (id) => selectSubject.current(id));
     const portal = createLifePortal(element, entries, layout, (id) => select.current(id));
     const portalProjection = new THREE.Vector3();
-    controls.enableDamping = true; controls.dampingFactor = .08;
-    controls.minDistance = 110; controls.maxDistance = 1800; controls.enablePan = true;
+    controls.enableDamping = true; controls.dampingFactor = .065; controls.rotateSpeed = .58; controls.zoomSpeed = .85;
+    controls.minDistance = 75; controls.maxDistance = 1150; controls.enablePan = true;
 
-    const colors = new Float32Array(entries.length * 3);
+    const colors = layout.reference.colors.slice();
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(layout.positions, 3));
     geometry.setAttribute('nodeColor', new THREE.BufferAttribute(colors, 3));
-    const degree = new Map(entries.map((entry) => [entry.id, entry.links.length]));
-    for (const entry of entries) for (const id of entry.links) if (degree.has(id)) degree.set(id, degree.get(id)! + 1);
-    const sizes = new Float32Array(entries.map((entry) => Math.min(2.6, 1.5 + Math.log2(1 + (degree.get(entry.id) ?? 0)) * .22)));
-    geometry.setAttribute('starSize', new THREE.BufferAttribute(sizes, 1));
+    geometry.setAttribute('starSize', new THREE.BufferAttribute(layout.reference.sizes, 1));
+    geometry.setAttribute('starPhase', new THREE.BufferAttribute(layout.reference.phases, 1));
+    geometry.setAttribute('starSpike', new THREE.BufferAttribute(layout.reference.spikes, 1));
+    geometry.setAttribute('starBrightness', new THREE.BufferAttribute(new Float32Array(entries.length).fill(1), 1));
     const dotCanvas = document.createElement('canvas'); dotCanvas.width = dotCanvas.height = 32;
     const dotContext = dotCanvas.getContext('2d');
     if (!dotContext) throw new Error('无法创建星点纹理');
@@ -92,13 +99,16 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
     glow.addColorStop(1, 'rgba(255,255,255,0)');
     dotContext.fillStyle = glow; dotContext.fillRect(0, 0, 32, 32);
     const dot = new THREE.CanvasTexture(dotCanvas);
-    const dustData = lifeStardust(layout, 4200);
+    const dustData = lifeStardust(layout, 3400);
     const dustBase = dustData.positions.slice();
     const dustGeometry = new THREE.BufferGeometry();
     dustGeometry.setAttribute('position', new THREE.BufferAttribute(dustData.positions, 3));
-    dustGeometry.setAttribute('color', new THREE.BufferAttribute(dustData.colors, 3));
-    const dust = new THREE.Points(dustGeometry, new THREE.PointsMaterial({ size: 1, sizeAttenuation: false,
-      vertexColors: true, transparent: true, opacity: .55, depthWrite: false }));
+    dustGeometry.setAttribute('nodeColor', new THREE.BufferAttribute(dustData.colors, 3));
+    dustGeometry.setAttribute('starSize',new THREE.BufferAttribute(dustData.sizes,1));
+    dustGeometry.setAttribute('starPhase',new THREE.BufferAttribute(dustData.phases,1));
+    dustGeometry.setAttribute('starSpike',new THREE.BufferAttribute(new Float32Array(dustData.sizes.length),1));
+    dustGeometry.setAttribute('starBrightness',new THREE.BufferAttribute(new Float32Array(dustData.sizes.length).fill(.58),1));
+    const dust = new THREE.Points(dustGeometry, starMaterial);
     scene.add(dust);
     const galaxyCoreGeometry = new THREE.BufferGeometry();
     const galaxyCorePositions = new Float32Array(layout.volumes.length * 3), galaxyCoreColors = new Float32Array(layout.volumes.length * 3);
@@ -108,36 +118,13 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
     });
     galaxyCoreGeometry.setAttribute('position', new THREE.BufferAttribute(galaxyCorePositions, 3));
     galaxyCoreGeometry.setAttribute('nodeColor', new THREE.BufferAttribute(galaxyCoreColors, 3));
-    galaxyCoreGeometry.setAttribute('brightness', new THREE.BufferAttribute(new Float32Array(layout.volumes.length).fill(1), 1));
-    function navigationMaterial(size: number) {
-      return new THREE.ShaderMaterial({ transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
-        uniforms: { pixelRatio: { value: Math.min(window.devicePixelRatio || 1, 2) }, size: { value: size }, time: { value: 0 } },
-        vertexShader: `attribute vec3 nodeColor; attribute float brightness; varying vec3 vColor; varying float vBrightness; uniform float pixelRatio; uniform float size;
-          void main(){vColor=nodeColor; vBrightness=brightness; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); gl_PointSize=size*pixelRatio;}`,
-        fragmentShader: `varying vec3 vColor; varying float vBrightness; uniform float time;
-          void main(){vec2 p=gl_PointCoord-vec2(.5); float d=length(p); if(d>.5) discard;
-            float core=exp(-d*d*45.); float halo=.35*exp(-d*6.5);
-            float cross=max(0.,1.-abs(p.x)*35.)*max(0.,1.-abs(p.y)*4.)
-                       +max(0.,1.-abs(p.y)*35.)*max(0.,1.-abs(p.x)*4.);
-            vec3 color=mix(vColor,vec3(1.),exp(-d*d*30.));
-            gl_FragColor=vec4(color,min(1.,core+halo+cross*.35)*(0.95+0.05*sin(time))*vBrightness);
-            #include <colorspace_fragment>
-          }` });
-    }
-    const galaxyCores = new THREE.Points(galaxyCoreGeometry, navigationMaterial(26));
+    galaxyCoreGeometry.setAttribute('starSize',new THREE.BufferAttribute(new Float32Array(layout.volumes.length).fill(34),1));
+    galaxyCoreGeometry.setAttribute('starPhase',new THREE.BufferAttribute(new Float32Array(layout.volumes.map((_,i)=>i*1.3)),1));
+    galaxyCoreGeometry.setAttribute('starSpike',new THREE.BufferAttribute(new Float32Array(layout.volumes.length).fill(1.35),1));
+    galaxyCoreGeometry.setAttribute('starBrightness',new THREE.BufferAttribute(new Float32Array(layout.volumes.length).fill(1.15),1));
+    const galaxyCores = new THREE.Points(galaxyCoreGeometry, starMaterial);
     scene.add(galaxyCores);
-    const stars = new THREE.Points(geometry, new THREE.ShaderMaterial({ transparent: true, depthWrite: false,
-      uniforms: { pixelRatio: { value: Math.min(window.devicePixelRatio || 1, 2) } },
-      vertexShader: `attribute float starSize; attribute vec3 nodeColor; varying vec3 vColor; uniform float pixelRatio;
-        void main() { vColor=nodeColor; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); gl_PointSize=starSize*pixelRatio; }`,
-      fragmentShader: `varying vec3 vColor;
-        void main() { float d=length(gl_PointCoord-vec2(.5)); if(d>.5) discard;
-          float core=exp(-d*d*45.); float halo=.45*exp(-d*6.5);
-          vec3 color=mix(vColor,vec3(1.),exp(-d*d*30.));
-          gl_FragColor=vec4(color,min(1.,core+halo)*.92);
-          #include <colorspace_fragment>
-        }`,
-    }));
+    const stars = new THREE.Points(geometry, starMaterial);
     scene.add(stars);
     const hubPositions = new Float32Array(subjects.length * 3), hubColors = new Float32Array(subjects.length * 3);
     subjects.forEach((subject, index) => {
@@ -146,25 +133,36 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
     });
     const hubGeometry = new THREE.BufferGeometry().setAttribute('position', new THREE.BufferAttribute(hubPositions, 3));
     hubGeometry.setAttribute('nodeColor', new THREE.BufferAttribute(hubColors, 3));
-    hubGeometry.setAttribute('brightness', new THREE.BufferAttribute(new Float32Array(subjects.length).fill(1), 1));
-    const hubs = new THREE.Points(hubGeometry, navigationMaterial(13));
+    // Alpha stars are already present in the reference mesh. This transparent
+    // points object supplies their larger, accessible picking targets only.
+    const hubs = new THREE.Points(hubGeometry, new THREE.PointsMaterial({transparent:true,opacity:0,depthWrite:false}));
     scene.add(hubs);
     const structures = layout.structuralEdges.map((group, index) => {
       const guide = new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(group.points),
         new THREE.LineBasicMaterial({ color: LIFE_PALETTES[index % LIFE_PALETTES.length], transparent: true, opacity: .16, depthWrite: false }));
       scene.add(guide); return guide;
     });
+    const celestial = lifeCelestialGuides(layout, entries, subjects);
+    const celestialLines = celestial.map((guide) => {
+      const line = new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(guide.points),
+        new THREE.LineBasicMaterial({color:guide.color,transparent:true,opacity:guide.opacity,depthWrite:false}));
+      scene.add(line); return line;
+    });
     const coreGeometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3()]);
-    const core = new THREE.Points(coreGeometry, new THREE.PointsMaterial({ color: '#efece6', map: dot,
-      size: 9, sizeAttenuation: false, transparent: true, depthWrite: false }));
+    coreGeometry.setAttribute('nodeColor',new THREE.BufferAttribute(new Float32Array(new THREE.Color('#ffe7b3').toArray()),3));
+    coreGeometry.setAttribute('starSize',new THREE.BufferAttribute(new Float32Array([42]),1));
+    coreGeometry.setAttribute('starPhase',new THREE.BufferAttribute(new Float32Array([.5]),1));
+    coreGeometry.setAttribute('starSpike',new THREE.BufferAttribute(new Float32Array([1.5]),1));
+    coreGeometry.setAttribute('starBrightness',new THREE.BufferAttribute(new Float32Array([1.25]),1));
+    const core = new THREE.Points(coreGeometry, starMaterial);
     scene.add(core);
     const selectedGeometry = new THREE.BufferGeometry();
     const selectedStar = new THREE.Points(selectedGeometry, new THREE.PointsMaterial({ color: 0xffe9bd, map: dot,
       size: 12, sizeAttenuation: false, transparent: true, depthTest: false }));
     scene.add(selectedStar);
     const lineGeometry = new THREE.BufferGeometry();
-    const lines = new THREE.LineSegments(lineGeometry, new THREE.LineBasicMaterial({ color: 0xc29d59,
-      transparent: true, opacity: .75, depthWrite: false }));
+    const lines = new THREE.LineSegments(lineGeometry, new THREE.LineBasicMaterial({ color: 0xdec084,
+      transparent: true, opacity: .26, depthWrite: false, blending: THREE.AdditiveBlending }));
     lines.frustumCulled = false;
     scene.add(lines);
     const pulseGeometry = new THREE.BufferGeometry();
@@ -173,8 +171,13 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
       size: 7, sizeAttenuation: false, transparent: true, opacity: .9, depthWrite: false }));
     pulses.frustumCulled = false;
     scene.add(pulses);
-    const motion = createLifeMotion(entries, layout);
+    const motion = createLifeMotion(entries, layout, celestial);
+    const morphBase=layout.positions.slice(), morphPoints=entries.map((entry)=>layout.locations.get(entry.id)!);
+    const subjectBase=new Map([...layout.centers].map(([id,point])=>[id,point.clone()]));
+    const ambientEdges = lifeAmbientEdges(entries);
     let movingStars = false, lastMotion = 0, pointerActive = false;
+    let currentMode: 'galaxy' | 'astrolabe' = 'galaxy', morph=0, morphTarget=0;
+    let selectedActive = false;
     let liveLinePoints: THREE.Vector3[] = [], liveSelectedPoint: THREE.Vector3 | undefined, labelsVisible = true;
     let labelVolume: string | null = null, labelSubject: string | null = null, labelSelected = false;
     const arcA = new THREE.Vector3(), arcB = new THREE.Vector3(), arcPulse = new THREE.Vector3(), arcSegments = 10;
@@ -189,6 +192,39 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
       }
       attribute.needsUpdate = true;
     }
+    function syncGuides() {
+      structures.forEach((guide,group)=>{
+        const attribute=guide.geometry.getAttribute('position') as THREE.BufferAttribute;
+        layout.structuralEdges[group].points.forEach((point,index)=>attribute.setXYZ(index,point.x,point.y,point.z));
+        attribute.needsUpdate=true;
+      });
+      celestialLines.forEach((line,group)=>{
+        const attribute=line.geometry.getAttribute('position') as THREE.BufferAttribute;
+        celestial[group].points.forEach((point,index)=>attribute.setXYZ(index,point.x,point.y,point.z));
+        attribute.needsUpdate=true;
+      });
+    }
+    function applyMorph(value:number) {
+      for(let i=0;i<morphPoints.length;i++) {
+        const at=i*3, x=morphBase[at]+(layout.flatPositions[at]-morphBase[at])*value;
+        const y=morphBase[at+1]+(layout.flatPositions[at+1]-morphBase[at+1])*value;
+        const z=morphBase[at+2]*(1-value);
+        layout.positions[at]=x;layout.positions[at+1]=y;layout.positions[at+2]=z;morphPoints[i].set(x,y,z);
+      }
+      geometry.getAttribute('position').needsUpdate=true;
+      subjects.forEach((subject,index)=>{
+        const point=layout.centers.get(subject.id), from=subjectBase.get(subject.id), to=layout.flatCenters.get(subject.id);
+        if(point && from && to) { point.lerpVectors(from,to,value); point.toArray(hubPositions,index*3); }
+      });
+      hubGeometry.getAttribute('position').needsUpdate=true;
+      for(let i=0;i<dustData.positions.length;i++) dustData.positions[i]=dustBase[i]+(dustData.flatPositions[i]-dustBase[i])*value;
+      dustGeometry.getAttribute('position').needsUpdate=true;
+      structures.forEach((guide)=>{guide.visible=value<.55;});
+      celestialLines[celestialLines.length-1].visible=value<.45;
+      updateArcs();
+      const selectedPosition=selectedGeometry.getAttribute('position') as THREE.BufferAttribute|undefined;
+      if(selectedPosition && liveSelectedPoint) { selectedPosition.setXYZ(0,liveSelectedPoint.x,liveSelectedPoint.y,liveSelectedPoint.z); selectedPosition.needsUpdate=true; }
+    }
     let focus: THREE.Vector3 | null = null, focusDirection: THREE.Vector3 | null = null, focusDistance = 0, frame = 0;
     function schedule() { if (!frame) frame = requestAnimationFrame(render); }
     function fly(target: THREE.Vector3, distance: number, direction: THREE.Vector3 | null = null) {
@@ -196,21 +232,24 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
     }
     function render(now: number) {
       frame = 0;
-      (galaxyCores.material as THREE.ShaderMaterial).uniforms.time.value = now / 2000;
-      (hubs.material as THREE.ShaderMaterial).uniforms.time.value = now / 2000;
-      if (movingStars && !pointerActive && !gravity.active() && !document.hidden) {
+      if (movingStars) (stars.material as THREE.ShaderMaterial).uniforms.time.value = now / 1000;
+      if(Math.abs(morphTarget-morph)>.001) {
+        morph+=(morphTarget-morph)*.085;
+        if(Math.abs(morphTarget-morph)<=.001) morph=morphTarget;
+        applyMorph(morph);
+      }
+      if (movingStars && currentMode==='galaxy' && morph===0 && !selectedActive && !pointerActive && !gravity.active() && !document.hidden) {
         if (lastMotion) {
           motion.advance((now - lastMotion) / 1000);
           geometry.getAttribute('position').needsUpdate = true;
           subjects.forEach((subject, index) => layout.centers.get(subject.id)?.toArray(hubPositions, index * 3));
           hubGeometry.getAttribute('position').needsUpdate = true;
+          layout.volumes.forEach((volume, index) => layout.volumeCenters.get(volume)?.toArray(galaxyCorePositions, index * 3));
+          galaxyCoreGeometry.getAttribute('position').needsUpdate = true;
+          atmosphere.rotate(motion.angle());
           motion.transformDust(dustData.positions, dustBase, dustData.groups);
           dustGeometry.getAttribute('position').needsUpdate = true;
-          structures.forEach((guide, group) => {
-            const attribute = guide.geometry.getAttribute('position') as THREE.BufferAttribute;
-            layout.structuralEdges[group].points.forEach((point, index) => attribute.setXYZ(index, point.x, point.y, point.z));
-            attribute.needsUpdate = true;
-          });
+          syncGuides();
           updateArcs();
           const selectedPosition = selectedGeometry.getAttribute('position') as THREE.BufferAttribute | undefined;
           if (selectedPosition && liveSelectedPoint) {
@@ -241,14 +280,14 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
           && (!focusDirection || bearing.dot(focusDirection) > .99999)) { focus = null; focusDirection = null; }
       }
       const moving = controls.update(); nebula.render(webgl, scene, camera, now / 1000, camera.aspect);
-      labels.update(camera, labelsVisible, labelVolume, labelSubject, labelSelected);
+      labels.update(camera, labelsVisible, labelVolume, labelSubject, labelSelected,currentMode==='astrolabe',morph);
       const portalPoint = portal.point();
       if (portalPoint) {
         portalProjection.copy(portalPoint).project(camera);
         portal.position((portalProjection.x + 1) * canvas.clientWidth / 2 + 10,
           (1 - portalProjection.y) * canvas.clientHeight / 2 + 10, portalProjection.z < 1 && Math.abs(portalProjection.x) < .95 && Math.abs(portalProjection.y) < .95);
       }
-      if (focus || moving || (movingStars && !document.hidden)) schedule();
+      if (focus || moving || Math.abs(morphTarget-morph)>.001 || (movingStars && !document.hidden)) schedule();
     }
     const visibility = () => { lastMotion = 0; if (!document.hidden && movingStars) schedule(); };
     document.addEventListener('visibilitychange', visibility);
@@ -259,12 +298,12 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
       if (webgl.getPixelRatio() !== ratio) {
         webgl.setPixelRatio(ratio);
         (stars.material as THREE.ShaderMaterial).uniforms.pixelRatio.value = ratio;
-        (galaxyCores.material as THREE.ShaderMaterial).uniforms.pixelRatio.value = ratio;
-        (hubs.material as THREE.ShaderMaterial).uniforms.pixelRatio.value = ratio;
       }
       camera.aspect = width / height;
-      if (width > 760) camera.setViewOffset(width, height, Math.round(width * .06), 0, width, height);
-      else camera.clearViewOffset();
+      // The original canvas continues behind the 48 px navigation bar.
+      // Match that full-window projection while keeping the app header intact.
+      const topInset = width > 760 ? Math.max(0,Math.min(80,Math.round(element.getBoundingClientRect().top))) : 0;
+      if(topInset) camera.setViewOffset(width,height+topInset,0,topInset,width,height); else camera.clearViewOffset();
       camera.updateProjectionMatrix(); webgl.setSize(width, height, false); schedule();
     };
     const observer = new ResizeObserver(resize); observer.observe(element); resize();
@@ -303,7 +342,11 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
         hovered = key;
         const title = target?.kind === 'hub' ? `学科 · ${subjects[target.index].title}`
           : target ? entries[target.index].title : '';
-        setHover(target ? { title, x: event.offsetX, y: event.offsetY } : null);
+        const entry = target?.kind === 'node' ? entries[target.index] : undefined;
+        const discipline = target?.kind === 'hub' ? subjects[target.index] : undefined;
+        setHover(target ? { title, x: event.offsetX, y: event.offsetY, id: entry?.id,
+          volume: entry?.volume ?? discipline?.volume,
+          detail: entry ? `${entry.topic} · 原书第 ${entry.page} 页` : '点击进入学科星域' } : null);
       }
     };
     const pointerDown = (event: PointerEvent) => {
@@ -328,60 +371,79 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
     canvas.addEventListener('pointerup', pointerUp); canvas.addEventListener('pointerleave', leave);
     const pointerCancel = () => { pointerActive = false; restoreGravity(); };
     canvas.addEventListener('pointercancel', pointerCancel);
-    const color = new THREE.Color();
     let lastFocus = '';
     const controller: LifeDrawing = {
       update(selected, subject, highlights, connect = true, volume = null) {
+        selectedActive = !!selected;
         labelsVisible = !selected && !subject && !volume;
         labelVolume = volume; labelSubject = subject; labelSelected = !!selected;
-        portal.select(selected);
+        portal.select(connect ? selected : null);
         const chosen = entries.find((entry) => entry.id === selected), related = new Set(chosen?.links ?? []);
         const matched = new Set(highlights);
         const activeVolume = volume ?? subjects.find((item) => item.id === subject)?.volume ?? chosen?.volume ?? null;
+        atmosphere.focus(activeVolume);
         structures.forEach((guide, index) => {
           (guide.material as THREE.LineBasicMaterial).opacity = activeVolume && layout.volumes[index] !== activeVolume ? .032 : .16;
         });
-        const coreBrightness = galaxyCoreGeometry.getAttribute('brightness') as THREE.BufferAttribute;
-        layout.volumes.forEach((item, index) => coreBrightness.setX(index, activeVolume && item !== activeVolume ? .2 : 1));
+        const coreBrightness = galaxyCoreGeometry.getAttribute('starBrightness') as THREE.BufferAttribute;
+        layout.volumes.forEach((item, index) => coreBrightness.setX(index, activeVolume && item !== activeVolume ? .2 : 1.15));
         coreBrightness.needsUpdate = true;
-        const subjectBrightness = hubGeometry.getAttribute('brightness') as THREE.BufferAttribute;
-        subjects.forEach((item, index) => subjectBrightness.setX(index, activeVolume && item.volume !== activeVolume ? .2 : 1));
-        subjectBrightness.needsUpdate = true;
         if (chosen) for (const entry of entries) if (entry.links.includes(chosen.id)) related.add(entry.id);
         entries.forEach((entry, i) => {
-          color.set(LIFE_PALETTES[layout.volumes.indexOf(entry.volume) % LIFE_PALETTES.length]);
           const dim = subject && entry.subject !== subject || volume && entry.volume !== volume ? .22 : selected && entry.id !== selected && !related.has(entry.id) ? .28
             : !selected && matched.size && !matched.has(entry.id) ? .22 : 1;
-          color.multiplyScalar(dim);
-          (geometry.getAttribute('nodeColor') as THREE.BufferAttribute).setXYZ(i, color.r, color.g, color.b);
+          (geometry.getAttribute('starBrightness') as THREE.BufferAttribute).setX(i, dim);
         });
-        geometry.getAttribute('nodeColor').needsUpdate = true;
+        geometry.getAttribute('starBrightness').needsUpdate = true;
         const origin = selected ? layout.locations.get(selected) : undefined;
+        (lines.material as THREE.LineBasicMaterial).opacity = origin ? .72 : highlights.length ? .48 : .26;
         liveSelectedPoint = origin; selectedGeometry.setFromPoints(origin ? [origin] : []);
         const linePoints: THREE.Vector3[] = [];
-        if (origin) for (const id of related) {
+        if (origin && connect) for (const id of related) {
           const target = layout.locations.get(id);
           if (target) linePoints.push(origin, target);
         }
         if (!origin && connect && highlights.length > 1) {
-          const trace = sampleLifeTrace(entries, highlights);
-          for (let index = 1; index < trace.length; index++) {
-            const a = layout.locations.get(trace[index - 1]), b = layout.locations.get(trace[index]);
+          for (const [from, to] of sampleLifeEdges(entries, highlights)) {
+            const a = layout.locations.get(from), b = layout.locations.get(to);
             if (a && b) linePoints.push(a, b);
           }
+        }
+        if (!origin && connect && !highlights.length && !subject && !volume) for (const [from,to] of ambientEdges) {
+          const a=layout.locations.get(from), b=layout.locations.get(to); if(a && b) linePoints.push(a,b);
         }
         liveLinePoints = linePoints;
         lineGeometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(linePoints.length / 2 * arcSegments * 6), 3));
         updateArcs();
         pulseGeometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(linePoints.length / 2 * 3), 3));
-        const target = origin ?? (subject ? layout.centers.get(subject) : volume ? layout.volumeCenters.get(volume) : undefined);
+        const target = origin ?? (subject ? layout.centers.get(subject) : volume && currentMode==='galaxy' ? layout.volumeCenters.get(volume) : undefined);
         const key = selected ? `entry:${selected}` : subject ? `subject:${subject}` : volume ? `volume:${volume}` : '';
-        if (target && key !== lastFocus) fly(target, origin ? 285 : subject ? 390 : 590);
+        if (target && key !== lastFocus) fly(target, currentMode==='astrolabe' ? origin ? 185 : 190 : origin ? 150 : subject ? 170 : 240);
         else if (!target && lastFocus) { focus = null; schedule(); } else schedule();
         lastFocus = key;
       },
       setMotion(enabled) { movingStars = enabled; lastMotion = 0; if (enabled && !document.hidden) schedule(); },
-      reset() { fly(new THREE.Vector3(), 1165, overviewDirection); },
+      setMode(next) {
+        if(next===currentMode) return;
+        if(next==='astrolabe' && morph===0) {
+          // Gemini returns its slowly turning universe to its original axis
+          // before morphing the same stars and dust into the flat target.
+          motion.reset(); atmosphere.rotate(0); dustData.positions.set(dustBase);
+          layout.volumes.forEach((volume,index)=>layout.volumeCenters.get(volume)?.toArray(galaxyCorePositions,index*3));
+          galaxyCoreGeometry.getAttribute('position').needsUpdate=true; syncGuides();
+        }
+        currentMode=next; morphTarget=next==='astrolabe'?1:0; canvas.dataset.sceneMode=next;
+        controls.enableRotate=next==='galaxy';
+        controls.mouseButtons.LEFT=next==='astrolabe'?THREE.MOUSE.PAN:THREE.MOUSE.ROTATE;
+        if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) { morph=morphTarget; applyMorph(morph); }
+        if(next==='astrolabe') fly(new THREE.Vector3(-12,0,0),640,new THREE.Vector3(0,0,1));
+        else fly(overviewTarget,576,overviewDirection);
+        schedule();
+      },
+      reset() {
+        if(currentMode==='astrolabe') fly(new THREE.Vector3(-12,0,0),640,new THREE.Vector3(0,0,1));
+        else fly(overviewTarget,576,overviewDirection);
+      },
       dispose() {
         movingStars = false; document.removeEventListener('visibilitychange', visibility);
         labels.dispose(); portal.dispose();
@@ -391,13 +453,14 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
         canvas.removeEventListener('pointerup', pointerUp); canvas.removeEventListener('pointerleave', leave);
         canvas.removeEventListener('pointercancel', pointerCancel);
         geometry.dispose(); (stars.material as THREE.Material).dispose(); hubGeometry.dispose(); (hubs.material as THREE.Material).dispose();
-        dustGeometry.dispose(); (dust.material as THREE.Material).dispose();
-        galaxyCoreGeometry.dispose(); (galaxyCores.material as THREE.Material).dispose();
+        dustGeometry.dispose();
+        galaxyCoreGeometry.dispose();
         selectedGeometry.dispose(); (selectedStar.material as THREE.Material).dispose(); lineGeometry.dispose(); (lines.material as THREE.Material).dispose();
         pulseGeometry.dispose(); (pulses.material as THREE.Material).dispose();
         structures.forEach((guide) => { guide.geometry.dispose(); (guide.material as THREE.Material).dispose(); });
-        coreGeometry.dispose(); (core.material as THREE.Material).dispose();
-        nebula.dispose(); dot.dispose(); webgl.dispose(); canvas.remove();
+        celestialLines.forEach((line) => { line.geometry.dispose(); (line.material as THREE.Material).dispose(); });
+        coreGeometry.dispose();
+        atmosphere.dispose(); nebula.dispose(); dot.dispose(); webgl.dispose(); canvas.remove();
       },
     };
     drawing.current = controller; controller.update(selectedId, subjectId, highlightIds, connectHighlights, volumeId); controller.setMotion(motionEnabled);
@@ -407,8 +470,9 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
   }, [entries, subjects]);
   useEffect(() => { drawing.current?.update(selectedId, subjectId, highlightIds, connectHighlights, volumeId); }, [selectedId, subjectId, highlightIds, connectHighlights, volumeId]);
   useEffect(() => { drawing.current?.setMotion(motionEnabled); }, [motionEnabled]);
+  useEffect(() => { drawing.current?.setMode?.(mode); }, [mode]);
   useEffect(() => { if (resetSerial) drawing.current?.reset(); }, [resetSerial]);
-  return <div className="life-scene" ref={host} aria-label="知识星图：拖动旋转，滚轮缩放，点击星点或学科星团">
-    {hover && <div className="life-tooltip" style={{ left: hover.x + 12, top: hover.y + 12 }}>{hover.title}</div>}
+  return <div className="life-scene" ref={host} aria-label={mode==='galaxy' ? '知识星图：拖动旋转，滚轮缩放，点击星点或学科星团' : '二维知识星盘：拖动平移，滚轮缩放，点击星点或学科'}>
+    <LifeStarTooltip hover={hover} />
   </div>;
 }

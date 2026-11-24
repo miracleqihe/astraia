@@ -7,7 +7,8 @@ import { createLifeMotion } from './lifeMotion';
 import { lifeStardust } from './lifeStardust';
 import { createLifeGalaxyLabels } from './lifeGalaxyLabels';
 import { createLifePortal } from './lifePortal';
-import { lifeArcPoint, sampleLifeTrace } from './lifeArcs';
+import { lifeCelestialGuides } from './lifeCelestialGuides';
+import { lifeAmbientEdges, lifeArcPoint, sampleLifeEdges } from './lifeArcs';
 import type { LifeDrawing, LifeHover } from './lifeSceneTypes';
 
 type Layout = ReturnType<typeof lifeGalaxyLayout>;
@@ -22,15 +23,22 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   const ctx: CanvasRenderingContext2D = drawingContext;
   canvas.dataset.renderer = 'software';
   host.appendChild(canvas);
-  const camera = new THREE.PerspectiveCamera(44, 1, 1, 4000);
-  camera.position.set(0, -620, 985);
-  const overviewDirection = camera.position.clone().normalize();
+  const glowLayer = document.createElement('div'); glowLayer.className = 'life-software-glows';
+  const volumeGlows = layout.volumes.map((_, index) => {
+    const glow = document.createElement('span'); glow.className = 'life-software-glow'; glow.dataset.volume = String(index);
+    glowLayer.append(glow); return glow;
+  });
+  host.append(glowLayer);
+  const camera = new THREE.PerspectiveCamera(46, 1, 1, 3500);
+  camera.position.set(-18, 22, 575);
   const controls = new OrbitControls(camera, canvas);
+  const overviewTarget = new THREE.Vector3(-14,-4,0); controls.target.copy(overviewTarget);
+  const overviewDirection = camera.position.clone().sub(overviewTarget).normalize();
   const labels = createLifeGalaxyLabels(host, layout, subjects, onVolume, onSubject);
   const portal = createLifePortal(host, entries, layout, onSelect);
   let labelsVisible = true, labelVolume: string | null = null, labelSubject: string | null = null, labelSelected = false;
-  controls.enableDamping = true; controls.dampingFactor = .08;
-  controls.minDistance = 110; controls.maxDistance = 1800; controls.enablePan = true;
+  controls.enableDamping = true; controls.dampingFactor = .065; controls.rotateSpeed = .58; controls.zoomSpeed = .85;
+  controls.minDistance = 75; controls.maxDistance = 1150; controls.enablePan = true;
 
   const hubPositions = new Float32Array(subjects.length * 3);
   const dust = lifeStardust(layout, 1200);
@@ -104,7 +112,8 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   });
   const nodeSize = entries.map((entry) => Math.min(2.6, 1.5 + Math.log2(1 + entry.links.length + (incoming.get(entry.id)?.length ?? 0)) * .22));
   const background = rgb(4, 6, 12), guideColor = rgb(43, 49, 56), dimGuideColor = rgb(13, 16, 23), hubColor = rgb(210, 176, 113);
-  const lineColor = rgb(174, 146, 93), selectedColor = rgb(255, 233, 189);
+  let lineColor = rgb(57, 51, 39);
+  const selectedColor = rgb(255, 233, 189);
   let image: ImageData | null = null;
   let pixels = new Uint32Array();
   let width = 1, height = 1;
@@ -125,14 +134,16 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   let dragging = false;
   let restoreQuality = 0;
   let drawCount = 0;
-  const motion = createLifeMotion(entries, layout);
+  const celestial = lifeCelestialGuides(layout, entries, subjects), ambientEdges = lifeAmbientEdges(entries);
+  const motion = createLifeMotion(entries, layout, celestial);
   let motionEnabled = false, motionTimer = 0, motionLast = 0, disposed = false;
+  let selectedActive = false;
 
   function ambientTick() {
     motionTimer = 0;
     if (!motionEnabled || disposed || document.hidden) { motionLast = 0; return; }
     const now = performance.now();
-    if (!dragging && !interacting && !focus && !gravity.active()) {
+    if (!selectedActive && !dragging && !interacting && !focus && !gravity.active()) {
       if (motionLast) {
         motion.advance((now - motionLast) / 1000);
         motion.transformDust(dust.positions, dustBase, dust.groups);
@@ -154,13 +165,13 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   function schedule() { if (!frame) frame = requestAnimationFrame(render); }
   function beginMotion() {
     window.clearTimeout(restoreQuality); restoreQuality = 0;
-    if (!interacting) { interacting = true; resize(); }
+    if (!interacting) { interacting = true; glowLayer.dataset.interacting='true'; resize(); }
   }
   function restoreWhenStill() {
     if (!interacting || dragging || focus || restoreQuality) return;
     restoreQuality = window.setTimeout(() => {
       restoreQuality = 0;
-      if (!dragging && !focus) { interacting = false; resize(); }
+      if (!dragging && !focus) { interacting = false; glowLayer.dataset.interacting='false'; resize(); }
     }, 180);
   }
   function fly(target: THREE.Vector3, distance: number, direction: THREE.Vector3 | null = null) {
@@ -219,6 +230,17 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       ctx.fill();
     }
     ctx.lineWidth = 1;
+    for (const guide of celestial) {
+      ctx.strokeStyle = guide.color; ctx.globalAlpha = guide.opacity; ctx.beginPath();
+      for (let i = 0; i < guide.points.length; i += interacting ? 4 : 2) {
+        const a = guide.points[i], b = guide.points[i + 1];
+        if (!project(a.x,a.y,a.z)) continue;
+        const x=projectedX,y=projectedY;
+        if (project(b.x,b.y,b.z)) { ctx.moveTo(x,y); ctx.lineTo(projectedX,projectedY); }
+      }
+      ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
     for (const group of layout.structuralEdges) {
       ctx.strokeStyle = activeVolume && group.volume !== activeVolume ? 'rgba(212,175,55,.025)' : 'rgba(212,175,55,.16)';
       ctx.beginPath();
@@ -230,7 +252,7 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       }
       ctx.stroke();
     }
-    ctx.strokeStyle = 'rgba(226,190,124,.7)'; ctx.beginPath();
+    ctx.strokeStyle = selectedActive ? 'rgba(226,190,124,.7)' : 'rgba(226,190,124,.26)'; ctx.beginPath();
     for (let i = 0; i < edges.length; i += 2) {
       const a = edges[i], b = edges[i + 1]; let haveLast = false;
       for (let step = 0; step <= 10; step++) {
@@ -292,6 +314,16 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   }
   function finishDraw() {
     labels.update(camera, labelsVisible, labelVolume, labelSubject, labelSelected);
+    layout.volumes.forEach((volume,index) => {
+      const center=layout.volumeCenters.get(volume), glow=volumeGlows[index];
+      if (!center || !project(center.x,center.y,center.z)) { glow.hidden=true; return; }
+      glow.hidden=false;
+      const x=projectedX/width*host.clientWidth, y=projectedY/height*host.clientHeight;
+      const distance=Math.max(40,camera.position.distanceTo(center));
+      const size=Math.min(1000,215*host.clientHeight/(2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*distance));
+      glow.style.transform=`translate3d(${x-128}px,${y-128}px,0) scale(${size/256})`;
+      glow.style.opacity=activeVolume && activeVolume!==volume ? '.22' : '1';
+    });
     const portalPoint = portal.point();
     if (portalPoint && project(portalPoint.x, portalPoint.y, portalPoint.z))
       portal.position(projectedX / width * host.clientWidth + 10, projectedY / height * host.clientHeight + 10,
@@ -318,6 +350,15 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       for (let k = -Math.round(4 * pixelRatio); k <= Math.round(4 * pixelRatio); k++) { pixel(x + k, y, dim ? guideColor : hubColor); pixel(x, y + k, dim ? guideColor : hubColor); }
       const core = Math.max(1, Math.round(pixelRatio));
       for (let dy = -core; dy <= core; dy++) for (let dx = -core; dx <= core; dx++) pixel(x + dx, y + dy, dim ? guideColor : selectedColor);
+    }
+    for (const guide of celestial) {
+      const strength=Math.round(10+guide.opacity*90), color=rgb(strength,strength+1,strength+3);
+      for (let i = 0; i < guide.points.length; i += 2) {
+        const a=guide.points[i], b=guide.points[i+1];
+        if (!project(a.x,a.y,a.z)) continue;
+        const x=projectedX,y=projectedY;
+        if (project(b.x,b.y,b.z)) line(x,y,projectedX,projectedY,color);
+      }
     }
     for (const group of layout.structuralEdges) for (let i = 0; i < group.points.length; i += 2) {
       const a = group.points[i], b = group.points[i + 1];
@@ -419,8 +460,9 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   const resize = () => {
     const cssWidth = Math.max(1, host.clientWidth), cssHeight = Math.max(1, host.clientHeight);
     hitMarginX = 12 / cssWidth; hitMarginY = 12 / cssHeight;
-    // Preserve physical-pixel sharpness in both idle and interaction states.
-    const scale = Math.min(window.devicePixelRatio || 1, 2);
+    // Reduce raster work only during a software-rendered drag or flight;
+    // return to full retina resolution once the camera settles.
+    const scale = Math.min(window.devicePixelRatio || 1, interacting ? 1 : 2);
     pixelRatio = scale;
     const nextWidth = Math.max(1, Math.round(cssWidth * scale));
     const nextHeight = Math.max(1, Math.round(cssHeight * scale));
@@ -430,8 +472,8 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       image = ctx.createImageData(width, height); pixels = new Uint32Array(image.data.buffer);
     }
     camera.aspect = cssWidth / cssHeight;
-    if (cssWidth > 760) camera.setViewOffset(cssWidth, cssHeight, Math.round(cssWidth * .06), 0, cssWidth, cssHeight);
-    else camera.clearViewOffset();
+    const topInset=cssWidth>760?Math.max(0,Math.min(80,Math.round(host.getBoundingClientRect().top))):0;
+    if(topInset) camera.setViewOffset(cssWidth,cssHeight+topInset,0,topInset,cssWidth,cssHeight); else camera.clearViewOffset();
     camera.updateProjectionMatrix(); schedule();
   };
   // A moving divider or an animated browser resize can otherwise allocate and
@@ -503,7 +545,11 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       // races across a dense cluster; show the label once it briefly settles.
       if (target) hoverTimer = window.setTimeout(() => {
         hoverTimer = 0; tooltipVisible = true;
-        onHover({ title, x: event.offsetX, y: event.offsetY });
+        const entry = target.kind === 'node' ? entries[target.index] : undefined;
+        const discipline = target.kind === 'hub' ? subjects[target.index] : undefined;
+        onHover({ title, x: event.offsetX, y: event.offsetY, id: entry?.id,
+          volume: entry?.volume ?? discipline?.volume,
+          detail: entry ? `${entry.topic} · 原书第 ${entry.page} 页` : '点击进入学科星域' });
       }, 60);
     }
   };
@@ -550,9 +596,11 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   let lastFocus = '';
   return {
     update(selected, subject, highlights, connectHighlights = true, volume = null) {
+      selectedActive = !!selected;
+      lineColor = selected ? rgb(174,146,93) : rgb(57,51,39);
       labelsVisible = !selected && !subject && !volume;
       labelVolume = volume; labelSubject = subject; labelSelected = !!selected;
-      portal.select(selected);
+      portal.select(connectHighlights ? selected : null);
       const chosen = selected ? entryById.get(selected) : undefined;
       activeVolume = volume ?? subjects.find((item) => item.id === subject)?.volume ?? chosen?.volume ?? null;
       const related = new Set(chosen?.links ?? []);
@@ -565,28 +613,30 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       });
       selectedPoint = selected ? layout.locations.get(selected) : undefined;
       edges = [];
-      if (selectedPoint) for (const id of related) {
+      if (selectedPoint && connectHighlights) for (const id of related) {
         const target = layout.locations.get(id);
         if (target) edges.push(selectedPoint, target);
       }
       if (!selectedPoint && connectHighlights && highlights.length > 1) {
-        const trace = sampleLifeTrace(entries, highlights);
-        for (let index = 1; index < trace.length; index++) {
-          const a = layout.locations.get(trace[index - 1]), b = layout.locations.get(trace[index]);
+        for (const [from, to] of sampleLifeEdges(entries, highlights)) {
+          const a = layout.locations.get(from), b = layout.locations.get(to);
           if (a && b) edges.push(a, b);
         }
       }
+      if (!selectedPoint && connectHighlights && !highlights.length && !subject && !volume) for (const [from,to] of ambientEdges) {
+        const a=layout.locations.get(from), b=layout.locations.get(to); if(a && b) edges.push(a,b);
+      }
       const target = selectedPoint ?? (subject ? layout.centers.get(subject) : volume ? layout.volumeCenters.get(volume) : undefined);
       const key = selected ? `entry:${selected}` : subject ? `subject:${subject}` : volume ? `volume:${volume}` : '';
-      if (target && key !== lastFocus) fly(target, selectedPoint ? 285 : subject ? 390 : 590);
+      if (target && key !== lastFocus) fly(target, selectedPoint ? 150 : subject ? 170 : 240);
       else if (!target && lastFocus) { focus = null; schedule(); } else schedule();
       lastFocus = key;
     },
     setMotion,
-    reset() { fly(new THREE.Vector3(), 1165, overviewDirection); },
+    reset() { fly(overviewTarget, 576, overviewDirection); },
     dispose() {
       disposed = true; setMotion(false); document.removeEventListener('visibilitychange', visibility);
-      labels.dispose(); portal.dispose();
+      labels.dispose(); portal.dispose(); glowLayer.remove();
       restoreGravity(); gravityAnimation.dispose(); cancelAnimationFrame(frame); cancelAnimationFrame(hoverFrame); window.clearTimeout(restoreQuality);
       window.clearTimeout(hoverTimer); observer.disconnect();
       controls.removeEventListener('change', schedule); controls.dispose();

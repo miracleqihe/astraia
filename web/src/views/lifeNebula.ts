@@ -11,22 +11,11 @@ export function createLifeNebula() {
     fragmentShader: `varying vec2 vUv;
       uniform float time;
       uniform float aspect;
-      float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1,311.7))) * 43758.5453); }
-      float noise(vec2 p) {
-        vec2 i = floor(p), f = fract(p); f = f*f*(3.0-2.0*f);
-        return mix(mix(hash(i), hash(i+vec2(1.,0.)),f.x),mix(hash(i+vec2(0.,1.)),hash(i+vec2(1.,1.)),f.x),f.y);
-      }
-      float clouds(vec2 p) { float v=0., a=.5; for(int i=0;i<4;i++){ v+=a*noise(p); p=p*2.05+17.1; a*=.5; } return v; }
       void main() {
-        vec2 p=(vUv-.5)*vec2(aspect,1.0);
-        float n=clouds(p*3.2+vec2(time*.006,-time*.004));
-        float n2=clouds(p*4.5+vec2(-time*.003,time*.004)+4.2);
-        float veil=exp(-dot(p*vec2(1.2,2.0),p*vec2(1.2,2.0))*1.6);
-        vec3 dark=vec3(.015,.023,.047);
-        vec3 blue=vec3(.025,.12,.20)*smoothstep(.25,.8,n);
-        vec3 violet=vec3(.13,.04,.19)*smoothstep(.33,.82,n2);
-        vec3 emerald=vec3(.015,.095,.065)*smoothstep(.48,.86,n+n2*.18);
-        gl_FragColor=vec4(dark+(blue+violet+emerald)*veil*.85,1.);
+        vec2 p=(vUv-vec2(.46,.5))*vec2(aspect,1.0);
+        float d=length(p)/max(.7,aspect*.55);
+        vec3 inner=vec3(11.,19.,38.)/255.; vec3 middle=vec3(5.,8.,18.)/255.; vec3 outer=vec3(2.,3.,7.)/255.;
+        gl_FragColor=vec4(mix(mix(inner,middle,smoothstep(0.,.48,d)),outer,smoothstep(.48,1.,d)),1.);
       }` });
   const geometry = new THREE.PlaneGeometry(2, 2), mesh = new THREE.Mesh(geometry, material);
   scene.add(mesh);
