@@ -64,12 +64,30 @@ def deploy(vault: Path, code_table: Path, *, reviewed_only: bool = False) -> Non
             if not (built / name).exists():
                 raise ValueError(f'网页构建缺少 {name}。')
 
+        # Pages caches HTML independently from hashed bundles. Retain older
+        # bundles so an open tab or a cached HTML document can still load its
+        # original scripts while clients receive the new deployment.
+        old_assets = site / 'assets'
+        preserved_assets = stage / 'previous-assets'
+        if old_assets.exists():
+            if old_assets.is_symlink() or any(path.is_symlink() for path in old_assets.rglob('*')):
+                raise ValueError('旧版网页资源包含符号链接，未继续发布。')
+            shutil.copytree(old_assets, preserved_assets)
+
         # This removes only the verified path in a fresh disposable checkout.
         run(['git', 'rm', '-rq', '--', PUBLIC_PATH], checkout)
         site.mkdir()
         shutil.copy2(built / 'index.html', site / 'index.html')
         for name in ('assets', 'fonts', 'ui-review', 'knowledge'):
             shutil.copytree(built / name, site / name)
+        if preserved_assets.is_dir():
+            for old_file in preserved_assets.rglob('*'):
+                if not old_file.is_file():
+                    continue
+                destination = site / 'assets' / old_file.relative_to(preserved_assets)
+                if not destination.exists():
+                    destination.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copy2(old_file, destination)
         (site / 'data').mkdir()
         (site / 'data/graph_data.json').write_text(json.dumps(graph, ensure_ascii=False, sort_keys=True,
             separators=(',', ':'), allow_nan=False) + '\n', encoding='utf-8', newline='\n')
