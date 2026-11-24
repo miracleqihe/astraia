@@ -19,4 +19,12 @@
 
 - 本机服务：`http://127.0.0.1:4331/astraia/syzygy/`。
 - 截图：`.local/totem-preview-dark.png`、`.local/totem-preview-parchment.png`、`.local/totem-preview-mobile-index.png` 和 `.local/totem-preview-mobile-codex.png`。
-- 本机预览为静态构建；页图与分享资源由本机现有预览资源补齐。本次没有推送或部署。
+- 本机预览为静态构建；页图与分享资源由本机现有预览资源补齐。预览阶段没有推送或部署。
+
+## 确认后的线上复核
+
+- 用户确认后，界面源码提交 `776f23b4`，公开站点提交 `0e5b458654bbbc6d769d382f672f5cb1fa2c94da`；GitHub Pages 的两条部署流程均成功。
+- 发布前核对九个图谱、原书与对读数据文件和 129 个正文分片均与既有站点一致，只更新两个入口页面并新增 13 个构建资源；原典页图、分享页和主页内容保留。
+- 线上两个入口页面、新增样式、星印脚本和朔望场景脚本均返回 HTTP 200，SHA-256 与本地预览构建一致。
+- Edge 无硬件加速的公网复测：桌面视图读取 11,216 个图谱节点，五个星印、F 级筛选、横梁开关、两主题与刷新后保持、五卷纹样、经典图谱筛选和原典第 7 页图通过；中文正文可见且可选择，未发现页面脚本错误或失败的站内资源请求。
+- 390 × 844 移动视图的目录、抽屉、B 级筛选和古拓主题通过，未发现水平溢出；经典／朔望视图往返、浏览器前进后退与筛选保持通过。线上截图保存为 `.local/totem-live-dark.png`、`.local/totem-live-parchment.png` 和 `.local/totem-live-mobile-codex.png`。
