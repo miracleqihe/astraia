@@ -50,6 +50,14 @@ sources:
   locator: 泰国寺院中鬼、遗体、僧侣与神的关系
   local_path: null
   content_sha256: null
+- citation: “Nang Nak”, USC Digital Folklore Archives, interview 24 April 2016, posted
+    28 April 2016。
+  type: oral_history
+  url: https://folklore.usc.edu/tag/thai-ghost-stories/
+  doi: null
+  locator: 受访者回忆童年听到的娜娜故事及烹饪用具版本；按标题查找
+  local_path: null
+  content_sha256: null
 audit:
   created_at: '2026-11-23'
   reviewed_by_human: false
@@ -63,8 +71,12 @@ audit:
   public_content_sha256: null
 ---
 
-## 故事梗概
+## 资料梗概
 
-丈夫马克归来后，以为娜娜仍在家里照顾孩子。一种著名变体里，他看到她的手从高脚屋伸得异常长，才发现她已在他离开时死于分娩。故事的结尾随着口述、电影和寺庙叙述而改变。
+故事里，马克离家服役，怀孕的妻子娜娜在他不在时去世。马克归来，仍看到妻子在屋里照料孩子，一时没有察觉。
 
-曼谷玛哈布寺一带供奉这位女鬼。来访者可以从地方祭祀、戏剧和电影接触不同版本。卷宗把曼谷传说地标与马来银幕上的 Pontianak 并列，方便比较。
+一天做饭时，娜娜把用具掉到高脚屋下。马克正要去捡，却看见她的手臂越伸越长，轻易把东西取了回来。
+
+2016 年，一位受访者向晚辈重讲这个版本，说自己小时候听别人说起时也害怕过。不同讲述中，掉落的东西和丈夫离开后的结尾都有变化。
+
+曼谷玛哈布寺一带有与娜娜相关的祭祀；电影和地方讲述也保留着不同版本。

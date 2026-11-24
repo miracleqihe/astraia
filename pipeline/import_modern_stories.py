@@ -44,6 +44,7 @@ def run(collection=COLLECTION, manifest=None):
     known = set(previous) | set(ids)
     targets = {target for item in data['themes'] for target in item.get('peers', [])}
     targets.update(item['theme'] for item in data['records'])
+    targets.update(target for item in data['records'] for target in item.get('peers', []))
     if targets - known:
         raise ValueError(f'关联目标不存在：{sorted(targets - known)}')
     planned, new_notes = {}, {}
@@ -53,7 +54,8 @@ def run(collection=COLLECTION, manifest=None):
         is_corpus = node_id.startswith('corpus_')
         node_type = 'myth_corpus' if is_corpus else 'case'
         refs = sources(item['sources'])
-        relation_targets = item.get('peers', []) if is_theme else [item['theme']]
+        relation_targets = item.get('peers', []) if is_theme else [item['theme'], *item.get('peers', [])]
+        relation_targets = list(dict.fromkeys(relation_targets))
         credibility_tier = item.get('credibility_tier', 'A')
         metadata = NodeMetadata.model_validate({
             'id': node_id, 'title': item['title'], 'aliases': item.get('aliases', []),

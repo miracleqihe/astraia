@@ -35,6 +35,14 @@ sources:
   locator: 泰国电台主持人转述高校间流传的买面故事
   local_path: null
   content_sha256: null
+- citation: Sirinee Saktidej Bhanubandh, “Roommates”, USC Digital Folklore Archives,
+    interview 11 November 2013, posted 25 November 2013。
+  type: oral_history
+  url: https://folklore.usc.edu/roommates/
+  doi: null
+  locator: 曼谷受访者转述高中同学讲过的清迈校园版本
+  local_path: null
+  content_sha256: null
 audit:
   created_at: '2026-11-23'
   reviewed_by_human: false
@@ -50,9 +58,13 @@ audit:
 
 ## 资料梗概
 
-泰国电台主持人讲过一个校园流传的故事：两名学生住在一起，其中一人夜里出门买吃的，途中遇害。他仍惦记着没有带回来的食物，于是拿着一袋面出现在室友门前。
+泰国校园里流传过一个关于两名室友的故事：一人身体不适，另一人出门时答应带一份食物回来。
 
-2006 年一篇对 Shock Radio 的采访把它列为高校中反复讲述的故事，并未指定学校或城市。文章讨论的是广播如何承接与传播口头怪谈，不是对案件的报道。
+2013 年一次民俗访谈保存了这样的版本：雨夜里，留下的人听见敲门声，开门却只看见一袋炒面和走廊上的水迹。第二天，她听说出门的朋友遇害了。
+
+受访者说自己从曼谷的高中同学那里听过这个故事，讲述中把地点设在清迈的大学；档案没有证实故事中所说的案件。
+
+2006 年泰国广播采访也记下类似的买面故事，但没有指定学校。两个版本可以并读，不能据此确认它们的共同来源。
 
 ## 地图锚点
 

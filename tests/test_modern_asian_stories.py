@@ -48,12 +48,14 @@ class ModernAsianStoriesTests(unittest.TestCase):
             (vault / '01_cases').mkdir(parents=True)
             (root / 'web/public/data').mkdir(parents=True)
             (root / 'web/public/data/graph_data.json').write_text(
-                '{"nodes":[{"id":"motif_existing","title":"已有母题","sources":[]}]}', encoding='utf-8')
+                '{"nodes":[{"id":"motif_existing","title":"已有母题","sources":[]},'
+                '{"id":"mech_existing","title":"已有机制","sources":[]}]}', encoding='utf-8')
             notes = root / 'notes.yaml'
             notes.write_text('{}\n', encoding='utf-8')
             collection = root / 'batch.yaml'
             collection.write_text(yaml.safe_dump({'themes': [], 'existing_notes': {}, 'records': [{
                 'id': 'case_test', 'title': '测试故事', 'genre': 'memorate', 'reading_kind': 'report', 'theme': 'motif_existing',
+                'peers': ['mech_existing', 'motif_existing'],
                 'location': {'lat': 1.0, 'lng': 2.0, 'precision': 'city', 'location_name': '参考点'},
                 'location_note': '参考坐标。', 'paragraphs': ['故事一。', '故事二。'],
                 'sources': [{'citation': '资料', 'url': 'https://example.com/story', 'locator': '正文'}],
@@ -61,6 +63,13 @@ class ModernAsianStoriesTests(unittest.TestCase):
             manifest = root / 'out/manifest.json'
             with patch.object(import_modern_stories, 'ROOT', root), patch.object(import_modern_stories, 'VAULT', vault), \
                     patch.object(import_modern_stories, 'NOTES', notes):
+                valid_collection = collection.read_text(encoding='utf-8')
+                collection.write_text(valid_collection.replace('mech_existing', 'mech_missing'), encoding='utf-8')
+                with self.assertRaisesRegex(ValueError, '关联目标不存在'):
+                    import_modern_stories.run(collection, manifest)
+                self.assertFalse((vault / '01_cases/case_test.md').exists())
+                self.assertEqual(notes.read_text(encoding='utf-8'), '{}\n')
+                collection.write_text(valid_collection, encoding='utf-8')
                 real_replace = import_modern_stories.replace_card
 
                 def fail_manifest(path, content):
@@ -75,6 +84,10 @@ class ModernAsianStoriesTests(unittest.TestCase):
                 self.assertFalse((vault / '01_cases/case_test.md').exists())
                 import_modern_stories.run(collection, manifest)
                 self.assertTrue((vault / '01_cases/case_test.md').exists())
+                card = read_card(vault, vault / '01_cases/case_test.md')
+                self.assertEqual({relation.target for relation in card.metadata.relations},
+                                 {'motif_existing', 'mech_existing'})
+                self.assertEqual(len(card.metadata.relations), 2)
                 self.assertIn('case_test', manifest.read_text(encoding='utf-8'))
                 self.assertEqual(yaml.safe_load(notes.read_text(encoding='utf-8'))['case_test']['kind'], 'report')
                 before = notes.read_bytes()
@@ -91,7 +104,7 @@ class ModernAsianStoriesTests(unittest.TestCase):
                          'modern_asian_stories_third_20261123.yaml', 'modern_asian_stories_fourth_20261123.yaml',
                          'modern_asian_stories_fifth_20261123.yaml', 'modern_asian_stories_sixth_20261123.yaml',
                          'modern_asian_stories_seventh_20261123.yaml', 'modern_asian_stories_eighth_20261123.yaml',
-                         'modern_asian_stories_ninth_20261123.yaml'):
+                         'modern_asian_stories_ninth_20261123.yaml', 'modern_asian_stories_tenth_20261123.yaml'):
             collection = yaml.load((ROOT / 'reference' / filename).read_text(encoding='utf-8'), Loader=FrontmatterLoader)
             records.extend(collection['records'])
             revisions.update(collection.get('revisions', {}))
@@ -114,6 +127,7 @@ class ModernAsianStoriesTests(unittest.TestCase):
                 self.assertIn(card.metadata.spatial.precision, ('city', 'province', 'culture_region'))
                 self.assertEqual(card.metadata.spatial.precision, item['location']['precision'])
                 self.assertEqual(card.metadata.genre, item['genre'])
+                self.assertTrue(set(item.get('peers', [])).issubset({relation.target for relation in card.metadata.relations}))
                 if item.get('reading_kind'):
                     self.assertEqual(note.kind, item['reading_kind'])
                 self.assertTrue(note.location_note)
@@ -152,6 +166,20 @@ class ModernAsianStoriesTests(unittest.TestCase):
 
     def test_ninth_batch_revisions_preserve_original_cards(self):
         collection = yaml.load((ROOT / 'reference/modern_asian_stories_ninth_20261123.yaml').read_text(encoding='utf-8'),
+                               Loader=FrontmatterLoader)
+        notes = yaml.load((ROOT / 'reference/reading_notes.yaml').read_text(encoding='utf-8'), Loader=FrontmatterLoader)
+        for node_id, revision in collection['revisions'].items():
+            with self.subTest(id=node_id):
+                metadata, body = parse_card((ROOT / revision['path']).read_text(encoding='utf-8'))
+                note = EditorialNote.model_validate(notes[node_id])
+                self.assertEqual(note.paragraphs, revision['paragraphs'])
+                self.assertEqual(note.source_numbers, revision['source_numbers'])
+                self.assertEqual(str(metadata.sources[-1].url), revision['source']['url'])
+                self.assertTrue(all(paragraph in body for paragraph in note.paragraphs))
+                self.assertFalse(metadata.audit.reviewed_by_human)
+
+    def test_tenth_batch_adds_versions_to_existing_cards(self):
+        collection = yaml.load((ROOT / 'reference/modern_asian_stories_tenth_20261123.yaml').read_text(encoding='utf-8'),
                                Loader=FrontmatterLoader)
         notes = yaml.load((ROOT / 'reference/reading_notes.yaml').read_text(encoding='utf-8'), Loader=FrontmatterLoader)
         for node_id, revision in collection['revisions'].items():
