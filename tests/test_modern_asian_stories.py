@@ -86,12 +86,14 @@ class ModernAsianStoriesTests(unittest.TestCase):
         notes = yaml.load((ROOT / 'reference/reading_notes.yaml').read_text(encoding='utf-8'),
                           Loader=FrontmatterLoader)
         records = []
+        revisions = {}
         for filename in ('modern_asian_stories_20261123.yaml', 'modern_asian_stories_second_20261123.yaml',
                          'modern_asian_stories_third_20261123.yaml', 'modern_asian_stories_fourth_20261123.yaml',
                          'modern_asian_stories_fifth_20261123.yaml', 'modern_asian_stories_sixth_20261123.yaml',
-                         'modern_asian_stories_seventh_20261123.yaml'):
+                         'modern_asian_stories_seventh_20261123.yaml', 'modern_asian_stories_eighth_20261123.yaml'):
             collection = yaml.load((ROOT / 'reference' / filename).read_text(encoding='utf-8'), Loader=FrontmatterLoader)
             records.extend(collection['records'])
+            revisions.update(collection.get('revisions', {}))
         self.assertEqual(len(records), len({item['id'] for item in records}))
         self.assertGreaterEqual(len(records), 30)
         for item in records:
@@ -100,7 +102,7 @@ class ModernAsianStoriesTests(unittest.TestCase):
                 path = ROOT / 'vault' / directory / (item['id'] + '.md')
                 card = read_card(ROOT / 'vault', path)
                 note = EditorialNote.model_validate(notes[item['id']])
-                self.assertEqual(note.paragraphs, item['paragraphs'])
+                self.assertEqual(note.paragraphs, revisions.get(item['id'], item)['paragraphs'])
                 self.assertTrue(all(paragraph in card.markdown for paragraph in note.paragraphs))
                 self.assertGreaterEqual(len(note.paragraphs), 2)
                 self.assertTrue(card.metadata.sources)
@@ -128,6 +130,20 @@ class ModernAsianStoriesTests(unittest.TestCase):
         self.assertEqual(note.paragraphs, revision['paragraphs'])
         self.assertEqual(note.source_numbers, [1, 2, 3])
         self.assertEqual(str(card.metadata.sources[2].url), revision['source']['url'])
+        self.assertTrue(all(paragraph in card.markdown for paragraph in note.paragraphs))
+        self.assertFalse(card.metadata.audit.reviewed_by_human)
+
+    def test_qingdao_followup_extends_the_original_record(self):
+        collection = yaml.load((ROOT / 'reference/modern_asian_stories_eighth_20261123.yaml').read_text(encoding='utf-8'),
+                               Loader=FrontmatterLoader)
+        node_id = 'case_cn_qingdao_jiangxi_road_red_dress'
+        revision = collection['revisions'][node_id]
+        card = read_card(ROOT / 'vault', ROOT / 'vault/01_cases' / (node_id + '.md'))
+        notes = yaml.load((ROOT / 'reference/reading_notes.yaml').read_text(encoding='utf-8'), Loader=FrontmatterLoader)
+        note = EditorialNote.model_validate(notes[node_id])
+        self.assertEqual(note.paragraphs, revision['paragraphs'])
+        self.assertEqual(note.source_numbers, [1, 2])
+        self.assertEqual(str(card.metadata.sources[1].url), revision['source']['url'])
         self.assertTrue(all(paragraph in card.markdown for paragraph in note.paragraphs))
         self.assertFalse(card.metadata.audit.reviewed_by_human)
 

@@ -114,6 +114,9 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   let focusDistance = 0;
   let selectedPoint: THREE.Vector3 | undefined;
   let edges: THREE.Vector3[] = [];
+  // Reuse the flight vectors on every frame to avoid creating temporary
+  // objects during long camera animations on software-rendered devices.
+  const focusDelta = new THREE.Vector3(), focusBearing = new THREE.Vector3();
   let frame = 0;
   let lastFrame = 0;
   let interacting = false;
@@ -253,16 +256,15 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     const easing = 1 - Math.pow(.9, frames);
     controls.dampingFactor = 1 - Math.pow(.92, frames);
     if (focus) {
-      const delta = focus.clone().sub(controls.target).multiplyScalar(easing);
-      camera.position.add(delta); controls.target.add(delta);
-      const offset = camera.position.clone().sub(controls.target);
-      const distance = offset.length();
+      focusDelta.subVectors(focus, controls.target).multiplyScalar(easing);
+      camera.position.add(focusDelta); controls.target.add(focusDelta);
+      const distance = focusBearing.subVectors(camera.position, controls.target).length();
       const next = distance + (focusDistance - distance) * easing;
-      const bearing = offset.multiplyScalar(1 / distance);
-      if (focusDirection) bearing.lerp(focusDirection, easing).normalize();
-      camera.position.copy(controls.target).add(bearing.clone().multiplyScalar(next));
-      if (delta.lengthSq() < .001 && Math.abs(next - focusDistance) < .1
-        && (!focusDirection || bearing.dot(focusDirection) > .99999)) { focus = null; focusDirection = null; }
+      focusBearing.multiplyScalar(1 / distance);
+      if (focusDirection) focusBearing.lerp(focusDirection, easing).normalize();
+      camera.position.copy(controls.target).addScaledVector(focusBearing, next);
+      if (focusDelta.lengthSq() < .001 && Math.abs(next - focusDistance) < .1
+        && (!focusDirection || focusBearing.dot(focusDirection) > .99999)) { focus = null; focusDirection = null; }
     }
     const moving = controls.update();
     draw();

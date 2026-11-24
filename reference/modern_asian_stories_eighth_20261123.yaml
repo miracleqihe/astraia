@@ -1,0 +1,470 @@
+themes:
+- id: corpus_cn_city_rumor_and_investigation_2002_2009
+  title: 传言如何走出一栋楼｜中国城市调查
+  genre: academic_model
+  peers:
+  - case_cn_qingdao_jiangxi_road_red_dress
+  - case_cn_cenxi_fish_drain_sound_2007
+  paragraphs:
+  - 闲置教室里飘落的一张纸、住宅楼墙里的敲击声、浴池里无人说清的故事，在口耳相传中各自长出新的版本。
+  - 记者走访留下了学生、住户和经营者的说法，也记录他们的回应。把传闻与调查放在一起，能看见一个故事如何改变人们对熟悉地方的想象。
+  sources:
+  - &id001
+    citation: 张明泉：〈学生惨死校园谣言害苦湖北咸宁一小学〉，《楚天都市报》，2002 年 1 月 9 日，新浪新闻转载。
+    type: newspaper_report
+    url: https://news.sina.com.cn/s/2002-01-09/439285.html
+    locator: 校长、附近商户与记者对传言演变的调查
+  - &id002
+    citation: 〈百通花园某楼凌晨传怪响以讹传讹被称为鬼楼〉，《青岛早报》，2009 年 8 月 27 日，青岛新闻网。
+    type: newspaper_report
+    url: https://qingdaonews.com/content/2009-08/27/content_8128471.htm
+    locator: 居民对晨间异响的讲述与现场排查
+  - &id003
+    citation: 陈瑛楠、张荣：〈呼和浩特谣传女子浴池内洗澡遇鬼被吓死〉，《北方新报》，2008 年 7 月 18 日，搜狐新闻转载。
+    type: newspaper_report
+    url: https://news.sohu.com/20080718/n258221612.shtml
+    locator: 浴池经营者与村委会调查
+- id: corpus_id_campus_stories_and_media_2021_2024
+  title: 印尼校园的夜晚｜口述、视频与戏仿地图
+  genre: academic_model
+  peers:
+  - case_id_yogyakarta_silent_lecturer_2016
+  - case_cn_shenzhen_university_dorm_sign_2007
+  paragraphs:
+  - 校园旧建筑、路口和电梯，既是夜间活动的真实地点，也会成为学生分享怪谈的坐标。有人讲述自己的经历，有人将片段拍成短视频，还有人绘制玩笑性质的地图。
+  - 2021 至 2024 年的新闻把讲述者、现场采访和管理者的解释留在一起。这些材料记录的是故事的传播与不同人的观察，并不证明故事中的超自然解释。
+  sources:
+  - &id004
+    citation: Ari Purnomo, “Alumni UNS Pasti Tahu! Kisah Mistis Makam Nyah Rewel nan Legendaris”, detikJateng, 27 March 2022。
+    type: newspaper_report
+    url: https://www.detik.com/jateng/berita/d-6003253/alumni-uns-pasti-tahu-kisah-mistis-makam-nyah-rewel-nan-legendaris
+    locator: 医学院职员、保安与附近居民的不同回忆
+  - &id005
+    citation: Hilda Rinanda, “Fakta-fakta Kisah Mahasiswi UM Naik Lift Horor Bikin Merinding”, detikJatim, 8 December 2023。
+    type: newspaper_report
+    url: https://www.detik.com/jatim/berita/d-7078208/fakta-fakta-kisah-mahasiswi-um-naik-lift-horor-bikin-merinding
+    locator: 学生自述、记者现场试乘及学校设施部门回应
+  - &id006
+    citation: Finta Rahyuni, “Menguak Misteri Hantu Wanita Gaun Merah Penunggu Pintu 4 USU Medan”, detikSumut, 7 October 2023。
+    type: newspaper_report
+    url: https://www.detik.com/sumut/berita/d-6970015/menguak-misteri-hantu-wanita-gaun-merah-penunggu-pintu-4-usu-medan/amp
+    locator: 两名学生分别讲述夜路与网约车故事
+  - &id008
+    citation: Hermawan Mappiwali, “Viral Sirene Ambulans di Makassar Bunyi Sendiri, Ini Penjelasan Pengelola”, detikNews, 26 February 2021。
+    type: newspaper_report
+    url: https://news.detik.com/berita/d-5473693/viral-sirene-ambulans-di-makassar-bunyi-sendiri-ini-penjelasan-pengelola
+    locator: 视频传播与宿舍管理者提供的几种可能解释
+  - &id009
+    citation: 'Rizky Adha Mahendra, “Viral Unggahan ‘Spot Hantu di IPB’, Pihak Kampus: Buat Seru-seruan Saja”, detikNews, 3 July 2024。'
+    type: newspaper_report
+    url: https://news.detik.com/berita/d-7420262/viral-unggahan-spot-hantu-di-ipb-pihak-kampus-buat-seru-seruan-saja
+    locator: 戏仿地图中列出的形象与校方对创作的回应
+- id: corpus_jp_school_story_space_1986_1999
+  title: 从林间学校到放学路｜日本校园怪谈的空间
+  genre: academic_model
+  peers:
+  - case_jp_yokohama_spiral_stairs_1990
+  - case_jp_tokyo_stair_step_1986
+  paragraphs:
+  - 林间学校的窗子和桥下，横滨校园的音乐室，以及高锅町天黑后的坡道，都出现在学生或地方讲述者保存的故事里。
+  - 日本国际日本文化研究中心的数据库注明采录文献、讲述者与地区。出版年份是研究发表时间，不能自动当成事情发生的年份；同一条记录中的不同学校版本也不应合并成一件事。
+  sources:
+  - &id012
+    citation: 常光徹：〈学校の世間話——中学生の妖怪伝承にみる異界的空間〉，《昔話伝説研究》第 12 号，1986 年，第 24 页；国际日本文化研究中心怪异传承数据库，2470071。
+    type: institutional_research
+    url: https://www.nichibun.ac.jp/cgi-bin/YoukaiDB3/youkai_card.cgi?ID=2470071
+    locator: 女中学生讲述的林间学校窗影
+  - &id013
+    citation: 常光徹：〈学校の世間話——中学生の妖怪伝承にみる異界的空間〉，《昔話伝説研究》第 12 号，1986 年，第 24 页；国际日本文化研究中心怪异传承数据库，2470064。
+    type: institutional_research
+    url: https://www.nichibun.ac.jp/cgi-bin/YoukaiDB3/youkai_card.cgi?ID=2470064
+    locator: 男中学生讲述的试胆活动与桥下人影
+  - &id011
+    citation: 林英一：〈学校の中の非日常空間の位相〉，《民俗》第 135 号，1990 年，第 1 页；国际日本文化研究中心怪异传承数据库，2210096。
+    type: institutional_research
+    url: https://www.nichibun.ac.jp/cgi-bin/YoukaiDB3/youkai_card.cgi?ID=2210096
+    locator: 横滨学校的音乐室故事与其他学校的变体
+  - &id010
+    citation: 矢口裕康：〈民俗表現の形態：音声表現〉，《宮崎県史 別編 民俗》，1999 年，第 701—702 页；国际日本文化研究中心怪异传承数据库，C4510207-000。
+    type: institutional_research
+    url: https://www.nichibun.ac.jp/cgi-bin/YoukaiDB3/youkai_card.cgi?ID=C4510207-000
+    locator: 永友千秋的高锅町谷坂口述摘要
+- id: corpus_seasia_empty_house_and_belief_2013_2017
+  title: 空屋、楼宇与家人记忆｜东南亚的讲述
+  genre: academic_model
+  peers:
+  - case_vn_hanoi_dorm_white_coat_2009
+  - case_ph_manila_manananggal_night
+  paragraphs:
+  - 胡志明市的高楼和旧宅、菲律宾家庭的童年记忆，与泰国素林地区悬挂红衣的做法，来自各自不同的城市生活与信仰环境。
+  - 一篇报道、一次口述与一部电影都保存了不同层次的材料。并读时保留故事发生地、讲述地点和未被证实的部分，不把相似形象视为共同起源的证据。
+  sources:
+  - &id014
+    citation: Mr True, “Cao ốc Thuận Kiều và nhiều đồn đoán bí hiểm”, Ngôi sao/VnExpress, 2015。
+    type: newspaper_report
+    url: https://ngoisao.vnexpress.net/cao-oc-thuan-kieu-va-nhieu-don-doan-bi-hiem-3267352.html
+    locator: 关于三座塔楼的说法与当时居民的回应
+  - &id015
+    citation: Mr True, “Chuyện ly kỳ về con ma nhà họ Hứa ám ảnh ở Sài Gòn”, Ngôi sao/VnExpress, 2016。
+    type: newspaper_report
+    url: https://ngoisao.vnexpress.net/chuyen-ly-ky-ve-con-ma-nha-ho-hua-am-anh-o-sai-gon-3432523.html
+    locator: 许氏家族的传闻、改编电影与博物馆工作人员回应
+  - &id016
+    citation: Minh Long, “Dân làng Thái lo sợ bóng ma góa phụ”, VnExpress, 19 January 2013，据 Bangkok Post 报道。
+    type: newspaper_report
+    url: https://vnexpress.net/dan-lang-thai-lo-so-bong-ma-goa-phu-2416020.html
+    locator: 素林地区红衣习俗、居民解释与医生说法
+  - &id017
+    citation: Crystal Yang, “Haunted House in the Philippines”, USC Digital Folklore Archives, interview 26 April 2017, posted 30 April 2017。
+    type: oral_history
+    url: https://folklore.usc.edu/2017/04/page/7/
+    locator: 当事人童年回忆与亲属口述，月度档案页同名条目
+records:
+- id: case_cn_xianning_classroom_paper_2002
+  title: 湖北咸宁｜教室门缝里的纸片
+  genre: memorate
+  credibility_tier: A
+  theme: corpus_cn_city_rumor_and_investigation_2002_2009
+  location:
+    lat: 29.8413
+    lng: 114.322
+    precision: city
+    location_name: 中国湖北咸宁 · 城市参考点
+    culture_region: 中国 · 华中
+  location_note: 学校名称见报道；地图使用城市参考点，不指向学生或教室。
+  paragraphs:
+  - 一间闲置教室堆着桌椅，门常年锁着。有学生透过门缝往里看，高年级同学开玩笑说里面有鬼；恰好一张纸从蜘蛛网上飘落，小孩子便害怕起来。
+  - 2002 年校长向记者回忆，这个故事传出学校后不断变化，有人说看见白骨，有人又编出关于师生的不幸遭遇。老师只好反复向家长解释，记者到附近商户处求证时，也没有人能说出传闻中人物的来历。
+  - 纸片与故事的最初经过来自校长的讲述；后续各种惊悚情节则是报道追访到的传言。
+  sources:
+  - *id001
+  reading_kind: report
+- id: case_cn_qingdao_morning_wall_tapping_2009
+  title: 青岛｜每天清晨响起的敲击
+  genre: memorate
+  credibility_tier: A
+  theme: corpus_cn_city_rumor_and_investigation_2002_2009
+  location:
+    lat: 36.0671
+    lng: 120.3826
+    precision: city
+    location_name: 中国山东青岛 · 城市参考点
+    culture_region: 中国 · 华东
+  location_note: 报道涉及仍有人居住的住宅；只标青岛城市参考点。
+  paragraphs:
+  - 连续半个月，青岛一栋住宅楼总在清晨传出一阵阵敲击声，似乎沿着墙面传遍房间。邻居们尝试寻找声源，有人猜是水管，也有人开始讲楼里闹鬼。
+  - 2009 年一个清晨，民警与居民逐层查找，敲到六楼时声音停了。住在那里的邻居解释，自己是在拍打墙面与地板尝试创作音乐。
+  - 这篇报道把早起住户听到的声音和后来查找的过程都保存了下来。
+  sources:
+  - *id002
+  reading_kind: report
+- id: case_cn_hohhot_bathhouse_rumor_2008
+  title: 呼和浩特｜浴池里的陌生传言
+  genre: memorate
+  credibility_tier: A
+  theme: corpus_cn_city_rumor_and_investigation_2002_2009
+  location:
+    lat: 40.8426
+    lng: 111.7492
+    precision: city
+    location_name: 中国内蒙古呼和浩特 · 城市参考点
+    culture_region: 中国 · 华北
+  location_note: 报道涉及当地经营场所与居民；点位为呼和浩特城市参考，不指向浴池。
+  paragraphs:
+  - 2008 年，呼和浩特一带传起浴池里的恐怖故事：有人说一名洗澡的女子见到了陌生身影，回家后遭遇不幸。街坊讲得越来越具体，却没人能说清当事人是谁。
+  - 记者访问传言中提到的经营者与村委会工作人员。经营者说自己也是听别人讲起，工作人员走访后同样找不到具体的浴池和人物。
+  - 故事留下的是一次传闻在社区里的扩散；报道中的个人猜测并不能单独确定传言由谁编造。
+  sources:
+  - *id003
+  reading_kind: report
+- id: case_id_solo_nyah_rewel_campus_grave_2022
+  title: 印尼梭罗｜校园里留下的旧墓
+  genre: memorate
+  credibility_tier: A
+  theme: corpus_id_campus_stories_and_media_2021_2024
+  location:
+    lat: -7.5576139
+    lng: 110.8557427
+    precision: city
+    location_name: 印尼中爪哇梭罗 · 三月十一日大学
+    culture_region: 东南亚 · 印度尼西亚
+  location_note: 点位采用大学公开的校园参考坐标，墓地及故事中的路线未作精确定位。
+  paragraphs:
+  - 三月十一日大学校园里保留着一座被称为 Nyah Rewel 的旧墓。有人讲，夜深时曾在附近看见穿传统服饰的女子；医学院的一位职员则说，自己长期夜间经过这里，没有遇到怪事，只在某些日子闻过香气。
+  - 一位附近居民回忆，童年时曾在墓下较大的空间玩耍；他从母亲那里听说，那个称呼与墓的修建过程有关。另一位保安谈及早年这片土地上的墓地和村落。
+  - 2022 年的采访保留了不同人的记忆和传闻。关于墓主与名字的解释，也仍是受访者转述的地方说法。
+  sources:
+  - *id004
+  - citation: Universitas Sebelas Maret, “University Profile”。
+    type: map_reference
+    url: https://uns.ac.id/en/about-uns/university-profile/
+    locator: 校方公布的校园坐标 -7.5576139, 110.8557427
+  reading_kind: report
+- id: case_id_malang_dark_seventh_floor_2023
+  title: 印尼玛琅｜雨后电梯的第七层
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_id_campus_stories_and_media_2021_2024
+  location:
+    lat: -7.96431
+    lng: 112.61998
+    precision: city
+    location_name: 印尼东爪哇玛琅 · 国立玛琅大学
+    culture_region: 东南亚 · 印度尼西亚
+  location_note: 校园范围参考点来自校园影像位置；故事发生的电梯不单独定位。
+  paragraphs:
+  - 一场大雨让学生 Hayyu 留在教学楼里。她到三楼寻找充电插座，发现周围已没人，便按下一楼准备离开；她回忆电梯却向上驶去，门打开时，七楼一片昏暗。
+  - 她惊慌地关门，停了一会儿，再次按下一楼，电梯便带她下去。她把拍到的片段发到网上，故事很快传开。
+  - 2023 年记者试乘时电梯正常运行；学校设施负责人推测，可能有人在七楼呼叫电梯，并表示会检查设备。推测不等于已经查明的故障原因。
+  sources:
+  - *id005
+  - citation: Universitas Negeri Malang：2020 年校园影像，Wikimedia Commons。
+    type: map_reference
+    url: https://commons.wikimedia.org/wiki/File:Universitas_Negeri_Malang_UM_2019.jpg
+    locator: 影像拍摄坐标 -7.964313, 112.619978；作为校园范围参考
+  reading_kind: report
+- id: case_id_medan_rain_gate_figure_2023
+  title: 印尼棉兰｜雨中的校园路口
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_id_campus_stories_and_media_2021_2024
+  location:
+    lat: 3.561741
+    lng: 98.656052
+    precision: city
+    location_name: 印尼北苏门答腊棉兰 · 苏门答腊大学
+    culture_region: 东南亚 · 印度尼西亚
+  location_note: 点位为大学校园范围参考；不精确标示受访者经过的停车处。
+  paragraphs:
+  - 考试结束后的雨夜，学生 Winda 和朋友骑车经过校园一带。她说朋友先注意到附近停车处的人影，她随后也看见一个似乎悬空坐着的身影；两人惊叫，一时紧张得忘了如何加速。
+  - 这一带还流传过红衣女子的故事。2023 年记者实地观察了树木、道路和照明，并分别采访学生；人影的身份仍然只是当事人的判断。
+  sources:
+  - *id006
+  - &id007
+    citation: LatLong.net：Universitas Sumatera Utara 校园坐标。
+    type: map_reference
+    url: https://www.latlong.net/place/universitas-sumatera-utara-medan-north-sumatera-indonesia-27506.html
+    locator: 棉兰大学校园参考坐标 3.561741, 98.656052
+  reading_kind: report
+- id: case_id_medan_night_ride_calls_2023
+  title: 印尼棉兰｜深夜无人回应的订单
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_id_campus_stories_and_media_2021_2024
+  location:
+    lat: 3.561741
+    lng: 98.656052
+    precision: city
+    location_name: 印尼北苏门答腊棉兰 · 苏门答腊大学
+    culture_region: 东南亚 · 印度尼西亚
+  location_note: 点位为大学校园参考；故事涉及不同校门，不表示订单的精确起点。
+  paragraphs:
+  - 深夜结束校园活动后，Ira 和朋友几次叫车都被取消。终于有司机接单，却在到达之前反复打电话；两人上车后才知道，司机担心这是一笔找不到乘客的订单。
+  - 司机告诉她，以前接过一些深夜从校园另一处门口发出的订单，打回去却没有声音。Ira 将这段对话讲给 2023 年来访的记者；她也说自己并未亲眼见过当地传说中的红衣女子。
+  - 司机的经历经由学生转述，订单是否存在技术问题或其他原因，报道没有查明。
+  sources:
+  - *id006
+  - *id007
+  reading_kind: report
+- id: case_id_makassar_ambulance_siren_2021
+  title: 印尼望加锡｜停在校园里的警笛
+  genre: memorate
+  credibility_tier: A
+  theme: corpus_id_campus_stories_and_media_2021_2024
+  location:
+    lat: -5.182901
+    lng: 119.442297
+    precision: city
+    location_name: 印尼南苏拉威西望加锡 · 穆罕默迪亚大学
+    culture_region: 东南亚 · 印度尼西亚
+  location_note: 点位是印尼教育部门公布的大学校园位置；不指向宿舍停车位。
+  paragraphs:
+  - 一段视频在网上传播：校园宿舍附近停着一辆救护车，警笛突然响起。拍摄者给画面配上带有神秘意味的解释，引来许多人议论。
+  - 2021 年宿舍管理者告诉记者，这辆车此前修过，他猜测可能是电路问题，也提到有人偶尔在车里休息。报道没有给出经过检验的最终原因。
+  - 视频记录的是一次声响，旁观者和管理者对它提出了不同解释。
+  sources:
+  - *id008
+  - citation: 印度尼西亚教育部门：Universitas Muhammadiyah Makassar 学校资料。
+    type: map_reference
+    url: https://referensi.data.kemendikdasmen.go.id/tabs.php?npsn=091004
+    locator: 校园经纬度 -5.182901, 119.442297
+  reading_kind: report
+- id: case_id_bogor_parody_ghost_map_2024
+  title: 印尼茂物｜学生画出的校园怪谈地图
+  genre: creepypasta_ostension
+  credibility_tier: F
+  theme: corpus_id_campus_stories_and_media_2021_2024
+  location:
+    lat: -6.5966
+    lng: 106.7972
+    precision: city
+    location_name: 印尼西爪哇茂物 · 城市参考点
+    culture_region: 东南亚 · 印度尼西亚
+  location_note: 戏仿地图所载地点属于虚构创作；点位只表示报道涉及的茂物地区。
+  paragraphs:
+  - 一张校园地图在社交网络上流传：不同地点旁标着会飞的保安、变形的河马、红色的坤蒂拉娜，还有等待巴士的人影。它把大家熟悉的路线变成了一张玩笑式的怪谈图。
+  - 2024 年博戈尔农业大学的沟通负责人回应，认为这些故事是学生为假期娱乐而创作和发展的。地图中的人物与情节在此作为虚构作品收录。
+  sources:
+  - *id009
+  reading_kind: story
+- id: case_jp_takanabe_tanizaka_evening_1999
+  title: 日本高锅町｜傍晚的谷坂
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_jp_school_story_space_1986_1999
+  location:
+    lat: 32.12472
+    lng: 131.50556
+    precision: city
+    location_name: 日本宫崎县高锅町 · 城镇参考点
+    culture_region: 东亚 · 日本
+  location_note: 点位为高锅町役场附近参考点；文献没有给出谷坂的可核对坐标。
+  paragraphs:
+  - 大约 1960 年前后，高锅町一些女生之间流传：天黑后经过谷坂，会遇见可怕的东西。有人讲，经过墓地下方时土石落下；也有人说自己害怕得头发都竖了起来。
+  - 1999 年《宫崎县史》的民俗章节收录了永友千秋的讲述，日本国际日本文化研究中心将它编成单独的资料卡。出版年份与故事中所说的年代并不相同。
+  sources:
+  - *id010
+  - citation: 日本防灾科学技术研究所：高锅町观测点坐标。
+    type: map_reference
+    url: https://dil-opac.bosai.go.jp/publication/edm/pdf/edm_tr12.pdf
+    locator: 町役场附近观测点：32°07′29″N、131°30′20″E
+- id: case_jp_yokohama_music_room_piano_1990
+  title: 日本横滨｜夜里的音乐室
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_jp_school_story_space_1986_1999
+  location:
+    lat: 35.4437
+    lng: 139.638
+    precision: city
+    location_name: 日本神奈川县横滨 · 城市参考点
+    culture_region: 东亚 · 日本
+  location_note: 采录资料只注明横滨市学校，点位为城市参考，不指定校舍。
+  paragraphs:
+  - 横滨一所中学的学生讲，夜里明明没人，音乐室却会传出钢琴声；另一所学校也有相似故事，被列作校园七不思议之一。
+  - 资料卡还记下另一个学校的版本：值夜人员走近音乐室时，琴声忽然停了，琴键上留下令人惊恐的痕迹。卡片没有说明这段变体一定发生在横滨的那所中学。
+  - 林英一 1990 年的校园民俗研究收录了这些说法；学校与讲述者的身份在摘要中没有进一步公开。
+  sources:
+  - *id011
+- id: case_jp_tokyo_forest_school_window_1986
+  title: 日本｜林间学校窗上的人影
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_jp_school_story_space_1986_1999
+  location:
+    lat: 35.6895
+    lng: 139.6917
+    precision: province
+    location_name: 日本东京都 · 采录地区参考点
+    culture_region: 东亚 · 日本
+  location_note: 数据库标注东京都；故事中林间学校实际位置未注明，点位代表采录地区。
+  paragraphs:
+  - 林间学校的夜里，一名女生醒来，听见敲窗声。她正要打开窗，却看见窗上映出人影，害怕得没有动，后来又躺下睡了。
+  - 第二天她告诉朋友，对方说幸好没有打开。常光徹 1986 年研究中的这一段口述，经日本国际日本文化研究中心数据库保存；朋友的判断也是故事的一部分。
+  sources:
+  - *id012
+- id: case_jp_tokyo_forest_school_bridge_1986
+  title: 日本｜试胆活动中桥下的背影
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_jp_school_story_space_1986_1999
+  location:
+    lat: 35.6895
+    lng: 139.6917
+    precision: province
+    location_name: 日本东京都 · 采录地区参考点
+    culture_region: 东亚 · 日本
+  location_note: 数据库标注东京都；试胆活动的桥与林间学校实际位置未注明。
+  paragraphs:
+  - 林间学校举行试胆活动时，一个男生坐在桥下，等着同伴来吓自己。他两次觉得有人拍背，回头却看不见人。
+  - 他害怕地跑走，迷了路，看见前方有个衣着破旧的人；等走到那里，眼前又空了。这个版本由男中学生讲述，收录在常光徹 1986 年的校园民俗研究中。
+  sources:
+  - *id013
+- id: case_vn_hcm_thuan_kieu_three_towers_2015
+  title: 胡志明市｜三座塔楼的夜声
+  genre: memorate
+  credibility_tier: A
+  theme: corpus_seasia_empty_house_and_belief_2013_2017
+  location:
+    lat: 10.7547
+    lng: 106.6616
+    precision: city
+    location_name: 越南胡志明市 · 第五郡参考点
+    culture_region: 东南亚 · 越南
+  location_note: 点位为第五郡区域参考；报道中的楼宇当时仍有居民，不指向住宅。
+  paragraphs:
+  - 胡志明市第五郡的 Thuận Kiều 三座塔楼曾因许多窗户长年不亮灯，被人编出各种说法：有人将它比作三炷香，有人说夜里会听见说话或水流声。
+  - 2015 年的报道访问当时仍住在楼里的居民。有人说自己多年没有遇过传闻中的事情，也提到购房期限等现实因素会影响人们是否愿意入住。
+  - 建筑后来的用途可能变化；这里保存的是当时的传说与住户回应。
+  sources:
+  - *id014
+  reading_kind: report
+- id: case_vn_hcm_hua_family_crying_house_2016
+  title: 胡志明市｜旧宅里的哭声传说
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_seasia_empty_house_and_belief_2013_2017
+  location:
+    lat: 10.7769
+    lng: 106.7009
+    precision: city
+    location_name: 越南胡志明市 · 第一郡参考点
+    culture_region: 东南亚 · 越南
+  location_note: 点位为胡志明市第一郡参考范围；故事与如今的美术博物馆建筑相关。
+  paragraphs:
+  - 西贡一座旧宅附近流传着许氏家族女儿的故事：人们说，她逐渐不再露面，深夜屋里传出哭声；后来又有人讲起空棺和屋顶上的白衣身影。各种版本的细节并不一致。
+  - 这则传说曾被改编成电影。2016 年记者向在如今的美术博物馆工作的人员询问，他们说游客常问起，但馆内没有能够回答传说真假的材料。
+  - 家族成员与传闻中的遭遇不能因电影和故事而认定；这里保留的是报道所记的城市传说。
+  sources:
+  - *id015
+  reading_kind: report
+- id: case_th_surin_widow_red_shirts_2013
+  title: 泰国素林｜挂在门前的红衣
+  genre: memorate
+  credibility_tier: A
+  theme: corpus_seasia_empty_house_and_belief_2013_2017
+  location:
+    lat: 14.8818
+    lng: 103.4936
+    precision: province
+    location_name: 泰国素林府 · 地区参考点
+    culture_region: 东南亚 · 泰国
+  location_note: 报道涉及素林府多个地区的居民；坐标为素林城市参考，不指向家庭住处。
+  paragraphs:
+  - 2013 年，泰国东北部素林地区一些家庭在屋外挂起红衣。当地流传的说法是，一位被称为“寡妇鬼”的存在会寻找男性，红衣可以阻挡她。
+  - 一名居民告诉记者，自己未必相信这个故事，但担心家中的侄子，还是挂了一件衣服。报道也转述医生对当地死亡事件的描述；民间解释并不能证明具体死因。
+  - 不同家庭的做法与感受并不相同，这段记录关注恐惧如何影响日常生活。
+  sources:
+  - *id016
+  reading_kind: report
+- id: case_ph_family_stair_chain_2017
+  title: 菲律宾｜祖母家楼梯上的锁链声
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_seasia_empty_house_and_belief_2013_2017
+  location:
+    lat: 12.8797
+    lng: 121.774
+    precision: culture_region
+    location_name: 菲律宾 · 国家范围参考点
+    culture_region: 东南亚 · 菲律宾
+  location_note: 口述仅称童年住处位于菲律宾，未指明城市；地图为国家范围参考，不代表祖母家所在地。
+  paragraphs:
+  - 一名菲律宾裔受访者回忆，小时候与哥哥、看护人在祖母家玩耍，忽然听见楼梯上传来像锁链拖动的声音。她记得看到一只带着锁链的脚，在楼梯上反复移动。
+  - 多年后她再和哥哥谈起，他仍记得那次经历。她还转述过亲人听来的另一段关于空屋的故事，并说自己已经记不清宅基地过去的情况。
+  - 2017 年南加州大学民俗档案保存了这次访谈；童年亲历回忆和后来听来的家庭故事各有不同的传述距离。
+  sources:
+  - *id017
+existing_notes: {}
+revisions:
+  case_cn_qingdao_jiangxi_road_red_dress:
+    source:
+      citation: 〈记者多方求证网友实地打探攻破“鬼楼”闹鬼传言〉，青岛新闻网，2005 年 2 月 21 日，新浪新闻转载。
+      type: newspaper_report
+      url: https://news.sina.cn/sa/2005-02-21/detail-ikkntiam2689120.d.html
+      locator: 网友夜宿及住户、管理者、警方采访
+    paragraphs:
+    - 青岛江西路一栋楼的部分窗户破旧，晚上偶尔透出灯光。附近居民听到一种讲法：一位穿红裙的女子出现在楼道，后来住户陆续搬走。
+    - 2004 年记者访问楼内租户、长期住户和当地派出所。受访者说自己也听过故事，但没有见到传闻中的事情；警方介绍，部分房间空置与住房使用安排有关。
+    - 2005 年，十位网友带着帐篷夜宿楼道，一夜只听见风声。另一些住户和附近工作人员告诉记者，他们一直在这里生活或工作，也没有遇到传闻中的情形。
+    - 红裙女子的经历属于转述，报道没有找到可以独立核对的当事人。
