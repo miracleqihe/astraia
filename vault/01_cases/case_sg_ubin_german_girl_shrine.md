@@ -20,7 +20,7 @@ temporal:
   year_start: 1914
   year_end: 1918
   era_label: 一战时期的起源传说
-  uncertainty_note: 年份为公园机构介绍的传说背景，祭祀持续至近年。
+  uncertainty_note: 年份为传说背景；相关家庭和具体经历尚无同时代档案证实。
 standards:
   atu_types: []
   thompson_motifs: []
@@ -49,6 +49,14 @@ sources:
   locator: 乌敏岛文物自导路线及庙址
   local_path: null
   content_sha256: null
+- citation: William L. Gibson, “Unravelling the Mystery of Ubin’s German Girl Shrine”,
+    BiblioAsia, National Library Board Singapore, 10 October 2021。
+  type: institutional_research
+  url: https://biblioasia.nlb.gov.sg/all-sections/vol-17-issue-3-oct-dec-2021-ubins-german-girl-shrine/
+  doi: null
+  locator: 谢衍庆的口述来源、土地登记及报纸档案对照
+  local_path: null
+  content_sha256: null
 audit:
   created_at: '2026-11-23'
   reviewed_by_human: false
@@ -64,9 +72,11 @@ audit:
 
 ## 故事梗概
 
-岛上的讲法从一战开始。岛上住过德国种植园家庭，据说战争来后，一个姑娘为躲避抓捕，跑进林子。几天后，做工的人在山崖下发现了她。此后经过那段路的人会留花或香，有人后来把她移葬到采石场的山头。
+乌敏岛流传一则故事：第一次世界大战期间，一名德国姑娘为躲避抓捕跑进树林，后来在山崖附近去世。岛上的小庙与她的传说，经过居民口述和报纸报道不断流传。
 
-姑娘的姓名没有从这里的档案里确定下来，庙却成了可到达的地点。早年通往采石场的危险山路和后来的祭祀一代代接在一起，让许多人是先听到这个故事，再认识这座岛。
+2021 年，William L. Gibson 在新加坡国家图书馆文章中对照土地登记、旧报纸与口述史：岛上的咖啡园在 1910 年已改种橡胶，他也没有找到 1914 年德国一家住在当地的证据。重要讲述者谢衍庆表示，故事也是他从长辈那里听来的。
+
+庙宇与长期供奉是真实存在的地方记忆；姑娘的身份和传说中的具体经历，目前仍缺少可确认的历史证据。
 
 ## 地图锚点
 

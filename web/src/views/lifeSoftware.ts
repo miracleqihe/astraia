@@ -244,7 +244,10 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     // Keep camera motion tied to elapsed time, not to the number of frames.
     // A software renderer may only present a few frames per second; without
     // this adjustment a one-second flight can take ten seconds on that device.
-    const elapsed = lastFrame ? Math.min(100, Math.max(0, now - lastFrame)) : 1000 / 60;
+    // Allow up to a quarter-second of progress per frame so that very slow
+    // software devices can still complete a focus flight in real time, while
+    // bounding the jump after a suspended or backgrounded tab resumes.
+    const elapsed = lastFrame ? Math.min(250, Math.max(0, now - lastFrame)) : 1000 / 60;
     lastFrame = now;
     const frames = elapsed / (1000 / 60);
     const easing = 1 - Math.pow(.9, frames);

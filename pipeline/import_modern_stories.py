@@ -54,11 +54,14 @@ def run(collection=COLLECTION, manifest=None):
         node_type = 'myth_corpus' if is_corpus else 'case'
         refs = sources(item['sources'])
         relation_targets = item.get('peers', []) if is_theme else [item['theme']]
+        credibility_tier = item.get('credibility_tier', 'A')
         metadata = NodeMetadata.model_validate({
             'id': node_id, 'title': item['title'], 'aliases': item.get('aliases', []),
             'node_type': node_type, 'z_layer': 2 if is_corpus else 1,
             'genre': item.get('genre', 'historical_archive' if is_theme else 'folktale'),
-            'credibility_tier': item.get('credibility_tier', 'A'), 'is_fictional_quarantine': False,
+            # F is the repository-wide fiction flag; keep both fields in sync
+            # so imported fictional narratives can be hidden in either view.
+            'credibility_tier': credibility_tier, 'is_fictional_quarantine': credibility_tier == 'F',
             'spatial': item.get('location'), 'temporal': item.get('temporal'), 'standards': {},
             'relations': [{'type': 'COMPARED_WITH', 'target': target, 'weight': 1.0,
                            'note': '同题并列阅读，不推断传播或共同起源。'} for target in relation_targets],

@@ -16,6 +16,31 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ModernAsianStoriesTests(unittest.TestCase):
+    def test_fiction_import_keeps_tier_and_quarantine_together(self):
+        with TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            vault = root / 'vault'
+            (vault / '01_cases').mkdir(parents=True)
+            (root / 'web/public/data').mkdir(parents=True)
+            (root / 'web/public/data/graph_data.json').write_text(
+                '{"nodes":[{"id":"motif_existing","title":"已有母题","sources":[]}]}', encoding='utf-8')
+            notes = root / 'notes.yaml'
+            notes.write_text('{}\n', encoding='utf-8')
+            collection = root / 'batch.yaml'
+            collection.write_text(yaml.safe_dump({'themes': [], 'existing_notes': {}, 'records': [{
+                'id': 'case_test_fiction', 'title': '虚构故事', 'genre': 'creepypasta_ostension',
+                'credibility_tier': 'F', 'theme': 'motif_existing',
+                'location': {'lat': 1.0, 'lng': 2.0, 'precision': 'city', 'location_name': '传播地'},
+                'location_note': '传播地参考点。', 'paragraphs': ['虚构故事。', '传播记录。'],
+                'sources': [{'citation': '采访', 'url': 'https://example.com/story', 'locator': '正文'}],
+            }]}, allow_unicode=True), encoding='utf-8')
+            with patch.object(import_modern_stories, 'ROOT', root), patch.object(import_modern_stories, 'VAULT', vault), \
+                    patch.object(import_modern_stories, 'NOTES', notes):
+                import_modern_stories.run(collection, root / 'out/manifest.json')
+            card = read_card(vault, vault / '05_quarantine_fiction/case_test_fiction.md')
+            self.assertEqual(card.metadata.credibility_tier, 'F')
+            self.assertTrue(card.metadata.is_fictional_quarantine)
+
     def test_import_with_custom_manifest_and_repeat_is_safe(self):
         with TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -63,14 +88,16 @@ class ModernAsianStoriesTests(unittest.TestCase):
         records = []
         for filename in ('modern_asian_stories_20261123.yaml', 'modern_asian_stories_second_20261123.yaml',
                          'modern_asian_stories_third_20261123.yaml', 'modern_asian_stories_fourth_20261123.yaml',
-                         'modern_asian_stories_fifth_20261123.yaml', 'modern_asian_stories_sixth_20261123.yaml'):
+                         'modern_asian_stories_fifth_20261123.yaml', 'modern_asian_stories_sixth_20261123.yaml',
+                         'modern_asian_stories_seventh_20261123.yaml'):
             collection = yaml.load((ROOT / 'reference' / filename).read_text(encoding='utf-8'), Loader=FrontmatterLoader)
             records.extend(collection['records'])
         self.assertEqual(len(records), len({item['id'] for item in records}))
         self.assertGreaterEqual(len(records), 30)
         for item in records:
             with self.subTest(id=item['id']):
-                path = ROOT / 'vault/01_cases' / (item['id'] + '.md')
+                directory = '05_quarantine_fiction' if item.get('credibility_tier', 'A') == 'F' else '01_cases'
+                path = ROOT / 'vault' / directory / (item['id'] + '.md')
                 card = read_card(ROOT / 'vault', path)
                 note = EditorialNote.model_validate(notes[item['id']])
                 self.assertEqual(note.paragraphs, item['paragraphs'])
@@ -86,8 +113,23 @@ class ModernAsianStoriesTests(unittest.TestCase):
                     self.assertEqual(note.kind, item['reading_kind'])
                 self.assertTrue(note.location_note)
                 self.assertFalse(card.metadata.audit.reviewed_by_human)
+                self.assertEqual(card.metadata.is_fictional_quarantine, item.get('credibility_tier', 'A') == 'F')
                 self.assertFalse(card.metadata.standards.atu_types)
                 self.assertFalse(card.metadata.standards.ocm_codes)
+
+    def test_ubin_revision_preserves_its_source_and_reading_note(self):
+        collection = yaml.load((ROOT / 'reference/modern_asian_stories_seventh_20261123.yaml').read_text(encoding='utf-8'),
+                               Loader=FrontmatterLoader)
+        node_id = 'case_sg_ubin_german_girl_shrine'
+        revision = collection['revisions'][node_id]
+        card = read_card(ROOT / 'vault', ROOT / 'vault/01_cases' / (node_id + '.md'))
+        notes = yaml.load((ROOT / 'reference/reading_notes.yaml').read_text(encoding='utf-8'), Loader=FrontmatterLoader)
+        note = EditorialNote.model_validate(notes[node_id])
+        self.assertEqual(note.paragraphs, revision['paragraphs'])
+        self.assertEqual(note.source_numbers, [1, 2, 3])
+        self.assertEqual(str(card.metadata.sources[2].url), revision['source']['url'])
+        self.assertTrue(all(paragraph in card.markdown for paragraph in note.paragraphs))
+        self.assertFalse(card.metadata.audit.reviewed_by_human)
 
 
 if __name__ == '__main__':

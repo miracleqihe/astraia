@@ -1,0 +1,435 @@
+themes:
+- id: corpus_cn_campus_lore_and_writing_2007
+  title: 校园传闻到恐怖小说｜讲述与创作
+  genre: academic_model
+  peers:
+  - case_cn_changsha_dorm_five_bus
+  - case_cn_guangzhou_yongfang_steps
+  paragraphs:
+  - 夜里的校舍、锁着的房间和学长学姐讲过的故事，会在宿舍里获得新的细节。2007 年深圳的校园报道把网上说法与学生、教职员的回忆放在一起。
+  - 同一年，重庆一名学生作家把对校园旧屋的猜想写进虚构故事。现实中的闲谈、记者记录和小说情节可以相互启发，但不是同一层证据。
+  sources:
+  - &id001
+    citation: 姜锵、梁朗然、陈彦炜：〈深圳四大邪地揭秘：网上传言见女鬼别回头〉，《南方都市报》，2007 年 9 月 20 日，新浪新闻转载。
+    type: newspaper_report
+    url: https://news.sina.cn/sa/2007-09-20/detail-ikftpnny3938449.d.html
+    locator: 深圳大学与仙湖公园两节
+  - &id002
+    citation: 〈女大学生写恐怖小说受追捧〉，《重庆晚报》，2007 年 12 月 12 日，搜狐新闻转载。
+    type: newspaper_report
+    url: https://news.sohu.com/20071212/n253990745.shtml
+    locator: 创作者杨雁粤的采访及同学转述的锁屋情节
+- id: corpus_vn_urban_rumor_reporting_2005_2017
+  title: 越南的鬼屋与校园传闻｜一则故事如何扩散
+  genre: academic_model
+  peers:
+  - case_vn_hanoi_kim_ma_photo
+  - case_vn_dalat_prenn_pine_villa
+  paragraphs:
+  - 河内宿舍的白衣人、山间空屋的红墙、湄公河三角洲学校里的传言，都曾在不同地点被人反复讲述。记者的访问留下了听闻者的害怕，也记下了居民和管理者的解释。
+  - 同一篇报道里，亲见、转述与事后推测并不等价。连锁短信又把讲故事的场所从走廊和夜路带到了手机屏幕。
+  sources:
+  - &id003
+    citation: Đàm Vĩnh, “Tin đồn có ma trong ký túc xá ‘5 sao’”, VnExpress, 21 October 2009。
+    type: newspaper_report
+    url: https://vnexpress.net/tin-don-co-ma-trong-ky-tuc-xa-5-sao-2147085.html
+    locator: 新生、宿舍管理员和同室学生的采访
+  - &id004
+    citation: Tuấn Linh、Nguyễn Hằng：〈Cận cảnh “ngôi nhà ma” ở Hòa Bình〉，Kiến Thức，2012 年 6 月 24 日，Dân trí 转载。
+    type: newspaper_report
+    url: https://dantri.com.vn/thoi-su/can-canh-ngoi-nha-ma-o-hoa-binh-1340921718.htm
+    locator: 路人叙述及附近居民对光点与声响的观察
+  - &id005
+    citation: Thiên Phong、Minh Phượng：〈Sự thực về bức tường nhà tự dưng biến thành màu đỏ như máu tươi〉，Pháp luật Việt Nam，2017 年 10 月 22 日，Dân trí 转载。
+    type: newspaper_report
+    url: https://dantri.com.vn/thoi-su/su-thuc-ve-buc-tuong-nha-tu-dung-bien-thanh-mau-do-nhu-mau-tuoi-20171022154220789.htm
+    locator: 高平省红屋的不同口述及当地居民采访
+  - &id006
+    citation: 〈Học sinh nghỉ học vì tin đồn bà già ăn thịt người〉，Thanh Niên 报道，VnExpress 转载，2005 年 4 月 23 日。
+    type: newspaper_report
+    url: https://vnexpress.net/hoc-sinh-nghi-hoc-vi-tin-don-ba-gia-an-thit-nguoi-1998357.html
+    locator: 坚江省学校中流言的传播与校方回应
+  - &id007
+    citation: Minh Thùy, “Tin nhắn ‘hồn ma’ - trò đùa quá đà của giới trẻ”, VnExpress, 2 March 2011。
+    type: newspaper_report
+    url: https://vnexpress.net/tin-nhan-hon-ma-tro-dua-qua-da-cua-gioi-tre-2275341.html
+    locator: 胡志明市学生收到的连锁短信及其选择
+- id: corpus_my_sg_campus_night_2011_2021
+  title: 半夜的校园与营房｜马来西亚、新加坡的讲述
+  genre: academic_model
+  peers:
+  - case_my_kl_um_roadside_woman_2009
+  - case_my_kelantan_school_dark_figure_2018
+  - case_sg_tekong_third_door_bunk
+  paragraphs:
+  - 甘马挽露营时的门缝、德光岛营房里逐渐靠近的数数声、索菲亚山旧校舍传来的脚步，是不同讲述者保存下来的夜间片段。
+  - 这些记录有的来自亲身回忆，有的是服役或求学时听来的故事。保留谁告诉了谁，可以让读者看见传闻在同伴和家庭中如何流动。
+  sources:
+  - &id008
+    citation: Patsy Teoh, “Ghosts of the Tortured”, USC Digital Folklore Archives, 20 November 2011。
+    type: oral_history
+    url: https://folklore.usc.edu/ghosts-of-the-tortured/
+    locator: 马来西亚受访者转述的甘马挽校园露营故事
+  - &id011
+    citation: Yi Lin Valerie Tan, “Tekong Stories”, USC Digital Folklore Archives, 16 May 2021。
+    type: oral_history
+    url: https://folklore.usc.edu/tekong-stories/
+    locator: 受访者转述服役时听来的祖孙数人数故事
+  - &id012
+    citation: Barbara Quek, “MGS Memories of 11 Mount Sophia”, BiblioAsia, National Library Board Singapore, 10 October 2012。
+    type: institutional_account
+    url: https://biblioasia.nlb.gov.sg/all-sections/vol-8-issue-3-oct-dec-2012-mgs-memories-mount-sophia/
+    locator: 旧校舍历史及 Anna Tham 的校友回忆
+- id: corpus_malay_sg_horror_media_2017
+  title: 从报纸到故事书｜新加坡与马来世界的恐怖叙事
+  genre: academic_model
+  peers:
+  - case_sg_orchard_ride_previous_passenger_2022
+  - case_sg_ubin_german_girl_shrine
+  paragraphs:
+  - 新加坡国家图书馆的文章梳理了恐怖故事在报纸、电影和出版物之间的变化：1950 年代的马来报纸连载，与后来畅销的英语故事集，保留了不同的城市声音。
+  - 2016 年沙巴受访者又介绍当地对 balan-balan 的称呼及相关传闻。它们和印刷作品可以并读，但不必假定所有故事有同一源头。
+  sources:
+  - citation: Ng Yi-Sheng, “A History of Singapore Horror”, BiblioAsia, National Library Board Singapore, 7 July 2017。
+    type: institutional_research
+    url: https://biblioasia.nlb.gov.sg/all-sections/vol-13-issue-2-jul-sep-2017-history-of-singaporean-horror/
+    locator: 马来恐怖文学、电影及 1989 年后的故事书
+  - &id010
+    citation: Julia Chan, “So, you’re a hunter of… ghosts? In Sabah, ghosthunting is a popular hobby”, Malay Mail, 26 June 2016。
+    type: newspaper_report
+    url: https://www.malaymail.com/news/malaysia/2016/06/26/so-youre-a-hunter-of-ghosts-in-sabah-ghosthunting-is-a-popular-hobby/1149253
+    locator: 沙巴探访团体采访及 balan-balan 的地方称呼
+- id: corpus_seasia_family_visits_2013
+  title: 家族记忆中的归访｜夜里的声音与老宅
+  genre: academic_model
+  peers:
+  - case_la_xieng_khouang_brother_in_doorway
+  - case_kh_river_island_still_pond_1980s
+  paragraphs:
+  - 一位马来西亚受访者记得家人离世后的夜晚，另一位菲律宾裔受访者讲起亲属一再提到的老宅身影。两则故事都随家庭聊天被保存下来。
+  - 南加州大学民俗档案收录的是讲述者的说法及采录情境；叙述中对逝者的思念、害怕和对住处的记忆，未必要归成一种解释。
+  sources:
+  - &id009
+    citation: “A Visitation”, USC Digital Folklore Archives, recorded 12 November 2013。
+    type: oral_history
+    url: https://folklore.usc.edu/a-visitation/
+    locator: 马来西亚受访者对祖母逝世后夜间经历的回忆
+  - &id013
+    citation: Juliette Kaplan, “Story – Philippines”, USC Digital Folklore Archives, 16 April 2011；访谈记录于 2007 年。
+    type: oral_history
+    url: https://folklore.usc.edu/story-philippines/
+    locator: 菲律宾裔受访者对家族老宅传闻的转述
+records:
+- id: case_cn_cenxi_fish_drain_sound_2007
+  title: 广西岑溪｜排水管里的夜声
+  genre: memorate
+  credibility_tier: A
+  theme: corpus_cn_empty_buildings_2004_2008
+  location:
+    lat: 22.92
+    lng: 110.98
+    precision: city
+    location_name: 中国广西岑溪 · 城市参考点
+    culture_region: 中国 · 华南
+  location_note: 报道涉及仍有人生活的楼房；坐标采用联合国地名数据库城市参考点，不指向具体住户。
+  paragraphs:
+  - 岑溪有栋楼，夜里常传出古怪声响。关于它的来历，人们越说越多，几任屋主陆续搬走；后来两兄弟买下房子，决定找出声音从哪里来。
+  - 他们在凌晨把耳朵贴近排污管，听见声音从地下传上来。按 2007 年的报道，两人打开池子后发现了几条塘角鱼；报道采访的解释认为，鱼活动时的声响沿管道传进屋里。
+  - 这是报纸保存的调查版本。关于旧地形和前任住户遭遇的讲法则来自附近传闻，需要与兄弟的发现分开看。
+  sources:
+  - citation: 〈“鬼楼”逼走房东，兄弟俩不信邪捉住“鬼”揭真相〉，中国新闻网据《南国早报》，2007 年 4 月 20 日，新浪新闻转载。
+    type: newspaper_report
+    url: https://news.sina.cn/sa/2007-04-20/detail-ikkntiam8963834.d.html
+    locator: 住户对异响的追查及报道中的解释
+  - citation: 联合国地名专家组公共数据库：Cenxi（岑溪），坐标来源为中国地名研究所。
+    type: map_reference
+    url: https://ungegn.un.org/dashboard/cities/details?id=1937
+    locator: 城市参考点，经度 110.98、纬度 22.92
+  reading_kind: report
+- id: case_cn_shenzhen_xianhu_fog_road_2007
+  title: 深圳仙湖｜雾中走在前方的人
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_asia_night_transit_lore_2025
+  location:
+    lat: 22.57864
+    lng: 114.16555
+    precision: city
+    location_name: 中国广东深圳 · 仙湖植物园参考点
+    culture_region: 中国 · 华南
+  location_note: 点位标示仙湖植物园区域；报道没有确认帖文中的具体道路或当事人。
+  paragraphs:
+  - 一位垂钓论坛用户讲过这样一段夜路：她与朋友驾车离开仙湖附近，浓雾里跟错了前车，在弯路上越开越不认识方向。
+  - 车灯前方出现一名穿白衣的女子，缓缓沿路行走，没有回头。讲述者想到听过的怪谈，加快速度驶了过去。
+  - 《南方都市报》2007 年转述了这篇网帖，也询问植物园工作人员和游客；他们说自己没有听过或遇见相同的事情。帖文中的经历与后来围绕地点形成的传闻，需要分别阅读。
+  sources:
+  - *id001
+  reading_kind: report
+- id: case_cn_shenzhen_university_dorm_sign_2007
+  title: 深圳校园｜传说中刷红的字
+  genre: memorate
+  credibility_tier: A
+  theme: corpus_cn_campus_lore_and_writing_2007
+  location:
+    lat: 22.5393
+    lng: 113.9337
+    precision: city
+    location_name: 中国广东深圳 · 深圳大学校园参考点
+    culture_region: 中国 · 华南
+  location_note: 点位为深圳大学校园范围参考，不指向宿舍房间；报道记录的是 2007 年的走访。
+  paragraphs:
+  - 深圳大学学生间曾流传一栋宿舍楼的说法：有人说楼名是红色的，并为这与其他楼不一样的颜色编出解释。附近的山和图书馆，也各有从学长或网络听来的故事。
+  - 2007 年记者来到校园询问师生，路过的学生说自己在这里生活并未遇到传闻中的事；记者当时观察到，宿舍门楣并没有传说中的红漆。
+  - 故事里的解释、当时实际看到的门楣和多年间可能发生的变化，都不能互相替代。
+  sources:
+  - *id001
+  reading_kind: report
+- id: case_cn_chongqing_locked_cabin_fiction_2007
+  title: 重庆校园｜深夜亮灯的旧屋
+  genre: urban_legend
+  credibility_tier: F
+  theme: corpus_cn_campus_lore_and_writing_2007
+  location:
+    lat: 29.563
+    lng: 106.5516
+    precision: city
+    location_name: 中国重庆 · 创作者求学城市参考点
+    culture_region: 中国 · 西南
+  location_note: 这是一则经报道介绍的虚构创作；点位标示作者当时求学的重庆，并非故事中旧屋的确切位置。
+  paragraphs:
+  - 白天，一间旧屋总上着锈锁；到了深夜，里面却会亮起闪动的灯。同学们猜了许多种可能，越猜越觉得这间屋子不寻常。
+  - 故事最后揭开谜底：一位清洁工定期将拾来的物品放进屋里。2007 年《重庆晚报》采访学生作家杨雁粤时，由她的同学回忆了这一段作品情节。
+  - 这是把校园闲谈写成的虚构故事，而不是关于某一间屋子的事实报告。
+  sources:
+  - *id002
+  reading_kind: story
+- id: case_vn_hanoi_dorm_white_coat_2009
+  title: 河内校园｜走廊上的白衣身影
+  genre: memorate
+  credibility_tier: A
+  theme: corpus_vn_urban_rumor_reporting_2005_2017
+  location:
+    lat: 21.05425
+    lng: 105.73526
+    precision: city
+    location_name: 越南河内 · 河内工业大学校园参考点
+    culture_region: 东南亚 · 越南
+  location_note: 坐标为公开校园范围参考，不指向宿舍或房间；报道记载的是 2009 年的说法。
+  paragraphs:
+  - 新学年开始后，河内一栋宿舍里传起白衣身影在走廊游荡的故事，新生还听说隔壁房间曾经发生过不幸。几个室友越听越担心，却说不清故事从哪里传来。
+  - 2009 年记者访问学生和宿舍管理人员。管理人员说，曾有人穿白衣吓同学，也否认有关房间的死亡传闻；住在那里的学生介绍，她们询问之后找不到知道细节的人。
+  - 报道同时保存了学生的感受和校方的解释。关于传闻最初由谁传出，不同说法仍需要独立证据。
+  sources:
+  - *id003
+  - citation: OpenStreetMap contributors：Hanoi University of Industry，地图数据 ODbL 1.0。
+    type: map_reference
+    url: https://www.openstreetmap.org/way/828691769
+    locator: Từ Liêm 校园参考位置
+  reading_kind: report
+- id: case_vn_luongson_firefly_bamboo_house_2012
+  title: 越南梁山｜雨后空屋前的光
+  genre: memorate
+  credibility_tier: A
+  theme: corpus_vn_urban_rumor_reporting_2005_2017
+  location:
+    lat: 20.87148
+    lng: 105.52568
+    precision: city
+    location_name: 越南和平省 · 梁山地区参考点
+    culture_region: 东南亚 · 越南
+  location_note: 报道涉及梁山一处旧屋及附近居民；地图使用地区参考点，不标住宅。
+  paragraphs:
+  - 一位经过越南和平省梁山地区的居民说，天色暗下来时，他看见空屋里有一团光像人影一样掠过，又听到类似呼号的声音，便赶紧骑车离开。
+  - 2012 年记者采访另一位附近居民。对方说，自己起初也被吓过，后来留意到雨后有成群萤火虫，风会吹响屋内竹管和门前风铃。
+  - 两人的经历都被写进报道：一个描述当时看到和听到的，另一个给出自己后来观察到的可能解释。
+  sources:
+  - *id004
+  reading_kind: report
+- id: case_vn_caobang_red_house_2017
+  title: 越南高平｜松林里的红屋
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_vn_urban_rumor_reporting_2005_2017
+  location:
+    lat: 22.56667
+    lng: 105.88333
+    precision: province
+    location_name: 越南高平省 · Phia Đén 区域参考点
+    culture_region: 东南亚 · 越南
+  location_note: 点位为报道所述地区的地名参考，不代表旧屋边界或任何现住者位置。
+  paragraphs:
+  - 高平省的一座旧屋因墙面颜色被人叫作“红屋”。附近流传过不同故事：有人说夜里能听到哭声，也有人说在屋里过夜后，醒来竟躺在院子里。
+  - 2017 年记者访问当地居民。一位受访者记得从小听过这些讲法，却说自己修路到傍晚也没有见到什么；另一位居民则仍对传闻感到害怕。
+  - 报道所记的旧屋、亲历观察和代代转述的情节各有不同来源，不能据此确认传说中的旧事。
+  sources:
+  - *id005
+  reading_kind: report
+- id: case_vn_kiengiang_school_rumor_2005
+  title: 越南坚江｜传进学校的老妇人故事
+  genre: memorate
+  credibility_tier: A
+  theme: corpus_vn_urban_rumor_reporting_2005_2017
+  location:
+    lat: 10.18684
+    lng: 104.92503
+    precision: city
+    location_name: 越南坚江省 · Hòn Đất 地区参考点
+    culture_region: 东南亚 · 越南
+  location_note: 坐标为 Hòn Đất 地区参考点，不指向学校或学生住处。
+  paragraphs:
+  - 2005 年，越南南部几个地方流传一种可怕的说法：有个能隐身的老妇人正在寻找孩子。故事传到坚江省一所学校时，一名家长因担心孩子而进校讲给学生听。
+  - 消息很快传开，孩子们慌张离开教室，许多家长也赶到学校。报道说，学校和当地人员随后向大家说明这是一则传言；讲述者也表示自己是从别人那里听来的。
+  - 这条记录关注传闻怎样改变当日的校园生活，并没有证据表明传闻中的老妇人存在。
+  sources:
+  - *id006
+  reading_kind: report
+- id: case_vn_hcm_ghost_phone_chain_2011
+  title: 胡志明市｜要求转发的亡者短信
+  genre: creepypasta_ostension
+  credibility_tier: F
+  theme: corpus_vn_urban_rumor_reporting_2005_2017
+  location:
+    lat: 10.8231
+    lng: 106.6297
+    precision: city
+    location_name: 越南胡志明市 · 受访者所在城市参考点
+    culture_region: 东南亚 · 越南
+  location_note: 数字传播的虚构短信以 F 级收录；坐标只表示报道中一名收信学生所在城市，不表示短信起源。
+  paragraphs:
+  - 一条短信自称来自已经去世的人，声称删除信息会给亲友带来厄运，转发给更多人则可以换来好运。它借收信人的担心，要求故事继续传下去。
+  - 2011 年，胡志明市一位学生向 VnExpress 讲起自己收到这类短信的经历：信息来自朋友，朋友解释说自己也是因为害怕才转发。他最后决定不再转发。
+  - 短信中的亡者和惩罚是人为编写的恐怖叙事；报道记录的是它如何被收到、传播和拒绝。
+  sources:
+  - *id007
+  reading_kind: story
+- id: case_my_kemaman_camp_door_fingers_2011
+  title: 马来西亚甘马挽｜门缝下的手指
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_my_sg_campus_night_2011_2021
+  location:
+    lat: 4.2193
+    lng: 103.4225
+    precision: city
+    location_name: 马来西亚丁加奴 · 甘马挽城市参考点
+    culture_region: 东南亚 · 马来西亚
+  location_note: 受访者只说故事与家乡一所学校有关；点位为甘马挽市镇参考，不定位学校。
+  paragraphs:
+  - 露营时，两名学生先后离开洗手间。其中一人想推门出去，却发现门推不开；她以为同伴在门外恶作剧，低头时看见门缝下似乎有两根手指。
+  - 她终于推开门，向同伴抱怨。同伴却说自己一直在外面等着，没有拉门。
+  - 2011 年一位马来西亚受访者向南加州大学民俗档案采集者转述这个家乡校园故事，也提到夜间行军声的说法。故事中的战时背景同样属于讲述者听来的解释。
+  sources:
+  - *id008
+  - citation: OpenStreetMap contributors：Kemaman / Chukai，地图数据 ODbL 1.0。
+    type: map_reference
+    url: https://www.openstreetmap.org/node/254074007
+    locator: 甘马挽市镇参考点
+- id: case_my_kl_grandmother_seventh_night_2013
+  title: 马来西亚｜祖母离世后的夜晚
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_seasia_family_visits_2013
+  location:
+    lat: 3.139
+    lng: 101.6869
+    precision: city
+    location_name: 马来西亚吉隆坡 · 受访者居住地参考点
+    culture_region: 东南亚 · 马来西亚
+  location_note: 吉隆坡是 2013 年档案所载受访者居住地；原文没有明确这一夜发生的具体地点。
+  paragraphs:
+  - 一名马来西亚青年回忆，祖母离世后的第七个夜晚，他在房间里醒来，觉得屋内异常闷热，还闻到像祭拜时使用的香气。
+  - 他说自己随后听见楼梯上的脚步声和开关响动，又从门缝看见像有什么东西移动。家人把那一夜与祖母可能归来的信念联系在一起。
+  - 南加州大学民俗档案保存了他 2013 年的讲述；感受来自受访者自己的回忆，不需替它补出确定的原因。
+  sources:
+  - *id009
+  reading_kind: report
+- id: case_my_kota_belud_balan_balan_2016
+  title: 马来西亚沙巴｜不轻易叫出的名字
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_malay_sg_horror_media_2017
+  location:
+    lat: 6.35
+    lng: 116.4333
+    precision: city
+    location_name: 马来西亚沙巴 · 哥打毛律地区参考点
+    culture_region: 东南亚 · 马来西亚
+  location_note: 报道受访者提到哥打毛律一带的传闻；点位为地区示意，不代表某次目击位置。
+  paragraphs:
+  - 在沙巴的一些讲述里，夜行的 balan-balan 是一个令人忌讳的名字。有人宁愿用缩写代替，担心直接叫出名字会招来它。
+  - 2016 年《马来邮报》采访地方夜间探访爱好者时，受访者讲到这种传闻，并把它与马来西亚半岛上另一种称呼作比较。
+  - 这些是地方讲述与命名习惯的记录；各地对形象和名字的理解并不完全相同。
+  sources:
+  - *id010
+- id: case_sg_tekong_grandmother_counting_2021
+  title: 新加坡德光岛｜越来越近的数数声
+  genre: urban_legend
+  credibility_tier: B
+  theme: corpus_my_sg_campus_night_2011_2021
+  location:
+    lat: 1.416
+    lng: 104.037
+    precision: culture_region
+    location_name: 新加坡德光岛 · 岛屿范围参考点
+    culture_region: 东南亚 · 新加坡
+  location_note: 点位标示德光岛范围，不定位营房；档案保存的是 2021 年对服役传闻的转述。
+  paragraphs:
+  - 夜里的营房中，故事说有一位祖母带着小女孩走过床铺，教她一个接一个数熟睡的人。数字越念越近，声音也越来越清楚。
+  - 听故事的新兵被告知不能睁眼，否则会被她们带走。2021 年，一名新加坡受访者把自己服役时听过的版本讲给家人，后来被收进南加州大学民俗档案。
+  - 它与德光岛流传的其他营房怪谈一样，保留的是同伴之间一代代转述的故事。
+  sources:
+  - *id011
+- id: case_sg_mount_sophia_night_desks_2012
+  title: 新加坡索菲亚山｜旧校舍里的桌椅声
+  genre: memorate
+  credibility_tier: A
+  theme: corpus_my_sg_campus_night_2011_2021
+  location:
+    lat: 1.30075
+    lng: 103.84736
+    precision: city
+    location_name: 新加坡 · Mount Sophia 原校址参考点
+    culture_region: 东南亚 · 新加坡
+  location_note: 点位采用旧校园保留建筑的公开参考位置，不表示声音发生在该建筑内部。
+  paragraphs:
+  - 一位新加坡校友回忆，小时候曾听说索菲亚山的旧学校到了午夜会有声响。她不太相信这些故事，参加营火和其他活动时也会留到很晚。
+  - 一次夜里，她真的听见了拖动脚步和桌椅的声音。后来有人又向她讲起关于旧校地的传闻，使她在童军露营时多留了心。
+  - 新加坡国家图书馆 2012 年发表的校友文章同时记载了学校迁址与旧建筑的历史；听到声音的回忆与后来听来的解释是两回事。
+  sources:
+  - *id012
+  - citation: OpenStreetMap contributors：Olson Building，地图数据 ODbL 1.0。
+    type: map_reference
+    url: https://www.openstreetmap.org/way/351305489
+    locator: 原学校所在山丘的保留建筑参考点
+  reading_kind: report
+- id: case_ph_family_old_house_visitor_2007
+  title: 菲律宾｜老宅里被反复讲起的身影
+  genre: memorate
+  credibility_tier: B
+  theme: corpus_seasia_family_visits_2013
+  location:
+    lat: 12.8797
+    lng: 121.774
+    precision: culture_region
+    location_name: 菲律宾 · 国家范围示意点
+    culture_region: 东南亚 · 菲律宾
+  location_note: 档案没有可核定的具体坐标；为尊重仍有家人居住的房屋，地图仅作菲律宾范围示意。
+  paragraphs:
+  - 一位菲律宾裔受访者讲起母亲家族的一座老宅：亲属常说屋里会出现一位年长女子的身影，因此到访的人不愿独自在房间里睡。
+  - 她本人没有见过那个身影，却记得表亲与长辈一次次讲述，也记得家里维修房屋时受到传闻影响。
+  - 这段 2007 年的家庭口述后来进入南加州大学民俗档案。老宅仍属于生活空间，故事保存的是家人如何谈论它。
+  sources:
+  - *id013
+  reading_kind: report
+existing_notes: {}
+revisions:
+  case_sg_ubin_german_girl_shrine:
+    source:
+      citation: William L. Gibson, “Unravelling the Mystery of Ubin’s German Girl Shrine”, BiblioAsia, National Library Board Singapore, 10 October 2021。
+      type: institutional_research
+      url: https://biblioasia.nlb.gov.sg/all-sections/vol-17-issue-3-oct-dec-2021-ubins-german-girl-shrine/
+      locator: 谢衍庆的口述来源、土地登记及报纸档案对照
+    paragraphs:
+    - 乌敏岛流传一则故事：第一次世界大战期间，一名德国姑娘为躲避抓捕跑进树林，后来在山崖附近去世。岛上的小庙与她的传说，经过居民口述和报纸报道不断流传。
+    - 2021 年，William L. Gibson 在新加坡国家图书馆文章中对照土地登记、旧报纸与口述史：岛上的咖啡园在 1910 年已改种橡胶，他也没有找到 1914 年德国一家住在当地的证据。重要讲述者谢衍庆表示，故事也是他从长辈那里听来的。
+    - 庙宇与长期供奉是真实存在的地方记忆；姑娘的身份和传说中的具体经历，目前仍缺少可确认的历史证据。
