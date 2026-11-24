@@ -141,7 +141,7 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
 
   function ambientTick() {
     motionTimer = 0;
-    if (!motionEnabled || disposed || document.hidden) { motionLast = 0; return; }
+    if (!motionEnabled || disposed || document.hidden || document.documentElement.dataset.astraiaActive === 'false') { motionLast = 0; return; }
     const now = performance.now();
     if (!selectedActive && !dragging && !interacting && !focus && !gravity.active()) {
       if (motionLast) {
@@ -157,10 +157,11 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   function setMotion(enabled: boolean) {
     motionEnabled = enabled; motionLast = 0;
     window.clearTimeout(motionTimer); motionTimer = 0;
-    if (enabled && !document.hidden && !disposed) motionTimer = window.setTimeout(ambientTick, 90);
+    if (enabled && !document.hidden && !disposed && document.documentElement.dataset.astraiaActive !== 'false') motionTimer = window.setTimeout(ambientTick, 90);
   }
-  const visibility = () => setMotion(motionEnabled);
+  const visibility = () => { setMotion(motionEnabled); if (document.documentElement.dataset.astraiaActive !== 'false') schedule(); };
   document.addEventListener('visibilitychange', visibility);
+  window.addEventListener('astraia:visibility', visibility);
 
   function schedule() { if (!frame) frame = requestAnimationFrame(render); }
   function beginMotion() {
@@ -425,6 +426,7 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   }
   function render(now: number) {
     frame = 0;
+    if (document.documentElement.dataset.astraiaActive === 'false') { lastFrame = 0; return; }
     // Keep camera motion tied to elapsed time, not to the number of frames.
     // A software renderer may only present a few frames per second; without
     // this adjustment a one-second flight can take ten seconds on that device.
@@ -635,7 +637,7 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
     setMotion,
     reset() { fly(overviewTarget, 576, overviewDirection); },
     dispose() {
-      disposed = true; setMotion(false); document.removeEventListener('visibilitychange', visibility);
+      disposed = true; setMotion(false); document.removeEventListener('visibilitychange', visibility); window.removeEventListener('astraia:visibility', visibility);
       labels.dispose(); portal.dispose(); glowLayer.remove();
       restoreGravity(); gravityAnimation.dispose(); cancelAnimationFrame(frame); cancelAnimationFrame(hoverFrame); window.clearTimeout(restoreQuality);
       window.clearTimeout(hoverTimer); observer.disconnect();

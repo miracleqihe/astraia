@@ -1,7 +1,11 @@
 import * as THREE from 'three';
-import { loadGraph, loadDetails, matchesGraph } from './graphBridge';
+import { loadGraph, matchesGraph } from './graphBridge';
 import { loadPortalMatches } from './portalMatches';
-import { handbookText } from './readable';
+import { handbookText, bookNavigation, bindBookNavigation } from './readable';
+import { createReadingShards } from './readingShards';
+import { genreContract, genreLabels, sourceTier } from './narrativeMetadata';
+import { storyShare, bindStoryShare } from './sharing';
+import { originalPageButton, bindOriginalPages } from './originalPages';
 
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const hasCoordinates = node => Number.isFinite(node.spatial?.lat) && Number.isFinite(node.spatial?.lng)
@@ -28,22 +32,26 @@ const readingText = node => {
 };
 const matchLabel = row => ({curated:'精选对读',theme:'主题关联',guide:'阅读指引'})[row?.kind] ?? '自选对读';
 const matchReason = row => row?.kind === 'theme'
-  ? `共同主题词：${(row.terms ?? []).map(item=>item.source === '题名或别名' && item.term.toLocaleLowerCase() !== item.target.toLocaleLowerCase() ? `${item.term} / ${item.target}` : item.term).join('、')}`
+  ? `共同主题词：${(row.terms ?? []).map(item=>`${item.term}${item.source === '正文' ? '（正文）' : ''}${item.source === '题名或别名' && item.term.toLocaleLowerCase() !== item.target.toLocaleLowerCase() ? ` / ${item.target}` : ''}`).join('、')}`
   : row?.kind === 'guide' || row?.kind === 'curated' ? row.reason : '由用户选择的对读';
 
 /** The second view uses the same public catalogue as the original atlas. */
 export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starMaterial, latLonToVec3, focusNode, onSelection, onPortal, onBrowseFolklore }) {
-  let graph = null, byId = new Map(), indexById = new Map(), adjacency = new Map(), detailsPromise = null, detailedNodes = null, bookPromise = null;
+  let graph = null, byId = new Map(), indexById = new Map(), adjacency = new Map(), shards = null;
+  const detailedNodes = new Map();
   let matchIndex = null, matchPromise = null, matchError = '';
+  let startPromise = null;
   let reverseEntryId = null, reverseQuery = '';
   let geoPoints = null, semanticPoints = null, networkLines = null, limit = 60;
   const semanticPositions = [];
   const selected = () => state.selectedGraph;
-  const allowed = node => state.tiers.has(node.credibility_tier) && (state.showF || !isFiction(node));
+  const allowed = node => state.tiers.has(node.credibility_tier) && (state.showF || !isFiction(node))
+    && (state.genre === 'ALL' || genreContract(node) === state.genre);
   const classicURL = (view, nodeId) => {
     const query = new URLSearchParams({view});
     if (nodeId) query.set('story',nodeId);
     if (state.showF) query.set('fiction','1');
+    if (state.genre !== 'ALL') query.set('genre',state.genre);
     query.set('tiers',[...state.tiers].join(','));
     if (nodeId && state.selectedGraph?.id === nodeId && state.selectedBook) {
       query.set('bridge_story',nodeId); query.set('bridge_entry',state.selectedBook.id);
@@ -53,6 +61,7 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
   const bookURL = id => {
     const query = new URLSearchParams({view:'life',entry:id});
     if (state.showF) query.set('fiction','1');
+    if (state.genre !== 'ALL') query.set('genre',state.genre);
     query.set('tiers',[...state.tiers].join(','));
     if (state.selectedGraph && state.selectedBook?.id === id) {
       query.set('bridge_story',state.selectedGraph.id); query.set('bridge_entry',id);
@@ -197,25 +206,15 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
     }
   }
 
-  async function allDetails() {
-    if (!detailsPromise) detailsPromise = loadDetails(root, graph).then(nodes=>{detailedNodes=nodes;return nodes;}).catch(error => { detailsPromise = null; throw error; });
-    return detailsPromise;
+  async function detail(node) {
+    if (detailedNodes.has(node.id)) return detailedNodes.get(node.id);
+    const record = { ...node, ...await shards.graph(node.id) };
+    detailedNodes.set(node.id, record);
+    return record;
   }
-  async function allBooks() {
-    if (!bookPromise) bookPromise = (async () => {
-      const response = await fetch(`${root}knowledge/data.json?v=${book.data_sha256}`);
-      if (!response.ok) throw new Error('原书资料读取失败。');
-      const bytes = await response.arrayBuffer();
-      if (globalThis.crypto?.subtle) {
-        const digest = await crypto.subtle.digest('SHA-256',bytes);
-        const hash = [...new Uint8Array(digest)].map(x => x.toString(16).padStart(2,'0')).join('');
-        if (hash !== book.data_sha256) throw new Error('原书资料版本不一致，请刷新。');
-      }
-      const data = JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(bytes));
-      if (!Array.isArray(data.entries)) throw new Error('原书资料格式错误。');
-      return new Map(data.entries.map(entry => [entry.id,entry]));
-    })().catch(error => { bookPromise = null; throw error; });
-    return bookPromise;
+  function loadMechanisms(node, update) {
+    const needed = mechanismsFor(node).map(item => item.related).filter(item => !detailedNodes.has(item.id));
+    if (needed.length) Promise.allSettled(needed.map(detail)).then(update);
   }
 
   function mechanismsFor(node) {
@@ -289,12 +288,13 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
       const other = byId.get(edge.source === node.id ? edge.target : edge.source);
       return other ? `<button class="syzygy-related" data-related="${escape(other.id)}"><span>${escape(other.title)}</span><small class="${statusClass(edge.status)}">${statusLabel(edge.status)}</small></button>` : '';
     }).join('');
-    container.innerHTML = `<section class="mythos-pane syzygy-full-card"><p class="syzygy-overline">上卷 · 民俗与个案 / L${escape(node.z_layer ?? '—')} · ${escape(node.credibility_tier ?? '—')} 级</p>
+    container.innerHTML = `<section class="mythos-pane syzygy-full-card"><p class="syzygy-overline">上卷 · 民俗与个案 / L${escape(node.z_layer ?? '—')}</p>
       <h3>${escape(node.title)}</h3><div class="syzygy-codes">${codePills(node)}</div>
+      <p class="syzygy-reference">来源等级 ${escape(sourceTier(node) ?? '未记录')} · 体裁 ${escape(genreLabels[genreContract(node)])}${isFiction(node) ? ' · 虚构标记 F' : ''}</p>
       <p class="syzygy-reference">${escape(node.spatial?.location_name || '地点未记录')} · ${escape(coords)}</p>
       <div class="syzygy-prose">${readingText(node)}</div>
       <h4>出处</h4>${loading ? '<p class="syzygy-reference">正在读取完整正文与出处…</p>' : sourceList(node)}
-      <div class="syzygy-read-links"><a href="${classicURL('map',node.id)}">在经典地图查看</a><a href="${classicURL('graph',node.id)}">在经典星络查看</a></div></section>
+      <div class="syzygy-read-links"><a href="${classicURL('map',node.id)}">在经典地图查看</a><a href="${classicURL('graph',node.id)}">在经典星络查看</a></div>${storyShare(root,node)}</section>
       <section class="prism-pane syzygy-full-card"><p class="syzygy-overline">跨层关联 · 原图谱记录 ${edges.length}</p>
       ${mechanismMarkup(node)}${relations || '<p class="syzygy-reference">暂无关联节点。</p>'}${edges.length>20 ? `<p class="syzygy-reference">展示前 20 条，完整关系请在经典星络中查看。</p>` : ''}</section>
       <section class="physis-pane syzygy-full-card"><p class="syzygy-overline">✦ 穿界星门 · 格物主题对读</p>
@@ -302,6 +302,7 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
       <label class="syzygy-reference" for="portal-book-search">搜索全部 ${book.entries.length.toLocaleString()} 条格物资料</label>
       <input id="portal-book-search" class="syzygy-portal-search" type="search" placeholder="标题、主题或编号" autocomplete="off"><div id="portal-book-results"></div></section>`;
     container.querySelectorAll('[data-related]').forEach(button => button.addEventListener('click', () => { const next=byId.get(button.dataset.related); if (next) select(next,true); }));
+    bindStoryShare(container);
     paintSuggestions(node,container.querySelector('[data-portal-suggestions]'));
     const input = container.querySelector('#portal-book-search'), results = container.querySelector('#portal-book-results');
     input.addEventListener('input', () => {
@@ -324,8 +325,9 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
     if (state.scopeTab === 'supplement' || state.dimension !== 'omnia' || state.searchQuery) renderDirectory();
     if (fly) focusNode(node, hasCoordinates(node) ? latLonToVec3(node.spatial.lat,node.spatial.lng,165) : null, semanticPositions[indexById.get(node.id)]);
     try {
-      const details = await allDetails();
-      if (selected()?.id === node.id && !state.selectedBook) renderNode(details.get(node.id) ?? node, false);
+      const full = await detail(node);
+      if (selected()?.id === node.id && !state.selectedBook) renderNode(full, false);
+      loadMechanisms(node, () => { if (selected()?.id === node.id && !state.selectedBook) renderNode(full, false); });
     } catch (error) {
       if (selected()?.id === node.id && !state.selectedBook) {
         renderNode(node, false);
@@ -342,12 +344,14 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
     state.selectedGraph = null; state.selectedBridge = null; state.selectedBook = entry; clearNeighborhood(); onSelection(); updatePoints();
     const container = document.getElementById('syzygy-card-container');
     const render = (body, loading) => {
-      container.innerHTML = `<section class="physis-pane syzygy-full-card"><p class="syzygy-overline">下卷 · 格物识微 / ${escape(entry.volume)}</p><h3>${escape(entry.title)}</h3><p class="syzygy-reference">${escape(entry.id)} · PDF 第 ${escape(entry.page)} 页</p><div class="syzygy-prose syzygy-book-body">${loading ? '正在读取原书正文…' : handbookText(body)}</div><div class="syzygy-read-links"><a href="${bookURL(entry.id)}">在经典万象星枢阅读</a><a href="${root}knowledge/handbook.pdf#page=${encodeURIComponent(entry.page)}" target="_blank" rel="noopener">打开原书</a><button id="portal-choose-story" class="ctl-btn">✦ 选择民俗条目对读</button></div><div data-portal-reverse></div></section>`;
+      container.innerHTML = `<section class="physis-pane syzygy-full-card"><p class="syzygy-overline">下卷 · 格物识微 / ${escape(entry.volume)}</p><h3>${escape(entry.title)}</h3><p class="syzygy-reference">${escape(entry.id)} · PDF 第 ${escape(entry.page)} 页</p><div class="syzygy-read-links">${originalPageButton(entry.page)}</div><div class="syzygy-prose syzygy-book-body">${loading ? '正在读取原书正文…' : handbookText(body,root)}</div>${bookNavigation(entry,book.entries)}<div class="syzygy-read-links"><a href="${bookURL(entry.id)}">在经典万象星枢阅读</a><a href="${root}knowledge/handbook.pdf#page=${encodeURIComponent(entry.page)}" target="_blank" rel="noopener">打开原书</a><button id="portal-choose-story" class="ctl-btn">✦ 选择民俗条目对读</button></div><div data-portal-reverse></div></section>`;
       container.querySelector('#portal-choose-story').addEventListener('click',()=>{state.pendingBook=entry; onBrowseFolklore(); renderDirectory();});
+      bindBookNavigation(container,selectBook);
+      bindOriginalPages(container,root,book);
       paintReverse(entry,container.querySelector('[data-portal-reverse]'));
     };
     render('',true);
-    try { const all=await allBooks(); if (state.selectedBook?.id === id && !state.selectedGraph) render(all.get(id)?.body,false); }
+    try { await start(); const full=await shards.book(id); if (state.selectedBook?.id === id && !state.selectedGraph) render(full.body,false); }
     catch (error) { if(state.selectedBook?.id === id && !state.selectedGraph) render(`正文读取失败：${error.message}，请重新选择条目。`,false); }
   }
 
@@ -361,18 +365,22 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
       const row=(matchIndex?.matches[node.id] ?? []).find(item=>item.entry === entry.id);
       const label=matchIndex ? matchLabel(row) : matchError ? '对照依据暂不可用' : '正在读取对照依据';
       const reason=matchIndex ? matchReason(row) : matchError ? '可继续阅读两侧资料，或稍后重试自动对照。' : '正在载入自动对照索引。';
-      container.innerHTML = `<section class="mythos-pane syzygy-full-card"><p class="syzygy-overline">上卷 · ${escape(story.credibility_tier ?? '—')} 级 / L${escape(story.z_layer ?? '—')}</p>
-        <h3>${escape(story.title)}</h3><p class="syzygy-reference">${escape(story.spatial?.location_name || '地点未记录')}</p><div class="syzygy-prose">${readingText(story)}</div>
-        <h4>出处</h4>${loading ? '<p class="syzygy-reference">正在读取…</p>' : sourceList(story)}<div class="syzygy-read-links"><a href="${classicURL('map',story.id)}">经典地图</a><a href="${classicURL('graph',story.id)}">经典星络</a></div></section>
+      container.innerHTML = `<section class="mythos-pane syzygy-full-card"><p class="syzygy-overline">上卷 · L${escape(story.z_layer ?? '—')}</p>
+        <h3>${escape(story.title)}</h3><p class="syzygy-reference">来源等级 ${escape(sourceTier(story) ?? '未记录')} · 体裁 ${escape(genreLabels[genreContract(story)])}${isFiction(story) ? ' · 虚构标记 F' : ''}</p><p class="syzygy-reference">${escape(story.spatial?.location_name || '地点未记录')}</p><div class="syzygy-prose">${readingText(story)}</div>
+        <h4>出处</h4>${loading ? '<p class="syzygy-reference">正在读取…</p>' : sourceList(story)}<div class="syzygy-read-links"><a href="${classicURL('map',story.id)}">经典地图</a><a href="${classicURL('graph',story.id)}">经典星络</a></div>${storyShare(root,story)}</section>
         <section class="prism-pane syzygy-full-card"><p class="syzygy-overline">◐ 穿界星门 · ${escape(label)}</p><p class="syzygy-reference">${escape(reason)}</p>${mechanismMarkup(story)}</section>
-        <section class="physis-pane syzygy-full-card"><p class="syzygy-overline">下卷 · 格物识微 / ${escape(entry.volume)}</p><h3>${escape(entry.title)}</h3><p class="syzygy-reference">${escape(entry.id)} · PDF 第 ${escape(entry.page)} 页</p><div class="syzygy-prose syzygy-book-body">${loading ? '正在读取原书正文…' : handbookText(body)}</div><div class="syzygy-read-links"><a href="${bookURL(entry.id)}">经典万象星枢阅读</a><a href="${root}knowledge/handbook.pdf#page=${encodeURIComponent(entry.page)}" target="_blank" rel="noopener">打开原书</a><button id="portal-change-book" class="ctl-btn">更换对读</button></div></section>`;
+        <section class="physis-pane syzygy-full-card"><p class="syzygy-overline">下卷 · 格物识微 / ${escape(entry.volume)}</p><h3>${escape(entry.title)}</h3><p class="syzygy-reference">${escape(entry.id)} · PDF 第 ${escape(entry.page)} 页</p><div class="syzygy-read-links">${originalPageButton(entry.page)}</div><div class="syzygy-prose syzygy-book-body">${loading ? '正在读取原书正文…' : handbookText(body,root)}</div>${bookNavigation(entry,book.entries)}<div class="syzygy-read-links"><a href="${bookURL(entry.id)}">经典万象星枢阅读</a><a href="${root}knowledge/handbook.pdf#page=${encodeURIComponent(entry.page)}" target="_blank" rel="noopener">打开原书</a><button id="portal-change-book" class="ctl-btn">更换对读</button></div></section>`;
       container.querySelector('#portal-change-book').addEventListener('click',()=>select(node,false));
+      bindStoryShare(container);
+      bindBookNavigation(container,next => openPortal(node,next));
+      bindOriginalPages(container,root,book);
     };
     render(node,'',true);
     try {
-      const [allNodes,allEntries] = await Promise.all([allDetails(),allBooks()]);
+      const [fullNode,fullEntry] = await Promise.all([detail(node),shards.book(id)]);
       await ensureMatches().catch(()=>null);
-      if (state.selectedGraph?.id === node.id && state.selectedBook?.id === id) render(allNodes.get(node.id) ?? node,allEntries.get(id)?.body,false);
+      if (state.selectedGraph?.id === node.id && state.selectedBook?.id === id) render(fullNode,fullEntry.body,false);
+      loadMechanisms(node, () => { if (state.selectedGraph?.id === node.id && state.selectedBook?.id === id) render(fullNode,fullEntry.body,false); });
     } catch (error) {
       if (state.selectedGraph?.id === node.id && state.selectedBook?.id === id) render(node,`正文读取失败：${error.message}，请重新打开对读。`,false);
     }
@@ -395,10 +403,11 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
     return { kind:'graph', node, worldPos:position.clone().applyMatrix4(cosmosGroup.matrixWorld), coord:node.spatial?.location_name || `L${node.z_layer ?? '—'}`, tag:'ASTRAIA / GRAPH', title:node.title, sub:'点击阅读原图谱卷宗' };
   }
 
-  return {
-    async start() {
+  function start() {
+    if (!startPromise) startPromise = (async () => {
       graph = await loadGraph(root, import.meta.env.VITE_PUBLIC_DEMO === '1');
       if (graph.snapshot_id !== dataset.snapshot_id) throw new Error('朔望数据与民俗目录版本不一致，请刷新。');
+      shards = createReadingShards(root, graph, book);
       byId = new Map(graph.nodes.map(node=>[node.id,node])); indexById = new Map(graph.nodes.map((node,i)=>[node.id,i]));
       graph.links.forEach(edge => { for (const id of [edge.source,edge.target]) { if (!adjacency.has(id)) adjacency.set(id,[]); adjacency.get(id).push(edge); } });
       graph.nodes.forEach((node,i) => semanticPositions.push(layerPosition(node,i)));
@@ -406,8 +415,25 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
       rendererCount();
       ensureMatches().catch(()=>{});
       return graph;
-    },
+    })().catch(error=>{startPromise=null;throw error;});
+    return startPromise;
+  }
+  return {
+    start,
     renderDirectory, updatePoints, updateDimension, hit, select, selectBook, openPortal, clearNeighborhood,
+    async hydrateCurated(bridge) {
+      if (!graph || !shards || !bridge || bridge.readingLoaded) return !!bridge?.readingLoaded;
+      if (!bridge.readingPromise) bridge.readingPromise = (async () => {
+        const node=byId.get(bridge.mythos.id), related=bridge.related && byId.get(bridge.related.id);
+        if (!node) throw new Error('未找到星桥对应的图谱条目。');
+        const [story,entry,relatedDetail]=await Promise.all([detail(node),shards.book(bridge.physis.id),related ? detail(related) : null]);
+        Object.assign(bridge.mythos,{reading:story.reading,sources:story.sources,markdown:story.markdown});
+        if (relatedDetail) Object.assign(bridge.related,{reading:relatedDetail.reading,sources:relatedDetail.sources,markdown:relatedDetail.markdown});
+        Object.assign(bridge.physis,{body:entry.body,figure_refs:entry.figure_refs});
+        bridge.readingLoaded=true; return true;
+      })().catch(error=>{bridge.readingPromise=null;throw error;});
+      return bridge.readingPromise;
+    },
     refreshFilters() {
       updatePoints();
       const slot=document.querySelector('[data-portal-reverse]');

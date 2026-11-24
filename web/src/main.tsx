@@ -9,7 +9,9 @@ import '@fontsource/noto-serif-sc/600.css';
 import '@fontsource/noto-sans-thai/thai-400.css';
 import '@fontsource/noto-sans-thai/thai-600.css';
 import { App } from './App';
+import { initViewRouter } from './viewRouter';
 import './styles.css';
 import './review-refinement.css';
 
+initViewRouter();
 createRoot(document.getElementById('root')!).render(<App />);

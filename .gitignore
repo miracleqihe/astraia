@@ -7,6 +7,10 @@ __pycache__/
 /web/public/data/catalogue_data.json
 /web/public/data/*_index.json
 /web/public/data/*_details.json
+/web/public/syzygy/shards/
+/web/public/knowledge/pages/
+/web/public/s/
+/web/public/og/
 /web/node_modules/
 /web/dist/
 /vault/.obsidian/

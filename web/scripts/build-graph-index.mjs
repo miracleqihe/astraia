@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, basename, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { genreContract, sourceTier } from '../src/syzygy/narrativeMetadata.js';
 
 // Keep all geometry, links and the first reading paragraph in the initial
 // graph. Detailed citations and full text are loaded separately afterwards.
@@ -34,7 +35,7 @@ async function build(input, required = true) {
       const { id, title, aliases, z_layer, z, genre, credibility_tier, is_fictional_quarantine, spatial, temporal, standards } = node;
       const reading = node.reading && { ...node.reading, paragraphs: node.reading.paragraphs.slice(0, 1),
         ...(node.reading.edition ? { edition: { text: '', source_number: node.reading.edition.source_number } } : {}) };
-      return { id, title, aliases, z_layer, z, genre, credibility_tier, is_fictional_quarantine, spatial, temporal, standards,
+      return { id, title, aliases, z_layer, z, genre, genre_contract: genreContract(node), source_tier: sourceTier(node), credibility_tier, is_fictional_quarantine, spatial, temporal, standards,
         sources: [], markdown: '', source_path: '', audit: { reviewed_by_human: false, is_sample: false }, ...(reading ? { reading } : {}) };
     }),
     links: graph.links.map(({ source, target, type, status, note, is_fictional_quarantine, matched_codes }) =>

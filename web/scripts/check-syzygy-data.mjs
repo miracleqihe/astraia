@@ -54,7 +54,8 @@ for (const [nodeId, rows] of Object.entries(matchIndex.matches)) {
     if (row.kind === 'theme') {
       assert.ok(Array.isArray(row.terms) && row.terms.length);
       for (const term of row.terms) {
-        const source = term.source === '题名' ? node.title : term.source === '别名' ? (node.aliases ?? []).join(' ') : `${node.title} ${(node.aliases ?? []).join(' ')}`;
+        const source = term.source === '题名' ? node.title : term.source === '别名' ? (node.aliases ?? []).join(' ')
+          : term.source === '正文' ? (node.reading?.paragraphs ?? []).join(' ') : `${node.title} ${(node.aliases ?? []).join(' ')}`;
         assert.ok(normalize(source).includes(normalize(term.term)),`${nodeId}: missing source term ${term.term}`);
         const target = term.target === '题名' ? entry.title : term.target === '主题' ? entry.topic : entry.title;
         const targetTerm = ['题名','主题'].includes(term.target) ? term.term : term.target;
@@ -63,6 +64,10 @@ for (const [nodeId, rows] of Object.entries(matchIndex.matches)) {
       if (row.method === 'concept') {
         const rule=concepts.find(item=>item.id === row.rule); assert.ok(rule);
         assert.equal(rule.entry,row.entry);
+        if (row.terms.some(term=>term.source === '正文')) {
+          assert.equal(rule.include_reading,true); assert.equal(node.z_layer,1);
+          assert.ok(row.terms.every(term=>!(rule.title_only_words ?? []).includes(term.term)));
+        }
       }
     }
     if (row.kind === 'curated') assert.ok(portal.bridges.some(bridge=>bridge.id === row.bridge_id && bridge.mythos.id === nodeId && bridge.physis.id === row.entry && bridge.rationale === row.reason));

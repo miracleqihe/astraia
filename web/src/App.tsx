@@ -11,6 +11,7 @@ import {
 } from './graph';
 import { loadOverviewMapFonts } from './views/geoFonts';
 import { portalHref, type PortalDimension } from './portalNavigation';
+import { announceViewReady } from './viewRouter';
 
 let geoPromise: Promise<typeof import('./views/GeoView')> | undefined;
 let constellationPromise: Promise<typeof import('./views/ConstellationView')> | undefined;
@@ -92,6 +93,27 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
   const [pinnedCode, setPinnedCode] = useState<CodeFocus | null>(null);
   const [years, setYears] = useState<[number, number] | null>(null);
   const [entryResolved, setEntryResolved] = useState(!loading);
+  const [lifeRouteVersion, setLifeRouteVersion] = useState(0);
+
+  useEffect(() => {
+    const navigate = (event: Event) => {
+      const url = new URL((event as CustomEvent<string>).detail);
+      const view = url.searchParams.get('view');
+      setLifeMode(view === 'life'); setSearchOpen(false);
+      if (view === 'life') { setLifeRouteVersion(value => value + 1); return; }
+      setMode(view === 'graph' ? 'graph' : 'geo');
+      const story = url.searchParams.get('story');
+      setSelectedId(story); setCompareId(url.searchParams.get('compare')); setDrawer('single');
+      setMapFocus(story && view !== 'graph' ? { id:story } : null);
+      if (url.searchParams.has('tiers')) {
+        const requested = new Set(url.searchParams.get('tiers')!.split(','));
+        setTiers(new Set(ALL_TIERS.filter(tier => requested.has(tier))));
+      } else setTiers(new Set(ALL_TIERS.filter(tier => tier !== 'F' || url.searchParams.get('fiction') === '1')));
+      if (story) onNeedDetails();
+    };
+    window.addEventListener('astraia:navigate',navigate);
+    return () => window.removeEventListener('astraia:navigate',navigate);
+  }, [onNeedDetails]);
 
   // The globe can initialize while the graph index is downloading. Resolve
   // deep links once the real records arrive without remounting the scene.
@@ -304,7 +326,7 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
         </>}
       </div>
     </header>
-    {lifeMode ? <Suspense fallback={<div className="life-status">正在载入知识星图…</div>}><LifeKnowledge /></Suspense> : <div className="workspace workbench" style={{ '--drawer-width': `${width}px` } as CSSProperties}>
+    {lifeMode ? <Suspense fallback={<div className="life-status">正在载入知识星图…</div>}><LifeKnowledge key={lifeRouteVersion} /></Suspense> : <div className="workspace workbench" style={{ '--drawer-width': `${width}px` } as CSSProperties}>
       <main id="visual-stage" className="visual-stage" aria-label="图谱主视图">
         <ViewportFrame />
         <div className="stage-heading">
@@ -382,6 +404,7 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
 
 export function App() {
   const [directLife, setDirectLife] = useState(() => new URL(window.location.href).searchParams.get('view') === 'life');
+  const [lifeRouteVersion, setLifeRouteVersion] = useState(0);
   const [pendingMode, setPendingMode] = useState<ViewMode>(() => new URL(window.location.href).searchParams.get('view') === 'graph' ? 'graph' : 'geo');
   const [snapshot, setSnapshot] = useState<GraphSnapshot | null>(null);
   const [details, setDetails] = useState<GraphDetails | null>(null);
@@ -392,6 +415,19 @@ export function App() {
   const retryDetails = useCallback(() => { setDetailsRequested(true); setDetailsAttempt((value) => value + 1); }, []);
   const [error, setError] = useState<string | null>(null);
   const [attempt, setAttempt] = useState(0);
+  useEffect(() => {
+    const navigate = (event: Event) => {
+      const url = new URL((event as CustomEvent<string>).detail), view = url.searchParams.get('view');
+      if (view === 'life') setLifeRouteVersion(value => value + 1);
+      else {
+        setPendingMode(view === 'graph' ? 'graph' : 'geo');
+        setDirectLife(false);
+      }
+    };
+    window.addEventListener('astraia:navigate',navigate);
+    announceViewReady();
+    return () => window.removeEventListener('astraia:navigate',navigate);
+  }, []);
   useEffect(() => {
     if (directLife) return;
     const controller = new AbortController();
@@ -427,7 +463,7 @@ export function App() {
       url.searchParams.set('view', next === 'geo' ? 'map' : 'graph'); url.searchParams.delete('entry'); url.hash = '';
       window.history.replaceState({}, '', url); setPendingMode(next); setDirectLife(false);
     }} /><div className="top-actions"><SyzygyLink dimension="omnia" /><span className="life-header-slot" /></div></header>
-    <Suspense fallback={<div className="life-status">正在载入知识星图…</div>}><LifeKnowledge /></Suspense>
+    <Suspense fallback={<div className="life-status">正在载入知识星图…</div>}><LifeKnowledge key={lifeRouteVersion} /></Suspense>
   </div>;
   if (snapshot || !error) return <Atlas snapshot={snapshot ?? EMPTY_SNAPSHOT} loading={!snapshot} details={details} detailsError={detailsError}
     onNeedDetails={needDetails} onRetryDetails={retryDetails} onEnterLifeWhileLoading={() => setDirectLife(true)} />;

@@ -9,6 +9,9 @@ import './utilities.css';
 import './overrides.css';
 import { createSyzygyRenderer } from './renderer';
 import { createFullAtlas } from './fullAtlas';
+import { genreContract, genreLabels } from './narrativeMetadata';
+import { announceViewReady } from '../viewRouter';
+import readingPaths from './reading-paths.json';
 import { renderBridgeCard } from './bridgeCard';
 
 const THREE = { ...THREECore, OrbitControls };
@@ -20,7 +23,9 @@ const initialTiers = initialParams.has('tiers')
   : new Set(tierOrder.filter(tier=>tier !== 'F' || initialParams.get('fiction') === '1'));
 const initialShowF = initialTiers.has('F');
 const loadJSON = async (url) => { const response = await fetch(url, {cache:'no-cache'}); if (!response.ok) throw new Error(`资料读取失败 (${response.status})`); return response.json(); };
-const [book, bridgeDataset] = await Promise.all([loadJSON(`${root}knowledge/index.json`), loadJSON(`${root}syzygy/data.json`)]);
+const [book, bridgeDataset, initialRenderer] = await Promise.all([
+  loadJSON(`${root}knowledge/index.json`), loadJSON(`${root}syzygy/boot.json`), createSyzygyRenderer(),
+]);
 if (book.data_sha256 !== bridgeDataset.handbook_sha256) throw new Error('星图和原书索引版本不一致，请刷新。');
 if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw new Error('星图资料格式不正确。');
 
@@ -117,7 +122,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       const confidence = linkStatus === 'confirmed' ? 'CONFIRMED' : linkStatus === 'refuted' ? 'DEBUNKED' : linkStatus ? 'UNVERIFIED' : 'CONTEXT';
       return { ...b, confidence, hasCoordinates,
         umbraGeo:{lat:hasCoordinates ? sp.lat : null, lon:hasCoordinates ? sp.lng : null, place:sp?.location_name || '未记录地点'},
-        mythos:{...node, genre:typeLabels[node.reading?.kind] ?? '资料', taxonomies:codes,
+        mythos:{...node, genre_contract:genreContract(node), genre:typeLabels[node.reading?.kind] ?? '资料', taxonomies:codes,
           narrative:(node.reading?.paragraphs ?? []).join('\n')},
         layers: b.related ? [b.related.title, ...(b.related.reading?.paragraphs?.slice(0,1) ?? [])] : ['主题对读：从相关知识条目继续探索'],
         physis:{...entry, code:entry.id, volLabel:`${entry.volume} · ${book.subjects.find(s => s.id === entry.subject)?.title ?? entry.subject}`,
@@ -436,7 +441,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
 
     camera.position.copy(CAM_OMNIA.pos);
 
-    const renderer = await createSyzygyRenderer();
+    const renderer = initialRenderer;
     document.body.dataset.renderer = renderer.isSoftware ? 'software' : 'webgl';
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -1023,21 +1028,26 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       activeTrail: 'all',
       searchQuery: '',
       openBridgeClusters: new Set(),
+      openReadingPaths: new Set(),
       showF: initialShowF,
       tiers: new Set(initialTiers),
-      selectedBridge: SYZYGY_BRIDGES.find(b=>initialTiers.has(b.mythos.credibility_tier) && (!b.fiction || initialShowF)) ?? null,
+      genre: Object.hasOwn(genreLabels,initialParams.get('genre')) ? initialParams.get('genre') : 'ALL',
+      selectedBridge: initialParams.has('story') || initialParams.has('entry') ? null : SYZYGY_BRIDGES.find(b=>initialTiers.has(b.mythos.credibility_tier) && (!b.fiction || initialShowF)
+        && (!Object.hasOwn(genreLabels,initialParams.get('genre')) || genreContract(b.mythos) === initialParams.get('genre'))) ?? null,
       selectedGraph: null,
       selectedBook: null,
       pendingBook: null,
       portalBridge: null,
       restoringDeepLink: initialParams.has('story') || initialParams.has('entry'),
+      pendingRoute: initialParams.has('story') || initialParams.has('entry') ? {story:initialParams.get('story'),entry:initialParams.get('entry')} : null,
       classicView: ['map','graph','life'].includes(initialParams.get('return')) ? initialParams.get('return')
         : initialParams.get('dim') === 'umbra' ? 'map' : initialParams.get('dim') === 'sidera' ? 'graph' : 'life',
       hoveredTarget: null,
       camAnim: null,
       needsBridgeRebuild: false
     };
-    function bridgeAllowed(bridge) { return appState.tiers.has(bridge.mythos.credibility_tier) && (!bridge.fiction || appState.showF); }
+    function bridgeAllowed(bridge) { return appState.tiers.has(bridge.mythos.credibility_tier) && (!bridge.fiction || appState.showF)
+      && (appState.genre === 'ALL' || genreContract(bridge.mythos) === appState.genre); }
     function bridgeMatchesFilter(b) {
       if (!bridgeAllowed(b) || (appState.activeTrail !== 'all' && b.trail !== appState.activeTrail)) return false;
       const query = appState.searchQuery.trim().toLowerCase();
@@ -1058,6 +1068,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       },
       onSelection() {
         appState.restoringDeepLink=false;
+        appState.pendingRoute=null;
         clearPersonalPortal();
         if (appState.selectedBook && !appState.selectedGraph) {
           appState.classicView='life';
@@ -1106,16 +1117,17 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       const view = appState.classicView;
       const params = new URLSearchParams({view});
       if (view === 'life') {
-        const entry = appState.selectedBook?.id || appState.selectedBridge?.physis.id;
+        const entry = appState.selectedBook?.id || appState.selectedBridge?.physis.id || appState.pendingRoute?.entry;
         if (entry) params.set('entry', entry);
       } else {
-        const id = appState.selectedGraph?.id || appState.selectedBridge?.mythos.id;
+        const id = appState.selectedGraph?.id || appState.selectedBridge?.mythos.id || appState.pendingRoute?.story;
         if (id) params.set('story', id);
       }
-      const story = appState.selectedGraph?.id || appState.selectedBridge?.mythos.id;
-      const entry = appState.selectedBook?.id || appState.selectedBridge?.physis.id;
+      const story = appState.selectedGraph?.id || appState.selectedBridge?.mythos.id || appState.pendingRoute?.story;
+      const entry = appState.selectedBook?.id || appState.selectedBridge?.physis.id || appState.pendingRoute?.entry;
       if (story && entry) { params.set('bridge_story',story); params.set('bridge_entry',entry); }
       params.set('tiers',tierOrder.filter(tier=>appState.tiers.has(tier)).join(','));
+      if (appState.genre !== 'ALL') params.set('genre',appState.genre);
       if (appState.showF) params.set('fiction','1');
       document.getElementById('btn-classic-view').href = `${root}?${params}`;
     }
@@ -1130,6 +1142,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       if (story) url.searchParams.set('story',story); else url.searchParams.delete('story');
       if (appState.selectedBook) url.searchParams.set('entry',appState.selectedBook.id); else url.searchParams.delete('entry');
       if (appState.showF) url.searchParams.set('fiction','1'); else url.searchParams.delete('fiction');
+      if (appState.genre !== 'ALL') url.searchParams.set('genre',appState.genre); else url.searchParams.delete('genre');
       history.replaceState({},'',url);
     }
 
@@ -1360,6 +1373,32 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       const container = document.getElementById('atlas-tree');
       container.innerHTML = '';
 
+      if (appState.scopeTab === 'reading') {
+        const heading=document.createElement('p'); heading.className='syzygy-directory-heading';
+        heading.textContent='跨学科阅读 · 原书选读 68 篇'; container.append(heading);
+        const q=appState.searchQuery.trim().normalize('NFKC').toLocaleLowerCase();
+        let visiblePaths=0;
+        for (const path of readingPaths) {
+          const entries=path.entries.map(id=>book.entries.find(entry=>entry.id === id)).filter(Boolean)
+            .filter(entry=>!q || `${entry.id} ${entry.title} ${entry.topic}`.normalize('NFKC').toLocaleLowerCase().includes(q));
+          if (!entries.length) continue;
+          visiblePaths++;
+          const section=document.createElement('details'); section.className='syzygy-bridge-group';
+          section.open=!!q || appState.openReadingPaths.has(path.id);
+          const label=document.createElement('summary'); label.className='syzygy-directory-heading';
+          label.textContent=`${path.title} · ${entries.length}`;
+          label.addEventListener('click',()=>{if(q)return;if(section.open)appState.openReadingPaths.delete(path.id);else appState.openReadingPaths.add(path.id);});
+          section.append(label);
+          entries.forEach(entry=>{
+            const button=document.createElement('button'); button.className='syzygy-directory-row';
+            button.innerHTML=`<b>${escapeHTML(entry.title)}</b><span>${escapeHTML(entry.id)} · PDF 第 ${escapeHTML(entry.page)} 页</span>`;
+            button.addEventListener('click',()=>fullAtlas.selectBook(entry.id)); section.append(button);
+          });
+          container.append(section);
+        }
+        if (!visiblePaths) {const empty=document.createElement('p');empty.className='syzygy-reference';empty.textContent='没有匹配的选读条目。';container.append(empty);}
+        return;
+      }
       if (appState.scopeTab === 'bridges') {
         const heading = document.createElement('p');
         heading.className = 'syzygy-directory-heading'; heading.textContent = '心物对读 · 已整理线索'; container.append(heading);
@@ -1490,8 +1529,9 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
 
     function renderDualPaneSyzygyCard(bridge) {
       renderBridgeCard(bridge, {
-        root, confidence:CONFIDENCE_META, relation:RELATION_META, showF:appState.showF, tiers:appState.tiers,
+        root, confidence:CONFIDENCE_META, relation:RELATION_META, showF:appState.showF, tiers:appState.tiers, genre:appState.genre, book, bookEntries:book.entries,
         onSelectRelated(id) { const node = fullAtlas.getNode(id); if (node) fullAtlas.select(node, true); },
+        onReadBook(id) { const node = fullAtlas.getNode(bridge.mythos.id); if (node) fullAtlas.openPortal(node,id); else flashToast('目录加载中，请稍候。'); },
         onJump(dim, item) {
           if (appState.dimension !== dim) switchDimension(dim, true);
           if (dim === 'umbra' && !item.hasCoordinates) return;
@@ -1502,6 +1542,14 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         }
       });
       fullAtlas.attachCuratedSuggestions(bridge);
+      if (bridge && !bridge.readingLoaded) fullAtlas.hydrateCurated(bridge).then(loaded=>{
+        if (loaded && appState.selectedBridge === bridge) renderDualPaneSyzygyCard(bridge);
+      }).catch(error=>{
+        if (appState.selectedBridge !== bridge) return;
+        const message=document.createElement('p'); message.className='syzygy-reference';
+        message.textContent=`完整正文读取失败：${error.message}，请重新选择这条星桥。`;
+        document.getElementById('syzygy-card-container').append(message);
+      });
     }
 
     function renderBridgesIndexList(matchingBridgeIds) {
@@ -1542,6 +1590,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     function selectSyzygyBridge(bridge, flyCamera = true) {
       if (!bridgeAllowed(bridge)) return;
       appState.restoringDeepLink=false;
+      appState.pendingRoute=null;
       appState.selectedBridge = bridge;
       appState.selectedGraph = null;
       appState.selectedBook = null;
@@ -1935,7 +1984,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
 
     function animateLoop(nowMs) {
       requestAnimationFrame(animateLoop);
-      if (document.hidden) return;
+      if (document.hidden || document.documentElement.dataset.astraiaActive === 'false') return;
       if (renderer.isSoftware && nowMs - lastSoftwareFrame < 32) return;
       lastSoftwareFrame = nowMs;
       const t = reducedMotion ? 0 : nowMs * 0.001;
@@ -2197,10 +2246,66 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       appState.needsBridgeRebuild = true;
     }
     syncTierButtons();
+    const genreSelect = document.getElementById('genre-filter');
+    genreSelect.value=appState.genre;
+    genreSelect.addEventListener('change',()=>{
+      appState.genre=genreSelect.value;
+      const hiddenBridge=appState.selectedBridge && !bridgeAllowed(appState.selectedBridge);
+      const hiddenNode=appState.selectedGraph && !fullAtlas.isVisible(appState.selectedGraph);
+      if (hiddenBridge || hiddenNode) {
+        appState.selectedBridge=null; appState.selectedGraph=null; appState.selectedBook=null;
+        clearPersonalPortal(); fullAtlas.clearNeighborhood(); renderDualPaneSyzygyCard(null);
+      }
+      appState.scopeTab='supplement';
+      document.querySelectorAll('.scope-tab').forEach(tab=>tab.classList.toggle('active',tab.dataset.scope === 'supplement'));
+      fullAtlas.refreshFilters(); updateHighlightsAndFilters(); renderLeftAtlasTree(); updateClassicLink(); syncViewURL();
+      appState.needsBridgeRebuild=true;
+    });
     fictionButton.addEventListener('click', () => toggleTier('F'));
     document.querySelectorAll('[data-tier]').forEach(button=>button.addEventListener('click',()=>toggleTier(button.dataset.tier)));
+    let routeSequence=0;
+    window.addEventListener('astraia:navigate',event=>{
+      const params=new URL(event.detail).searchParams, sequence=++routeSequence;
+      appState.restoringDeepLink=true;
+      appState.pendingRoute={story:params.get('story'),entry:params.get('entry')};
+      appState.selectedBridge=null; appState.selectedGraph=null; appState.selectedBook=null;
+      clearPersonalPortal(); fullAtlas.clearNeighborhood();
+      document.getElementById('syzygy-card-container').innerHTML='<p class="syzygy-reference" role="status">正在定位资料…</p>';
+      appState.tiers = params.has('tiers') ? new Set(tierOrder.filter(tier=>params.get('tiers').split(',').includes(tier)))
+        : new Set(tierOrder.filter(tier=>tier !== 'F' || params.get('fiction') === '1'));
+      appState.showF=appState.tiers.has('F');
+      appState.genre=Object.hasOwn(genreLabels,params.get('genre')) ? params.get('genre') : 'ALL';
+      genreSelect.value=appState.genre; syncTierButtons();
+      const dimension=['umbra','sidera','omnia'].includes(params.get('dim')) ? params.get('dim') : 'omnia';
+      appState.classicView=['map','graph','life'].includes(params.get('return')) ? params.get('return')
+        : dimension === 'umbra' ? 'map' : dimension === 'sidera' ? 'graph' : 'life';
+      if (appState.dimension !== dimension) switchDimension(dimension,false,true);
+      fullAtlas.refreshFilters(); updateHighlightsAndFilters();
+      fullAtlas.start().then(()=>{
+        if (sequence !== routeSequence) return;
+        appState.restoringDeepLink=false;
+        const storyId=params.get('story'), entryId=params.get('entry'), node=storyId && fullAtlas.getNode(storyId);
+        const missing=message=>{appState.pendingRoute=null;document.getElementById('syzygy-card-container').textContent=message;updateClassicLink();flashToast(message);};
+        if (node && !fullAtlas.isVisible(node)) { missing('该条目被当前筛选隐藏。'); return; }
+        if (node && entryId && book.entries.some(entry=>entry.id === entryId)) fullAtlas.openPortal(node,entryId);
+        else if (node && entryId) {fullAtlas.select(node,true);flashToast('未找到该知识条目，请重新选择对读。');}
+        else if (node) {
+          const curated=SYZYGY_BRIDGES.find(bridge=>bridge.mythos.id === storyId && bridgeAllowed(bridge));
+          if (curated) selectSyzygyBridge(curated,true); else fullAtlas.select(node,true);
+        } else if (entryId && book.entries.some(entry=>entry.id === entryId)) fullAtlas.selectBook(entryId);
+        else if (!storyId && !entryId) {
+          appState.pendingRoute=null;
+          const bridge=SYZYGY_BRIDGES.find(bridgeAllowed);
+          if (bridge) selectSyzygyBridge(bridge,false);
+          else {appState.selectedBridge=null;appState.selectedGraph=null;appState.selectedBook=null;renderDualPaneSyzygyCard(null);}
+        } else missing('未找到对应资料，请从目录重新选择。');
+        renderLeftAtlasTree(); updateClassicLink(); syncViewURL();
+      }).catch(error=>flashToast(`图谱载入失败：${error.message}`));
+    });
+    announceViewReady();
     renderLeftAtlasTree();
     renderDualPaneSyzygyCard(appState.selectedBridge);
+    if (appState.restoringDeepLink) document.getElementById('syzygy-card-container').innerHTML='<p class="syzygy-reference" role="status">正在定位资料…</p>';
     updateHighlightsAndFilters();
     rebuildSyzygyPhotonBridges();
     const initial = new URL(window.location.href).searchParams;
@@ -2211,12 +2316,13 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     requestAnimationFrame(animateLoop);
     setTimeout(() => fullAtlas.start().then(() => {
       renderLeftAtlasTree();
-      if (appState.selectedBridge) fullAtlas.attachCuratedSuggestions(appState.selectedBridge);
-      if (!appState.restoringDeepLink) return;
+      if (appState.selectedBridge) renderDualPaneSyzygyCard(appState.selectedBridge);
+      if (!appState.restoringDeepLink || routeSequence) return;
       const storyId = initial.get('story');
       const entryId = initial.get('entry');
       appState.restoringDeepLink = false;
       const missing = message => {
+        appState.pendingRoute=null;
         appState.selectedBridge=null; appState.selectedGraph=null; appState.selectedBook=null;
         clearPersonalPortal(); fullAtlas.clearNeighborhood(); updateHighlightsAndFilters(); updateClassicLink();
         document.getElementById('syzygy-card-container').textContent=message; flashToast(message);

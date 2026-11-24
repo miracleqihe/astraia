@@ -5,7 +5,9 @@ import '@fontsource/noto-serif-sc/600.css';
 import '../styles.css';
 import './utilities.css';
 import './overrides.css';
+import { initViewRouter } from '../viewRouter';
 
+initViewRouter();
 import('./scene-reference.js').catch((error) => {
   console.error('Syzygy initialization failed', error);
   const status = document.getElementById('syzygy-loading');

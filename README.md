@@ -52,6 +52,16 @@ npm.cmd run preview
 
 前端构建时会基于实际图谱快照和原书词条生成 `syzygy/matches.json`：题名、别名与本地双语词表支持主题候选，来源类型支持阅读指引。界面分别标注两者，并单独显示原图谱中个案与机制之间已有的证据状态；算法不创建新的“已证实”关系。选中原书条目时可反向浏览、筛选匹配到的民俗资料。上下文对读、信源等级与 F 级开关在经典和朔望视图间传递；更换所选条目后会清除不再对应的旧配对。
 
+两套视图在同一页面内切换并保留各自的画布，浏览器前进、后退和现有深链接仍可使用。朔望卷宗按需读取经 SHA-256 校验的故事与原书正文分片；体裁筛选只采用资料中已有的标记，未分类的资料不会被自动猜测。原书条目提供同学科前后翻阅和原版 PDF 物理页的按需图文阅读。
+
+本地如果需要生成原典页图，先安装 `pip install -e ".[pages]"` 并确保 Poppler 的 `pdftotext`、`pdffonts` 在 PATH 中，再从项目根目录运行：
+
+```powershell
+.\.venv\Scripts\python.exe pipeline/build_handbook_pages.py --output web/public/knowledge/pages
+```
+
+该步骤保留原有 PDF，使用 Poppler 和 PDFium 核对每页中文与条目编号，并生成可单页加载的 WebP。公开发布时会从实际发布的图谱和原书重建分片、原典页图与单条目分享页。仅在本地预览分享页时，可运行 `node web/scripts/build-share-pages.mjs web/public/data/graph_data.json web/public https://miracleqihe.github.io/astraia/`。
+
 数据一致性与中文覆盖检查可从项目根目录运行：
 
 ```powershell

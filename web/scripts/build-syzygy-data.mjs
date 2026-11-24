@@ -15,10 +15,14 @@ const bookBytes = await readFile(`${webRoot}/public/knowledge/data.json`);
 const book = JSON.parse(bookBytes.toString('utf8'));
 const graph = JSON.parse(await readFile(graphPath, 'utf8'));
 const manifest = JSON.parse(await readFile(`${webRoot}/src/syzygy/bridges.json`, 'utf8'));
+const readingPaths = JSON.parse(await readFile(`${webRoot}/src/syzygy/reading-paths.json`, 'utf8'));
 if (graph.schema_version !== 1 || !Array.isArray(graph.nodes) || !Array.isArray(graph.links)
   || !Array.isArray(book.entries) || !Array.isArray(book.subjects)) throw new Error('Syzygy sources are invalid.');
 const graphById = new Map(graph.nodes.map((node) => [node.id, node]));
 const bookById = new Map(book.entries.map((entry) => [entry.id, entry]));
+const readingIds = readingPaths.flatMap(path => path.entries);
+if (readingPaths.length !== 4 || readingPaths.some(path => !path.title || path.entries.length !== 17)
+  || new Set(readingIds).size !== 68 || readingIds.some(id => !bookById.has(id))) throw new Error('Invalid cross-disciplinary reading paths.');
 if (new Set(manifest.map(item => item.id)).size !== manifest.length
   || new Set(manifest.map(item => `${item.case}\u0000${item.entry}`)).size !== manifest.length)
   throw new Error('Duplicate curated bridge or story/knowledge pair.');
@@ -26,7 +30,7 @@ const volumeIds = [...new Set(book.subjects.map((subject) => subject.volume))];
 const safeSources = (node) => (node?.sources ?? []).map(({ citation, type, url, doi, locator }) =>
   ({ citation, type, url: /^https?:\/\//i.test(url ?? '') ? url : null, doi, locator }));
 const compact = (node) => node && ({
-  id: node.id, title: node.title, z_layer: node.z_layer, credibility_tier: node.credibility_tier,
+  id: node.id, title: node.title, z_layer: node.z_layer, genre: node.genre, credibility_tier: node.credibility_tier,
   spatial: node.spatial, standards: node.standards, sources: safeSources(node),
   reading: node.reading ?? null, markdown: node.markdown ?? '',
 });

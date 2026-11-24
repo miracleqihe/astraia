@@ -306,6 +306,7 @@ export function mountConstellation(host: HTMLDivElement, layout: Layout, labels:
   }
 
   function render(now: number) {
+    if (document.documentElement.dataset.astraiaActive === 'false') return;
     if (animation) {
       const progress = Math.min(1, (now - animation.at) / animation.duration);
       const ease = 1 - (1 - Math.max(0, progress)) ** 3;

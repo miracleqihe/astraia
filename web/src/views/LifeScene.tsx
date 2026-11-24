@@ -264,6 +264,7 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
     }
     function render(now: number) {
       frame = 0;
+      if (document.documentElement.dataset.astraiaActive === 'false') { lastMotion = 0; return; }
       if (movingStars) (stars.material as THREE.ShaderMaterial).uniforms.time.value = now / 1000;
       if(Math.abs(morphTarget-morph)>.001) {
         morph+=(morphTarget-morph)*.085;
@@ -321,8 +322,9 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
       }
       if (focus || moving || Math.abs(morphTarget-morph)>.001 || (movingStars && !document.hidden)) schedule();
     }
-    const visibility = () => { lastMotion = 0; if (!document.hidden && movingStars) schedule(); };
+    const visibility = () => { lastMotion = 0; if (!document.hidden && document.documentElement.dataset.astraiaActive !== 'false') schedule(); };
     document.addEventListener('visibilitychange', visibility);
+    window.addEventListener('astraia:visibility', visibility);
     controls.addEventListener('change', schedule);
     const resize = () => {
       const width = Math.max(1, element.clientWidth), height = Math.max(1, element.clientHeight);
@@ -477,7 +479,7 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
         else fly(overviewTarget,576,overviewDirection);
       },
       dispose() {
-        movingStars = false; document.removeEventListener('visibilitychange', visibility);
+        movingStars = false; document.removeEventListener('visibilitychange', visibility); window.removeEventListener('astraia:visibility', visibility);
         labels.dispose(); portal.dispose();
         window.clearTimeout(gravityTimer); gravityAnimation.dispose();
         cancelAnimationFrame(frame); observer.disconnect(); controls.removeEventListener('change', schedule); controls.dispose();

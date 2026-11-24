@@ -92,14 +92,19 @@ function sourceMatches(rule, node) {
     && (!rule.source_contains || `${source.url ?? ''} ${source.doi ?? ''} ${source.citation ?? ''}`.includes(rule.source_contains)));
 }
 function conceptWord(rule,node) {
-  const value=normalize(`${node.title ?? ''} ${(node.aliases ?? []).join(' ')}`);
-  for (const word of rule.words) {
-    const target=normalize(word);
-    if (/^[a-z ]+$/.test(target)) {
-      for (let index=value.indexOf(target); index >= 0; index=value.indexOf(target,index+target.length)) {
-        if (!/[a-z]/.test(value[index-1] ?? '') && !/[a-z]/.test(value[index+target.length] ?? '')) return word;
-      }
-    } else if (value.includes(target)) return word;
+  const fields=[['题名或别名',`${node.title ?? ''} ${(node.aliases ?? []).join(' ')}`]];
+  if (rule.include_reading && node.z_layer === 1) fields.push(['正文',(node.reading?.paragraphs ?? []).join(' ')]);
+  for (const [source,text] of fields) {
+    const value=normalize(text);
+    for (const word of rule.words) {
+      if (source === '正文' && (rule.title_only_words ?? []).includes(word)) continue;
+      const target=normalize(word);
+      if (/^[a-z ]+$/.test(target)) {
+        for (let index=value.indexOf(target); index >= 0; index=value.indexOf(target,index+target.length)) {
+          if (!/[a-z]/.test(value[index-1] ?? '') && !/[a-z]/.test(value[index+target.length] ?? '')) return {word,source};
+        }
+      } else if (value.includes(target)) return {word,source};
+    }
   }
   return null;
 }
@@ -157,7 +162,7 @@ function matchNode(node) {
     const found=conceptWord(rule,node);
     if (!found || seen.has(rule.entry)) continue;
     output.push({entry:rule.entry,kind:'theme',method:'concept',rule:rule.id,
-      terms:[{term:found,source:'题名或别名',target:rule.target}]}); seen.add(rule.entry);
+      terms:[{term:found.word,source:found.source,target:rule.target}]}); seen.add(rule.entry);
   }
   for (const item of thematic) {
     if (seen.has(item.entry)) continue;

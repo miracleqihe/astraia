@@ -18,5 +18,6 @@ export function portalHref(dimension: PortalDimension, story?: string | null, en
   if (showFiction ?? current.searchParams.get('fiction') === '1') query.set('fiction','1');
   if (tiers) query.set('tiers',tiers.join(','));
   else if (current.searchParams.has('tiers')) query.set('tiers',current.searchParams.get('tiers')!);
+  if (current.searchParams.has('genre')) query.set('genre',current.searchParams.get('genre')!);
   return `${import.meta.env.BASE_URL}syzygy/?${query}`;
 }

@@ -58,7 +58,7 @@ def deploy(vault: Path, code_table: Path, *, reviewed_only: bool = False) -> Non
         env['VITE_PUBLIC_DEMO'] = '1'
         npm = 'npm.cmd' if os.name == 'nt' else 'npm'
         run([npm, 'run', 'build', '--', '--base=/astraia/', '--outDir', str(built), '--emptyOutDir'], root / 'web', env=env)
-        for name in ('index.html', 'ui-review/index.html', 'syzygy/index.html', 'syzygy/data.json', 'syzygy/matches.json', 'assets', 'fonts', 'knowledge/index.json', 'knowledge/data.json',
+        for name in ('index.html', 'ui-review/index.html', 'syzygy/index.html', 'syzygy/data.json', 'syzygy/boot.json', 'syzygy/matches.json', 'syzygy/shards', 'assets', 'fonts', 'knowledge/index.json', 'knowledge/data.json',
                      'knowledge/handbook.pdf', 'knowledge/inline-figures/manifest.json',
                      'knowledge/figures/font-report.json'):
             if not (built / name).exists():
@@ -98,6 +98,21 @@ def deploy(vault: Path, code_table: Path, *, reviewed_only: bool = False) -> Non
              str(site / 'syzygy/data.json')], root)
         run(['node', str(root / 'web/scripts/build-portal-matches.mjs'), str(site / 'data/graph_data.json'),
              str(site / 'syzygy/matches.json'), str(site / 'syzygy/data.json')], root)
+        # Rebuild against the exact graph and book copied to the publication,
+        # never reuse shards generated from a local-only development catalogue.
+        run(['node', str(root / 'web/scripts/build-syzygy-shards.mjs'), str(site / 'data/graph_data.json'),
+             str(site / 'syzygy/shards'), str(site / 'knowledge/data.json')], root)
+        run(['node', str(root / 'web/scripts/build-syzygy-boot.mjs'), str(site / 'syzygy/data.json'),
+             str(site / 'syzygy/boot.json')], root)
+        run(['node', str(root / 'web/scripts/build-share-pages.mjs'), str(site / 'data/graph_data.json'),
+             str(site), 'https://miracleqihe.github.io/astraia/'], root)
+        pages = site / 'knowledge/pages'
+        if pages.exists():
+            if pages.is_symlink() or pages.resolve() != site.resolve() / 'knowledge/pages':
+                raise ValueError('原典页图目录不在预期位置。')
+            shutil.rmtree(pages)
+        run([sys.executable, str(root / 'pipeline/build_handbook_pages.py'), '--pdf', str(site / 'knowledge/handbook.pdf'),
+             '--book', str(site / 'knowledge/data.json'), '--output', str(pages)], root)
         publish_graph(site / 'data/asia_coverage.json', coverage, 'json')
         # A Windows checkout may otherwise normalize SVG newlines when staging,
         # breaking the image hashes and embedded-font verification on Pages.
