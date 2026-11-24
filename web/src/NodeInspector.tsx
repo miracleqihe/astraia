@@ -182,6 +182,15 @@ export function NodeInspector({ node, graph, onSelect, onClose, onCompare, onNod
     const b = graph.byId.get(otherEnd(right, node.id))?.z_layer === 4 ? 0 : 1;
     return a - b;
   });
+  const quickLinks = [];
+  const quickTargets = new Set<string>();
+  for (const link of orderedLinks) {
+    const target = otherEnd(link, node.id);
+    if (!graph.byId.has(target) || quickTargets.has(target)) continue;
+    quickTargets.add(target);
+    quickLinks.push(link);
+    if (quickLinks.length === 3) break;
+  }
   const jump = (section: string) => contentRef.current?.querySelector(section)?.scrollIntoView({
     behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start',
   });
@@ -225,7 +234,7 @@ export function NodeInspector({ node, graph, onSelect, onClose, onCompare, onNod
         {codes.length > 0 && <DossierCodes codes={codes} interaction={codeInteraction} />}
         {orderedLinks.length > 0 && <div className="record-quick-links" aria-label="首屏关联">
           <button type="button" className="record-quick-heading" onClick={() => jump('[data-section="relations"]')}>机制与关联 · {links.length}</button>
-          {orderedLinks.slice(0, 3).map((link) => {
+          {quickLinks.map((link) => {
             const related = graph.byId.get(otherEnd(link, node.id));
             return related && <button type="button" key={linkKey(link)} title={related.title}
               aria-label={`定位关联 ${related.title}`}

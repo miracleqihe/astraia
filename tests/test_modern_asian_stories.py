@@ -108,7 +108,7 @@ class ModernAsianStoriesTests(unittest.TestCase):
                          'modern_asian_stories_ninth_20261123.yaml', 'modern_asian_stories_tenth_20261123.yaml',
                          'modern_asian_stories_eleventh_20261123.yaml', 'modern_asian_stories_twelfth_20261123.yaml',
                          'modern_asian_stories_thirteenth_20261123.yaml', 'modern_asian_stories_fourteenth_20261123.yaml',
-                         'modern_asian_stories_fifteenth_20261123.yaml'):
+                         'modern_asian_stories_fifteenth_20261123.yaml', 'modern_asian_stories_sixteenth_20261123.yaml'):
             collection = yaml.load((ROOT / 'reference' / filename).read_text(encoding='utf-8'), Loader=FrontmatterLoader)
             records.extend(collection['records'])
             revisions.update(collection.get('revisions', {}))
@@ -260,6 +260,24 @@ class ModernAsianStoriesTests(unittest.TestCase):
                 self.assertTrue(set(revision['peers']).issubset({r.target for r in card.metadata.relations}))
                 self.assertTrue(all(paragraph in card.markdown for paragraph in note.paragraphs))
                 self.assertFalse(card.metadata.audit.reviewed_by_human)
+
+    def test_mill_versions_are_distinct_and_white_shadow_links_back(self):
+        collection = yaml.load((ROOT / 'reference/modern_asian_stories_sixteenth_20261123.yaml').read_text(encoding='utf-8'),
+                               Loader=FrontmatterLoader)
+        old_id = 'case_cn_shenyang_village_white_mill_2023'
+        new_id = 'case_cn_northeast_big_white_shadow_2021'
+        revision = collection['revisions'][old_id]
+        old = read_card(ROOT / 'vault', ROOT / revision['path'])
+        new = read_card(ROOT / 'vault', ROOT / 'vault/01_cases' / (new_id + '.md'))
+        notes = yaml.load((ROOT / 'reference/reading_notes.yaml').read_text(encoding='utf-8'), Loader=FrontmatterLoader)
+        self.assertEqual(notes[old_id]['paragraphs'], revision['paragraphs'])
+        self.assertEqual(notes[old_id]['source_numbers'], [1, 2])
+        self.assertIn('红带沟', old.markdown)
+        self.assertIn('不能证明两次采录来自同一村庄', old.markdown)
+        self.assertIn(new_id, {relation.target for relation in old.metadata.relations})
+        self.assertIn(old_id, {relation.target for relation in new.metadata.relations})
+        self.assertEqual(new.metadata.spatial.precision, 'culture_region')
+        self.assertFalse(old.metadata.audit.reviewed_by_human)
 
     def test_tenth_batch_adds_versions_to_existing_cards(self):
         collection = yaml.load((ROOT / 'reference/modern_asian_stories_tenth_20261123.yaml').read_text(encoding='utf-8'),

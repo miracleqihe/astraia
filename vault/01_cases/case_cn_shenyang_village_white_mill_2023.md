@@ -31,6 +31,11 @@ relations:
   weight: 1.0
   note: 同题并列阅读，不推断传播或共同起源。
   status: null
+- type: COMPARED_WITH
+  target: case_cn_northeast_big_white_shadow_2021
+  weight: 1.0
+  note: 同题并列阅读，不推断传播或共同起源。
+  status: null
 sources:
 - citation: Lingchong Hu, “Ghost Story in Chinese Village in Sheng Yang”, USC Digital
     Folklore Archives, 8 May 2023。
@@ -38,6 +43,14 @@ sources:
   url: https://folklore.usc.edu/ghost-story-in-chinese-village-in-sheng-yang/
   doi: null
   locator: 祖母讲述的石磨旁白影；题名指向沈阳
+  local_path: null
+  content_sha256: null
+- citation: Free Guan, “The Ghost on the Millstone”, USC Digital Folklore Archives,
+    4 May 2021。
+  type: oral_history
+  url: https://folklore.usc.edu/the-ghost-on-the-millstone/
+  doi: null
+  locator: 2021 年 4 月访谈；东北村庄石磨传说的另一段讲述
   local_path: null
   content_sha256: null
 audit:
@@ -57,9 +70,11 @@ audit:
 
 村口有一座大家共用的石磨。祖母讲，夜里常有一个小小的白影绕着石磨跑，人们说它是小鬼。
 
-故事里的警告是，不要靠近它：它会扑上来挠人，让人笑得喘不过气。祖母说自己曾见过白影，但并没有被它挠到。
+故事里的警告是，不要靠近它：它会扑上来挠人，让人笑得喘不过气。祖母说自己曾见过白影，但并没有被它挠到。2023 年采录的讲述者把后来不再听见白影的消息，与文化大革命后的变化联系起来。
 
-2023 年的受访者转述祖母的讲法，还说后来再没有听见白影的消息，并把这一变化与特定历史时期联系起来；这是讲述者自己的解释。
+2021 年，另一位住在沈阳的受访者讲起东北村庄“红带沟”附近的相似故事：她说自己从老人那里听来白影绕石磨的传闻，老人认为它在战争之后消失，猜测是被炮火声吓走。
+
+两个讲述对消失的时间和原因有不同说法；2023 年的祖母说自己见过，2021 年的受访者则说是听长辈讲的。现有材料不能证明两次采录来自同一村庄或同一个家庭。
 
 ## 地图锚点
 
