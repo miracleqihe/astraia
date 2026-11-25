@@ -47,10 +47,11 @@ def run(collection: Path = COLLECTION, created_at: date = date.fromisoformat('20
     for offset, item in enumerate(records):
         node_id = item['id']
         refs = [Source.model_validate(source) for source in item['sources']]
+        tier = item.get('credibility_tier', 'A')
         meta = NodeMetadata.model_validate({
             'id': node_id, 'title': item['title'], 'aliases': item.get('aliases', []),
             'node_type': 'case', 'z_layer': 1, 'genre': item['genre'],
-            'credibility_tier': item.get('credibility_tier', 'A'), 'is_fictional_quarantine': False,
+            'credibility_tier': tier, 'is_fictional_quarantine': tier == 'F',
             'spatial': item['location'], 'temporal': None, 'standards': {},
             'relations': [{'type': 'COMPARED_WITH', 'target': target, 'weight': 1.0,
                            'note': '同题比较，非已证实的传播或因果关系。'}
