@@ -1,0 +1,218 @@
+# Original Chinese editorial summaries, linked to the cited sources.
+# Region and city coordinates are reference points, not claims of exact events.
+records:
+  - id: case_ba_bihac_hudam_harmani
+    title: 比哈奇｜敲响碗碟的胡达姆
+    aliases: [Hudam, Harmani, Bihać, 家宅精灵]
+    genre: folktale
+    location: {lat: 44.8154, lng: 15.8708, precision: city, location_name: 波黑 · 比哈奇, culture_region: 欧洲 · 波黑}
+    location_note: 比哈奇市是 Harmani 地区传说的参考点，并非研究中任一住户的住宅坐标。
+    paragraphs:
+      - 在比哈奇的讲述中，家里夜间响起敲打声，碗碟也可能莫名破碎。老人将这些动静归给胡达姆：一种与屋宅和家务相连的存在，仿佛在提醒住户照看家里的整洁。
+      - 民俗学者 Amira Dervišević 比较了当地相隔约二十年的采录，发现有关胡达姆的故事仍在流传；一些版本还把这种灵体与特定人物联系起来。故事保存的是讲述者的信念与家庭生活经验，并不等同于对异响来源的鉴定。
+    sources:
+      - {citation: 'Amira Dervišević, Usmene predaje o hudamu iz Harmana, Narodna umjetnost 53(2), 2016, 97–109.', type: academic_article, url: 'https://hrcak.srce.hr/en/clanak/251846', doi: '10.15176/vol53no206', locator: 比哈奇口述传统与家宅动静}
+    bridge: {entry: REL-5-0005, cluster: sid_hag, trail: trail2, label: 胡达姆与家庭口述, rationale: 把比哈奇不同年代的家宅故事与口述传统的记录方法并读，留意讲述者与生活环境的变化。}
+  - id: case_ba_zenica_road_ghosts
+    title: 波斯纳河谷｜公路上的失踪乘客
+    aliases: [Zli Brijeg, Janjići, Vanishing hitchhiker, 消失的搭车人]
+    genre: urban_legend
+    location: {lat: 44.2034, lng: 17.9077, precision: city, location_name: 波黑 · 泽尼察地区, culture_region: 欧洲 · 波黑}
+    location_note: 泽尼察是波斯纳河谷 M17 沿线的城市参考点，不代表具体事故点或被毁墓地位置。
+    paragraphs:
+      - 在波黑中部，一些人把 M17 公路沿线的车祸与修路时受到扰动的墓地联系起来。研究者记录到的讲述中，公路上的幽灵有时与“搭车后消失的乘客”故事相交：司机在路上遇见乘客，随后又发现对方不见了。
+      - Mirjam Mencej 自 2016 年起在附近村落访谈，并比较了地方口述与媒体报道。她发现，两者对于墓地和亡者身份的描述并不总是一致；事故、道路历史和超自然解释因此应分别追溯。
+    sources:
+      - {citation: 'Mirjam Mencej, Paved-over Graveyards in Bosnia, Folklore: Electronic Journal of Folklore 96, 2025.', type: academic_article, url: 'https://www.folklore.ee/folklore/vol96/mencej.pdf', locator: Zli Brijeg 和 Janjići 的访谈与报道比较}
+      - {citation: 'Mirjam Mencej, Roadside Ghosts in Bosnia: Vanishing Hitchhiker, Studia ethnologica Croatica 37, 2025.', type: academic_article, url: 'https://hrcak.srce.hr/en/clanak/495089', doi: '10.17234/SEC.37.9', locator: 波黑五种搭车人故事的田野研究}
+    bridge: {entry: HIS-6-0002, cluster: sid_liminal, trail: trail5, label: 波黑公路幽灵与口述证据, rationale: 从公路幽灵的不同版本进入口述史方法，比较受访者回忆、记者转述与事故记录各自能说明什么。}
+  - id: case_rs_zarozje_sava_vampire
+    title: 扎罗日耶｜水磨坊里的萨瓦
+    aliases: [Sava Savanović, Zarožje, Leptirica, 萨瓦·萨瓦诺维奇]
+    genre: urban_legend
+    location: {lat: 44.1, lng: 19.683, precision: city, location_name: 塞尔维亚 · 扎罗日耶村, culture_region: 欧洲 · 塞尔维亚}
+    location_note: 坐标为扎罗日耶村的区域参考点，水磨坊及不同讲述中的具体位置可能不同。
+    paragraphs:
+      - 扎罗日耶的水磨坊夜里无人愿意久留：传说磨坊主接连死去，凶手是名叫萨瓦的吸血鬼。一种讲法里，年轻人用木桩和毯子做出睡着的人形，自己躲在高处等待，从闯入者的话里听出了他的名字。
+      - 这一人物后来出现在格利希奇的小说《九十年之后》和 1973 年电视电影《蝴蝶》中。2012 年旧磨坊屋顶坍塌后，当地有关萨瓦“无家可归”的消息又吸引了记者；塞尔维亚公共广播的报道同时提及旅游宣传背景。
+    sources:
+      - {citation: 'Tanja Jurkovic, Balkan Vampire Myth: Urban Legends or a Publicity Tool?, Bulletin of the Transilvania University, 2021.', type: academic_article, url: 'https://ueaeprints.uea.ac.uk/id/eprint/83493/1/14_jurkovic.pdf', doi: '10.31926/but.pcs.2021.63.14.3.14', locator: 水磨坊故事和地方旅游}
+      - {citation: 'Radio-televizija Srbije, Povratak prvog srpskog vampira Save Savanovića, 2012.', type: newspaper_report, url: 'https://www.rts.rs/lat/magazin/Zanimljivosti/1222618/.html?print=true', locator: 磨坊、现代报道与影视改编}
+    compare: [case_rs_kisiljevo_petar_vampire]
+    bridge: {entry: REL-5-0006, cluster: sid_hag, trail: trail4, label: 水磨坊吸血鬼与旅游, rationale: 并读水磨坊传说、影视改编和 2012 年报道，观察地方叙事如何进入旅游与大众传媒。}
+  - id: case_rs_kisiljevo_petar_vampire
+    title: 基西列沃｜1725 年的吸血鬼报告
+    aliases: [Petar Blagojević, Peter Plogojowitz, Kisilova, 弗龙巴尔德报告]
+    genre: historical_archive
+    location: {lat: 44.757, lng: 21.52, precision: city, location_name: 塞尔维亚 · 大格拉迪什泰地区, culture_region: 欧洲 · 塞尔维亚}
+    location_note: 旧文献中的 Kisolova 常被对应到今天的 Kisiljevo；坐标取附近大格拉迪什泰作为地区参考点。
+    paragraphs:
+      - 1725 年，一份官员报告记下村庄里接连有人患病死亡，死者在病中声称遭已故的彼得袭扰。村民要求开棺，报告又记录了在场者对遗体外观的观察，以及他们随后采取的处置。
+      - 这份报告进入当时报纸，成为欧洲早期吸血鬼讨论的重要材料。它能帮助我们理解当时的人如何解释死亡和身体变化，不能单凭报告确认超自然袭击或疾病原因；旧地名与今地名的对应也应保留余地。
+    sources:
+      - {citation: 'Paul Barber, Vampires, Burial, and Death, Yale University Press, chapter Peter Plogojowitz.', type: academic_article, url: 'https://www.degruyterbrill.com/document/doi/10.12987/9780300153484-004/html', doi: '10.12987/9780300153484-004', locator: 1725 年报告及其传播背景}
+      - {citation: 'Ádám Mézes, Vampire cases in the Habsburg Empire, Central European University MA thesis, 2013.', type: academic_article, url: 'https://www.etd.ceu.hu/2013/mezes_adam.pdf', locator: 弗龙巴尔德报告与报刊传播，约第 28–29 页}
+      - {citation: 'Aleksandar Ristić, The Vampirlija Hill in the Village of Mijajlovac, Istraživanja 32, 2021, 116–132.', type: academic_article, url: 'https://istrazivanja.ff.uns.ac.rs/index.php/istr/en/article/download/2177/2199/3985', doi: '10.19090/i.2021.32.116-132', locator: 文中对基西列沃 1725 年报告的历史对照}
+    compare: [case_rs_zarozje_sava_vampire]
+    bridge: {entry: HIS-6-0001, cluster: sid_hag, trail: trail4, label: 吸血鬼报告与史料批判, rationale: 将 1725 年官员报告及其报刊传播与史料评估并读，区分见闻、转述和后来的解释。}
+  - id: case_pl_warsaw_basilisk
+    title: 华沙老城｜镜子里的蛇怪
+    aliases: [Bazyliszek, Basilisk of Warsaw, Krzywe Koło, 华沙蛇怪]
+    genre: folktale
+    location: {lat: 52.25, lng: 21.013, precision: city, location_name: 波兰 · 华沙老城, culture_region: 欧洲 · 波兰}
+    location_note: 坐标取华沙老城街区，传说中的地下室位置与叙述版本并不完全一致。
+    paragraphs:
+      - 华沙老城曲环街的地下室里，据说藏着一只蛇怪。它的目光让闯入者倒下或变成石像，勇敢的来客一次次走进黑暗，却没有把它带出来。
+      - 一位手艺人带着镜子下楼，让怪物望见自己的倒影。在华沙旅游机构保存的版本里，蛇怪被自己的目光制服，地下室也重新亮起来；不同讲法对手艺人的身份和结局各有变化。
+    sources:
+      - {citation: 'Warsaw Tourist Office, Basilisk Legend.', type: institutional_account, url: 'https://go2warsaw.pl/en/basilisk-legend/', locator: 曲环街蛇怪与镜子}
+      - {citation: 'Culture.pl, 10 Fantastic Beasts from Poland and Where to Find Them.', type: institutional_account, url: 'https://culture.pl/en/article/10-fantastic-beasts-from-poland-where-to-find-them', locator: 华沙蛇怪及城市中的形象}
+    compare: [case_pl_krakow_wawel_dragon_den]
+    bridge: {entry: LIT-2-0001, cluster: sid_myth, trail: all, label: 蛇怪与镜子的故事结构, rationale: 从地下室、反照与解救的顺序，阅读叙事如何用一个转折改变角色处境。}
+  - id: case_pl_kornik_white_lady
+    title: 科尔尼克城堡｜从画像走出的白衣女士
+    aliases: [White Lady of Kórnik, Teofila Działyńska, Biała Dama]
+    genre: folktale
+    location: {lat: 52.2439, lng: 17.0908, precision: exact, location_name: 波兰 · 科尔尼克城堡, culture_region: 欧洲 · 波兰}
+    location_note: 坐标指向科尔尼克城堡；画像活过来属于地方传说。
+    paragraphs:
+      - 夜深时，城堡餐厅里的女主人画像似乎有了动静。传说中，特奥菲拉身穿白衣走出画框，与一名神秘骑士在城堡周围骑行，天亮前再回到画像里。
+      - 城堡如今保存馆藏与波兰科学院科尔尼克图书馆。白衣女士的讲述将真实历史人物、肖像和夜间想象连接起来；画像与建筑可供参观，夜行故事则属于地方传说。
+    sources:
+      - {citation: 'National Geographic, Folklore Sites in Poland.', type: journalism, url: 'https://www.nationalgeographic.com/travel/article/polish-folklore-sites', locator: 科尔尼克画像与白衣女士传说}
+      - {citation: 'Polish Tourism Organisation, Castle/Palace in Kórnik.', type: institutional_account, url: 'https://www.polen.travel/no/monuments/castle-palace-in-kornik', locator: 城堡、馆藏和坐标}
+    bridge: {entry: ARC-4-0009, cluster: sid_liminal, trail: trail5, label: 白衣女士与历史建筑, rationale: 将城堡画像和夜行故事与历史建筑的保存阅读并置，分别看待建筑资料和围绕它的地方讲述。}
+  - id: case_br_belem_matinta_whistle
+    title: 贝伦｜夜半口哨与玛廷塔
+    aliases: [Matinta Perêra, Matinta Pereira, Belém, Acampamento]
+    genre: urban_legend
+    location: {lat: -1.4558, lng: -48.4902, precision: city, location_name: 巴西 · 贝伦, culture_region: 南美 · 巴西亚马孙地区}
+    location_note: 坐标为贝伦市中心；论文所述 Acampamento 街区的具体住址未作定位。
+    paragraphs:
+      - 巴西帕拉州的故事里，夜晚屋外传来不停的口哨声，人们说这是玛廷塔。有些讲述把她想作能变成鸟的老妇；屋主答应给她烟草后，声音才会停下，而第二天可能有人上门讨取承诺。
+      - 研究贝伦城市记忆的论文记录了 Acampamento 街区的相关讲述，并将它放进城市边缘地区的河沟、树木和居住环境中理解。故事在不同地方有不同版本，不能把某一次听到的声音直接认定为同一种来源。
+    sources:
+      - {citation: 'Rudá Silva de Pinho, Perspectivas espaciais sobre a construção do imaginário de medo em bairros periféricos de Belém do Pará, Equatorial 4(6), 2017.', type: academic_article, url: 'https://periodicos.ufrn.br/equatorial/article/download/14935/pdf/46357', locator: 贝伦 Acampamento 街区的玛廷塔叙事}
+      - {citation: 'Universidade Federal do Pará, Diálogo entre tradição e inovação, 2017.', type: institutional_account, url: 'https://www.beiradorio.ufpa.br/component/content/article/81-2017/135-fevereiro-e-marco/138-dialogo-entre-tradicao-e-inovacao', locator: 玛廷塔和口哨的地方文化教育}
+    compare: [case_ve_guanare_el_silbon]
+    bridge: {entry: REL-5-0005, cluster: sid_hag, trail: trail2, label: 玛廷塔口哨与城市记忆, rationale: 将贝伦街区讲述与口述传统的记录方法并读，关注讲述者、声音与街区环境。}
+  - id: case_br_sao_paulo_curupira
+    title: 巴西森林｜倒脚印的守林者
+    aliases: [Curupira, 库鲁皮拉, 倒脚守林人]
+    genre: folktale
+    location: {lat: -23.5664, lng: -46.7219, precision: city, location_name: 巴西 · 圣保罗布坦坦科学园, culture_region: 南美 · 巴西}
+    location_note: 圣保罗科学园是公开展示该形象的参考地点，故事流传范围远不止这一城市。
+    paragraphs:
+      - 走进森林的人可能看见一串奇怪的脚印：脚趾似乎朝着相反方向。巴西民间故事里的库鲁皮拉常被描绘成红发、双脚倒转的守林者，用脚印和口哨让破坏森林的猎人迷失方向。
+      - 布坦坦研究所介绍说，他的外形与性格在不同地区并不完全一致；森林与动物的守护是许多版本的共同线索。这里的地图点指向圣保罗一处展示该形象的科学园，而非给广泛流传的故事指定唯一发源地。
+    sources:
+      - {citation: 'Instituto Butantan, Conheça a história do curupira, o defensor das árvores e dos animais, 2022.', type: institutional_account, url: 'https://butantan.gov.br/bubutantan/conheca-a-historia-do-curupira-o-defensor-das-arvores-e-dos-animais', locator: 形象、森林故事和科学园展示}
+      - {citation: 'Secretaria Municipal de Educação de Goiânia, História: Folclore.', type: institutional_account, url: 'https://sme.goiania.go.gov.br/conexaoescola/ensino_fundamental/folclore/', locator: 守护森林与反向脚印的另一公开介绍}
+    bridge: {entry: BIO-5-0008, cluster: sid_myth, trail: all, label: 守林者与森林栖息地, rationale: 从保护森林的传说延伸阅读栖息地与生态位；民间形象与生态学概念各自回答不同问题。}
+  - id: case_ve_guanare_el_silbon
+    title: 瓜纳雷平原｜远近颠倒的口哨
+    aliases: [El Silbón, Guanarito, Guanare, 哨声鬼]
+    genre: folktale
+    location: {lat: 9.0418, lng: -69.7421, precision: city, location_name: 委内瑞拉 · 瓜纳雷, culture_region: 南美 · 委内瑞拉平原}
+    location_note: 瓜纳雷是波图格萨州的文化参考点；哨声鬼传说横跨多个平原地区，其起源地点有不同说法。
+    paragraphs:
+      - 委内瑞拉平原的夜色中，哨声鬼的口哨让赶路人不安。在一些版本里，他因杀害亲人而受到诅咒，长久地徘徊在道路与旷野间；讲述者对死者是谁、故事从哪里开始并不一致。
+      - 波图格萨州的采录保存了不同居民对地点和情节的回忆，甚至对于瓜纳里托与埃尔维豪哪一个是故事起点也有争议。歌曲和地方音乐节使这一形象持续进入新的讲述场合。
+    sources:
+      - {citation: 'Fundación Empresas Polar, Mitos y leyendas del estado Portuguesa: El Silbón.', type: institutional_account, url: 'https://bibliofep.fundacionempresaspolar.org/media/1377934/mitos_portuguesa_c_01_el-silbon.pdf', locator: 波图格萨州地方版本与口述记忆}
+      - {citation: 'Instituto Cervantes, Bestiario latinoamericano: El Silbón, 2006.', type: institutional_account, url: 'https://cvc.cervantes.es/el_rinconete/anteriores/marzo_06/31032006_02.htm', locator: 哨声鬼与平原音乐节}
+    compare: [case_br_belem_matinta_whistle]
+    bridge: {entry: PHY-4-0003, cluster: sid_hag, trail: trail2, label: 哨声鬼与听觉距离, rationale: 以平原口哨故事为入口阅读声波与响度；声学概念不能单独证明故事中的人物。}
+  - id: case_ec_guayaquil_dama_tapada
+    title: 瓜亚基尔｜揭开面纱的夜行女子
+    aliases: [La Dama Tapada, Dama Tapada, 蒙面女士]
+    genre: urban_legend
+    location: {lat: -2.1894, lng: -79.8891, precision: city, location_name: 厄瓜多尔 · 瓜亚基尔, culture_region: 南美 · 厄瓜多尔}
+    location_note: 坐标为瓜亚基尔市区参考点；不同版本将故事放在不同街巷。
+    paragraphs:
+      - 夜归人看见一位蒙面的女子从街巷前方走过，身上留下一阵香气。他越追，她越保持着距离；当她终于转身揭开面纱，眼前的容貌却成了令人惊骇的骷髅或尸面。
+      - 不同讲述对人物的来历和尾声各不相同。瓜亚基尔市政府在 2024 年的城市文化活动中把“蒙面女士”搬上舞台；大学保存的文本则展示了其中一种面向夜归者的故事版本。
+    sources:
+      - {citation: 'Universidad Nacional de Educación, Leyenda de la Dama Tapada, anexo 16.', type: academic_article, url: 'https://repositorio.unae.edu.ec/server/api/core/bitstreams/67b94d15-d469-45a7-83b7-38b1fbfbb869/content', locator: 瓜亚基尔夜行蒙面女子的故事文本}
+      - {citation: 'Alcaldía de Guayaquil, Las historias y leyendas guayaquileñas se revivieron en el parque Seminario, 2024.', type: institutional_account, url: 'https://guayaquil.gob.ec/historias-leyendas-guayaquilenas-revivieron-parque-seminario/', locator: 现代城市文化活动中的讲述}
+      - {citation: 'El Telégrafo, Las leyendas más famosas de Guayaquil, 2026.', type: journalism, url: 'https://www.eltelegrafo.com.ec/noticias/tendencias/213/las-leyendas-mas-famosas-de-guayaquil-fantasmas-tragedias-y-pactos-con-el-diablo', locator: 瓜亚基尔蒙面女士与其他城市传说}
+    bridge: {entry: LIT-2-0001, cluster: sid_liminal, trail: trail5, label: 蒙面女士与叙事视角, rationale: 从夜行者的视角和揭面转折，阅读故事如何借延迟揭示组织悬念。}
+  - id: case_ec_quito_cantuna_devil
+    title: 基多｜坎图尼亚与少了一块的石头
+    aliases: [Cantuña, San Francisco de Quito, 坎图尼亚与魔鬼]
+    genre: folktale
+    location: {lat: -0.2205, lng: -78.5155, precision: city, location_name: 厄瓜多尔 · 基多圣方济各广场, culture_region: 南美 · 厄瓜多尔}
+    location_note: 坐标为基多圣方济各广场附近的参考点，故事中契约和施工细节属于传说。
+    paragraphs:
+      - 相传坎图尼亚受托修建圣方济各教堂前的空间，期限将至却无法按时完工。魔鬼提出连夜帮助他完成工作，交换条件是他的灵魂；一夜之间，小鬼们搬石砌筑，工程看似马上就要完成。
+      - 不同版本里，坎图尼亚凭缺失的一块石头或契约里的条件逃过交易。厄瓜多尔旅游部门和基多市把它作为城市地方传说介绍，故事中的机智转折与建筑的真实修建史应分开阅读。
+    sources:
+      - {citation: 'Ministerio de Turismo de Ecuador, Recorre Quito a través de sus leyendas, 2018.', type: institutional_account, url: 'https://historicomintur.produccion.gob.ec/recorre-quito-a-traves-de-sus-leyendas/', locator: 坎图尼亚、圣方济各教堂与魔鬼的契约}
+      - {citation: 'Municipio de Quito, Las leyendas y tradiciones son parte de la identidad quiteña, 2021.', type: institutional_account, url: 'https://www.quitoinforma.gob.ec/2021/12/02/las-leyendas-y-tradiciones-son-parte-de-la-identidad-quitena/', locator: 基多传统叙事的当代表演}
+    bridge: {entry: LIT-2-0001, cluster: sid_myth, trail: all, label: 坎图尼亚与契约转折, rationale: 从限期、交换和缺失的石头入手，阅读故事如何安排冲突与解决。}
+  - id: case_py_capiata_pombero
+    title: 巴拉圭｜夜里拜访的庞贝罗
+    aliases: [Pombero, Pombéro, 庞贝罗, Capiatá]
+    genre: folktale
+    location: {lat: -25.355, lng: -57.445, precision: city, location_name: 巴拉圭 · 卡皮亚塔, culture_region: 南美 · 巴拉圭}
+    location_note: 卡皮亚塔为神话博物馆所在地，庞贝罗故事并不只流传于该市。
+    paragraphs:
+      - 巴拉圭的夜间故事里，庞贝罗是行动安静的林野精灵。有人讲他保护鸟儿，也有人说可以留下烟草或酒，求他不要捉弄家人和牲畜；他的形象在不同故事里时而亲近，时而令人畏惧。
+      - 巴拉圭国家文化机构和地方神话博物馆都保存、展示这一人物。地图点取卡皮亚塔作为阅读入口，并不把跨地区、跨语言流传的故事限定为某一座城市的发明。
+    sources:
+      - {citation: 'Biblioteca Nacional del Paraguay, ISBN catalogue: leyendas del Paraguay.', type: institutional_account, url: 'https://isbn.bibliotecanacional.gov.py/catalogo.php?mode=detalle&nt=19099', locator: 庞贝罗、夜行和供物的故事简介}
+      - {citation: 'Secretaría Nacional de Cultura, Museo Mitológico Ramón Elías.', type: institutional_account, url: 'https://agendarte.cultura.gov.py/evento/museo-mitologico-ramon-elias', locator: 卡皮亚塔神话博物馆的相关展示}
+    bridge: {entry: REL-5-0001, cluster: sid_myth, trail: all, label: 庞贝罗与地方传承, rationale: 将庞贝罗的多种讲法与民俗实践的传承方式并读，留意地方称呼和讲述语境。}
+  - id: case_uy_animas_luz_mala
+    title: 灵魂山｜夜色里的游光
+    aliases: [Sierra de las Ánimas, Luz mala, 火流光]
+    genre: folktale
+    location: {lat: -34.7562, lng: -55.3009, precision: culture_region, location_name: 乌拉圭 · 灵魂山地区, culture_region: 南美 · 乌拉圭}
+    location_note: 坐标为灵魂山区域参考点，不代表某一次光现象的观测位置。
+    paragraphs:
+      - 乌拉圭马尔多纳多的山地有“灵魂山”之名。地方介绍将这一名称与夜间在旧墓地附近见到的蓝色光点联系起来；这种光在当地叙述里也被称为 luz mala 或鬼火。
+      - 这里保留的是地名解释及地方讲述。市政府页面提出了与分解物有关的解释，但没有提供这一地点的现场测量；阅读自然发光时，仍须分别核对观测条件、物质和其他可能原因。
+    sources:
+      - {citation: 'Intendencia de Maldonado, Circuito Sentir Las Ánimas.', type: institutional_account, url: 'https://www.maldonado.gub.uy/circuito-sentir-las-animas', locator: 灵魂山地名与地方游光说明}
+      - {citation: 'Universidad de la República, Oxymycterus specimens in Uruguay.', type: academic_article, url: 'https://www.colibri.udelar.edu.uy/jspui/bitstream/20.500.12008/8231/1/uy24-17632.pdf', locator: 灵魂山地区坐标}
+    bridge: {entry: HIS-6-0001, cluster: sid_crypt, trail: all, label: 灵魂山游光与来源核对, rationale: 从地方地名说明出发，区分观察记录、传说与未经现场检验的自然解释。}
+  - id: case_co_huila_patasola
+    title: 乌伊拉｜山林中的独腿女人
+    aliases: [La Patasola, Patasola, 乌伊拉山林独腿女]
+    genre: folktale
+    location: {lat: 2.9273, lng: -75.2819, precision: city, location_name: 哥伦比亚 · 内瓦, culture_region: 南美 · 哥伦比亚乌伊拉省}
+    location_note: 坐标取乌伊拉省首府内瓦作为地区参考点，故事并非只发生在城区。
+    paragraphs:
+      - 哥伦比亚山林里流传着独腿女人帕塔索拉的故事。她在树木深处出没，有时以美丽的样貌引人靠近，接着显出可怕的形貌；夜行者听见哭声或察觉林中异常寂静，便会想到她。
+      - 乌伊拉省的地方采录将她受伤后的遭遇与夜路相连；其他地区的版本对她失去一条腿的缘由、外貌和对人的态度有不同描述。她既是恐怖故事中的人物，也是可以比较不同讲述的地方文化形象。
+    sources:
+      - {citation: 'Gobernación del Huila, Expresiones orales: La Patasola.', type: institutional_account, url: 'https://www.huila.gov.co/cultura-y-turismo/publicaciones/6134/expresiones-orales/', locator: 乌伊拉地方讲述}
+      - {citation: 'Ministerio de Educación de Colombia, La Patasola.', type: institutional_account, url: 'https://contenidos.mineducacion.gov.co/ntg/men/archivos/Referentes_Calidad/Modelos_Flexibles/Aceleracion_del_Aprendizaje/Guia_del_estudiante/Modulo%204.pdf', locator: 托利马的另一地方版本}
+    bridge: {entry: REL-5-0005, cluster: sid_witch, trail: trail4, label: 独腿女人与地方版本, rationale: 比较乌伊拉和托利马的帕塔索拉讲述，观察口传故事如何随地点和讲述者改变。}
+  - id: case_pe_ayacucho_pishtaco
+    title: 安第斯山路｜取脂者的传闻
+    aliases: [Pishtaco, Ñaqaq, Naqaq, 皮什塔科]
+    genre: urban_legend
+    location: {lat: -13.1631, lng: -74.2236, precision: city, location_name: 秘鲁 · 阿亚库乔地区, culture_region: 南美 · 秘鲁安第斯}
+    location_note: 阿亚库乔是安第斯地区的参考点；取脂者叙事广泛流传，不能据此推断某一地点发生过袭击。
+    paragraphs:
+      - 在安第斯地区流传的故事中，独行的人担心遭遇取脂者：这个危险人物会夺取人的身体脂肪。不同地区使用 pishtaco、ñaqaq 等名称，故事中的身份和外貌也随时代改变。
+      - 秘鲁文化部对克丘亚语社群的资料提及这一人物，医学人类学论文则梳理了关于其历史背景的多种研究。有关起源的解释仍有争论，故事与针对现实人群的具体指控应分别核查。
+    sources:
+      - {citation: 'Ministerio de Cultura del Perú, Base de Datos de Pueblos Indígenas: Quechuas.', type: institutional_account, url: 'https://bdpi.cultura.gob.pe/index.php/pueblos/quechuas', locator: 克丘亚叙事中的 naqaq 或 pishtaco}
+      - {citation: 'Rosario de Priby, Evidencias médico antropológicas sobre el origen del pishtaco, Revista Peruana de Medicina Experimental y Salud Pública 27(1), 2010, 123–137.', type: academic_article, url: 'https://rpmesp.ins.gob.pe/index.php/rpmesp/article/download/1452/1446', locator: 取脂者形象与医学人类学研究}
+    bridge: {entry: HIS-6-0001, cluster: sid_hag, trail: trail4, label: 取脂者传闻与证据, rationale: 并读安第斯取脂者传说与来源评估方法，区分口述故事、历史研究和对具体事件的指控。}
+  - id: case_cl_chiloe_trauco
+    title: 奇洛埃｜林中敲树的特劳科
+    aliases: [Trauco, El Trauco, 特劳科]
+    genre: folktale
+    location: {lat: -42.4721, lng: -73.7732, precision: city, location_name: 智利 · 卡斯特罗, culture_region: 南美 · 智利奇洛埃群岛}
+    location_note: 卡斯特罗是奇洛埃群岛城市参考点，不是故事中某次相遇的具体位置。
+    paragraphs:
+      - 奇洛埃的森林传说里，特劳科是矮小而令人畏惧的林中人物；一些版本说他携带小斧，敲打树干，住在树洞或林间隐蔽之处。遇见他的后果与他的外貌，在不同讲述中有所变化。
+      - 智利国家图书馆把特劳科列在群岛的森林叙事中，与海上的卡莱乌切等形象并列。关于他接近女性的故事也反映了讲述者当时的社会观念，不应把传说中的指责当成对现实个人的判断。
+    sources:
+      - {citation: 'Biblioteca Nacional de Chile, Religiosidad, mito e identidad chilota.', type: institutional_account, url: 'https://www.memoriachilena.gob.cl/602/w3-article-3672.html', locator: 奇洛埃森林、海洋与民间信仰}
+      - {citation: 'Biblioteca Nacional de Chile, El Trauco, archivo de folclore.', type: institutional_account, url: 'https://www.memoriachilena.gob.cl/archivos2/pdfs/MC0031710.pdf', locator: 林中居所和小斧的地方文本}
+    compare: [case_cl_ancud_caleuche_ghost_ship]
+    bridge: {entry: REL-5-0005, cluster: sid_myth, trail: all, label: 奇洛埃森林与口传版本, rationale: 将特劳科的不同故事与口述传统并读，留意群岛的森林环境和讲述场合。}
