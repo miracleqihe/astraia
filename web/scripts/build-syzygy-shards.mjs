@@ -47,9 +47,16 @@ async function build(kind, records, source) {
   }
   const parts = [];
   for (const [index, items] of groups.entries()) {
-    const bytes = Buffer.from(JSON.stringify({ schema_version: 1, kind, source, bucket: index, records: items }) + '\n', 'utf8');
+    // A graph snapshot changes on every catalogue update. Keep that identity in
+    // the manifest rather than every bucket so unchanged text is reusable.
+    const payload = kind === 'graph'
+      ? { schema_version: 2, kind, bucket: index, records: items }
+      : { schema_version: 1, kind, source, bucket: index, records: items };
+    const bytes = Buffer.from(JSON.stringify(payload) + '\n', 'utf8');
     const sha256 = digest(bytes);
-    const file = `${kind}-${source.slice(0, 12)}-${index.toString().padStart(2, '0')}-${sha256.slice(0, 16)}.json`;
+    const prefix = kind === 'graph' ? sha256.slice(0, 12) : source.slice(0, 12);
+    const suffix = kind === 'graph' ? sha256.slice(12, 28) : sha256.slice(0, 16);
+    const file = `${kind}-${prefix}-${index.toString().padStart(2, '0')}-${suffix}.json`;
     await save(file, bytes); parts.push({ file, sha256, count: items.length });
   }
   return { count: ids.size, parts };

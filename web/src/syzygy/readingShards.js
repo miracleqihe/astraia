@@ -46,7 +46,9 @@ export function createReadingShards(root, graph, book) {
         const hash = [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))].map(x => x.toString(16).padStart(2,'0')).join('');
         if (hash !== part.sha256) throw new Error('正文分片校验失败，请刷新。');
         const data = decode(bytes), source = kind === 'graph' ? graph.snapshot_id : book.data_sha256;
-        if (data.schema_version !== 1 || data.kind !== kind || data.source !== source || data.bucket !== bucket
+        const validVersion = (data.schema_version === 1 && data.source === source)
+          || (kind === 'graph' && data.schema_version === 2 && !Object.hasOwn(data, 'source'));
+        if (!validVersion || data.kind !== kind || data.bucket !== bucket
           || !Array.isArray(data.records) || data.records.length !== part.count) throw new Error('正文分片与目录不一致。');
         const records = new Map();
         for (const record of data.records) {
