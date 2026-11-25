@@ -1,0 +1,374 @@
+# Original Chinese summaries based on the cited works; map points are labelled as reference areas where necessary.
+records:
+  - id: case_cn_changle_fangshan_city_gate
+    title: 山东昌乐｜被封住的西城门
+    aliases: [方山爷, 于子仁, 昌乐西门, Fangshan]
+    genre: folktale
+    credibility_tier: B
+    location: {lat: 36.7033, lng: 118.8290, precision: city, location_name: 山东 · 昌乐县城, culture_region: 东亚 · 中国山东}
+    location_note: 昌乐县城是故事的地区参考点，旧城门与方山山洞均未作精确定位。
+    paragraphs:
+      - 相传昌乐西门外闹鬼，城里的人把门用砖石堵住。新到任的县令于子仁询问缘由后，命人拆开城门，手持路上老人赠送的拐杖，独自面对涌来的鬼怪。
+      - 故事里，拐杖化成鞭子，鬼怪退入方山的洞中。于子仁以巨石封洞，坐守洞口，最终坐化；乡人后来为他建庙，将他称作方山爷。
+      - 昌乐县志把这则叙事与地方庙会放在一起记录，也另注于子仁的任职年代。县令任职与驱鬼情节属于不同性质的材料，阅读时可分别辨认。
+    sources:
+      - {citation: 山东地方志资料归档《昌乐县志》民间故事，方山爷的传说。, type: local_gazetteer, url: 'https://shandong-chorography.org/database/c76/section/1/article/266/', locator: 昌乐西门、方山及庙会叙事}
+    bridge: {entry: HIS-6-0007, cluster: sid_myth, trail: all, label: 城门传说与地方纪念, rationale: 将旧城门叙事和庙会记忆并读，区分历史人物与后来讲述的情节。}
+  - id: case_cn_jingxing_riverbank_reverse_shoes
+    title: 河北井陉｜倒穿鞋走过河滩
+    aliases: [老偏头捉鬼, 倒穿鞋, 井陉河滩传说]
+    genre: folktale
+    credibility_tier: B
+    location: {lat: 38.0327, lng: 114.1445, precision: city, location_name: 河北石家庄 · 井陉县, culture_region: 东亚 · 中国河北}
+    location_note: 井陉县城是传统村落资料的地区参考，故事未给出河滩和山神庙的准确位置。
+    paragraphs:
+      - 夜里，老偏头从邻村回家，经过村外河滩时，听见身后传来细小的声音。那一带有旧坟地，乡亲们往往赶在天亮时通过，他却决定回头看看。
+      - 这时一个矮个陌生人前来相助，让他把鞋倒穿，悄悄接近声音。两人驱走了传说中的小鬼；第二天老偏头经过山神庙，觉得神像正像那位夜间的帮手。
+      - 井陉传统村落资料保存了这则故事。河滩、鞋印和神像构成了村人熟悉的场景，但记录没有给出这次夜行的确切年代和地点。
+    sources:
+      - {citation: 井陉县传统村落文化信息网，《老偏头捉鬼》。, type: local_gazetteer, url: 'https://jxxctcl.com/article/2204', locator: 村外河滩、倒穿鞋与山神庙}
+    compare: [case_ph_pagbilao_calibuyboy_bridge]
+    bridge: {entry: LIT-2-0006, cluster: sid_liminal, trail: all, label: 河滩夜路与地方故事, rationale: 对读河滩与桥梁叙事，观察道路、水流如何成为故事中的场景。}
+  - id: case_cn_hk_ling_to_temple_inscription
+    title: 香港元朗｜灵渡寺碑上的家族故事
+    aliases: [灵渡寺, 靈渡寺, 邓宠荣碑记, Ling To Monastery]
+    genre: historical_archive
+    credibility_tier: B
+    location: {lat: 22.4457, lng: 114.0227, precision: city, location_name: 香港 · 元朗地区, culture_region: 东亚 · 中国香港}
+    location_note: 元朗地区是寺院与家族故事的区域参考，不表示私人住宅或石碑的精确位置。
+    paragraphs:
+      - 元朗灵渡寺的一块碑记，讲了邓氏家人面对重病时的经历。母亲和亲属清晨入山祈祷，守在病榻边的人则说，曾在半梦半醒间看见陌生人影来到房外。
+      - 碑记把家人的祈愿、母亲的离世和病者后来逐渐好转写进同一段家族回忆。后人认为这段文字也表现了亲人之间彼此照料的心意。
+      - 一篇地方文化文章依据寺内碑记介绍故事。碑文是能够讨论的历史材料，梦境与疗效则是叙述者的信仰解释，不是可据此验证的治疗方法。
+    sources:
+      - {citation: 演然，《百多年来灵渡寺流传着一个灵异故事》，佛门网，2020。, type: institutional_account, url: 'https://www.buddhistdoor.org/mingkok/%E7%99%BE%E5%A4%9A%E5%B9%B4%E4%BE%86%E9%9D%88%E6%B8%A1%E5%AF%BA%E6%B5%81%E5%82%B3%E8%91%97%E4%B8%80%E5%80%8B%E9%9D%88%E7%95%B0%E6%95%85%E4%BA%8B%E5%88%B0%E5%BA%95%E6%98%AF%E5%9D%8A%E9%96%93%E8%AC%A0%E5%82%B3%E9%82%84%E6%98%AF%E7%9C%9F%E6%9C%89%E5%85%B6%E4%BA%8B/', locator: 1904 年碑记与家族讲述}
+      - {citation: 苏万兴，《灵渡寺》地方历史资料。, type: institutional_account, url: 'https://www.somanhing.com/gotowalk/dist/yuenlong/hacun/lingto.pdf', locator: 寺院碑文和家族回忆}
+    bridge: {entry: HIS-6-0007, cluster: sid_myth, trail: all, label: 一块碑如何保存家族回忆, rationale: 对照碑文、后人的解释与家庭记忆，观察地方文献怎样保留个人经历。}
+  - id: case_cn_tw_miaoli_baguali_headless
+    title: 苗栗八卦力｜清晨厨房里的声音
+    aliases: [saehpoy, 赛夏族无头鬼, 八卦力无头鬼]
+    genre: memorate
+    credibility_tier: B
+    location: {lat: 24.5972, lng: 121.0040, precision: city, location_name: 苗栗 · 南庄乡地区, culture_region: 东亚 · 中国台湾}
+    location_note: 南庄乡为八卦力附近的地区参考点；山中工作地点没有精确坐标。
+    paragraphs:
+      - 一位赛夏族讲述者回忆，年轻时与客家人一起在八卦力附近的山里工作。一天清晨，大家正准备早餐，听见吼声靠近，厨房的锅碗也响了起来。
+      - 同行者把声音与当地称作 saehpoy 的无头鬼联系起来；有人用客语喝斥后，声音停了。讲述中，这个寻找头颅的身影与过去山地劳动的记忆相连。
+      - 苗栗地方文化资料注明了采集来源及赛夏族、客家人的叙事背景。它是一则被保存的口述，不应替具体历史暴力事件下未经核实的结论。
+    sources:
+      - {citation: 唐菓创意有限公司施采妍，《苗栗县赛夏族八卦力无头鬼出没纪录》，苗栗县政府文化观光局，国家文化记忆库。, type: oral_archive, url: 'https://tcmb.culture.tw/zh-tw/detail?id=315166&indexCode=Culture_Event', locator: '根据文字描述改述；CC BY 3.0 TW：https://creativecommons.org/licenses/by/3.0/tw/'}
+    compare: [case_cn_tw_kinmen_tongzishan_headless]
+    bridge: {entry: HIS-6-0002, cluster: sid_liminal, trail: all, label: 山地劳动与口述记忆, rationale: 并读不同讲述者的无头鬼故事，留意地点、劳动经验和族群语境各自的差异。}
+  - id: case_cn_tw_puli_trouser_bamboo
+    title: 南投埔里｜勾住裤脚的山路
+    aliases: [守城份, maxadaxedaxe, 徐碧莲口述, 埔里竹子鬼]
+    genre: memorate
+    credibility_tier: B
+    location: {lat: 23.9664, lng: 120.9695, precision: city, location_name: 南投 · 埔里镇地区, culture_region: 东亚 · 中国台湾}
+    location_note: 埔里镇是讲述者生活和采录的地区参考点，不指向具体田间路径。
+    paragraphs:
+      - 徐碧莲在社区讲古时转述祖父的经历：他去查看田里的水源，路过一处素有可怕传闻的地方，突然觉得裤脚被什么东西死死抓住，越挣扎越害怕。
+      - 等他回头一看，原来是木柴勾住了裤管。她又讲了另一次拾柴归来时道路被竹子挡住的经历；同行的人用当地怪异叙事解释这件事。
+      - 暨南大学在 2017 年的采录保留了这两个相邻的说法：一次虚惊和一次仍由讲述者保留的奇遇。把它们一起读，能看到传闻如何影响人对山路的感受。
+    sources:
+      - {citation: 国立暨南国际大学与李珮甄，徐碧莲女士口述故事，2017，国家文化记忆库。, type: oral_archive, url: 'https://tcmb.culture.tw/zh-tw/detail?id=559281&indexCode=Culture_Media', locator: '根据文字描述改述；CC BY 3.0 TW：https://creativecommons.org/licenses/by/3.0/tw/'}
+    bridge: {entry: FOR-1-0101, cluster: sid_liminal, trail: all, label: 传闻与一次虚惊, rationale: 从回头发现木柴勾住裤脚的细节，进入见闻、预期和事后叙述的阅读。}
+  - id: case_cn_tw_puli_tree_experience
+    title: 南投埔里｜树上的奇异经历
+    aliases: [味辉镇口述, 埔里蜈蚣社区, 树上灵异]
+    genre: memorate
+    credibility_tier: B
+    location: {lat: 23.9768, lng: 120.9897, precision: city, location_name: 南投埔里 · 蜈蚣社区, culture_region: 东亚 · 中国台湾}
+    location_note: 坐标参考文化记忆库列出的社区录制地点；讲述中的树木并未定位。
+    paragraphs:
+      - 一位埔里居民上山采摘展览所需的叶子，设法爬上一棵高树。他在树上发现一处宽阔的地方，觉得像可以坐下来的位置，便好奇地坐了上去。
+      - 讲述者说，当时自己忽然感到身体不能动弹，像被电流击中；他在心里念诵佛号，随后才觉得可以脱身。这是他对当时感受和应对方式的回忆。
+      - 暨南大学在 2019 年的社区讲古中录下这段话。听者可以直接阅读他的经历，同时保留身体感受、宗教语言和具体成因之间尚未解决的距离。
+    sources:
+      - {citation: 国立暨南国际大学与李珮甄，味辉镇先生的口述故事，2019，国家文化记忆库。, type: oral_archive, url: 'https://tcmb.culture.tw/zh-tw/detail?id=614016&indexCode=Culture_Media', locator: '根据文字描述改述；CC BY 3.0 TW：https://creativecommons.org/licenses/by/3.0/tw/'}
+    bridge: {entry: HIS-6-0002, cluster: sid_liminal, trail: all, label: 怎样记录亲历者的感受, rationale: 从当事人的描述和采录场合出发，阅读口述史如何保存感受而不代替医学判断。}
+  - id: case_cn_tw_lieyu_skeleton_tofu
+    title: 金门烈屿｜古厝里买豆腐的骷髅
+    aliases: [西口古厝, 骷髅买豆腐, 金斗瓮]
+    genre: folktale
+    credibility_tier: B
+    location: {lat: 24.4280, lng: 118.2351, precision: city, location_name: 金门 · 烈屿乡, culture_region: 东亚 · 中国金门}
+    location_note: 烈屿乡是采访和地方传说的地区参考；原始资料说明古厝位置不详。
+    paragraphs:
+      - 烈屿一则旧故事把骷髅和日常买豆腐的场景放到一起：古厝里的骨骸久未安葬，后来竟像活物一样与人间生活发生联系。
+      - 讲述者林金树说，这类故事来自长辈和乡亲的转述。地方采录者将它与拾骨、安葬及精怪购买食物的民俗观念并列介绍。
+      - 国家文化记忆库保存了 2020 年的台语采访及文字简介；简介没有交代古厝的确切位置，也没有详述全部经过，因此这里保留可核对的故事线索。
+    sources:
+      - {citation: 林金树口述，《烈屿西口古厝骷髅买豆腐》，国立台南生活美学馆采录，2020。, type: oral_archive, url: 'https://tcmb.culture.tw/zh-tw/detail?id=605218&indexCode=Culture_Media', locator: '根据文字描述改述；CC BY 3.0 TW：https://creativecommons.org/licenses/by/3.0/tw/'}
+    bridge: {entry: REL-5-0003, cluster: sid_myth, trail: all, label: 安葬习俗与日常物品, rationale: 从骨瓮、豆腐和口述记录进入地方丧葬与家庭记忆的阅读。}
+  - id: case_jp_oyama_kanko_bridge_stain
+    title: 日本小山｜观晃桥墙上的人影
+    aliases: [観晃橋, 小山市观晃桥幽灵骚动, '0970054']
+    genre: urban_legend
+    credibility_tier: B
+    location: {lat: 36.3142, lng: 139.8000, precision: city, location_name: 日本枥木县 · 小山市, culture_region: 东亚 · 日本关东}
+    location_note: 小山市是观晃桥及思川沿岸的城市参考点，不标作施工现场的精确位置。
+    paragraphs:
+      - 1989 年夏天，栃木县小山市观晃桥改建时，附近一处通道墙面出现了污迹。有人从轮廓里看出一名怀抱婴儿的女子，消息随之在当地传播。
+      - 一种解释把人影与旧时桥边女性的遭遇联系起来；媒体报道后，夏季一度引起许多人注意，到了秋冬又渐渐平息。那些身世细节属于传闻，不能当成已核实的人物经历。
+      - 日本国际日本文化研究中心的妖怪数据库收录了山中清次 1990 年的地方民俗文章。它让我们看到从墙面痕迹到新闻事件之间，讲述如何一层层附着上去。
+    sources:
+      - {citation: 山中清次，《小山市观晃桥的幽灵骚动》，《下野民俗》第 31 号，1990；国际日本文化研究中心卡片 0970054。, type: academic_article, url: 'https://www.nichibun.ac.jp/cgi-bin/YoukaiDB3/youkai_card.cgi?ID=0970054', locator: 第 71 至 73 页摘要与地方民俗文献}
+      - {citation: 小山市观光协会，观晃桥。, type: institutional_account, url: 'https://oyama-kankou.info/other/kankoubahi/', locator: 桥梁与思川的地理背景}
+    compare: [case_cn_cenxi_fish_drain_sound_2007]
+    bridge: {entry: FOR-5-0011, cluster: sid_liminal, trail: trail5, label: 人影、传闻和目击描述, rationale: 对读墙面痕迹、传言与后来的报道，讨论观察和讲述如何受到期待影响。}
+  - id: case_jp_yachiyo_benten_bridge_shrine
+    title: 日本八千代｜河道整修后重建的小祠
+    aliases: [弁天橋, 胜田民俗, 八千代幽灵, '1310115']
+    genre: folktale
+    credibility_tier: B
+    location: {lat: 35.7225, lng: 140.0990, precision: city, location_name: 日本千叶县 · 八千代市, culture_region: 东亚 · 日本关东}
+    location_note: 八千代市为胜田地区的城市参考；资料未给出弁天桥小祠的精确坐标。
+    paragraphs:
+      - 千叶县胜田的一则短故事说，弁天桥旁原有一座供奉弁天的小祠。河道整修时，旧祠被拆掉，随后地方上开始流传出现幽灵的说法。
+      - 讲述的结尾是人们重新建起小祠。它没有展开幽灵长相，也没有记下一连串事故，而是把施工、地方信仰和重建联系在同一段记忆里。
+      - 国际日本文化研究中心保存了都留文科大学民俗学研究会 1983 年的文献摘要，并标明讲述者来自当地家庭。短小的档案本身也是故事流传方式的一部分。
+    sources:
+      - {citation: 都留文科大学民俗学研究会，《胜田的民俗》，1983；国际日本文化研究中心卡片 1310115。, type: academic_article, url: 'https://www.nichibun.ac.jp/cgi-bin/YoukaiDB3/youkai_card.cgi?ID=1310115', locator: 第 59 页口述摘要及讲述者信息}
+    compare: [case_ph_pagbilao_calibuyboy_bridge]
+    bridge: {entry: REL-5-0002, cluster: sid_myth, trail: all, label: 桥边小祠与地方信仰, rationale: 比较桥梁周围的故事和仪式背景，保留不同地区的具体版本。}
+  - id: case_jp_tokushima_bridge_laughing_stone
+    title: 日本德岛｜桥下的钟声与会笑的石头
+    aliases: [德岛桥梁怪谈, お多福, 山伏, 会笑的白石]
+    genre: folktale
+    credibility_tier: B
+    location: {lat: 34.0703, lng: 134.5548, precision: city, location_name: 日本 · 德岛市, culture_region: 东亚 · 日本四国}
+    location_note: 德岛市是文献标注的地区参考；旧桥位置和后来移走的石头未作精确定位。
+    paragraphs:
+      - 德岛一座桥的旧传说里，有人说每到除夕深夜，河底会传出寂寞的钟声。另一个细节则在桥墩上：一块白石逢雨天变成笑脸，笑声令经过的人感到不安。
+      - 档案还记下与造桥有关的“人柱”故事，并说那块被指会笑的石头后来被移走。口述传说中的献祭说法并不自动构成历史上实际发生过的证据。
+      - 这条记录来自 1979 年关于石头信仰与习俗的文献摘要。钟声和白石使一座普通桥梁有了两种截然不同的夜间形象。
+    sources:
+      - {citation: 日下洋子，《石的信仰与习俗》，《历史民俗研究》第 2 号，1979；国际日本文化研究中心卡片 2600006。, type: academic_article, url: 'https://www.nichibun.ac.jp/cgi-bin/YoukaiDB3/youkai_card.cgi?ID=2600006', locator: 第 10 至 11 页摘要与德岛市本町}
+    compare: [case_ph_pagbilao_calibuyboy_bridge]
+    bridge: {entry: LIT-2-0006, cluster: sid_liminal, trail: all, label: 白石、钟声和桥梁场景, rationale: 比较声音与视觉细节如何让不同地方的桥梁成为故事发生的场所。}
+  - id: case_kr_seoul_coin_ghost
+    title: 韩国｜深埋地下的铜钱变成鬼
+    aliases: [사귀가 된 엽전, Sagwi, 铜钱鬼, Coin That Turned Into an Evil Ghost]
+    genre: folktale
+    location: {lat: 37.5665, lng: 126.9780, precision: culture_region, location_name: 韩国 · 首尔（国家参考） , culture_region: 东亚 · 韩国}
+    location_note: 这则故事在韩国有多个版本，首尔仅作国家级参考点，不代表故事发生地。
+    paragraphs:
+      - 旅人夜宿一间瓦房，屋里只剩下一位年轻女子。她说家人接连被夜里出现的鬼害死，今晚也许轮到自己，因此劝陌生人离开。
+      - 深夜鬼群果然出现，旅人用石臼将它们吓退。鬼声称自己是埋在地下太久的一罐铜钱，请他挖出并分给村民；天亮后，旅人照着做了。
+      - 韩国国立民俗博物馆指出，旅人也可能是赶考书生、船夫或仆人，结局因讲述者而异。研究者把它与财富流通、分享观念联系起来，这是一种解释而非唯一答案。
+    sources:
+      - {citation: National Folk Museum of Korea，Coin That Turned Into an Evil Ghost，Encyclopedia of Korean Folk Culture。, type: institutional_account, url: 'https://folkency.nfm.go.kr/en/topic/detail/5840', locator: 铜钱鬼故事及不同版本}
+    bridge: {entry: SOC-1-0003, cluster: sid_myth, trail: all, label: 藏钱故事与社会规范, rationale: 从鬼要求分发铜钱的结局进入社会规范的阅读，观察民间故事怎样表达对分享的期待。}
+  - id: case_id_jakarta_casablanca_underpass
+    title: 雅加达｜卡萨布兰卡隧道里的老妇
+    aliases: [Terowongan Casablanca, Casablanca tunnel, 雅加达卡萨布兰卡隧道]
+    genre: urban_legend
+    credibility_tier: B
+    location: {lat: -6.2297, lng: 106.8440, precision: city, location_name: 印度尼西亚 · 雅加达南部, culture_region: 东南亚 · 印度尼西亚}
+    location_note: 雅加达南部是隧道一带的城市参考点，不作道路入口或停车位置的精确标注。
+    paragraphs:
+      - 夜里经过雅加达卡萨布兰卡一带，有司机听过一则故事：一位抱着孩子的老妇站在隧道附近，似乎想拦下驶来的车。另一些版本则把这条道路与附近旧墓地联系起来。
+      - 《雅加达邮报》2019 年采访导览者时记录了这些说法，也提到传闻曾被改编为电影。随着道路建设与照明变化，人们对这一带的感受和讲法也在变化。
+      - 道路、电影与口头传闻都有各自的资料来源；老妇是否存在并未得到报道证实。这条卷宗保存的是一处城市交通空间如何被讲成故事。
+    sources:
+      - {citation: Nina A. Loasana，Urban development drives eeriness out of scary places，The Jakarta Post，2019。, type: journalism, url: 'https://www.thejakartapost.com/news/2019/10/31/urban-development-drives-eeriness-out-scary-places', locator: 隧道、抱孩子的老妇与城市变化}
+    compare: [case_sg_bishan_last_train]
+    bridge: {entry: ARC-4-0006, cluster: sid_liminal, trail: trail5, label: 夜间道路与城市日常, rationale: 将交通设施、光线与城市故事并读，观察人们怎样在日常通行中理解地方。}
+  - id: case_id_sawahlunto_mining_tunnel_memory
+    title: 印尼沙瓦伦托｜矿道里的夜谈
+    aliases: [Sawahlunto tunnel, 沙瓦伦托矿道, Ombilin coal heritage]
+    genre: urban_legend
+    credibility_tier: B
+    location: {lat: -0.6817, lng: 100.7788, precision: city, location_name: 印度尼西亚西苏门答腊 · 沙瓦伦托, culture_region: 东南亚 · 印度尼西亚}
+    location_note: 沙瓦伦托市为矿业遗产和传闻的城市参考；地下矿道并未逐条定位。
+    paragraphs:
+      - 西苏门答腊的沙瓦伦托曾依靠煤矿与铁路发展。矿业衰退后，旧矿道和工人故事被重新讲述，一些居民把黑暗隧道与矿工亡魂的传闻联系在一起。
+      - 2014 年的报道把这种夜谈放进城市寻求转型的背景中。有关矿工人数和具体死亡经过的传闻需要独立史料核实，不能直接当作矿难统计。
+      - 联合国教科文组织的矿业遗产资料介绍了矿井、铁路和港口之间的联系。把遗产记录与城市传闻并读，能看到劳动史与后来的地方想象如何交错。
+    sources:
+      - {citation: 'The Jakarta Post, Sawahlunto: A small town that dreams big, 2014.', type: journalism, url: 'https://www.thejakartapost.com/news/2014/09/05/sawahlunto-a-small-town-dreams-big', locator: 矿道传闻与矿镇转型}
+      - {citation: UNESCO World Heritage Centre，Ombilin Coal Mining Heritage of Sawahlunto。, type: official_archive, url: 'https://whc.unesco.org/en/list/1610/', locator: 矿道、铁路和港口遗产}
+    compare: [case_bo_potosi_cerro_rico_el_tio]
+    bridge: {entry: HIS-6-0007, cluster: sid_liminal, trail: trail5, label: 矿道、劳动与地方记忆, rationale: 对读矿业遗产资料和地下空间的讲述，分开矿工劳动史与后来形成的传说。}
+  - id: case_my_jeram_tengkek_bunian
+    title: 马来西亚｜瀑布林中的布尼安传闻
+    aliases: [Jeram Tengkek, Orang Bunian, Negeri Sembilan forest spirit]
+    genre: folktale
+    credibility_tier: B
+    location: {lat: 2.8732, lng: 102.1830, precision: culture_region, location_name: 马来西亚森美兰 · Jeram Tengkek 林区, culture_region: 东南亚 · 马来西亚}
+    location_note: 坐标是瀑布林区附近的区域参考点，不代表某次遭遇的确切地点。
+    paragraphs:
+      - 森美兰州 Jeram Tengkek 的林间溪流与瀑布旁，流传着关于布尼安的说法：人们相信林中还住着通常不被看见的另一群存在。
+      - 州旅游资料将这种地方传闻与林区景观一同介绍。不同地方的布尼安故事有各自细节，这条资料只保留能够在该地点来源中核对到的内容。
+      - 作为地图条目，它邀请读者把森林当作既有生境、也有地方记忆的空间，而不把这则短记录扩写成未经采录的遭遇故事。
+    sources:
+      - {citation: Negeri Sembilan Tourism，Jeram Tengkek Eco Park。, type: official_archive, url: 'https://n9tourism.ns.gov.my/en/attraction/taman-eko-rimba-jeram-tengkek/', locator: 森林公园及布尼安的地方传闻}
+      - {citation: Waterfalls of Malaysia，Jeram Tengkek。, type: institutional_account, url: 'https://www.waterfallsofmalaysia.com/14jeramtengkek.php', locator: 森美兰地区位置参考}
+    bridge: {entry: BIO-5-0008, cluster: sid_myth, trail: all, label: 瀑布林与栖息地, rationale: 把林区的地方讲述与生态位知识并读，保留自然观察和民间想象各自的内容。}
+  - id: case_ph_pagbilao_eme_road_ghosts
+    title: 菲律宾奎松省｜鸡肠公路的夜间传闻
+    aliases: [EME Road, Bitukang Manok, 鸡肠公路, Pagbilao Zigzag Road]
+    genre: urban_legend
+    credibility_tier: B
+    location: {lat: 13.9675, lng: 121.6920, precision: city, location_name: 菲律宾奎松省 · 巴格比劳地区, culture_region: 东南亚 · 菲律宾}
+    location_note: 巴格比劳市镇是弯曲山路的地区参考，不能用于定位某一事故或驾驶路线。
+    paragraphs:
+      - 在菲律宾奎松省，蜿蜒的 EME 山路因连续急弯有了“鸡肠”这一绰号。司机和居民谈起这条路时，也会提到夜间怪影与事故传闻。
+      - 巴格比劳地方旅游资料将山路的急弯、道路历史和夜谈一起介绍。它没有为所有流传的遭遇提供独立证据，具体事故也不能简单归到超自然原因。
+      - 一条山路可以同时是通行设施、事故记忆和故事场景；地图上的点标示的是地区，不是对任何路段安全性的判断。
+    sources:
+      - {citation: 'Municipality of Pagbilao, Cultural Built Heritage: EME Road.', type: official_archive, url: 'https://tourism.pagbilao.gov.ph/Immovable.html', locator: EME 公路、急弯及地方夜谈}
+    compare: [case_my_karak_yellow_beetle]
+    bridge: {entry: ARC-4-0002, cluster: sid_liminal, trail: trail5, label: 弯道与道路叙事, rationale: 并读山路与公路传闻，并从道路几何和交通组织理解真实通行环境。}
+  - id: case_co_bogota_haunted_house_1912
+    title: 波哥大｜1912 年的寻宝鬼屋
+    aliases: [Bogotá haunted house, La Candelaria, 哥伦比亚旧宅宝藏传闻]
+    genre: urban_legend
+    credibility_tier: B
+    location: {lat: 4.5981, lng: -74.0758, precision: city, location_name: 哥伦比亚 · 波哥大历史城区, culture_region: 南美洲 · 哥伦比亚}
+    location_note: 波哥大历史城区是旧宅传闻的城市参考；1912 年的门牌未换算为现今精确坐标。
+    paragraphs:
+      - 1912 年的波哥大，一处老房子被传藏有宝物。人们谈论两个修士、夜里的铁链声和不明亮光，越说越像是一处不肯安静的鬼屋。
+      - 后来甚至出现与寻找传闻中宝物有关的租赁文件。波哥大地方档案和文化遗产机构整理这段往事时，将文书记录与街头传说放在一起阅读。
+      - 文件能够证明有人围绕寻宝作过安排，却不能证明鬼影或宝物确实存在。旧地址、传闻和契约各自留下不同的城市记忆。
+    sources:
+      - {citation: Instituto Distrital de Patrimonio Cultural，Fantasmas y leyendas de La Candelaria，2026。, type: official_archive, url: 'https://idpc.gov.co/noticias/fantasmas-y-leyendas-de-la-candelaria/4/', locator: 1912 年旧宅、宝藏传闻与租赁文件}
+      - {citation: Secretaría Distrital de Gobierno，Susurros entre muros y calles centenarias，2026。, type: official_archive, url: 'https://gobiernobogota.gov.co/noticias/susurros-muros-calles-centenarias', locator: 老城讲述及历史档案背景}
+    bridge: {entry: HIS-6-0007, cluster: sid_liminal, trail: trail5, label: 寻宝契约与旧宅传闻, rationale: 对读真实文书与鬼屋传闻，辨认档案可以回答什么、不能回答什么。}
+  - id: case_co_bogota_green_coat_ghost
+    title: 波哥大｜楼梯上的绿外套
+    aliases: [Fantasma de la Casaca Verde, Angel Cuervo, La Candelaria ghost]
+    genre: urban_legend
+    credibility_tier: B
+    location: {lat: 4.5981, lng: -74.0758, precision: city, location_name: 哥伦比亚 · 波哥大历史城区, culture_region: 南美洲 · 哥伦比亚}
+    location_note: 波哥大历史城区是故事与文化机构所在的地区参考；不对某间旧屋作精确定位。
+    paragraphs:
+      - 波哥大旧城的一则故事里，屋子安静时，有人听到脚步上楼。一名穿绿外套的陌生人走到楼上，在墙上敲了三下，随后消失。
+      - 文化机构介绍说，这段叙述与作家 Ángel Cuervo 的记录及 Elisa Mújica 后来的著作有关。旧屋中的值守者和访客又讲过脚步、灯光等其他经历。
+      - 绿外套的人影如今也出现在老城导览中；文献、个人记忆和当代演出可以互相参照，不必把它们合成同一次可证实的目击。
+    sources:
+      - {citation: Fundación Gilberto Alzate Avendaño，五十周年机构历史，2022。, type: institutional_account, url: 'https://portalant.fuga.gov.co/sites/default/files/archivos/ed_50anos_28dic_j_v2.pdf', locator: 第 35 至 36 页绿外套与旧屋记录}
+      - {citation: Instituto Distrital de Patrimonio Cultural，Fantasmas y leyendas de La Candelaria，2026。, type: official_archive, url: 'https://idpc.gov.co/noticias/fantasmas-y-leyendas-de-la-candelaria/4/', locator: Ángel Cuervo 与敲墙三次的讲述}
+    compare: [case_co_bogota_haunted_house_1912]
+    bridge: {entry: HIS-6-0002, cluster: sid_liminal, trail: trail5, label: 老屋中的书写与口述, rationale: 对照机构史、旧城导览与个人叙述，观察城市记忆如何跨媒介流传。}
+  - id: case_co_tumaco_madremonte_forest
+    title: 哥伦比亚图马科｜森林深处的母山
+    aliases: [Madremonte, La Madremonte, 图马科森林母亲]
+    genre: folktale
+    location: {lat: 1.8067, lng: -78.7647, precision: city, location_name: 哥伦比亚纳里尼奥 · 图马科, culture_region: 南美洲 · 哥伦比亚}
+    location_note: 图马科是哥伦比亚文化部音频标注的制作地点；故事流传于更广泛的森林地区。
+    paragraphs:
+      - 哥伦比亚太平洋沿岸的一段讲述里，母山是守护树林的女性形象。她会在失去孩子时哭泣，也会吓走进入她领地、伤害林中生灵的人。
+      - 另一类广泛流传的版本把她描绘成披着苔藓与枝叶的森林守护者。不同讲述的外形和情节并不完全相同，但都让山林成为有回应的地方。
+      - 哥伦比亚文化部保存了一段 2012 年在图马科制作的音频；阅读时可把它与波哥大文化部门的概述对照，留意太平洋沿岸版本的特征。
+    sources:
+      - {citation: 哥伦比亚文化部，La Madremonte，太平洋口述传统音频，2012。, type: oral_archive, url: 'https://bancodecontenidos.mincultura.gov.co/FichaDocumental?id=5344', locator: 纳里尼奥图马科音频与森林守护者简介}
+      - {citation: 波哥大文化休闲体育局，Mitos y leyendas de Colombia。, type: institutional_account, url: 'https://www.culturarecreacionydeporte.gov.co/es/principal/noticias/mitos-y-leyendas-de-colombia', locator: 母山的其他形象及森林背景}
+    compare: [case_br_sao_paulo_curupira]
+    bridge: {entry: BIO-5-0009, cluster: sid_myth, trail: all, label: 森林守护者与生境, rationale: 从不同地区的守林形象进入森林连通性，保留各地讲述之间的差别。}
+  - id: case_co_honda_magdalena_mohan
+    title: 哥伦比亚马格达莱纳河｜渔网边的莫汉
+    aliases: [El Mohán, Poira, 莫汉, Magdalena river spirit]
+    genre: folktale
+    location: {lat: 5.2067, lng: -74.7350, precision: city, location_name: 哥伦比亚托利马 · 洪达地区, culture_region: 南美洲 · 哥伦比亚}
+    location_note: 洪达是马格达莱纳河沿岸的区域参考；莫汉的故事流传于多个河畔社区。
+    paragraphs:
+      - 马格达莱纳河边，渔民讲起长发、爱音乐的莫汉：他可能坐在石头上抽烟，也可能捣乱缠住渔网，或让船上的人听见陌生的乐声。
+      - 一些版本把他描绘为守护河流的存在，另一些则强调他与洗衣女子、渔民的冲突。哥伦比亚文化部保存的音频又把故事与当代河流环境的变化联系起来。
+      - 洪达只是沿河参考点，不是所有莫汉故事的发生地。比较不同版本时，可以先看谁在说话、靠河生活的人如何描绘他，再看故事怎样进入广播。
+    sources:
+      - {citation: 哥伦比亚文化部，El Mohán el protector del Magdalena，广播资料。, type: oral_archive, url: 'https://bancodecontenidos.mincultura.gov.co/FichaDocumental?id=11677', locator: 河流、渔民与当代环境}
+      - {citation: 波哥大文化休闲体育局，Leyenda de El Mohán。, type: institutional_account, url: 'https://www.culturarecreacionydeporte.gov.co/es/bogotanitos/cuenta-la-leyenda/leyenda-de-el-mohan', locator: 托利马地区的莫汉传说}
+    bridge: {entry: BIO-5-0010, cluster: sid_myth, trail: all, label: 河流守护者与水域, rationale: 将渔民讲述与河流生态知识对读，区分故事里的守护者和可观察的环境变化。}
+  - id: case_pe_iquitos_chullachaqui
+    title: 秘鲁伊基托斯｜脚印不同的林中向导
+    aliases: [Chullachaqui, Chulla Chaqui, 亚马逊森林精灵]
+    genre: folktale
+    location: {lat: -3.7437, lng: -73.2516, precision: city, location_name: 秘鲁洛雷托 · 伊基托斯, culture_region: 南美洲 · 秘鲁}
+    location_note: 伊基托斯是秘鲁亚马逊地区的城市参考点；故事涉及洛雷托等更广阔地区。
+    paragraphs:
+      - 一个人走进亚马逊森林，遇见熟悉的亲友，对方便招手请他跟上。可是当来者的脚从衣服下露出来，他发现两只脚并不一样，这才想起关于 Chullachaqui 的故事。
+      - 一种伊基托斯版本说，这位林中存在能变成熟人，把人引到难以辨认方向的地方；另一些讲述又把他看作保护动物和森林的存在。
+      - 秘鲁文化材料和地方旅游档案都保存了相关版本。名称、外形和行为随讲述者变化，伊基托斯只是地图上的地区入口。
+    sources:
+      - {citation: 秘鲁文化部，Directorio de Arte Nativa，2017，Chullachaqui 传说。, type: official_archive, url: 'https://cdn.www.gob.pe/uploads/document/file/473755/2_Directorio_Arte_Nativa_2017.pdf', locator: 伊基托斯版本与不同的脚}
+      - {citation: 秘鲁旅游资源名录，Leyenda del Chullachaqui。, type: official_archive, url: 'https://consultasenlinea.mincetur.gob.pe/fichaInventario/index.aspx?cod_ficha=13686', locator: 洛雷托和亚马逊地区的不同讲述}
+    compare: [case_br_sao_paulo_curupira]
+    bridge: {entry: BIO-5-0008, cluster: sid_myth, trail: all, label: 森林向导与地方生境, rationale: 将变形向导的故事与亚马逊生境知识并读，保留不同社区讲述的细节。}
+  - id: case_br_santa_catarina_boitata
+    title: 巴西圣卡塔琳娜｜火蛇与独眼牛
+    aliases: [Boitatá, Boitata, Cobra de fogo, 巴西火蛇]
+    genre: folktale
+    location: {lat: -27.5949, lng: -48.5482, precision: city, location_name: 巴西圣卡塔琳娜 · 弗洛里亚诺波利斯, culture_region: 南美洲 · 巴西}
+    location_note: 弗洛里亚诺波利斯是州级文化调查列出的地区之一；故事在巴西多个地区有不同版本。
+    paragraphs:
+      - 巴西许多讲述把 Boitatá 描绘成燃烧的蛇，它出现在夜色中，保护田野和森林免受纵火者破坏。有人说它也会变成一截发光的木头。
+      - 圣卡塔琳娜州的文化调查还记录了不同的模样：在当地一种讲法里，它像一头巨大、额头中央只有一只发光眼睛的牛。名字相同，形象却可以差得很远。
+      - 调查文献提到地方对于夜间光现象的解释，但这并不证明每一则火蛇叙事都来自同一种自然现象；不同故事应保留自己的讲述细节。
+    sources:
+      - {citation: 巴西国家历史艺术遗产研究所，圣卡塔琳娜非物质文化遗产调查，Boitatá 条目。, type: official_archive, url: 'https://portal.iphan.gov.br/uploads/ckfinder/arquivos/Anexo_1_referencia_cultural_pnpi.pdf', locator: 第 31 页，火蛇与圣卡塔琳娜独眼牛版本}
+      - {citation: 巴西国家民俗与大众文化中心，Boitatá 词条。, type: institutional_account, url: 'https://antigo.cnfcp.gov.br/tesauro/00000517.htm', locator: 火蛇形象与田野保护传说}
+      - {citation: 圣卡塔琳娜州立大学，Franklin Cascaes 的 Boitatá 与生态，2022。, type: academic_article, url: 'https://www.revistas.udesc.br/index.php/tempo/es/article/view/2175180314352022e0201', locator: 圣卡塔琳娜地方艺术中的火蛇形象}
+      - {citation: Elisa Aparecida Corrêa，圣卡塔琳娜州立大学硕士论文，2021。, type: academic_thesis, url: 'https://www.udesc.br/arquivos/ceart/id_cpmenu/9601/Elisa_Aparecida_Correa_Dissertacao_16300918733874_9601.pdf', locator: 圣卡塔琳娜的民俗形象与火蛇故事}
+    compare: [case_uy_animas_luz_mala]
+    bridge: {entry: BIO-5-0008, cluster: sid_myth, trail: all, label: 火蛇与森林环境, rationale: 对读守护林地的故事和实际栖息地知识，不把地方叙事压缩成单一自然解释。}
+  - id: case_br_jau_saci_whirlwind
+    title: 巴西雅乌｜旋风里的萨西
+    aliases: [Saci Pererê, Saci, 萨西, 雅乌市萨西日]
+    genre: folktale
+    location: {lat: -22.2967, lng: -48.5589, precision: city, location_name: 巴西圣保罗州 · 雅乌, culture_region: 南美洲 · 巴西}
+    location_note: 雅乌是本条市政纪念资料的地点；萨西故事并不限于这一座城市。
+    paragraphs:
+      - 厨房里的豆子烧糊了，针线莫名打结，屋外一阵小旋风卷过：在巴西的故事里，这些恶作剧常被算到萨西头上。他常被画成戴红帽、只有一条腿的小个子。
+      - 关于他的来源、性格和捕捉方法，各地说法不尽相同。市政文化资料记录了萨西日，布坦坦研究所也介绍了他后来进入儿童文学和漫画的过程。
+      - 从口头趣谈到出版物，同一个人物不断改变形象。读者可以把日常琐事、讲述者和媒介改编一起放进故事的背景。
+    sources:
+      - {citation: 雅乌市政府，Dia do Saci，2022。, type: official_archive, url: 'https://www.jau.sp.gov.br/noticia/11946/defesa-civil', locator: 旋风、红帽与市政纪念}
+      - {citation: Instituto Butantan，Dia do Saci，2023。, type: institutional_account, url: 'https://butantan.gov.br/bubutantan/dia-do-saci-conheca-a-historia-nao-tao-doce-mas-cheia-de-travessuras-da-lenda-do-folclore-brasileiro', locator: 萨西的恶作剧与文学改编}
+    bridge: {entry: HIS-6-0009, cluster: sid_myth, trail: all, label: 萨西从口述走进书页, rationale: 对读地方节日、口述形象和儿童文学改编，留意人物跨媒介时的变化。}
+  - id: case_br_rio_headless_mule
+    title: 巴西｜夜路上的无头骡
+    aliases: [Mula sem Cabeça, Mula-sem-cabeça, 巴西无头骡]
+    genre: folktale
+    location: {lat: -22.9068, lng: -43.1729, precision: culture_region, location_name: 巴西 · 里约热内卢（国家参考）, culture_region: 南美洲 · 巴西}
+    location_note: 里约热内卢是出版故事资料的城市参考；无头骡在巴西不同地区都有流传。
+    paragraphs:
+      - 漆黑乡路上，一匹骡子飞奔而来，头部的位置喷着火。不同版本对她为何变形各有解释，但夜里马蹄声和火光往往先于身影出现。
+      - 里约教育资料的一种版本讲，一个人跟随妻子到墓地，惊见她变成无头骡后奔走；巴西民俗中心则把她概括为受诅咒而变形的角色。
+      - 这些版本将变身、夜路与社会禁忌编在一起。此处保留各来源之间的差异，不把不同讲法拼成一个确定的生平。
+    sources:
+      - {citation: Prefeitura do Rio，Folclore Brasileiro，Mula sem Cabeça，市政教育资料转载本。, type: institutional_account, url: 'https://www.britania.go.gov.br/wp-content/uploads/2020/03/FOLCLORE-BRASILEIRO.pdf', locator: 无头骡与墓地变身版本}
+      - {citation: 巴西国家民俗与大众文化中心，Mula-sem-cabeça 词条。, type: institutional_account, url: 'https://antigo.cnfcp.gov.br/tesauro/00000550.htm', locator: 夜行、变形与火光形象}
+    compare: [case_co_bogota_green_coat_ghost]
+    bridge: {entry: LIT-2-0006, cluster: sid_liminal, trail: all, label: 夜路上的声音与火光, rationale: 比较脚步、马蹄和火光在不同城市与乡路故事中如何塑造场景。}
+  - id: case_pl_leczyca_boruta_castle
+    title: 波兰文奇察｜住在城堡里的博鲁塔
+    aliases: [Boruta, Diabeł Boruta, Łęczyca Castle, 文奇察恶魔]
+    genre: folktale
+    location: {lat: 52.0594, lng: 19.2015, precision: city, location_name: 波兰 · 文奇察, culture_region: 欧洲 · 波兰}
+    location_note: 文奇察为城堡博物馆所在城镇参考；各版本还发生在周围河流和乡村。
+    paragraphs:
+      - 文奇察城堡的故事里，博鲁塔会变换模样：有时像衣着体面的绅士在庭院散步，有时化作猫头鹰守着地下室的宝物，也可能在河里变成带角的大鱼。
+      - 博物馆还讲一个舞会版本：陌生男子邀请姑娘跳舞，后来她和母亲发现他有一只马蹄，才怀疑他就是博鲁塔。故事最后以一场喧闹收尾。
+      - 城堡博物馆如今收藏和展示许多博鲁塔雕像，让乡间讲述、地貌与当代民间艺术在同一处相遇。
+    sources:
+      - {citation: Muzeum w Łęczycy，Diabeł Boruta，常设展览与地方故事。, type: institutional_account, url: 'https://www.muzeumleczyca.pl/diabel-boruta/', locator: 不同化身、舞会故事与雕像收藏}
+      - {citation: Muzeum w Łęczycy，The Museum。, type: institutional_account, url: 'https://www.muzeumleczyca.pl/the-museum/', locator: 城堡博物馆与地方收藏}
+    compare: [case_tt_port_of_spain_la_diablesse]
+    bridge: {entry: REL-5-0005, cluster: sid_myth, trail: all, label: 博鲁塔的多种化身, rationale: 对读地方口述与博物馆雕像，观察同一人物怎样适应不同故事场景。}
+  - id: case_rs_medvedja_paole_commission
+    title: 塞尔维亚梅德韦贾｜1732 年的吸血鬼调查
+    aliases: [Medveđa, Arnold Paole, Visum et Repertum, 梅德韦贾吸血鬼报告]
+    genre: historical_archive
+    location: {lat: 43.6307, lng: 21.0757, precision: city, location_name: 塞尔维亚 · 特尔斯泰尼克附近梅德韦贾, culture_region: 欧洲 · 塞尔维亚}
+    location_note: 坐标是特尔斯泰尼克辖区的梅德韦贾村庄参考，不是墓地的确切位置；与塞尔维亚南部同名市镇不同。
+    paragraphs:
+      - 1731 至 1732 年，哈布斯堡边境村庄梅德韦贾连续出现死亡，当地人将其中一些死亡与已故的阿诺尔德·保莱联系起来。官员和外科医生因此前往调查。
+      - 后来的报告记录了询问、开墓以及调查者对遗体状况的判断。这份调查成为欧洲有关吸血鬼讨论的重要材料，也给后世留下了理解当时恐惧与行政处置的线索。
+      - 诺维萨德大学研究者讨论了文献中的地点和考古问题。报告证明了调查与当时的信念存在，并不能证明死者曾以超自然方式伤人。
+    sources:
+      - {citation: Istraživanja，The Vampirlija Hill in the Village of Mijajlovac，诺维萨德大学，2021。, type: academic_article, url: 'https://istrazivanja.ff.uns.ac.rs/index.php/istr/en/article/download/2177/2199/3985', locator: 1732 年调查、Medveđa 与地点辨析}
+      - {citation: 奥地利国家档案馆，300 Jahre Karl VI，关于 1731 至 1732 年调查的章节。, type: official_archive, url: 'https://www.oesta.gv.at/dam/jcr%3A15032f8b-e14c-4f8f-b567-1bf74090b963/300jahre-karl-vi.pdf', locator: 调查官员与当时书面记录}
+    compare: [case_rs_kisiljevo_petar_vampire]
+    bridge: {entry: FOR-1-0007, cluster: sid_crypt, trail: all, label: 开墓报告与证据边界, rationale: 对读两起不同村庄的历史调查，区分官方记录、当时判断与现代证据。}

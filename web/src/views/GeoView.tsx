@@ -4,7 +4,7 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { FeatureCollection, LineString, MultiLineString, Point } from 'geojson';
-import { coordinatesOf, geographicCases, isFiction, isModernReading, locationPrecision, mapLabel, READING_LABELS,
+import { coordinatesOf, geographicCases, isFiction, isModernReading, locationPrecision, mapLabel, readingLabel,
   type Coordinates, type GraphIndex, type GraphNode, type ViewSelection } from '../graph';
 import { addStreetDetail, mapStyle } from './geoStyle';
 import { loadOverviewMapFonts } from './geoFonts';
@@ -581,7 +581,7 @@ export default function GeoView({ graph, selection, codeIds, focus, onSelect, on
                 onClick={(event) => onSelect(node.id, event.shiftKey)}>
                 <strong>{node.title}</strong>
                 <small>{mapLabel(node)} · {node.reading && isModernReading(node)
-                  ? READING_LABELS[node.reading.kind] : locationPrecision(node)}</small>
+                  ? readingLabel(node) : locationPrecision(node)}</small>
               </button>
             </li>)}</ul> : <p role="status">当前视野内没有条目。</p>}
           </section>}

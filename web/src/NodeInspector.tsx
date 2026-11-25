@@ -5,7 +5,7 @@ import { DossierCodes, type CodeInteractions } from './DossierCodes';
 import { TIER_META, tierSeal } from './engraving';
 import {
   coordinatesOf, dossierCodes, EVIDENCE, geographicCases, isFiction, LAYERS, linkKey, locationPrecision, mapLabel, otherEnd,
-  READING_LABELS, RELATIONS, shortNodeLabel, STANDARDS, type Citation, type GraphIndex, type GraphNode,
+  readingLabel, RELATIONS, shortNodeLabel, STANDARDS, type Citation, type GraphIndex, type GraphNode,
 } from './graph';
 
 const RELATION_PAGE_SIZE = 80;
@@ -332,7 +332,7 @@ export function NodeInspector({ node, graph, portalHref, onSelect, onClose, onCo
         </div>}
         {reading && paragraphs.length > 0
           ? <section className="reading-section" data-section="reading" data-reading-kind={reading.kind}>
-            <h4>{READING_LABELS[reading.kind]}</h4>
+            <h4>{readingLabel(node)}</h4>
             {paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
             <div className="reading-citations" aria-label="提要出处">
               <span>出处</span>

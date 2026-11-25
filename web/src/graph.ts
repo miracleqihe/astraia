@@ -142,8 +142,22 @@ export const READING_LABELS: Record<ReadingKind, string> = {
   research: '研究提要', archive: '档案提要', edition: '古籍正文',
 };
 
+export function readingLabel(node: GraphNode): string {
+  if (!node.reading) return '资料';
+  if (node.reading.kind === 'legend') {
+    const explicit: Record<string, string> = {
+      folktale: '民间故事', fabulate: '地方传说', myth: '神话故事',
+      memorate: '亲历叙述', historical_archive: '历史个案',
+    };
+    if (explicit[node.genre]) return explicit[node.genre];
+  }
+  return READING_LABELS[node.reading.kind];
+}
+
 export function isModernReading(node: GraphNode): boolean {
-  return node.reading?.kind === 'legend' || node.reading?.kind === 'report';
+  if (node.reading?.kind === 'report') return true;
+  return node.reading?.kind === 'legend'
+    && !['folktale', 'fabulate', 'myth', 'historical_archive'].includes(node.genre);
 }
 
 export function isEditorialReading(node: GraphNode): boolean {
@@ -282,7 +296,7 @@ export function matchesQuery(node: GraphNode, query: string): boolean {
     return Array.isArray(values) ? values.map((code) => `${label} ${code}`) : [];
   });
   const fields = [node.title, node.id, ...node.aliases, node.spatial?.location_name,
-    node.reading?.map_label, node.reading ? READING_LABELS[node.reading.kind] : undefined,
+    node.reading?.map_label, node.reading ? readingLabel(node) : undefined,
     node.temporal?.era_label, node.temporal?.year_start, node.temporal?.year_end,
     ...Object.values(node.standards).flat(), ...formattedCodes,
     ...node.sources.flatMap(({ citation, locator, doi }) => [citation, locator, doi])];

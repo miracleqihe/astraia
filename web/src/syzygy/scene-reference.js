@@ -123,9 +123,13 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       const codes = Object.entries(codeLabels).flatMap(([key, label]) => (node.standards?.[key] ?? []).map(code => `${label} ${code}`));
       const linkStatus = b.edge?.type === 'EXPLAINED_BY' ? b.edge.status : null;
       const confidence = linkStatus === 'confirmed' ? 'CONFIRMED' : linkStatus === 'refuted' ? 'DEBUNKED' : linkStatus ? 'UNVERIFIED' : 'CONTEXT';
+      const genre = genreContract(node);
+      const explicitGenres = ['MYTH', 'FABULATE', 'FOLKTALE', 'MEMORATE', 'HISTORICAL'];
+      const readingGenre = node.reading?.kind === 'legend' && explicitGenres.includes(genre)
+        ? genreLabels[genre] : typeLabels[node.reading?.kind] ?? '资料';
       return { ...b, confidence, hasCoordinates,
         umbraGeo:{lat:hasCoordinates ? sp.lat : null, lon:hasCoordinates ? sp.lng : null, place:sp?.location_name || '未记录地点'},
-        mythos:{...node, genre_contract:genreContract(node), genre:typeLabels[node.reading?.kind] ?? '资料', taxonomies:codes,
+        mythos:{...node, genre_contract:genre, genre:readingGenre, taxonomies:codes,
           narrative:(node.reading?.paragraphs ?? []).join('\n')},
         layers: b.related ? [b.related.title, ...(b.related.reading?.paragraphs?.slice(0,1) ?? [])] : ['主题对读：从相关知识条目继续探索'],
         physis:{...entry, code:entry.id, volLabel:`${entry.volume} · ${book.subjects.find(s => s.id === entry.subject)?.title ?? entry.subject}`,

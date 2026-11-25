@@ -1,6 +1,6 @@
 import { useDeferredValue, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { coordinatesOf, isEditorialReading, isFiction, LAYERS, LAYER_ORDER, mapLabel, matchesQuery,
-  nodeColor, READING_LABELS, type GraphNode } from './graph';
+  nodeColor, readingLabel, type GraphNode } from './graph';
 import { CONTENT_GROUPS, nodeContentGroup, nodeRegion, REGIONS, type ContentGroup, type Region } from './catalogueBrowse';
 
 export type DirectoryScope = 'all' | 'stories' | 'modern' | 'research';
@@ -112,7 +112,7 @@ export function NodeDirectory({ nodes, selectedId, scope, onScope, onClose, onSe
                         <span className={`node-shape shape-${layer}`} aria-hidden="true" />
                         <span className="directory-title">{node.title}
                           {(scope !== 'all' || region !== 'all' || content !== 'all') && node.reading && <span className="directory-preview">
-                            <small>{READING_LABELS[node.reading.kind]}{coordinatesOf(node) ? ` · ${mapLabel(node)}` : ''}</small>
+                            <small>{readingLabel(node)}{coordinatesOf(node) ? ` · ${mapLabel(node)}` : ''}</small>
                             {node.reading.paragraphs[0] && <span>{node.reading.paragraphs[0]}</span>}
                           </span>}
                         </span>

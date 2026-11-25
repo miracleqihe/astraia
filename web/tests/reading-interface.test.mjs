@@ -20,6 +20,8 @@ test('book navigation stays within the original subject and escapes titles',()=>
 
 test('genre is never inferred from source rank or title, and F remains a fiction marker',()=>{
   assert.equal(genreContract({genre:'memorate',credibility_tier:'A'}),'MEMORATE');
+  assert.equal(genreContract({genre:'folktale',credibility_tier:'A'}),'FOLKTALE');
+  assert.equal(genreContract({genre:'historical_archive',credibility_tier:'A'}),'HISTORICAL');
   assert.equal(genreContract({genre:'unclassified',title:'都市传说'}),'OTHER');
   assert.equal(genreContract({genre:'creepypasta_ostension',credibility_tier:'F'}),'OSTENSION');
   assert.equal(sourceTier({credibility_tier:'F'}),null);
