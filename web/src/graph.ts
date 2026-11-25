@@ -1,3 +1,4 @@
+import { publicAssetUrl } from './publicAssetUrl.js';
 export type Layer = 1 | 2 | 3 | 4;
 export type Tier = 'S' | 'A' | 'B' | 'C' | 'F';
 export type ViewMode = 'geo' | 'graph';
@@ -297,7 +298,7 @@ export async function loadSnapshot(signal: AbortSignal): Promise<GraphSnapshot> 
     const filename = candidates[index];
     let current: Response;
     try {
-      current = await fetch(`${import.meta.env.BASE_URL}data/${filename}`, {
+      current = await fetch(publicAssetUrl(import.meta.env.BASE_URL, `data/${filename}`), {
         signal, cache: import.meta.env.VITE_PUBLIC_DEMO === '1' ? 'no-cache' : 'no-store',
       });
     } catch (error) {
@@ -326,7 +327,7 @@ export async function loadSnapshot(signal: AbortSignal): Promise<GraphSnapshot> 
 export async function loadGraphDetails(snapshot: GraphSnapshot, signal: AbortSignal): Promise<GraphDetails> {
   if (!snapshot.details_file || !/^(graph|catalogue)_details\.json$/.test(snapshot.details_file)
     || !/^[a-f0-9]{64}$/.test(snapshot.details_sha256 ?? '')) throw new Error('图谱正文索引无效。');
-  const response = await fetch(`${import.meta.env.BASE_URL}data/${snapshot.details_file}?v=${snapshot.details_sha256}`, { signal, priority: 'low' });
+  const response = await fetch(`${publicAssetUrl(import.meta.env.BASE_URL, `data/${snapshot.details_file}`)}?v=${snapshot.details_sha256}`, { signal, priority: 'low' });
   if (!response.ok) throw new Error(`读取正文失败 (${response.status})。`);
   const bytes = await response.arrayBuffer();
   if (globalThis.crypto?.subtle) {

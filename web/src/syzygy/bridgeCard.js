@@ -1,3 +1,4 @@
+import { publicAssetUrl } from '../publicAssetUrl.js';
 import { handbookText, bookNavigation, bindBookNavigation } from './readable';
 import { storyShare, bindStoryShare } from './sharing';
 import { originalPageButton, bindOriginalPages } from './originalPages';
@@ -77,7 +78,7 @@ export function renderBridgeCard(bridge, { root, onJump, onSelectRelated, onRead
         <div class="syzygy-read-links">${originalPageButton(knowledge.page)}</div>
         <div class="syzygy-prose syzygy-book-body">${knowledge.body ? handbookText(knowledge.body, root) : '正在读取原书正文…'}</div>
         ${bookNavigation(knowledge, bookEntries)}
-        <div class="syzygy-read-links"><a href="${bookLink}">精查万象星枢</a><a href="${root}knowledge/handbook.pdf#page=${encodeURIComponent(knowledge.page)}" target="_blank" rel="noopener">打开原书 PDF</a></div>
+        <div class="syzygy-read-links"><a href="${bookLink}">精查万象星枢</a><a href="${publicAssetUrl(root, 'knowledge/handbook.pdf')}#page=${encodeURIComponent(knowledge.page)}" target="_blank" rel="noopener">打开原书 PDF</a></div>
         <div class="syzygy-read-links"><button class="action-pill ctl-btn" data-jump="omnia">✦ 格物星点</button><button class="action-pill ctl-btn" data-jump="sidera">+ 玄象星络</button><button class="action-pill ctl-btn" data-jump="umbra" ${bridge.hasCoordinates ? '' : 'disabled title="该条目没有坐标"'}>◇ 坤舆坐标</button></div>
         <p class="syzygy-match-heading">此材料的其他知识对照</p><div data-curated-suggestions></div>
       </section>

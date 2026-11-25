@@ -1,3 +1,4 @@
+import { publicAssetUrl } from '../publicAssetUrl.js';
 const hashPattern = /^[a-f0-9]{64}$/;
 const manifests = new Map();
 
@@ -44,7 +45,7 @@ export function bindOriginalPages(container, root, book) {
         number.value=String(current); number.max=String(manifest.page_count);
         dialog.querySelector('[data-total]').textContent=`/ ${manifest.page_count}`;
         prev.disabled=current === 1; next.disabled=current === manifest.page_count;
-        const item=manifest.pages[current-1], response=await fetch(`${root}knowledge/pages/${item.file}`);
+        const item=manifest.pages[current-1], response=await fetch(publicAssetUrl(root, `knowledge/pages/${item.file}`));
         if (!response.ok) throw new Error('页图读取失败。');
         const bytes=await response.arrayBuffer();
         if (!globalThis.crypto?.subtle) throw new Error('当前浏览器无法校验页图，请使用安全连接。');

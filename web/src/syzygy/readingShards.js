@@ -1,3 +1,4 @@
+import { publicAssetUrl } from '../publicAssetUrl.js';
 import { shardKey } from './shardKey.js';
 
 const hashPattern = /^[a-f0-9]{64}$/;
@@ -39,7 +40,7 @@ export function createReadingShards(root, graph, book) {
     if (!cache.has(key)) {
       const pending = (async () => {
         const part = manifest[kind].parts[bucket];
-        const response = await fetch(`${root}syzygy/shards/${part.file}`);
+        const response = await fetch(publicAssetUrl(root, `syzygy/shards/${part.file}`));
         if (!response.ok) throw new Error(`正文读取失败 (${response.status})`);
         const bytes = await response.arrayBuffer();
         if (!globalThis.crypto?.subtle) throw new Error('当前浏览器无法校验正文，请使用安全连接或更新浏览器。');

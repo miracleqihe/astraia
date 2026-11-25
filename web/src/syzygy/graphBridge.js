@@ -1,3 +1,4 @@
+import { publicAssetUrl } from '../publicAssetUrl.js';
 const normalize = value => String(value ?? '').normalize('NFKC').toLocaleLowerCase();
 const textCache = new WeakMap();
 
@@ -19,7 +20,7 @@ export function matchesGraph(node, query) {
 export async function loadGraph(root, publicSite) {
   const names = publicSite ? ['graph_index.json', 'graph_data.json'] : ['catalogue_data.json', 'graph_data.json'];
   for (const name of names) {
-    const response = await fetch(`${root}data/${name}`, { cache: 'no-cache' });
+    const response = await fetch(publicAssetUrl(root, `data/${name}`), { cache: 'no-cache' });
     if (!response.ok || !response.headers.get('content-type')?.includes('json')) continue;
     const graph = await response.json();
     if (graph.schema_version !== 1 || !Array.isArray(graph.nodes) || !Array.isArray(graph.links)) throw new Error('图谱数据格式不匹配。');
@@ -31,7 +32,7 @@ export async function loadGraph(root, publicSite) {
 export async function loadDetails(root, graph) {
   if (!graph.details_file) return new Map(graph.nodes.map(node => [node.id, node]));
   if (!/^(graph|catalogue)_details\.json$/.test(graph.details_file) || !/^[a-f0-9]{64}$/.test(graph.details_sha256 ?? '')) throw new Error('图谱正文索引无效。');
-  const response = await fetch(`${root}data/${graph.details_file}?v=${graph.details_sha256}`);
+  const response = await fetch(`${publicAssetUrl(root, `data/${graph.details_file}`)}?v=${graph.details_sha256}`);
   if (!response.ok) throw new Error(`图谱正文读取失败 (${response.status})。`);
   const bytes = await response.arrayBuffer();
   if (globalThis.crypto?.subtle) {

@@ -1,3 +1,4 @@
+import { publicAssetUrl } from './publicAssetUrl.js';
 import { Children, lazy, Suspense, startTransition, useDeferredValue, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -216,7 +217,7 @@ export default function LifeKnowledge() {
   }
   if (error) return <div className="life-status" role="alert">知识星图加载失败：{error}</div>;
   if (!book) return <div className="life-status" role="status">正在载入知识星图…</div>;
-  const pdfUrl = `${base}knowledge/handbook.pdf#page=${selected?.page ?? 1}`;
+  const pdfUrl = `${publicAssetUrl(base, 'knowledge/handbook.pdf')}#page=${selected?.page ?? 1}`;
   const subjectLabel = book.subjects.find((item) => item.id === subject)?.title ?? volume ?? '全部学科';
   const volumes = [...new Set(book.subjects.map((item) => item.volume))];
   const isSaved = selected ? Object.hasOwn(observations, selected.id) : false;
@@ -332,7 +333,7 @@ export default function LifeKnowledge() {
                 return <span className="life-figure" role="group" aria-label="原书图表及说明">
                   <button className="life-figure-open" type="button" aria-label="放大原书图表"
                     onClick={() => setEnlargedFigure({ src, alt: alt ?? '原书图表' })}>
-                    <img src={`${base}knowledge/${src}`} alt={alt ?? '原书图表'} loading="lazy" />
+                    <img src={publicAssetUrl(base, `knowledge/${src}`)} alt={alt ?? '原书图表'} loading="lazy" />
                     <span>查看大图 ↗</span>
                   </button>
                   {figure?.text && <span className="life-figure-text">{figure.text}</span>}
@@ -343,7 +344,7 @@ export default function LifeKnowledge() {
               if (src?.startsWith('figures/')) return <span className="life-figure" role="group" aria-label="原书图表及说明">
                 <button className="life-figure-open" type="button" aria-label="放大原书图表"
                   onClick={() => setEnlargedFigure({ src, alt: alt ?? '原书图表' })}>
-                  <img src={`${base}knowledge/${src}`} alt={alt ?? ''} loading="lazy" />
+                  <img src={publicAssetUrl(base, `knowledge/${src}`)} alt={alt ?? ''} loading="lazy" />
                   <span>查看大图 ↗</span>
                 </button>
                 {alt && <span className="life-figure-text">{alt}</span>}
@@ -390,7 +391,7 @@ export default function LifeKnowledge() {
       <section className="life-zoom-sheet" role="dialog" aria-modal="true" aria-label="原书图表大图">
         <div className="life-zoom-head"><strong>原书图表</strong>
           <button type="button" autoFocus onClick={() => setEnlargedFigure(null)}>关闭 ×</button></div>
-        <img src={`${base}knowledge/${enlargedFigure.src}`} alt="原书图表放大图" />
+        <img src={publicAssetUrl(base, `knowledge/${enlargedFigure.src}`)} alt="原书图表放大图" />
         <p>{book.figures?.[enlargedFigure.src.slice('inline-figures/'.length)]?.text ?? enlargedFigure.alt}</p>
         <div className="life-figure-links">{book.figures?.[enlargedFigure.src.slice('inline-figures/'.length)]?.links.map((href, index) =>
           <a key={href} href={href} target="_blank" rel="noreferrer">图源与许可 {index + 1} ↗</a>)}</div>

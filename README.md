@@ -253,6 +253,8 @@ py -m venv .venv
 .\.venv\Scripts\python.exe -X utf8 -m pipeline.publish_site --publish
 ```
 
+源文件仍按原来的方式提交、推送。正式发布会由网站仓库的 GitHub Actions 同步新增或修改的 PDF、图像和图谱资源到 R2，验证通过后部署至 GitHub Pages。R2 凭据由发布仓库的 Actions Secrets 管理。
+
 最后一条命令可随时按照当前草稿重建清单。对从头重新导入的苏格兰批次，可先运行 `pipeline.enrich_scottish`，从本地调查库的 `WDB_Reference` 表补充史料索引。命令在输入文件、码表和已有草稿之间保留各自的出处与哈希。
 
 日文研批次读取本地保存的官方馆藏卡 HTML，保留馆藏号、所引书目、引用页和地域。条目中的年份指引用资料的出版时间。明确对应地名的市镇参考坐标与出处存放在 `reference/nichibun_places.yaml`。馆藏页中的正文与摘要可通过原链接回查。若要向新知识库重建批次，可执行以下命令。
