@@ -131,6 +131,7 @@
 }
 .guide-entry:first-of-type { border-top: var(--border-crisp); }
 .guide-entry:hover { background: var(--folio-paper-alt); }
+.guide-entry-link { text-decoration: none; }
 .guide-entry strong { display: block; font-size: .9rem; }
 .guide-entry small { display: block; margin-top: 3px; color: var(--ink-muted); font-size: 12px; }
 
@@ -154,7 +155,7 @@
 .code-filter-banner {
   position: absolute;
   z-index: 6;
-  top: 22px;
+  top: 26px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -163,7 +164,7 @@
   max-width: calc(100% - 45px);
   padding: 5px 7px 5px 9px;
   border: 1px solid var(--brass-tick);
-  background: var(--plate-bg);
+  background: rgba(9, 14, 24, 0.94);
   color: var(--folio-paper);
   font-size: 12px;
 }
@@ -172,8 +173,8 @@
 
 .stage-heading p, .scene-footer, .control-rail, .chronology { color: rgba(234, 229, 217, .88); font-size: 12px; }
 .rail-search small { color: rgba(234, 229, 217, .78); font-size: 11px; }
-.rail-caption { font-size: 11px; }
-.control-rail[data-layers='true'] { width: 132px; }
+.rail-caption { font-size: 10px; }
+.control-rail[data-layers='true'] { width: 142px; }
 .control-rail .rail-flatten {
   border: var(--border-plate);
   min-width: 49px;

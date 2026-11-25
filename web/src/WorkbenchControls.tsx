@@ -1,6 +1,6 @@
 import { useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { LAYERS, matchesQuery, type GraphNode, type Layer, type Tier, type ViewMode } from './graph';
-import { tierSeal } from './engraving';
+import { TIER_META, tierSeal } from './engraving';
 
 const TIERS: Tier[] = ['S', 'A', 'B', 'C', 'F'];
 const LAYERS_DESC: Layer[] = [4, 3, 2, 1];
@@ -31,9 +31,9 @@ interface RailProps {
 
 export function ControlRail(props: RailProps) {
   return <aside className="control-rail" data-layers={props.mode === 'graph'} aria-label="图层与信源筛选">
-    <button type="button" className="rail-search" onClick={props.onSearch} title="搜索节点 (Ctrl/⌘ K)" aria-label="搜索节点">⌕ <small>⌘K</small></button>
+    <button type="button" className="rail-search" onClick={props.onSearch} title="搜索节点 (Ctrl/⌘ K)" aria-label="搜索节点">⌕ 检索 <small>⌘K</small></button>
     {props.mode === 'graph' && <>
-      <span className="rail-caption">图层</span>
+      <span className="rail-caption">图层 · LAYERS</span>
       {LAYERS_DESC.map((layer) => <div className="rail-layer" key={layer}>
         <button type="button" className="rail-layer-name" aria-pressed={props.activeLayer === layer || props.soloLayer === layer}
           onClick={() => props.onLayer(layer)} onDoubleClick={() => props.onSolo(layer)} title="点击聚焦，双击平铺">
@@ -47,9 +47,14 @@ export function ControlRail(props: RailProps) {
       <label className="rail-spread"><span>层距</span><input type="range" min="60" max="220" step="10" value={props.spread}
         aria-label="Z 轴层距" onChange={(event) => props.onSpread(Number(event.target.value))} /></label>
     </>}
-    <span className="rail-caption">SOURCE</span>
-    <div className="rail-tiers">{TIERS.map((tier) => <button key={tier} type="button" aria-label={`${tier} 级信源`}
-      aria-pressed={props.tiers.has(tier)} onClick={() => props.onTier(tier)}><span className="rail-seal" dangerouslySetInnerHTML={{ __html:tierSeal(tier) }} /></button>)}</div>
+    <span className="rail-caption" title="按资料信源等级筛选：S/A/B/C 级为实证与文献记录，F 级为虚构隔离区">信源 · SOURCE</span>
+    <div className="rail-tiers">{TIERS.map((tier) => {
+      const meta = TIER_META[tier];
+      return <button key={tier} type="button" data-tier={tier} title={`${meta.title}（${meta.summary}）`}
+        aria-label={meta.title} aria-pressed={props.tiers.has(tier)} onClick={() => props.onTier(tier)}>
+        <span className="rail-seal" dangerouslySetInnerHTML={{ __html: tierSeal(tier) }} />
+      </button>;
+    })}</div>
   </aside>;
 }
 
@@ -63,17 +68,26 @@ interface TimelineProps {
 export function Chronology({ bounds, value, ticks, onChange }: TimelineProps) {
   if (!bounds || !value || bounds[0] === bounds[1]) return null;
   const [minimum, maximum] = bounds;
+  const span = Math.max(1, maximum - minimum);
+  const startPct = ((value[0] - minimum) / span) * 100;
+  const endPct = ((value[1] - minimum) / span) * 100;
+  const formatYear = (year: number) => year < 0 ? `前${-year}` : String(year);
   return <div className="chronology" aria-label="年代筛选">
     <span className="chronology-title">年代</span>
     <div className="chronology-track">
       <div className="chronology-ticks" aria-hidden="true">{ticks.map((year) => <i key={year}
-        style={{ left: `${((year - minimum) / (maximum - minimum)) * 100}%` }} />)}</div>
-      <input aria-label="起始年份" type="range" min={minimum} max={maximum} value={value[0]}
+        style={{ left: `${((year - minimum) / span) * 100}%` }} />)}</div>
+      <div className="chronology-rail" aria-hidden="true">
+        <span className="chronology-fill" style={{ left: `${startPct}%`, width: `${Math.max(0.6, endPct - startPct)}%` }} />
+      </div>
+      <input className="chronology-thumb chronology-thumb-start" style={{ zIndex: startPct > 92 ? 4 : 2 }}
+        aria-label="起始年份" type="range" min={minimum} max={maximum} value={value[0]}
         onChange={(event) => onChange([Math.min(Number(event.target.value), value[1]), value[1]])} />
-      <input aria-label="结束年份" type="range" min={minimum} max={maximum} value={value[1]}
+      <input className="chronology-thumb chronology-thumb-end"
+        aria-label="结束年份" type="range" min={minimum} max={maximum} value={value[1]}
         onChange={(event) => onChange([value[0], Math.max(Number(event.target.value), value[0])])} />
     </div>
-    <span className="chronology-value">{value[0]} — {value[1]}</span>
+    <span className="chronology-value">{formatYear(value[0])} — {formatYear(value[1])}</span>
   </div>;
 }
 

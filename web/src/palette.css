@@ -1,19 +1,47 @@
 :root {
-  --plate-bg: #101722;
-  --plate-grid: rgba(239, 236, 230, 0.12);
-  --vellum-sheet: rgba(239, 236, 230, 0.16);
-  --vellum-edge: rgba(239, 236, 230, 0.55);
-  --constellation-line: #EAE5D9;
-  --brass-tick: #C29D59;
+  /* Unified Astraia Observatory × Engraved Codex Design Tokens */
+  --topbar-height: 52px;
+  --void-deep: #060a13;
+  --void-surface: #0b111d;
+  --plate-bg: #0c121e;
+  --plate-elevated: #111929;
+  --plate-inset: #070b14;
+  --plate-grid: rgba(239, 236, 230, 0.11);
+  --vellum-sheet: rgba(239, 236, 230, 0.14);
+  --vellum-edge: rgba(239, 236, 230, 0.52);
+  --constellation-line: #eae5d9;
 
-  --folio-paper: #EFECE6;
-  --folio-paper-alt: #E5E0D5;
-  --ink-prussian: #1B2A4A;
-  --ink-muted: #5A6578;
-  --ink-vermilion: #9E2A2B;
-  --ink-verified: #1F5E4B;
+  --brass-tick: #cfa962;
+  --brass-bright: #f0d79c;
+  --brass-muted: #9f8452;
+  --brass-hairline: rgba(207, 169, 98, 0.28);
+  --brass-faint: rgba(207, 169, 98, 0.12);
+
+  /* Parchment Reading Folio (古拓羊皮) */
+  --folio-paper: #f2ece1;
+  --folio-paper-alt: #e7dfd0;
+  --folio-paper-inset: #faf6ee;
+  --ink-prussian: #1b2740;
+  --ink-body: #252c3a;
+  --ink-muted: #5a5d66;
+  --ink-gold: #785520;
+  --ink-vermilion: #9e2a2b;
+  --ink-verified: #1f5e4b;
+  --ink-contested: #8a5b16;
+
+  /* Dark Obsidian Reading Folio (深空金错) */
+  --obsidian-paper: #0b0f18;
+  --obsidian-paper-alt: #111725;
+  --obsidian-paper-inset: #060910;
+  --obsidian-ink: #efe9dc;
+  --obsidian-muted: #a9a295;
+  --obsidian-verified: #63c7a7;
+  --obsidian-contested: #e6bc6a;
+  --obsidian-vermilion: #e0766c;
 
   --radius-none: 0px;
-  --border-crisp: 1px solid #1B2A4A;
-  --border-plate: 1px solid rgba(239, 236, 230, 0.24);
+  --border-crisp: 1px solid rgba(27, 39, 64, 0.36);
+  --border-crisp-strong: 1px solid #1b2740;
+  --border-plate: 1px solid rgba(207, 169, 98, 0.28);
+  --border-plate-subtle: 1px solid rgba(239, 236, 230, 0.18);
 }

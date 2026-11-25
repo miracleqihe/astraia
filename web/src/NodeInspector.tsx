@@ -2,12 +2,50 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { DossierCodes, type CodeInteractions } from './DossierCodes';
+import { TIER_META, tierSeal } from './engraving';
 import {
   coordinatesOf, dossierCodes, EVIDENCE, geographicCases, isFiction, LAYERS, linkKey, locationPrecision, mapLabel, otherEnd,
   READING_LABELS, RELATIONS, shortNodeLabel, STANDARDS, type Citation, type GraphIndex, type GraphNode,
 } from './graph';
 
 const RELATION_PAGE_SIZE = 80;
+
+interface PortalPreviewItem {
+  kind: 'curated' | 'theme';
+  entryId: string;
+  entryTitle: string;
+  label: string;
+}
+
+let bootPreviewPromise: Promise<Map<string, PortalPreviewItem>> | null = null;
+function loadPortalPreviewMap(): Promise<Map<string, PortalPreviewItem>> {
+  if (!bootPreviewPromise) {
+    const base = import.meta.env.BASE_URL;
+    bootPreviewPromise = fetch(`${base}syzygy/boot.json`, { cache: 'no-cache' })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        const map = new Map<string, PortalPreviewItem>();
+        if (Array.isArray(data?.bridges)) {
+          for (const bridge of data.bridges) {
+            const storyId = bridge?.mythos?.id;
+            const entryId = bridge?.physis?.id;
+            const entryTitle = bridge?.physis?.title;
+            if (storyId && entryId && entryTitle && !map.has(storyId)) {
+              map.set(storyId, {
+                kind: 'curated',
+                entryId,
+                entryTitle,
+                label: bridge.shortLabel || '精选心物对读',
+              });
+            }
+          }
+        }
+        return map;
+      })
+      .catch(() => new Map<string, PortalPreviewItem>());
+  }
+  return bootPreviewPromise;
+}
 
 const SOURCE_TYPES: Record<string, string> = {
   primary_archive: '原始档案', archival_catalogue: '档案目录', scholarly_database: '学术数据库',
@@ -161,6 +199,8 @@ interface Props {
 
 export function NodeInspector({ node, graph, portalHref, onSelect, onClose, onCompare, onNodeHover, codeInteraction, onLocate }: Props) {
   const [relationLimit, setRelationLimit] = useState(RELATION_PAGE_SIZE);
+  const [activeSection, setActiveSection] = useState<string>('reading');
+  const [portalPreview, setPortalPreview] = useState<PortalPreviewItem | null>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const links = graph.adjacency.get(node.id) ?? [];
   const layer = LAYERS[node.z_layer];
@@ -171,13 +211,24 @@ export function NodeInspector({ node, graph, portalHref, onSelect, onClose, onCo
   const hasText = hasOriginal(node);
   const hasOverview = paragraphs.length > 0 || (!hasText && (!!node.spatial || node.sources.length > 0));
   const codes = dossierCodes(node);
+  const tierMeta = TIER_META[node.credibility_tier];
   const geographicCount = useMemo(() => new Set(geographicCases(graph, node)
     .map((item) => coordinatesOf(item)?.join(','))).size, [graph, node]);
 
   useEffect(() => {
     if (contentRef.current) contentRef.current.scrollTop = 0;
-  }, [node.id]);
+    setActiveSection(hasOverview ? 'reading' : hasText ? 'text' : 'facts');
+  }, [node.id, hasOverview, hasText]);
   useEffect(() => setRelationLimit(RELATION_PAGE_SIZE), [node.id]);
+
+  useEffect(() => {
+    let active = true;
+    void loadPortalPreviewMap().then((map) => {
+      if (active) setPortalPreview(map.get(node.id) ?? null);
+    });
+    return () => { active = false; };
+  }, [node.id]);
+
   const orderedLinks = [...links].sort((left, right) => {
     const a = graph.byId.get(otherEnd(left, node.id))?.z_layer === 4 ? 0 : 1;
     const b = graph.byId.get(otherEnd(right, node.id))?.z_layer === 4 ? 0 : 1;
@@ -192,9 +243,27 @@ export function NodeInspector({ node, graph, portalHref, onSelect, onClose, onCo
     quickLinks.push(link);
     if (quickLinks.length === 3) break;
   }
-  const jump = (section: string) => contentRef.current?.querySelector(section)?.scrollIntoView({
-    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start',
-  });
+
+  const handleScroll = () => {
+    const scroller = contentRef.current;
+    if (!scroller) return;
+    const sections = [...scroller.querySelectorAll<HTMLElement>('[data-section]')];
+    if (!sections.length) return;
+    const top = scroller.getBoundingClientRect().top + 36;
+    let current = sections[0].dataset.section ?? 'reading';
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top <= top) current = section.dataset.section ?? current;
+    }
+    setActiveSection(current);
+  };
+
+  const jump = (section: string) => {
+    const name = section.match(/data-section="([^"]+)"/)?.[1];
+    if (name) setActiveSection(name);
+    contentRef.current?.querySelector(section)?.scrollIntoView({
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start',
+    });
+  };
 
   return (
     <aside id="node-inspector" className="inspector" aria-label="节点详情">
@@ -204,15 +273,23 @@ export function NodeInspector({ node, graph, portalHref, onSelect, onClose, onCo
           <div className="inspector-actions"><button type="button" className="compare-button" onClick={onCompare}>＋ 加入对比</button>
             <button type="button" className="icon-button close-inspector" aria-label="关闭节点详情" onClick={onClose}>×</button></div>
         </div>
-        <div className="record-meta">
-          <span className={`node-shape shape-${node.z_layer}`} aria-hidden="true" />
-          <span>L{node.z_layer} {layer.short}</span>
-          <span className="meta-divider" />
-          <span className="tier-label" data-fiction={isFiction(node)}>{isFiction(node) ? 'F 级虚构' : `${node.credibility_tier} 级信源`}</span>
+        <div className="inspector-title-row">
+          <div className="inspector-title-col">
+            <div className="record-meta">
+              <span className={`node-shape shape-${node.z_layer}`} aria-hidden="true" />
+              <span>L{node.z_layer} {layer.short}</span>
+              <span className="meta-divider" />
+              <span className="tier-label" data-fiction={isFiction(node)} title={tierMeta?.summary}>
+                {isFiction(node) ? 'F 级虚构' : `${node.credibility_tier} 级信源`}
+              </span>
+            </div>
+            <h3 className="record-title">{yearSuffix
+              ? <>{node.title.slice(0, -yearSuffix.length)}<wbr /><span className="record-year">{yearSuffix}</span></>
+              : node.title}</h3>
+          </div>
+          <span className="inspector-seal" title={tierMeta ? `${tierMeta.title} · ${tierMeta.summary}` : `${node.credibility_tier} 级信源`}
+            dangerouslySetInnerHTML={{ __html: tierSeal(node.credibility_tier) }} />
         </div>
-        <h3 className="record-title">{yearSuffix
-          ? <>{node.title.slice(0, -yearSuffix.length)}<wbr /><span className="record-year">{yearSuffix}</span></>
-          : node.title}</h3>
         {node.aliases[0] && node.aliases[0] !== node.title && <p className="record-alias">{node.aliases[0]}</p>}
         {coordinates && <div className="record-location">
           <span title={node.spatial?.location_name}>{mapLabel(node)}</span>
@@ -224,15 +301,21 @@ export function NodeInspector({ node, graph, portalHref, onSelect, onClose, onCo
       </div>
 
       <nav className="inspector-nav" aria-label="节点详情分区">
-        {hasOverview && <button type="button" onClick={() => jump('[data-section="reading"]')}>阅读</button>}
-        {hasText && <button type="button" onClick={() => jump('[data-section="text"]')}>原文</button>}
-        <button type="button" onClick={() => jump('[data-section="facts"]')}>概况</button>
-        <button type="button" onClick={() => jump('[data-section="sources"]')}>出处 <span>{node.sources.length}</span></button>
-        {links.length > 0 && <button type="button" onClick={() => jump('[data-section="relations"]')}>关联 <span>{links.length}</span></button>}
+        {hasOverview && <button type="button" aria-pressed={activeSection === 'reading'} onClick={() => jump('[data-section="reading"]')}>阅读</button>}
+        {hasText && <button type="button" aria-pressed={activeSection === 'text'} onClick={() => jump('[data-section="text"]')}>原文</button>}
+        <button type="button" aria-pressed={activeSection === 'facts'} onClick={() => jump('[data-section="facts"]')}>概况</button>
+        <button type="button" aria-pressed={activeSection === 'sources'} onClick={() => jump('[data-section="sources"]')}>出处 <span>{node.sources.length}</span></button>
+        {links.length > 0 && <button type="button" aria-pressed={activeSection === 'relations'} onClick={() => jump('[data-section="relations"]')}>关联 <span>{links.length}</span></button>}
       </nav>
 
-      <div className="inspector-content" ref={contentRef}>
-        <a className="record-portal-link" href={portalHref}>◐ 穿界星门 · 查看知识对照 <span aria-hidden="true">↗</span></a>
+      <div className="inspector-content" ref={contentRef} onScroll={handleScroll}>
+        <a className="record-portal-link" href={portalHref} data-has-curated={portalPreview ? 'true' : undefined}>
+          <span className="portal-link-kicker">{portalPreview ? '◐ 朔望精选星桥 · 心物双界对读' : '◐ 穿界星门 · 朔望知识对照'}</span>
+          <span className="portal-link-title">
+            {portalPreview ? `对读《格物识微》· ${portalPreview.entryTitle}` : '在朔望视图对照《格物识微》科学词条与主题线索'}
+            <span aria-hidden="true"> ↗</span>
+          </span>
+        </a>
         {codes.length > 0 && <DossierCodes codes={codes} interaction={codeInteraction} />}
         {orderedLinks.length > 0 && <div className="record-quick-links" aria-label="首屏关联">
           <button type="button" className="record-quick-heading" onClick={() => jump('[data-section="relations"]')}>机制与关联 · {links.length}</button>

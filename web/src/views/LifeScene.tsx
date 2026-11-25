@@ -104,9 +104,9 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
     const scene = new THREE.Scene();
     const nebula = createLifeNebula(), starMaterial = lifeStarMaterial(), atmosphere = lifeAtmosphere(scene, layout, starMaterial);
     const camera = new THREE.PerspectiveCamera(46, 1, 1, 3500);
-    camera.position.set(-18, 22, 575);
+    camera.position.set(0, 12, 795);
     const controls = new OrbitControls(camera, canvas);
-    const overviewTarget = new THREE.Vector3(-14,-4,0);
+    const overviewTarget = new THREE.Vector3(0, -10, 0);
     controls.target.copy(overviewTarget);
     const overviewDirection = camera.position.clone().sub(overviewTarget).normalize();
     const labels = createLifeGalaxyLabels(element, layout, subjects, (id) => selectVolume.current(id), (id) => selectSubject.current(id));
@@ -326,6 +326,7 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
     document.addEventListener('visibilitychange', visibility);
     window.addEventListener('astraia:visibility', visibility);
     controls.addEventListener('change', schedule);
+    const workspaceEl = element.closest('.life-workspace') as HTMLElement | null;
     const resize = () => {
       const width = Math.max(1, element.clientWidth), height = Math.max(1, element.clientHeight);
       const ratio = Math.min(window.devicePixelRatio || 1, 2);
@@ -334,13 +335,17 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
         (stars.material as THREE.ShaderMaterial).uniforms.pixelRatio.value = ratio;
       }
       camera.aspect = width / height;
-      // The original canvas continues behind the 48 px navigation bar.
-      // Match that full-window projection while keeping the app header intact.
-      const topInset = width > 760 ? Math.max(0,Math.min(80,Math.round(element.getBoundingClientRect().top))) : 0;
-      if(topInset) camera.setViewOffset(width,height+topInset,0,topInset,width,height); else camera.clearViewOffset();
+      const leftW = width > 760 && workspaceEl?.dataset.directoryOpen !== 'false' ? (width <= 1180 ? 210 : 246) : 0;
+      const rightW = width > 760 && workspaceEl?.dataset.folioOpen !== 'false' ? (width <= 1180 ? 346 : 406) : 0;
+      const shiftX = width > 760 ? Math.round((rightW - leftW) / 2) : 0;
+      const shiftY = width > 760 ? -12 : 0;
+      if (shiftX || shiftY) camera.setViewOffset(width, height, shiftX, shiftY, width, height); else camera.clearViewOffset();
       camera.updateProjectionMatrix(); webgl.setSize(width, height, false); schedule();
     };
-    const observer = new ResizeObserver(resize); observer.observe(element); resize();
+    const observer = new ResizeObserver(resize); observer.observe(element);
+    const drawerObserver = workspaceEl ? new MutationObserver(resize) : null;
+    drawerObserver?.observe(workspaceEl!, { attributes: true, attributeFilter: ['data-directory-open', 'data-folio-open'] });
+    resize();
     const raycaster = new THREE.Raycaster(), pointer = new THREE.Vector2();
     const hit = (event: PointerEvent) => {
       const box = canvas.getBoundingClientRect();
@@ -470,19 +475,19 @@ export default function LifeScene({ entries, subjects, selectedId, subjectId, vo
         controls.enableRotate=next==='galaxy';
         controls.mouseButtons.LEFT=next==='astrolabe'?THREE.MOUSE.PAN:THREE.MOUSE.ROTATE;
         if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) { morph=morphTarget; applyMorph(morph); }
-        if(next==='astrolabe') fly(new THREE.Vector3(-12,0,0),640,new THREE.Vector3(0,0,1));
-        else fly(overviewTarget,576,overviewDirection);
+        if(next==='astrolabe') fly(new THREE.Vector3(0,0,0),740,new THREE.Vector3(0,0,1));
+        else fly(overviewTarget,795,overviewDirection);
         schedule();
       },
       reset() {
-        if(currentMode==='astrolabe') fly(new THREE.Vector3(-12,0,0),640,new THREE.Vector3(0,0,1));
-        else fly(overviewTarget,576,overviewDirection);
+        if(currentMode==='astrolabe') fly(new THREE.Vector3(0,0,0),740,new THREE.Vector3(0,0,1));
+        else fly(overviewTarget,795,overviewDirection);
       },
       dispose() {
         movingStars = false; document.removeEventListener('visibilitychange', visibility); window.removeEventListener('astraia:visibility', visibility);
         labels.dispose(); portal.dispose();
         window.clearTimeout(gravityTimer); gravityAnimation.dispose();
-        cancelAnimationFrame(frame); observer.disconnect(); controls.removeEventListener('change', schedule); controls.dispose();
+        cancelAnimationFrame(frame); observer.disconnect(); drawerObserver?.disconnect(); controls.removeEventListener('change', schedule); controls.dispose();
         canvas.removeEventListener('pointermove', move); canvas.removeEventListener('pointerdown', pointerDown);
         canvas.removeEventListener('pointerup', pointerUp); canvas.removeEventListener('pointerleave', leave);
         canvas.removeEventListener('pointercancel', pointerCancel);

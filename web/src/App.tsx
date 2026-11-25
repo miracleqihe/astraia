@@ -2,6 +2,7 @@ import { lazy, Suspense, useCallback, useEffect, useMemo, useState, type CSSProp
 import { CollectionGuide } from './CollectionGuide';
 import { nodeContentGroup, type ContentGroup, type Region } from './catalogueBrowse';
 import { DossierComparison } from './DossierComparison';
+import { BRAND_MARK_SVG } from './engraving';
 import { NodeDirectory, type DirectoryScope } from './NodeDirectory';
 import { NodeInspector } from './NodeInspector';
 import { Chronology, ControlRail, QuickSearch, ViewportFrame } from './WorkbenchControls';
@@ -25,27 +26,47 @@ const ALL_TIERS: Tier[] = ['S', 'A', 'B', 'C', 'F'];
 const ALL_LAYERS: Layer[] = [1, 2, 3, 4];
 const ALL_EVIDENCE: EvidenceGroup[] = ['confirmed', 'unverified', 'refuted'];
 const EMPTY_SNAPSHOT: GraphSnapshot = { schema_version: 1, snapshot_id: '', nodes: [], links: [] };
+const FOLIO_THEME_KEY = 'astraia-classic-folio-theme';
+
+function readFolioTheme(): 'parchment' | 'dark' {
+  try {
+    return localStorage.getItem(FOLIO_THEME_KEY) === 'dark' ? 'dark' : 'parchment';
+  } catch {
+    return 'parchment';
+  }
+}
 
 function Brand() {
-  return <div className="wordmark"><span className="brand-orbit" aria-hidden="true"><span /></span>
-    <span className="brand-name">Astraia</span></div>;
+  return <div className="wordmark">
+    <span className="brand-seal" aria-hidden="true" dangerouslySetInnerHTML={{ __html: BRAND_MARK_SVG }} />
+    <span className="brand-name">ASTRAIA</span>
+    <span className="brand-sub">PHYSIS × MYTHOS</span>
+  </div>;
 }
 
 function SyzygyLink({ dimension, story, showFiction, tiers }: { dimension: PortalDimension; story?: string | null; showFiction?: boolean; tiers?: readonly string[] }) {
-  return <a className="syzygy-entry" href={portalHref(dimension,story,undefined,showFiction,tiers)} aria-label="切换到朔望叠影视图" onClick={(event) => {
-    event.currentTarget.href = portalHref(dimension,story,undefined,showFiction,tiers);
+  return <a className="syzygy-entry" href={portalHref(dimension, story, undefined, showFiction, tiers)} aria-label="切换到朔望叠影视图" onClick={(event) => {
+    event.currentTarget.href = portalHref(dimension, story, undefined, showFiction, tiers);
   }}>
-    ◐ <span className="syzygy-entry-full">朔望叠影</span><span className="syzygy-entry-short" aria-hidden="true">叠影</span></a>;
+    <span aria-hidden="true">◐</span>
+    <span className="syzygy-entry-full">朔望叠影</span>
+    <span className="syzygy-entry-short" aria-hidden="true">叠影</span>
+  </a>;
 }
 
 function ViewSwitch({ mode, lifeMode, onSwitch }: { mode: ViewMode; lifeMode: boolean; onSwitch: (next: ViewMode | 'life') => void }) {
   return <nav className="view-switch" aria-label="图谱视图">
     <button type="button" aria-label="UMBRA 坤舆异志" aria-pressed={!lifeMode && mode === 'geo'} onClick={() => onSwitch('geo')}>
-      <span className="mode-icon globe-icon" aria-hidden="true" /><span className="mode-full">UMBRA · 坤舆异志</span><span className="mode-short" aria-hidden="true">UMBRA</span></button>
+      <span className="mode-glyph mode-glyph-umbra" aria-hidden="true">◇</span>
+      <span className="mode-full">UMBRA · 坤舆异志</span><span className="mode-short" aria-hidden="true">UMBRA</span>
+    </button>
     <button type="button" aria-label="SIDERA 玄象星络" aria-pressed={!lifeMode && mode === 'graph'} onClick={() => onSwitch('graph')}>
-      <span className="mode-icon constellation-icon" aria-hidden="true" /><span className="mode-full">SIDERA · 玄象星络</span><span className="mode-short" aria-hidden="true">SIDERA</span></button>
+      <span className="mode-glyph mode-glyph-sidera" aria-hidden="true">+</span>
+      <span className="mode-full">SIDERA · 玄象星络</span><span className="mode-short" aria-hidden="true">SIDERA</span>
+    </button>
     <button type="button" aria-label="OMNIA 万象星枢" aria-pressed={lifeMode} onClick={() => onSwitch('life')}>
-      <span className="mode-icon constellation-icon" aria-hidden="true" /><span className="mode-life-full">OMNIA · 万象星枢</span>
+      <span className="mode-glyph mode-glyph-omnia" aria-hidden="true">✦</span>
+      <span className="mode-life-full">OMNIA · 万象星枢</span>
       <span className="mode-life-short" aria-hidden="true">OMNIA</span>
     </button>
   </nav>;
@@ -73,6 +94,7 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
   const [directoryRegion, setDirectoryRegion] = useState<Region>('all');
   const [directoryContent, setDirectoryContent] = useState<ContentGroup>('all');
   const [searchOpen, setSearchOpen] = useState(false);
+  const [folioTheme, setFolioTheme] = useState<'parchment' | 'dark'>(readFolioTheme);
   const [tiers, setTiers] = useState(() => {
     const url = new URL(window.location.href);
     const requested = url.searchParams.has('tiers') ? new Set(url.searchParams.get('tiers')!.split(',')) : null;
@@ -96,6 +118,10 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
   const [lifeRouteVersion, setLifeRouteVersion] = useState(0);
 
   useEffect(() => {
+    try { localStorage.setItem(FOLIO_THEME_KEY, folioTheme); } catch { /* ignore */ }
+  }, [folioTheme]);
+
+  useEffect(() => {
     const navigate = (event: Event) => {
       const url = new URL((event as CustomEvent<string>).detail);
       const view = url.searchParams.get('view');
@@ -104,15 +130,15 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
       setMode(view === 'graph' ? 'graph' : 'geo');
       const story = url.searchParams.get('story');
       setSelectedId(story); setCompareId(url.searchParams.get('compare')); setDrawer('single');
-      setMapFocus(story && view !== 'graph' ? { id:story } : null);
+      setMapFocus(story && view !== 'graph' ? { id: story } : null);
       if (url.searchParams.has('tiers')) {
         const requested = new Set(url.searchParams.get('tiers')!.split(','));
         setTiers(new Set(ALL_TIERS.filter(tier => requested.has(tier))));
       } else setTiers(new Set(ALL_TIERS.filter(tier => tier !== 'F' || url.searchParams.get('fiction') === '1')));
       if (story) onNeedDetails();
     };
-    window.addEventListener('astraia:navigate',navigate);
-    return () => window.removeEventListener('astraia:navigate',navigate);
+    window.addEventListener('astraia:navigate', navigate);
+    return () => window.removeEventListener('astraia:navigate', navigate);
   }, [onNeedDetails]);
 
   // The globe can initialize while the graph index is downloading. Resolve
@@ -127,7 +153,7 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
       setCompareId(compared?.id ?? null);
       setDrawer(compared ? 'compare' : 'single');
       if (coordinatesOf(requested)) setMapFocus({ id: requested.id });
-      if (isFiction(requested) || (compared && isFiction(compared))) setTiers(previous => new Set([...previous,'F']));
+      if (isFiction(requested) || (compared && isFiction(compared))) setTiers(previous => new Set([...previous, 'F']));
     }
     if (!url.searchParams.has('view') && !snapshot.nodes.some(isModernReading)) setMode('graph');
     setEntryResolved(true);
@@ -136,15 +162,15 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
   useEffect(() => {
     if (loading || !entryResolved || lifeMode) return;
     const url = new URL(window.location.href);
-    if (selectedId) url.searchParams.set('story',selectedId); else url.searchParams.delete('story');
-    if (compareId) url.searchParams.set('compare',compareId); else url.searchParams.delete('compare');
-    if (tiers.has('F')) url.searchParams.set('fiction','1'); else url.searchParams.delete('fiction');
-    url.searchParams.set('tiers',ALL_TIERS.filter(tier=>tiers.has(tier)).join(','));
+    if (selectedId) url.searchParams.set('story', selectedId); else url.searchParams.delete('story');
+    if (compareId) url.searchParams.set('compare', compareId); else url.searchParams.delete('compare');
+    if (tiers.has('F')) url.searchParams.set('fiction', '1'); else url.searchParams.delete('fiction');
+    url.searchParams.set('tiers', ALL_TIERS.filter(tier => tiers.has(tier)).join(','));
     if (url.searchParams.has('bridge_story') && url.searchParams.get('bridge_story') !== selectedId) {
       url.searchParams.delete('bridge_story'); url.searchParams.delete('bridge_entry');
     }
-    window.history.replaceState({},'',url);
-  }, [selectedId,compareId,tiers,loading,entryResolved,lifeMode]);
+    window.history.replaceState({}, '', url);
+  }, [selectedId, compareId, tiers, loading, entryResolved, lifeMode]);
 
   const timeline = useMemo(() => {
     const values = snapshot.nodes.filter((node) => node.z_layer === 1 && tiers.has(node.credibility_tier))
@@ -303,7 +329,7 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
     const url = new URL(window.location.href);
     url.searchParams.set('view', next === 'geo' ? 'map' : next);
     if (next === 'life' && selectedId && url.searchParams.get('bridge_story') === selectedId && url.searchParams.has('bridge_entry')) {
-      url.searchParams.set('entry',url.searchParams.get('bridge_entry')!);
+      url.searchParams.set('entry', url.searchParams.get('bridge_entry')!);
     }
     if (next !== 'life') url.searchParams.delete('entry');
     window.history.replaceState({}, '', url);
@@ -315,14 +341,13 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
       <Brand />
       <ViewSwitch mode={mode} lifeMode={lifeMode} onSwitch={switchView} />
       <div className="top-actions">
-      <SyzygyLink dimension={lifeMode ? 'omnia' : mode === 'geo' ? 'umbra' : 'sidera'} story={lifeMode ? null : selectedId} showFiction={tiers.has('F')} tiers={ALL_TIERS.filter(tier=>tiers.has(tier))} />
-        {lifeMode && <span className="life-header-slot" />}
+        <SyzygyLink dimension={lifeMode ? 'omnia' : mode === 'geo' ? 'umbra' : 'sidera'} story={lifeMode ? null : selectedId} showFiction={tiers.has('F')} tiers={ALL_TIERS.filter(tier => tiers.has(tier))} />
         {!lifeMode && <>
-        {!publicSite && <a className="review-link" href={`${import.meta.env.BASE_URL}review/index.html`}>资料复核</a>}
-        <button className="directory-toggle" type="button" disabled={loading} aria-expanded={directoryOpen && directoryScope !== 'modern'}
-          onClick={() => openDirectory('all')}>资料目录 <span>{loading ? '…' : graph.nodes.length}</span></button>
-        <button className="fiction-switch" type="button" role="switch" aria-label="隐藏 F 级虚构" aria-checked={!tiers.has('F')} onClick={() => toggle<Tier>(setTiers, 'F')}>
-          <span>隐藏 F 级虚构</span><span className="switch-track" aria-hidden="true" /></button>
+          {!publicSite && <a className="review-link" href={`${import.meta.env.BASE_URL}review/index.html`}>资料复核</a>}
+          <button className="directory-toggle" type="button" disabled={loading} aria-expanded={directoryOpen && directoryScope !== 'modern'}
+            onClick={() => openDirectory('all')}>资料目录 <span>{loading ? '…' : graph.nodes.length}</span></button>
+          <button className="fiction-switch" type="button" role="switch" aria-label="隐藏 F 级虚构" aria-checked={!tiers.has('F')} onClick={() => toggle<Tier>(setTiers, 'F')}>
+            <span>隔离 F 级</span><span className="switch-track" aria-hidden="true" /></button>
         </>}
       </div>
     </header>
@@ -330,9 +355,9 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
       <main id="visual-stage" className="visual-stage" aria-label="图谱主视图">
         <ViewportFrame />
         <div className="stage-heading">
-          <span className="stage-eyebrow">{mode === 'geo' ? 'ASTRAIA / 3D FOLKLORE & ANOMALY GLOBE' : 'ASTRAIA / SEMANTIC MOTIF CONSTELLATION'}</span>
+          <span className="stage-eyebrow">{mode === 'geo' ? 'UMBRA / 3D FOLKLORE & ANOMALY GLOBE' : 'SIDERA / SEMANTIC MOTIF CONSTELLATION'}</span>
           <h1>{mode === 'geo' ? '坤舆异志' : '玄象星络'}</h1>
-          <p>{mode === 'geo' ? '全球灵异与民俗三维舆图' : '跨文化母题与语义演化星络'}</p>
+          <p>{mode === 'geo' ? '全球灵异与民俗三维舆图' : '跨文化母题与四层语义星络'}</p>
           <p className="stage-count">{loading ? '正在载入资料…' : mode === 'geo' ? `图谱有坐标资料 ${mappedCount.toLocaleString()} 条` : `${graph.nodes.length.toLocaleString()} 个节点 · ${graph.links.length.toLocaleString()} 条关系`}</p></div>
         {modernCount > 0 && <button type="button" className="modern-shortcut"
           aria-expanded={directoryOpen && directoryScope === 'modern'} onClick={() => openDirectory('modern')}>现代异闻 <span>{modernCount}</span></button>}
@@ -365,16 +390,22 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
               setDirectoryOpen(false);
             }} /></div>}
       </main>
-      {drawer === 'collapsed' || (!loading && !selected && !showGuide) ? <aside className="inspector-spine" aria-label="收起的卷宗">
+      {drawer === 'collapsed' || (!loading && !selected && !showGuide) ? <aside className="inspector-spine" data-folio-theme={folioTheme} aria-label="收起的卷宗">
         <button type="button" onClick={() => { if (!selected && selectedId) setSelectedId(firstSelection(graph.nodes)); setDrawer('single'); }}>展开卷宗</button></aside>
-        : <div className="inspector-drawer">
-          <div className="drawer-modes" aria-label="卷宗宽度">
-            <button type="button" onClick={() => { setDrawer('collapsed'); setComparePicking(false); }}>收起</button>
-            <button type="button" aria-pressed={drawer === 'single'} onClick={() => { setDrawer('single'); setComparePicking(false); }}>单卷宗</button>
-            {selected && <button type="button" aria-pressed={drawer === 'compare'} onClick={() => { setDrawer('compare'); if (!comparison) setComparePicking(true); }}>双卷宗</button>}
+        : <div className="inspector-drawer" data-folio-theme={folioTheme}>
+          <div className="drawer-modes" aria-label="卷宗主题与宽度">
+            <div className="drawer-theme-group" role="group" aria-label="卷宗纸面主题">
+              <button type="button" aria-pressed={folioTheme === 'dark'} onClick={() => setFolioTheme('dark')}>深空金错</button>
+              <button type="button" aria-pressed={folioTheme === 'parchment'} onClick={() => setFolioTheme('parchment')}>古拓羊皮</button>
+            </div>
+            <div className="drawer-size-group">
+              <button type="button" onClick={() => { setDrawer('collapsed'); setComparePicking(false); }}>收起</button>
+              <button type="button" aria-pressed={drawer === 'single'} onClick={() => { setDrawer('single'); setComparePicking(false); }}>单卷宗</button>
+              {selected && <button type="button" aria-pressed={drawer === 'compare'} onClick={() => { setDrawer('compare'); if (!comparison) setComparePicking(true); }}>双卷宗</button>}
+            </div>
           </div>
           {loading ? <div className="inspector-loading" role="status"><h2>馆藏导览</h2><p>正在载入故事与图谱资料…</p></div>
-            : showGuide ? <CollectionGuide graph={graph} onRead={readRecord} onCompare={startComparison} onBrowse={browseCollection} />
+            : showGuide ? <CollectionGuide graph={graph} onRead={readRecord} onCompare={startComparison} onBrowse={browseCollection} onOpenOmnia={() => switchView('life')} />
             : selected && !detailsReady ? <div className="inspector-loading" role="status"><h2>{selected.title}</h2>
               {selected.reading?.paragraphs[0] && <p>{selected.reading.paragraphs[0]}</p>}
               <p>{detailsError ? `正文与出处暂未载入：${detailsError}` : '正在载入完整正文与出处…'}</p>
@@ -382,7 +413,7 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
             : selectedDetail && comparisonDetail ? <DossierComparison key={`${selectedDetail.id}:${comparisonDetail.id}`} left={selectedDetail} right={comparisonDetail}
               graph={graph} hubs={commonHubs} codeInteraction={codeInteraction} onRead={readRecord} onChange={() => setComparePicking(true)} onHover={setHoveredId} />
             : selectedDetail && <div className={`inspector-columns${drawer === 'compare' ? ' comparing' : ''}`}>
-              <NodeInspector node={selectedDetail} graph={graph} portalHref={portalHref(mode === 'geo' ? 'umbra' : 'sidera',selectedDetail.id,undefined,tiers.has('F'),ALL_TIERS.filter(tier=>tiers.has(tier)))} onSelect={selectNode} onLocate={locate} onClose={() => { setDrawer('collapsed'); setComparePicking(false); }}
+              <NodeInspector node={selectedDetail} graph={graph} portalHref={portalHref(mode === 'geo' ? 'umbra' : 'sidera', selectedDetail.id, undefined, tiers.has('F'), ALL_TIERS.filter(tier => tiers.has(tier)))} onSelect={selectNode} onLocate={locate} onClose={() => { setDrawer('collapsed'); setComparePicking(false); }}
                 onCompare={() => { setDrawer('compare'); setComparePicking(true); }} onNodeHover={setHoveredId} codeInteraction={codeInteraction} />
               {drawer === 'compare' && <div className="compare-empty">请选择第二个节点。</div>}
             </div>}
@@ -424,9 +455,9 @@ export function App() {
         setDirectLife(false);
       }
     };
-    window.addEventListener('astraia:navigate',navigate);
+    window.addEventListener('astraia:navigate', navigate);
     announceViewReady();
-    return () => window.removeEventListener('astraia:navigate',navigate);
+    return () => window.removeEventListener('astraia:navigate', navigate);
   }, []);
   useEffect(() => {
     if (directLife) return;
@@ -458,11 +489,11 @@ export function App() {
       if (next === 'life') return;
       const url = new URL(window.location.href);
       if (url.searchParams.get('entry') === url.searchParams.get('bridge_entry') && url.searchParams.has('bridge_story')) {
-        url.searchParams.set('story',url.searchParams.get('bridge_story')!);
+        url.searchParams.set('story', url.searchParams.get('bridge_story')!);
       }
       url.searchParams.set('view', next === 'geo' ? 'map' : 'graph'); url.searchParams.delete('entry'); url.hash = '';
       window.history.replaceState({}, '', url); setPendingMode(next); setDirectLife(false);
-    }} /><div className="top-actions"><SyzygyLink dimension="omnia" /><span className="life-header-slot" /></div></header>
+    }} /><div className="top-actions"><SyzygyLink dimension="omnia" /></div></header>
     <Suspense fallback={<div className="life-status">正在载入知识星图…</div>}><LifeKnowledge key={lifeRouteVersion} /></Suspense>
   </div>;
   if (snapshot || !error) return <Atlas snapshot={snapshot ?? EMPTY_SNAPSHOT} loading={!snapshot} details={details} detailsError={detailsError}

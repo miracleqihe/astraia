@@ -295,9 +295,9 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
       <p class="syzygy-reference">${escape(node.spatial?.location_name || '地点未记录')} · ${escape(coords)}</p>
       <div class="syzygy-prose">${readingText(node)}</div>
       <h4>出处</h4>${loading ? '<p class="syzygy-reference">正在读取完整正文与出处…</p>' : sourceList(node)}
-      <div class="syzygy-read-links"><a href="${classicURL('map',node.id)}">在经典地图查看</a><a href="${classicURL('graph',node.id)}">在经典星络查看</a></div>${storyShare(root,node)}</section>
+      <div class="syzygy-read-links"><a href="${classicURL('map',node.id)}">精查地图</a><a href="${classicURL('graph',node.id)}">精查星络</a></div>${storyShare(root,node)}</section>
       ${engravingBeam(false)}<section class="prism-pane syzygy-full-card"><p class="syzygy-overline">跨层关联 · 原图谱记录 ${edges.length}</p>
-      ${mechanismMarkup(node)}${relations || '<p class="syzygy-reference">暂无关联节点。</p>'}${edges.length>20 ? `<p class="syzygy-reference">展示前 20 条，完整关系请在经典星络中查看。</p>` : ''}</section>
+      ${mechanismMarkup(node)}${relations || '<p class="syzygy-reference">暂无关联节点。</p>'}${edges.length>20 ? `<p class="syzygy-reference">展示前 20 条，完整关系请在精查星络中查看。</p>` : ''}</section>
       <section class="physis-pane syzygy-full-card"><p class="syzygy-overline">✦ 穿界星门 · 格物主题对读</p>
       <p class="syzygy-reference">主题候选依据共同词汇；阅读指引依据资料类型。</p><div data-portal-suggestions></div>
       <label class="syzygy-reference" for="portal-book-search">搜索全部 ${book.entries.length.toLocaleString()} 条格物资料</label>
@@ -345,7 +345,7 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
     state.selectedGraph = null; state.selectedBridge = null; state.selectedBook = entry; clearNeighborhood(); onSelection(); updatePoints();
     const container = document.getElementById('syzygy-card-container');
     const render = (body, loading) => {
-      container.innerHTML = `<article class="engraving-codex">${engravingHeader('格物识微',entry.volume,undefined,engravingPatternForVolume(entry.volume))}<section class="physis-pane syzygy-full-card"><p class="syzygy-overline">下卷 · 格物识微 / ${escape(entry.volume)}</p><h3>${escape(entry.title)}</h3><p class="syzygy-reference">${escape(entry.id)} · PDF 第 ${escape(entry.page)} 页</p><div class="syzygy-read-links">${originalPageButton(entry.page)}</div><div class="syzygy-prose syzygy-book-body">${loading ? '正在读取原书正文…' : handbookText(body,root)}</div>${bookNavigation(entry,book.entries)}<div class="syzygy-read-links"><a href="${bookURL(entry.id)}">在经典万象星枢阅读</a><a href="${root}knowledge/handbook.pdf#page=${encodeURIComponent(entry.page)}" target="_blank" rel="noopener">打开原书</a><button id="portal-choose-story" class="ctl-btn">✦ 选择民俗条目对读</button></div><div data-portal-reverse></div></section></article>`;
+      container.innerHTML = `<article class="engraving-codex">${engravingHeader('格物识微',entry.volume,undefined,engravingPatternForVolume(entry.volume))}<section class="physis-pane syzygy-full-card"><p class="syzygy-overline">下卷 · 格物识微 / ${escape(entry.volume)}</p><h3>${escape(entry.title)}</h3><p class="syzygy-reference">${escape(entry.id)} · PDF 第 ${escape(entry.page)} 页</p><div class="syzygy-read-links">${originalPageButton(entry.page)}</div><div class="syzygy-prose syzygy-book-body">${loading ? '正在读取原书正文…' : handbookText(body,root)}</div>${bookNavigation(entry,book.entries)}<div class="syzygy-read-links"><a href="${bookURL(entry.id)}">精查万象星枢</a><a href="${root}knowledge/handbook.pdf#page=${encodeURIComponent(entry.page)}" target="_blank" rel="noopener">打开原书 PDF</a><button id="portal-choose-story" class="ctl-btn">✦ 选择民俗条目对读</button></div><div data-portal-reverse></div></section></article>`;
       container.querySelector('#portal-choose-story').addEventListener('click',()=>{state.pendingBook=entry; onBrowseFolklore(); renderDirectory();});
       bindBookNavigation(container,selectBook);
       bindOriginalPages(container,root,book);
@@ -366,11 +366,34 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
       const row=(matchIndex?.matches[node.id] ?? []).find(item=>item.entry === entry.id);
       const label=matchIndex ? matchLabel(row) : matchError ? '对照依据暂不可用' : '正在读取对照依据';
       const reason=matchIndex ? matchReason(row) : matchError ? '可继续阅读两侧资料，或稍后重试自动对照。' : '正在载入自动对照索引。';
-      container.innerHTML = `<article class="engraving-codex">${engravingHeader('民俗与格物对读',story.spatial?.location_name || '地点未记录',story.credibility_tier)}<section class="mythos-pane syzygy-full-card"><p class="syzygy-overline">上卷 · L${escape(story.z_layer ?? '—')}</p>
-        <h3>${escape(story.title)}</h3><p class="syzygy-reference">来源等级 ${escape(sourceTier(story) ?? '未记录')} · 体裁 ${escape(genreLabels[genreContract(story)])}${isFiction(story) ? ' · 虚构标记 F' : ''}</p><p class="syzygy-reference">${escape(story.spatial?.location_name || '地点未记录')}</p><div class="syzygy-prose">${readingText(story)}</div>
-        <h4>出处</h4>${loading ? '<p class="syzygy-reference">正在读取…</p>' : sourceList(story)}<div class="syzygy-read-links"><a href="${classicURL('map',story.id)}">经典地图</a><a href="${classicURL('graph',story.id)}">经典星络</a></div>${storyShare(root,story)}</section>
-        ${engravingBeam(true)}<section class="prism-pane syzygy-full-card"><p class="syzygy-overline">◐ 穿界星门 · ${escape(label)}</p><p class="syzygy-reference">${escape(reason)}</p>${mechanismMarkup(story)}</section>
-        <section class="physis-pane syzygy-full-card"><div class="engraving-reading-band">${engravingFrieze(engravingPatternForVolume(entry.volume),'engraving-reading-band')}</div><p class="syzygy-overline">下卷 · 格物识微 / ${escape(entry.volume)}</p><h3>${escape(entry.title)}</h3><p class="syzygy-reference">${escape(entry.id)} · PDF 第 ${escape(entry.page)} 页</p><div class="syzygy-read-links">${originalPageButton(entry.page)}</div><div class="syzygy-prose syzygy-book-body">${loading ? '正在读取原书正文…' : handbookText(body,root)}</div>${bookNavigation(entry,book.entries)}<div class="syzygy-read-links"><a href="${bookURL(entry.id)}">经典万象星枢阅读</a><a href="${root}knowledge/handbook.pdf#page=${encodeURIComponent(entry.page)}" target="_blank" rel="noopener">打开原书</a><button id="portal-change-book" class="ctl-btn">更换对读</button></div></section></article>`;
+      container.innerHTML = `<article class="engraving-codex">${engravingHeader('民俗与格物对读',story.spatial?.location_name || '地点未记录',story.credibility_tier)}
+        <div class="syzygy-overview-strip">
+          <div class="syzygy-overview-pair">
+            <div class="syzygy-overview-node"><small>上卷 · 玄象志怪</small><strong title="${escape(story.title)}">${escape(story.title)}</strong></div>
+            <span class="syzygy-overview-link" aria-hidden="true">⇄</span>
+            <div class="syzygy-overview-node"><small>下卷 · 格物识微</small><strong title="${escape(entry.title)}">${escape(entry.title)}</strong></div>
+          </div>
+          <div class="syzygy-overview-meta">
+            <span class="syzygy-badge syzygy-badge-context">◇ ${escape(label)}</span>
+            <span class="syzygy-reference">✦ 穿界自选对读</span>
+          </div>
+          <div class="syzygy-jump-tabs" role="navigation" aria-label="对读锚点">
+            <button type="button" data-codex-jump="mythos">上卷 · 志怪</button>
+            <button type="button" data-codex-jump="prism">◐ 折光依据</button>
+            <button type="button" data-codex-jump="physis">下卷 · 格物</button>
+          </div>
+        </div>
+        ${engravingBeam(true)}
+        <section class="prism-pane syzygy-full-card" data-codex-section="prism"><p class="syzygy-overline">◐ 穿界星门 · ${escape(label)}</p><p class="syzygy-reference">${escape(reason)}</p>${mechanismMarkup(story)}</section>
+        <div class="syzygy-dual-body">
+          <section class="mythos-pane syzygy-full-card" data-codex-section="mythos"><p class="syzygy-overline">上卷 · L${escape(story.z_layer ?? '—')}</p>
+            <h3>${escape(story.title)}</h3><p class="syzygy-reference">来源等级 ${escape(sourceTier(story) ?? '未记录')} · 体裁 ${escape(genreLabels[genreContract(story)])}${isFiction(story) ? ' · 虚构标记 F' : ''}</p><p class="syzygy-reference">${escape(story.spatial?.location_name || '地点未记录')}</p><div class="syzygy-prose">${readingText(story)}</div>
+            <h4>文献出处</h4>${loading ? '<p class="syzygy-reference">正在读取…</p>' : sourceList(story)}<div class="syzygy-read-links"><a href="${classicURL('map',story.id)}">精查地图</a><a href="${classicURL('graph',story.id)}">精查星络</a></div>${storyShare(root,story)}</section>
+          <section class="physis-pane syzygy-full-card" data-codex-section="physis"><div class="engraving-reading-band">${engravingFrieze(engravingPatternForVolume(entry.volume),'engraving-reading-band')}</div><p class="syzygy-overline">下卷 · 格物识微 / ${escape(entry.volume)}</p><h3>${escape(entry.title)}</h3><p class="syzygy-reference">${escape(entry.id)} · PDF 第 ${escape(entry.page)} 页</p><div class="syzygy-read-links">${originalPageButton(entry.page)}</div><div class="syzygy-prose syzygy-book-body">${loading ? '正在读取原书正文…' : handbookText(body,root)}</div>${bookNavigation(entry,book.entries)}<div class="syzygy-read-links"><a href="${bookURL(entry.id)}">精查万象星枢</a><a href="${root}knowledge/handbook.pdf#page=${encodeURIComponent(entry.page)}" target="_blank" rel="noopener">打开原书 PDF</a><button id="portal-change-book" class="ctl-btn">更换对读</button></div></section>
+        </div></article>`;
+      container.querySelectorAll('[data-codex-jump]').forEach(button => button.addEventListener('click', () => {
+        container.querySelector(`[data-codex-section="${button.dataset.codexJump}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }));
       container.querySelector('#portal-change-book').addEventListener('click',()=>select(node,false));
       bindStoryShare(container);
       bindBookNavigation(container,next => openPortal(node,next));

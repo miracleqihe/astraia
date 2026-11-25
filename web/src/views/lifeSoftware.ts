@@ -30,9 +30,9 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   });
   host.append(glowLayer);
   const camera = new THREE.PerspectiveCamera(46, 1, 1, 3500);
-  camera.position.set(-18, 22, 575);
+  camera.position.set(0, 12, 795);
   const controls = new OrbitControls(camera, canvas);
-  const overviewTarget = new THREE.Vector3(-14,-4,0); controls.target.copy(overviewTarget);
+  const overviewTarget = new THREE.Vector3(0, -10, 0); controls.target.copy(overviewTarget);
   const overviewDirection = camera.position.clone().sub(overviewTarget).normalize();
   const labels = createLifeGalaxyLabels(host, layout, subjects, onVolume, onSubject);
   const portal = createLifePortal(host, entries, layout, onSelect);
@@ -459,6 +459,7 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
   controls.addEventListener('change', schedule);
   controls.addEventListener('start', beginMotion);
   controls.addEventListener('end', restoreWhenStill);
+  const workspaceEl = host.closest('.life-workspace') as HTMLElement | null;
   const resize = () => {
     const cssWidth = Math.max(1, host.clientWidth), cssHeight = Math.max(1, host.clientHeight);
     hitMarginX = 12 / cssWidth; hitMarginY = 12 / cssHeight;
@@ -474,14 +475,13 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       image = ctx.createImageData(width, height); pixels = new Uint32Array(image.data.buffer);
     }
     camera.aspect = cssWidth / cssHeight;
-    const topInset=cssWidth>760?Math.max(0,Math.min(80,Math.round(host.getBoundingClientRect().top))):0;
-    if(topInset) camera.setViewOffset(cssWidth,cssHeight+topInset,0,topInset,cssWidth,cssHeight); else camera.clearViewOffset();
+    const leftW = cssWidth > 760 && workspaceEl?.dataset.directoryOpen !== 'false' ? (cssWidth <= 1180 ? 210 : 246) : 0;
+    const rightW = cssWidth > 760 && workspaceEl?.dataset.folioOpen !== 'false' ? (cssWidth <= 1180 ? 346 : 406) : 0;
+    const shiftX = cssWidth > 760 ? Math.round((rightW - leftW) / 2) : 0;
+    const shiftY = cssWidth > 760 ? -12 : 0;
+    if (shiftX || shiftY) camera.setViewOffset(cssWidth, cssHeight, shiftX, shiftY, cssWidth, cssHeight); else camera.clearViewOffset();
     camera.updateProjectionMatrix(); schedule();
   };
-  // A moving divider or an animated browser resize can otherwise allocate and
-  // upload a full-resolution image on every resize notification. Use the
-  // same bounded raster as a camera drag while the viewport is changing,
-  // then restore the detailed image once its dimensions have settled.
   let observedWidth = host.clientWidth, observedHeight = host.clientHeight;
   const observer = new ResizeObserver(() => {
     const nextWidth = host.clientWidth, nextHeight = host.clientHeight;
@@ -493,6 +493,8 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       restoreWhenStill();
     }
   });
+  const drawerObserver = workspaceEl ? new MutationObserver(resize) : null;
+  drawerObserver?.observe(workspaceEl!, { attributes: true, attributeFilter: ['data-directory-open', 'data-folio-open'] });
   observer.observe(host); resize();
   const hit = (event: Pick<PointerEvent, 'clientX' | 'clientY'>) => {
     const box = canvas.getBoundingClientRect();
@@ -635,12 +637,12 @@ export function mountLifeSoftware(host: HTMLDivElement, entries: LifeEntry[], su
       lastFocus = key;
     },
     setMotion,
-    reset() { fly(overviewTarget, 576, overviewDirection); },
+    reset() { fly(overviewTarget, 795, overviewDirection); },
     dispose() {
       disposed = true; setMotion(false); document.removeEventListener('visibilitychange', visibility); window.removeEventListener('astraia:visibility', visibility);
       labels.dispose(); portal.dispose(); glowLayer.remove();
       restoreGravity(); gravityAnimation.dispose(); cancelAnimationFrame(frame); cancelAnimationFrame(hoverFrame); window.clearTimeout(restoreQuality);
-      window.clearTimeout(hoverTimer); observer.disconnect();
+      window.clearTimeout(hoverTimer); observer.disconnect(); drawerObserver?.disconnect();
       controls.removeEventListener('change', schedule); controls.dispose();
       controls.removeEventListener('start', beginMotion); controls.removeEventListener('end', restoreWhenStill);
       canvas.removeEventListener('pointermove', move); canvas.removeEventListener('pointerdown', pointerDown);

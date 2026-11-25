@@ -1,5 +1,7 @@
 import * as THREECore from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { feature } from 'topojson-client';
+import worldAtlas from 'world-atlas/countries-110m.json';
 import '@fontsource/cormorant-garamond/latin-600.css';
 import '@fontsource/jetbrains-mono/latin-400.css';
 import '@fontsource/noto-serif-sc/400.css';
@@ -11,7 +13,7 @@ import { createSyzygyRenderer } from './renderer';
 import { createFullAtlas } from './fullAtlas';
 import { genreContract, genreLabels } from './narrativeMetadata';
 import { announceViewReady } from '../viewRouter';
-import { engravingFrieze, engravingPatternForVolume, syncEngravingBeam, tierSeal } from '../engraving';
+import { TIER_META, engravingFrieze, engravingPatternForVolume, syncEngravingBeam, tierSeal } from '../engraving';
 import readingPaths from './reading-paths.json';
 import { renderBridgeCard } from './bridgeCard';
 
@@ -89,23 +91,23 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       }
     };
 
-    // Epistemic Confidence Status Dictionary
+    // Epistemic Confidence Status Dictionary (mineral pigments calibrated for both Obsidian & Parchment)
     const CONFIDENCE_META = {
       CONFIRMED: {
         badge: '● 个案关联已证实',
-        cls: 'bg-emerald-500/15 text-emerald-300 border-emerald-400/45'
+        cls: 'syzygy-badge-confirmed'
       },
       UNVERIFIED: {
         badge: '◐ 个案关联待核实',
-        cls: 'bg-amber-500/15 text-amber-300 border-amber-400/45'
+        cls: 'syzygy-badge-unverified'
       },
       DEBUNKED: {
         badge: '✕ 个案关联已驳回',
-        cls: 'bg-rose-500/15 text-rose-300 border-rose-400/45'
+        cls: 'syzygy-badge-refuted'
       },
       CONTEXT: {
         badge: '◇ 专题对读',
-        cls: 'syzygy-status-context'
+        cls: 'syzygy-badge-context'
       }
     };
 
@@ -436,9 +438,9 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     const scene = new THREE.Scene();
 
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 3600);
-    const CAM_OMNIA = { pos: new THREE.Vector3(-18, 28, 605), target: new THREE.Vector3(-14, -4, 12) };
-    const CAM_UMBRA = { pos: new THREE.Vector3(-35, 68, 465), target: new THREE.Vector3(-10, 0, 0) };
-    const CAM_SIDERA = { pos: new THREE.Vector3(0, 18, 560), target: new THREE.Vector3(-10, 4, 0) };
+    const CAM_OMNIA = { pos: new THREE.Vector3(0, 14, 840), target: new THREE.Vector3(0, -10, 0) };
+    const CAM_UMBRA = { pos: new THREE.Vector3(-18, 52, 515), target: new THREE.Vector3(0, 0, 0) };
+    const CAM_SIDERA = { pos: new THREE.Vector3(0, 14, 760), target: new THREE.Vector3(0, 0, 0) };
 
     camera.position.copy(CAM_OMNIA.pos);
 
@@ -802,11 +804,12 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
 
     const obsidianSphere = new THREE.Mesh(
       new THREE.SphereGeometry(EARTH_RADIUS - 2.2, 48, 36),
-      new THREE.MeshBasicMaterial({ color: '#050812', transparent: true, opacity: 0.88 })
+      new THREE.MeshBasicMaterial({ color: '#050812', transparent: true, opacity: 0.9 })
     );
+    obsidianSphere.userData.globeShellRadius = EARTH_RADIUS;
     umbraGlobeGroup.add(obsidianSphere);
 
-    // Brass Latitude Parallels & Longitude Meridians
+    // Brass Latitude Parallels & Longitude Meridians (front-hemisphere culled)
     const graticulePts = [];
     for (let lat = -75; lat <= 75; lat += 15) {
       const isEq = lat === 0;
@@ -815,8 +818,8 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         const lon1 = (i / segs) * 360 - 180;
         const lon2 = ((i + 1) / segs) * 360 - 180;
         graticulePts.push(
-          latLonToVec3(lat, lon1, EARTH_RADIUS + (isEq ? 0.6 : 0.2)),
-          latLonToVec3(lat, lon2, EARTH_RADIUS + (isEq ? 0.6 : 0.2))
+          latLonToVec3(lat, lon1, EARTH_RADIUS + (isEq ? 0.5 : 0.2)),
+          latLonToVec3(lat, lon2, EARTH_RADIUS + (isEq ? 0.5 : 0.2))
         );
       }
     }
@@ -828,20 +831,65 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         graticulePts.push(latLonToVec3(lat1, lon, EARTH_RADIUS + 0.2), latLonToVec3(lat2, lon, EARTH_RADIUS + 0.2));
       }
     }
-    umbraGlobeGroup.add(new THREE.LineSegments(
+    const graticuleLines = new THREE.LineSegments(
       new THREE.BufferGeometry().setFromPoints(graticulePts),
-      new THREE.LineBasicMaterial({ color: '#d6b678', transparent: true, opacity: 0.16, depthWrite: false })
-    ));
+      new THREE.LineBasicMaterial({ color: '#cfa962', transparent: true, opacity: 0.14, depthWrite: false })
+    );
+    graticuleLines.userData.sphereCull = true;
+    graticuleLines.userData.sphereCullRadius = EARTH_RADIUS;
+    graticuleLines.userData.strokeColor = '#cfa962';
+    graticuleLines.userData.lineWidth = 0.65;
+    umbraGlobeGroup.add(graticuleLines);
+
+    // Engraved Brass World Coastlines projected from real world-atlas land geometry
+    const coastPts = [];
+    const landGeo = feature(worldAtlas, worldAtlas.objects.land);
+    const pushRing = (ring) => {
+      for (let i = 0; i < ring.length - 1; i++) {
+        const [lon1, lat1] = ring[i], [lon2, lat2] = ring[i + 1];
+        if (Math.abs(lon2 - lon1) > 180) continue;
+        coastPts.push(
+          latLonToVec3(lat1, lon1, EARTH_RADIUS + 0.55),
+          latLonToVec3(lat2, lon2, EARTH_RADIUS + 0.55)
+        );
+      }
+    };
+    const landGeometries = landGeo.type === 'FeatureCollection'
+      ? landGeo.features.map(f => f.geometry)
+      : [landGeo.geometry || landGeo];
+    for (const geom of landGeometries) {
+      if (!geom) continue;
+      if (geom.type === 'Polygon') geom.coordinates.forEach(pushRing);
+      else if (geom.type === 'MultiPolygon') geom.coordinates.forEach(poly => poly.forEach(pushRing));
+    }
+    const coastLines = new THREE.LineSegments(
+      new THREE.BufferGeometry().setFromPoints(coastPts),
+      new THREE.LineBasicMaterial({ color: '#d9b977', transparent: true, opacity: 0.54, depthWrite: false })
+    );
+    coastLines.userData.sphereCull = true;
+    coastLines.userData.sphereCullRadius = EARTH_RADIUS;
+    coastLines.userData.strokeColor = '#e0c07f';
+    coastLines.userData.lineWidth = 1.05;
+    umbraGlobeGroup.add(coastLines);
 
     // Tilted 23.5° Brass Ecliptic Ring around Umbra Earth
-    const umbraEcliptic = createCircleCurve(EARTH_RADIUS + 26, 128, '#d6b678', 0.28, false);
+    const umbraEcliptic = createCircleCurve(EARTH_RADIUS + 26, 128, '#cfa962', 0.28, false);
     umbraEcliptic.rotation.set(1.15, 0.25, 0.41);
     umbraGlobeGroup.add(umbraEcliptic);
 
-    // 5C. SIDERA Shimmering Non-Euclidean Constellation Filaments
+    // 5C. SIDERA Shimmering Non-Euclidean Constellation Filaments + L1-L4 Brass Strata
     const sideraFilamentGroup = new THREE.Group();
     sideraFilamentGroup.visible = false;
     cosmosGroup.add(sideraFilamentGroup);
+
+    [1, 2, 3, 4].forEach((layer, idx) => {
+      const stratum = createCircleCurve(204 - idx * 24, 120, '#cfa962', 0.14, idx % 2 === 1);
+      stratum.rotation.x = Math.PI / 2;
+      stratum.position.y = (layer - 2.5) * 90;
+      stratum.userData.strokeColor = '#cfa962';
+      stratum.userData.lineWidth = 0.7;
+      sideraFilamentGroup.add(stratum);
+    });
 
     const sideraLinePts = [];
     // Connect hubs across the 5 motif clusters + connect each Syzygy Motif hub to its cluster center
@@ -861,12 +909,14 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         sideraLinePts.push(clusterStars[k].posSidera3D, clusterStars[k + 1].posSidera3D);
       }
     }
-    sideraFilamentGroup.add(new THREE.LineSegments(
+    const sideraFilaments = new THREE.LineSegments(
       new THREE.BufferGeometry().setFromPoints(sideraLinePts),
       new THREE.LineBasicMaterial({
         color: '#c4b5fd', transparent: true, opacity: 0.22, depthWrite: false, blending: THREE.AdditiveBlending
       })
-    ));
+    );
+    sideraFilaments.userData.strokeColor = '#c4b5fd';
+    sideraFilamentGroup.add(sideraFilaments);
 
     // ============================================================================
     // 6. CUBIC BEZIER PHOTON BRIDGES (心物折光弦) WITH TRAVELING PULSES
@@ -968,7 +1018,10 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
           blending: THREE.AdditiveBlending
         });
 
-        bezierBridgesGroup.add(new THREE.Line(lineGeo, lineMat));
+        const bridgeLine = new THREE.Line(lineGeo, lineMat);
+        bridgeLine.userData.strokeColor = relMeta.colorA;
+        bridgeLine.userData.lineWidth = isSelected ? 1.65 : 0.9;
+        bezierBridgesGroup.add(bridgeLine);
         activeBridgeCurves.push({ bridge, idx, curve, geometry: lineGeo });
 
         // Add 2 bidirectional / staggered traveling photon light pulses per active bridge
@@ -1189,6 +1242,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       sideraFilamentGroup.visible = (dim === 'sidera');
       syzygyUpperRing.visible = (dim === 'omnia' && appState.syzygyOn && !appState.is2DPlanisphere);
       primaryStarPoints.visible = dim === 'omnia';
+      dustPoints.visible = (dim !== 'umbra');
       userPortalMarker.visible = !!appState.portalBridge && dim === 'omnia' && appState.syzygyOn;
       fullAtlas.updateDimension();
       updateClassicLink();
@@ -1520,7 +1574,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
             dActive ? 'bg-[#d6b678]/22 text-[#fff6e0] border-l-2 border-[#d6b678]' : 'text-[#9e9688] hover:text-[#f3ece0] hover:bg-white/5'
           }`;
           dBtn.innerHTML = `
-            <span class="truncate ${disc.isSupplement ? 'text-[#52d1a2]' : ''}">${disc.name}</span>
+            <span class="truncate flex items-center gap-1.5"><span>${disc.name}</span>${disc.isSupplement ? '<span class="text-[9px] text-[#cfa962]/85" title="含精选心物星桥">✦</span>' : ''}</span>
             <span class="font-mono-tech text-[10px] opacity-80">${disc.count}</span>
           `;
           dBtn.addEventListener('click', () => focusOmniaDiscipline(vol.id, disc.id));
@@ -1559,6 +1613,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     function renderBridgesIndexList(matchingBridgeIds) {
       const listEl = document.getElementById('bridges-index-list');
       const countLbl = document.getElementById('bridge-count-label');
+      if (!listEl || !countLbl) return;
       listEl.innerHTML = '';
 
       const visibleBridges = SYZYGY_BRIDGES.filter(b => matchingBridgeIds.has(b.id));
@@ -1781,7 +1836,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       });
     });
 
-    // Prominent ◐ 朔望叠影 Toggle
+    // Prominent ◐ 折光星桥 Toggle
     const btnSyzygy = document.getElementById('btn-syzygy-toggle');
     btnSyzygy.addEventListener('click', () => {
       appState.syzygyOn = !appState.syzygyOn;
@@ -1791,7 +1846,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       userPortalMarker.visible = !!appState.portalBridge && appState.dimension === 'omnia' && appState.syzygyOn;
       updateHighlightsAndFilters();
       appState.needsBridgeRebuild = true;
-      flashToast(appState.syzygyOn ? '已开启「◐ 朔望叠影」：心物双界折光弦实时耦合' : '已关闭朔望叠影：进入单界纯粹观测态');
+      flashToast(appState.syzygyOn ? '已开启「◐ 折光星桥」：心物双界折光弦实时耦合' : '已隐藏折光星桥：进入单界纯粹观测态');
     });
 
     // 3D Galaxy <-> 2D Planisphere Toggle
@@ -1806,7 +1861,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       cosmosGroup.rotation.y = 0;
 
       if (appState.is2DPlanisphere) {
-        animateCameraTo(new THREE.Vector3(-12, 0, 650), new THREE.Vector3(-12, 0, 0), 980);
+        animateCameraTo(new THREE.Vector3(0, 0, 720), new THREE.Vector3(0, 0, 0), 980);
         flashToast('已展平为 2D 古典天体星盘');
       } else {
         animateCameraTo(CAM_OMNIA.pos, CAM_OMNIA.target, 980);
@@ -1874,11 +1929,12 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       });
     });
 
-    // Collapsible Left & Right Panels
+    // Collapsible Left & Right Panels + Dynamic Drawer-Aware Camera Framing
     const leftDrawer = document.getElementById('left-drawer');
     const rightDrawer = document.getElementById('right-drawer');
     const btnOpenLeft = document.getElementById('btn-open-left');
     const btnOpenRight = document.getElementById('btn-open-right');
+    const btnSpreadCodex = document.getElementById('btn-spread-codex');
     const contextBanner = document.getElementById('context-banner');
     for (const [drawer,id] of [[leftDrawer,'engraving-left-heading'],[rightDrawer,'engraving-right-heading']]) {
       const heading=drawer.querySelector(':scope > div');
@@ -1888,6 +1944,31 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       }
     }
 
+    function updateCameraOffset() {
+      const w = Math.max(1, window.innerWidth), h = Math.max(1, window.innerHeight);
+      camera.aspect = w / h;
+      if (w >= 768) {
+        const leftOpen = !leftDrawer.classList.contains('drawer-left-hidden');
+        const rightOpen = !rightDrawer.classList.contains('drawer-right-hidden');
+        const leftOcc = leftOpen ? 262 : 0;
+        const spreadOn = rightDrawer.classList.contains('codex-spread');
+        const rightOcc = rightOpen ? (spreadOn ? Math.min(760, Math.round(w * 0.56)) : 438) : 0;
+        const rawShiftX = Math.round((rightOcc - leftOcc) / 2);
+        const shiftX = Math.max(-Math.round(w * 0.24), Math.min(Math.round(w * 0.24), rawShiftX));
+        const shiftY = -10;
+        if (shiftX || shiftY) camera.setViewOffset(w, h, shiftX, shiftY, w, h);
+        else camera.clearViewOffset();
+      } else {
+        camera.clearViewOffset();
+      }
+      camera.updateProjectionMatrix();
+    }
+
+    function syncContextBannerOffset() {
+      const collapsed = leftDrawer.classList.contains('drawer-left-hidden');
+      contextBanner.style.left = collapsed && window.innerWidth >= 768 ? '128px' : '';
+    }
+
     function setLeftDrawerCollapsed(collapsed) {
       if (!collapsed && window.innerWidth < 768 && !rightDrawer.classList.contains('drawer-right-hidden')) {
         setRightDrawerCollapsed(true);
@@ -1895,7 +1976,8 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       leftDrawer.classList.toggle('drawer-left-hidden', collapsed);
       btnOpenLeft.classList.toggle('hidden', !collapsed);
       btnOpenLeft.classList.toggle('inline-flex', collapsed);
-      contextBanner.style.left = collapsed ? '20px' : '';
+      syncContextBannerOffset();
+      updateCameraOffset();
     }
 
     function setRightDrawerCollapsed(collapsed) {
@@ -1905,6 +1987,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       rightDrawer.classList.toggle('drawer-right-hidden', collapsed);
       btnOpenRight.classList.toggle('hidden', !collapsed);
       btnOpenRight.classList.toggle('inline-flex', collapsed);
+      updateCameraOffset();
     }
 
     document.getElementById('btn-close-left').addEventListener('click', () => setLeftDrawerCollapsed(true));
@@ -1912,7 +1995,30 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     document.getElementById('btn-close-right').addEventListener('click', () => setRightDrawerCollapsed(true));
     btnOpenRight.addEventListener('click', () => setRightDrawerCollapsed(false));
 
-    // The canvas and its geometry stay unchanged; the surrounding engraved UI has two palettes.
+    if (btnSpreadCodex) {
+      let leftWasOpenBeforeSpread = false;
+      btnSpreadCodex.addEventListener('click', () => {
+        const nextSpread = !rightDrawer.classList.contains('codex-spread');
+        rightDrawer.classList.toggle('codex-spread', nextSpread);
+        btnSpreadCodex.setAttribute('aria-pressed', String(nextSpread));
+        btnSpreadCodex.textContent = nextSpread ? '单卷阅读' : '展卷并读';
+        if (nextSpread) {
+          if (rightDrawer.classList.contains('drawer-right-hidden')) setRightDrawerCollapsed(false);
+          if (window.innerWidth >= 768 && !leftDrawer.classList.contains('drawer-left-hidden')) {
+            leftWasOpenBeforeSpread = true;
+            setLeftDrawerCollapsed(true);
+          } else {
+            leftWasOpenBeforeSpread = false;
+          }
+        } else if (leftWasOpenBeforeSpread && window.innerWidth >= 1024) {
+          leftWasOpenBeforeSpread = false;
+          setLeftDrawerCollapsed(false);
+        }
+        updateCameraOffset();
+      });
+    }
+
+    // The canvas and its geometry stay unchanged; the reading codex shifts between 深空金错 and 古拓羊皮.
     const btnDarkTheme = document.getElementById('theme-btn-dark');
     const btnParchmentTheme = document.getElementById('theme-btn-parchment');
     const applyEngravingTheme = theme => {
@@ -1929,7 +2035,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     try { storedTheme=localStorage.getItem('astraia-engraving-theme') || 'obsidian'; } catch { /* Use the default. */ }
     applyEngravingTheme(storedTheme);
 
-    // Live Search Input & Cmd+K Shortcut
+    // Live Search Input & Cmd+K Shortcut (co-located inside Left Atlas Drawer)
     const searchInput = document.getElementById('codex-search');
     const btnClearQuery = document.getElementById('btn-clear-query');
     const mobileResults = document.getElementById('btn-mobile-results');
@@ -1959,7 +2065,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     window.addEventListener('keydown', (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
-        setRightDrawerCollapsed(false);
+        setLeftDrawerCollapsed(false);
         searchInput.focus();
       }
     });
@@ -1969,13 +2075,15 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       setLeftDrawerCollapsed(true);
       if (window.innerWidth < 768) setRightDrawerCollapsed(true);
     }
+    syncContextBannerOffset();
+    updateCameraOffset();
 
     window.addEventListener('resize', () => {
       if (window.innerWidth < 768 && !leftDrawer.classList.contains('drawer-left-hidden')
         && !rightDrawer.classList.contains('drawer-right-hidden')) setLeftDrawerCollapsed(true);
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
+      syncContextBannerOffset();
+      updateCameraOffset();
       renderer.setPixelRatio(dpr);
       renderer.setSize(window.innerWidth, window.innerHeight);
       starUniforms.uPixelRatio.value = dpr;
@@ -2234,8 +2342,11 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     document.getElementById('stats-subjects').textContent = book.subjects.length.toLocaleString();
     const fictionButton = document.getElementById('btn-fiction');
     document.querySelectorAll('[data-tier]').forEach(button=>{
-      button.innerHTML=tierSeal(button.dataset.tier);
-      button.setAttribute('aria-label',`${button.dataset.tier} 级信源`);
+      const tier = button.dataset.tier;
+      const meta = TIER_META[tier];
+      button.innerHTML=tierSeal(tier);
+      button.title = meta ? `${meta.title}（${meta.summary}）` : `${tier} 级信源`;
+      button.setAttribute('aria-label', meta ? meta.title : `${tier} 级信源`);
     });
     function syncTierButtons() {
       fictionButton.setAttribute('aria-checked', String(!appState.showF));

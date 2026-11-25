@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { mapLabel, type GraphIndex } from './graph';
 import { CONTENT_GROUPS, nodeContentGroup, nodeRegion, REGIONS, type ContentGroup, type Region } from './catalogueBrowse';
+import { portalHref } from './portalNavigation';
 
 const CASES = [
   'case_cn_meigu_ghost_boards_1992',
@@ -17,12 +18,18 @@ const PAIRS = [
   { title: '睡眠瘫痪 · 访谈与实验', description: '开罗访谈 / 东京实验', left: 'case_egypt_jinn_sleep_paralysis', right: 'case_sleep_paralysis_lab_1992' },
   { title: '妖术恐慌 · 跨地域对读', description: '塞勒姆 1692 / 中国 1768', left: 'case_salem_1692', right: 'case_china_soulstealers_1768' },
 ];
+const SYZYGY_HIGHLIGHTS = [
+  { title: '老巫婆夜访 ⇄ 睡眠与情绪', desc: '纽芬兰口述访谈 ×《格物识微》生理机制', story: 'case_old_hag_sleep_paralysis_1982', entry: 'HEA-009' },
+  { title: 'H 夫人闹鬼住宅 ⇄ 一氧化碳危害', desc: '1921 年病例档案 ×《格物识微》化学毒理', story: 'case_mrs_h_co_haunting_1921', entry: 'CHE-6-0016' },
+  { title: '乾隆叫魂案 ⇄ 社会关系与恐慌', desc: '1768 年清代档案 ×《格物识微》社会契约', story: 'case_china_soulstealers_1768', entry: 'SOC-1-0009' },
+];
 
-export function CollectionGuide({ graph, onRead, onCompare, onBrowse }: {
+export function CollectionGuide({ graph, onRead, onCompare, onBrowse, onOpenOmnia }: {
   graph: GraphIndex;
   onRead: (id: string) => void;
   onCompare: (left: string, right: string) => void;
   onBrowse: (region: Region, content: ContentGroup) => void;
+  onOpenOmnia: () => void;
 }) {
   const trails = STORY_TRAILS.filter(({ id }) => graph.byId.has(id));
   const counts = useMemo(() => {
@@ -35,13 +42,26 @@ export function CollectionGuide({ graph, onRead, onCompare, onBrowse }: {
   }, [graph.nodes]);
   return <aside id="node-inspector" className="collection-guide" aria-labelledby="collection-guide-title">
     <header>
-      <span className="guide-overline">ASTRAIA / COLLECTION GUIDE</span>
+      <span className="guide-overline">ASTRAIA / PHYSIS × MYTHOS GUIDE</span>
       <h2 id="collection-guide-title">馆藏导览</h2>
-      <p>先按地域或内容寻找故事，打开卷宗阅读梗概和出处；从地点进入地图，再沿关联探索文本、母题与机制。</p>
+      <p>从地理舆图与四层星络读地方志怪与档案，再经朔望星门与《格物识微》五卷知识并置对读。</p>
       <ol className="guide-layers" reversed>
         <li><b>L4</b> 机制</li><li><b>L3</b> 母题</li><li><b>L2</b> 文本</li><li><b>L1</b> 个案</li>
       </ol>
     </header>
+    <section aria-labelledby="guide-syzygy-title">
+      <div className="guide-section-heading"><h3 id="guide-syzygy-title">心物双界 · 朔望叠影</h3><span>SYZYGY × OMNIA</span></div>
+      {SYZYGY_HIGHLIGHTS.map((item) => (
+        <a key={item.story} className="guide-entry guide-entry-link" href={portalHref('omnia', item.story, item.entry)}>
+          <span><strong>{item.title}</strong><small>{item.desc}</small></span>
+          <span aria-hidden="true">◐</span>
+        </a>
+      ))}
+      <button className="guide-entry" type="button" onClick={onOpenOmnia}>
+        <span><strong>进入 OMNIA · 万象星枢</strong><small>《格物识微》五卷 · 二十门 · 2,266 条实用科学知识</small></span>
+        <span aria-hidden="true">✦</span>
+      </button>
+    </section>
     <section aria-labelledby="guide-regions-title">
       <div className="guide-section-heading"><h3 id="guide-regions-title">按地域探索</h3><span>{graph.nodes.length.toLocaleString()} 条资料</span></div>
       <div className="guide-categories">{REGIONS.map((item) => <button type="button" key={item.id}

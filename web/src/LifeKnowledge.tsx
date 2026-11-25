@@ -1,5 +1,4 @@
 import { Children, lazy, Suspense, startTransition, useDeferredValue, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
-import { createPortal } from 'react-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { ViewportFrame } from './WorkbenchControls';
@@ -17,6 +16,25 @@ function loadLifeScene() { return scenePromise ??= import('./views/LifeScene').c
 const LifeScene = lazy(loadLifeScene);
 const LifeAstrolabe = lazy(() => import('./views/LifeAstrolabe'));
 const base = import.meta.env.BASE_URL;
+const LIFE_THEME_KEY = 'astraia-engraving-theme';
+
+function readLifeTheme(): 'dark' | 'parchment' {
+  try {
+    return localStorage.getItem(LIFE_THEME_KEY) === 'parchment' ? 'parchment' : 'dark';
+  } catch {
+    return 'dark';
+  }
+}
+
+function PanelCorners() {
+  return <>
+    {(['nw', 'ne', 'sw', 'se'] as const).map((pos) => (
+      <svg key={pos} className={`engraving-corner engraving-corner-${pos}`} viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+        <path d="M1 19V1H19 M4.5 15V4.5H15V9.5H9.5V7" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      </svg>
+    ))}
+  </>;
+}
 
 function headingParts(children: ReactNode) {
   const parts = Children.toArray(children);
@@ -49,7 +67,7 @@ export default function LifeKnowledge() {
   const [dimension, setDimension] = useState<LifeDimension>('all');
   const [folioOpen, setFolioOpen] = useState(true);
   const [directoryOpen, setDirectoryOpen] = useState(true);
-  const [folioTheme, setFolioTheme] = useState<'dark' | 'parchment'>('dark');
+  const [folioTheme, setFolioTheme] = useState<'dark' | 'parchment'>(readLifeTheme);
   const [showConnections, setShowConnections] = useState(true);
   const [inquiryIds, setInquiryIds] = useState<string[]>([]);
   const [renderer, setRenderer] = useState<'software' | 'webgl' | null>(null);
@@ -63,6 +81,10 @@ export default function LifeKnowledge() {
   const deferredQuery = useDeferredValue(query.trim().toLocaleLowerCase());
   const searchRef = useRef<HTMLInputElement>(null);
   const inspectorRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    try { localStorage.setItem(LIFE_THEME_KEY, folioTheme === 'parchment' ? 'parchment' : 'obsidian'); } catch { /* ignore */ }
+  }, [folioTheme]);
 
   useEffect(() => {
     try { localStorage.setItem(OBSERVATION_KEY, JSON.stringify(observations)); setStorageUnavailable(false); }
@@ -81,8 +103,6 @@ export default function LifeKnowledge() {
         setIndexBook(data);
       } catch (reason) {
         if (controller.signal.aborted) return;
-        // Old static builds may not have an index. They can still open the
-        // complete book normally until the next publication is deployed.
         const response = await fetch(`${base}knowledge/data.json`, { signal: controller.signal, cache: 'no-cache' });
         if (!response.ok) throw new Error(`读取失败 (${response.status})`);
         const data = await response.json() as LifeBook;
@@ -133,9 +153,6 @@ export default function LifeKnowledge() {
     return () => window.removeEventListener('keydown', key);
   }, []);
   const byId = useMemo(() => new Map((book?.entries ?? []).map((entry) => [entry.id, entry])), [book]);
-  // The full handbook is searchable, including figure captions. Cache each
-  // normalized string lazily so successive keystrokes do not repeatedly join
-  // and lowercase thousands of long entries on the rendering thread.
   const searchText = useMemo(() => new Map<string, string>(), [book]);
   const selected = selectedId ? byId.get(selectedId) : undefined;
   useEffect(() => {
@@ -214,35 +231,33 @@ export default function LifeKnowledge() {
 
   return <div className="life-workspace" data-folio-open={folioOpen} data-directory-open={directoryOpen} data-folio-theme={folioTheme}
     data-low-power={renderer === 'software' ? 'true' : undefined}>
-    {document.querySelector('.app-shell-life .life-header-slot') && createPortal(<div className="life-header-status">
-      {sceneMode === 'astrolabe' ? 'ASTROLABE' : renderer === 'software' ? 'CANVAS 2D' : 'RETINA SHADER'} · {book.entries.length.toLocaleString()} NODES
-    </div>, document.querySelector('.app-shell-life .life-header-slot')!)}
     <aside className="life-sidebar" aria-label="知识学科" hidden={!directoryOpen}>
-      <div className="life-side-heading"><div><span>OMNIA / ATLAS</span><strong>知识目录</strong><small>五卷 · 二十门</small></div>
+      <PanelCorners />
+      <div className="life-side-heading"><div><span>OMNIA / ATLAS</span><strong>知识目录</strong><small>五卷 · 二十门 · {book.entries.length.toLocaleString()} 星点</small></div>
         <button className="life-directory-toggle" type="button" onClick={() => setDirectoryOpen(false)}>◂ 收起</button></div>
       <button className="life-subject-all" type="button" aria-pressed={!subject && !volume} onClick={() => chooseSubject(null)}>
         <span>✦ &nbsp;全部星域条目</span><b>{book.entries.length.toLocaleString()}</b></button>
       {volumes.map((volume, index) => <div className="life-volume" key={volume} data-volume={index}>
         <button type="button" className="life-volume-name" aria-pressed={volume === subjectLabel && !subject} onClick={() => chooseVolume(volume)}>{volume} <span>↗</span></button>
-        <div className="life-volume-frieze" aria-hidden="true" dangerouslySetInnerHTML={{ __html:engravingFrieze(engravingPatternForVolume(index),`engraving-life-${index}`) }} />
+        <div className="life-volume-frieze" aria-hidden="true" dangerouslySetInnerHTML={{ __html: engravingFrieze(engravingPatternForVolume(index), `engraving-life-${index}`) }} />
         {book.subjects.filter((item) => item.volume === volume).map((item) => <button key={item.id} type="button"
           aria-pressed={subject === item.id} onClick={() => chooseSubject(item.id)}>
           <span>{item.title}</span><small>{item.count}</small></button>)}
       </div>)}
     </aside>
-    {!directoryOpen && <button className="life-directory-restore" type="button" onClick={() => setDirectoryOpen(true)}>☰ 展开目录</button>}
+    {!directoryOpen && <button className="life-directory-restore" type="button" onClick={() => setDirectoryOpen(true)}>☰ 知识目录</button>}
     <main className="life-map" aria-label="知识星图">
       <ViewportFrame />
-      <div className="life-map-heading"><span>ASTRAIA / KNOWLEDGE ATLAS</span><h1>OMNIA <small>万象星枢</small></h1>
-        <p>《格物识微》· 五卷异构星系 · {book.entries.length.toLocaleString()} 个知识星点</p></div>
+      <div className="life-map-heading"><span>OMNIA / KNOWLEDGE ATLAS</span><h1>万象星枢 <small>《格物识微》</small></h1>
+        <p>五卷异构星系 · {book.entries.length.toLocaleString()} 个知识星点</p></div>
       <div className="life-view-controls" aria-label="知识星图视角">
-        <button type="button" aria-pressed={sceneMode === 'galaxy'} onClick={() => setSceneMode('galaxy')}>3D 异构星系</button>
-        <button type="button" aria-pressed={sceneMode === 'astrolabe'} onClick={() => setSceneMode('astrolabe')}>2D 天体星盘</button>
+        <button type="button" aria-pressed={sceneMode === 'galaxy'} onClick={() => setSceneMode('galaxy')}>3D 星系</button>
+        <button type="button" aria-pressed={sceneMode === 'astrolabe'} onClick={() => setSceneMode('astrolabe')}>2D 星盘</button>
         <button type="button" aria-pressed={showConnections} onClick={() => setShowConnections((value) => !value)}>✦ 共鸣星弦</button>
         {sceneMode === 'galaxy' && <button type="button" aria-pressed={motionEnabled} onClick={() => setMotionEnabled((value) => !value)}>
           {motionEnabled ? '暂停星动' : '恢复星动'}</button>}
         <button type="button" className="life-reset" onClick={() => { chooseSubject(null); setResetSerial((value) => value + 1); }}>
-          ◇ 全景总览</button>
+          ◇ 全景</button>
       </div>
       <Suspense fallback={<div className="stage-message">正在绘制知识星图…</div>}>
         {sceneMode === 'galaxy' || renderer === 'webgl'
@@ -252,120 +267,121 @@ export default function LifeKnowledge() {
               volumeId={volume} highlightIds={highlightIds} connectHighlights={showConnections} resetSerial={resetSerial} onSelect={choose} onSubject={chooseSubject} onVolume={chooseVolume} />}
       </Suspense>
       <LifeResonance value={dimension} onChange={(value) => { chooseSubject(null); setDimension(value); }} />
-      <div className="life-map-footer"><span>{highlightIds.length ? `✦　点亮 ${highlightIds.length} 项${dimension !== 'all' ? '维度' : observationsOnly ? '观测' : '搜索'}轨迹` : '✦　五卷异构星系 · 明星为学科'}</span>
+      <div className="life-map-footer"><span>{highlightIds.length ? `✦ 点亮 ${highlightIds.length} 项${dimension !== 'all' ? '维度' : observationsOnly ? '观测' : '搜索'}轨迹` : '✦ 五卷异构星系 · 明星为学科'}</span>
         <span>{sceneMode === 'galaxy' ? '拖动旋转' : '拖动平移'} · 滚轮缩放 · 长按聚拢关联</span></div>
     </main>
     <aside className="life-inspector" ref={inspectorRef} aria-label="知识卷宗">
+      <PanelCorners />
       <div className="life-folio-bar">
-        {folioOpen && <div className="life-theme-switch" role="group" aria-label="手卷主题">
-          <button type="button" aria-pressed={folioTheme === 'dark'} onClick={() => setFolioTheme('dark')}>深空星卷</button>
-          <button type="button" aria-pressed={folioTheme === 'parchment'} onClick={() => setFolioTheme('parchment')}>羊皮典籍</button>
+        {folioOpen && <div className="life-theme-switch" role="group" aria-label="手卷纸面主题">
+          <button type="button" aria-pressed={folioTheme === 'dark'} onClick={() => setFolioTheme('dark')}>深空金错</button>
+          <button type="button" aria-pressed={folioTheme === 'parchment'} onClick={() => setFolioTheme('parchment')}>古拓羊皮</button>
         </div>}
         <button className="life-folio-toggle" type="button" aria-expanded={folioOpen} onClick={() => setFolioOpen((value) => !value)}>
           {folioOpen ? '收起手卷 ▸' : '◂ 展开格物手卷'}</button>
       </div>
       <div hidden={!folioOpen}>
-      <div className="life-search"><label htmlFor="life-search">检索知识星库 <span>⌘ K</span></label>
-        <input id="life-search" ref={searchRef} value={query} placeholder="搜索关键词、编号或问题" onChange={(event) => {
-          setQuery(event.target.value); setDimension('all'); setInquiryIds([]); clearSelection(); setLimit(40);
-        }} />
-        <div className="life-reading-modes"><button type="button" aria-pressed={!observationsOnly} onClick={() => {
-          setObservationsOnly(false); clearSelection(); setLimit(40);
-        }}>星卷目录</button><button type="button" aria-pressed={observationsOnly} onClick={() => {
-          setObservationsOnly(true); setSubject(null); setVolume(null); setQuery(''); clearSelection(); setLimit(40);
-        }}>观测星标 <span>{Object.keys(observations).length}</span></button></div>
-      </div>
-      {fullBook ? <LifeInquiry book={fullBook} onChoose={choose} onEvidence={(ids) => {
-        setInquiryIds(ids); setDimension('all'); setSubject(null); setVolume(null); setQuery(''); setObservationsOnly(false); clearSelection();
-      }} /> : <div className="life-load-status" role="status">{fullError ? <>知识正文暂未载入：{fullError} <button type="button" onClick={() => setFullAttempt((value) => value + 1)}>重试</button></> : '正在载入全文与跨章节问答…'}</div>}
-      {selected ? <article className="life-article">
-        <button className="life-back" type="button" onClick={clearSelection}>← 返回条目目录</button>
-        <div className="life-overline">{selected.volume} / {book.subjects.find((s) => s.id === selected.subject)?.title}</div>
-        <h2>{selected.title}</h2>
-        <a className="life-portal-link" href={portalHref('omnia',undefined,selected.id)} onClick={(event)=>{
-          event.currentTarget.href=portalHref('omnia',undefined,selected.id);
-        }}>◐ 穿界星门 · 查看关联民俗 ↗</a>
-        <button className="life-save" type="button" aria-pressed={isSaved} onClick={() => toggleObservation(selected.id)}>
-          {isSaved ? '★ 已加入观测列表' : '☆ 加入观测列表'}</button>
-        {isSaved && <label className="life-observation-note">个人笔记 <span>{storageUnavailable ? '浏览器未允许保存' : '保存在此浏览器'}</span>
-          <textarea value={observations[selected.id]} maxLength={4000} placeholder="写下你的观察…" onChange={(event) => {
-            const value = event.target.value;
-            setObservations((previous) => ({ ...previous, [selected.id]: value }));
-          }} /></label>}
-        <div className="life-id">{selected.id} <span>{selected.topic}</span></div>
-        <div className="life-source"><span>来源：《格物识微》{book.edition}</span><strong>PDF 第 {selected.page} 页</strong></div>
-        {fullBook && <div className="life-prose"><ReactMarkdown remarkPlugins={[remarkGfm]} components={{
-          a: ({ href, children }) => {
-            if (href?.startsWith('#entry-')) {
-              const id = href.slice(7).toUpperCase();
-              return <a href={`?view=life&entry=${encodeURIComponent(id)}`} onClick={(event) => {
-                if (byId.has(id)) { event.preventDefault(); choose(id); }
-              }}>{children}</a>;
-            }
-            if (href?.startsWith('#')) {
-              const anchor = href.slice(1), owner = book.anchors[anchor];
-              if (owner) return <a href={`?view=life&entry=${encodeURIComponent(owner)}#${anchor}`} onClick={(event) => {
-                event.preventDefault(); choose(owner, anchor);
-              }}>{children}</a>;
-            }
-            return <a href={href} target={href?.startsWith('http') ? '_blank' : undefined} rel="noreferrer">{children}</a>;
-          },
-          img: ({ src, alt }) => {
-            if (src?.startsWith('inline-figures/')) {
-              const figure = book.figures?.[src.slice('inline-figures/'.length)];
-              return <span className="life-figure" role="group" aria-label="原书图表及说明">
+        <div className="life-search"><label htmlFor="life-search">检索知识星库 <span>⌘ K</span></label>
+          <input id="life-search" ref={searchRef} value={query} placeholder="搜索关键词、编号或问题" onChange={(event) => {
+            setQuery(event.target.value); setDimension('all'); setInquiryIds([]); clearSelection(); setLimit(40);
+          }} />
+          <div className="life-reading-modes"><button type="button" aria-pressed={!observationsOnly} onClick={() => {
+            setObservationsOnly(false); clearSelection(); setLimit(40);
+          }}>星卷目录</button><button type="button" aria-pressed={observationsOnly} onClick={() => {
+            setObservationsOnly(true); setSubject(null); setVolume(null); setQuery(''); clearSelection(); setLimit(40);
+          }}>观测星标 <span>{Object.keys(observations).length}</span></button></div>
+        </div>
+        {fullBook ? <LifeInquiry book={fullBook} onChoose={choose} onEvidence={(ids) => {
+          setInquiryIds(ids); setDimension('all'); setSubject(null); setVolume(null); setQuery(''); setObservationsOnly(false); clearSelection();
+        }} /> : <div className="life-load-status" role="status">{fullError ? <>知识正文暂未载入：{fullError} <button type="button" onClick={() => setFullAttempt((value) => value + 1)}>重试</button></> : '正在载入全文与跨章节问答…'}</div>}
+        {selected ? <article className="life-article">
+          <button className="life-back" type="button" onClick={clearSelection}>← 返回条目目录</button>
+          <div className="life-overline">{selected.volume} / {book.subjects.find((s) => s.id === selected.subject)?.title}</div>
+          <h2>{selected.title}</h2>
+          <a className="life-portal-link" href={portalHref('omnia', undefined, selected.id)} onClick={(event) => {
+            event.currentTarget.href = portalHref('omnia', undefined, selected.id);
+          }}>◐ 穿界星门 · 在朔望视图查看关联民俗 ↗</a>
+          <button className="life-save" type="button" aria-pressed={isSaved} onClick={() => toggleObservation(selected.id)}>
+            {isSaved ? '★ 已加入观测列表' : '☆ 加入观测列表'}</button>
+          {isSaved && <label className="life-observation-note">个人笔记 <span>{storageUnavailable ? '浏览器未允许保存' : '保存在此浏览器'}</span>
+            <textarea value={observations[selected.id]} maxLength={4000} placeholder="写下你的观察…" onChange={(event) => {
+              const value = event.target.value;
+              setObservations((previous) => ({ ...previous, [selected.id]: value }));
+            }} /></label>}
+          <div className="life-id">{selected.id} <span>{selected.topic}</span></div>
+          <div className="life-source"><span>来源：《格物识微》{book.edition}</span><strong>PDF 第 {selected.page} 页</strong></div>
+          {fullBook && <div className="life-prose"><ReactMarkdown remarkPlugins={[remarkGfm]} components={{
+            a: ({ href, children }) => {
+              if (href?.startsWith('#entry-')) {
+                const id = href.slice(7).toUpperCase();
+                return <a href={`?view=life&entry=${encodeURIComponent(id)}`} onClick={(event) => {
+                  if (byId.has(id)) { event.preventDefault(); choose(id); }
+                }}>{children}</a>;
+              }
+              if (href?.startsWith('#')) {
+                const anchor = href.slice(1), owner = book.anchors[anchor];
+                if (owner) return <a href={`?view=life&entry=${encodeURIComponent(owner)}#${anchor}`} onClick={(event) => {
+                  event.preventDefault(); choose(owner, anchor);
+                }}>{children}</a>;
+              }
+              return <a href={href} target={href?.startsWith('http') ? '_blank' : undefined} rel="noreferrer">{children}</a>;
+            },
+            img: ({ src, alt }) => {
+              if (src?.startsWith('inline-figures/')) {
+                const figure = book.figures?.[src.slice('inline-figures/'.length)];
+                return <span className="life-figure" role="group" aria-label="原书图表及说明">
+                  <button className="life-figure-open" type="button" aria-label="放大原书图表"
+                    onClick={() => setEnlargedFigure({ src, alt: alt ?? '原书图表' })}>
+                    <img src={`${base}knowledge/${src}`} alt={alt ?? '原书图表'} loading="lazy" />
+                    <span>查看大图 ↗</span>
+                  </button>
+                  {figure?.text && <span className="life-figure-text">{figure.text}</span>}
+                  {!!figure?.links.length && <span className="life-figure-links">{figure.links.map((href, index) =>
+                    <a key={href} href={href} target="_blank" rel="noreferrer">图源与许可 {index + 1} ↗</a>)}</span>}
+                </span>;
+              }
+              if (src?.startsWith('figures/')) return <span className="life-figure" role="group" aria-label="原书图表及说明">
                 <button className="life-figure-open" type="button" aria-label="放大原书图表"
                   onClick={() => setEnlargedFigure({ src, alt: alt ?? '原书图表' })}>
-                  <img src={`${base}knowledge/${src}`} alt={alt ?? '原书图表'} loading="lazy" />
+                  <img src={`${base}knowledge/${src}`} alt={alt ?? ''} loading="lazy" />
                   <span>查看大图 ↗</span>
                 </button>
-                {figure?.text && <span className="life-figure-text">{figure.text}</span>}
-                {!!figure?.links.length && <span className="life-figure-links">{figure.links.map((href, index) =>
-                  <a key={href} href={href} target="_blank" rel="noreferrer">图源与许可 {index + 1} ↗</a>)}</span>}
+                {alt && <span className="life-figure-text">{alt}</span>}
               </span>;
-            }
-            if (src?.startsWith('figures/')) return <span className="life-figure" role="group" aria-label="原书图表及说明">
-              <button className="life-figure-open" type="button" aria-label="放大原书图表"
-                onClick={() => setEnlargedFigure({ src, alt: alt ?? '原书图表' })}>
-                <img src={`${base}knowledge/${src}`} alt={alt ?? ''} loading="lazy" />
-                <span>查看大图 ↗</span>
-              </button>
-              {alt && <span className="life-figure-text">{alt}</span>}
-            </span>;
-            return <img src={src} alt={alt ?? ''} loading="lazy" />;
-          },
-          p: ({ children }) => {
-            const parts = Children.toArray(children);
-            const marker = parts.length === 1 && typeof parts[0] === 'string' ? parts[0].match(/^⟦anchor:([a-z0-9-]+)⟧$/) : null;
-            return marker ? <span className="life-anchor" id={marker[1]} /> : <p>{children}</p>;
-          },
-          h4: ({ children }) => { const h = headingParts(children); return <h4 id={h.id}>{h.parts}</h4>; },
-          h5: ({ children }) => { const h = headingParts(children); return <h5 id={h.id}>{h.parts}</h5>; },
-          h6: ({ children }) => { const h = headingParts(children); return <h6 id={h.id}>{h.parts}</h6>; },
-        }}>{separateAnchorMarkers(selected.body)}</ReactMarkdown></div>}
-        {related.length > 0 && <section className="life-related"><h3>原书交叉索引</h3>
-          <p>以下连接来自手册原有的条目引用。</p>
-          {related.map((entry: LifeEntry) => <button type="button" key={entry.id} onClick={() => choose(entry.id)}>
-            <span>{entry.title}</span><small>{entry.volume !== selected.volume ? '跨卷 · ' : ''}{entry.id} →</small></button>)}
-        </section>}
-        <section className="life-original"><h3>原书图文</h3><p>原版保留全部图表、图注及页内版式。</p>
-          <div className="life-original-actions"><button type="button" onClick={() => setShowPdf((value) => !value)}>
-            {showPdf ? '收起原书' : '展开原书图文'}</button><a href={pdfUrl} target="_blank" rel="noreferrer">在新窗口打开 ↗</a></div>
-          {showPdf && <iframe title={`格物识微：${selected.title}，第 ${selected.page} 页`} src={pdfUrl} />}
-        </section>
-      </article> : <div className="life-directory">
-        <div className="life-overline">格物识微 / 全书增绘版</div><h2>{observationsOnly ? '观测列表' : subjectLabel}</h2>
-        <p className="life-directory-intro">{observationsOnly ? '收藏的知识与个人笔记保存在此浏览器。'
-          : '选择学科，或搜索、点击星点，阅读原书条目与图文。'}</p>
-        <div className="life-results-heading"><span>{deferredQuery ? `搜索结果 · ${results.length}` : `条目目录 · ${results.length}`}</span><span>INDEX</span></div>
-        {!!deferredQuery && <p className="life-search-context">{fullBook ? `按原书关键词匹配 · 星图点亮前 ${Math.min(results.length, 30)} 项` : '正在载入全文，搜索结果将自动补全。'}</p>}
-        {results.slice(0, limit).map((entry) => <button type="button" className="life-result" key={entry.id} onClick={() => choose(entry.id)}>
-          <span>{entry.title}</span><small>{entry.id} · 第 {entry.page} 页 · {entry.topic || entry.volume}</small>
-          {!!deferredQuery && <em>{lifeSearchExcerpt(entry, deferredQuery)}</em>}</button>)}
-        {!results.length && <p className="life-empty">{observationsOnly && !deferredQuery ? '打开知识条目，加入你的观测列表。' : '没有找到匹配的条目。'}</p>}
-        {limit < results.length && <button className="life-more" type="button" onClick={() => setLimit((value) => value + 60)}>
-          显示更多 · 还有 {results.length - limit} 条</button>}
-      </div>}
+              return <img src={src} alt={alt ?? ''} loading="lazy" />;
+            },
+            p: ({ children }) => {
+              const parts = Children.toArray(children);
+              const marker = parts.length === 1 && typeof parts[0] === 'string' ? parts[0].match(/^⟦anchor:([a-z0-9-]+)⟧$/) : null;
+              return marker ? <span className="life-anchor" id={marker[1]} /> : <p>{children}</p>;
+            },
+            h4: ({ children }) => { const h = headingParts(children); return <h4 id={h.id}>{h.parts}</h4>; },
+            h5: ({ children }) => { const h = headingParts(children); return <h5 id={h.id}>{h.parts}</h5>; },
+            h6: ({ children }) => { const h = headingParts(children); return <h6 id={h.id}>{h.parts}</h6>; },
+          }}>{separateAnchorMarkers(selected.body)}</ReactMarkdown></div>}
+          {related.length > 0 && <section className="life-related"><h3>原书交叉索引</h3>
+            <p>以下连接来自手册原有的条目引用。</p>
+            {related.map((entry: LifeEntry) => <button type="button" key={entry.id} onClick={() => choose(entry.id)}>
+              <span>{entry.title}</span><small>{entry.volume !== selected.volume ? '跨卷 · ' : ''}{entry.id} →</small></button>)}
+          </section>}
+          <section className="life-original"><h3>原书图文</h3><p>原版保留全部图表、图注及页内版式。</p>
+            <div className="life-original-actions"><button type="button" onClick={() => setShowPdf((value) => !value)}>
+              {showPdf ? '收起原书' : '展开原书图文'}</button><a href={pdfUrl} target="_blank" rel="noreferrer">在新窗口打开 ↗</a></div>
+            {showPdf && <iframe title={`格物识微：${selected.title}，第 ${selected.page} 页`} src={pdfUrl} />}
+          </section>
+        </article> : <div className="life-directory">
+          <div className="life-overline">格物识微 / 全书增绘版</div><h2>{observationsOnly ? '观测列表' : subjectLabel}</h2>
+          <p className="life-directory-intro">{observationsOnly ? '收藏的知识与个人笔记保存在此浏览器。'
+            : '选择学科，或搜索、点击星点，阅读原书条目与图文。'}</p>
+          <div className="life-results-heading"><span>{deferredQuery ? `搜索结果 · ${results.length}` : `条目目录 · ${results.length}`}</span><span>INDEX</span></div>
+          {!!deferredQuery && <p className="life-search-context">{fullBook ? `按原书关键词匹配 · 星图点亮前 ${Math.min(results.length, 30)} 项` : '正在载入全文，搜索结果将自动补全。'}</p>}
+          {results.slice(0, limit).map((entry) => <button type="button" className="life-result" key={entry.id} onClick={() => choose(entry.id)}>
+            <span>{entry.title}</span><small>{entry.id} · 第 {entry.page} 页 · {entry.topic || entry.volume}</small>
+            {!!deferredQuery && <em>{lifeSearchExcerpt(entry, deferredQuery)}</em>}</button>)}
+          {!results.length && <p className="life-empty">{observationsOnly && !deferredQuery ? '打开知识条目，加入你的观测列表。' : '没有找到匹配的条目。'}</p>}
+          {limit < results.length && <button className="life-more" type="button" onClick={() => setLimit((value) => value + 60)}>
+            显示更多 · 还有 {results.length - limit} 条</button>}
+        </div>}
       </div>
     </aside>
     {enlargedFigure && <div className="life-zoom-backdrop" role="presentation" onClick={(event) => {
