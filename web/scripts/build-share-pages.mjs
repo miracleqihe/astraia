@@ -24,7 +24,10 @@ const out=resolve(outputRoot), W=1200, H=630, stride=W+1;
 await mkdir(`${out}/s`,{recursive:true}); await mkdir(`${out}/og`,{recursive:true});
 const esc = text => String(text ?? '').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[char]);
 
-// Indexed-color PNGs keep 7,732 individual cards inexpensive to store and transfer.
+// Sharing images contain only decorative stars; titles and descriptions are in
+// each page's Open Graph tags. Reuse a small, deterministic set so new stories
+// do not each add another image to the published site's storage footprint.
+const imageVariants = 8;
 const crcTable=Uint32Array.from({length:256},(_,n)=>{for(let k=0;k<8;k++)n=n&1?0xedb88320^(n>>>1):n>>>1;return n>>>0;});
 function crc(bytes) { let n=0xffffffff; for(const b of bytes)n=crcTable[(n^b)&255]^(n>>>8); return (n^0xffffffff)>>>0; }
 function chunk(type,data) { const name=Buffer.from(type), length=Buffer.alloc(4), check=Buffer.alloc(4); length.writeUInt32BE(data.length); check.writeUInt32BE(crc(Buffer.concat([name,data]))); return Buffer.concat([length,name,data,check]); }
@@ -46,17 +49,20 @@ function image(id) {
 async function make(node) {
   const title=String(node.title ?? node.id), text=(node.reading?.paragraphs ?? []).find(p=>typeof p==='string'&&p.trim());
   const description=[...(text ? text.replace(/\s+/g,' ').trim() : `${title}：在 Astraia 阅读这条资料及其出处。`)].slice(0,180).join('');
-  const route=`${publicBase}s/${node.id}/`, og=`${publicBase}og/${node.id}.png`;
+  const variant=createHash('sha256').update(node.id).digest()[0] % imageVariants;
+  const route=`${publicBase}s/${node.id}/`, og=`${publicBase}og/shared-${variant}.png`;
   const dim=Number.isFinite(node.spatial?.lat)&&Number.isFinite(node.spatial?.lng)?'umbra':'sidera';
   const isFiction=node.credibility_tier==='F'||node.is_fictional_quarantine;
   const qs=new URLSearchParams({dim,story:node.id}); if(isFiction){qs.set('fiction','1');qs.set('tiers','S,A,B,C,F');}
   const target=`../../syzygy/?${qs}`, targetJson=JSON.stringify(target);
   const html=`<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} · ASTRAIA</title><meta name="description" content="${esc(description)}"><meta property="og:type" content="article"><meta property="og:title" content="${esc(title)} · ASTRAIA"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${esc(route)}"><meta property="og:image" content="${esc(og)}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="${esc(title)} · Astraia 星图"><meta name="twitter:card" content="summary_large_image"><script>const target=new URL(${targetJson},location.href);for(const [k,v] of new URLSearchParams(location.search))if(k!=='story')target.searchParams.set(k,v);location.replace(target.href);</script></head><body><p>正在打开 ${esc(title)}。<a href="${esc(target)}">点击阅读</a></p></body></html>\n`;
   await mkdir(`${out}/s/${node.id}`,{recursive:true});
-  await Promise.all([writeFile(`${out}/s/${node.id}/index.html`,html,'utf8'),writeFile(`${out}/og/${node.id}.png`,image(node.id))]);
+  await writeFile(`${out}/s/${node.id}/index.html`,html,'utf8');
 }
 for(let i=0;i<nodes.length;i+=32) await Promise.all(nodes.slice(i,i+32).map(make));
+const usedVariants=new Set(nodes.map(node=>createHash('sha256').update(node.id).digest()[0] % imageVariants));
+await Promise.all([...usedVariants].map(variant=>writeFile(`${out}/og/shared-${variant}.png`,image(`shared-${variant}`))));
 const manifest={schema_version:1,snapshot_id:graph.snapshot_id,graph_sha256:createHash('sha256').update(graphBytes).digest('hex'),
   count:nodes.length,ids_sha256:createHash('sha256').update(nodes.map(node=>node.id).join('\n'),'utf8').digest('hex')};
 await writeFile(`${out}/og/manifest.json`,JSON.stringify(manifest)+'\n','utf8');
-console.log(`Share pages: ${nodes.length} story entries, each with metadata and a decorative 1200×630 PNG.`);
+console.log(`Share pages: ${nodes.length} story entries using ${usedVariants.size} shared 1200×630 PNGs.`);

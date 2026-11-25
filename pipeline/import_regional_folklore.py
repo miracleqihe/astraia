@@ -1,5 +1,6 @@
 """Import source-linked regional stories and their editorial knowledge bridges."""
 
+import argparse
 from datetime import date
 import json
 from pathlib import Path
@@ -19,8 +20,8 @@ MANIFEST = ROOT / 'web/src/syzygy/bridges.json'
 VAULT = ROOT / 'vault'
 
 
-def run():
-    records = yaml.load(COLLECTION.read_text(encoding='utf-8'), Loader=FrontmatterLoader)['records']
+def run(collection: Path = COLLECTION, created_at: date = date.fromisoformat('2026-11-25')):
+    records = yaml.load(collection.read_text(encoding='utf-8'), Loader=FrontmatterLoader)['records']
     graph = json.loads((ROOT / 'web/public/data/graph_data.json').read_text(encoding='utf-8'))
     book = json.loads((ROOT / 'web/public/knowledge/data.json').read_text(encoding='utf-8'))
     old_notes = NOTES.read_text(encoding='utf-8')
@@ -49,13 +50,13 @@ def run():
         meta = NodeMetadata.model_validate({
             'id': node_id, 'title': item['title'], 'aliases': item.get('aliases', []),
             'node_type': 'case', 'z_layer': 1, 'genre': item['genre'],
-            'credibility_tier': 'A', 'is_fictional_quarantine': False,
+            'credibility_tier': item.get('credibility_tier', 'A'), 'is_fictional_quarantine': False,
             'spatial': item['location'], 'temporal': None, 'standards': {},
             'relations': [{'type': 'COMPARED_WITH', 'target': target, 'weight': 1.0,
                            'note': '同题比较，非已证实的传播或因果关系。'}
                           for target in item.get('compare', [])],
             'sources': [ref.model_dump(mode='json') for ref in refs],
-            'audit': {'created_at': date.fromisoformat('2026-11-25'), 'reviewed_by_human': False},
+            'audit': {'created_at': created_at, 'reviewed_by_human': False},
         })
         body = '\n## 故事梗概\n\n' + '\n\n'.join(item['paragraphs'])
         body += '\n\n## 地图与年代\n\n' + item['location_note']
@@ -97,4 +98,8 @@ def run():
 
 
 if __name__ == '__main__':
-    run()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--collection', type=Path, default=COLLECTION)
+    parser.add_argument('--created-at', type=date.fromisoformat, default=date.fromisoformat('2026-11-25'))
+    args = parser.parse_args()
+    run(args.collection, args.created_at)

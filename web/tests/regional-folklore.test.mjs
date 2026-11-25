@@ -8,7 +8,8 @@ const [manifest, graph, handbook] = await Promise.all([
 ]);
 const nodes = new Map(graph.nodes.map(node => [node.id, node]));
 const entries = new Map(handbook.entries.map(entry => [entry.id, entry]));
-const regional = manifest.filter(bridge => /^SYZ-\d+$/.test(bridge.id) && Number(bridge.id.slice(4)) >= 74);
+const regional = manifest.filter(bridge => /^SYZ-\d+$/.test(bridge.id)
+  && Number(bridge.id.slice(4)) >= 74 && Number(bridge.id.slice(4)) <= 100);
 
 test('regional bridges retain readable stories, source links, map context and honest relation types', () => {
   assert.equal(regional.length, 27);

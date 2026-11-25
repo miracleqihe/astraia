@@ -1,0 +1,215 @@
+# Original Chinese reading summaries from the cited public research and heritage sources.
+# Point locations are either documented places or explicitly labelled regional anchors.
+records:
+  - id: case_tz_pemba_popobawa_1995
+    title: 奔巴岛｜夜访者波波巴瓦
+    aliases: [Popobawa, Pemba, Zanzibar, 波波巴瓦]
+    genre: urban_legend
+    location: {lat: -5.2459, lng: 39.7666, precision: city, location_name: 坦桑尼亚 · 奔巴岛查克查克, culture_region: 非洲 · 坦桑尼亚桑给巴尔群岛}
+    location_note: 查克查克是奔巴岛的地区参考点；相关叙述也流传于桑给巴尔其他岛屿及大陆沿岸。
+    paragraphs:
+      - 在坦桑尼亚沿海与桑给巴尔群岛，波波巴瓦是流传于夜间的恐怖故事。人们用这个名字讲述陌生的夜访者、睡眠中的威胁，以及消息怎样从一家传到另一家；不同讲述对它的外形和经历并不一致。
+      - 研究者 Martin Walsh 把 1995 年以来的多次集体恐慌与奔巴岛更早的地方叙述联系起来，同时指出居民有不同的解释。Katrina Daly Thompson 则研究故事的传播方式与难以公开谈论的社会经验。传闻、亲历叙述和造成恐慌的具体原因需分别阅读。
+    sources:
+      - {citation: 'Martin Walsh, The Politicisation of Popobawa: Changing Explanations of a Collective Panic in Zanzibar, Journal of Humanities 1(1), 2009.', type: academic_article, url: 'https://www.academia.edu/694054/The_politicisation_of_Popobawa_changing_explanations_of_a_collective_panic_in_Zanzibar', locator: 1995 年及其后集体恐慌和不同地方解释}
+      - {citation: 'Katrina Daly Thompson, The Circulation of Sexual Knowledge through a Coastal Tanzania Urban Legend, University of Texas African studies conference abstract, 2010.', type: academic_article, url: 'https://www.laits.utexas.edu/africa/2010/10abstracts_q-z.htm', locator: 坦桑尼亚沿海波波巴瓦传闻的传播与社会语境}
+    compare: [case_egypt_jinn_sleep_paralysis]
+    bridge: {entry: SOC-5-0010, cluster: sid_hag, trail: trail2, label: 波波巴瓦与传闻网络, rationale: 从奔巴岛不同讲述和集体恐慌进入传播网络，区分消息扩散、具体经历和独立证据。}
+  - id: case_ma_tangier_aisha_qandisha
+    title: 丹吉尔｜水边的艾莎·坎迪莎
+    aliases: [Aisha Qandisha, Aïcha Kandicha, 艾莎·坎迪莎]
+    genre: folktale
+    location: {lat: 35.7595, lng: -5.834, precision: city, location_name: 摩洛哥 · 丹吉尔, culture_region: 非洲 · 摩洛哥}
+    location_note: 丹吉尔是摩洛哥北部的城市参考点，艾莎的故事在不同地区有不同形象和场景。
+    paragraphs:
+      - 摩洛哥的夜谈中，艾莎·坎迪莎是一位令人敬畏的女性灵体。有些故事让她在水边出现：她看起来美丽，直到对方发现衣裙下并非人的双足，才意识到自己遇见的并非寻常路人。
+      - 但她并不只有一种形象。研究者记录到，她也与音乐、仪式和个人经验相连；讲述者对她的名字、性情与由来各有说法。把这些叙述并列，能看到同一人物如何穿行于地方故事和当代文化中。
+    sources:
+      - {citation: 'Liana Saif, Aisha Qandisha, University of Amsterdam / Columbia University Libraries, 2025.', type: academic_article, url: 'https://journals.library.columbia.edu/index.php/alusur/article/download/uw33saif/uw33saif/41560', locator: 摩洛哥女性灵体与不同讲述中的形象}
+      - {citation: 'Peace Corps Worldwide, An interview with North Africa Folklorist Deborah Kapchan, 2023.', type: interview, url: 'https://peacecorpsworldwide.org/north-africa-folklorist-rpcv-deborah-kapchan-morocco/', locator: 民俗研究者对艾莎与仪式语境的访谈}
+    bridge: {entry: REL-5-0005, cluster: sid_witch, trail: trail4, label: 艾莎与多种口述形象, rationale: 对照摩洛哥不同地区的艾莎讲述，阅读口述传统如何随地点、讲述者和仪式场合变化。}
+  - id: case_ng_abuja_madam_koi_koi
+    title: 尼日利亚｜走廊里的红鞋声
+    aliases: [Madam Koi Koi, Lady Koi Koi, 红鞋夫人]
+    genre: urban_legend
+    credibility_tier: B
+    location: {lat: 9.0765, lng: 7.3986, precision: city, location_name: 尼日利亚 · 阿布贾, culture_region: 非洲 · 尼日利亚}
+    location_note: 阿布贾是报道所用的国家级城市参考点；寄宿学校传闻并不指向某一所学校。
+    paragraphs:
+      - 深夜，寄宿学校走廊响起高跟鞋敲击地面的声音，学生把那节奏称作“科伊、科伊”。有人说穿红鞋的女教师正在巡行，听到警报便赶紧回到宿舍；有的版本说她因失业或死去而回来。
+      - 美联社记者在 2024 年介绍了这一代代流传的学校鬼故事，也指出人物身世并无统一说法。它是一则关于夜间声音与群体恐惧的都市传说，地图以阿布贾作国家参考，而不是虚构一所具体学校。
+    sources:
+      - {citation: 'Associated Press, It’s spooky season: scary stories from around the world, 2024, Nigeria section by Dyepkazah Shibayan.', type: journalism, url: 'https://apnews.com/article/22426b638b79e06b1aa997125e72abd3', locator: 尼日利亚寄宿学校的红鞋与脚步声传闻}
+      - {citation: 'Moberly Area Community College, 2024 Humanities in Action Project: Nigerian boarding-school ghost story.', type: institutional_account, url: 'https://www.macc.edu/2024-hia-project/', locator: 另一则学校讲述及版本差异}
+    bridge: {entry: LIT-2-0001, cluster: sid_liminal, trail: trail5, label: 红鞋夫人与声音悬念, rationale: 从走廊脚步声和不同身世版本入手，阅读叙事如何通过听觉线索与留白制造悬念。}
+  - id: case_gh_kumasi_sasabonsam
+    title: 加纳森林｜树冠里的萨萨邦萨姆
+    aliases: [Sasabonsam, Asanbosam, 阿坎森林灵体]
+    genre: folktale
+    location: {lat: 6.6885, lng: -1.6244, precision: city, location_name: 加纳 · 库马西, culture_region: 非洲 · 加纳阿散蒂地区}
+    location_note: 库马西是阿散蒂地区的城市参考点；森林灵体的讲述不限于城市或单一林地。
+    paragraphs:
+      - 在加纳阿坎人的一些故事里，萨萨邦萨姆藏在森林树冠中，等待经过林地的猎物。它常被描述成具有危险性、近似吸血形象的森林存在；具体外形随讲述和艺术作品而变化。
+      - 剑桥菲茨威廉博物馆展示了来自阿散蒂雕刻家奥塞·博恩苏的相关作品，并介绍这个形象在跨大西洋文化中的象征。将雕像与森林故事一起看，既能读到恐惧，也能看到同一形象进入艺术的新方式。
+    sources:
+      - {citation: 'Fitzwilliam Museum, Black Atlantic: Power, People, Resistance, large-print object labels.', type: institutional_account, url: 'https://fitz-cms-images.s3.eu-west-2.amazonaws.com/large-print-labels-black-atlantic_updated.pdf', locator: 奥塞·博恩苏的森林灵体雕刻及阿坎故事}
+      - {citation: 'University of Cambridge Museum of Archaeology and Anthropology, Ghana collection colouring sheets.', type: institutional_account, url: 'https://maa.cam.ac.uk/files/bhm_maa_colouring_sheets.pdf', locator: Asanbonsam 或 Sasabonsam 的馆藏解说}
+    bridge: {entry: REL-5-0010, cluster: sid_crypt, trail: all, label: 森林灵体与博物馆收藏, rationale: 从库马西雕刻与阿坎森林故事，阅读馆藏、社区传承和作品说明之间的关系。}
+  - id: case_gm_banjul_ninki_nanka
+    title: 冈比亚河｜沼泽里的宁基南卡
+    aliases: [Ninki Nanka, Gambian dragon, 宁基南卡]
+    genre: folktale
+    credibility_tier: B
+    location: {lat: 13.4549, lng: -16.579, precision: city, location_name: 冈比亚 · 班珠尔, culture_region: 非洲 · 冈比亚河流域}
+    location_note: 班珠尔是冈比亚河口的城市参考点；宁基南卡的叙述跨越冈比亚、塞内加尔和几内亚的一些地区。
+    paragraphs:
+      - 冈比亚河的湿地和红树林里，宁基南卡以不同的面貌出现在讲述中：有人说它像巨蛇，有人说它有鳄鱼般的头。某些版本把相遇视作危险，另一些却将它与好运联系起来。
+      - 冈比亚文化记录保存了这些不同说法，也介绍故事如何进入当地的河流文化路线。它是人们与水域共同生活的讲述；相似形象不意味着已经发现了某一种动物。
+    sources:
+      - {citation: 'The Standard, Dragons of the Gambia, 2014.', type: journalism, url: 'https://standard.gm/dragons-of-the-gambia-2/', locator: 冈比亚、塞内加尔和几内亚的地方讲述}
+      - {citation: 'Her African Culture, Ninki Nanka: A River of Stories.', type: institutional_account, url: 'https://herafricanculture.com/story/ninki-nanka-a-river-of-stories', locator: 地方版本、河流文化与当代传承}
+    compare: [case_za_kwazulu_natal_howick_inkanyamba]
+    bridge: {entry: REL-5-0005, cluster: sid_crypt, trail: all, label: 宁基南卡与地方讲述, rationale: 以冈比亚河的水边传说为入口，比较讲述者对地点、形象和向外人讲述的不同选择。}
+  - id: case_ke_nairobi_night_runner
+    title: 内罗毕｜夜行者进入城市传闻
+    aliases: [night runner, night running, Nairobi, 夜行者]
+    genre: urban_legend
+    location: {lat: -1.2921, lng: 36.8219, precision: city, location_name: 肯尼亚 · 内罗毕, culture_region: 非洲 · 肯尼亚}
+    location_note: 内罗毕是论文讨论都市报刊的城市参考点；其田野访谈还包括肯尼亚西部的基苏木和维希加。
+    paragraphs:
+      - 在肯尼亚的夜间讲述里，“夜行者”既可能是令人害怕的神秘人物，也可能被报刊和居民重新解释。有人描述半夜在屋外奔走、敲门或制造响动的身影；关于动机与身份的说法并不一致。
+      - Maureen Amimo 结合肯尼亚西部田野访谈和 1990—2010 年报刊，研究这一称呼如何进入内罗毕的城市想象。她区分实际行为、地方解释和媒体重写，提醒读者不要把传言直接套到某个现实个人身上。
+    sources:
+      - {citation: 'Maureen Amimo, Rural ritual, urban appropriation: night running as an examination of mobility in the city by night, 2025.', type: academic_article, url: 'https://www.tandfonline.com/doi/full/10.1080/02533952.2025.2541330', doi: '10.1080/02533952.2025.2541330', locator: 肯尼亚西部田野与内罗毕报刊研究}
+      - {citation: 'BBC Africa Eye, Meet the Night Runners, 2019.', type: journalism, url: 'https://www.youtube.com/watch?v=-wCfTAa-w4Y', locator: 对夜行者传闻及现实人物的纪录片调查}
+    bridge: {entry: HIS-6-0002, cluster: sid_liminal, trail: trail5, label: 夜行者与田野访谈, rationale: 将肯尼亚田野访谈与报刊叙述并读，留意讲述者、城市空间和转述链的差异。}
+  - id: case_za_johannesburg_tokoloshe
+    title: 南非｜夜访的托科洛舍
+    aliases: [Tokoloshe, Thokolosi, 托科洛舍]
+    genre: folktale
+    location: {lat: -26.2041, lng: 28.0473, precision: city, location_name: 南非 · 约翰内斯堡, culture_region: 非洲 · 南非}
+    location_note: 约翰内斯堡为南非城市参考点；托科洛舍传说分布于不同地区和语言社群。
+    paragraphs:
+      - 托科洛舍是南部非洲多种地方故事中的神秘存在。有人把它描绘成矮小、夜间活动的灵物，也有讲述将它与睡眠、家屋及对不幸的解释联系起来；不同语言社群的版本并不相同。
+      - 南非学者讨论这一形象时，将它放进当地怪物叙事和社会生活，而非当作一种已经鉴定的动物。约翰内斯堡点位只为读者提供国家级地图入口，不表示故事发生在某一户人家。
+    sources:
+      - {citation: 'Theologia Viatorum, The monstrous and the grotesque: (De)scribing and unmasking eschatology in Sepedi folktales, 2020.', type: academic_article, url: 'https://theologiaviatorum.org/index.php/tv/article/view/72/184', locator: 南非地方叙事中的托科洛舍及其他灵物}
+      - {citation: 'The Tokoloshe and cultural identity in post-apartheid South Africa.', type: academic_article, url: 'https://www.academia.edu/116339937/The_Tokoloshe_and_cultural_identity_in_post_apartheid_South_Africa', locator: 不同历史资料及社会文化语境}
+    bridge: {entry: REL-5-0005, cluster: sid_hag, trail: trail2, label: 托科洛舍与地方版本, rationale: 从南部非洲不同语言社群的夜访故事出发，阅读口述版本及其记录背景。}
+  - id: case_so_hargeisa_dhegdheer
+    title: 索马里语地区｜长耳朵的德格德赫尔
+    aliases: [Dhegdheer, Dheg Dheer, 长耳女人]
+    genre: folktale
+    location: {lat: 9.5624, lng: 44.077, precision: city, location_name: 索马里语地区 · 哈尔格萨, culture_region: 非洲 · 索马里语地区}
+    location_note: 哈尔格萨是索马里语地区的城市参考点，德格德赫尔的故事在多个地区和版本中流传。
+    paragraphs:
+      - 长耳朵的德格德赫尔住在山谷里，能从远处听见来人的动静。在一种故事中，迷路的母亲和孩子误入她的地盘，而德格德赫尔的女儿决定帮助他们逃走。
+      - 索马里讲述者保存了不同的情节和结尾：有的强调迷路的危险，有的突出女儿的善意与选择。明尼苏达人文机构保存了索马里语与英语讲述及讨论材料，可继续比较这则故事如何被讲给新一代。
+    sources:
+      - {citation: 'Minnesota Humanities Center, Dhegdheer: A Scary Somali Folktale.', type: institutional_account, url: 'https://humanitieslearning.org/resource/resourceDetails.cfm?id=4844', locator: 索马里讲述者、故事版本与教学讨论}
+      - {citation: 'Biblioteca di Area Umanistica Giorgio Petrocchi, Sheekadii Dheg Dheer, Somali cultural education text.', type: institutional_account, url: 'https://arcadia.sba.uniroma3.it/handle/2307/4746', locator: 索马里文化与故事文献目录}
+    bridge: {entry: REL-5-0005, cluster: sid_myth, trail: all, label: 德格德赫尔与故事结尾, rationale: 比较德格德赫尔的口述版本和结尾，观察讲述者如何突出危险、善意与选择。}
+  - id: case_et_harar_hyena_jinn
+    title: 哈勒尔｜夜啼的鬣狗与精灵
+    aliases: [Harar hyenas, hyena and jinn, 哈勒尔鬣狗]
+    genre: folktale
+    location: {lat: 9.3117, lng: 42.1278, precision: city, location_name: 埃塞俄比亚 · 哈勒尔, culture_region: 非洲 · 埃塞俄比亚}
+    location_note: 哈勒尔市是研究和地方讲述的城市参考点，不代表某次夜间动物观察的精确坐标。
+    paragraphs:
+      - 埃塞俄比亚哈勒尔的夜晚，人们可能听见城市附近鬣狗的叫声。一些当地讲述认为，鬣狗能对付精灵，因此它的夜啼也可能被理解为保护人的信号；同一种动物在不同地方有截然不同的故事。
+      - 关于埃塞俄比亚城市中人和斑鬣狗关系的研究记录了这些地方观念，也调查人们对动物的实际态度。故事是理解社区如何与野生动物共处的一条线索，并不说明精灵或某次事件已被证实。
+    sources:
+      - {citation: 'Linking Human Perceptions and Spotted Hyena Behavior in Urban Areas of Ethiopia, Animals 10(12), 2020.', type: academic_article, url: 'https://www.mdpi.com/2076-2615/10/12/2400', locator: 哈勒尔的鬣狗、精灵观念与人类态度}
+      - {citation: 'The Ontogeny of Hyena Representations among the Harari People of Ethiopia, Africa, Cambridge University Press.', type: academic_article, url: 'https://www.cambridge.org/core/journals/africa/article/abs/ontogeny-of-hyena-representations-among-the-harari-people-of-ethiopia/C8DF16BFDC6F03E0EFAF69678AA734FA', locator: 哈勒尔人不同生命阶段对鬣狗的认识}
+    bridge: {entry: BIO-5-0008, cluster: sid_crypt, trail: all, label: 鬣狗故事与城市栖息地, rationale: 将哈勒尔的鬣狗讲述与栖息地知识并读，区分社区观念和对动物行为的观察。}
+  - id: case_au_sydney_quarantine_ghost_tours
+    title: 悉尼北角｜隔离站的夜间导览
+    aliases: [North Head Quarantine Station, Q Station, 悉尼隔离站鬼故事]
+    genre: urban_legend
+    location: {lat: -33.8182, lng: 151.2892, precision: city, location_name: 澳大利亚 · 悉尼北角隔离站, culture_region: 大洋洲 · 澳大利亚}
+    location_note: 坐标为悉尼北角隔离站区域参考点，具体建筑与导览站点分布在园区内。
+    paragraphs:
+      - 夜间导览走过隔离站的洗衣房、医院、停尸房和旧墓地。导览方案列有敲门、移动的床和多出一个孩子等故事，借幽灵讲述把参观者带进原本安静的建筑。
+      - 这片场所从 1832 年至 1984 年用于隔离船只与旅客，超过一万三千人曾在此停留。新南威尔士州资料分别保存了隔离站历史和后来的导览设计；隔离记录、创作出的故事与个人感受应各自看待。
+    sources:
+      - {citation: 'NSW Environment and Heritage, Quarantine Station: park management.', type: institutional_account, url: 'https://www.environment.nsw.gov.au/topics/parks-reserves-and-protected-areas/park-management/npws-park-management/quarantine-station', locator: 1832—1984 年隔离站历史}
+      - {citation: 'Mawland Quarantine Station, Final Interpretation Plan, 2005.', type: institutional_account, url: 'https://www2.environment.nsw.gov.au/sites/default/files/2024-11/quarantine-station-interpretation-plan.pdf', locator: 第六感故事导览路线及所列故事}
+    bridge: {entry: REL-5-0006, cluster: sid_liminal, trail: trail5, label: 隔离站幽灵与遗址导览, rationale: 并读隔离站的真实历史和夜游方案，观察遗址、故事与当代旅游如何相互连接。}
+  - id: case_au_tasmania_port_arthur_ghost
+    title: 亚瑟港｜旧监狱的提灯夜路
+    aliases: [Port Arthur ghost tour, Separate Prison, 亚瑟港鬼故事]
+    genre: urban_legend
+    location: {lat: -43.1465, lng: 147.8497, precision: city, location_name: 澳大利亚 · 塔斯马尼亚亚瑟港, culture_region: 大洋洲 · 澳大利亚塔斯马尼亚}
+    location_note: 地图点位为亚瑟港历史遗址区域，导览会经过多处建筑，不对应某一次目击位置。
+    paragraphs:
+      - 在塔斯马尼亚亚瑟港，夜间导览者提着灯走过旧监狱和残存建筑，讲述有人听见声音或感到异样的故事。遗址管理机构说，与这里相关的鬼故事至少在 19 世纪后期已有记录，后来访客又加入自己的讲述。
+      - 亚瑟港曾是殖民时期的流放和惩罚场所，1877 年最后一批囚犯离开。建筑档案与当代夜游相互关联，但一段导览故事不能替代对囚犯生活和遗址历史的研究。
+    sources:
+      - {citation: 'Port Arthur Historic Site, Ghost Tour.', type: institutional_account, url: 'https://portarthur.org.au/ghost-tour/', locator: 遗址夜游和鬼故事的历史说明}
+      - {citation: 'Port Arthur Historic Site, History Timeline.', type: institutional_account, url: 'https://portarthur.org.au/history/history-timeline/', locator: 1830—1877 年惩罚场所的历史}
+    bridge: {entry: HIS-6-0007, cluster: sid_liminal, trail: trail5, label: 亚瑟港夜游与历史记忆, rationale: 把亚瑟港的惩罚史、遗址保存和夜间故事并读，区分历史证据与后来的纪念方式。}
+  - id: case_au_thirlmere_lakes_bunyip
+    title: 瑟尔米尔湖｜夜里传来的长鸣
+    aliases: [Thirlmere Lakes, Bunyip, 瑟尔米尔湖水怪]
+    genre: folktale
+    location: {lat: -34.245, lng: 150.592, precision: culture_region, location_name: 澳大利亚 · 瑟尔米尔湖, culture_region: 大洋洲 · 澳大利亚新南威尔士}
+    location_note: 坐标为瑟尔米尔湖群的区域参考点；早期转述未给出某次鸣声的精确位置。
+    paragraphs:
+      - 新南威尔士州瑟尔米尔湖附近保存着关于夜间长鸣的旧讲述：有人把湖里的声音与 bunyip 联系起来，另一些早期移居者则想到了哀号的幽灵。黑暗中的湖面与难以辨认的叫声，让故事有了生长的空间。
+      - 新南威尔士州研究综述同时列出猫头鹰或其他鸟类的可能说法，但原始材料并未提供足以确认每次声音来源的现场记录。这里把这些解释作为研究线索保留，不把地方原住民的不同传统压成一个统一故事。
+    sources:
+      - {citation: 'NSW Environment and Heritage, Thirlmere Lakes: A Synthesis of Current Research, 2022.', type: institutional_account, url: 'https://www.environment.nsw.gov.au/sites/default/files/thirlmere-lakes-a-synthesis-of-current-research-220164.pdf', locator: 湖区早期口述、夜鸣与可能的鸟类解释}
+    bridge: {entry: PHY-4-0003, cluster: sid_hag, trail: trail2, label: 湖边夜鸣与声音辨认, rationale: 从湖区夜鸣的多种转述出发阅读声波与听感；没有现场记录时不替个案指定声源。}
+  - id: case_nz_rotorua_patupaiarehe_ngongotaha
+    title: 罗托鲁瓦｜雾山中的帕图派阿雷赫
+    aliases: [Patupaiarehe, Ngongotahā, tūrehu, 毛利雾山故事]
+    genre: folktale
+    location: {lat: -38.1368, lng: 176.2497, precision: city, location_name: 新西兰 · 罗托鲁瓦, culture_region: 大洋洲 · 新西兰毛利传统}
+    location_note: 罗托鲁瓦市是恩贡戈塔哈山及周边讲述的地区参考点，并非山上具体相遇的位置。
+    paragraphs:
+      - 毛利传统中，帕图派阿雷赫与雾中的山林相连；有时人们听见笛声，却看不见演奏者。Te Ara 收录的一个讲述说，探路者伊亨加攀山时口渴，一位帕图派阿雷赫女子给他水，山名恩贡戈塔哈也与这次饮水相连。
+      - 不同 iwi 的讲述对这些存在的身形、居所与行为有不同描述。这里保留新西兰百科所介绍的罗托鲁瓦版本，并将它作为活着的地方传统来阅读，而不是把所有毛利故事概括成同一个“怪物”。
+    sources:
+      - {citation: 'Martin Wikaira, Patupaiarehe, Te Ara: The Encyclopedia of New Zealand.', type: institutional_account, url: 'https://teara.govt.nz/en/patupaiarehe/print', locator: 雾山、笛声与恩贡戈塔哈的命名故事}
+      - {citation: 'Te Ara, First peoples in Māori tradition: Patupaiarehe and tūrehu.', type: institutional_account, url: 'https://teara.govt.nz/en/first-peoples-in-maori-tradition/page-5', locator: Ngāti Maru 长者 Hoani Nahe 的讲述}
+    bridge: {entry: REL-5-0005, cluster: sid_myth, trail: all, label: 雾山笛声与毛利口述, rationale: 阅读罗托鲁瓦山名故事与不同毛利讲述，留意具体 iwi、地点与叙述场合。}
+  - id: case_nz_wellington_ngake_whataitai
+    title: 惠灵顿港｜两位水灵与通海之路
+    aliases: [Ngake, Whātaitai, Wellington taniwha, 惠灵顿港水灵]
+    genre: myth
+    location: {lat: -41.283, lng: 174.818, precision: culture_region, location_name: 新西兰 · 惠灵顿港, culture_region: 大洋洲 · 新西兰毛利传统}
+    location_note: 坐标是惠灵顿港区域参考点；毛利传统有不止一种关于港口地貌的叙述。
+    paragraphs:
+      - 在一则毛利讲述中，惠灵顿港原是一座湖，两位水灵 Ngake 和 Whātaitai 居住其中。Ngake 冲向库克海峡打开通路；Whātaitai 从另一方向试图离开，却被困在陆地上。
+      - Te Ara 记载，Whātaitai 的灵魂化为鸟飞到今天的维多利亚山哀鸣，山的毛利名称也与此讲述相连。另一条关于地震和地貌变化的版本安排不同，应把各自的讲述者与地方语境一同保留。
+    sources:
+      - {citation: 'Te Ara: The Encyclopedia of New Zealand, Taniwha of the sea.', type: institutional_account, url: 'https://teara.govt.nz/en/taniwha/page-2', locator: Ngake、Whātaitai 与惠灵顿港}
+      - {citation: 'Te Ara: The Encyclopedia of New Zealand, Whenua: how the land was shaped.', type: institutional_account, url: 'https://teara.govt.nz/en/whenua-how-the-land-was-shaped/print', locator: 惠灵顿港地貌的另一种叙述}
+    compare: [case_nz_wellington_te_ika_a_maui]
+    bridge: {entry: REL-5-0001, cluster: sid_myth, trail: all, label: 惠灵顿水灵与地方知识, rationale: 并读两位水灵的不同地方版本与民俗传承，观察港口地貌和地名怎样进入故事。}
+  - id: case_fj_kadavu_dakuwaqa
+    title: 卡达武｜鲨神与礁口的章鱼
+    aliases: [Dakuwaqa, Kadavu, shark god, 鲨神达库瓦卡]
+    genre: myth
+    credibility_tier: B
+    location: {lat: -19.06, lng: 178.16, precision: culture_region, location_name: 斐济 · 卡达武岛地区, culture_region: 大洋洲 · 斐济}
+    location_note: 坐标为卡达武岛的区域参考点；不同讲述与斐济多个岛屿和社群相关。
+    paragraphs:
+      - 斐济的一种讲述中，鲨神达库瓦卡来到卡达武岛附近的礁口，遇到守护此处的巨大章鱼。章鱼缠住他；他请求脱身，并承诺保护当地人，故事由此解释人与海中守护者的关系。
+      - 澳大利亚博物馆保存了斐济讲述者关于鲨神与祖先的说明，地方报道也记录鲨神与章鱼相遇的版本。不同社群对名字、地点和保护对象的描述有差异；信仰故事不应被当作野外安全保证。
+    sources:
+      - {citation: 'Australian Museum, Sharks: Fiji.', type: institutional_account, url: 'https://australian.museum/publications/sharks/fiji/', locator: 斐济讲述者的祖先鲨神与海洋文化}
+      - {citation: 'The Fiji Times, Battle of the shark and octopus.', type: journalism, url: 'https://www.fijitimes.com.fj/battle-of-the-shark-and-octopus/', locator: 卡达武礁口鲨神与章鱼的地方版本}
+    bridge: {entry: BIO-5-0008, cluster: sid_myth, trail: all, label: 鲨神故事与海洋栖息地, rationale: 从斐济鲨神和礁口的讲述延伸到海洋栖息地，分别阅读社区故事与生物生态知识。}
+  - id: case_pg_goroka_nokoti
+    title: 东部高地｜从森林走进城市的诺科蒂
+    aliases: [Nokoti, Nokondi, masalai, Fore, 诺科蒂]
+    genre: folktale
+    location: {lat: -6.0817, lng: 145.3919, precision: city, location_name: 巴布亚新几内亚 · 戈罗卡, culture_region: 大洋洲 · 巴布亚新几内亚东部高地}
+    location_note: 戈罗卡是东部高地省的城市参考点；Fore 族的森林讲述涉及更广的地方，具体地点不在此标作精确坐标。
+    paragraphs:
+      - 在巴布亚新几内亚东部高地的 Fore 族讲述里，诺科蒂是与森林和具体地点相连的灵体。一种故事中，猎人攀上岩石后遇见他，两人约定彼此照应；另一些较晚的故事则让他出现在道路、商店和殖民机构附近。
+      - 人类学者 Shirley Lindenbaum 比较 1961—1999 年的讲述，追踪这一形象如何从地方森林故事进入东部高地的旗帜、公共雕塑与戏剧。不同版本反映不同年代的生活，不宜把诺科蒂和所有 masalai 都当成同一个形象。
+    sources:
+      - {citation: 'Shirley Lindenbaum, Fore Narratives Through Time, Current Anthropology 43(S4), 2002.', type: academic_article, url: 'https://www.journals.uchicago.edu/doi/full/10.1086/339562', doi: '10.1086/339562', locator: 1961—1999 年 Fore 族诺科蒂叙述与东部高地公共形象}
+    bridge: {entry: HIS-6-0007, cluster: sid_myth, trail: all, label: 诺科蒂与地方公共记忆, rationale: 比较森林中的诺科蒂与后来旗帜、雕塑中的形象，阅读地方故事与公共记忆的变化。}
