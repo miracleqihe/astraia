@@ -1,0 +1,1360 @@
+# Original simplified Chinese summaries based on cited scholarly, museum, and primary-text editions;
+# map coordinates mark archaeological, manuscript, or regional reference points for mythic traditions.
+records:
+  # =========================================================================
+  # 1. Mesopotamian (4)
+  # =========================================================================
+  - id: case_iq_sumer_inanna_underworld
+    title: 美索不达米亚｜伊南娜下冥界与七道门神话
+    aliases:
+      - Inana's Descent to the Nether World
+      - 伊南娜下冥府
+      - 伊什塔尔冥界之旅
+      - 杜木兹替身神话
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 31.3222
+      lng: 45.6361
+      precision: city
+      location_name: 伊拉克穆萨纳省 · 乌鲁克古城遗址（Warka）
+      culture_region: 中东与西亚 · 两河流域（美索不达米亚）
+    location_note: 乌鲁克是伊南娜主神庙所在城邦及早期楔形文字泥板出土重镇，此坐标作为苏美尔文学传统的地区参考点，并非冥界入口的现实位置。
+    paragraphs:
+      - 在苏美尔长诗《伊南娜下冥界》中，掌管丰饶与战事的女神伊南娜决定前往姐姐埃列什基伽勒统治的“不归之地”。动身前，她叮嘱随从宁舒布尔，若三日未归便遍访诸神坛庙求援。踏入冥界七重门时，守门者内提要求她每过一门卸下一件权杖、王冠或服饰，直至她赤身站在冥界七位裁判神面前，遭死亡凝视击毙，尸身被悬于钩上。
+      - 宁舒布尔依约向恩利尔、南纳求救均遭婉拒，唯有智慧与深水之神恩基从指甲缝里的泥垢捏出两位不属阴阳秩序的使者库尔加拉与卡拉图尔，携生命之水与生命之草潜入冥界，借共情埃列什基伽勒的苦痛换取尸身并令伊南娜复生。然而冥界律法规定离去者须留替身；伊南娜见丈夫牧神杜木兹非但未穿丧服反高坐华座，遂令冥府鬼卒将其拘走，最终改为杜木兹与姐姐格什提南娜各在冥界值守半年。
+      - 牛津大学苏美尔文学电子语料库（ETCSL c.1.4.1）收录了来自尼普尔、乌尔等地多块古巴比伦时期泥板的合校本，后期阿卡德语《伊什塔尔下冥界》亦保留了相近骨架但删略了替身细节。学界常将此诗与两河农牧季节交替及王权葬仪对照阅读，但不应将楔形文字宗教诗篇直接等同于可证实的客观自然现象或冥界经验。
+    sources:
+      - citation: Electronic Text Corpus of Sumerian Literature (ETCSL), University of Oxford, "Inana's descent to the nether world" (c.1.4.1).
+        type: primary_text
+        url: 'https://etcsl.orinst.ox.ac.uk/section1/tr141.htm'
+        locator: 苏美尔语合校英译本第 1 至 412 行（七道门、恩基造使者与杜木兹替身）
+      - citation: Encyclopaedia Britannica, "Ishtar" (Inanna and Descent to the Underworld).
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Ishtar'
+        locator: 伊南娜/伊什塔尔神格及苏美尔—阿卡德冥界文本传统
+    compare: [case_gr_eleusis_persephone_cycle, case_jp_izumo_izanagi_yomi, corpus_theme_between_life_death]
+    motifs: [index_berezkin_h12, index_berezkin_k27r]
+    bridge:
+      entry: SCR-1-0003
+      cluster: sid_myth
+      trail: all
+      label: 泥板诗篇与楔形文字载体
+      rationale: 将苏美尔女神下冥界的文学结构与早期楔形文字泥板的书写、校勘语境并读，辨认文本流传的物质基础。
+
+  - id: case_iq_uruk_gilgamesh_flood
+    title: 美索不达米亚｜吉尔伽美什与大洪水泥板神话
+    aliases:
+      - Epic of Gilgamesh Tablet XI
+      - 乌特纳比什提姆
+      - 济乌苏德拉洪水神话
+      - Flood Tablet K.3375
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 31.3222
+      lng: 45.6361
+      precision: city
+      location_name: 伊拉克 · 乌鲁克古城（叙事核心城邦）
+      culture_region: 中东与西亚 · 两河流域（美索不达米亚）
+    location_note: 乌鲁克是史诗主人公吉尔伽美什传说统治的城邦；最完整的第十一泥板大洪水文献则出土于亚述首都尼尼微王室图书馆。
+    paragraphs:
+      - 挚友恩奇都死后，乌鲁克王吉尔伽美什因畏惧死亡而长途跋涉至世界边缘，寻访唯一逃过劫难、获赐永生的先祖乌特纳比什提姆。对方道出大洪水往事：诸神议决降下灭世洪涛，唯有恩基（埃阿）隔着舒鲁帕克的芦苇墙暗中传谕，命他拆毁屋宇建造边长相等的巨舟，携家人、工匠与百兽种子登船避难。
+      - 暴风狂雨席卷天地六日七夜，连诸神也惊惧退避天界。船只搁浅在尼西尔山后，乌特纳比什提姆先后放出鸽子、燕子与乌鸦试探水势，见乌鸦不再飞回，遂出舱向风祭献；诸神聚于祭烟之上，恩利尔虽初怒后缓，仍抚额祝福夫妻二人如神般长生。随后吉尔伽美什在“七夜不眠”的考验中沉睡失败，潜入深海采得的返老还童仙草又被蛇吞食，只得空手返归乌鲁克城墙。
+      - 大英博物馆藏泥板 K.3375（公元前 7 世纪亚述巴尼拔图书馆藏本）于 1872 年被乔治·史密斯破译，并与更早的苏美尔《洪水故事》（ETCSL c.1.7.4，主人公称济乌苏德拉）及《阿特拉哈西斯》一脉相承。考古学上美索不达米亚确有多期区域性河泛淤积层，但泥板所载全球性灭世洪水属于古老神学与文学母题，不可把神话叙事直接用作单一地质灾变的实证。
+    sources:
+      - citation: The British Museum, "The Flood Tablet (K.3375), Epic of Gilgamesh Tablet XI".
+        type: archival_catalogue
+        url: 'https://www.britishmuseum.org/collection/object/W_K-3375'
+        locator: 尼尼微出土新亚述时期黏土泥板藏品 K.3375 馆藏记录
+      - citation: Electronic Text Corpus of Sumerian Literature (ETCSL), University of Oxford, "The flood story" (c.1.7.4).
+        type: primary_text
+        url: 'https://etcsl.orinst.ox.ac.uk/section1/tr174.htm'
+        locator: 苏美尔语济乌苏德拉洪水叙事片段英译本
+      - citation: Encyclopaedia Britannica, "Gilgamesh".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Gilgamesh'
+        locator: 史诗流传谱系与第十一泥板大洪水比较
+    compare: [case_in_vedic_manu_matsya_flood, case_iq_eridu_adapa_wind]
+    motifs: [index_berezkin_c2, index_berezkin_c3]
+    bridge:
+      entry: HIS-4-0001
+      cluster: sid_myth
+      trail: all
+      label: 洪水叙事与冲积地层边界
+      rationale: 把两河大洪水泥板传统与考古地层判读并置，明确文学母题、局部河患沉积与历史定年各自的证据边界。
+
+  - id: case_iq_babylon_enuma_elish
+    title: 美索不达米亚｜巴比伦《埃努玛·埃利什》创世神话
+    aliases:
+      - Enuma Elish
+      - 当高天之上
+      - 马尔杜克与提阿玛特
+      - Seven Tablets of Creation
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 32.5364
+      lng: 44.4208
+      precision: city
+      location_name: 伊拉克巴比伦省 · 巴比伦古城遗址
+      culture_region: 中东与西亚 · 两河流域（美索不达米亚）
+    location_note: 巴比伦城是史诗主神马尔杜克与埃萨吉拉神庙的礼仪中心，现存七块泥板抄本则出土于尼尼微、阿述尔及巴比伦多地。
+    paragraphs:
+      - 《埃努玛·埃利什》以天地未名之初开篇：唯有淡水之神阿普苏与咸水混沌提阿玛特混融一体。新生诸神喧闹不休，阿普苏欲加诛灭，却反被智慧之神埃阿施咒安眠并击杀。暴怒的提阿玛特遂缔造十一种毒龙怪兽复仇，诸神无力迎战，最终推举埃阿之子、巴比伦主神马尔杜克担任统帅，赋予其至高无上的神权。
+      - 马尔杜克携风暴、雷霆与巨网迎战，趁提阿玛特张口吞噬之际驱使恶风灌入其腹，一箭洞穿其心，再将庞大躯壳劈作两半：一半支起苍穹挡住天水，一半铺作大地与深渊，又以其眼窝涌出幼发拉底河与底格里斯河，设定日月星辰与历法秩序。随后他取叛神金古之血混合泥土塑造人类，令人承担劳役以奉养神祇，诸神则在巴比伦为他筑起埃萨吉拉神庙。
+      - 这部七板阿卡德语长诗每年在巴比伦新年阿基图节（Akitu）上由大祭司诵读，是宗教宇宙观与城市神权合法性的礼仪文本，大英博物馆藏有多块亚述巴尼拔图书馆及新巴比伦时期残片。将神战劈分混沌的叙事与各地域“原初之水”创世诗并读，可以清楚看到政治中心转移如何改写古老神谱。
+    sources:
+      - citation: The British Museum, "Cuneiform tablet with part of the Babylonian Creation Myth (Enuma Elish)".
+        type: archival_catalogue
+        url: 'https://www.britishmuseum.org/collection/object/W_1888-0419-13'
+        locator: 大英博物馆藏巴比伦创世史诗楔形文字泥板残片 1888,0419.13
+      - citation: Encyclopaedia Britannica, "Enuma elish".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Enuma-elish'
+        locator: 七块泥板结构、马尔杜克登极与新年祭仪背景
+      - citation: Internet Sacred Text Archive, L. W. King (trans.), "The Seven Tablets of Creation (Enuma Elish)".
+        type: primary_text
+        url: 'https://www.sacred-texts.com/ane/enuma.htm'
+        locator: 第一至第七泥板英译全文
+    compare: [corpus_theme_creation_worlds, case_b3a_yoruba_waters, case_in_purana_samudra_manthana]
+    motifs: [index_berezkin_b3a, index_berezkin_i44]
+    bridge:
+      entry: REL-6-0001
+      cluster: sid_myth
+      trail: all
+      label: 创世史诗与城市祭仪秩序
+      rationale: 以《埃努玛·埃利什》与新年祭仪的绑定为例，从比较宗教方法观察宇宙叙事如何依托具体历史与政教结构展开。
+
+  - id: case_iq_eridu_adapa_wind
+    title: 美索不达米亚｜埃里都智者阿达帕与南风折翼神话
+    aliases:
+      - Adapa and the South Wind
+      - 阿达帕神话
+      - 生命之食
+      - 阿马尔纳泥板 EA 356
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 30.8158
+      lng: 45.9961
+      precision: city
+      location_name: 伊拉克济加尔省 · 埃里都古城遗址（Tell Abu Shahrain）
+      culture_region: 中东与西亚 · 两河流域（美索不达米亚）
+    location_note: 埃里都是两河传统中最早的圣城与恩基主庙所在地；核心泥板残片则保存于埃及阿马尔纳外交档案与尼尼微遗址。
+    paragraphs:
+      - 埃里都的祭司兼圣贤阿达帕受深水之神恩基（埃阿）赐予极高智慧，唯独未得永生。一日他乘舟出海捕鱼供奉神庙，却遭凶猛的南风倾覆小船，跌入海中；阿达帕怒极咒语出口，竟将南风的双翼折断，致使七日间无风拂面、大地闷热难耐。天神阿努察觉异状后派使者传唤这位凡人登天问罪。
+      - 临行前恩基设下叮嘱：阿达帕应身着丧服赴天庭，向守门神杜木兹与宁吉什济达致哀博取同情，但切忌饮用天父阿努赐下的饮食，因其或为“死亡之水食”。不料诸神见其谦卑遂心生怜惜，阿努转而端出能令凡人成神的“生命之面包与生命之水”；阿达帕谨遵恩基告诫婉拒进食，阿努只得大笑令其返回人间，凡人遂永远错失长生。
+      - 该故事目前仅存阿卡德语写本，最著名的一块出土于公元前 14 世纪埃及阿马尔纳（EA 356），疑作外交书吏学习阿卡德语的范本，另有尼尼微藏本补充后续。关于恩基究竟有意剥夺凡人永生还是保护爱徒避免天庭诡计，学界尚无定论，正显示了神谕多义性与阿卡德智慧文学的张力。
+    sources:
+      - citation: Encyclopaedia Britannica, "Adapa".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Adapa'
+        locator: 阿达帕折断南风之翼、天庭拒绝生命之食及阿马尔纳泥板综述
+      - citation: Internet Sacred Text Archive, R. W. Rogers (trans.), "Adapa and the Food of Life".
+        type: primary_text
+        url: 'https://www.sacred-texts.com/ane/adapa.htm'
+        locator: 泥板残片英译本及埃里都祭司设定
+    compare: [case_iq_uruk_gilgamesh_flood, case_gr_caucasus_prometheus_fire]
+    motifs: [index_berezkin_m27]
+    bridge:
+      entry: LIT-2-0004
+      cluster: sid_myth
+      trail: all
+      label: 神谕陷阱与凡人有限性
+      rationale: 阅读恩基对阿达帕的矛盾忠告，体会古代叙事如何通过信息不对称安排凡人与永生的擦肩而过。
+
+  # =========================================================================
+  # 2. Ancient Egyptian (4)
+  # =========================================================================
+  - id: case_eg_abydos_osiris_myth
+    title: 古埃及阿拜多斯｜奥西里斯受难、木匣漂流与复活神话
+    aliases:
+      - Osiris Myth
+      - 奥西里斯与伊西斯
+      - 赛特分尸神话
+      - 荷鲁斯复仇
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 26.1850
+      lng: 31.9189
+      precision: city
+      location_name: 埃及索哈杰省 · 阿拜多斯遗址（Abydos）
+      culture_region: 非洲 · 古埃及尼罗河流域
+    location_note: 阿拜多斯是古埃及最为核心的奥西里斯圣地与王室朝圣中心，全篇连续叙事亦见于后世希腊罗马作者的整理。
+    paragraphs:
+      - 古埃及神话中，奥西里斯曾作为贤明君王教导人间农耕与律法，却遭嫉妒的兄弟赛特设局谋害。赛特按奥西里斯身形暗制精美木匣，在宴会上佯称合身者可得此宝；待奥西里斯躺入匣中，赛特与同伙即刻封死铅盖将其投入尼罗河。木匣顺流飘向地中海并搁浅于比布鲁斯，被一棵巨树包裹其中，直至妻子伊西斯历尽艰辛将其寻回。
+      - 据普鲁塔克等古典转述及埃及本土铭文片段，赛特再度劫得遗体并裂为十四块散落埃及各地；伊西斯与奈芙蒂斯化鸟哀哭遍寻残骸，借阿努比斯防腐术拼接木乃伊，伊西斯化作隼鸟扇动双翼吹入气息，令奥西里斯短暂苏生并孕育遗腹子荷鲁斯。奥西里斯此后留驻杜阿特幽冥世界担任冥王与审判主神，而荷鲁斯长成后与赛特激战八十年夺回埃及王权。
+      - 奥西里斯之死与再生在古埃及并未以单一连续长篇传世，而是散见于金字塔铭文、阿拜多斯圣庙浮雕、亡灵书咒文及公元 1 至 2 世纪普鲁塔克《论伊西斯与奥西里斯》中。宗教史上，奥西里斯的复苏既呼应尼罗河年复一年的泛滥与草木枯荣，也构成王室与平民追求来世永生的葬仪核心，但它属于信仰与文学传统而非可核验的史实。
+    sources:
+      - citation: Encyclopaedia Britannica, "Osiris (Egyptian god)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Osiris-Egyptian-god'
+        locator: 奥西里斯受难、赛特分尸、伊西斯复原与阿拜多斯圣地传统
+      - citation: The Metropolitan Museum of Art, "Statuette of Osiris" (Late Period, 664–332 B.C.).
+        type: archival_catalogue
+        url: 'https://www.metmuseum.org/art/collection/search/545802'
+        locator: 后期王朝奥西里斯青铜像馆藏说明与冥王图像学
+    compare: [case_eg_aswan_philae_isis_tears, case_eg_thebes_weighing_heart]
+    motifs: [index_berezkin_k59]
+    bridge:
+      entry: REL-1-0003
+      cluster: sid_myth
+      trail: all
+      label: 王权交替与古埃及葬仪信仰
+      rationale: 结合阿拜多斯圣地传统与古埃及宗教概论，理解地方祭仪、王权继承与奥西里斯神话如何交织演进。
+
+  - id: case_eg_thebes_weighing_heart
+    title: 古埃及底比斯｜《亡灵书》玛特之羽与心脏称量审判
+    aliases:
+      - Weighing of the Heart
+      - 霍尼费尔纸草卷
+      - 第 125 章否定自白
+      - Book of the Dead
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 25.7300
+      lng: 32.6000
+      precision: city
+      location_name: 埃及卢克索 · 底比斯西岸墓葬区
+      culture_region: 非洲 · 古埃及尼罗河流域
+    location_note: 新王国时期众多绘有心脏称量图的《亡灵书》纸草卷出土于底比斯西岸贵族墓地，此坐标标示文本出土的地域中心。
+    paragraphs:
+      - 古埃及丧葬文学《亡灵书》（原名《白昼出行之书》）第 125 章描绘亡者历经阴间门户与守卫后，步入奥西里斯坐镇的“双重真理大厅”。亡者须面向四十二位阴间神灵逐一诵出“否定自白”，声明生前未曾偷盗、欺诈、污染水源或篡改秤砣，从而求取通往芦苇原永生之地的资格。
+      - 随后进入著名的称心仪式：豺狼首的阿努比斯将象征生命记录与良知的心脏（ib）置于天平一端，另一端摆放代表宇宙真理与秩序的女神玛特（Ma'at）之鸵鸟羽；朱鹭首书吏神托特执芦苇笔站在旁侧记录称量结果。若心脏轻过或与羽毛平衡，荷鲁斯便引领亡者拜见端坐莲花与奥西里斯四子前的冥王；若因罪恶沉重失衡，蹲伏天平旁的“吞噬者”阿米特便会扑食心脏，令亡者陷入彻底毁灭的“第二次死亡”。
+      - 大英博物馆藏第十九王朝霍尼费尔纸草卷（EA 9901 第 3 幅）完整保存了这一图景。考古与文献研究指出，《亡灵书》往往与圣甲虫护身符共同陪葬，咒文意在借助仪式语言帮助亡者安度审判；它呈现的是古埃及人对道德责任与死后秩序的宗教想象，而不是实证层面的死后世界图景。
+    sources:
+      - citation: The British Museum, "Book of the Dead of Hunefer (EA9901, Sheet 3)".
+        type: archival_catalogue
+        url: 'https://www.britishmuseum.org/collection/object/Y_EA9901-3'
+        locator: 第十九王朝霍尼费尔纸草卷称心审判场景馆藏说明
+      - citation: Internet Sacred Text Archive, E. A. Wallis Budge (trans.), "The Papyrus of Ani (The Egyptian Book of the Dead)".
+        type: primary_text
+        url: 'https://www.sacred-texts.com/egy/ebd/'
+        locator: 导论与第 125 章双重真理大厅译文
+    compare: [corpus_egypt_weighing_heart, case_eg_abydos_osiris_myth, corpus_theme_between_life_death]
+    motifs: [index_berezkin_k27r]
+    bridge:
+      entry: SCR-1-0004
+      cluster: sid_liminal
+      trail: all
+      label: 纸草卷图像与咒文阅读
+      rationale: 将霍尼费尔纸草卷的审判图绘与古埃及书写系统条目对读，辨析圣书体咒文、插画功能与陪葬语境。
+
+  - id: case_eg_heliopolis_ra_apophis
+    title: 古埃及赫利奥波利斯｜太阳神拉夜航冥界与巨蛇阿波菲斯
+    aliases:
+      - Ra and Apophis
+      - 太阳船夜航
+      - 阿佩普巨蛇
+      - Book of Overthrowing Apep
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 30.1294
+      lng: 31.3075
+      precision: city
+      location_name: 埃及开罗东北部 · 赫利奥波利斯古城遗址
+      culture_region: 非洲 · 古埃及尼罗河流域
+    location_note: 赫利奥波利斯（古名伊乌努）是古埃及九柱神体系与太阳神拉崇拜的中心，此坐标作为太阳夜航神话的文化溯源点。
+    paragraphs:
+      - 古埃及宇宙观认为太阳神拉每日驾“百万年之舟”巡游白昼苍穹，黄昏时化作羊首老者潜入西方地平线，换乘夜舟驶入黑暗幽深、分作十二时辰的杜阿特冥界。夜间航道危机四伏，太阳船的庇护使每时辰幽魂重获片刻光明，而黎明能否准时重临取决于船队能否冲破黑暗的阻截。
+      - 在第十二时辰的深渊或清晨山脊前，象征绝对混乱与虚无的巨蛇阿波菲斯（阿佩普）盘踞水道，企图吞噬太阳船或吸干冥河之水使其搁浅。此时船头的赛特持长矛迎战巨蛇，魔术女神伊西斯、奈芙蒂斯及随船诸神齐声念诵诅咒，甚至有“赫利奥波利斯大猫”手持利刀在圣树旁斩首巨蛇，终使拉神化作甲虫凯普里重升东方地平线。
+      - 《推翻阿佩普之书》（载于布雷姆纳—林德纸草卷）和帝王谷墓室的《冥界之书》（Amduat）保留了每日由祭司配合摧毁泥塑蛇像念诵的护日咒文。古埃及人将昼夜交替与日蚀视作宇宙秩序（玛特）与混沌（伊斯菲特）永恒拉锯的象征表达，这一宗教隐喻须与现代天体力学解释严格区分。
+    sources:
+      - citation: Encyclopaedia Britannica, "Apopis (Egyptian deity)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Apopis'
+        locator: 阿波菲斯（阿佩普）混沌巨蛇与阻截拉神夜舟条目
+      - citation: Encyclopaedia Britannica, "Re (Egyptian deity)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Re-Egyptian-deity'
+        locator: 赫利奥波利斯太阳神拉的日夜航行与变形体系
+      - citation: Internet Sacred Text Archive, E. A. Wallis Budge, "The Book of Knowing the Evolutions of Ra, and of Overthrowing Apep".
+        type: primary_text
+        url: 'https://www.sacred-texts.com/egy/leg/leg04.htm'
+        locator: 布雷姆纳—林德纸草卷讨伐阿佩普咒文段落
+    compare: [case_iq_babylon_enuma_elish, case_ru_novgorod_perun_veles]
+    motifs: [index_berezkin_i44, index_berezkin_a16]
+    bridge:
+      entry: REL-1-0003
+      cluster: sid_myth
+      trail: all
+      label: 日夜秩序与神庙镇魔礼仪
+      rationale: 通过拉神与阿波菲斯的神话及神庙日课，了解古埃及如何以仪式参与维持宇宙秩序的宗教逻辑。
+
+  - id: case_eg_dendera_sekhmet_beer
+    title: 古埃及丹德拉｜塞赫迈特屠戮与红啤酒安抚神话
+    aliases:
+      - Sekhmet and the Beer of Hathor
+      - 天牛之书
+      - 毁灭人类神话
+      - Destruction of Mankind
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 26.1422
+      lng: 32.6703
+      precision: city
+      location_name: 埃及基纳省 · 丹德拉哈索尔神庙（Dendera）
+      culture_region: 非洲 · 古埃及尼罗河流域
+    location_note: 丹德拉神庙保存了哈索尔与塞赫迈特醉酒节庆及狂怒平息的丰富铭文，新王国王墓则载有《天牛之书》全文。
+    paragraphs:
+      - 见于新王国时期王室陵墓《天牛之书》的神话讲述：年迈的太阳神拉察觉凡人在沙漠密谋背叛，遂拔下自己的太阳之眼，令其化作狂暴的狮首女神哈索尔—塞赫迈特降临人间惩罚叛逆者。女神踏入旷野大开杀戒，品尝人血后陷入狂喜嗜血之态，甚至连拉神心生怜悯欲留人类余脉亦无法令她停手。
+      - 为挽救世间，拉神连夜遣使前往阿斯旺象岛采来大片赤铁矿，磨成红粉并令赫利奥波利斯女祭司酿造七千罐大麦啤酒，调配出宛如鲜血的红啤酒倾倒在女神必经的田野上，淹没三掌深。黎明塞赫迈特重返猎场，在红酒镜面中欣喜顾影并俯首畅饮，终致沉醉酣睡而忘却杀戮，复归温顺的哈索尔归返天庭。
+      - 大都会艺术博物馆与大英博物馆藏有大量卡纳克与底比斯出土的阿蒙霍特普三世时期塞赫迈特黑花岗闪长岩坐像与立像，丹德拉等地亦长期举行“醉酒节”与“安抚塞赫迈特”礼仪以祈求消弭尼罗河汛期瘟疫。学界认为赤红泛滥水色与石榴石红啤酒仪式共同塑造了这则兼具警世与医疗祈福功能的神话。
+    sources:
+      - citation: The Metropolitan Museum of Art, "Statue of the Goddess Sekhmet" (12.181.198, ca. 1390–1352 B.C.).
+        type: archival_catalogue
+        url: 'https://www.metmuseum.org/art/collection/search/544483'
+        locator: 卡纳克穆特神庙出土塞赫迈特狮首女神雕像及神话说明
+      - citation: Encyclopaedia Britannica, "Sekhmet".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Sekhmet'
+        locator: 塞赫迈特战神与瘟疫/疗愈双面神格及红啤酒安抚情节
+      - citation: Encyclopaedia Britannica, "Hathor (Egyptian goddess)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Hathor-Egyptian-goddess'
+        locator: 丹德拉哈索尔神庙崇拜及与塞赫迈特的神格转换
+    compare: [case_eg_heliopolis_ra_apophis, case_eg_aswan_philae_isis_tears]
+    motifs: [index_berezkin_c2]
+    bridge:
+      entry: CHE-2-0004
+      cluster: sid_myth
+      trail: all
+      label: 铁矿红酒意象与矿物悬浊
+      rationale: 将神话中赤铁矿调染红啤酒淹没田野的叙事意象与矿物分散沉淀的理化常识对照，不以现代化学逆推古代传说成因。
+
+  # =========================================================================
+  # 3. Greco-Roman (4)
+  # =========================================================================
+  - id: case_gr_eleusis_persephone_cycle
+    title: 古希腊厄琉息斯｜得墨忒耳、珀耳塞福涅与四季交替神话
+    aliases:
+      - Homeric Hymn to Demeter
+      - 荷马颂歌·致得墨忒耳
+      - 厄琉息斯秘仪
+      - 石榴籽禁忌
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 38.0411
+      lng: 23.5375
+      precision: city
+      location_name: 希腊阿提卡大区 · 厄琉息斯遗址（Elefsina）
+      culture_region: 欧洲 · 古希腊阿提卡
+    location_note: 厄琉息斯是《致得墨忒耳荷马颂歌》明确指明建庙并举行秘仪的圣地，坐标对应当地得墨忒耳圣域遗址。
+    paragraphs:
+      - 《致得墨忒耳荷马颂歌》记述年轻的科瑞（珀耳塞福涅）在草地采摘水仙花时，大地骤裂，冥王哈得斯驾金车将她掳入幽冥。母亲谷物女神得墨忒耳听闻女儿呼救，燃起火炬在人间苦寻九日，终从太阳神赫利俄斯口中得知实情，乃因宙斯默许这桩婚事；她震怒之下离弃奥林匹斯，乔装老妪流浪至厄琉息斯城邦。
+      - 得墨忒耳获当地王室收留后，拒令大地生长谷物，使人间陷入大饥荒，天界亦断绝祭品。宙斯只得遣赫尔墨斯赴冥府传旨释放少女；然而哈得斯暗中递给珀耳塞福涅一枚甘甜的石榴籽，令她吞食其中一粒，从而立下冥界食物契约。最终众神裁定她每年三分之二时光返归地上伴随母亲、万物随之萌发繁茂，其余三分之一须返冥府相伴哈得斯，大地随之步入寒冬。
+      - 该颂歌约成篇于公元前 7 至前 6 世纪，明确以厄琉息斯秘仪（Eleusinian Mysteries）的起源作结，并向参与者许诺死后较好的命运。这则将婚姻掠夺、母亲哀痛、冥食禁忌与农时周期编织在一起的古老宗教诗篇，是理解古代地中海季节与重生观念的关键文本，而非现代物候学的实证解释。
+    sources:
+      - citation: Encyclopaedia Britannica, "Hymn to Demeter".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Hymn-to-Demeter'
+        locator: 《致得墨忒耳荷马颂歌》成篇年代、剧情结构与厄琉息斯秘仪背景
+      - citation: 'Internet Sacred Text Archive, Hugh G. Evelyn-White (trans.), "The Homeric Hymns: To Demeter".'
+        type: primary_text
+        url: 'https://www.sacred-texts.com/cla/hom/homer04.htm'
+        locator: 荷马颂歌第二首全篇英译
+    compare: [case_iq_sumer_inanna_underworld, case_gr_thrace_orpheus_underworld]
+    motifs: [index_berezkin_k27r]
+    bridge:
+      entry: REL-5-0005
+      cluster: sid_myth
+      trail: all
+      label: 秘仪口传与农时叙事结构
+      rationale: 并读厄琉息斯秘仪的隐秘传承与口述仪式研究，体会宗教节律如何借助季节循环故事安顿生死焦虑。
+
+  - id: case_gr_thrace_orpheus_underworld
+    title: 古希腊色雷斯｜俄耳甫斯琴声下冥界与回望禁忌
+    aliases:
+      - Orpheus and Eurydice
+      - 俄耳甫斯与欧律狄刻
+      - 勿回头禁忌
+      - 俄耳甫斯教传统
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 41.1333
+      lng: 24.8833
+      precision: culture_region
+      location_name: 希腊东马其顿与色雷斯地区（叙事故里参考）
+      culture_region: 欧洲 · 古希腊色雷斯
+    location_note: 古典文献普遍将俄耳甫斯与古色雷斯山地相连，此坐标为色雷斯文化区的地理参考点，全诗亦见罗马拉丁诗集改写。
+    paragraphs:
+      - 色雷斯乐师俄耳甫斯以七弦琴声能令林木走兽倾听而闻名。新婚妻子欧律狄刻在草地奔跑时被毒蛇咬中脚踝亡故，俄耳甫斯悲痛欲绝，遂抱琴自泰纳隆洞穴潜入幽冥。他的哀歌竟使渡船老翁卡戎停桨、地狱三头犬刻耳柏洛斯垂耳、受罚众鬼暂止受刑，连铁石心肠的哈得斯与珀耳塞福涅亦为之动容。
+      - 冥王与冥后同意放欧律狄刻随他重返阳间，但设下唯一戒律：踏出冥界阴影前，俄耳甫斯绝不可回头望她一眼。二人沿陡峭昏暗的甬道摸索而上，就在即将步出光明门槛的一瞬，俄耳甫斯因疑惧妻子的脚步是否紧随而忍不住回首一瞥，欧律狄刻瞬间化作轻烟被拖回深渊，令他二度永失爱妻，此后悲歌终遭酒神狂女撕碎，首级与琴飘流至莱斯沃斯岛。
+      - 现存最早完整铺陈“回望失妻”悲剧的文献是公元前 1 世纪罗马诗人维吉尔《农事诗》第四卷与奥维德《变形记》第十至十一卷（佩尔修斯数字图书馆均收校勘原典），早期希腊文献中反而曾有成功挽回妻子的异文。此故事不仅铸就古典“冥界禁忌”范式，也与古代追求灵魂净化的俄耳甫斯教（Orphism）传统遥相呼应。
+    sources:
+      - citation: Perseus Digital Library (Tufts University), Ovid, "Metamorphoses, Book 10" (Orpheus and Eurydice).
+        type: primary_text
+        url: 'https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.02.0028%3Abook%3D10'
+        locator: 奥维德《变形记》第十卷开篇俄耳甫斯下冥界诗行
+      - citation: Perseus Digital Library (Tufts University), Virgil, "Georgics, Book 4".
+        type: primary_text
+        url: 'https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a1999.02.0058%3abook%3d4'
+        locator: 维吉尔《农事诗》第四卷阿里斯泰俄斯与俄耳甫斯插话
+      - citation: Encyclopaedia Britannica, "Orpheus (Greek mythology)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Orpheus-Greek-mythology'
+        locator: 俄耳甫斯传说变体、色雷斯渊源与奥菲斯教综述
+    compare: [case_jp_izumo_izanagi_yomi, case_iq_sumer_inanna_underworld, case_gr_eleusis_persephone_cycle]
+    motifs: [index_berezkin_h12, index_berezkin_k27r]
+    bridge:
+      entry: LIT-1-0009
+      cluster: sid_liminal
+      trail: all
+      label: 冥界门槛、挽歌与回望禁忌
+      rationale: 对读俄耳甫斯重返阳间门槛失妻的诗篇与挽歌哀悼传统，观察“回头即失去”如何在文学形式中刻画不可逆的生死边界。
+
+  - id: case_gr_caucasus_prometheus_fire
+    title: 古希腊｜普罗米修斯盗火与高加索绝壁受刑神话
+    aliases:
+      - Prometheus Bound
+      - 盗火神话
+      - 被缚的普罗米修斯
+      - 茴香茎藏火
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 37.9715
+      lng: 23.7267
+      precision: culture_region
+      location_name: 希腊 · 雅典（悲剧保存中心，故事放逐高加索极边）
+      culture_region: 欧洲 · 古希腊文学传统
+    location_note: 古典戏剧将普罗米修斯锁于世界极东的高加索山岩，而传世最完整文本《被缚的普罗米修斯》创作并上演于雅典城邦。
+    paragraphs:
+      - 在赫西俄德《神谱》与《工作与时日》的记述中，提坦神族之子普罗米修斯屡次为弱小的人类斡旋：他先在墨科涅祭牲分配中用白骨包以肥脂瞒过宙斯，迫使天父震怒收回人间的火种。普罗米修斯遂潜入天界，将神火火种藏于空心大茴香茎内偷带下凡，重新点亮人间灶膛与锻炉，宙斯则遣赫菲斯托斯塑造潘多拉作为对凡人的反制。
+      - 归于埃斯库罗斯名下的雅典悲剧《被缚的普罗米修斯》进一步将他塑造成赋予人类数字、文字、历法、航海、驯兽与医药的文明导师。作为惩戒，力量神与暴力神协同火神将他用金刚锁链钉在高加索荒原的绝壁之上；据赫西俄德所记，白昼还有宙斯的神鹰飞来啄食他每日夜间重新长出的肝脏，直至英雄赫拉克勒斯射杀神鹰才为他解开枷锁。
+      - 从赫西俄德的叙事诗到公元前 5 世纪雅典悲剧及琉善的讽刺对话，普罗米修斯的形象在“狡黠欺神者”与“抗拒暴政、启蒙人类的受难者”之间不断改写。佩尔修斯数字图书馆保存的希腊原文校勘本提醒读者，同题神话如何在不同城邦政治与哲学争论中被赋予截然不同的伦理重心。
+    sources:
+      - citation: Perseus Digital Library (Tufts University), Aeschylus, "Prometheus Bound" (Perseus:text:1999.01.0090).
+        type: primary_text
+        url: 'https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0090'
+        locator: 埃斯库罗斯《被缚的普罗米修斯》全文及高加索受刑开篇
+      - citation: Perseus Digital Library (Tufts University), Hesiod, "Theogony" (Perseus:text:1999.01.0130).
+        type: primary_text
+        url: 'https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0130'
+        locator: 赫西俄德《神谱》第 507 至 616 行盗火与墨科涅祭祀段落
+      - citation: 'Internet Sacred Text Archive, Lucian, "Dialogues of the Gods: Prometheus on Caucasus".'
+        type: primary_text
+        url: 'https://www.sacred-texts.com/cla/luc/dg/dg02.htm'
+        locator: 琉善讽刺对话集中高加索链刑辩论
+    compare: [case_iq_eridu_adapa_wind, case_nz_aotearoa_maui_fishing]
+    motifs: [index_berezkin_d4a]
+    bridge:
+      entry: PHI-6-0001
+      cluster: sid_myth
+      trail: all
+      label: 技艺、神律与古希腊思辨
+      rationale: 对照普罗米修斯向人类传授技艺的悲剧叙事与古希腊哲学对自然、技艺和正义的追问，理解神话如何进入城邦伦理辩论。
+
+  - id: case_it_rome_romulus_remus
+    title: 古罗马｜罗穆卢斯、雷穆斯与母狼哺育建城神话
+    aliases:
+      - Romulus and Remus
+      - 帕拉蒂尼山占卜
+      - 母狼喂乳
+      - 罗马建城传说
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 41.8892
+      lng: 12.4875
+      precision: city
+      location_name: 意大利拉齐奥大区 · 罗马帕拉蒂尼山（Palatine Hill）
+      culture_region: 欧洲 · 古罗马（意大利）
+    location_note: 帕拉蒂尼山及台伯河畔无花果树一带是罗马文献公认的母狼救婴及罗穆卢斯筑城遗址参考点。
+    paragraphs:
+      - 据李维《罗马史》与普鲁塔克《罗穆卢斯传》记载，阿尔巴隆加篡位者阿穆利乌斯恐王室血脉复辟，强迫侄女西尔维娅成为贞女祭司。不料她与战神马尔斯生下双胞胎罗穆卢斯与雷穆斯；国王怒将婴孩装篮投入涨水的台伯河，竹篮随退潮搁浅在一株无花果树下，先有一头母狼循啼声前来哺乳，另有马尔斯的圣鸟啄木鸟衔食相助，直至牧羊人法乌斯图卢斯夫妇将兄弟抚养成人。
+      - 兄弟二人长大后推翻篡位者迎回外祖父努米托耳，转而返回最初获救的台伯河七丘之地另建新城。然而兄弟俩因城址归属发生争执：雷穆斯在阿文廷山先看到六只秃鹫，罗穆卢斯随后在帕拉蒂尼山看到十二只秃鹫，各自坚持占卜胜出。罗穆卢斯依礼在帕拉蒂尼山犁出圣界（pomerium）并筑起城墙，雷穆卢斯轻蔑一跃跨过矮墙，遭罗穆卢斯或其随从当场击毙，奠下“越界者死”的铁血城规。
+      - 罗马人传统上将建城日定在公元前 753 年 4 月 21 日，并于帕拉蒂尼山保留泥草小屋遗址及著名的卡比托利欧青铜母狼像（考古界对其主体铸造年代尚有伊特鲁里亚与中世纪之争）。正如李维本人所言，早期建城传说混杂了诗意神迹与城邦政治宣传，阅读时须将“手足相残的建城神学”与实际考古聚落演进分别对待。
+    sources:
+      - citation: Perseus Digital Library (Tufts University), Plutarch, "Life of Romulus" (Perseus:text:1999.01.0126).
+        type: primary_text
+        url: 'https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0126'
+        locator: 普鲁塔克《希腊罗马名人传·罗穆卢斯传》英译全文
+      - citation: Encyclopaedia Britannica, "Romulus and Remus".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Romulus-and-Remus'
+        locator: 双生子漂流、母狼哺乳与帕拉蒂尼山建城冲突综述
+    compare: [case_gt_quiche_popol_vuh_twins, case_kr_baekdu_dangun_founding, case_gr_athens_erechtheion_sacred_olive]
+    motifs: [index_berezkin_k93]
+    bridge:
+      entry: HIS-6-0001
+      cluster: sid_myth
+      trail: all
+      label: 建城传说与罗马史料批判
+      rationale: 借李维与普鲁塔克记录建城神迹时的审慎态度，对照史料批判方法，辨析城邦起源叙事的政治与修辞层累。
+
+  # =========================================================================
+  # 4. Norse & Finnic (4)
+  # =========================================================================
+  - id: case_is_snorra_yggdrasil_ragnarok
+    title: 北欧冰岛｜世界树尤格德拉西尔与诸神黄昏末世神话
+    aliases:
+      - Yggdrasil and Ragnarök
+      - 女巫的预言
+      - 诸神黄昏
+      - 世界之树
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 64.6644
+      lng: -21.2922
+      precision: city
+      location_name: 冰岛西部 · 雷克霍特（Reykholt，斯诺里撰述地）
+      culture_region: 欧洲 · 北欧冰岛
+    location_note: 雷克霍特为 13 世纪冰岛学者斯诺里·斯图鲁松编撰《散文埃达》的庄园所在地，此处作为文献定本的地理坐标参考。
+    paragraphs:
+      - 《诗体埃达·女巫的预言》与斯诺里《散文埃达·欺骗古鲁菲》共同勾勒出环绕参天白蜡树尤格德拉西尔的九大世界：树冠伸入天界阿斯加德，树干贯通人类所居中庭米德加德，三条巨根分探诸神泉、巨人智慧泉与地下冥渊赫尔海姆。然而世界树时刻面临侵蚀：毒龙尼德霍格噬咬树根，四头牡鹿啃食新芽，生命与毁灭的张力已然嵌入宇宙结构之中。
+      - 预言终将迎来“诸神黄昏”（Ragnarök）：历经连续三个严冬（芬布尔之冬）而无夏日的饥荒与内战后，群狼吞没日月，巨狼芬里尔与绕海巨蛇耶梦加得挣脱束缚。阿萨诸神集结英灵殿战士在维格里德平原迎战巨人与死灵大军；奥丁被芬里尔吞噬、维达复仇斩狼，索尔斩杀尘世巨蛇却中蛇毒九步倒毙，火巨人苏尔特尔挥动烈焰之剑焚尽九界。
+      - 大火熄灭、陆地沉入沧海后，碧绿的新世界再次自水底升起，躲藏在世界树心木中的一男一女重繁人间，残存子辈重拾先祖遗落的金色棋子。丹麦国家博物馆与冰岛文献学界指出，现存《埃达》文本定型于基督教传入冰岛二百年之后，其中既有维京时代口传宇宙观的遗存，也可能经过中世纪抄写者的审美统整与末世重构。
+    sources:
+      - citation: National Museum of Denmark, "The Old Religion (Yggdrasil, fate and the end of the world)".
+        type: institutional_account
+        url: 'https://en.natmus.dk/historical-knowledge/denmark/prehistoric-period-until-1050-ad/the-viking-age/religion-magic-death-and-rituals/the-old-religion/'
+        locator: 丹麦国家博物馆维京时代宇宙观与终局叙事介绍
+      - citation: Encyclopaedia Britannica, "Yggdrasill".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Yggdrasill'
+        locator: 世界树三条根系与九界结构条目
+      - citation: 'Internet Sacred Text Archive, Henry Adams Bellows (trans.), "The Poetic Edda: Völuspá".'
+        type: primary_text
+        url: 'https://www.sacred-texts.com/neu/poe/poe02.htm'
+        locator: 《女巫的预言》创世与诸神黄昏诗节
+    compare: [corpus_norse_world_tree, case_is_edda_baldr_mistletoe, case_mx_teotihuacan_five_suns]
+    motifs: [index_berezkin_b21, index_berezkin_g8d, index_berezkin_c2]
+    bridge:
+      entry: LIT-1-0003
+      cluster: sid_myth
+      trail: all
+      label: 诗体与散文埃达的体裁编纂
+      rationale: 并读《女巫的预言》诗节与斯诺里散文叙事，观察头韵古诗与中世纪散文注疏如何共同塑造北欧末世景观。
+
+  - id: case_is_edda_baldr_mistletoe
+    title: 北欧冰岛｜光明神巴德尔与槲寄生之箭悲剧
+    aliases:
+      - Death of Baldr
+      - 巴德尔之死
+      - 弗丽嘉发誓
+      - 洛基诡计与槲寄生
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 64.1466
+      lng: -21.9426
+      precision: culture_region
+      location_name: 冰岛 · 雷克雅未克与西南冰岛抄本文化区
+      culture_region: 欧洲 · 北欧冰岛
+    location_note: 巴德尔神话以冰岛保存的双《埃达》文本最为详备（丹麦编年史家萨克索另存不同版本），此处以冰岛西南文化区为文献参考点。
+    paragraphs:
+      - 奥丁与弗丽嘉之子巴德尔温润正直，一日忽为噩梦所扰，梦见自己将丧失性命。奥丁骑八足骏马斯莱普尼尔下赴冥界唤醒女预言家，得知冥府已为巴德尔备好宴席与蜜酒。为护爱子周全，弗丽嘉奔走天地间向水火、铁石、百木、飞禽走兽与毒物取誓，唯独漏过英灵殿西侧一株幼小脆弱的槲寄生。
+      - 诸神得知巴德尔刀枪不入，便常聚在议会场以石块、标枪投掷他作戏；狡诈的洛基化作老妪从弗丽嘉口中套出遗漏的秘密，折来槲寄生削成细箭，递到盲神霍德尔手中并扶臂瞄准。细箭穿透巴德尔胸膛令其当场陨落，众神惊骇失声。大船林霍恩被推作火葬舟，奥丁在儿尸耳畔轻声低语，成为日后北欧诸神最著名的无解谜题。
+      - 随后赫尔莫德跨海赴赫尔海姆求情，冥后赫尔允诺只要天地万物无一例外为巴德尔哭泣即可放归；万灵皆泣之际，山洞中唯独自称女巨人的索克（实为洛基所变）拒不落泪，巴德尔乃须留居冥府直至诸神黄昏之后重生。此故事凸显“微小事物颠覆宏大防护”及“无法挽回的悲剧”，也是北欧神话中命运不可逆转的核心转折。
+    sources:
+      - citation: Encyclopaedia Britannica, "Balder".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Balder'
+        locator: 巴德尔之死、《埃达》与萨克索《丹麦史》版本对照
+      - citation: 'Internet Sacred Text Archive, Rasmus B. Anderson (trans.), "The Younger Edda: The Death of Baldur".'
+        type: primary_text
+        url: 'https://www.sacred-texts.com/neu/nda/nda08.htm'
+        locator: 《散文埃达》巴德尔之死与赫尔莫德冥府求情章节
+      - citation: 'Internet Sacred Text Archive, Henry Adams Bellows (trans.), "The Poetic Edda: Baldrs Draumar".'
+        type: primary_text
+        url: 'https://www.sacred-texts.com/neu/poe/poe13.htm'
+        locator: 《巴德尔之梦》奥丁赴冥界问卜全诗
+    compare: [case_is_snorra_yggdrasil_ragnarok, case_gr_thrace_orpheus_underworld]
+    motifs: [index_berezkin_k27r]
+    bridge:
+      entry: LIT-2-0001
+      cluster: sid_myth
+      trail: all
+      label: 伏笔漏洞与不可逆命运结构
+      rationale: 从弗丽嘉遗漏槲寄生的叙事伏笔出发，对照叙事学中的因果链条与宿命安排，对比冰岛与丹麦不同史诗异文。
+
+  - id: case_is_edda_odin_mead
+    title: 北欧冰岛｜奥丁化鹰窃取诗神蜜酒神话
+    aliases:
+      - Mead of Poetry
+      - Kvasir
+      - 诗歌蜜酒
+      - Skáldskaparmál
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 64.6644
+      lng: -21.2922
+      precision: culture_region
+      location_name: 冰岛 · 博尔加峡湾与雷克霍特文化区
+      culture_region: 欧洲 · 北欧冰岛
+    location_note: 《散文埃达·诗语篇》（Skáldskaparmál）由斯诺里在冰岛西部的雷克霍特整理定稿，此坐标作文学与诗学注释传统参考点。
+    paragraphs:
+      - 斯诺里《诗语篇》与《诗体埃达·高人的箴言》回溯了诗艺的起源：阿萨诸神与华纳诸神战后停火，众神向同一个酒缸吐出唾液立誓，从中诞生出博学多识的智者克瓦希尔。然而克瓦希尔周游世界时遭侏儒菲亚拉尔与加拉尔杀害，双侏儒将他的鲜血混合蜂蜜酿成“诗歌蜜酒”，凡饮一口者即能出口成章、化为诗人或智者。
+      - 二侏儒随后因杀害巨人基林而落入其子苏通格之手，被迫交出装满蜜酒的缸与釜换命。苏通格将宝酒藏于赫尼特比约格山心深处，命女儿贡洛德昼夜看守。主神奥丁化身长工“恶行者”潜入巨人包吉领地，诱使九名刈草奴彼此误杀而独揽农活，以“品饮一口蜜酒”作为秋收报酬；秋尽后他教唆包吉用钻头在山壁凿出孔洞，化为蛇钻入石室。
+      - 奥丁变回英俊模样与贡洛德共度三夜，求得三口蜜酒之诺，不料三口竟将三口大缸里的佳酿一饮而尽，随即便化作巨鹰振翅直奔阿斯加德。苏通格同样化鹰紧追，诸神在城墙上备好酒缸迎接；奥丁飞越墙垣时吐出绝大部分蜜酒入缸，却在惊慌失措间自尾部泄出少许“劣酒”撒向凡间，遂成为世间庸俗诗人的灵感来源。
+    sources:
+      - citation: Encyclopaedia Britannica, "Prose Edda" (Skáldskaparmál and Mead of Poetry).
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Prose-Edda'
+        locator: 《散文埃达》体例与诗语篇（Skáldskaparmál）神话注释背景
+      - citation: 'Internet Sacred Text Archive, Arthur Gilchrist Brodeur (trans.), "The Prose Edda: Skáldskaparmál".'
+        type: primary_text
+        url: 'https://www.sacred-texts.com/neu/pre/pre05.htm'
+        locator: 《诗语篇》克瓦希尔与奥丁窃取诗酒全文
+      - citation: 'Internet Sacred Text Archive, Henry Adams Bellows (trans.), "The Poetic Edda: Hávamál".'
+        type: primary_text
+        url: 'https://www.sacred-texts.com/neu/poe/poe04.htm'
+        locator: 《高人的箴言》第 104 至 110 节贡洛德密室诗行
+    compare: [case_is_snorra_yggdrasil_ragnarok, case_gr_caucasus_prometheus_fire]
+    motifs: [index_berezkin_d4a]
+    bridge:
+      entry: LIT-1-0002
+      cluster: sid_myth
+      trail: all
+      label: 诗艺隐喻与暗喻体系（Kenning）
+      rationale: 结合《诗语篇》阐释北欧吟唱诗人以“克瓦希尔之血”代指诗歌的隐喻传统，理解神话故事如何支撑古代诗学修辞。
+
+  - id: case_fi_karelia_kalevala_sampo
+    title: 芬兰卡累利阿｜《卡勒瓦拉》锻造与争夺神磨“桑波”神话
+    aliases:
+      - The Kalevala and Sampo
+      - 卡勒瓦拉
+      - 桑波磨坊
+      - 铁匠伊尔玛里宁
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 64.1278
+      lng: 29.5186
+      precision: culture_region
+      location_name: 芬兰凯努区 · 库赫莫（卡累利阿民歌采集文化区）
+      culture_region: 欧洲 · 芬兰与卡累利阿传统
+    location_note: 伦罗特采录《卡勒瓦拉》口头吟唱诗歌的聚落横跨芬兰东部与白海卡累利阿（如沃基涅米），库赫莫周边作区域文化参考。
+    paragraphs:
+      - 芬兰民族史诗《卡勒瓦拉》第 10 歌及第 42 至 43 歌中，波赫约拉的女王洛乌希许诺将女儿嫁给能打造奇物“桑波”（Sampo）的巧匠。老智者万奈摩宁求得卡勒瓦拉第一铁匠伊尔玛里宁出山，后者凭天鹅羽尖、不妊母牛之乳、一粒大麦与春羊微毛起炉鼓风，火舌淬炼三日先后化出金弩、红船、金角牛与银犁却均不满意，第四日终从火焰深处锻出带有彩绘盖顶的“桑波”——它一面源源磨出面粉，一面磨出食盐，另一面磨出黄金。
+      - 波赫约拉凭桑波日渐富足，卡勒瓦拉诸英雄却生活拮据，万奈摩宁、伊尔玛里宁与浪子莱明凯宁遂扬帆北渡争夺神磨。万奈摩宁奏响梭鱼骨制成的坎特勒琴，令波赫约拉全城昏睡，三人将桑波搬上木船返航。醒觉的洛乌希化作遮天巨鹰率兵追击，双方在狂涛中厮杀，桑波被扯出船舷摔得粉碎，大部分沉入海底，据说海水从此富含盐分。
+      - 残片漂流上岸后，万奈摩宁只拾回寥寥数块桑波碎片与彩盖残片埋入芬兰土地，使大地年年重获农作物收成与五谷丰登。1835 与 1849 年埃利亚斯·伦罗特将采自卡累利阿歌者的四音步抑扬格长短吟唱汇编成《卡勒瓦拉》；学界提醒，伦罗特的史诗编排带有 19 世纪文学统合色彩，而关于“桑波”原型是手推石磨、世界柱还是太阳盘至今仍有多种考证。
+    sources:
+      - citation: Encyclopaedia Britannica, "Sampo (Finnish mythology)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Sampo'
+        locator: 桑波神磨锻造、海战碎裂与诸种学界释义综述
+      - citation: 'Internet Sacred Text Archive, John Martin Crawford (trans.), "The Kalevala: Rune XLII (Capture of the Sampo)".'
+        type: primary_text
+        url: 'https://www.sacred-texts.com/neu/kveng/kv42.htm'
+        locator: 第 42 歌渡海夺取桑波英译全篇
+    compare: [case_is_edda_odin_mead, case_kr_baekdu_dangun_founding]
+    motifs: [index_berezkin_m18b, index_berezkin_g6]
+    bridge:
+      entry: LIT-1-0010
+      cluster: sid_myth
+      trail: all
+      label: 口头吟唱与史诗汇编文本
+      rationale: 以卡累利阿口传歌谣在 19 世纪被编纂为民族史诗《卡勒瓦拉》为例，认识口头表演变体与案头定本之间的张力。
+
+  # =========================================================================
+  # 5. Vedic & Hindu (4)
+  # =========================================================================
+  - id: case_in_purana_samudra_manthana
+    title: 古印度往世书｜乳海搅拌与不死甘露诞生神话
+    aliases:
+      - Samudra Manthana
+      - 搅拌乳海
+      - 毗湿奴龟化身
+      - 湿婆蓝喉
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 25.3176
+      lng: 83.0058
+      precision: culture_region
+      location_name: 印度北方邦 · 瓦拉纳西（恒河往世书文本传统中心参考）
+      culture_region: 南亚 · 古印度吠陀与往世书传统
+    location_note: 搅拌乳海属泛印度宇宙创生神话，不固定于单一城市；瓦拉纳西作为梵语往世书校勘与礼仪传承重镇作区域文化参考。
+    paragraphs:
+      - 见于《摩诃婆罗多》《毗湿奴往世书》及《薄伽梵往世书》的著名创世母题中，天神（提婆）因遭圣人咒诅而元气大衰，遂听从毗湿奴之计，暂与宿敌阿修罗缔约携手搅拌无垠乳海，以提炼令人不死的甘露（Amrita）。双方拔取曼陀罗山作搅棒，请巨蛇王婆苏吉缠绕山体充当搅绳；天神握蛇尾，阿修罗攥蛇头，轮番扯动翻搅大海。
+      - 巨山起初因无支撑而下沉海底，毗湿奴遂化作巨龟（俱利摩）潜入海床以龟壳稳稳托住山底。搅拌千年间，海中率先涌出足以焚毁三界的剧毒哈拉哈拉（Halahala），湿婆挺身而出吞下烈毒却将其停锁于咽喉，喉部自此化为靛蓝，得名“蓝喉者”；随后神牛、天马、如意树、月亮、吉运女神拉克什米与手持甘露金瓶的医神檀梵陀利相继破浪而出。
+      - 为免甘露落入阿修罗之手，毗湿奴化作绝色天女莫希尼吸引阿修罗目光，趁机将不死琼浆依次分予天神。此叙事不仅滋养了印度寺庙、柬埔寨吴哥窟浮雕等宏伟的南亚与东南亚艺术传统，也与古代印度节日（如大壶节传说中滴落的四地）紧密交织；其象征善恶力量协作与平衡的宗教寓意须与医学或海洋学事实区分。
+    sources:
+      - citation: Encyclopaedia Britannica, "Samudra Manthana (Hindu mythology)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Samudra-Manthana'
+        locator: 曼陀罗山、婆苏吉蛇、毗湿奴龟化身及甘露分配概要
+      - citation: Internet Sacred Text Archive, H. H. Wilson (trans.), "The Vishnu Purana, Book I (Index & Chapter IX)".
+        type: primary_text
+        url: 'https://www.sacred-texts.com/hin/vp/index.htm'
+        locator: 《毗湿奴往世书》第一卷第九章搅拌乳海目录与英译本
+    compare: [case_iq_babylon_enuma_elish, case_in_chidambaram_shiva_nataraja, case_b3a_kojiki_waters]
+    motifs: [index_berezkin_b3a, index_berezkin_i44]
+    bridge:
+      entry: REL-1-0007
+      cluster: sid_myth
+      trail: all
+      label: 印度教文本层累与跨地域艺术
+      rationale: 从往世书搅拌乳海神话进入印度教历史与文本传统条目，观察同一母题如何在梵语典籍与地方寺庙浮雕间传播演变。
+
+  - id: case_in_vedic_manu_matsya_flood
+    title: 古印度吠陀｜摩奴与摩蹉神鱼的大洪水神话
+    aliases:
+      - Matsya and Manu
+      - 百道梵书洪水神话
+      - 摩蹉鱼化身
+      - Shatapatha Brahmana
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 29.9695
+      lng: 76.8783
+      precision: culture_region
+      location_name: 印度哈里亚纳邦 · 俱卢之野（晚期吠陀文献形成文化带）
+      culture_region: 南亚 · 古印度吠陀与往世书传统
+    location_note: 《百道梵书》成书于恒河上游及俱卢之野一带的晚期吠陀婆罗门学派，此坐标作印度古文献生成地域参考。
+    paragraphs:
+      - 现存最早的古印度大洪水记述见于晚期吠陀散文经典《百道梵书》（第一编第八章第一节）：人类始祖摩奴清晨取水净手时，掌中忽然落入一条极小的鱼。小鱼开口请求收留，许诺日后洪涛淹天时必报救命之恩。摩奴依言先以陶瓮蓄养，继而随鱼身暴涨将其移入深池，最终送归大海；神鱼临别时预告洪灾将至的精确年岁，嘱他造大舟备行。
+      - 大水如期涌起淹没世间一切生灵时，摩奴独乘木舟航行其上；神鱼游回船侧，摩奴遂用长绳将船缆系于鱼头独角，由神鱼牵引船只平稳度过汹涌巨浪，直抵北方巍峨群峰之巅（后世称“摩奴坠舟处”）。洪水渐退后，摩奴依神鱼指引循水际下山，独自献上酥油与乳酪祭品，竟从祭仪泡沫中生出一女子名为“依达”（Ida），二人遂成为洪水后人类的新始祖。
+      - 后世《摩诃婆罗多》与《往世书》将救世神鱼确认为毗湿奴十大化身之首“摩蹉”（Matsya），并将随舟同行者扩充为携带着药草、五谷种子及七仙人的救赎船队。将《百道梵书》素朴的祭仪起源叙事与两河流域乌特纳比什提姆泥板对照，可清晰识别跨地域大洪水母题在南亚祭祀神学中的独特重构。
+    sources:
+      - citation: 'Internet Sacred Text Archive, Julius Eggeling (trans.), "Satapatha Brahmana, Part I (SBE 12): Adhyaya VIII, Brahmana 1 (Manu and the Fish)".'
+        type: primary_text
+        url: 'https://www.sacred-texts.com/hin/sbr/sbr05.htm'
+        locator: 《百道梵书》1.8.1.1 至 1.8.1.11 摩奴遇鱼与造舟渡海译文
+      - citation: Encyclopaedia Britannica, "Matsya (Hindu mythology)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Matsya'
+        locator: 摩蹉鱼神化身从《百道梵书》到《往世书》的谱系演变
+    compare: [case_iq_uruk_gilgamesh_flood, case_in_purana_samudra_manthana]
+    motifs: [index_berezkin_c2, index_berezkin_c3]
+    bridge:
+      entry: REL-2-0001
+      cluster: sid_myth
+      trail: all
+      label: 梵书祭仪与经典谱系增补
+      rationale: 对比早期《百道梵书》摩奴独舟与后期《往世书》七仙人版本的差异，思考宗教经典如何不断增补神学解释。
+
+  - id: case_in_katha_nachiketa_yama
+    title: 古印度奥义书｜那奇凯塔向死神阎摩问道的生死对话
+    aliases:
+      - Nachiketa and Yama
+      - 卡塔奥义书
+      - 阎摩三愿
+      - Katha Upanishad
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 25.3176
+      lng: 83.0058
+      precision: culture_region
+      location_name: 印度北印度 · 恒河流域奥义书传习区（瓦拉纳西参考）
+      culture_region: 南亚 · 古印度吠陀与往世书传统
+    location_note: 《卡塔奥义书》由黑夜柔吠陀伽陀学派口传定型于北印度，此处用北印度宗教学术重镇作文献文化圈参考。
+    paragraphs:
+      - 《卡塔奥义书》开篇借一则极具戏剧性的父子冲突引出冥界访道：婆罗门瓦加什拉瓦萨举办献出全部家产的祭祀，却仅将衰老无乳的病牛作为布施。耿直的少年那奇凯塔三度追问父亲“究竟将我献给谁”，激怒之下父亲脱口怒喝“我把你献给死神”。少年恪守父言孤身赴阎摩殿报到，适逢死神外出三日，饿着肚子枯守门前。
+      - 阎摩归来惊见婆罗门童子三夜未受款待，深感失礼，遂许下三个愿望以示赔罪。那奇凯塔首愿祈求父亲消怒复归和睦，次愿求教通往天界不惧饥渴的天火祭法；及至第三愿，少年直问“人死之后，有人言其尚存，有人言其归于无，唯愿闻知真实究竟”。阎摩百般推辞，愿以长寿子孙、黄金疆土与天女乐舞代换此问，少年皆不为所动。
+      - 面对顽强求真的问者，死神阎摩终肯开示著名的“胜善（shreyas）与可喜（preyas）”之辨，并将身体比作马车、感官比作骏马、理智比作御者，阐发不生不灭之“大我”（Ātman）教义。从早期《鹧鸪氏梵书》的祭火故事演进至《卡塔奥义书》的哲学寓言，此文本是印度神话叙事向抽象形而上学转化的典范，应当置于古代宗教哲学语境中细读。
+    sources:
+      - citation: 'Internet Sacred Text Archive, F. Max Müller (trans.), "The Upanishads, Part II (SBE 15): Katha-Upanishad".'
+        type: primary_text
+        url: 'https://www.sacred-texts.com/hin/sbe15/sbe15020.htm'
+        locator: 《卡塔奥义书》第一品那奇凯塔赴死神居所与三愿段落
+      - citation: Encyclopaedia Britannica, "Upanishad".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Upanishad'
+        locator: 奥义书谱系与从吠陀祭仪向自我（Atman）哲学的转变
+    compare: [case_gr_thrace_orpheus_underworld, case_eg_thebes_weighing_heart, corpus_theme_between_life_death]
+    motifs: [index_berezkin_h12, index_berezkin_k27r]
+    bridge:
+      entry: REL-2-0009
+      cluster: sid_liminal
+      trail: all
+      label: 死后之问与我（Ātman）观念边界
+      rationale: 以那奇凯塔拒受俗世奖赏而追问死后实相的对话，引导阅读印度传统对业报、解脱及生死界线的哲学探讨。
+
+  - id: case_in_chidambaram_shiva_nataraja
+    title: 南印度吉登伯勒姆｜湿婆“舞王”纳塔罗阇宇宙之舞神话
+    aliases:
+      - Shiva Nataraja
+      - 舞王湿婆
+      - 阿帕斯玛拉侏儒
+      - 安南达坦达瓦
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 11.3994
+      lng: 79.6936
+      precision: city
+      location_name: 印度泰米尔纳德邦 · 吉登伯勒姆（Chidambaram）舞王神庙
+      culture_region: 南亚 · 南印度泰米尔湿婆派传统
+    location_note: 吉登伯勒姆梯莱神庙是湿婆“欢喜之舞”（Ananda Tandava）的核心圣地与朱罗王朝青铜舞王造像的礼仪中心。
+    paragraphs:
+      - 南印度梯莱（吉登伯勒姆）圣地传说的核心情节，讲述毗湿奴邀湿婆前往塔鲁伽森林折服一批自满于苦行与祭祀法力的仙人。湿婆化作乞丐圣者、毗湿奴化作美妇同行，令众仙妻室神魂颠倒，仙人们暴怒之下集念祭火先后唤出猛虎、毒蛇与代表愚昧遗忘的矮鬼阿帕斯玛拉扑向乞丐。湿婆轻剥虎皮披腰、揽毒蛇饰颈，随后右足稳稳踏住阿帕斯玛拉的脊背，在众仙注视下起舞。
+      - 在环绕周身的烈焰光环（Prabhamandala）中，四臂湿婆展现出宇宙循环的五重神工：右上臂摇响小鼓“达玛鲁”象征创造之声；左上臂托起火焰象征归灭与蜕变；右下手结无畏印象征护佑；左下臂指向高抬左足象征解脱之恩。朱罗王朝（9 至 13 世纪）铸造师将这套高度凝练的神学语汇化作流芳世界的青铜造像。
+      - 吉登伯勒姆提拉伊·纳塔罗阇神庙至今保留金顶舞殿与空无雕像的“以太秘室”（Chit Sabha），成为南印度古典舞婆罗多舞的源流所系。大都会艺术博物馆藏朱罗时期青铜舞王像印证了神话图像与南印度寺庙节庆巡游的结合，切勿将宗教象征语言混同于现代宇宙物理学假说。
+    sources:
+      - citation: Encyclopaedia Britannica, "Nataraja (Hindu deity)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Nataraja'
+        locator: 舞王五重宇宙职能、手印象征与朱罗青铜造像条目
+      - citation: The Metropolitan Museum of Art, "Shiva as Lord of Dance (Nataraja)" (Chola period, 11th century, Acc. 1987.80.1).
+        type: archival_catalogue
+        url: 'https://www.metmuseum.org/art/collection/search/39328'
+        locator: 朱罗青铜舞王湿婆造像馆藏记录及塔鲁伽森林降魔细节
+      - citation: Encyclopaedia Britannica, "Chidambaram (India)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/place/Chidambaram'
+        locator: 吉登伯勒姆大庙建筑与南印度湿婆圣地史
+    compare: [case_in_purana_samudra_manthana, case_in_gangotri_bhagiratha_ganga]
+    motifs: [index_berezkin_i48]
+    bridge:
+      entry: REL-6-0010
+      cluster: sid_myth
+      trail: all
+      label: 造像符号与圣殿空间秩序
+      rationale: 将朱罗舞王青铜像的五重象征与宗教空间秩序知识并读，了解神像巡游、舞殿结构如何共同承载印度神学叙事。
+
+  # =========================================================================
+  # 6. Mesoamerican & Andean (4)
+  # =========================================================================
+  - id: case_gt_quiche_popol_vuh_twins
+    title: 基切玛雅｜《波波尔·乌》英雄双子降伏西巴尔巴冥界神话
+    aliases:
+      - Hero Twins of the Popol Vuh
+      - 胡纳普与伊什巴兰克
+      - 西巴尔巴球赛
+      - Hunahpu and Xbalanque
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 14.9436
+      lng: -91.1108
+      precision: city
+      location_name: 危地马拉基切省 · 奇奇卡斯特南戈（抄本保存地）
+      culture_region: 北美洲 · 中美洲危地马拉（基切玛雅）
+    location_note: 奇奇卡斯特南戈是 18 世纪初传教士希梅内斯抄录基切语《波波尔·乌》文本所在市镇，此坐标作抄本流传与文献核查参考。
+    paragraphs:
+      - 《波波尔·乌》第二至第三部追述基切玛雅神话中的英雄双子胡纳普与伊什巴兰克如何克服西巴尔巴（Xibalba）冥界死神的试炼。双子的父伯两兄弟曾因在地上打球吵闹被西巴尔巴诸君主诱下冥府，在错认木偶、坐烫石凳的把戏中落败被杀；死神将长兄的头颅悬于枯树梢，却瞬间结出瓜果，令冥界少女伊什基克受其吐唾感应而孕，逃上大地生下双子。
+      - 双子长成后智除自夸为太阳的七金刚鹦鹉，又循鼠儿泄密寻回父辈的橡皮球具，主动赴西巴尔巴应战。兄弟二人先遣蚊子刺探诸死神真名免于敬拜木偶，继而屡破刀屋、寒屋、美洲豹屋与蝙蝠屋难关，即便胡纳普一度被蝙蝠斩首，仍以南瓜与泥龟暂替并赢回真首。最终双子主动跃入死神预掘的火坑化作骨灰洒入河水，五日后化作人鱼与街头魔术师重返冥界。
+      - 迷醉于“杀而复生”幻术的冥王们争相求死并被拆解，双子拒绝将其复原，彻底削弱了冥界的权势并宣告祭祀归正，兄弟二人随后腾空升天化为太阳与月亮。芝加哥纽伯里图书馆藏希梅内斯手稿（约 1701 年）与大都会艺术博物馆所藏古典期玛雅彩陶证明，双子球赛母题早在西班牙征服前数百年便已在中美洲陶瓷与石刻中广泛流传。
+    sources:
+      - citation: The Newberry Library, "Popol Vuh Research Guide (Francisco Ximénez manuscript, Vault Ayer MS 1515)".
+        type: archival_catalogue
+        url: 'https://www.newberry.org/collection/research-guide/popol-vuh'
+        locator: 芝加哥纽伯里图书馆希梅内斯基切语—西班牙语双栏手稿馆藏指南
+      - citation: The Metropolitan Museum of Art, "Plate with Hero Twins and Principal Bird Deity" (Classic Maya, 600–800 CE).
+        type: archival_catalogue
+        url: 'https://www.metmuseum.org/art/collection/search/313262'
+        locator: 古典期玛雅彩陶盘上的英雄双子射落七金刚鹦鹉图像
+      - citation: Encyclopaedia Britannica, "Popol Vuh".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Popol-Vuh'
+        locator: 《波波尔·乌》成书结构与英雄双子试炼概要
+    compare: [corpus_popol_vuh, case_b3a_kiche_waters, case_it_rome_romulus_remus]
+    motifs: [index_berezkin_k93, index_berezkin_h12]
+    bridge:
+      entry: HIS-2-0028
+      cluster: sid_myth
+      trail: all
+      label: 玛雅抄本、球场与石刻记忆
+      rationale: 将18世纪奇奇卡斯特南戈手稿的双子球赛故事与玛雅古典遗址考古、象形文字记录并读，追踪同一传统跨媒介延续。
+
+  - id: case_mx_teotihuacan_five_suns
+    title: 中美洲阿兹特克｜特奥蒂瓦坎圣火与“五太阳”创世神话
+    aliases:
+      - Legend of the Five Suns
+      - 五太阳纪
+      - 特奥蒂瓦坎太阳诞生
+      - 纳纳瓦辛献祭
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 19.6925
+      lng: -98.8439
+      precision: city
+      location_name: 墨西哥墨西哥州 · 特奥蒂瓦坎古城遗址（Teotihuacán）
+      culture_region: 北美洲 · 中美洲墨西哥（纳瓦—阿兹特克）
+    location_note: 阿兹特克传世文献（如《佛罗伦萨手抄本》）明确将第五太阳纪诞生的圣火炉设于先民古城特奥蒂瓦坎，此坐标对应遗址核心轴线。
+    paragraphs:
+      - 见于《太阳传说》（Leyenda de los Soles）等纳瓦语文献的五太阳纪宇宙观认为，现今世间之前已历经四个各具主神的太阳纪元，并分别毁于美洲豹吞噬、飓风席卷、火雨倾泻与大洪水淹没；太阳石（Piedra del Sol）中央核心便雕刻着这四个历代毁灭的纪日符号，警示第五纪终将毁于地震。
+      - 为开启第五个也是当今的“运动太阳”（Nahui Ollin），诸神齐聚已然化作废墟的特奥蒂瓦坎生起圣火，询问谁愿跃入烈焰化为新太阳。华衣富贵的神祇特库西斯特卡特尔抢先应承，身形丑陋、满身疮疥的谦卑小神纳纳瓦辛亦受命同行。登坛时，富贵神四度怯步于炙热火焰前不敢跳下，反倒纳纳瓦辛紧闭双眼毅然投火并升化为璀璨太阳；羞愧的特库西斯特卡特尔随后跳入余烬成为同样明亮的月亮，诸神恐双日灼地便用一只兔子掷向月面遮暗其光。
+      - 然而新诞生的太阳悬于东方纹丝不动，诸神不得不集体自献心血并由风神艾埃卡特尔吹拂推进，方才令日月沿着天轨运转。殖民时期萨阿贡整理《佛罗伦萨手抄本》第七卷保存了这段悲壮的纳瓦语口述；阿兹特克人借此阐释特奥蒂瓦坎金字塔与太阳运行的神圣秩序，今日考古界则通过大都会艺术博物馆及联合国遗产名录来分别评估特奥蒂瓦坎遗址真实的城市建造年代。
+    sources:
+      - citation: UNESCO World Heritage Centre, "Pre-Hispanic City of Teotihuacan (WHC List 414)".
+        type: official_archive
+        url: 'https://whc.unesco.org/en/list/414/'
+        locator: 特奥蒂瓦坎遗址世界遗产档案及与阿兹特克“众神诞生之地”称谓的关系
+      - citation: The Metropolitan Museum of Art, Heilbrunn Timeline of Art History, "Teotihuacan".
+        type: institutional_account
+        url: 'https://www.metmuseum.org/toah/hd/teot/hd_teot.htm'
+        locator: 特奥蒂瓦坎古典城邦考古分期与后世阿兹特克宗教朝圣
+      - citation: Encyclopaedia Britannica, "Calendar stone (Aztec Sun Stone)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/calendar-stone'
+        locator: 阿兹特克太阳石中央四纪符号与第五“运动太阳”浮雕解说
+    compare: [case_mx_mictlan_quetzalcoatl_bones, case_is_snorra_yggdrasil_ragnarok, case_a37b_khalkha]
+    motifs: [index_berezkin_a2a, index_berezkin_a2b1]
+    bridge:
+      entry: HIS-2-0018
+      cluster: sid_myth
+      trail: all
+      label: 古城轴线与阿兹特克回溯神学
+      rationale: 将阿兹特克“诸神在特奥蒂瓦坎铸造第五太阳”的回溯神话与遗址真实的城市轴线考古分期对照阅读。
+
+  - id: case_mx_mictlan_quetzalcoatl_bones
+    title: 中美洲阿兹特克｜羽蛇神下米克特兰盗取枯骨造人神话
+    aliases:
+      - Quetzalcoatl in Mictlan
+      - 米克特兰冥界
+      - 索洛特尔
+      - 宝玉骨粉造人
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 19.4350
+      lng: -99.1313
+      precision: culture_region
+      location_name: 墨西哥城 · 特诺奇蒂特兰大神庙遗址（文献保存中心）
+      culture_region: 北美洲 · 中美洲墨西哥（纳瓦—阿兹特克）
+    location_note: 《奇马尔波波卡抄本·太阳传说》流传于墨西哥谷地纳瓦语文化圈，此坐标对应阿兹特克礼仪中心特诺奇蒂特兰遗址。
+    paragraphs:
+      - 第五太阳开启后，世上尚无新的居民，众神议决须赴九重地下冥界米克特兰（Mictlan），向冥王米克特兰特库特利与冥后取回前四个纪元毁灭者遗留的“宝玉之骨”。羽蛇神克察尔科亚特尔与双生兄弟犬首神索洛特尔（Xolotl）受命担此重任，深入暗无天日的冥域求索骸骨。
+      - 冥王起初刁难，要求羽蛇神须在冥界四周吹响无孔海螺号角方肯交出枯骨；羽蛇神唤来蚯蚓钻孔，又请蜜蜂钻入螺腔鸣响过关。待他捧起男女骨骸急忙返程时，冥王仍生悔意，令阴间鬼卒暗中掘下深坑设伏；羽蛇神奔逃间坠落坑底撞昏过去，受惊的鹌鹑纷纷扑上啄食，使怀中宝骨摔折成大小碎块。
+      - 苏醒后的羽蛇神含泪拾回碎骨带回圣地塔莫安昌（Tamoanchan），交由女神西瓦科瓦特尔在玉钵中研为骨粉；众神以羽蛇神首滴阳血为先，纷纷刺血洒入钵中和泥塑出今世人类——因骨片曾跌碎且大小不一，世人乃有高矮之别，而人类亦自此肩负以祭礼回馈神血之责。这则源自 16 世纪《太阳传说》的造人叙事，深刻解释了古代墨西哥对生死循环与血祭债务的宗教理解。
+    sources:
+      - citation: Encyclopaedia Britannica, "Quetzalcoatl".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Quetzalcoatl'
+        locator: 羽蛇神下冥界米克特兰夺骨、滴血造人及塔莫安昌叙事
+      - citation: Encyclopaedia Britannica, "Mictlantecuhtli".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Mictlantecuhtli'
+        locator: 米克特兰九层冥界与冥王阻止羽蛇神夺骨细节
+    compare: [case_mx_teotihuacan_five_suns, case_cn_qinan_nuwa_festival, case_iq_sumer_inanna_underworld]
+    motifs: [index_berezkin_e5a, index_berezkin_h12]
+    bridge:
+      entry: SCR-1-0005
+      cluster: sid_myth
+      trail: all
+      label: 纳瓦语抄本与中美洲历法系统
+      rationale: 了解殖民早期拉丁字母转写纳瓦语抄本《太阳传说》的文献背景，区分中美洲文字历法史实与创世宗教叙事。
+
+  - id: case_pe_titicaca_viracocha_creation
+    title: 南美洲安第斯｜的的喀喀湖维拉科查石雕创世与远行神话
+    aliases:
+      - Viracocha Creation Myth
+      - 维拉科查
+      - 蒂亚瓦纳科石人
+      - Lake Titicaca Creation
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: -15.8402
+      lng: -69.5356
+      precision: culture_region
+      location_name: 秘鲁与玻利维亚交界 · 的的喀喀湖流域（Titicaca Basin）
+      culture_region: 南美洲 · 秘鲁安第斯高原
+    location_note: 的的喀喀湖及湖畔蒂亚瓦纳科遗址是安第斯高原多数创世记述的起点，坐标位于湖区中部作文化地域参考。
+    paragraphs:
+      - 见于胡安·德·贝坦索斯《印加叙事》（1551 年）与佩德罗·萨缅托·德·甘博阿编年史的安第斯创世记述称，至高造物神孔·提西·维拉科查最初自暗无日月的的喀喀湖升起，先在蒂亚瓦纳科用石块雕造出一批巨人并令其居住大地，却因初民骄横违背诫命而发动大洪水将其冲毁或复化为石像。
+      - 随后维拉科查再自湖水浮现，以岩石泥土按恰当比例重塑各部族祖先，在石人身上绘制出各异的服饰发式、语言歌谣与农耕种子，继而命令他们潜入地下穿过洞穴、泉眼与火山（即各地圣源 Paqarina）涌出地面，各领水土繁衍生息；他又顺次召出太阳、月亮与星辰照亮高原。
+      - 完成分配后，维拉科查携两名助手分头巡行安第斯山谷与海岸，教导万民礼法与技艺（在卡查曾降天火惩戒抗拒者，遗址建有大庙），最终行至厄瓜多尔曼塔海岸，披起斗篷如履平地般踏波走入太平洋远逝。安第斯不同族群对该神祇留有“图努帕”或“帕查卡马克”等多重地域异名；读史时须留意 16 世纪西班牙编年史家常带基督教或库斯科王室视角，宜结合蒂亚瓦纳科考古实证予以分辨。
+    sources:
+      - citation: Encyclopaedia Britannica, "Viracocha (Inca deity)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Viracocha'
+        locator: 的的喀喀湖两次创世、蒂亚瓦纳科石像及踏海西逝传说
+      - citation: 'UNESCO World Heritage Centre, "Tiwanaku: Spiritual and Political Centre of the Tiwanaku Culture (WHC List 567)".'
+        type: official_archive
+        url: 'https://whc.unesco.org/en/list/567'
+        locator: 蒂亚瓦纳科高原礼仪中心遗址与石构雕塑历史背景
+      - citation: 'Internet Sacred Text Archive, Lewis Spence, "The Myths of Mexico and Peru: Viracocha".'
+        type: institutional_account
+        url: 'https://www.sacred-texts.com/nam/peru/pvm/pvm04.htm'
+        locator: 维拉科查石像造人与各部族地下圣源传说汇述
+    compare: [case_bo_isla_del_sol_manco_capac, corpus_huarochiri_manuscript, case_cn_qinan_nuwa_festival]
+    motifs: [index_berezkin_e5a, index_berezkin_c2]
+    bridge:
+      entry: HIS-2-0029
+      cluster: sid_myth
+      trail: all
+      label: 蒂亚瓦纳科石构与高原记忆
+      rationale: 对读维拉科查“在蒂亚瓦纳科以石造各族先祖”的叙事与蒂亚瓦纳科实际考古遗址，区分前印加帝国建筑与后世编年史追认。
+
+  # =========================================================================
+  # 7. Celtic & Slavic (3)
+  # =========================================================================
+  - id: case_ie_tara_tuatha_de_danann
+    title: 爱尔兰塔拉｜达努神族降临、魔法四宝与退居仙丘神话
+    aliases:
+      - Tuatha Dé Danann
+      - 达努神族
+      - 爱尔兰侵占记
+      - 塔拉山命运之石
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 53.5789
+      lng: -6.6122
+      precision: city
+      location_name: 爱尔兰米斯郡 · 塔拉山遗址（Hill of Tara）
+      culture_region: 欧洲 · 爱尔兰凯尔特传统
+    location_note: 塔拉山是爱尔兰王权加冕圣地与神族四宝之一“命运之石”（Lia Fáil）传说安放点，此坐标作凯尔特神族叙事中心参考。
+    paragraphs:
+      - 收录于中世纪爱尔兰抄本《爱尔兰侵占记》（Lebor Gabála Érenn）及《莫伊图拉战役》的古老传说称，拥有超凡技艺与魔法的达努神族（Tuatha Dé Danann）曾居于北方四座神秘城市习得秘法，后乘着蔽日黑云降临爱尔兰岛并焚毁战船断绝退路。神族携四件至宝入岛：一触真王即长啸的塔拉命运之石（Lia Fáil）、所向披靡的卢格长矛、无人能逃脱的努阿达神剑，以及永不枯竭的达格达魔釜。
+      - 历经两场莫伊图拉血战，达努神族先胜本地菲尔博格人，再借银臂王努阿达、全能匠神卢格（Lugh）之力击败独眼巨人巴罗尔统率的福摩尔海魔，确立岛上秩序。然而数代之后，随着西班牙渡海而来的凡人米利西安人（盖尔人先祖）登陆，神族吟游诗人阿美尔金与国王们议定契约，将爱尔兰天地上下平分。
+      - 按“地上归凡人、地下归神族”的盟约，达努神族举族隐入岛上星罗棋布的史前土丘（Sídhe，即“仙丘”）之下，逐渐演变为爱尔兰民间信仰中的隐世精怪与“好邻居”（Aos Sí）。近代民俗学家指出，中世纪基督教修道士在抄录这些神话时多刻意将昔日神祇史实化为古代移民部落，故阅读时须辨析修道院文本与口述仙丘传说之间的层累改写。
+    sources:
+      - citation: Encyclopaedia Britannica, "Tuatha Dé Danann".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Tuatha-De-Danann'
+        locator: 达努神族四件圣物、莫伊图拉战役及退入地下仙丘条目
+      - citation: Office of Public Works (Heritage Ireland), "Hill of Tara".
+        type: official_archive
+        url: 'https://heritageireland.ie/places/hill-of-tara/'
+        locator: 塔拉山考古土丘、加冕石与米斯郡王权遗迹介绍
+    compare: [case_duchas_tullaroan_fairy_forts, case_gb_dyfed_mabinogion_annwn, case_gb_antrim_giants_causeway_finn]
+    motifs: [index_berezkin_e5a]
+    bridge:
+      entry: HIS-6-0009
+      cluster: sid_myth
+      trail: all
+      label: 抄本史实化与仙丘演变
+      rationale: 以《爱尔兰侵占记》对凯尔特古神的修道院历史化改写为例，学习抄本异文、宗教滤镜与文本校勘视角。
+
+  - id: case_gb_dyfed_mabinogion_annwn
+    title: 威尔士迪费德｜《马比诺吉昂》普伊斯与彼世安温易位神话
+    aliases:
+      - Pwyll Prince of Dyfed
+      - 马比诺吉昂第一支
+      - 安温彼世
+      - Annwn
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 51.8000
+      lng: -4.9667
+      precision: province
+      location_name: 英国威尔士 · 彭布罗克郡（古代迪费德领地）
+      culture_region: 欧洲 · 威尔士凯尔特传统
+    location_note: 故事主舞台迪费德位于威尔士西南部彭布罗克郡一带，现存最早古威尔士语写本则藏于阿伯里斯特威斯国立图书馆《雷德赫白书》。
+    paragraphs:
+      - 中世纪威尔士散文集《马比诺吉昂》首篇《迪费德亲王普伊斯》讲述，年轻的普伊斯在格林库赫林中狩猎时，见一群通体雪白、双耳赤红的奇异猎犬先于自家猎群扑倒雄鹿，他一时贪念赶走白犬改由己犬咬食，遂惊动白犬之主——彼世安温（Annwn）之王阿劳恩骑乘灰驹现身斥责其失礼。
+      - 为赔罪并缔结盟好，二人商定互换容貌与身份一年：普伊斯前往富饶壮丽的安温代掌王政并与阿劳恩的王后同榻却严守克己不越雷池；满一年之日，他依约赴渡口独自迎战阿劳恩的宿敌哈夫甘，谨记“一击致伤、绝不补第二剑”的叮嘱而大胜，使安温全境重归统属。归来后两人皆惊叹对方治理有方、持身清正，遂互称“安温之首”结为生死之交。
+      - 在凯尔特文学里，“安温”（Annwn）并非严酷的阴间惩罚所，而是与人间比邻交错、时有雾气与奇犬相通的丰饶“彼世”。保存该文本的 14 世纪写本《雷德赫白书》（藏于威尔士国家图书馆）与《赫格斯特红书》保存了不列颠前基督教神灵叙事演化为中世纪骑士故事的珍贵轨迹，亦须作为文学史而非实录看待。
+    sources:
+      - citation: Llyfrgell Genedlaethol Cymru (National Library of Wales), "The White Book of Rhydderch (Peniarth MS 4)".
+        type: archival_catalogue
+        url: 'https://www.library.wales/discover/digital-gallery/manuscripts/the-middle-ages/the-white-book-of-rhydderch'
+        locator: 14 世纪中叶古威尔士语《雷德赫白书》中《马比诺吉昂》手稿藏品档案
+      - citation: Encyclopaedia Britannica, "Mabinogion".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Mabinogion'
+        locator: 《马比诺吉昂》四支架构、迪费德与安温彼世传统
+      - citation: 'Internet Sacred Text Archive, Lady Charlotte Guest (trans.), "The Mabinogion: Pwyll Prince of Dyved".'
+        type: primary_text
+        url: 'https://sacred-texts.com/neu/celt/mab/mab06.htm'
+        locator: 第一支《迪费德亲王普伊斯》红耳白犬与换位之约译文
+    compare: [case_ie_tara_tuatha_de_danann, case_gb_beddgelert_faithful_hound_gelert]
+    motifs: [index_berezkin_k27r]
+    bridge:
+      entry: LIT-2-0002
+      cluster: sid_liminal
+      trail: all
+      label: 凯尔特彼世与中世纪浪漫转型
+      rationale: 以《马比诺吉昂》从古老凯尔特彼世神话演化为宫廷骑士叙事为例，对照文学类型与叙事模式演变条目。
+
+  - id: case_ru_novgorod_perun_veles
+    title: 东斯拉夫诺夫哥罗德｜雷神佩伦与伏神维列斯对峙神话
+    aliases:
+      - Perun and Veles
+      - 佩伦神
+      - 维列斯
+      - 佩伦尼神庙遗址
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 58.4744
+      lng: 31.2736
+      precision: city
+      location_name: 俄罗斯诺夫哥罗德州 · 大诺夫哥罗德佩伦尼（Peryn）半岛
+      culture_region: 欧洲 · 俄罗斯东斯拉夫传统
+    location_note: 大诺夫哥罗德沃尔霍夫河出口的佩伦尼（Peryn）曾立有雷神佩伦神像并经考古发掘，此坐标作东斯拉夫文献与考古参照点。
+    paragraphs:
+      - 在前基督教斯拉夫宗教中，至高雷电战神佩伦（Perun）高居世界橡树树冠或天际山巅，手持战斧与火石雷箭；而在树根沼泽、水域与冥界深处盘踞着牛角蛇身之神维列斯（Veles），主司牲畜、财富、水域、魔法与逝者之魂。自《往年纪事》（Russian Primary Chronicle）至后世条约誓言，这对并立的神名共同维系着天界秩序与大地冥界的张力。
+      - 比较语言学家伊万诺夫与托波罗夫等学者从后期巴尔干及东斯拉夫民俗、民谣与雷电禁忌中构拟出著名的“暴风战神对决蛇魔”核心神话：维列斯窃走天界牛群、水源或配偶逃往地面，一路不断化形隐匿于树石、水波或屋角之后；佩伦驾云投掷闪电一路追击，直至迫出蛇怪将其劈入水中，随即降下倾盆甘霖滋润田野。
+      - 980 年基辅大公弗拉基米尔曾在基辅与大诺夫哥罗德佩伦尼高丘竖立佩伦木像，并于 988 年受洗后下令将神像拖入第聂伯河与沃尔霍夫河焚毁沉水。学界需明确说明：东斯拉夫并未留下如《埃达》般完整的本土神话长卷，佩伦与维列斯“盗牛激战”的完整情节很大程度上属于结合印欧语源学与民间雷雨故事的学术重构，不能与直接传世的古文献混为一谈。
+    sources:
+      - citation: Encyclopaedia Britannica, "Perun (Slavic deity)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Perun'
+        locator: 雷电神佩伦神格、基辅与诺夫哥罗德毁像纪事及民俗雷箭传统
+      - citation: Encyclopaedia Britannica, "Slavic religion".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Slavic-religion'
+        locator: 佩伦与维列斯二元宇宙结构及东斯拉夫史料有限性说明
+      - citation: UNESCO World Heritage Centre, "Historic Monuments of Novgorod and Surroundings (WHC List 604)".
+        type: official_archive
+        url: 'https://whc.unesco.org/en/list/604'
+        locator: 大诺夫哥罗德历史建筑群与沃尔霍夫河流域早期聚落遗产档案
+    compare: [case_eg_heliopolis_ra_apophis, case_ru_svetloyar_invisible_city_kitezh]
+    motifs: [index_berezkin_k41, index_berezkin_i44]
+    bridge:
+      entry: HIS-6-0010
+      cluster: sid_myth
+      trail: all
+      label: 碎片重构与印欧比较限度
+      rationale: 以佩伦与维列斯的文献缺环及民俗学重构为例，讨论历史比较中的证据边界与谨慎类比原则。
+
+  # =========================================================================
+  # 8. East & SE Asian Myth (2)
+  # =========================================================================
+  - id: case_jp_izumo_izanagi_yomi
+    title: 日本出云｜伊邪那岐赴黄泉比良坂追妻与禊祓神话
+    aliases:
+      - Izanagi in Yomi
+      - 黄泉国神话
+      - 伊邪那岐与伊邪那美
+      - 黄泉比良坂
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 35.4681
+      lng: 133.0484
+      precision: province
+      location_name: 日本岛根县 · 松江市东出云町及出云文化区
+      culture_region: 东亚 · 日本出云
+    location_note: 《古事记》将通往黄泉国的境界“黄泉比良坂”比定为今出云国伊赋夜坂（今松江市东出云町一带），此坐标作传统地景参照点。
+    paragraphs:
+      - 据日本现存最早典籍《古事记》（712 年）与《日本书纪》（720 年）神代卷记载，共同国生并诞下众神的伊邪那美因产下火神迦具土而重伤陨落，葬于出云与伯耆国交界之比婆山。悲痛欲绝的丈夫伊邪那岐砍死火神后追赴幽暗死域“黄泉国”（Yomi），呼唤妻子归来继续未竟的造国大业。
+      - 伊邪那美从殿内隔门叹息，自言已食“黄泉灶煮之食”（yomotsuhegui），需向黄泉神请示方能返还，再三叮嘱丈夫切勿窥看自己身形。伊邪那岐久候不耐，掰下左鬓木梳的一根粗齿燃起一火烛照进暗殿，惊见伊邪那美遍体腐坏、缠绕八尊雷神与蛆虫。自觉蒙羞震怒的女神遂遣黄泉丑女与雷军沿路追杀；伊邪那岐边逃边抛下黑蔓化作山葡萄、竹梳化作竹笋阻敌，逃至“黄泉比良坂”时以桃子击退追兵，并用千人方能推举的“千引石”彻底堵死阴阳通路。
+      - 隔石对立的夫妇就此发出“每日绞杀千人”与“每日建千五百产屋”的绝交誓言，为生死定量之始；随后伊邪那岐嫌身染死秽，赴筑紫日向橘小户阿波岐原入水“禊祓”净身，左眼洗出天照大神、右眼洗出月读命、鼻中洗出须佐之男。国学院大学神道事典指出，《古事记》与《日本书纪》诸多“一书曰”版本对黄泉比良坂与桃子的归属本有差异，这一传统深刻影响了日本关于死秽与净水的洁净礼俗，而不宜当成历史人物事件。
+    sources:
+      - citation: Kokugakuin University, Encyclopedia of Shinto, "Izanagi".
+        type: institutional_account
+        url: 'https://d-museum.kokugakuin.ac.jp/ujrr/db/detail.php?id=9385'
+        locator: 国学院大学数字博物馆神道词典伊邪那岐赴黄泉国与禊祓条目
+      - citation: Kokugakuin University, Encyclopedia of Shinto, "Yomi (Yomi no kuni)".
+        type: institutional_account
+        url: 'https://d-museum.kokugakuin.ac.jp/ujrr/db/detail.php?id=8639'
+        locator: 黄泉国、黄泉食（yomotsuhegui）禁忌与比良坂神学解释
+      - citation: Encyclopaedia Britannica, "Izanagi and Izanami".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Izanagi-and-Izanami'
+        locator: 国生神话、火神诞生及黄泉国决裂全貌
+    compare: [case_b3a_kojiki_waters, case_gr_thrace_orpheus_underworld, case_gr_eleusis_persephone_cycle]
+    motifs: [index_berezkin_h12, index_berezkin_k27r]
+    bridge:
+      entry: REL-3-0010
+      cluster: sid_liminal
+      trail: all
+      label: 死秽隔离、桃击与禊祓洁净
+      rationale: 并读黄泉国吃食、千引石断界及入水禊祓与丧葬哀悼规范知识，理解社群如何以洁净礼仪划分生者与亡者的空间界线。
+
+  - id: case_kr_baekdu_dangun_founding
+    title: 朝鲜半岛｜《三国遗事》白头山神檀树与檀君开国神话
+    aliases:
+      - Dangun Founding Myth
+      - 檀君王俭
+      - 桓雄神市
+      - 熊女灵艾
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 41.9936
+      lng: 128.0772
+      precision: culture_region
+      location_name: 朝鲜半岛北部与白头山（《三国遗事》太伯山学术考订参考区）
+      culture_region: 东亚 · 朝鲜半岛
+    location_note: 高丽文献载桓雄降于“太伯山”顶神檀树下，近代学界多考订太伯山指向白头山或妙香山，此处标白头山作开国始祖神话地理参照。
+    paragraphs:
+      - 高丽僧一然于 1281 年前后所著《三国遗事·纪异》卷一古朝鲜条，征引《魏书》与《古记》录下了半岛最具影响力的开国神谱：天帝桓因察知庶子桓雄怀有救世之心，乃俯察“三危太伯可以弘益人间”，赐下天符印三枚，遣其率众三千携风伯、雨师、云师降临太伯山顶神檀树下建置“神市”，号称桓雄天王，主导谷物、寿命、疾病、刑罚与善恶等三百六十余项人间事务。
+      - 时有一熊一虎同穴共居，恳切祈求桓雄化为人类。桓雄赐下灵艾一炷与蒜二十枚，嘱咐“食此且百日不见日光，即得人形”。猛虎性躁半途违戒，唯有熊忍过三七二十一日蜕化为女身“熊女”，因苦无匹配对象而在神檀树下祈孕；桓雄遂暂化人形与之成婚诞下“檀君王俭”，立都平壤城定国号为“朝鲜”，复于白岳山阿斯达治世一千五百年后入山化为山神。
+      - 同年代李承休所作长篇史诗《帝王韵纪》（1287 年）则录有“令孙女饮药化人而与檀树神婚配”的另一异文，今韩国国立民俗博物馆与韩国学中央研究院均并陈二者。此外“太伯山”在历代方志与高丽后期文献中既对应妙香山、白头山亦联系江原道太白山祭天坛，说明民族始祖记忆往往随着朝代疆域与仪式中心的变迁而不断叠合。
+    sources:
+      - citation: National Folk Museum of Korea, Encyclopedia of Korean Folk Culture, "檀君神话 (Dangun Sinhwa)".
+        type: institutional_account
+        url: 'https://folkency.nfm.go.kr/topic/detail/5336'
+        locator: 韩国国立民俗博物馆《三国遗事》与《帝王韵纪》檀君神话条目
+      - citation: Encyclopaedia Britannica, "Tangun (Korean mythology)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Tangun'
+        locator: 桓雄、熊女与古朝鲜开天建国神话学术概览
+      - citation: Academy of Korean Studies, Encyclopedia of Korean Culture, "太白山 (Taebaeksan)".
+        type: institutional_account
+        url: 'https://encykorea.aks.ac.kr/Article/E0058920'
+        locator: 太伯山名号考证及半岛圣山天祭传统
+    compare: [case_kr_taebaeksan_dangun, case_it_rome_romulus_remus, case_fi_karelia_kalevala_sampo]
+    motifs: [index_berezkin_e5c]
+    bridge:
+      entry: HIS-6-0007
+      cluster: sid_myth
+      trail: all
+      label: 建国谱系与名山地理考订
+      rationale: 并读《三国遗事》开国神话、13 世纪异文与“太伯山”地名迁移，认识始祖叙事如何进入高丽后期集体记忆。
+
+  # =========================================================================
+  # 9. Sub-Saharan African (2)
+  # =========================================================================
+  - id: case_ng_ife_obatala_oduduwa
+    title: 西非尼日利亚｜伊费创世金链与奥巴塔拉、奥杜杜瓦神话
+    aliases:
+      - Obatala and Oduduwa
+      - 约鲁巴创世神话
+      - 伊莱—伊费
+      - 棕榈酒误事创世
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 7.4824
+      lng: 4.5603
+      precision: city
+      location_name: 尼日利亚奥孙州 · 伊莱—伊费（Ile-Ife）
+      culture_region: 非洲 · 西非尼日利亚（约鲁巴）
+    location_note: 伊莱—伊费被约鲁巴口述传统公认为天地初分及人类诞生之地，亦为著名的青铜与陶塑王权考古中心。
+    paragraphs:
+      - 约鲁巴口述创世传统讲述，最初至高神奥洛杜马雷（Olodumare）统治天界，其下唯有苍茫原始水域（Olokun 所掌）。天神奥巴塔拉受命携金链、装满圣土的蜗牛壳、五趾母鸡与变色龙攀链而下铺设陆地。不料途中口渴难耐，他饮用过量发酵棕榈酒后酣然醉睡；另一位大能神祇奥杜杜瓦（Oduduwa）见状接过法器，顺金链降至海面倾倒圣土并放鸡扒散泥土，变色龙试踩大地确认坚实，遂定名为“伊莱—伊费”（大地扩展之处）。
+      - 奥巴塔拉酒醒后追悔莫及，但仍忠实履行泥土造人的天职：他用湿泥捏出世间凡人男女，唯独醉酒之余偶尔失手塑出驼背、侏儒或白化体态者，因此约鲁巴传统将残障群体视作“奥巴塔拉神圣的特殊匠作”而给予尊崇庇护；最终奥洛杜马雷向泥像吹入生命气息（Emi），奥杜杜瓦成为伊费首任人间神圣君王（Ooni）。
+      - 别列兹金母题目录（B3A）与大都会艺术博物馆关于伊莱—伊费铜雕及陶塑的研究指出，约鲁巴各城邦内部其实存在多支并行版本：在奥约等王室叙事里奥杜杜瓦常被置于至高始祖之位，而祭司神学传统则推崇奥巴塔拉（白布之主）的造人之功与禁棕榈酒戒律；两者差异正反映了口传神话与西非城邦政治谱系之间的动态张力。
+    sources:
+      - citation: The Metropolitan Museum of Art, Heilbrunn Timeline of Art History, "Ife (from ca. 6th century)".
+        type: institutional_account
+        url: 'https://www.metmuseum.org/toah/hd/ife_1/hd_ife_1.htm'
+        locator: 伊莱—伊费古城、王权青铜头像与约鲁巴创世起源背景
+      - citation: Encyclopaedia Britannica, "Orisha" & "The Philosophy of the Yoruba".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/orisha'
+        locator: 奥洛杜马雷、奥巴塔拉及奥杜杜瓦神系与创世职能概览
+      - citation: 'Yu. E. Berezkin & E. N. Duvakin, "Analytical Catalogue of Folklore and Mythological Motifs: B3A (Waters & Land)".'
+        type: archival_catalogue
+        url: 'https://www.ruthenia.ru/folklore/berezkin/b3a.html'
+        locator: 西非约鲁巴原初之水与鸡爪散土造陆版本引文对比
+    compare: [case_b3a_yoruba_waters, case_ng_osun_osogbo_sacred_grove, corpus_theme_creation_worlds]
+    motifs: [index_berezkin_b3a]
+    bridge:
+      entry: REL-5-0083
+      cluster: sid_myth
+      trail: all
+      label: 伊法占卜诗节与创世记忆
+      rationale: 并读约鲁巴伊莱—伊费创世与伊法口传占卜体系，了解圣土、神圣王权和口述诗句如何保存神谱变体。
+
+  - id: case_gh_ashanti_anansi_stories
+    title: 西非加纳｜阿坎—阿散蒂蜘蛛智者阿南西夺得世间故事神话
+    aliases:
+      - Anansi the Spider
+      - Ananse
+      - 阿南西故事集
+      - 尼阿梅故事盒
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 6.6885
+      lng: -1.6244
+      precision: culture_region
+      location_name: 加纳阿散蒂大区 · 库马西（阿坎口述传统中心）
+      culture_region: 非洲 · 西非加纳（阿散蒂）
+    location_note: 阿散蒂王国首都库马西所在的加纳中部森林带是阿坎语“阿南西故事”（Anansesem）发源地，该母题后跨大西洋流传至加勒比及美洲。
+    paragraphs:
+      - 西非阿坎与阿散蒂民间哲学传说称，古时候世间所有故事原皆归天神“尼阿梅”（Nyame）所有，被严密锁在金盒之中。擅长巧计的蜘蛛智者阿南西（Kwaku Ananse）决心买下全部故事；天神笑称条件近乎不可能，须生擒森中巨蟒奥尼尼、花豹奥塞博、剧毒大黄蜂姆莫博罗及隐身林精莫阿蒂亚四物作价。
+      - 阿南西毫无蛮力，全凭设谋用智逐一制服强敌：他假意与妻子争辩长棍与蟒蛇孰长，骗蟒蛇自己伸直身躯绑上竹竿量度；又掘下深坑骗花豹入坑试救而将其缚起；再以椰壳倾水佯作暴雨，哄骗大黄蜂群飞入小葫芦躲雨随后封口；最后用树胶涂满木偶并置香甜山药诱捕脾气暴躁的林精。天神尼阿梅震撼之余如约将故事金盒交予阿南西，从此世间故事皆冠以“阿南西故事”（Anansesem）之名。
+      - 大英博物馆阿散蒂称金砝码馆藏研究表明，阿南西“以小博大、智胜强权”的谚语和造型长期铸造于传统黄铜砝码上传递伦理智慧；17 至 19 世纪随大西洋奴隶贸易，阿南西（亦作 Nancy 或 Aunt Nancy）经加纳传往牙买加等加勒比社群（如贝克威思 1924 年采录本），化作弱者以机智与语言保全记忆与尊严的跨大西洋象征。
+    sources:
+      - citation: Encyclopaedia Britannica, "Ananse (West African trickster figure)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Ananse'
+        locator: 阿坎—阿散蒂阿南西向天神尼阿梅换取世间故事全过程及跨大西洋演变
+      - citation: 'The British Museum, "African Gold-weights: Origins and History" (Asante brass weights and proverbs).'
+        type: archival_catalogue
+        url: 'https://www.britishmuseum.org/research/online_research_catalogues/agw/african_gold-weights/origins_and_history.aspx'
+        locator: 阿散蒂黄铜称金砝码造型与阿坎口传谚语故事传统
+      - citation: Internet Sacred Text Archive, Martha Warren Beckwith, "Jamaica Anansi Stories" (1924).
+        type: oral_archive
+        url: 'https://sacred-texts.com/afr/jas/index.htm'
+        locator: 牙买加离散社群保存的阿南西口头故事采样导言与目录
+    compare: [case_gh_ashanti_kumasi_golden_stool, case_jm_buff_bay_rolling_calf]
+    motifs: [index_berezkin_m29p]
+    bridge:
+      entry: HIS-2-0002
+      cluster: sid_myth
+      trail: all
+      label: 跨区域流传与“以弱胜强”叙事
+      rationale: 从阿坎—阿散蒂口传故事走向加勒比离散社会的轨迹，关联西非商贸、族群迁徙与历史语境下口头传统的维系。
+
+  # =========================================================================
+  # 10. Polynesian / Oceanic (1)
+  # =========================================================================
+  - id: case_nz_aotearoa_maui_fishing
+    title: 大洋洲奥特亚罗瓦｜半神毛伊拉起北岛巨鱼与套日神话
+    aliases:
+      - Māui Fishing the North Island
+      - Te Ika-a-Māui
+      - 毛伊套太阳
+      - 祖母颚骨鱼钩
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: -39.6442
+      lng: 177.0928
+      precision: culture_region
+      location_name: 新西兰北岛东岸 · 霍克湾“毛伊鱼钩”（Te Matau-a-Māui）区域参考
+      culture_region: 大洋洲 · 波利尼西亚与新西兰毛利传统
+    location_note: “毛伊之鱼”遍布奥特亚罗瓦（新西兰）北岛与大洋洲多岛海传说；此处以霍克湾南端“鱼钩海角”作区域文化锚点，区别于惠灵顿港“鱼头”单点条目。
+    paragraphs:
+      - 纵贯夏威夷、塔希提至奥特亚罗瓦（新西兰）的波利尼西亚泛岛神谱中，幼弟兼变形文化英雄毛伊（Māui）常以叛逆机智改变世界秩序。他曾率兄长赴大洋边缘编织麻绳套住疾驰的太阳拉（Tama-nui-te-rā），用先祖颚骨痛击使其受伤缓行，从而延长白昼供人织麻造物；又曾赴冥界祖母马胡伊卡处“借一留九”逐次熄灭火指以致险遭大火追杀，最终化鹰求雨为凡人留存钻木取火的秘密。
+      - 在新西兰毛利传统最具代表性的垂钓创世篇中，遭兄长们拒载的毛伊暗藏船舱底，驶至深海后亮出以祖母穆里朗阿费努阿颚骨雕成、涂满鼻血的魔法鱼钩下饵。鱼钩深深勾住海底巨物，毛伊念动神咒将一条庞然巨鱼拉出海面——这正是北岛“毛伊之鱼”（Te Ika-a-Māui），南岛则是他所驾独木舟，霍克湾海湾南端正是那柄神力鱼钩（Te Matau-a-Māui）。
+      - 据 Te Ara 新西兰国家百科及新西兰国家博物馆 Te Papa 整理的不同部落（iwi）口述，兄弟们不顾毛伊禁止而争相挥刀劈割鱼肉，致使平坦鱼背隆起今天北岛的层叠山脉与深谷；另一系传说则叙及毛伊最终试图钻入沉睡死神辛妮努伊特波体内盗取永生，却因扇尾鹟发笑惊醒女神而殒命，从此凡人有死。不同岛群及部落对毛伊生平与地理部位的对应本就多元并存，记录时应尊重原住民叙述者各自的传统而不可简化为单一地质解释。
+    sources:
+      - citation: 'Te Ara – The Encyclopedia of New Zealand, Te Ahukaramū Charles Royal, "Whenua – how the land was shaped: The North and South islands".'
+        type: institutional_account
+        url: 'https://teara.govt.nz/en/whenua-how-the-land-was-shaped/page-2'
+        locator: 毛伊钓起北岛巨鱼、各部族鱼身地景对照及惠灵顿鱼头说明
+      - citation: Te Ara – The Encyclopedia of New Zealand, Judith Sidney Hornabrook, "The Fish of Maui" (1966 Encyclopaedia).
+        type: institutional_account
+        url: 'https://teara.govt.nz/en/1966/maui-legends-of/page-4'
+        locator: 颚骨鱼钩、鼻血诱饵与霍克湾鱼钩海角传统汇总
+      - citation: Museum of New Zealand Te Papa Tongarewa, "Origins of Māori Weaving" (Rangi, Papa, and Māui traditions).
+        type: institutional_account
+        url: 'https://collections.tepapa.govt.nz/topic/3612'
+        locator: 毛利宇宙观与文化英雄毛伊传统谱系
+    compare: [case_nz_wellington_te_ika_a_maui, case_nz_wellington_ngake_whataitai, corpus_nz_maori_rangi_papa, case_gr_caucasus_prometheus_fire]
+    motifs: [index_berezkin_b4, index_berezkin_m18b, index_berezkin_d4a]
+    bridge:
+      entry: REL-5-0079
+      cluster: sid_myth
+      trail: all
+      label: 波利尼西亚口述地景与毛利会场
+      rationale: 将毛伊以独木舟和巨鱼赋予岛屿身体隐喻的叙事，与现代毛利会场（Marae）空间礼俗并读，体会口述谱系与当代表达的连续性。

@@ -38,7 +38,7 @@ function makeSoftwareRenderer() {
   if (!ctx) throw new Error('浏览器无法创建星图画布。');
   canvas.dataset.renderer = 'software';
   let width = 1, height = 1, ratio = 1;
-  const mvp = new THREE.Matrix4(), projected = new THREE.Vector3();
+  const mvp = new THREE.Matrix4(), projected = new THREE.Vector3(), spriteCol = new THREE.Color();
   const stampCache = new Map();
   function stampFor(r, g, b) {
     const key = `${r >> 4}-${g >> 4}-${b >> 4}`;
@@ -49,7 +49,6 @@ function makeSoftwareRenderer() {
     }
     return stamp;
   }
-  const pulseStamp = makeGlowStamp(246, 224, 168);
 
   function screen(point, matrix) {
     projected.copy(point).applyMatrix4(matrix);
@@ -111,11 +110,11 @@ function makeSoftwareRenderer() {
             if (style !== lastStyle) { ctx.fillStyle = style; lastStyle = style; }
             ctx.beginPath(); ctx.arc(x2, y2, Math.max(1.4, size * 0.45), 0, Math.PI * 2); ctx.fill();
           } else if (colors && (size > 2.2 || (spikes?.getX(i) ?? 0) > 0.35)) {
-            const d = size * 2.5;
+            const d = size * 2.8;
             ctx.drawImage(cache.stamps[i], x2 - d / 2, y2 - d / 2, d, d);
           } else {
             if (style !== lastStyle) { ctx.fillStyle = style; lastStyle = style; }
-            ctx.beginPath(); ctx.arc(x2, y2, Math.max(0.9, size * 0.42), 0, Math.PI * 2); ctx.fill();
+            ctx.beginPath(); ctx.arc(x2, y2, Math.max(1.1, size * 0.45), 0, Math.PI * 2); ctx.fill();
           }
           if (!roundGlobePoints && (spikes?.getX(i) ?? 0) > .55 && h > .4) {
             const flare = Math.min(11, 4.5 + size * 0.85);
@@ -137,7 +136,7 @@ function makeSoftwareRenderer() {
         const cullLimit = object.userData.sphereCullRadius ? object.userData.sphereCullRadius * object.userData.sphereCullRadius * 0.96 : 0;
         ctx.strokeStyle = object.userData.strokeColor || `#${material.color?.getHexString() ?? 'cfa962'}`;
         ctx.globalAlpha = material.opacity;
-        ctx.lineWidth = object.userData.lineWidth ?? 0.8;
+        ctx.lineWidth = object.userData.lineWidth ?? 0.9;
         ctx.beginPath();
         const point = new THREE.Vector3();
         if (object.isLineSegments) {
@@ -151,13 +150,15 @@ function makeSoftwareRenderer() {
           }
         } else {
           let penDown = false;
+          let completeLoop = true;
           for (let i = 0; i < position.count; i++) {
             point.fromBufferAttribute(position, i);
-            if (localEye && point.dot(localEye) < cullLimit) { penDown = false; continue; }
+            if (localEye && point.dot(localEye) < cullLimit) { penDown = false; completeLoop = false; continue; }
             const [x, y, z] = screen(point, mvp);
-            if (z < -1 || z > 1) { penDown = false; continue; }
+            if (z < -1 || z > 1) { penDown = false; completeLoop = false; continue; }
             if (!penDown) { ctx.moveTo(x, y); penDown = true; } else ctx.lineTo(x, y);
           }
+          if (object.isLineLoop && completeLoop && penDown) ctx.closePath();
         }
         ctx.stroke(); ctx.globalAlpha = 1;
       } else if (object.isMesh && object.userData.globeShellRadius) {
@@ -182,12 +183,25 @@ function makeSoftwareRenderer() {
           }
         }
       } else if (object.isSprite) {
-        const [x, y, z] = screen(new THREE.Vector3(), mvp);
-        if (z >= -1 && z <= 1) {
-          ctx.globalAlpha = object.material.opacity;
-          ctx.drawImage(pulseStamp, x - 7, y - 7, 14, 14);
-          ctx.globalAlpha = 1;
-        }
+        const mat = object.material;
+        if (!mat || mat.visible === false || mat.opacity <= 0.01) return;
+        const e = mvp.elements;
+        const w = e[15];
+        if (w <= 0) return;
+        const px = e[12] / w, py = e[13] / w, pz = e[14] / w;
+        if (Math.abs(px) > 1.15 || Math.abs(py) > 1.15 || pz < -1 || pz > 1) return;
+        const x = width * (px + 1) / 2, y = height * (1 - py) / 2;
+        if (mat.color) spriteCol.copy(mat.color).convertLinearToSRGB();
+        else spriteCol.setRGB(0.96, 0.88, 0.66);
+        const r = Math.round(Math.max(0, Math.min(1, spriteCol.r)) * 255);
+        const g = Math.round(Math.max(0, Math.min(1, spriteCol.g)) * 255);
+        const b = Math.round(Math.max(0, Math.min(1, spriteCol.b)) * 255);
+        const projScaleY = camera.projectionMatrix.elements[5] || 2.4;
+        const worldRadius = Math.max(1, object.scale?.x ?? 10) * 0.5;
+        const radius = Math.max(2.2, Math.min(110, (worldRadius * projScaleY / w) * (height * 0.5)));
+        ctx.globalAlpha = Math.max(0, Math.min(1, mat.opacity));
+        ctx.drawImage(stampFor(r, g, b), x - radius, y - radius, radius * 2, radius * 2);
+        ctx.globalAlpha = 1;
       }
     });
   }

@@ -1,0 +1,241 @@
+# Original Chinese summaries based on cited digital folklore, media history, and acoustic investigation sources.
+# Coordinates mark origin countries/cities or field investigation regions and are explicitly labelled in location_note.
+records:
+  - id: case_scp_173_containment_2007
+    title: SCP-173 与集体协作收容档案
+    aliases: [SCP-173, The Sculpture, Moto42, 最初的收容物, 混凝土雕塑]
+    genre: creepypasta_ostension
+    credibility_tier: F
+    note_kind: legend
+    location: {lat: 39.8283, lng: -98.5795, precision: culture_region, location_name: 美国 · 数字原生空间（国别参考点）, culture_region: 北美 · 英语互联网}
+    location_note: 本条目为数字原生作品，坐标取美国国别参考点标示 4chan /x/ 版面发源的英语网络语境，不指向任何现实收容设施或物理地点。
+    temporal: {year_start: 2007, year_end: 2007, era_label: 2007 年 4chan /x/ 论坛初稿, uncertainty_note: 标记匿名作者首发并开启后续协作世界观的年份。}
+    paragraphs:
+      - 2007 年 6 月，网名 Moto42 的作者在英文论坛 4chan 的超自然板块 /x/ 发布了一则简短帖子：编号“SCP-173”的混凝土与钢筋雕塑只有在无人直视时才会高速移动并折断人的颈部，因此清洁人员必须轮流保持视线接触。这则模仿机密实验档案的虚构文本附带了一张雕塑照片，成为后来整个“SCP 基金会”协作写作计划的起点。
+      - 围绕这条孤立的条目，网络参与者逐渐仿照同一套“项目等级—特殊收容措施—描述—附录”文书模板续写成千上万份档案，形成高度制度化的共创宇宙。正因体裁表面采用冷静、克制的科研报告与行政公文口吻，读者的不安不再依赖传统恐怖修辞，而是来自“仿佛确有某个隐秘机构正在日常运转”的拟真形式。
+      - 美国新闻史与媒介研究学者 Hayley McCullough 在《American Journalism》的评述中指出，SCP 维基将官方文献体例转化为参与式数字民俗，使作者与读者在共享规则框架内协作造物。阅读时须将作品本身的虚构收容机制、外部雕塑艺术品原型以及数字共创史严格区分开来。
+    sources:
+      - {citation: 'Moto42 (Wesley Williams), "SCP-173", SCP Foundation Wiki, 2007.', type: community_retelling, url: 'https://scp-wiki.wikidot.com/scp-173', locator: 特殊收容措施、项目等级与最初档案格式}
+      - {citation: 'Hayley McCullough, "SCP Foundation Wiki, https://scp-wiki.wikidot.com/", American Journalism 39(2), 2022, pp. 239–241.', type: peer_reviewed, url: 'https://doi.org/10.1080/08821127.2022.2064167', doi: '10.1080/08821127.2022.2064167', locator: 伪官方档案体裁与协同叙事机制分析}
+    ostension_of: motif_urban_ostension_liminal
+    compare: [case_ghq_ghost_protocol_2026, case_the_backrooms_2019]
+    bridge: {entry: LIT-2-0004, cluster: sid_liminal, trail: all, label: 收容档案体例与读者契约, rationale: 将 SCP-173 的伪官方档案写作与叙事伦理、读者契约对读，辨析技术官僚文体如何在网络创作中营造真实感。}
+
+  - id: case_local58_analog_horror_2015
+    title: Local 58 与模拟电视恐怖体裁
+    aliases: [Local 58, LOCAL58TV, Kris Straub, Weather Service, 模拟恐怖]
+    genre: creepypasta_ostension
+    credibility_tier: F
+    note_kind: legend
+    location: {lat: 39.8283, lng: -98.5795, precision: culture_region, location_name: 美国 · 数字原生空间（国别参考点）, culture_region: 北美 · 英语互联网}
+    location_note: 本条目为数字原生作品，坐标采用美国国别参考点对应作者发布的英语网络语境；作品设定的“梅森县地方电视台”为完全虚构台标。
+    temporal: {year_start: 2015, era_label: 2015 年起网络短片连载, uncertainty_note: 以《气象服务》发布及随后形成模拟恐怖（Analog Horror）标志系列为起点。}
+    paragraphs:
+      - 2015 年底，美国创作者 Kris Straub 在网络上推出短片《气象服务》（Weather Service），假借名为 WCLV-TV（Local 58）的地方公共电视台节目表，插入逐步升级的紧急警报：屏幕先呼吁民众“不要直视夜空与月亮”，随后却被篡改并转为“我们现在共同仰望”。作者将模拟电视的雪花噪点、卡带扫描线、台标提示音与冷战式公共防灾广播结合，让熟悉的居家媒介变成陌生威胁的通道。
+      - 此后的《应急广播测试》《收台》与《高速路最短路线》等短片，把“模拟恐怖”（Analog Horror）确立为辨识度极高的网络恐怖体裁。研究者注意到，这类作品几乎不依靠现代特效，而是借公共广播的权威感与画面受干扰时的信息残缺，引导观众自行补全缺失的情节与恐慌。
+      - 电影与民俗学者在探讨模拟恐怖的论文中指出，Local 58 通过模拟旧式录像带归档与信号被劫持的质感，唤醒观众对冷战核预警、地方社区孤立以及屏幕指令失灵的集体记忆。归档本条目重在梳理其媒介修辞与体裁影响，而不将虚构台标混同于现实公共广播事件。
+    sources:
+      - {citation: 'Kris Straub, LOCAL58TV Official Digital Archive.', type: institutional_account, url: 'https://local58.tv/', locator: 虚构地方电视台档案与核心短片目录}
+      - {citation: 'Elinor Dolliver, "The Surprising Folklore of Analog Horror", Film Quarterly 79(3), 2026, pp. 8–18.', type: peer_reviewed, url: 'https://doi.org/10.1525/fq.2026.79.3.8', doi: '10.1525/fq.2026.79.3.8', locator: 模拟恐怖作为数字民俗的体裁溯源}
+      - {citation: 'Serdula, "And I Must Scream: Exploring the Distortion of Humanity in Analog Horror", University of North Carolina Asheville Journal of Undergraduate Research, 2023.', type: academic_article, url: 'https://www.unca.edu/sites/default/files/2023-05/Serdula_Paper.pdf', locator: 广播警报格式与磁带失真美学研究}
+    ostension_of: motif_urban_ostension_liminal
+    compare: [case_us_chicago_max_headroom_1987, case_mandela_catalogue_2021]
+    bridge: {entry: SOC-5-0001, cluster: sid_liminal, trail: all, label: 紧急广播框架与媒介恐慌, rationale: 将虚构地方台的紧急警报叙事与媒体框架、议程设置对读，理解权威广播体例为何极易诱发紧迫感。}
+
+  - id: case_mandela_catalogue_2021
+    title: 曼德拉记录与替代体恐怖叙事
+    aliases: [The Mandela Catalogue, Alex Kister, Alternates, 曼德拉记录, 替代体]
+    genre: creepypasta_ostension
+    credibility_tier: F
+    note_kind: legend
+    location: {lat: 43.2558, lng: -88.1912, precision: city, location_name: 美国威斯康星州 · 里奇菲尔德地区（发源参考点）, culture_region: 北美 · 英语互联网}
+    location_note: 本条目为数字原生作品，坐标参考创作者 Alex Kister 启动该视频系列的威斯康星州地区背景，作品中的“曼德拉县”及警务录像完全属于虚构。
+    temporal: {year_start: 2021, era_label: 2021 年起网络视频连载, uncertainty_note: 标示《第一卷》与政府防灾教学短片在视频平台发布及走红年份。}
+    paragraphs:
+      - 2021 年，青年创作者 Alex Kister 在视频平台发布《曼德拉记录》（The Mandela Catalogue），以 20 世纪 90 年代至 21 世纪初的复古教学录像、警局培训带与失踪案简报为外壳，虚构了一座受神秘“替代体”（Alternates）渗透的威斯康星“曼德拉县”。片中将伪人生物描绘为能够模仿熟人声音、扭曲面部比例并利用人类心理脆弱处诱导绝望的存在。
+      - 作品把宗教经文异变、公共安全教育指南和家用 VHS 录像带的低保真画面揉合在一起，通过刻意拉长的静默镜头、突然畸变的黑白人脸以及白底黑字警句，把日常家庭监控与电视教程改造成心理压迫工具。随着网友二次解析和线索梳理，这类“替代体”形象迅速演变为当代互联网流行恐怖符号。
+      - 佐治亚理工学院媒介研究学位论文与《F Newsmagazine》的创作者访谈都讨论了该作品如何用有限成本制造“中介化的诡异真实感”：创作者借助失真画面触发观众对人脸辨识的微妙违和，并将民俗化的“伪人替身”焦虑移植到现代家庭监控与公共指南语境之中。
+    sources:
+      - {citation: 'Georgia Institute of Technology, "Analog Horror and the Internet: The Mandela Catalogue and the Uncanny Reality of Mediation", Master Thesis.', type: academic_thesis, url: 'https://smartech.gatech.edu/handle/1853/73617', locator: 模拟恐怖的中介性、恐怖谷人脸与录像拼贴}
+      - {citation: 'F Newsmagazine, "Ghosts in the Machine: The Fearful Symmetry of Alex Kister’s The Mandela Catalogue", October 2022.', type: interview, url: 'https://fnewsmagazine.com/2022/10/01/ghosts-in-the-machine-the-fearful-symmetry-of-alex-kisters-the-mandela-catalogue/', locator: Alex Kister 创作历程与宗教、影像动机访谈}
+    ostension_of: motif_urban_ostension_liminal
+    compare: [case_local58_analog_horror_2015, case_the_backrooms_2019]
+    bridge: {entry: LIT-3-0003, cluster: sid_hag, trail: all, label: 拟真录像中的时间与舞台性, rationale: 借戏剧空间、时间与舞台性观念，观察静态黑屏字幕、门廊视角和失真录音如何在虚构档案里持续积累张力。}
+
+  - id: case_mystery_flesh_pit_2019
+    title: 神秘血肉矿井与伪官方地质档案
+    aliases: [Mystery Flesh Pit National Park, MFPNP, Trevor Roberts, Permian Basin Superorganism, 血肉国家公园]
+    genre: creepypasta_ostension
+    credibility_tier: F
+    note_kind: legend
+    location: {lat: 31.8457, lng: -102.3676, precision: city, location_name: 美国得克萨斯州西部 · 二叠纪盆地设定参考区, culture_region: 北美 · 英语互联网}
+    location_note: 本条目为数字原生作品，坐标参考故事背景所设定的西得克萨斯二叠纪盆地周边地带，现实中并无该国家公园或地下巨型生物遗迹。
+    temporal: {year_start: 2019, era_label: 2019 年起跨平台虚构档案创作, uncertainty_note: 自 2019 年在 Reddit 与 Tumblr 连载虚构公园折页、地质剖面图与 2007 年事故报告至今。}
+    paragraphs:
+      - 2019 年起，设计师 Trevor Roberts 在 Reddit 与 Tumblr 等平台以“神秘血肉矿井国家公园”（Mystery Flesh Pit National Park）为题，虚构了一段跨越数十年的架空历史：石油钻探队在得克萨斯二叠纪盆地地下发现一个宛如活体器官的巨型超生物孔洞，随后私人企业与联邦机构将其包装成观光景区，直到 2007 年暴雨引发灾难性苏醒并导致永久封园。
+      - 整部作品以逼真的二十世纪七八十年代旅游宣传折页、地质横截面图、游客守则、商业开发简报与事后调查报告组成，甚至包含印有复古排版的警示标牌与医学观察记录。作者通过极度平静的科普口吻和官僚化安全免责声明，反衬地下血肉景观与资本开发之间的荒诞反差。
+      - 2023 年《福布斯》专访记录了作者从一张腐烂哈密瓜照片获得灵感、并利用工业档案设计构建架空世界观的过程。该案例清楚展现了当代数字民俗如何将生态想象、企业危机公关讽刺与视觉平面设计整合为一整套“可信的虚构博物档案”。
+    sources:
+      - {citation: 'Trevor Roberts, Mystery Flesh Pit National Park Official Digital Archive.', type: institutional_account, url: 'https://mysteryfleshpit.tumblr.com/', locator: 虚构国家公园导览折页、地质剖面与事故报告汇编}
+      - {citation: 'Josh Weiss, "The Strange Appeal Of Mystery Flesh Pit: How Trevor Roberts Built The Wildest Theme Park In All Of Fiction", Forbes, June 6, 2023.', type: journalism, url: 'https://www.forbes.com/sites/joshweiss/2023/06/06/the-strange-appeal-of-mystery-flesh-pit-how-trevor-roberts-built-the-wildest-theme-park-in-all-of-fiction/', locator: 创作起源、世界观设计及企业讽刺访谈}
+    ostension_of: motif_urban_ostension_liminal
+    compare: [case_scp_173_containment_2007, case_ghq_ghost_protocol_2026]
+    bridge: {entry: LIT-4-0002, cluster: sid_crypt, trail: all, label: 伪官方地质文书与真实契约, rationale: 从非虚构叙事策略与真实契约入手，分析公园指南、事故简报和地质图示如何在视觉上建立架空史料权威。}
+
+  - id: case_house_of_leaves_ergodic_2000
+    title: 《叶之屋》与不可能空间超文本
+    aliases: [House of Leaves, Mark Z. Danielewski, The Navidson Record, 叶之屋, 遍历文学]
+    genre: creepypasta_ostension
+    credibility_tier: F
+    note_kind: legend
+    location: {lat: 34.0522, lng: -118.2437, precision: city, location_name: 美国加利福尼亚州 · 洛杉矶（出版与早期网络联动参考点）, culture_region: 北美 · 英语互联网}
+    location_note: 本条目涵括早期网络论坛连载及数字原生作品互文实验，坐标取作者创作与出版发源城市洛杉矶作参考，书中房屋及纪录片完全虚构。
+    temporal: {year_start: 2000, year_end: 2000, era_label: 2000 年出版及同期网络超文本扩散, uncertainty_note: 2000 年由万神殿书局首次出版，之前曾在网络社群与独立传阅稿中流传。}
+    paragraphs:
+      - 美国作家 Mark Z. Danielewski 于 2000 年出版的《叶之屋》（House of Leaves）采用多层伪学术嵌套结构：文身店学徒 Johnny Truant 整理盲人老者 Zampanò 遗留的手稿，后者逐帧评述一部并不存在的纪录片《纳维森纪录》——片中一家人搬入弗吉尼亚老宅后，发现房屋内部测量尺寸竟然比外部宽阔一分五寸，且门后不断延伸出漆黑无底的迷宫走廊。
+      - 小说在排版上打破常规线性阅读：字句时而倒置、斜排、缩成窗口或只剩单字，整页充斥相互跳转的伪引文注脚与附录线索，甚至规定“房屋”一词一律印成蓝色。读者必须像翻检实体迷宫或浏览超链接一样在前后页来回穿梭，被学界视作纸本媒介上的“遍历文学”（ergodic literature）与后续网路“阈限空间”创作的重要先声。
+      - 文学与新媒体学者 N. Katherine Hayles 与 Jessica Pressman 在相关研究中指出，作品一方面以印刷书籍的物理材质模拟数字超文本与论坛检索，另一方面通过配套网络讨论版与音乐专辑拓展出跨媒介共读生态，成为数字时代前夕“伪档案空间恐怖”的典范文本。
+    sources:
+      - {citation: 'N. Katherine Hayles, "Saving the Subject: Remediation in House of Leaves", American Literature 74(4), 2002, pp. 779–806.', type: peer_reviewed, url: 'https://doi.org/10.1215/00029831-74-4-779', doi: '10.1215/00029831-74-4-779', locator: 技术文本、版式迷宫与跨媒介再中介}
+      - {citation: 'Jessica Pressman, "House of Leaves: Reading the Networked Novel", Studies in American Fiction 34(1), 2006, pp. 107–128.', type: peer_reviewed, url: 'https://doi.org/10.1353/saf.2006.0015', doi: '10.1353/saf.2006.0015', locator: 网络化小说结构、论坛互动与超文本阅读}
+    ostension_of: motif_urban_ostension_liminal
+    compare: [case_the_backrooms_2019, case_r_place_liminal_poolrooms_2020]
+    bridge: {entry: LIT-4-0004, cluster: sid_liminal, trail: all, label: 纸本迷宫与超文本形态, rationale: 将数字时代的非虚构新形态与《叶之屋》伪学术注脚对照，观察纸面排版和超链接如何共同营造迷失感。}
+
+  - id: case_marble_hornets_2009
+    title: 大理石黄蜂与瘦长鬼影伪纪录片
+    aliases: [Marble Hornets, Troy Wagner, Joseph DeLage, totheark, 大理石黄蜂]
+    genre: creepypasta_ostension
+    credibility_tier: F
+    note_kind: legend
+    location: {lat: 33.2098, lng: -87.5692, precision: city, location_name: 美国亚拉巴马州 · 塔斯卡卢萨（拍摄发源参考点）, culture_region: 北美 · 英语互联网}
+    location_note: 本条目为数字原生作品，坐标参考创作者在亚拉巴马州塔斯卡卢萨制作该网络伪纪录片系列的拍摄区域，剧中实体“The Operator”及案件纯粹虚构。
+    temporal: {year_start: 2009, year_end: 2014, era_label: 2009—2014 年 YouTube 连载周期, uncertainty_note: 起于 2009 年 6 月首支视频，止于 2014 年第 87 集完结。}
+    paragraphs:
+      - 2009 年 6 月，在 Something Awful 论坛诞生“瘦长人”图像仅十天后，美国大学生 Troy Wagner 与 Joseph DeLage 在 YouTube 开设“Marble Hornets”频道，以自称 Jay 的叙述者口吻上传友人 Alex 遗留的未完成学生电影录像带。录像里不断闪现身着西装、没有五官的高大身影，同时伴随着画面撕裂、电磁杂音以及人物的记忆断片。
+      - 随着连载推进，另一名为“totheark”的神秘账号以加密视频、摩尔斯电码和倒放画面穿插回应，使观众必须跟踪两个频道、推特线索与时间码来拼接故事。这部横跨五年、共 87 集的交互式伪纪录片把原本停留在论坛修图阶段的“瘦长鬼影”重塑为极具传播力的动态视频传说。
+      - 法学与哥特文学研究者指出，《大理石黄蜂》示范了“反向展演”如何在视频平台落地：创作者不声称自己是纯小说作者，而是扮演“整理失踪友人旧录像的调查员”，从而把实时评论区解谜与后续模仿拍摄一同吸纳进当代网络民间传说之中。
+    sources:
+      - {citation: 'Cathay Y. N. Smith, "Beware the Slender Man: Intellectual Property and Internet Folklore", Florida Law Review 73(3), 2021.', type: peer_reviewed, url: 'https://scholarship.law.ufl.edu/flr/vol73/iss3/3/', locator: Marble Hornets 对瘦长鬼影视频化传播与数字民俗权利探讨}
+      - {citation: 'Edinburgh University Press, "In the Dark: The Afterlife of a Horror Hoax", Gothic Studies, 2023.', type: peer_reviewed, url: 'https://www.euppublishing.com/doi/10.3366/gothic.2023.0145', doi: '10.3366/gothic.2023.0145', locator: 伪纪录片叙事、电磁故障美学与双频道互动}
+    ostension_of: [case_slender_man_2009, motif_urban_ostension_liminal]
+    compare: [case_local58_analog_horror_2015]
+    bridge: {entry: LIT-3-0003, cluster: sid_liminal, trail: all, label: 伪纪录片与双频道展演, rationale: 运用戏剧空间、时间与舞台性概念，剖析手持录像、跳剪残片与加密回帖如何共同构成沉浸式舞台。}
+
+  - id: case_polybius_arcade_legend_2000
+    title: 波利比乌斯街机与记忆改造都市传说
+    aliases: [Polybius, Sinneslöschen, 波利比乌斯街机, 波利比乌斯传说]
+    genre: creepypasta_ostension
+    credibility_tier: F
+    note_kind: legend
+    location: {lat: 45.5152, lng: -122.6784, precision: city, location_name: 美国俄勒冈州 · 波特兰（传说设定参考点）, culture_region: 北美 · 英语互联网}
+    location_note: 本条目为数字原生作品与现代网络伪史传说，坐标采用传说虚构设定的 1981 年俄勒冈州波特兰市区作为参考点，历史文献从未证实该街机曾实际存在。
+    temporal: {year_start: 2000, year_end: 2000, era_label: 2000 年前后街机网站建档形成传说, uncertainty_note: 最早确切文本见于 2000 年前后 coinop.org 网站收录并经 2003 年游戏杂志传播。}
+    paragraphs:
+      - 这则广为流传的街机都市传说宣称，1981 年俄勒冈州波特兰郊区的几家游乐场曾短暂停放过一款名为“波利比乌斯”（Polybius）、署名为德语词汇“Sinneslöschen”（意为感官消除）的神秘街机。故事说，该游戏画面令人极度上瘾，却会引发玩家健忘、夜惊与幻觉，随后有黑衣政府人员定期前去抄录主机数据，并很快将机台全部撤走。
+      - 经《Skeptoid》与游戏史媒体《Eurogamer》追查，这则传闻的最早文本记录源自 2000 年前后复古街机资料站 coinop.org 的匿名投稿，随后在 2003 年《GamePro》专栏被提及而迅速扩散。无论厂商登记、版权数据库还是 1981 年地方报纸，都没有找到任何与该机台或公司相符的当代一手证据。
+      - 研究者指出，该传说之所以逼真，是因为它巧妙嫁接了 1981 年波特兰确曾发生过的联邦调查局（FBI）打击非法赌博街机行动、早期电子游戏引发光敏不适的新闻记忆，以及冷战心理实验想象。它是一例由早期互联网资料站条目反向演化为全球流行现代传说的典型样本。
+    sources:
+      - {citation: 'Brian Dunning, "Polybius: Video Game of Death", Skeptoid Episode #362.', type: institutional_account, url: 'https://skeptoid.com/episodes/4362', locator: 1981 年档案空白核查与游戏传说拆解}
+      - {citation: 'Eurogamer, "Polybius: The story behind the world''s most mysterious arcade cabinet", May 2015.', type: journalism, url: 'https://www.eurogamer.net/articles/2015-05-22-polybius-the-story-behind-the-worlds-most-mysterious-arcade-cabinet', locator: coinop.org 初见日期、FBI 波特兰行动史实与传闻演变}
+    ostension_of: motif_urban_ostension_liminal
+    compare: [case_slender_man_2009, case_dead_internet_theory_2021]
+    bridge: {entry: SOC-5-0002, cluster: sid_crypt, trail: all, label: 街机谣言与溯源核查, rationale: 依托谣言与事实核查原则，辨认一份缺乏当代证据的网页名录如何借真实执法新闻获得历时可信度。}
+
+  - id: case_dead_internet_theory_2021
+    title: 死互联网假说与算法幽灵叙事
+    aliases: [Dead Internet Theory, IlluminatiPirate, 死互联网理论, 算法幽灵]
+    genre: creepypasta_ostension
+    credibility_tier: F
+    note_kind: legend
+    location: {lat: 39.8283, lng: -98.5795, precision: culture_region, location_name: 美国 · 数字原生空间（国别参考点）, culture_region: 北美 · 英语互联网}
+    location_note: 本条目为数字原生作品与当代网络阴谋叙事，坐标采用美国国别参考点标示其 2021 年英文论坛原帖语境，用以区分夸大化的叙事隐喻与真实自动化流量统计。
+    temporal: {year_start: 2021, era_label: 2021 年论坛原帖与媒体讨论期, uncertainty_note: 2021 年 1 月英文论坛出现系统性原帖，同年 8 月经《大西洋月刊》报道扩散。}
+    paragraphs:
+      - 2021 年初，网名“IlluminatiPirate”的用户在英文网络论坛 Agora Road’s Macintosh Cafe 发布长帖，提出所谓“死互联网假说”（Dead Internet Theory）：声称互联网大致已在 2016 至 2017 年间“死亡”，此后网上绝大多数帖子、热点评论与审美趋势均由人工智能与机器人账号相互生成、自导自演，只为诱导尚存的少量真人用户沉浸其中并接受舆论引导。
+      - 同年 8 月，《大西洋月刊》记者 Kaitlyn Tiffany 撰文剖析这一说法，指出“全网已被政府与科技公司用机器人彻底替代”的阴谋论前提并不成立，但“觉得网络越来越空洞、处处像脚本回复”的情绪却引发了广泛共鸣。近年的网络安全流量观测确实记录到爬虫与自动脚本占据可观比例，但真实人类社区与机构通讯依然活跃。
+      - 随着大语言模型与合成图片在 2023 年后普及，计算机与社会媒体学者开始重新讨论该假说如何从边缘论坛怪谈演变为形容“低质量合成内容泛滥”的文化隐喻。归档时应将实证层面的机器人流量监测同整体阴谋叙事分开，避免把隐喻当作事实结论。
+    sources:
+      - {citation: 'Kaitlyn Tiffany, "Maybe You Missed It, but the Internet ''Died'' Five Years Ago", The Atlantic, August 31, 2021.', type: journalism, url: 'https://www.theatlantic.com/technology/archive/2021/08/dead-internet-theory-wrong-but-feels-true/619937/', locator: Agora Road 论坛原帖、阴谋叙事与用户疏离感}
+      - {citation: 'Pranav Muzumdar et al., "The Dead Internet Theory: A Survey on Artificial Interactions and the Future of Social Media", arXiv:2502.00007, 2025.', type: academic_article, url: 'https://arxiv.org/abs/2502.00007', locator: 社交平台机器人交互比例、合成媒体与死互联网概念综述}
+    ostension_of: motif_urban_ostension_liminal
+    compare: [case_polybius_arcade_legend_2000, case_ghq_ghost_protocol_2026]
+    bridge: {entry: LAN-6-0002, cluster: sid_liminal, trail: all, label: 算法幽灵与合成文本感知, rationale: 联系大型语言模型的语言能力与偏差，区分可测量的生成内容比例与“全网只剩机器人”的当代赛博传说。}
+
+  - id: case_r_place_liminal_poolrooms_2020
+    title: 泳池空间与阈限建筑视觉民俗
+    aliases: [The Poolrooms, Dream Pools, Jared Pike, r/LiminalSpace, 阈限泳池]
+    genre: creepypasta_ostension
+    credibility_tier: F
+    note_kind: legend
+    location: {lat: 39.8283, lng: -98.5795, precision: culture_region, location_name: 美国 · 数字原生空间（国别参考点）, culture_region: 北美 · 英语互联网}
+    location_note: 本条目为数字原生作品与计算机三维渲染建筑视觉民俗，坐标采用美国国别参考点标示创作者与英文网络社群环境，画面所描绘的无尽室内泳池并不存在于现实。
+    temporal: {year_start: 2020, era_label: 2020 年起视觉渲染与网络社区传播, uncertainty_note: 涵盖 2020 年代初《梦幻泳池》三维系列及 Reddit 阈限空间社区的图像汇流。}
+    paragraphs:
+      - 2020 年以来，随着《后室》与 Reddit 社区 r/LiminalSpace 的流行，美国三维视觉艺术家 Jared Pike 创作的《梦幻泳池》（Dream Pools，俗称“泳池空间”/Poolrooms）成为最具代表性的网络阈限建筑意象之一。画面总是呈现连绵不断、铺满白瓷砖的室内水道、旋转阶梯、天窗冷光与静止的水面，既像似曾相识的度假村和地下浴场，又彻底剥离了救生员、泳客与具体出口。
+      - 在受访中，Jared Pike 表示自己最初只是结合老旧水上乐园的记忆与三维渲染软件探索梦境建筑，但图像在网络流传后，很快被网友纳入共创楼层编号、水下回响音效与逃生规则之中，逐渐从单纯的视觉艺术转化为集体建构的数字传说空间。
+      - 环境心理学家 Alexander Diel 与 Michael Lewis 在 2022 年《Journal of Environmental Psychology》的研究提出，物理空间中的“结构性轻微偏离”（如比例失调、功能线索缺失但视觉高度熟悉的通道）会诱发类似“恐怖谷”的不适感。将心理学实验与视觉民俗并读，可以清晰看见数字创作如何放大这种微妙的空间错位感。
+    sources:
+      - {citation: 'Designboom, "Diving into 3D artist Jared Pike''s pool dreamscapes and imaginary liminal interiors", February 17, 2024.', type: interview, url: 'https://www.designboom.com/art/jared-pike-interview-dream-pools-3d-digital-art-liminal-spaces-02-17-2024/', locator: 《梦幻泳池》建筑灵感、三维建模与虚构空景}
+      - {citation: 'Northeastern University News, "The dreamlike images of pools you''ve been seeing on the internet are made by a Northeastern grad", June 17, 2025.', type: institutional_account, url: 'https://news.northeastern.edu/2025/06/17/the-dream-pools-jared-pike/', locator: 泳池空间从个人作品到网络阈限民俗的传播}
+      - {citation: 'Alexander Diel & Michael Lewis, "Structural deviations drive an uncanny valley of physical places", Journal of Environmental Psychology 82, 2022.', type: peer_reviewed, url: 'https://doi.org/10.1016/j.jenvp.2022.101844', doi: '10.1016/j.jenvp.2022.101844', locator: 阈限建筑结构偏差与空间恐怖谷效应}
+    ostension_of: [case_the_backrooms_2019, motif_urban_ostension_liminal]
+    compare: [case_house_of_leaves_ergodic_2000]
+    bridge: {entry: LIT-4-0004, cluster: sid_liminal, trail: all, label: 无尽瓷砖空间与数字民俗, rationale: 把数字时代的新形态视觉叙事与建筑空间心理研究合读，理解三维空景如何变成集体共享的阈限异境。}
+
+  - id: case_ru_uvb76_buzzer_station
+    title: 俄罗斯｜UVB-76 蜂鸣器短波电台之谜
+    aliases: [UVB-76, The Buzzer, MDZhB, 4625 kHz, 短波蜂鸣器电台]
+    genre: urban_legend
+    credibility_tier: B
+    note_kind: legend
+    location: {lat: 56.0850, lng: 37.0870, precision: city, location_name: 俄罗斯莫斯科州 · 波瓦罗沃历史发射区（参考点）, culture_region: 欧洲 · 俄罗斯}
+    location_note: 坐标对应无线电监测者定位的 2010 年前莫斯科州波瓦罗沃发射区参考点；此后发射点迁往圣彼得堡周边及普斯科夫一带，实际军事通信用途未获官方公布。
+    temporal: {year_start: 1973, era_label: 约 20 世纪 70 年代末至今持续播送, uncertainty_note: 连续单调蜂鸣脉冲约自 1982 年起被国际短波爱好者稳定记录。}
+    paragraphs:
+      - 在短波 4625 千赫（上边带调幅）上，一座呼号曾用 UZB-76（民间习称 UVB-76）与 MDZhB 的电台数十年如一日地连续播送单调、粗糙的低频蜂鸣声，每分钟大约响起二十余次；极少数时候，蜂鸣会突然中断，改由人声用俄语朗读一串字母姓名代码与数字组，随后又恢复无止境的“嗡——嗡——”声。
+      - 无线电爱好者的测向与档案追踪显示，该台站早年位于莫斯科西北的波瓦罗沃，2010 年前后发射地点转移至圣彼得堡与普斯科夫方向，而播音中偶尔还会泄漏麦克风旁的背景交谈或走动声。由于俄罗斯官方从未就其性质发布说明，网络上围绕它衍生出“冷战自动核反击死手开关”或神秘气候控制指令等诸多都市传闻。
+      - 无线电研究站 Priyom 与《Wired》杂志的调查均区分了“可确认的射频观测事实”与“缺乏根据的末日猜测”：在工程与军事通信史上，持续发射占有标记音能帮助维护军区战备信道并防止其他台站占用频率，而偶尔播报的加密语音更符合常规单向军事调度特征，并不支持各类超自然或末日阴谋假说。
+    sources:
+      - {citation: 'Priyom.org, "The Buzzer (UVB-76 / MDZhB / ZhUOZ) Profile & Broadcast Logs".', type: institutional_account, url: 'https://priyom.org/military-stations/russia/the-buzzer', locator: 4625 kHz 连续蜂鸣参数、呼号变化与发射点迁移监测}
+      - {citation: 'Peter Savodnik, "Inside the Buzzer: The Russian Shortwave Radio Enigma", Wired, September 27, 2011.', type: journalism, url: 'https://www.wired.com/2011/09/ff-uvb76/', locator: 波瓦罗沃废弃旧台址寻访与无线电爱好者调查}
+    compare: [case_us_chicago_max_headroom_1987, case_us_taos_hum_1993]
+    bridge: {entry: PHI-2-0002, cluster: sid_crypt, trail: all, label: 短波标记信号与推理边界, rationale: 依托怀疑论、证据与证言视角，区分可复现的无线电测向记录与缺乏官方文献支持的“末日开关”民间推想。}
+
+  - id: case_us_taos_hum_1993
+    title: 美国陶斯｜陶斯嗡鸣与低频环境声调查
+    aliases: [Taos Hum, The Hum, 陶斯嗡鸣, 低频环境嗡鸣]
+    genre: urban_legend
+    credibility_tier: B
+    note_kind: legend
+    location: {lat: 36.4072, lng: -105.5731, precision: city, location_name: 美国新墨西哥州 · 陶斯地区, culture_region: 北美 · 美国新墨西哥州}
+    location_note: 坐标为新墨西哥州陶斯镇区域参考点，对应 1993 年联邦与高校联合声学调查的田野范围，并非已知具体声源位置。
+    temporal: {year_start: 1993, year_end: 1993, era_label: 1993 年联合科学测量调查, uncertainty_note: 当地居民自 1991 年前后开始反映嗡鸣，1993 年夏季进行集中仪器监测。}
+    paragraphs:
+      - 20 世纪 90 年代初，美国新墨西哥州北部小城陶斯（Taos）部分居民向媒体与国会反映，当地持续出现一种微弱而恼人的低频嗡鸣，听起来像远处停着一辆怠速运转的柴油卡车，在室内与夜间尤显清晰。然而在同一个家庭中，有人被声音折磨得难以入眠，另一些人却丝毫听不见任何异响。
+      - 在居民怀疑声音与附近国家实验室或军事通讯设施有关后，1993 年夏天，由新墨西哥大学机械工程学者 Joe Mullins、洛斯阿拉莫斯国家实验室、桑迪亚国家实验室及空军菲利普斯实验室组成的联合团队进驻陶斯，部署声学麦克风、地震传感器与电磁检测仪进行了密集监测。受访听者普遍估计声音频率在 30 至 80 赫兹之间，但仪器却未测出任何与主诉匹配的环境声波、地震或电磁信号。
+      - 《洛杉矶时报》1993 年的现场报道与《Skeptoid》汇总的声学研究指出，“陶斯嗡鸣”迄今没有单一确定结论：部分学者考虑个体自发性耳声发射、低频耳鸣或鼓膜张肌自发收缩等生理差异，也有研究者探讨未完全测及的局部次声或工业共振。它同时展现了环境传闻与仪器测量之间复杂的感受落差。
+    sources:
+      - {citation: 'Los Angeles Times, "Mysterious Low-Level Noise Destroys Peace, Serenity of Taos Residents", July 18, 1993.', type: journalism, url: 'https://www.latimes.com/archives/la-xpm-1993-07-18-mn-14234-story.html', locator: 1993 年新墨西哥大学、洛斯阿拉莫斯与桑迪亚联合实地调查}
+      - {citation: 'Brian Dunning, "Can You Hear the Hum?", Skeptoid Episode #90.', type: institutional_account, url: 'https://skeptoid.com/episodes/4090', locator: Joe Mullins 与 Norman Kelly 声学调查总结及听觉机制分析}
+    compare: [case_coventry_sword_lab_1998, case_andover_tremors_1970s]
+    bridge: {entry: PHY-4-0003, cluster: sid_hag, trail: all, label: 低频声波测量与感知差异, rationale: 对照声波强度、响度与多普勒效应中的听阈概念，理解为何精密监测未检出对应外部信号而部分听者仍报告真实痛苦。}
+
+  - id: case_us_chicago_max_headroom_1987
+    title: 美国芝加哥｜1987 年电视信号劫持事件档案
+    aliases: [Max Headroom signal hijackings, Max Headroom incident, 1987 芝加哥电视劫持, WGN WTTW 劫持案]
+    genre: urban_legend
+    credibility_tier: B
+    note_kind: legend
+    location: {lat: 41.8781, lng: -87.6298, precision: city, location_name: 美国伊利诺伊州 · 芝加哥, culture_region: 北美 · 美国芝加哥}
+    location_note: 坐标为芝加哥市区参考点，标记 1987 年 11 月 22 日晚间 WGN-TV 与 WTTW 电视台微波中继链路遭外部发射器覆盖的城市，不指向未知作案者位置。
+    temporal: {year_start: 1987, year_end: 1987, era_label: 1987 年 11 月 22 日晚间, uncertainty_note: 有精确电视播出时间记录：当晚 21 时 14 分劫持 WGN-TV，23 时 15 分劫持 WTTW。}
+    paragraphs:
+      - 1987 年 11 月 22 日晚 9 时 14 分，芝加哥独立电视台 WGN-TV 正在直播体育新闻，信号忽然黑屏十余秒，随即切入一名戴着科幻电视人物“麦克斯·海德鲁姆”（Max Headroom）橡胶面具与墨镜的男子：他在旋转波纹金属板前剧烈晃动，伴随刺耳嗡鸣持续约半分钟，直到值班工程师切换演播室至发射塔链路频率才得以切断。
+      - 两小时后的晚上 11 时 15 分左右，公共电视台 WTTW 在重播科幻剧《神秘博士》期间再次遭同一扮相劫持。由于西尔斯大厦发射台深夜无人值守，控制室无法立即中断这段持续约 90 秒的盗播画面——男子口齿含混地调侃体育主播、举起百事可乐罐讽刺原作代言的“新可乐”广告，最后弯腰露出臀部并由同伙用苍蝇拍抽打，画面随即突然中止。
+      - 联邦通信委员会（FCC）与联邦调查局（FBI）事后调查认为，要从地面向高楼微波接收端定向发射更强的压制信号，需要相当专业的广播发射机、微波天线与工程知识，但因追诉期届满且线索零散，真实作案人始终未能落网。这起真实发生却长期悬而未决的技术恶作剧，也成为后来“模拟恐怖”作品反复效仿广播侵入桥段的现实原型。
+    sources:
+      - {citation: 'Motherboard (Vice), "The Max Headroom Incident: The Unsolved Mystery of the Broadcast Pirate".', type: journalism, url: 'https://www.vice.com/en/article/headroom-hacker/', locator: 微波演播室发射链路压制原理与案件侦查回顾}
+      - {citation: 'Wikipedia, "Max Headroom signal hijackings".', type: institutional_account, url: 'https://en.wikipedia.org/wiki/Max_Headroom_signal_hijackings', locator: WGN-TV 与 WTTW 劫持时间线、FCC 调查档案与文化影响}
+    compare: [case_local58_analog_horror_2015, case_ru_uvb76_buzzer_station]
+    bridge: {entry: MTH-STAT-0002, cluster: sid_liminal, trail: all, label: 未破信号案与线索归因, rationale: 借“相关不等于因果”的推断规范，把有确切工程记录的电视微波链路劫持事件与网络上诸多无法核实的匿名认领区分开来。}

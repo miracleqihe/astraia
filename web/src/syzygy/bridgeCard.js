@@ -3,6 +3,7 @@ import { handbookText, bookNavigation, bindBookNavigation } from './readable';
 import { storyShare, bindStoryShare } from './sharing';
 import { originalPageButton, bindOriginalPages } from './originalPages';
 import { engravingHeader, engravingBeam, engravingFrieze, engravingPatternForVolume, bindEngravingBeam } from '../engraving';
+import { resolvePrismForPair, renderPrismPhilosophyHTML, bindSensoryLabs } from './philosophicalPrism';
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]);
 const sources = node => {
   const items = node?.sources ?? [];
@@ -14,10 +15,11 @@ const sources = node => {
 };
 const paragraphs = node => (node?.reading?.paragraphs ?? []).map(p=>`<p>${esc(p)}</p>`).join('') || '<p>本条暂无站内正文。</p>';
 
-export function renderBridgeCard(bridge, { root, onJump, onSelectRelated, onReadBook, book, bookEntries, confidence, relation, showF, tiers, genre }) {
+export function renderBridgeCard(bridge, { root, onJump, onSelectRelated, onReadBook, onOpenBook, book, bookEntries, confidence, relation, showF, tiers, genre, membraneDepth = 0.5, audio }) {
   const wrap = document.getElementById('syzygy-card-container');
   if (!bridge) { wrap.innerHTML = ''; return; }
   const node = bridge.mythos, knowledge = bridge.physis;
+  const prism = resolvePrismForPair({ node, entry: knowledge, bridge, depth: membraneDepth });
   const classic = view => {
     const query=new URLSearchParams({view,story:node.id,bridge_story:node.id,bridge_entry:knowledge.id});
     query.set('tiers',[...tiers].join(','));
@@ -57,6 +59,7 @@ export function renderBridgeCard(bridge, { root, onJump, onSelectRelated, onRead
       <p class="syzygy-reference">${esc(bridge.rationale)}</p>
       ${bridge.related ? `<p class="syzygy-reference" style="margin-top:8px"><span class="syzygy-badge ${esc(badge.cls)}">${esc(badge.badge)}</span> · 个案与下列节点的原有关系</p><button class="syzygy-related" data-bridge-related><span>${esc(bridge.related.title)}</span><small>查看关联节点 ↗</small></button><div class="syzygy-prose">${paragraphs(bridge.related)}</div>${sources(bridge.related)}` : '<p class="syzygy-reference">依照共同主题组织的阅读线索；对读本身不构成已证实的因果关系。</p>'}
       ${bridge.related ? '<p class="syzygy-reference" style="margin-top:6px">下卷为主题对读；上述状态仅描述原图谱中的个案关联。</p>' : ''}
+      ${renderPrismPhilosophyHTML(prism, bookEntries)}
     </section>
     <div class="syzygy-dual-body">
       <section class="mythos-pane syzygy-full-card" data-codex-section="mythos">
@@ -93,4 +96,5 @@ export function renderBridgeCard(bridge, { root, onJump, onSelectRelated, onRead
   bindStoryShare(wrap);
   bindOriginalPages(wrap, root, book);
   bindEngravingBeam(wrap);
+  bindSensoryLabs(wrap, { audio, onOpenBook: onOpenBook || onReadBook });
 }

@@ -1,0 +1,816 @@
+# Original simplified Chinese editorial summaries based on cited primary texts, museum collections, and peer-reviewed scholarship.
+# All map coordinates are historical, literary, or regional cultural reference points, not assertions of literal mythic events.
+records:
+  - id: case_cn_shanhai_gonggong_buzhou
+    title: 昆仑西北｜共工怒触不周山与天柱折地维绝神话
+    aliases:
+      - 共工触山
+      - 不周山神话
+      - 天柱折地维绝
+      - Gonggong
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 39.1500
+      lng: 76.1500
+      precision: culture_region
+      location_name: 中国新疆喀什与帕米尔东麓 · 古西北“不周山”神话地理参照区
+      culture_region: 中国 · 西北昆仑帕米尔神话区
+    location_note: “不周之山”出自《山海经》西北荒服的想象地理，后世史地考证常将其比附帕米尔至昆仑山系；此坐标仅作文献地理参照，并非真实神山所在。
+    temporal:
+      year_start: -300
+      year_end: -139
+      era_label: 战国《山海经》至西汉《淮南子·天文训》（前 139 年）时期
+      uncertainty_note: 共工之名早见于先秦典籍，而“怒触不周山、天倾西北、地不满东南”完整宇宙灾变叙事定型于西汉刘安《淮南子·天文训》。
+    paragraphs:
+      - 西汉《淮南子·天文训》记述，昔者水神共工与颛顼争夺帝位失败，愤怒之下以头撞击西北撑天巨柱“不周之山”，致使“天柱折，地维绝”。天穹随之向西北方向倾斜，故日月星辰皆朝西北运转；大地东南一角陷落不满，江河水潦与尘埃泥沙乃尽数向东南归注。
+      - 后出《列子·汤问》将共工触山直接衔接至女娲炼五色石补天、断巨鳌之足以撑四极的修复篇章；而年代更早的《山海经·大荒西经》已载“有山而不合，名曰不周负子”，同书《海内经》《大荒北经》又保留共工臣属相柳九首食九山、喷吐腥水并遭大禹诛杀的治水支线。不同典籍中，共工的敌手亦存在颛顼、祝融、高辛或神农等多重异文。
+      - 这则神话以高度戏剧化的神战冲突，把中国古代对“西北山岳隆起、东南低平入海”地势格局与北天极星象运行的观察融入宇宙创世论。当代神话学与地质史阅读中，宜将其理解为古人对天文历象与大河水势的诗意化解释，而非字面意义上的远古天体撞击事件。
+    sources:
+      - citation: 〔西汉〕刘安等编（前 139 年），《淮南子·天文训》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/huainanzi/tian-wen-xun'
+        locator: 《天文训》“昔者共工与颛顼争为帝，怒而触不周之山”一段原文
+      - citation: 《山海经·大荒西经》，维基文库古籍校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%A4%A7%E8%8D%92%E8%A5%BF%E7%B6%93'
+        locator: 《大荒西经》“西北海之外，大荒之隅，有山而不合，名曰不周负子”条
+      - citation: 〔晋〕张湛注，《列子·汤问》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/liezi/tang-wen'
+        locator: 《汤问》女娲炼石补天衔接共工触山段落
+      - citation: 'Anne Birrell, Chinese Mythology: An Introduction, Johns Hopkins University Press, 1993.'
+        type: academic_monograph
+        url: 'https://archive.org/details/chinesemythology00birr'
+        locator: 洪水、宇宙柱折断与共工神谱比较研究
+    compare: [case_cn_qinan_nuwa_festival, case_cn_xizhou_pangu_creation, case_is_snorra_yggdrasil_ragnarok]
+    motifs: [index_berezkin_c24, index_berezkin_c39]
+    bridge:
+      entry: GEO-STRUC-0002
+      cluster: sid_myth
+      trail: all
+      label: 天倾西北与板块高差常识
+      rationale: 将“天柱折地维绝、地不满东南”的古代宇宙灾变神话，与现代板块边界及地形高差成因并置阅读，分辨神话宇宙观与地球科学机制。
+
+  - id: case_cn_shanhai_kuafu
+    title: 北方大荒｜《山海经》夸父逐日与弃杖化邓林神话
+    aliases:
+      - 夸父逐日
+      - 夸父追日
+      - 邓林神话
+      - Kuafu
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 34.5500
+      lng: 110.8800
+      precision: culture_region
+      location_name: 中国河南灵宝与豫西桃林原 · 注疏比定“邓林/夸父山”参照区
+      culture_region: 中国 · 中原豫西神话地理区
+    location_note: “夸父山”与“邓林”在《山海经》属北方大荒想象地界，晋郭璞及北魏《水经注》多将邓林比附豫西桃林塞，此处作文献注疏地理参考。
+    temporal:
+      year_start: -300
+      year_end: 320
+      era_label: 战国《山海经》至东晋郭璞注时期
+      uncertainty_note: 夸父追日载于《山海经·海外北经》及《大荒北经》，《列子·汤问》存详尽变体，东晋郭璞注进一步比定“邓林”所在。
+    paragraphs:
+      - 《山海经·海外北经》以简劲笔法记下“夸父与日逐走，入日”的著名神话：巨人夸父奋力追赶落日，渴极而饮尽黄河、渭水仍嫌不足，北上欲赴“大泽”解渴，却未及抵达便半途渴死；临终之际他“弃其杖，化为邓林”，使枯死的手杖在荒原化作葱郁林海。
+      - 同书《大荒北经》另存一则视角相异的记述：成都载天之山有名叫“夸父”的神人，耳穿两黄蛇、手操两黄蛇，“不量力，欲追日景，逮之于禺谷”，终因饮大泽而亡，另又涉入应龙蓄水之争；至《列子·汤问》复增写“尸膏肉所浸，生邓林，邓林弥广数千里焉”，东晋陶渊明《读山海经》则称颂“夸父诞宏志，乃与日竞走”，确立了不畏险阻的悲壮形象。
+      - 并读《海外北经》与《大荒北经》两段古文，能够清楚看见《山海经》各卷原本汇集了不同地域与部族的口述残片，连夸父究竟是部族名号抑或单一巨人、死于枯渴抑或神战均尚存歧义。读者宜将“饮干河渭”视为测度昼夜日影与抗争意志的象征修辞，而非水文史实。
+    sources:
+      - citation: 《山海经·海外北经》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/shan-hai-jing/hai-wai-bei-jing'
+        locator: 《海外北经》“夸父与日逐走，入日……弃其杖，化为邓林”原文
+      - citation: 《山海经·大荒北经》，维基文库古籍校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%A4%A7%E8%8D%92%E5%8C%97%E7%B6%93'
+        locator: 《大荒北经》“大荒之中，有山名曰成都载天……夸父不量力，欲追日景”条
+      - citation: Lihui Yang & Deming An, Handbook of Chinese Mythology, Oxford University Press, 2005.
+        type: academic_monograph
+        url: 'https://archive.org/details/handbookofchines0000yang'
+        locator: 夸父逐日与太阳神话多文本条目分析
+    compare: [case_cn_zhangzi_fajiushan_jingwei, case_cn_shanhai_xingtian, case_nz_aotearoa_maui_fishing]
+    motifs: [index_berezkin_a16, index_berezkin_a37]
+    bridge:
+      entry: LIT-1-0002
+      cluster: sid_myth
+      trail: all
+      label: 追日意象与弃杖变形诗学
+      rationale: 从夸父手杖化作千里邓林的诗意转化入手，结合意象与隐喻机制，阅读上古神话如何借自然地景铭刻抗争记忆。
+
+  - id: case_cn_shanhai_xingtian
+    title: 常羊之山｜《山海经》刑天断首与舞干戚神话
+    aliases:
+      - 刑天舞干戚
+      - 形天
+      - 常羊山
+      - Xingtian
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 36.1500
+      lng: 112.9500
+      precision: culture_region
+      location_name: 中国山西上党与太行南麓 · 方志比定“常羊山”文化参照区
+      culture_region: 中国 · 华北太行神话传统区
+    location_note: “常羊之山”原出《山海经·海外西经》的西方想象地理，宋元以后晋东南长治等地山志常比附为当地常羊山，此坐标仅作文献地理参照。
+    temporal:
+      year_start: -300
+      year_end: 420
+      era_label: 战国《山海经》至东晋陶渊明诗咏时期
+      uncertainty_note: 早期传本多作“形天”，东晋陶渊明诗作写作“刑天”，唐宋校勘家曾辨析二者字形与义理演替。
+    paragraphs:
+      - 《山海经·海外西经》用极度凝练的三十余字塑造了中国神话中最震撼的抗争者：“形天与帝至此争神，帝断其首，葬之常羊之山。乃以乳为目，以脐为口，操干戚以舞。”在这段战国至汉初留存的叙事中，失首的神祇并未倒下，反而将胸腹重塑为面目，执持盾牌与大斧继续挥舞。
+      - 宋代曾巩与清代郝懿行考订指出，先秦两汉古本多作“形天”，意谓断首残形或天威裁断；至东晋陶渊明据所见本作“刑天”，并于《读山海经十三首》写下名句“刑天舞干戚，猛志固常在”，使原本奇诡的异域神祇转化为士人在逆境中不屈的抗争符号。宋代《路史》及清代注疏则进一步将其演绎为炎帝神农氏的乐官与武将。
+      - 从比较民俗与早期身体想象观察，“无头而以胸乳为目”在欧亚古典地理志（如古希腊所谓无头异人）与神话母题中均有平行例证；《山海经》把它与“和天帝争神位”结合，既体现了上古部族竞争的神话记忆，也是文本字形与读史注解层累改写的绝佳样本。
+    sources:
+      - citation: 《山海经·海外西经》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/shan-hai-jing/hai-wai-xi-jing'
+        locator: 《海外西经》“形天与帝至此争神……操干戚以舞”原文及郭璞注
+      - citation: 《山海经·海外西经》，维基文库古籍校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E6%B5%B7%E5%A4%96%E8%A5%BF%E7%B6%93'
+        locator: 海外西经“形天/刑天”校勘条文
+      - citation: Mark Edward Lewis, Sanctioned Violence in Early China, SUNY Press, 1990.
+        type: academic_monograph
+        url: 'https://archive.org/details/sanctionedviolenc0000lewi'
+        locator: 早期中国神战暴烈身体意象与礼仪秩序分析
+    compare: [case_cn_shanhai_kuafu, case_cn_shanhai_gonggong_buzhou, case_cn_zhangzi_fajiushan_jingwei]
+    motifs: [index_berezkin_i17, index_berezkin_l5e]
+    bridge:
+      entry: HIS-6-0009
+      cluster: sid_myth
+      trail: all
+      label: “形天”与“刑天”版本校勘
+      rationale: 从《海外西经》古本“形天”到陶渊明诗作“刑天”的字形歧异切入，结合抄本异文与校勘方法，观察字句演变如何重塑神话含义。
+
+  - id: case_cn_xizhou_pangu_creation
+    title: 江左与南方｜三国《三五历纪》盘古开天与化身宇宙神话
+    aliases:
+      - 盘古开天地
+      - 盘古化身
+      - 三五历纪
+      - Pangu
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 32.0600
+      lng: 118.7900
+      precision: culture_region
+      location_name: 中国江苏南京（三国吴徐整文献辑撰地）与华南盘古俗传圈
+      culture_region: 中国 · 江南与华南盘古神话区
+    location_note: 盘古创世最早见于三国吴太常卿徐整所撰文献，南京为吴都建业所在；后世盘古庙会亦分布于华南多省，此坐标作文本定本文化参考点。
+    temporal:
+      year_start: 222
+      year_end: 624
+      era_label: 三国吴徐整《三五历纪》至唐初《艺文类聚》引录时期
+      uncertainty_note: 徐整原著已佚，现存最早文字保存于唐欧阳询编《艺文类聚》（624 年）及明清类书《绎史》所引《五运历年纪》。
+    paragraphs:
+      - 见于唐初类书《艺文类聚》卷一引三国吴徐整《三五历纪》的记载称：“天地混沌如鸡子，盘古生其中。”经历一万八千年，天地开辟，“阳清为天，阴浊为地”，盘古顶天立地于其间，一日九变，圣神过天、智过地；随后“天日高一丈，地日厚一丈，盘古日长一丈”，如是再历一万八千年，天极高、地极深、盘古极长，然后始有三皇。
+      - 另一组托名徐整所作、见于明清辑佚书《绎史》的《五运历年纪》与梁代《述异记》则记录了宏阔的“垂死化身”篇：盘古垂死之时，气息化为风云、声音化为雷霆、左眼为日、右眼为月、四肢五体为四极五岳、血液为江河、筋脉为地理、肌肉为田土、发髭为星辰、皮毛为草木、齿骨为金石、精髓为珠玉、汗流为雨泽，身上诸虫因风所感而化为黎民百姓。
+      - 先秦两汉主流经子典籍均未见“盘古”之名，直至三国东吴经略南方百越山地后，学界推测江左文人可能吸收了南方“盘瓠”始祖记忆与道家混沌元气说，整合出盘古创世神话。将其与印度吠陀原人（Purusha）或北欧尤弥尔巨躯化生万物对读时，必须注意两者在“创世巨人肢解”母题之外各有独立的历史文本生成脉络。
+    sources:
+      - citation: 〔唐〕欧阳询等撰（624 年），《艺文类聚·卷一·天部上》引三国吴徐整《三五历纪》，维基文库校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E8%97%9D%E6%96%87%E9%A1%9E%E8%81%9A/%E5%8D%B7001'
+        locator: 卷一引“天地混沌如鸡子，盘古生其中”开篇原文
+      - citation: Encyclopaedia Britannica, "Pan Gu (Chinese mythology)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Pan-Gu'
+        locator: 宇宙卵、天地分离及盘古垂死化身万物条目
+      - citation: 'Anne Birrell, Chinese Mythology: An Introduction, Johns Hopkins University Press, 1993.'
+        type: academic_monograph
+        url: 'https://archive.org/details/chinesemythology00birr'
+        locator: 盘古文本晚出背景与宇宙巨人母题辨析
+    compare: [case_cn_qinan_nuwa_festival, case_cn_shanhai_gonggong_buzhou, case_iq_babylon_enuma_elish]
+    motifs: [index_berezkin_b43, index_berezkin_b77a, index_berezkin_a46]
+    bridge:
+      entry: REL-6-0001
+      cluster: sid_myth
+      trail: all
+      label: 巨人化身与比较创世谱系
+      rationale: 从盘古“垂死化身万物”文本与印度原人、北欧尤弥尔的跨文化相似出发，对照比较宗教尺度与历史语境分析方法。
+
+  - id: case_cn_kunlun_xiwangmu
+    title: 昆仑瑶池｜西王母神格演变、穆天子会饮与不死药神话
+    aliases:
+      - 西王母
+      - 昆仑仙境
+      - 穆天子传
+      - 不死药
+      - Xiwangmu
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 36.4500
+      lng: 94.8500
+      precision: culture_region
+      location_name: 中国青海昆仑山口与柴达木南缘 · 昆仑神山文化参照区
+      culture_region: 中国 · 青藏与西北昆仑神话带
+    location_note: 古代文献中的“昆仑之丘”与西王母之山兼含神圣宇宙中心与西域地理想象；近世地理命名为青海—新疆界山昆仑山脉，坐标仅作文化地域参照。
+    temporal:
+      year_start: -350
+      year_end: 220
+      era_label: 战国竹简《穆天子传》至东汉画像石兴盛时期
+      uncertainty_note: 战国《山海经》与汲冢竹书《穆天子传》各呈异貌，两汉《淮南子》与汉墓画像石完成“长生仙境主神”的图像定型。
+    paragraphs:
+      - 《山海经·西山经》与《大荒西经》保存了西王母最早的荒古面貌：“其状如人，豹尾虎齿而善啸，蓬发戴胜，是司天之厉及五残”，主掌灾疫与刑杀，并有三只青鸟往来取食；而在西晋太康年间自战国魏王墓发掘出的《穆天子传》里，周穆王驾八骏西巡至昆仑瑶池，与西王母执白圭玄璧相见、互相赋诗唱和，展现出截然不同的西方邦国女主气象。
+      - 至西汉《淮南子·览冥训》，“羿请不死之药于西王母，姮娥窃以奔月”将西王母确立为执掌长生灵药的神仙至尊；到了东汉，墓室画像石、青铜摇钱树与规矩镜普遍雕铸出头戴玉胜、端坐龙虎神座的西王母，身边簇拥捣药玉兔、九尾狐与三足乌，成为祈求羽化登仙与墓主灵魂升天的核心图像。
+      - 把先秦竹简、传世文献与大都会艺术博物馆藏东汉画像石等出土文物并读，清晰可见一位上古“司厉之兽形山神”如何在数百年间演变为后世道教《汉武帝内传》中赐赠蟠桃仙丹的女仙之宗。这种演变见证了汉代方仙道、西域交通想象与丧葬永生观如何共同重塑传统神谱。
+    sources:
+      - citation: 《山海经·西山经》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/shan-hai-jing/xi-shan-jing'
+        locator: 《西山经》玉山“西王母其状如人，豹尾虎齿而善啸”条
+      - citation: 《穆天子传》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/mutianzi-zhuan'
+        locator: 周穆王瑶池宾会西王母及白云谣唱和段落
+      - citation: Encyclopaedia Britannica, "Xiwangmu (Chinese deity)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Xiwangmu'
+        locator: 西王母从凶神向长生仙境主神及蟠桃神话演变综述
+      - citation: The Metropolitan Museum of Art, "Tomb Panel with Relief of Figures in a Pavilion" (Eastern Han dynasty, 20.99).
+        type: archival_catalogue
+        url: 'https://www.metmuseum.org/art/collection/search/44791'
+        locator: 东汉墓室画像石上西王母端坐亭台及神兽侍从造像档案
+      - citation: Nataša Vampelj Suhadolnik, "Image and Role of the Queen Mother of the West in Han Grave Art", Asian Studies 3(2), 2015, pp. 197–212.
+        type: peer_reviewed
+        url: 'https://doi.org/10.4312/as.2015.3.2.197-212'
+        doi: '10.4312/as.2015.3.2.197-212'
+        locator: 汉墓壁画及画像石中西王母、九尾狐与玉兔不死药图像研究
+    compare: [case_cn_shanhai_jiuweihu, case_cn_shanhai_gonggong_buzhou]
+    motifs: [index_berezkin_h52, index_berezkin_h6d]
+    bridge:
+      entry: HIS-4-0002
+      cluster: sid_myth
+      trail: all
+      label: 墓葬图像与神格流变史
+      rationale: 将《山海经》文字谱系与汉墓画像石上端坐龙虎座、旁侍玉兔的西王母器物造像对读，从物质文化视角追踪神祇观念迁移。
+
+  - id: case_cn_gesar_epic
+    title: 青藏高原｜藏族《格萨尔王传》神授说唱与降魔史诗
+    aliases:
+      - 格萨尔王传
+      - 格萨（斯）尔
+      - 神授说唱艺人
+      - Gesar Epic
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 31.8200
+      lng: 98.5800
+      precision: culture_region
+      location_name: 中国西藏昌都与川藏康巴草原 · 格萨尔活态说唱文化区
+      culture_region: 中国 · 青藏高原藏族史诗文化区
+    location_note: 《格萨尔》传唱广布青藏高原及蒙古族、土族等群体，康巴与安多留存密集说唱传统，此坐标仅作青藏草原史诗文化参考区。
+    temporal:
+      year_start: 1000
+      year_end: 2009
+      era_label: 吐蕃后分立时期口传定型至 2009 年联合国非遗名录
+      uncertainty_note: 史诗核心传说约成型于公元 10 至 12 世纪，各部篇目随历代艺人与木刻本不断扩充，2009 年列入人类非物质文化遗产代表作名录。
+    paragraphs:
+      - 流传于中国藏族、蒙古族及土族民间的英雄史诗《格萨尔王传》（简称《格萨（斯）尔》）是世界迄今篇幅最宏大、仍在活态演述的口头史诗传统。全诗叙写雪域妖魔横行、黎民受苦之际，天界推巴噶瓦奉莲花生大师之命降生人间岭国，幼时化作贫苦丑童觉如，在赛马大会上力压群雄继位称王，随即率岭国诸将征战霍尔、姜国、门国与大食，并深入地狱救母。
+      - 《格萨尔》最具特色的传承机制是“神授说唱艺人”（仲肯）：许多原本不识字的牧民艺人讲述自己在少年时历经一场剧烈奇梦、昏睡或山野异感后“胸臆豁开”，戴上特制史诗法帽便能清唱或散韵相间说唱数十部乃至数百万行长诗；此外还有圆光镜观象艺人、掘藏艺人、闻知艺人及木刻本读诵者等多元谱系。
+      - 2009 年联合国教科文组织将其列入人类非物质文化遗产代表作名录。现代民间文学与认知民族志研究指出，“神授梦境”属于艺人获得社区神圣认可的文化叙事，实质仍依托从小浸润牧区说唱听觉记忆、程式化韵文格律与长时即兴重组技巧，应在尊重民族信仰的同时审慎区分宗教叙事与艺术记忆机制。
+    sources:
+      - citation: UNESCO Intangible Cultural Heritage, "Gesar epic tradition" (RL 00204, inscribed 2009).
+        type: official_archive
+        url: 'https://ich.unesco.org/en/RL/gesar-epic-tradition-00204'
+        locator: 藏族、蒙古族及土族格萨尔史诗活态说唱与神授艺人传统档案
+      - citation: Encyclopaedia Britannica, "Rgyal-po Ge-sar dgra-'dul gyi rtogs-pa brjod-pa (Tibetan epic)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Rgyal-po-Ge-sar-dgradul-gyi-rtogs-pa-brjod-pa'
+        locator: 格萨尔史诗结构、岭国征战母题与中亚跨族群流传概览
+    compare: [case_cn_ashma_yi_epic, case_cn_shannan_samye_padmasambhava]
+    motifs: [index_berezkin_k38f, index_berezkin_k27r]
+    bridge:
+      entry: REL-5-0005
+      cluster: sid_myth
+      trail: all
+      label: 活态史诗与神授说唱记忆
+      rationale: 结合《格萨尔》艺人散韵相间的现场说唱、声腔与“梦授”叙事传统，阅读口述传统与记忆传承的田野记录规范。
+
+  - id: case_cn_ashma_yi_epic
+    title: 滇中石林｜彝族撒尼叙事长诗《阿诗玛》口传诗学与回声传说
+    aliases:
+      - 阿诗玛
+      - 撒尼叙事长诗
+      - 石林回声传说
+      - Ashima
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 24.8150
+      lng: 103.3300
+      precision: province
+      location_name: 中国云南石林彝族自治县 · 撒尼村寨与石林喀斯特文化区
+      culture_region: 中国 · 云南滇中彝族撒尼文化区
+    location_note: 区别于单点风景区条目，本坐标对应云南滇中石林周边的撒尼支系村寨与长诗活态吟唱区域，聚焦民间诗学整理史。
+    temporal:
+      year_start: 1953
+      year_end: 2007
+      era_label: 撒尼古歌口传、1953 年采录整理与 2007 年世界自然遗产时期
+      uncertainty_note: 撒尼彝语五言叙事长诗世代口传无确切起始年，1953 年工作组采录整理成汉译定本，石林喀斯特于 2007 年入选世界自然遗产。
+    paragraphs:
+      - 在云南石林彝族撒尼支系的语言与节庆生活里，《阿诗玛》既是一段深入人心的抗婚传说，更是一部按固定五言对偶格律吟唱的口传叙事诗。牧羊、婚嫁与火塘夜聚时，长诗以撒尼口弦为引，咏唱聪慧勤劳的姑娘阿诗玛拒绝土司热布巴拉逼婚，哥哥阿黑远归对歌赛箭救妹，却在渡河归家时遭遇山洪将阿诗玛卷走。
+      - 诗篇尾声将丧亲之痛化入高原岩溶山水：落水的阿诗玛化为山峰间的“回声”，族人只要高声呼唤其名，石峰便以清越回音应答，仿佛少女仍在云崖深处守望村寨。1953 年，云南圭山工作组深入撒尼村寨收集了二十余份流传于不同歌师口中的撒尼语手抄与口述文本，经比较合校后译为汉语，并在 2006 年列入首批国家级非物质文化遗产名录。
+      - 从口述诗学、版本整理史与喀斯特声学角度共读《阿诗玛》，可以看到三层脉络：撒尼语重叠比兴格律如何维系长篇叙事记忆、1950 年代整理本如何在多歌师异文中定型并进入舞台电影改编，以及世界自然遗产“中国南方喀斯特”石林陡立岩壁天然具备的清脆回声反射条件如何滋养了当地传说想象。
+    sources:
+      - citation: 中国非物质文化遗产网，《阿诗玛》（国家级非遗项目 Ⅰ-28，云南省石林彝族自治县申报），2006 年公布。
+        type: official_archive
+        url: 'https://www.ihchina.cn/project_details/12241/'
+        locator: 撒尼彝语五言叙事诗传统、1953 年采录本与非遗保护记录
+      - citation: UNESCO World Heritage Centre, "South China Karst" (WHC List 1248, Shilin Stone Forest).
+        type: official_archive
+        url: 'https://whc.unesco.org/en/list/1248'
+        locator: 云南石林溶蚀柱状喀斯特地貌与回声岩峰自然载体档案
+      - citation: Jiajia Ren, "Study on the Construction of Shared Cultural Symbols in the Translation and Dissemination of Chinese Ethnic Poetry Classics", Open Access Library Journal 12(12), 2025, e1114666.
+        type: peer_reviewed
+        url: 'https://doi.org/10.4236/oalib.1114666'
+        doi: '10.4236/oalib.1114666'
+        locator: 撒尼史诗《阿诗玛》多版本整理与跨文化译介研究
+    compare: [case_cn_shilin_ashima, case_cn_gesar_epic]
+    motifs: [index_berezkin_b75a, index_berezkin_j62]
+    bridge:
+      entry: LIT-1-0010
+      cluster: sid_myth
+      trail: all
+      label: 撒尼五言吟唱与异文整理
+      rationale: 从《阿诗玛》二十余份撒尼口述异文的采录合校与石林峡谷回声意象切入，对照诗歌口传表演、节律记忆与文本改编方法。
+
+  - id: case_cn_shanhai_jiuweihu
+    title: 青丘之山｜九尾狐从瑞兽到食人妖异的二重谱系
+    aliases:
+      - 青丘九尾狐
+      - 九尾狐
+      - 涂山九尾白狐
+      - Nine-tailed Fox
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 36.7500
+      lng: 119.5000
+      precision: culture_region
+      location_name: 中国山东东部海岱青丘故地 · 古代东夷九尾狐神话参照区
+      culture_region: 中国 · 齐鲁海岱神话传统区
+    location_note: 先秦注家常以海岱东夷“青丘”比定《山海经》青丘之山，两汉九尾狐画像石则广泛出土于山东、河南与四川汉墓，此坐标作海岱文化参考点。
+    temporal:
+      year_start: -300
+      year_end: 1050
+      era_label: 先秦《山海经》至汉代瑞兽、唐宋狐魅转型期
+      uncertainty_note: 战国《山海经》兼录其食人异性与辟蛊功效，汉代《吴越春秋》《白虎通》将其奉为王者祥瑞，唐宋笔记后方盛行媚惑幻形故事。
+    paragraphs:
+      - 《山海经·南山经》首载青丘之山“有兽焉，其状如狐而九尾，其音如婴儿，能食人，食者不蛊”；同书《海外东经》及《大荒东经》亦复记青丘国之“四足九尾狐”。在最早的先秦异兽谱系里，九尾狐并非后世温婉妖媚的书斋精怪，而是兼具食人凶猛之性与“食其肉可免蛊毒”双重巫药灵验的奇兽。
+      - 至两汉时期，九尾狐跃升为政治与仙界的祥瑞徽号：《吴越春秋》记大禹三十未婚，行至涂山遇“九尾白狐”，遂娶涂山氏女以应王业；东汉班固《白虎通·封禅》称“狐九尾何？狐死首丘，不忘本也”，认为九尾象征子孙繁昌、德被远方时方现身的圣王符瑞；东汉墓室画像石亦常将九尾狐刻于西王母仙座之旁，伴随三足乌与玉兔象征长生。
+      - 六朝《玄中记》至唐宋《广异记》《太平广记》再度挖掘狐狸“善魅、通灵、千年化女”的志怪一面，至明代《封神演义》妲己与清代《聊斋志异》灵狐分流成祸国妖孽与重情精灵。梳理这组从“食人奇兽—汉代瑞兽—唐宋妖异”的历史翻转，可见政治符瑞与民间想象如何层累重写同一神兽符号。
+    sources:
+      - citation: 《山海经·南山经》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/shan-hai-jing/nan-shan-jing'
+        locator: 《南山经》青丘之山“其状如狐而九尾……能食人，食者不蛊”条
+      - citation: 〔东汉〕班固等撰，《白虎通德论·封禅》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/bai-hu-tong/feng-shan'
+        locator: 《封禅》“狐九尾何？狐死首丘，不忘本也”瑞兽诠释原文
+      - citation: Nataša Vampelj Suhadolnik, "Image and Role of the Queen Mother of the West in Han Grave Art", Asian Studies 3(2), 2015, pp. 197–212.
+        type: peer_reviewed
+        url: 'https://doi.org/10.4312/as.2015.3.2.197-212'
+        doi: '10.4312/as.2015.3.2.197-212'
+        locator: 东汉画像石中西王母侍从九尾狐祥瑞图像考述
+    compare: [case_cn_kunlun_xiwangmu, case_cn_bengbu_tushan_dayu, case_asia_liaozhai_huapi]
+    motifs: [index_berezkin_e9a, index_berezkin_m29b]
+    bridge:
+      entry: HIS-6-0010
+      cluster: sid_crypt
+      trail: all
+      label: 九尾狐的瑞兽与妖异反转
+      rationale: 对照先秦“食人辟蛊”异兽、汉代封禅瑞兽与唐宋志怪狐魅的语义流变，运用历史比较方法辨析同一符号在不同制度语境中的重塑。
+
+  - id: case_cn_shanhai_bifang
+    title: 章莪之山｜《山海经》独足神鸟毕方与兆火灾异记录
+    aliases:
+      - 毕方鸟
+      - 章莪山毕方
+      - 木精毕方
+      - Bifang
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 35.1000
+      lng: 108.5000
+      precision: culture_region
+      location_name: 中国陕西关中西部与陇东山脉 · 西次三经“章莪之山”参照区
+      culture_region: 中国 · 关中西北古山经文化区
+    location_note: “章莪之山”出自《山海经·西山经》西次三经昆仑—钟山神话带，古籍方域对应关中以西山系，此坐标仅作文献方位参考。
+    temporal:
+      year_start: -300
+      year_end: 220
+      era_label: 战国《山海经》至东汉《东京赋》方相驱疫时期
+      uncertainty_note: 《西山经》首记毕方“见则其邑有讹火”，西汉《淮南子》定为“木精”，东汉张衡《东京赋》将其列入大傩所逐火妖。
+    paragraphs:
+      - 《山海经·西山经》载，章莪之山不生草木而多瑶碧美玉，“有鸟焉，其状如鹤，一足，赤文青质而白喙，名曰毕方，其鸣自叫也，见则其邑有讹火”。同书《海外南经》亦记“毕方鸟在其东，青水西，其为鸟人面一脚”，塑造出中国上古神禽谱系中最醒目的独足火鸟意象。
+      - 在汉魏以来的典籍流传中，毕方同时扮演着神官卫从与木火妖异的双重角色：《韩非子·十过》记黄帝合鬼神于泰山之上，“毕方并辖”，充当车驾护卫；而《淮南子·氾论训》称“木生毕方”，认为林木精气积久化为此怪；东汉张衡《东京赋》更写岁终大傩仪式中追逐“魑魅与毕方”，将其视为能引发无名怪火的灾异之精，须以礼仪驱逐。
+      - 民俗与图像史研究常从三层线索解析“独足兆火神鸟”：一是先秦巫觋单足跳神（禹步或跛行傩舞）与草木钻火仪式的身体记忆；二是鹤鹳等涉禽单脚站立栖息时在暮色火光下留下的“一足”视觉印象；三是早期木构城市频发无名火灾（讹火），古人借怪鸟现身来解释突发性火患征兆。
+    sources:
+      - citation: 《山海经·西山经》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/shan-hai-jing/xi-shan-jing'
+        locator: 《西山经》章莪之山“其状如鹤，一足，赤文青质而白喙……见则其邑有讹火”原文
+      - citation: 〔西汉〕刘安等编，《淮南子·氾论训》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/huainanzi/fan-lun-xun'
+        locator: 《氾论训》“山出枭阳，水生罔象，木生毕方，井生坟羊”条
+      - citation: Shuyan Yi, Jing Wang & Bing Han, "Research on the Bird Image in Shanhai Jing", Journal of Education, Humanities and Social Sciences 15, 2023, pp. 308–313.
+        type: peer_reviewed
+        url: 'https://doi.org/10.54097/ehss.v15i.9315'
+        doi: '10.54097/ehss.v15i.9315'
+        locator: 《山海经》毕方等灾异神禽形态与文化分类分析
+    compare: [case_cn_shanhai_jiuweihu, case_cn_zhangzi_fajiushan_jingwei]
+    motifs: [index_berezkin_i6, index_berezkin_d4l]
+    bridge:
+      entry: ARC-6-0005
+      cluster: sid_crypt
+      trail: all
+      label: “讹火”灾异与木构防火常识
+      rationale: 将古人面对“讹火”火灾时归因于独足神鸟毕方的灾异占候记录，与现代建筑火灾预防、防火分隔与成因常识并读。
+
+  - id: case_cn_soushen_ganjiang_moye
+    title: 江淮楚墓｜《搜神记》干将莫邪雌雄双剑与三王墓传说
+    aliases:
+      - 干将莫邪
+      - 三王墓
+      - 眉间尺
+      - 莫邪铸剑
+      - Ganjiang Moye
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 32.9800
+      lng: 114.0200
+      precision: culture_region
+      location_name: 中国河南驻马店西平 · 汝南古冶剑遗存与“三王墓”方志参照区
+      culture_region: 中国 · 江淮楚地铸剑传说区
+    location_note: 东晋《搜神记》记“楚王与三王墓”事，豫南汝宁及西平地方志将其比附当地古墓与冶铁遗址（江南吴越亦存莫干山传说），此坐标仅作文献地理参考。
+    temporal:
+      year_start: -100
+      year_end: 350
+      era_label: 汉代《吴越春秋》至东晋干宝《搜神记》定型期
+      uncertainty_note: 东汉《吴越春秋》聚焦吴国夫妇投发爪入炉炼剑，东晋干宝《搜神记》卷十一整合成“雌雄双剑与赤比三王墓”复仇名篇。
+    paragraphs:
+      - 东晋干宝《搜神记》卷十一“三王墓”记载，名匠干将、莫邪为楚王铸成雌雄双剑却因耗时三年触怒楚王。干将预料王必杀己，暗将雄剑藏于“南山之阴、北山之阳”屋柱石础之下，嘱有孕的妻子莫邪将来令遗腹子寻剑雪恨，自己仅持雌剑入宫献王，果然遭楚王诛杀。
+      - 其子赤（民间又名眉间尺）长大后劈柱取剑，夜梦楚王悬赏追捕，逃亡山中时遇黑衣侠客愿代为手刃仇敌。赤毅然自刎将头颅与雄剑交付侠客；侠客携首赴楚宫见王，请用滚沸汤镬烹煮人头，三日三夜头在沸水中昂首瞋目不烂；待楚王俯身逼近察看，侠客趁势挥雄剑斩下王首落镬，随即自刎相殉，三首沸烂难以分辨，楚人遂合葬号称“三王墓”。
+      - 对照成书更早的东汉《吴越春秋·阖闾内传》，早本记述干将采五山之铁精与六合之金英，因铁汁不下，夫妇乃“断发剪爪投于炉中”，才使炭火飙发炼成名剑，原是吴越青铜与钢铁高温冶炼工艺的宗教化记忆；魏晋之际合流烈士代仇母题后，终成中国志怪小说史上以器物与义烈交织的经典名篇。
+    sources:
+      - citation: 〔东晋〕干宝撰，《搜神记·卷十一·三王墓》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/soushenji/juan-11'
+        locator: 卷十一“干将莫邪为楚王作剑……合葬之，故名三王墓”全文
+      - citation: 〔东晋〕干宝撰，《搜神记·第十一卷》，维基文库校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E6%90%9C%E7%A5%9E%E8%A8%98/%E7%AC%AC11%E5%8D%B7'
+        locator: 卷十一三王墓分段校勘文本
+      - citation: 〔东汉〕赵晔撰，《吴越春秋·阖闾内传》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/wu-yue-chun-qiu'
+        locator: 干将莫邪采五山铁精、断发剪爪入炉铸剑早期版本
+      - citation: 'Jianjun He, Spring and Autumn Annals of Wu and Yue: An Annotated Translation of Wu Yue Chunqiu, Cornell University Press, 2021.'
+        type: academic_monograph
+        url: 'https://doi.org/10.7591/cornell/9781501754340.001.0001'
+        doi: '10.7591/cornell/9781501754340.001.0001'
+        locator: 《吴越春秋》名剑叙事及先秦汉代冶铁仪式文献校注
+    compare: [case_cn_shanhai_xingtian, case_cn_yijian_night_lantern]
+    motifs: [index_berezkin_l15e, index_berezkin_k110]
+    bridge:
+      entry: HIS-4-0012
+      cluster: sid_crypt
+      trail: all
+      label: 铸剑炉祭与先秦冶金考古
+      rationale: 并读干将莫邪“铁精不销、投发爪乃成”的铸剑传说与冶金考古对炉温、坩埚及合金成分的实证分析，理解古代工匠技艺记忆的文学编码。
+
+  - id: case_cn_yijian_night_lantern
+    title: 两宋江南｜洪迈《夷坚志》鬼市幽灯与夜行鬼火文献记述
+    aliases:
+      - 夷坚志鬼火
+      - 洪迈夷坚志
+      - 鬼市幽灯
+      - 野火鬼磷
+      - Yijian Zhi
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location:
+      lat: 28.9700
+      lng: 117.6400
+      precision: province
+      location_name: 中国江西饶州鄱阳（洪迈编撰地）与两宋江南水泽区
+      culture_region: 中国 · 江南鄱阳两宋笔记文献区
+    location_note: 南宋学者洪迈致仕归居江西鄱阳（饶州）期间编定《夷坚志》多卷，所录鬼灯野火亦以江南江湖荒冢、林泽地貌为主，坐标作编纂文化区参照。
+    temporal:
+      year_start: 1161
+      year_end: 1202
+      era_label: 南宋绍兴末至嘉泰年间（1161–1202 年《夷坚志》成书期）
+      uncertainty_note: 洪迈自绍兴三十一年前起陆续刊印甲、乙、丙、丁及支、三各志直至嘉泰二年卒前，多署有讲述人籍贯姓氏与听闻年代。
+    paragraphs:
+      - 南宋翰林学士洪迈耗费数十年辑成的《夷坚志》，是宋代篇幅最为浩繁的笔记体异闻总集，现存约两千七百余则。受史学实录体例影响，洪迈常在文末注明述事人姓名、官阶、地点与年份，其中不乏江南夜行旅人、水手与守墓者对“鬼市幽灯”“野火磷光”及林间暗火的具名目击记录。
+      - 这批宋代文献并非一味渲染鬼怪：有的条目描绘水乡暮夜见荒冢草泽中青碧灯影幢幢、人声嘈杂却近前无物；另一些记述则记下胆大士人或役夫持杖追索幽灯，最终看破只是萤火群聚、朽木自明、夜间渔舟倒影抑或盗墓与私盐贩设局伪装。洪迈自身亦时常并存“时人疑为鬼火”与“实有物形”的两端。
+      - 从现代气象光学与生物化学观察，江南墓地及沼泽水畔有机质腐败所涉微弱化学发光、水雾下的灯火折射、夜间暗适应导致的距离错觉，乃至萤火虫与发光真菌，都易在黑夜中被附会为游离幽灯。将《夷坚志》当作两宋夜行生活与地方感官史档案阅读，能够区分可核实的编纂风俗与民间的超自然归因。
+    sources:
+      - citation: 〔南宋〕洪迈撰，《夷坚志·夷坚甲志》，维基文库四库全书校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E5%A4%B5%E5%A0%85%E5%BF%97/%E5%A4%B5%E5%A0%85%E7%94%B2%E5%BF%97'
+        locator: 《夷坚甲志》宋代江湖夜行、野火幽灯与地方采录署款体例
+      - citation: Alister D. Inglis, "A Textual History of Hong Mai's Yijian zhi", T'oung Pao 93(4–5), 2007, pp. 283–368.
+        type: peer_reviewed
+        url: 'https://doi.org/10.1163/008254307x246928'
+        doi: '10.1163/008254307x246928'
+        locator: 《夷坚志》成书分志、宋代刊刻传播与信息来源考证
+      - citation: 'Alister D. Inglis, Record of the Listener: Selections of Chinese Supernatural Stories, Cornell East Asia Series, 2010.'
+        type: academic_monograph
+        url: 'https://archive.org/details/recordoflistener0000hong'
+        locator: 洪迈笔记采录体例及南宋民间信仰选译评注
+      - citation: Encyclopaedia Britannica, "Jack-o'-lantern (meteorological phenomenon)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/science/Jack-o-lantern-meteorological-phenomenon'
+        locator: 湿地与坟场夜间冷光（鬼火）自然化学与光学研究概述
+    compare: [case_cn_soushen_ganjiang_moye, case_cn_zigu_divination]
+    motifs: [index_berezkin_m87, index_berezkin_l81]
+    bridge:
+      entry: GEO-CLIM-0014
+      cluster: sid_crypt
+      trail: all
+      label: 宋代笔记幽灯与夜间微光
+      rationale: 把洪迈《夷坚志》的夜行幽灯记述，与潮湿环境中生物发光、荧光及暗夜视距感知的科学知识并读，分清笔记风貌与冷光机制。
+
+  - id: case_cn_laoshan_wall_illusion
+    title: 清初山东｜《聊斋志异·劳山道士》幻术叙事与明清戏法文学
+    aliases:
+      - 劳山道士
+      - 崂山道士穿墙幻术
+      - 剪纸化月
+      - Taoist Priest of Lao Mountain
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 36.1500
+      lng: 120.6600
+      precision: province
+      location_name: 中国山东淄川至胶东崂山 · 清代《聊斋》文本流播区
+      culture_region: 中国 · 山东聊斋志怪文学带
+    location_note: 区别于崂山太清宫景区非遗条目，本坐标标记清代蒲松龄籍贯淄川至胶东崂山的《聊斋》文学创作与评点文化带，聚焦小说文本中的幻术修辞。
+    temporal:
+      year_start: 1679
+      year_end: 1766
+      era_label: 清康熙十八年《聊斋自志》（1679 年）至乾隆青柯亭刊本（1766 年）
+      uncertainty_note: 蒲松龄于 1679 年序定《聊斋志异》早稿，长期以抄本流行于齐鲁士林，至 1766 年赵起杲首次大规模刊刻问世。
+    paragraphs:
+      - 清代蒲松龄《聊斋志异》卷一《劳山道士》借邑人王生入山求仙的经历，铺陈了一套环环相扣的“道士幻术”戏剧结构：夜饮之间，白发道士先“剪纸如镜，贴壁间”，瞬间化作皎洁明月照亮全室；继而从仅够独酌的一壶微酒中倾出取之不尽的佳酿供门徒同饮；最后掷竹箸入月镜化为美人嫦娥翩然起舞后还为木箸，将传统方士戏法的奇巧层层推高。
+      - 不耐砍柴之苦的王生临归前急求学会“念咒俯身即可透壁而入”的穿墙法术，师父明言“归宜洁持，否则不验”；返家后王生非但不修德行，反在妻子面前卖弄试穿砖墙并自诩可入人家盗财，结果一头撞上坚壁额肿如卵。与同卷《画皮》以厉鬼易容制造阴森恐怖不同，《劳山道士》依托唐宋《幻戏》与明清《西湖二集》式“戏法惩戒”模板，属幽默讽喻短篇而非鬼魅实录。
+      - 文学批评史上，清代评点家多将“洁持方验、涉妄即碰壁”视为对科场及求道投机者的辛辣反讽；而视觉与杂技史学者亦注意到，剪纸映月、酒壶机关与分身障眼等细节吸收了明清市井魔术（古彩戏法）的表演想象。1880 年汉学家翟理斯将《劳山道士》译入英文选集后，穿墙遇挫更成为海外汉学讨论清代讽喻志怪的代表母题。
+    sources:
+      - citation: 〔清〕蒲松龄撰，《聊斋志异·第01卷·劳山道士》，维基文库校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E8%81%8A%E9%BD%8B%E5%BF%97%E7%95%B0/%E7%AC%AC01%E5%8D%B7'
+        locator: 卷一《劳山道士》剪纸化月、酒壶倾饮与穿墙触壁全篇原文
+      - citation: Encyclopaedia Britannica, "Strange Stories from a Chinese Studio (Liaozhai zhiyi)".
+        type: encyclopedia
+        url: 'https://www.britannica.com/topic/Strange-Stories-from-a-Chinese-Studio'
+        locator: 《聊斋志异》讽喻体裁、文学地位与英文译介源流
+      - citation: Pu Songling (trans. Herbert A. Giles), Strange Stories from a Chinese Studio, Vol. 1, London, 1880.
+        type: primary_text
+        url: 'https://archive.org/details/strangestoriesfr00pusuuoft'
+        locator: 翟理斯 1880 年英译本《劳山道士》（The Taoist Priest of Lao Shan）
+    compare: [case_asia_liaozhai_huapi, case_cn_laoshan_daoshi_chuanqiang]
+    motifs: [index_ocm_776, index_berezkin_m39a1]
+    bridge:
+      entry: LIT-2-0001
+      cluster: sid_witch
+      trail: all
+      label: 幻术寓言与《聊斋》叙事讽喻
+      rationale: 区分《聊斋》卷一《劳山道士》戏法寓言与《画皮》骇异志怪的叙事体例差异，从叙事学视角剖析三重幻术的递进与惩戒反转。
+
+  - id: case_cn_zigu_divination
+    title: 江南与两淮｜历代笔记中的迎紫姑与扶乩占卜民俗史料
+    aliases:
+      - 迎紫姑
+      - 紫姑神
+      - 扶箕
+      - 扶乩占卜
+      - Zigu Spirit-Writing
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location:
+      lat: 30.2700
+      lng: 120.1500
+      precision: culture_region
+      location_name: 中国浙江杭州与江南两淮 · 宋元明清迎紫姑及扶乩文献记述区
+      culture_region: 中国 · 江南笔记史料文化区
+    location_note: 北宋沈括《梦溪笔谈》及苏轼《子姑神记》多围绕江淮、两浙士林与村落元宵迎紫姑记述展开，此坐标作江南文献风俗参考区。
+    temporal:
+      year_start: 420
+      year_end: 1911
+      era_label: 南朝刘宋《异苑》至宋元明清扶乩笔记时期
+      uncertainty_note: 南朝刘敬叔《异苑》首见正月望夜厕边迎紫姑卜蚕桑之俗，北宋沈括与苏轼则详细记录了向“扶箕写诗”演变的转折节点。
+    paragraphs:
+      - 迎紫姑与中国传统“扶乩”（古作扶箕、扶鸾）习俗拥有长达千余年的连续史料轨迹。南朝宋刘敬叔《异苑》卷五首载：世传紫姑原为人家妾室，遭大妇嫉恨而在正月十五日于厕间气愤身亡，后世遂于是夜作其偶形，在厕旁或猪栏边迎请，“捉之觉重，便是神来”，用以卜问来岁蚕桑丰歉与家事吉凶。
+      - 进入北宋后，这项原本贴近民间妇女岁时祷祝的习俗被士大夫广为记录并转向书画诗文降笔：沈括《梦溪笔谈》卷二十一专条记“旧俗正月望夜迎厕神谓之紫姑”，载时人以竹箕悬笔令小儿或妇女扶之，笔锋竟自运行成字、颇有文思；苏轼更亲撰《子姑神记》，记述黄州、淮南两地亲眼所见扶箕写诗答客的盛况，显示其已演化成兼跨闺阁与文人雅集的占卜方式。
+      - 当代宗教学与民俗史研究指出，从南朝“托物重感”到宋以后道教坛场与善书结社盛行的双人“扶鸾沙盘”，既反映了受压女性传说形象如何在边缘空间获取社群代言权，亦涉及持架者在期待暗示下的微弱无意识肌动反应（即理念运动效应）。史料阅读中应严格分开文献记录的社会实践与“神灵降笔”的信仰解释。
+    sources:
+      - citation: 〔北宋〕沈括撰，《梦溪笔谈·卷二十一·异事》，维基文库四库校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E5%A4%A2%E6%BA%AA%E7%AD%86%E8%AB%87/%E5%8D%B721'
+        locator: 卷二十一“旧俗正月望夜迎厕神谓之紫姑”及悬笔写字记述
+      - citation: 〔北宋〕苏轼撰，《子姑神记》，维基文库东坡文集校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E5%AD%90%E5%A7%91%E7%A5%9E%E8%A8%98'
+        locator: 苏轼亲历黄州、淮南士庶迎请紫姑扶箕题诗记事原文
+      - citation: 〔南朝宋〕刘敬叔撰，《异苑（四库全书本）》，维基文库校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E7%95%B0%E8%8B%91(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)'
+        locator: 卷五紫姑神正月十五厕边占卜缘起早期文本
+      - citation: 'Elena Valussi, "Women, Goddesses, and Gender Affinity in Spirit-Writing", in Communicating with the Gods: Spirit-Writing in Chinese History and Society, Brill, 2023, pp. 133–168.'
+        type: academic_chapter
+        url: 'https://doi.org/10.1163/9789004677906_005'
+        doi: '10.1163/9789004677906_005'
+        locator: 紫姑信仰与宋清女性扶乩（spirit-writing）性别社会史考察
+    compare: [case_cn_tw_lantern_chair_aunt_sanggu, case_china_soulstealers_1768, case_cn_yijian_night_lantern]
+    motifs: [index_ocm_754, index_ocm_776]
+    bridge:
+      entry: REL-6-0007
+      cluster: sid_witch
+      trail: all
+      label: 扶箕落笔与宗教经验分层
+      rationale: 并读宋代笔记中的迎紫姑赋诗记录与现代宗教学对宗教经验、现象学描述及肌动暗示的解释层次，区分实践史实与超自然归因。
+
+  - id: case_cn_xiangxi_gu_poison
+    title: 江南与湘西｜隋唐至明清地方志、医书中的蓄蛊毒与巫蛊焦虑
+    aliases:
+      - 蓄蛊毒
+      - 放蛊传说
+      - 巫蛊
+      - 诸病源候论蛊毒
+      - Gu Poison
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location:
+      lat: 28.3100
+      lng: 109.7300
+      precision: culture_region
+      location_name: 中国湖南湘西与武陵山区 · 明清方志蓄蛊叙事重点参照区
+      culture_region: 中国 · 湘西武陵与江南古籍蛊毒文献区
+    location_note: 《隋书·地理志》原将蓄蛊载于古扬州江南诸郡，宋明清方志与边疆游记则逐步将“放蛊”想象推移至湘西、黔东南与岭南，此坐标仅作文献流变参考区。
+    temporal:
+      year_start: 610
+      year_end: 1935
+      era_label: 隋唐史志医书（610 年）至明清方志及近代人类学检讨时期
+      uncertainty_note: 610 年《诸病源候论》与《隋书》确立政书与医典的“蛊毒”叙述框架，清律仍设“造畜蛊毒”刑条，1935 年近代学界始作系统祛魅分析。
+    paragraphs:
+      - “蛊”（从虫从皿）在中国正史地理志与历代医典中留有长期记录。《隋书·地理志下》在述及江南数郡民俗时写道：“五月五日聚百种虫，大者至蛇，小者至虱，合置器中，令自相啖，余一种存者留之”，谓之“蛊”以暗害人命、图取财物；隋巢元方《诸病源候论》卷二十六《蛊毒病诸候下》与明李时珍《本草纲目》亦设专目，分述蛇蛊、金蚕蛊、挑生蛊等症状如腹痛呕血、昏厥消瘦及相应解毒药方。
+      - 历史人类学与社会史学者指出，所谓“蓄蛊”在现实中高度交织着刑律严惩、区域偏见与基层污名。唐宋至明清法典严厉惩处“造畜蛊毒”，往往将边陲山地居民、外地客商或寡居女性贴上“蓄蛊放毒”标签，由此引发邻里猜疑、婚姻阻断甚至冤狱；1935 年冯汉骥与施赖奥克（J. K. Shryock）发表专题研究，指出“百虫相啖留一毒王”既不合生物学常识，实为层累演化的巫术恐慌话语。
+      - 医学史新研（如刘焱对中古中国“以毒疗疾”的考察）进一步揭示，史书与方志中归为“蛊病”的症状群，往往掩盖了湿热山区常见的寄生虫感染、微生物食物中毒，以及斑蝥（芫菁）或毒草药材（如断肠草、乌头类）误服或投毒引发的急性胃肠、肾脏损害。解读此类档案时，必须将真实的中毒与地方病史同针对特定人群的巫蛊焦虑严格剥离。
+    sources:
+      - citation: 〔唐〕魏征等撰，《隋书·卷三十一·地理志下》，维基文库二十四史校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E9%9A%8B%E6%9B%B8/%E5%8D%B731'
+        locator: 卷三十一扬州江南郡县“五月五日聚百种虫，合置器中”蓄蛊记述
+      - citation: 〔隋〕巢元方等撰（610 年），《巢氏诸病源候总论·卷二十六·蛊毒病诸候下》，维基文库四库本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E5%B7%A2%E6%B0%8F%E8%AB%B8%E7%97%85%E6%BA%90%E5%80%99%E7%B8%BD%E8%AB%B8(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B726'
+        locator: 卷二十六蛊毒症候及蛇蛊、金蚕蛊辨证原文
+      - citation: H. Y. Feng & J. K. Shryock, "The Black Magic in China Known as Ku", Journal of the American Oriental Society 55(1), 1935, pp. 1–30.
+        type: peer_reviewed
+        url: 'https://doi.org/10.2307/594297'
+        doi: '10.2307/594297'
+        locator: 蓄蛊文献谱系、方志地域迁移与生物常识辨析
+      - citation: 'Yan Liu, Healing with Poisons: Potent Medicines in Medieval China, University of Washington Press, 2021.'
+        type: academic_monograph
+        url: 'https://library.oapen.org/handle/20.500.12657/50014'
+        locator: 中古医学史中的蛊毒概念、毒药边界与身体政治分析
+    compare: [case_china_soulstealers_1768, case_cn_zhubing_mengyan, case_cn_zigu_divination]
+    motifs: [index_ocm_754]
+    bridge:
+      entry: CHE-6-0036
+      cluster: sid_witch
+      trail: all
+      label: 蓄蛊恐慌与昆虫毒理边界
+      rationale: 把历史方志中的“聚虫炼蛊”社会恐慌，与现代化学毒理中斑蝥素等毒虫、植物毒素引起的消化道及肝肾损伤常识并读，划清生物中毒与巫术污名的界限。
+
+  - id: case_cn_luban_yansheng
+    title: 明清匠作｜《鲁班经》厌胜镇物与传统木作厌胜化解民俗
+    aliases:
+      - 鲁班经厌胜
+      - 木匠镇物
+      - 鲁班尺吉凶
+      - 厌胜化解民俗
+      - Lu Ban Jing
+    genre: folktale
+    credibility_tier: A
+    note_kind: story
+    location:
+      lat: 35.5900
+      lng: 116.9900
+      precision: province
+      location_name: 中国山东曲阜至江南传统木作坊 · 鲁班匠作与厌胜民俗区
+      culture_region: 中国 · 鲁班木作与传统厌胜民俗区
+    location_note: 鲁班（公输般）相传出自春秋鲁地（今山东曲阜、滕州一带），明刊《鲁班经匠家镜》则汇集了南北木匠尺度禁忌与厌胜俗信，坐标作匠祖信仰参照点。
+    temporal:
+      year_start: 1450
+      year_end: 1993
+      era_label: 明代《鲁班经》刊行（15–16 世纪）至现代建筑民俗研究时期
+      uncertainty_note: 现存明万历间《鲁班木经匠家镜》定型于 15 至 16 世纪，融合传统木构法式、门公尺吉凶与工匠厌胜解镇仪式。
+    paragraphs:
+      - 托名春秋名匠公输般、实由明代书坊与工匠合编的《鲁班经匠家镜》（通称《鲁班经》），不仅详载传统屋架尺寸、家具式样与俗称“鲁班尺”（门公尺）的吉凶刻寸，还用专卷录下数十种“厌胜”与“解厌”秘法：民间相传造屋木匠若受雇主克扣工银或酒食怠慢，可在正梁、门楣、柱础内暗埋倒置木楔、破碗、反写符字、铁钉或雕形木人，使宅主家宅不宁、口舌频生；欲求平安须延请高明匠师拆解或设坛化解。
+      - 荷兰汉学家鲁克思（Klaas Ruitenbeek）系统比勘明清《鲁班经》诸刻本后指出，这种围绕“厌胜镇物”的恐惧与口述故事，实质上服务于古代流动手工业的劳资制约：在缺乏现代书面合同保障的乡土社会里，工匠借助“匠神暗藏镇物”的集体禁忌，迫使雇主在立梁、合脊与竣工节点保持礼敬并足额兑付报酬，具有鲜明的社会规范功能。
+      - 从建筑物理与传统木构特性检视，木质梁柱在建屋数月乃至数年内因含水率下降产生干缩应力，常于静夜发出清脆的爆裂或“噼啪”异响，门窗扇亦易因湿胀沉降变形卡滞；居民若未明木材干缩与地基微沉降机理，便常疑为当年木匠“暗放厌胜”作祟。将《鲁班经》置于木构力学与工匠民俗交叉视野下阅读，正可剥离其匠作实用价值与心理威慑想象。
+    sources:
+      - citation: 'Klaas Ruitenbeek, Carpentry and Building in Late Imperial China: A Study of the Fifteenth-Century Carpenter''s Manual Lu Ban Jing, Brill, 1993.'
+        type: academic_monograph
+        url: 'https://archive.org/details/carpentrybuildin0000ruit'
+        locator: 明刊《鲁班经匠家镜》全本译注、鲁班尺及木匠厌胜民俗考析
+      - citation: Review of Klaas Ruitenbeek, Carpentry and Building in Late Imperial China, The Journal of Asian Studies 53(1), 1994.
+        type: academic_article
+        url: 'https://doi.org/10.2307/2058880'
+        doi: '10.2307/2058880'
+        locator: 鲁班经中木工厌胜、劳资规范与营造技艺研究评述
+      - citation: Wikimedia Commons Digital Plates, 《新镌京版工师雕造正式鲁班木经匠家镜》古籍图版汇存。
+        type: archival_catalogue
+        url: 'https://commons.wikimedia.org/wiki/Category:Luban_Shu'
+        locator: 明清刊本鲁班经镇宅符式与营造图样数字化图版
+    compare: [case_cn_zigu_divination, case_cn_shanghai_dragon_pillar, case_cn_changle_fangshan_city_gate]
+    motifs: [index_ocm_754]
+    bridge:
+      entry: ARC-3-0001
+      cluster: sid_witch
+      trail: all
+      label: 营造尺法、木构力学与厌胜民俗
+      rationale: 把《鲁班经》里的木工禁忌、门公尺吉凶及厌胜化解故事，与中国古代木构体系、梁柱受力及干缩异响的物理观察并读，还原匠作工艺与民俗本义。
+
+  - id: case_cn_zhubing_mengyan
+    title: 隋代洛阳｜《诸病源候论》及古医案中的鬼魇与梦魇记载
+    aliases:
+      - 卒魇候
+      - 鬼魇
+      - 梦魇
+      - 诸病源候论梦魇
+      - 古代鬼压床医案
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location:
+      lat: 34.6200
+      lng: 112.4500
+      precision: city
+      location_name: 中国河南洛阳（隋大业六年太医署《诸病源候论》编成地）
+      culture_region: 中国 · 中原洛阳古代医学文献区
+    location_note: 隋炀帝大业六年（610 年）太医博士巢元方奉诏于东都洛阳编撰《诸病源候论》，此坐标标志中国最早载录“卒魇候”的系统病因医典编成地。
+    temporal:
+      year_start: 610
+      year_end: 1798
+      era_label: 隋大业六年（610 年）至明清中医医案时期
+      uncertainty_note: 610 年《诸病源候论》系统记述“卒魇候”，此后唐《千金要方》、宋明方书至清代医案连续探讨“梦魇”与气血痰热、睡姿之关系。
+    paragraphs:
+      - 隋大业六年（610 年）太医博士巢元方等编撰的《诸病源候论》，是中国现存最早的系统病因与证候学专著。其卷二十三《中恶病诸候·卒魇候》对睡眠中意识虽觉清醒却不能言语动弹的经历作出精准描摹：“卒魇者，屈也，谓梦里为鬼邪之所魇屈。人卧不悟，皆是魂魄外游，为他邪所执录，欲还未得，致成魇也”，并特记民间“忌火照，火照则神魂遂不复入，乃至于死；而人有于灯光前魇者，是本由明出，是以不忌火也”的救急禁忌与例外观察。
+      - 值得注意的是，中医经典文献并未将梦魇完全停留在鬼祟归因之上。随后的唐代孙思邈《备急千金要方》、宋代官修方书乃至明清临床医案，日益强调“仰卧胸闷、手按胸前”“心脾虚怯、痰热上扰”及“惊恐伤神”等身体与环境因素诱发梦魇，主张通过调整睡姿枕高、避风安神、宽胸理气及轻声缓唤或掐按穴位加以缓解。
+      - 现代睡眠医学与跨文化精神病学研究指出，古代医典所记的“卒魇”“鬼魇”（即现代汉语俗称的“鬼压床”）高度符合孤立性睡眠瘫痪（isolated sleep paralysis）的临床表征：个体在快速眼动睡眠（REM）与清醒切换的瞬间恢复了部分意识，但脑干抑制骨骼肌运动的生理性肌弛缓尚未解除，常伴发胸口重压呼吸受阻感以及入睡前/醒后移行幻觉（例如感到卧室有入侵暗影）。将隋唐医籍与香港“鬼压床”流行病学研究（Wing 等，1994）及加拿大“老巫婆”夜访报告并读，可清晰辨认同一神经睡眠生理现象如何跨越古今被不同文化语言命名。
+    sources:
+      - citation: 〔隋〕巢元方等撰（610 年），《巢氏诸病源候总论·卷二十三·卒魇候》，维基文库四库全书校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E5%B7%A2%E6%B0%8F%E8%AB%B8%E7%97%85%E6%BA%90%E5%80%99%E7%B8%BD%E8%AB%B8(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B723'
+        locator: 卷二十三《中恶病诸候·卒魇候》全文及“忌火照”记载
+      - citation: 'Yun-Kwok Wing, Sharon Therese Lee & Char-Nie Chen, "Sleep Paralysis in Chinese: Ghost Oppression Phenomenon in Hong Kong", Sleep 17(7), 1994, pp. 609–613.'
+        type: peer_reviewed
+        url: 'https://doi.org/10.1093/sleep/17.7.609'
+        doi: '10.1093/sleep/17.7.609'
+        locator: 汉语“鬼压床”现象与现代睡眠瘫痪症候群临床对照
+      - citation: Ambra Stefani & Birgit Högl, "Nightmare Disorder and Isolated Sleep Paralysis", Neurotherapeutics 18(1), 2021, pp. 100–106.
+        type: peer_reviewed
+        url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC8116464/'
+        locator: 孤立性睡眠瘫痪、REM 期肌张力抑制与移行幻觉神经机制综述
+      - citation: 'Baland Jalal & Vilayanur S. Ramachandran, "Sleep Paralysis, ''The Ghostly Bedroom Intruder'' and Out-of-Body Experiences: The Role of Mirror Neurons", Frontiers in Human Neuroscience 11, 2017, Article 92.'
+        type: peer_reviewed
+        url: 'https://doi.org/10.3389/fnhum.2017.00092'
+        doi: '10.3389/fnhum.2017.00092'
+        locator: 胸口压迫感与卧室入侵者幻觉的跨文化神经机制模型
+    compare: [case_cn_hk_ghost_oppression_wing_1994, case_old_hag_sleep_paralysis_1982, case_egypt_jinn_sleep_paralysis]
+    motifs: [index_berezkin_b100]
+    bridge:
+      entry: HEA-009
+      cluster: sid_hag
+      trail: all
+      label: 古代卒魇医案与睡眠体验
+      rationale: 将隋代《诸病源候论》“卒魇候”文献记载与现代睡眠调节、快速眼动期肌张力抑制及焦虑干预知识并读，理解古今医学解释与症状照护的区别。

@@ -1,0 +1,851 @@
+[
+  {
+    "id": "relay-node-co",
+    "trigger": "node_id",
+    "match": "mech_co_poisoning",
+    "entry": "CHE-6-0016",
+    "reason": "机制节点直连一氧化碳中毒与暴露防护条目",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-co-alarm",
+    "trigger": "node_id",
+    "match": "mech_co_poisoning",
+    "entry": "LIF-EMERG-0002",
+    "reason": "机制节点直连居家一氧化碳报警与通风处置"
+  },
+  {
+    "id": "relay-node-co-for",
+    "trigger": "node_id",
+    "match": "mech_co_poisoning",
+    "entry": "FOR-4-0008",
+    "reason": "机制节点对照法医毒理学一氧化碳暴露与血液结果",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-sleep-hea",
+    "trigger": "node_id",
+    "match": "mech_sleep_paralysis",
+    "entry": "HEA-009",
+    "reason": "机制节点直连睡眠调节、焦虑与夜间体验条目",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-sleep-phi",
+    "trigger": "node_id",
+    "match": "mech_sleep_paralysis",
+    "entry": "PHI-2-0005",
+    "reason": "睡眠移行期体验与日常感官怀疑论哲学对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-infra-wave",
+    "trigger": "node_id",
+    "match": "mech_haunt_infrasound_field_hypothesis",
+    "entry": "PHY-4-0002",
+    "reason": "次声与驻波物理假说对照波的干涉与驻波条目",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-infra-osc",
+    "trigger": "node_id",
+    "match": "mech_haunt_infrasound_field_hypothesis",
+    "entry": "PHY-6-0002",
+    "reason": "场强与低频信号测量的示波器及频域分析方法",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-weak-em",
+    "trigger": "node_id",
+    "match": "mech_weak_complex_field_hypothesis",
+    "entry": "PHY-3-0005",
+    "reason": "微弱磁场假说对照电磁感应基础物理原理",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-weak-phi",
+    "trigger": "node_id",
+    "match": "mech_weak_complex_field_hypothesis",
+    "entry": "PHI-5-0002",
+    "reason": "机制假说与可证伪性、证据划界科学哲学对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-tpj-bio",
+    "trigger": "node_id",
+    "match": "mech_tpj_body_signal_integration",
+    "entry": "BIO-3-0004",
+    "reason": "身体信号整合假说对照感官与环境信息处理",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-tpj-phi",
+    "trigger": "node_id",
+    "match": "mech_tpj_body_signal_integration",
+    "entry": "PHI-2-0005",
+    "reason": "身体知觉错配与怀疑论论证哲学对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-suggest-for",
+    "trigger": "node_id",
+    "match": "mech_suggestibility_bias",
+    "entry": "FOR-1-0101",
+    "reason": "暗示易感性与证人记忆污染及交叉核验对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-suggest-phi",
+    "trigger": "node_id",
+    "match": "mech_suggestibility_bias",
+    "entry": "PHI-2-0002",
+    "reason": "目击预期与怀疑论、证言评估哲学对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-seismic-geo",
+    "trigger": "node_id",
+    "match": "mech_seismic_groundwater",
+    "entry": "GEO-QUAKE-0001",
+    "reason": "微震移物假说对照地震震级、烈度与地震波条目",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-seismic-arc",
+    "trigger": "node_id",
+    "match": "mech_seismic_groundwater",
+    "entry": "ARC-1-0006",
+    "reason": "微震与建筑结构振动响应观测方法对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-ergot-bio",
+    "trigger": "node_id",
+    "match": "mech_salem_ergotism",
+    "entry": "BIO-2-0115",
+    "reason": "麦角真菌假说对照野生真菌中毒识别知识",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-ergot-phi",
+    "trigger": "node_id",
+    "match": "mech_salem_ergotism",
+    "entry": "PHI-5-0002",
+    "reason": "麦角假说及其历史反证与科学划界原则对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-rspk-phi",
+    "trigger": "node_id",
+    "match": "mech_rspk_poltergeist",
+    "entry": "PHI-5-0003",
+    "reason": "反复自发扰动假说与可重复性证据标准对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-rspk-for",
+    "trigger": "node_id",
+    "match": "mech_rspk_poltergeist",
+    "entry": "FOR-1-0001",
+    "reason": "室内异常扰动报告与现场保护、证据链规范对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-mci-phi",
+    "trigger": "node_id",
+    "match": "theory_mci_recall_experiments",
+    "entry": "PHI-2-0004",
+    "reason": "最小反直觉记忆实验与记忆作为知识来源对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-mci-mth",
+    "trigger": "node_id",
+    "match": "theory_mci_recall_experiments",
+    "entry": "MTH-STAT-0002",
+    "reason": "认知记忆实验的相关统计与因果推断边界对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-bascom-lit",
+    "trigger": "node_id",
+    "match": "theory_bascom_prose_genres",
+    "entry": "LIT-4-0001",
+    "reason": "巴斯科姆民间叙事体裁划分与文本体裁谱系对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-bascom-lan",
+    "trigger": "node_id",
+    "match": "theory_bascom_prose_genres",
+    "entry": "LAN-2-0002",
+    "reason": "口传叙事分类中的语用、语境与意义分析",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-witzel-his",
+    "trigger": "node_id",
+    "match": "theory_witzel_mythology_phylogeny",
+    "entry": "HIS-6-0003",
+    "reason": "世界神话谱系假说与历史分期、尺度分析方法对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-witzel-rel",
+    "trigger": "node_id",
+    "match": "theory_witzel_mythology_phylogeny",
+    "entry": "REL-6-0001",
+    "reason": "宏观神话谱系比较与比较宗教研究的尺度边界",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-ostension-lit",
+    "trigger": "node_id",
+    "match": "motif_urban_ostension_liminal",
+    "entry": "LIT-2-0004",
+    "reason": "现代阈限叙事展演与叙事伦理、读者契约对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-ostension-soc",
+    "trigger": "node_id",
+    "match": "motif_urban_ostension_liminal",
+    "entry": "SOC-5-0004",
+    "reason": "数字造物与网络传说传播中的平台可见性机制",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-prefix-scot-trial-law",
+    "trigger": "id_prefix",
+    "match": "scot_c_",
+    "entry": "LAW-CN-CRI-005",
+    "reason": "历史审讯案件目录与现代刑事辩护权及程序规范的制度对照"
+  },
+  {
+    "id": "relay-prefix-scot-trial-phi",
+    "trigger": "id_prefix",
+    "match": "scot_c_",
+    "entry": "PHI-2-0006",
+    "reason": "历史猎巫审判记录与认识不正义及证言可信度判断对照"
+  },
+  {
+    "id": "relay-prefix-zibuyu-lit",
+    "trigger": "id_prefix",
+    "match": "case_cn_zibuyu_",
+    "entry": "LIT-5-0002",
+    "reason": "清代志怪小说选本与中国文学理论及叙事传统对照"
+  },
+  {
+    "id": "relay-prefix-zibuyu-scr",
+    "trigger": "id_prefix",
+    "match": "case_cn_zibuyu_",
+    "entry": "SCR-2-0003",
+    "reason": "繁体古籍转录文本与古文字字形演变及释读证据对照"
+  },
+  {
+    "id": "relay-prefix-nichibun-rel",
+    "trigger": "id_prefix",
+    "match": "case_nichibun_",
+    "entry": "REL-5-0001",
+    "reason": "日文研妖怪馆藏卡片与地方民俗实践及口传传承对照"
+  },
+  {
+    "id": "relay-prefix-nichibun-scr",
+    "trigger": "id_prefix",
+    "match": "case_nichibun_",
+    "entry": "SCR-3-0002",
+    "reason": "日汉双语馆藏题名与音节文字、假名及日文书写对照"
+  },
+  {
+    "id": "relay-prefix-lao-scr",
+    "trigger": "id_prefix",
+    "match": "corpus_lao_dllm_",
+    "entry": "SCR-4-0001",
+    "reason": "老挝贝叶与写本馆藏目录对照书写材料与文本保存方法"
+  },
+  {
+    "id": "relay-prefix-lao-rel",
+    "trigger": "id_prefix",
+    "match": "corpus_lao_dllm_",
+    "entry": "REL-2-0005",
+    "reason": "东南亚写本故事目录与经典翻译及版本选择方法对照"
+  },
+  {
+    "id": "relay-prefix-lanna-scr",
+    "trigger": "id_prefix",
+    "match": "corpus_th_lanna_",
+    "entry": "SCR-4-0001",
+    "reason": "北泰手稿馆藏记录与书写材料及物理载体保存对照"
+  },
+  {
+    "id": "relay-prefix-lanna-rel",
+    "trigger": "id_prefix",
+    "match": "corpus_th_lanna_",
+    "entry": "REL-2-0005",
+    "reason": "北泰多语写本目录与文本翻译及版本比勘对照"
+  },
+  {
+    "id": "relay-prefix-nitean-scr",
+    "trigger": "id_prefix",
+    "match": "case_kh_nitean_",
+    "entry": "SCR-3-0003",
+    "reason": "高棉文叙事转录目录与阿布吉达书写及附标系统对照"
+  },
+  {
+    "id": "relay-prefix-nitean-rel",
+    "trigger": "id_prefix",
+    "match": "case_kh_nitean_",
+    "entry": "REL-5-0005",
+    "reason": "高棉故事分卷转录与口述传统及文本整理对照"
+  },
+  {
+    "id": "relay-prefix-thai-rel",
+    "trigger": "id_prefix",
+    "match": "case_thai_sac_",
+    "entry": "REL-5-0002",
+    "reason": "泰语民间叙事档案与地方信仰分类及混融语境对照"
+  },
+  {
+    "id": "relay-prefix-thai-scr",
+    "trigger": "id_prefix",
+    "match": "case_thai_sac_",
+    "entry": "SCR-3-0003",
+    "reason": "泰语故事文本与东南亚阿布吉达文字系统及正字法对照"
+  },
+  {
+    "id": "relay-prefix-japhug-lan",
+    "trigger": "id_prefix",
+    "match": "case_cn_japhug_",
+    "entry": "LAN-1-0002",
+    "reason": "川西嘉绒语口语录音目录与国际音标及田野语音转写对照"
+  },
+  {
+    "id": "relay-prefix-japhug-lan2",
+    "trigger": "id_prefix",
+    "match": "case_cn_japhug_",
+    "entry": "LAN-5-0001",
+    "reason": "双语或汉译嘉绒语转写目录与跨语言翻译等值研究对照"
+  },
+  {
+    "id": "relay-prefix-yongning-lan",
+    "trigger": "id_prefix",
+    "match": "case_cn_yongning_",
+    "entry": "LAN-1-0004",
+    "reason": "永宁纳语声调及口述录音与词汇声调、语调分析对照"
+  },
+  {
+    "id": "relay-prefix-yongning-rel",
+    "trigger": "id_prefix",
+    "match": "case_cn_yongning_",
+    "entry": "REL-5-0005",
+    "reason": "永宁纳语仪式与故事录音对照口述传统及社区语境"
+  },
+  {
+    "id": "relay-prefix-sinica-lan",
+    "trigger": "id_prefix",
+    "match": "case_tw_sinica_",
+    "entry": "LAN-3-0005",
+    "reason": "台湾南岛语口语档案与语言活力、代际传承工作对照"
+  },
+  {
+    "id": "relay-prefix-sinica-his",
+    "trigger": "id_prefix",
+    "match": "case_tw_sinica_",
+    "entry": "HIS-6-0002",
+    "reason": "田野口语录档案与口述史访谈方法及记忆边界对照"
+  },
+  {
+    "id": "relay-prefix-palue-lan",
+    "trigger": "id_prefix",
+    "match": "case_sea_palue_",
+    "entry": "LAN-6-0005",
+    "reason": "印尼濒危语声音档案与语料采集、隐私及社群数据治理对照"
+  },
+  {
+    "id": "relay-prefix-palue-his",
+    "trigger": "id_prefix",
+    "match": "case_sea_palue_",
+    "entry": "HIS-6-0002",
+    "reason": "声音采集项目记录与口述史采集及元数据审校对照"
+  },
+  {
+    "id": "relay-prefix-khmu-lan",
+    "trigger": "id_prefix",
+    "match": "case_sea_khmu_",
+    "entry": "LAN-1-0002",
+    "reason": "克木语田野录音目录与语音转写及音系记录方法对照"
+  },
+  {
+    "id": "relay-prefix-khmu-rel",
+    "trigger": "id_prefix",
+    "match": "case_sea_khmu_",
+    "entry": "REL-5-0005",
+    "reason": "克木语歌唱、祈祷与叙事录音对照口述仪式语境"
+  },
+  {
+    "id": "relay-prefix-kr-aks-rel",
+    "trigger": "id_prefix",
+    "match": "case_kr_aks_",
+    "entry": "REL-5-0005",
+    "reason": "韩国口碑文学目录与口述讲述人及变体传承机制对照"
+  },
+  {
+    "id": "relay-prefix-kr-aks-lan",
+    "trigger": "id_prefix",
+    "match": "case_kr_aks_",
+    "entry": "LAN-3-0001",
+    "reason": "地方口碑文学采录与方言、标准语社会建构对照"
+  },
+  {
+    "id": "relay-prefix-cn-ich-rel",
+    "trigger": "id_prefix",
+    "match": "corpus_cn_ich_",
+    "entry": "REL-5-0006",
+    "reason": "国家级非遗名录项目与节庆展示、文化遗产保护及再创造对照"
+  },
+  {
+    "id": "relay-prefix-cn-ich-law",
+    "trigger": "id_prefix",
+    "match": "corpus_cn_ich_",
+    "entry": "LAW-CN-PUB-005",
+    "reason": "行政公布名录条目与行政决定主体、依据核验方法对照"
+  },
+  {
+    "id": "relay-prefix-cn-bl-scr",
+    "trigger": "id_prefix",
+    "match": "case_cn_bl_",
+    "entry": "SCR-4-0003",
+    "reason": "滇西手稿与仪式档案对照书卷册页形制及馆藏阅读规范"
+  },
+  {
+    "id": "relay-prefix-pumi-lan",
+    "trigger": "id_prefix",
+    "match": "case_cn_pumi_",
+    "entry": "LAN-3-0005",
+    "reason": "普米语口传项目录音与少数民族语言活力和传承工作对照"
+  },
+  {
+    "id": "relay-prefix-minyag-lan",
+    "trigger": "id_prefix",
+    "match": "case_cn_minyag_",
+    "entry": "LAN-3-0005",
+    "reason": "木雅语口传录音目录与语言传承及社群资料保护对照"
+  },
+  {
+    "id": "relay-prefix-cham-rel",
+    "trigger": "id_prefix",
+    "match": "case_vietnam_cham_",
+    "entry": "REL-5-0005",
+    "reason": "越南占族故事目录与跨族群口述传统及版本对比对照"
+  },
+  {
+    "id": "relay-prefix-cole-lit",
+    "trigger": "id_prefix",
+    "match": "case_ph_cole_",
+    "entry": "LIT-6-0005",
+    "reason": "二十世纪初英文改写民间故事集与译者声音及副文本批判对照"
+  },
+  {
+    "id": "relay-prefix-yuhuan-his",
+    "trigger": "id_prefix",
+    "match": "case_cn_yuhuan_",
+    "entry": "HIS-6-0002",
+    "reason": "县域民间故事汇编索引与口述采录整理及记忆边界对照"
+  },
+  {
+    "id": "relay-prefix-sd-his",
+    "trigger": "id_prefix",
+    "match": "case_cn_sd_",
+    "entry": "HIS-6-0001",
+    "reason": "地方志民间文学镜像线索与史料批判、版本溯源方法对照"
+  },
+  {
+    "id": "relay-prefix-hmml-scr",
+    "trigger": "id_prefix",
+    "match": "corpus_hmml_makassar_",
+    "entry": "SCR-4-0005",
+    "reason": "印尼望加锡手稿目录对照重写本、文本层累与编目追溯"
+  },
+  {
+    "id": "relay-prefix-mm-bl-scr",
+    "trigger": "id_prefix",
+    "match": "case_mm_bl_",
+    "entry": "SCR-3-0003",
+    "reason": "缅甸多语唱片目录对照东南亚阿布吉达文字与拼写转写"
+  },
+  {
+    "id": "relay-prefix-lowell-rel",
+    "trigger": "id_prefix",
+    "match": "corpus_us_lowell_",
+    "entry": "REL-1-0008",
+    "reason": "东南亚离散社群口述项目对照移民、宗教机构与社群传承"
+  },
+  {
+    "id": "relay-prefix-duchas-his",
+    "trigger": "id_prefix",
+    "match": "case_duchas_",
+    "entry": "HIS-6-0002",
+    "reason": "爱尔兰学校采录档案对照口述史访谈方法与记忆边界"
+  },
+  {
+    "id": "relay-prefix-jade-scr",
+    "trigger": "id_prefix",
+    "match": "case_asia_jade_",
+    "entry": "SCR-4-0003",
+    "reason": "早期地方叙事刊本目录对照书卷、册页形制与阅读操作"
+  },
+  {
+    "id": "relay-prefix-dongjing-rel",
+    "trigger": "id_prefix",
+    "match": "case_cn_bl_dongjing_",
+    "entry": "REL-3-0005",
+    "reason": "云南洞经仪式表演录音对照宗教仪式的音乐与身体实践"
+  },
+  {
+    "id": "relay-prefix-berezkin-reg-mth",
+    "trigger": "id_prefix",
+    "match": "corpus_berezkin_region_",
+    "entry": "MTH-STAT-0003",
+    "reason": "文化分析区母题分布数据与抽样偏差及地理代表性方法对照"
+  },
+  {
+    "id": "relay-berezkin-a-phy",
+    "trigger": "berezkin_prefix",
+    "match": "a",
+    "entry": "PHY-4-0004",
+    "reason": "别列兹金 A 组（天体与日月食）母题对照几何光学与成像原理",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-a-phi",
+    "trigger": "berezkin_prefix",
+    "match": "a",
+    "entry": "PHI-5-0001",
+    "reason": "古代天象宇宙观模型与科学实在论及模型边界对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-b-geo",
+    "trigger": "berezkin_prefix",
+    "match": "b",
+    "entry": "GEO-STRUC-0002",
+    "reason": "别列兹金 B 组（天地水域创世）母题对照地球板块构造与地壳运动",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-b-phi",
+    "trigger": "berezkin_prefix",
+    "match": "b",
+    "entry": "PHI-6-0002",
+    "reason": "本初宇宙生成叙事与中国古典自然生成哲学脉络对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-c-geo",
+    "trigger": "berezkin_prefix",
+    "match": "c",
+    "entry": "GEO-LAND-0001",
+    "reason": "别列兹金 C 组（大洪水与世界灾变）对照古环境与海平面变化研究",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-c-lif",
+    "trigger": "berezkin_prefix",
+    "match": "c",
+    "entry": "LIF-EMERG-0004",
+    "reason": "世界灾变叙事与现实洪水撤离、涉水风险防护对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-d-phy",
+    "trigger": "berezkin_prefix",
+    "match": "d",
+    "entry": "PHY-2-0005",
+    "reason": "别列兹金 D 组（火与光热起源）对照热传递与热平衡物理概念",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-d-mat",
+    "trigger": "berezkin_prefix",
+    "match": "d",
+    "entry": "MAT-4-0004",
+    "reason": "取火与用火技术传说对照材料学中的三种热传递方式",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-e-his",
+    "trigger": "berezkin_prefix",
+    "match": "e",
+    "entry": "HIS-4-0002",
+    "reason": "别列兹金 E 组（仪式与器物）对照物质文化研究与器物传记方法",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-e-scr",
+    "trigger": "berezkin_prefix",
+    "match": "e",
+    "entry": "SCR-4-0001",
+    "reason": "仪式符号与记录器物对照书写材料与文本保存实践",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-f-soc",
+    "trigger": "berezkin_prefix",
+    "match": "f",
+    "entry": "SOC-1-0003",
+    "reason": "别列兹金 F 组（性别与婚姻禁忌）对照社会规范、角色与制裁理论",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-f-phi",
+    "trigger": "berezkin_prefix",
+    "match": "f",
+    "entry": "PHI-4-0002",
+    "reason": "社群分配与禁忌规范对照平等、正义与分配原则讨论",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-g-bio",
+    "trigger": "berezkin_prefix",
+    "match": "g",
+    "entry": "BIO-TOPIC-0002",
+    "reason": "别列兹金 G 组（草木农耕起源）对照植物观察记录与物候知识",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-g-bio2",
+    "trigger": "berezkin_prefix",
+    "match": "g",
+    "entry": "BIO-2-0001",
+    "reason": "植物生命与循环母题对照光合作用与植物碳固定机制",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-h-for",
+    "trigger": "berezkin_prefix",
+    "match": "h",
+    "entry": "FOR-3-0001",
+    "reason": "别列兹金 H 组（死亡、冥界与鬼魂）对照死亡原因、机制与法医分辨",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-h-phi",
+    "trigger": "berezkin_prefix",
+    "match": "h",
+    "entry": "PHI-6-0006",
+    "reason": "灵魂与死后存在母题对照佛教无我论争及存在观哲学",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-i-geo",
+    "trigger": "berezkin_prefix",
+    "match": "i",
+    "entry": "GEO-CLIM-0101",
+    "reason": "别列兹金 I 组（雷鸟、虹霓与天象）对照强对流气象观测",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-i-phy",
+    "trigger": "berezkin_prefix",
+    "match": "i",
+    "entry": "PHY-3-0001",
+    "reason": "雷电神话母题对照静电场、电荷积聚与电击穿物理机制",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-j-bio",
+    "trigger": "berezkin_prefix",
+    "match": "j",
+    "entry": "BIO-1-0002",
+    "reason": "别列兹金 J 组（化形与身体变异）对照基因表达与表型多样性",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-j-lit",
+    "trigger": "berezkin_prefix",
+    "match": "j",
+    "entry": "LIT-2-0002",
+    "reason": "民俗化形与试炼故事对照文学叙事类型与模式演变",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-k-lit",
+    "trigger": "berezkin_prefix",
+    "match": "k",
+    "entry": "LIT-2-0001",
+    "reason": "别列兹金 K 组（英雄历险与考验）对照叙事学核心功能与情节结构",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-k-phi",
+    "trigger": "berezkin_prefix",
+    "match": "k",
+    "entry": "PHI-3-0002",
+    "reason": "英雄抉择与助人报恩母题对照德性伦理与道德品格哲学",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-l-bio",
+    "trigger": "berezkin_prefix",
+    "match": "l",
+    "entry": "BIO-3-0004",
+    "reason": "别列兹金 L 组（妖异感知与逃遁）对照动物感官与环境信息处理",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-l-phi",
+    "trigger": "berezkin_prefix",
+    "match": "l",
+    "entry": "PHI-2-0005",
+    "reason": "幻象与感官欺瞒母题对照怀疑论论证与日常知识边界",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-m-mth",
+    "trigger": "berezkin_prefix",
+    "match": "m",
+    "entry": "MTH-GAME-0002",
+    "reason": "别列兹金 M 组（狡猾者与斗智）对照囚徒困境与纳什均衡博弈模型",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-m-eco",
+    "trigger": "berezkin_prefix",
+    "match": "m",
+    "entry": "ECO-1-0010",
+    "reason": "民间智斗与骗局叙事对照经济学中的承诺、信号与协调博弈",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-n-lan",
+    "trigger": "berezkin_prefix",
+    "match": "n",
+    "entry": "LAN-2-0002",
+    "reason": "别列兹金 N 组（叙事套语与身体意象）对照语义、语用与语境分析",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-berezkin-n-hea",
+    "trigger": "berezkin_prefix",
+    "match": "n",
+    "entry": "HEA-001",
+    "reason": "透明身体与内脏想象母题对照人体基础结构与器官系统概览",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-ocm-754-phi",
+    "trigger": "ocm_code",
+    "match": "754",
+    "entry": "PHI-2-0006",
+    "reason": "OCM 754（巫术指控档案）对照认识不正义与社会可信度不平等"
+  },
+  {
+    "id": "relay-ocm-754-his",
+    "trigger": "ocm_code",
+    "match": "754",
+    "entry": "HIS-6-0006",
+    "reason": "OCM 754（历史审判目录）对照档案沉默、保存制度与历史可见性"
+  },
+  {
+    "id": "relay-ocm-776-rel",
+    "trigger": "ocm_code",
+    "match": "776",
+    "entry": "REL-6-0001",
+    "reason": "OCM 776（精怪与超自然存在观念）对照比较宗教研究的尺度与方法"
+  },
+  {
+    "id": "relay-ocm-776-phi",
+    "trigger": "ocm_code",
+    "match": "776",
+    "entry": "PHI-2-0001",
+    "reason": "OCM 776 超自然证言叙事对照知识、信念与证成哲学分析"
+  },
+  {
+    "id": "relay-node-pareidolia-phi",
+    "trigger": "node_id",
+    "match": "mech_pareidolia_apophenia",
+    "entry": "PHI-2-0002",
+    "reason": "空想性错视与模式过度识别对照怀疑论、证据与证言哲学评估",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-hypnagogic-hea",
+    "trigger": "node_id",
+    "match": "mech_hypnagogic_hypnopompic",
+    "entry": "HEA-009",
+    "reason": "入睡前与醒后移行幻觉直连睡眠调节、焦虑与夜间体验知识",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-mpi-soc",
+    "trigger": "node_id",
+    "match": "mech_mass_psychogenic_illness",
+    "entry": "SOC-5-0002",
+    "reason": "群体心因性反应与社会传染对照谣言扩散、错误信息与核查方法",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-mirage-phy",
+    "trigger": "node_id",
+    "match": "mech_optical_mirage_refraction",
+    "entry": "PHY-4-0004",
+    "reason": "大气折射与海市蜃楼错觉直连几何光学反射、折射与成像原理",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-evp-lan",
+    "trigger": "node_id",
+    "match": "mech_auditory_evp_apophenia",
+    "entry": "LAN-1-0006",
+    "reason": "听觉空想性错视与 EVP 误读直连言语感知、范畴化与听者差异",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-evp-phy",
+    "trigger": "node_id",
+    "match": "mech_auditory_evp_apophenia",
+    "entry": "PHY-4-0003",
+    "reason": "低信噪比声学录音误读对照声波特性、强度与响度物理边界",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-grief-phi",
+    "trigger": "node_id",
+    "match": "mech_grief_bereavement_hallucination",
+    "entry": "PHI-2-0004",
+    "reason": "哀伤期在场感与丧亲幻觉对照记忆作为知识来源的认识论边界",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-ostension-lit4",
+    "trigger": "node_id",
+    "match": "theory_ostension_legend_tripping",
+    "entry": "LIT-4-0004",
+    "reason": "示现理论与传说朝圣对照数字时代的非虚构新形态与拟真文体",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-ostension-soc5",
+    "trigger": "node_id",
+    "match": "theory_ostension_legend_tripping",
+    "entry": "SOC-5-0001",
+    "reason": "示现行为与伪证传播对照媒体框架与议程设置社会过程",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-liminality-soc1",
+    "trigger": "node_id",
+    "match": "theory_liminality_rites_passage",
+    "entry": "SOC-1-0004",
+    "reason": "阈限理论与过渡礼仪直连社会化、身份形成与生命周期转换",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-liminality-rel5",
+    "trigger": "node_id",
+    "match": "theory_liminality_rites_passage",
+    "entry": "REL-5-0001",
+    "reason": "仪式阈限阶段与地方民间实践、传承结构并置对读",
+    "propagate_edges": true
+  }
+]

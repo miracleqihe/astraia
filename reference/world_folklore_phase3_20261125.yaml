@@ -1,0 +1,237 @@
+# Original Chinese editorial summaries based on cited scholarly, institutional, and archival works.
+# All coordinates are regional or cultural reference points, not assertions of literal supernatural events.
+records:
+  - id: case_sa_rubalkhali_jinn_lore
+    title: 鲁卜哈利沙漠｜沙丘鸣响、废城传说与精灵夜谈
+    aliases: [Rub' al-Khali, Empty Quarter, Ubar, 鲁卜哈利, 乌巴尔, 阿拉伯精灵]
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location: {lat: 19.8, lng: 50.5, precision: culture_region, location_name: 沙特阿拉伯 · 鲁卜哈利沙漠腹地（区域参考）, culture_region: 中东与西亚 · 阿拉伯半岛}
+    location_note: 坐标取阿拉伯半岛南部鲁卜哈利沙漠腹地作文化地理参考，不指向具体的沙丘鸣响地点或考古遗址坐标。
+    paragraphs:
+      - 横跨阿拉伯半岛南部的鲁卜哈利沙漠（意为“空域”）自古被贝都因口述视为人迹罕至的荒原边界。在当地民间叙事中，极度干旱与无人沙海常被说成精灵（Jinn）与食尸鬼出没的领地，商旅夜间听见沙丘发出低沉嗡鸣或鼓声，便将其解释为荒原精灵试图诱人偏离驼道的呼唤。
+      - 与沙海精灵共生的还有“沙中失落之城”乌巴尔（Ubar）的传说：叙事把乳香贸易带来的繁华与后来的毁灭相连，描绘城市因傲慢遭神罚而整体没入黄沙。二十世纪九十年代初，研究团队借助 NASA 卫星光学与成像雷达辨识出深沙下的古商道汇集点，并在阿曼佐法尔省希斯尔（Shisr）发掘出古代贸易堡垒遗址，发现其坍塌与地下石灰岩溶洞及水位下降有关。
+      - 将地理声学现象、太空考古成果与阿拉伯精灵传说并读，能够分开三个层面：风沙摩擦产生的物理鸣响、商站因地质塌陷而废弃的考古事实，以及地方社会在极端荒漠环境下编织的敬畏与警戒故事。
+    sources:
+      - {citation: 'Encyclopædia Britannica, Rubʿ al-Khali.', type: institutional_account, url: 'https://www.britannica.com/place/Rub-al-Khali', locator: 阿拉伯半岛南部沙漠地理与勘探史}
+      - {citation: 'Encyclopædia Britannica, Jinni.', type: institutional_account, url: 'https://www.britannica.com/topic/jinni', locator: 前伊斯兰及阿拉伯民间信仰中的精灵概念与荒原栖居说}
+      - {citation: 'Pola Lem, Peering through the Sands of Time: Searching for the Origins of Space Archaeology, NASA Earth Observatory.', type: official_archive, url: 'https://earthobservatory.nasa.gov/features/SpaceArchaeology', locator: 遥感古商道、希斯尔遗址与乌巴尔传说的考古对照}
+    compare: [case_egypt_jinn_sleep_paralysis, case_et_harar_hyena_jinn]
+    motifs: [index_ocm_776]
+    bridge: {entry: GEO-LAND-0008, cluster: sid_liminal, trail: all, label: 沙漠荒原、鸣沙与精灵想象, rationale: 将阿拉伯沙漠精灵夜谈、乌巴尔考古遥感与风成沙丘地貌知识并读，区分自然声学、遗址塌陷与民间叙事。}
+
+  - id: case_ir_alborz_simurgh_lore
+    title: 厄尔布尔士山脉｜《列王纪》中的神鸟西摩格
+    aliases: [Simurgh, Sīmorḡ, Shahnameh, 西摩格, 萨尔, 厄尔布尔士山]
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location: {lat: 35.9511, lng: 52.1096, precision: culture_region, location_name: 伊朗 · 厄尔布尔士山脉（区域参考）, culture_region: 中东与西亚 · 伊朗高原}
+    location_note: 坐标取伊朗北部厄尔布尔士山脉中段作文化参考；古代文献中的阿尔布尔兹神山兼有宇宙论象征，不限于现代山体。
+    paragraphs:
+      - 在伊朗高原的古代文献与史诗叙事里，西摩格（Simurgh，中古波斯语 sēnmurw）是一只栖息于厄尔布尔士山巅的巨型神鸟。语源学追溯至阿维斯陀语的“萨埃纳鸟”，早期萨珊艺术常将其刻画为兼有禽翼、狗首或狮爪的复合神兽；在菲尔多西十世纪末的波斯史诗《列王纪》中，它进一步成为通晓医术与人言的庇护者。
+      - 最广为流传的情节围绕英雄萨尔（Zal）展开：萨尔出生时满头白发，父亲萨姆因迷信将其遗弃在厄尔布尔士山坡，西摩格发现并叼回巢中抚养。父子重逢时，神鸟赠予一枚羽毛，嘱咐遇险焚羽即可召来救援；后来萨尔的妻子鲁达芭因胎儿过大难产，正是焚羽召来西摩格传授剖腹产方略与草药，救下英雄罗斯塔姆母子。
+      - 不过，波斯传统里的西摩格并非单一面貌。《列王纪》另有一则英雄伊斯凡迪亚尔斩杀食人凶禽西摩格的试炼，而十二世纪苏菲诗人阿塔尔则在《百鸟朝凤》里借谐音“三十只鸟”（sī murḡ）将其转写为灵性合一的隐喻。同一神鸟在不同文体中承担护佑、试炼与神秘主义象征三重角色。
+    sources:
+      - {citation: 'Hanns-Peter Schmidt, Sīmorḡ, Encyclopædia Iranica.', type: academic_article, url: 'https://www.iranicaonline.org/articles/simorg', locator: 阿维斯陀语源、萨珊艺术图像及《列王纪》双重形象}
+      - {citation: 'Wilhelm Eilers, Alborz i. The Name, Encyclopædia Iranica.', type: academic_article, url: 'https://www.iranicaonline.org/articles/alborz-name/', locator: 厄尔布尔士山名语源与波斯神话地理演变}
+      - {citation: 'Encyclopædia Britannica, Shāh-nāmeh.', type: institutional_account, url: 'https://www.britannica.com/topic/Shah-nameh', locator: 菲尔多西史诗结构、萨尔与罗斯塔姆故事脉络}
+    motifs: [index_berezkin_k38c, index_ocm_776]
+    bridge: {entry: LIT-1-0003, cluster: sid_myth, trail: all, label: 史诗神鸟与文体流变, rationale: 对照阿维斯陀宗教文本、《列王纪》英雄叙事与苏菲诗作，观察同一神话意象如何随诗歌与文体规则转化。}
+
+  - id: case_tr_anatolia_nazar_amulet
+    title: 安纳托利亚｜蓝色“恶眼珠”与避邪习俗
+    aliases: [Nazar boncuğu, Nazar, Evil eye, 恶眼珠, 土耳其蓝眼睛]
+    genre: folktale
+    credibility_tier: A
+    note_kind: story
+    location: {lat: 38.43, lng: 27.36, precision: culture_region, location_name: 土耳其 · 安纳托利亚西部（伊兹密尔区域参考）, culture_region: 中东与西亚 · 土耳其安纳托利亚}
+    location_note: 坐标取土耳其西部伊兹密尔近郊传统玻璃珠作坊一带作区域参考，护眼珠习俗通行于整个安纳托利亚与东地中海地区。
+    paragraphs:
+      - 在安纳托利亚与东地中海的民间观念里，“恶眼”（Nazar 或 göz değmesi）指带有嫉妒、恶意或过度赞美成分的注视，被认为会给新生儿、新居、牲畜乃至新开业店铺带来无形灾厄。为了承接并反弹第一道投来的目光，当地长期使用同心圆眼状的蓝色玻璃护符“纳扎尔珠”（Nazar boncuğu）。
+      - 围绕伊兹密尔周边的传统玻璃炉坊（如纳扎尔村），工匠至今以熔融玻璃与铁钎沿袭师徒口传手工制珠。学者对美索不达米亚、乌加里特泥板与古埃及文献的梳理显示，将“有害目光”物化为辟邪护符的做法在古代近东已有深厚渊源，进入安纳托利亚后又与中亚突厥民俗及伊斯兰日常祝祷语相互交织。
+      - 现代土耳其民俗学研究同时指出，恶眼珠在旅游商品化与文化工业中成为高度符号化的纪念品，但其民间功能本质上是应对人际羡慕与不确定风险的心理缓冲。佩戴或悬挂护符属于社群文化实践，并不构成任何可检验的物理防护机制。
+    sources:
+      - {citation: 'Metin Ekici & Pınar Fedakâr, Gelenek, Aktarma, Dönüşüm ve Kültür Endüstrisi Bağlamında Nazar ve Nazar Boncuğu, Millî Folklor 101, 2014.', type: academic_article, url: 'https://dergipark.org.tr/en/pub/millifolklor/issue/74526/1209355', locator: 安纳托利亚恶眼珠传统、玻璃匠艺与文化工业转型}
+      - {citation: 'Mustafa Karageçi, Burak Taşdüvenci & Dilek Karageçi, Ugarit, Mısır ve Mezopotamya Kaynaklarına Göre Nazar, Adıyaman Üniversitesi Sosyal Bilimler Enstitüsü Dergisi 18(50), 2025, 739–769.', type: academic_article, url: 'https://dergipark.org.tr/en/pub/adyisosbil/issue/91039/1572970', locator: 古代两河、乌加里特与埃及文献中的恶眼观念溯源}
+      - {citation: 'Encyclopædia Britannica, Evil eye.', type: institutional_account, url: 'https://www.britannica.com/topic/evil-eye-superstition', locator: 环地中海与西亚恶眼信仰比较概述}
+    bridge: {entry: REL-5-0009, cluster: sid_myth, trail: all, label: 护身珠工艺与嫉妒规避, rationale: 从安纳托利亚玻璃珠作坊与古代近东文献出发，阅读民间器物如何将无形的嫉妒焦虑转化为可佩戴的日常物件。}
+
+  - id: case_se_dalarna_tomte_lore
+    title: 瑞典达拉纳｜守望农舍与牲畜的汤姆特
+    aliases: [Tomte, Gårdstomte, Nisse, Lillhättgubbe, 汤姆特, 尼瑟, 农舍矮灵]
+    genre: folktale
+    credibility_tier: A
+    note_kind: story
+    location: {lat: 60.6065, lng: 15.6355, precision: province, location_name: 瑞典 · 达拉纳省（区域参考）, culture_region: 欧洲 · 北欧瑞典}
+    location_note: 坐标取瑞典达拉纳省法伦一带作省级参考；瑞典语言与民俗档案馆记有该地区方言称谓及广泛农庄传说。
+    paragraphs:
+      - 在瑞典及斯堪的纳维亚乡村记忆里，汤姆特（Tomte 或 gårdstomte，在丹麦、挪威与瑞典南部也称 Nisse）是驻守农庄院落与马厩的矮小灵体。瑞典语言与民俗档案馆（ISOF）的方言资料显示，各地对其称呼丰富多样，在达拉纳省部分方言中被称为“小红帽老头”（lillhättgubbe）。
+      - 传统讲述把汤姆特刻画成身披灰呢外衣、戴红帽、身形仅如幼童的老者，有时被视为最早开垦这片土地的先祖精魂。他脾气耿直而严厉，若农人勤勉照料牲畜、在圣诞夜端上一碗浇了黄油的热麦粥，他便会暗中守护牛马与谷仓；反之，若遭怠慢或被挑剔，他就会藏起农具、惊扰马匹甚至转投别家。
+      - 直到十九世纪中叶，随着画家与文学作品把灰色农舍守望者、圣尼古拉与北欧圣诞山羊的形象合流，汤姆特才逐渐演变为现代圣诞送礼形象（Jultomten）。将档案口述与后来节庆插画对读，能清楚看见农业伦理精灵怎样转向城市节日符号。
+    sources:
+      - {citation: 'Institutet för språk och folkminnen (ISOF), Tomtegubbe, Väsen i folktron.', type: official_archive, url: 'https://www.isof.se/lar-dig-mer/kunskapsbanker/lar-dig-mer-om-vasen-i-folktron/vasengalleriet/tomtegubbe', locator: 瑞典农庄精灵传统特征、麦粥供奉与图像演变}
+      - {citation: 'Institutet för språk och folkminnen (ISOF), Tomten i dialekterna.', type: official_archive, url: 'https://www.isof.se/lar-dig-mer/kunskapsbanker/lar-dig-mer-om-arets-hogtider/jul/tomten-i-dialekterna', locator: 达拉纳方言称谓 lillhättgubbe 与瑞典各地名称分布}
+      - {citation: 'Encyclopædia Britannica, Tomte.', type: institutional_account, url: 'https://www.britannica.com/topic/tomte', locator: 北欧汤姆特与尼瑟的词源、农舍职能及圣诞形象融合}
+    compare: [case_ba_bihac_hudam_harmani]
+    motifs: [index_ocm_776]
+    bridge: {entry: REL-5-0007, cluster: sid_myth, trail: all, label: 农舍守护灵与日常秩序, rationale: 对读北欧方言档案中的农舍精灵与家庭信仰空间，理解供奉礼俗与农务规范怎样维系农庄内部秩序。}
+
+  - id: case_ru_karelia_baba_yaga
+    title: 卡累利阿与俄北林区｜林界边缘的芭芭雅嘎
+    aliases: [Baba Yaga, Баба-яга, 芭芭雅嘎, 鸡腿小屋]
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location: {lat: 61.7850, lng: 34.3469, precision: province, location_name: 俄罗斯 · 卡累利阿林区（区域参考）, culture_region: 欧洲 · 俄罗斯东欧}
+    location_note: 坐标取俄罗斯西北部卡累利阿林区作文化参考；芭芭雅嘎故事流传于东斯拉夫广大地区，并非某座单一林屋的位置。
+    paragraphs:
+      - 在俄罗斯与东斯拉夫民间故事里，芭芭雅嘎居住在密林深处的“鸡腿小屋”中：屋舍由鸟爪般的高柱撑起并不断旋转，门窗常背向来客，周遭还立着人骨篱笆。闯入林地的主角必须念出固定口诀——“小屋呀，背对森林，面向我站好”——屋子才会停转开门。她乘坐木臼飞行，以木杵为桨，并用扫帚抹去行踪。
+      - 这位林中老妇极少呈现单纯的善或恶，而是扮演充满矛盾的门槛守卫与考验者。有时她扬言烹食迷路的孩童或继女，但在对方保持礼貌、耐心完成繁重家务并善待林中小动物后，又会赠予火种、宝马或指路线索；在另一些故事里，她甚至承担着检验英雄资格的严苛导师角色。
+      - 民俗学家普罗普等学者在形式结构研究中，把芭芭雅嘎的林中小屋解读为成人礼与生死分界的象征空间：高架木屋与古代北方森林葬俗中的架空尸屋颇有呼应，故事借森林边缘这一空间门槛，将少年离开家庭、接受试炼并携宝归来的过程戏剧化。
+    sources:
+      - {citation: 'Encyclopædia Britannica, Baba Yaga.', type: institutional_account, url: 'https://www.britannica.com/topic/Baba-Yaga', locator: 鸡腿小屋、木臼木杵飞行器及矛盾角色特征}
+      - {citation: 'Andreas Johns, Baba Yaga and the Russian Mother, The Slavic and East European Journal 42(1), 1998.', type: academic_article, url: 'https://doi.org/10.2307/310050', doi: '10.2307/310050', locator: 东斯拉夫民间故事中芭芭雅嘎的双重母性形象与考验结构}
+      - {citation: 'Juliette Wood, Review of Baba Yaga: The Wild Witch of the East in Russian Fairy Tales, Folklore 126(2), 2015, 238–239.', type: academic_article, url: 'https://doi.org/10.1080/0015587X.2015.1047184', doi: '10.1080/0015587X.2015.1047184', locator: 芭芭雅嘎文本编选与林界叙事研究评述}
+    motifs: [index_berezkin_c26, index_berezkin_k89]
+    bridge: {entry: LIT-2-0001, cluster: sid_witch, trail: all, label: 森林门槛与考验叙事, rationale: 从鸡腿小屋的转向口诀与双重考验入手，阅读民间故事如何利用空间边界结构推动主角成长。}
+
+  - id: case_ua_dnipro_rusalka_lore
+    title: 第聂伯河流域｜水岸、黑麦田与鲁萨尔卡
+    aliases: [Rusalka, Русалка, 鲁萨尔卡, 绿周节水灵]
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location: {lat: 49.4444, lng: 32.0598, precision: culture_region, location_name: 乌克兰 · 第聂伯河中游流域（区域参考）, culture_region: 欧洲 · 乌克兰东欧}
+    location_note: 坐标取乌克兰第聂伯河中游河段作流域参考；鲁萨尔卡故事遍布乌克兰各河流、池塘与麦田交界处。
+    paragraphs:
+      - 不同于西欧长着鱼尾的美人鱼，乌克兰与东斯拉夫民间传闻中的鲁萨尔卡（Rusalka）拥有双腿，常现身为披散长发、着素白长衫或戴草冠的年轻女子。民族志调查通常将其解释为非正常离世者的游荡魂灵，尤其是溺亡少女、未受洗婴孩或怀恨离世的新娘。
+      - 在第聂伯河流域的农耕日历中，鲁萨尔卡与春末夏初的“绿周节”（Rusalii）紧密相连。传说此时她们离开水底，栖息于岸边垂柳与桦树枝头，或在黑麦田间起舞以助庄稼生长；然而她们也会以歌声诱惑独自涉水或夜行的青年，将其拖入深水或“挠痒致死”。村民过河或下田时，常随身携带艾草、大蒜等辟邪植物。
+      - 当代斯拉夫民俗学者指出，鲁萨尔卡集结了农时节气、水域危险警示与对未尽生命之痛的集体悼念。十九世纪乌克兰文化复兴先驱甚至以“德涅斯特水仙”（Rusalka Dnistrovaia）命名首部民间文献年鉴，使这一水陆边界灵体进入区域文化记忆。
+    sources:
+      - {citation: 'Internet Encyclopedia of Ukraine, Rusalka, Canadian Institute of Ukrainian Studies.', type: institutional_account, url: 'https://www.encyclopediaofukraine.com/display.aspx?letr=R&page=Rusalka', locator: 乌克兰民族志中的鲁萨尔卡形象、绿周节禁忌与护身草药}
+      - {citation: 'Jiří Dynda, Rusalki: Anthropology of Time, Death, and Sexuality in Slavic Folklore, Studia Mythologica Slavica 20, 2017, 83–109.', type: academic_article, url: 'https://doi.org/10.3986/SMS.V20I0.6662', doi: '10.3986/SMS.V20I0.6662', locator: 斯拉夫水灵与时间节律、非正常死亡观念的民俗人类学分析}
+      - {citation: 'Encyclopædia Britannica, Rusalka.', type: institutional_account, url: 'https://www.britannica.com/topic/rusalka', locator: 东斯拉夫水岸精魂的田野形象与季节迁徙}
+    compare: [case_pl_warsaw_old_town_mermaid_syrenka]
+    motifs: [index_berezkin_f27, index_berezkin_k25a4]
+    bridge: {entry: REL-5-0008, cluster: sid_liminal, trail: all, label: 农时节期与水陆边界, rationale: 将鲁萨尔卡与“绿周节”农耕历法对读，观察民间叙事怎样借季节节点标记水岸、田野与死亡禁忌。}
+
+  - id: case_it_friuli_benandanti_1575
+    title: 意大利弗留利｜1575 年“善行者”夜战审判档案
+    aliases: [Benandanti, 善行者, Paolo Gasparutto, Carlo Ginzburg, 夜战]
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location: {lat: 46.0926, lng: 13.4316, precision: province, location_name: 意大利弗留利 · 奇维达莱与乌迪内地区, culture_region: 欧洲 · 意大利南欧}
+    location_note: 坐标取弗留利奇维达莱一带（1575 年首批审讯地点）作区域参考，相关卷宗涉及乌迪内及周边多个村镇。
+    temporal: {year_start: 1575, year_end: 1647, era_label: 1575–1647 年弗留利宗教裁判所卷宗时期, uncertainty_note: 1575 年 3 月奇维达莱开始讯问保罗·加斯帕鲁托与巴托洛梅奥·斯加巴里扎，此后数十年的审讯记录反映了证词如何被逐步改写。}
+    paragraphs:
+      - 1575 年 3 月 21 日，意大利东北部的奇维达莱宗教裁判所展开一场不寻常的调查：农夫保罗·加斯帕鲁托等人平静地供述，凡是“带胎膜降生”的人都会在四季斋日夜间陷入昏睡，灵魂离开躯体，手持茴香茎秆赴野地与巫师作战，以保卫村庄的谷物、葡萄收成并祈求风调雨顺。他们自称为“善行者”（Benandanti）。
+      - 历史学家卡洛·金茨堡于二十世纪六十年代发掘这批乌迪内档案，写成微观史名著《夜战》。与常见猎巫案不同，善行者最初并非自认魔鬼仆从，反而认为自己在为基督与农田丰收而战；然而审判官既不理解也不接纳民间口述中的“出神梦境”与巫术之间的界线，执意用欧洲魔鬼安息夜（Sabbat）的教义模版反复盘问。
+      - 跨越 1575 年至十七世纪中叶的卷宗揭示了一个清晰的史料演变过程：在长期审讯、拘禁与引导性提问的压力下，后期的受审者逐渐放弃原有的护稼自述，转而“承认”参与魔鬼聚会。这批档案证明了审讯制度如何重塑民间口述记忆，而不能将供词里的夜战神游当作客观发生的超自然事实。
+    sources:
+      - {citation: 'Carlo Ginzburg, The Night Battles: Witchcraft and Agrarian Cults in the Sixteenth and Seventeenth Centuries, Johns Hopkins University Press.', type: academic_article, url: 'https://press.jhu.edu/books/title/12660/night-battles', locator: 1575 年弗留利审判卷宗重构与善行者夜战研究}
+      - {citation: 'Istituto della Enciclopedia Italiana, Ginzburg, Carlo, Dizionario di Storia, Treccani.', type: institutional_account, url: 'https://www.treccani.it/enciclopedia/carlo-ginzburg_%28Dizionario-di-Storia%29/', locator: 《夜战》与十六至十七世纪大众文化与裁判所档案分析}
+      - {citation: 'Carlo Ginzburg & Dipesh Chakrabarty, Carlo Ginzburg (Correspondence on historical knowledge and The Night Battles), Postcolonial Studies 14(3), 2011, 347.', type: academic_article, url: 'https://doi.org/10.1080/13688790.2011.621405', doi: '10.1080/13688790.2011.621405', locator: 历史档案中证词与审讯框架的认识论讨论}
+    compare: [case_italy_pandafeche_sleep_paralysis, case_salem_1692]
+    motifs: [index_ocm_754]
+    bridge: {entry: HIS-6-0001, cluster: sid_witch, trail: all, label: 裁判所笔录与陈述转化, rationale: 借助微观史料批判视角，观察审判官的巫术框架如何逐步改写农民关于“出神护稼”的原始自述。}
+
+  - id: case_in_ujjain_vetala_cycle
+    title: 印度乌贾因｜尸鬼韦塔拉的二十五个谜题
+    aliases: [Vetala Panchavimsati, Baital Pachisi, 韦塔拉, 维克拉玛蒂亚, 起尸鬼]
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location: {lat: 23.1765, lng: 75.7885, precision: city, location_name: 印度中央邦 · 乌贾因（文学都城参考）, culture_region: 南亚 · 印度中央邦}
+    location_note: 坐标取印度中央邦乌贾因（故事框架中维克拉玛蒂亚王的都城）作参考；现存抄本与方言译本流传于克什米尔至北印多地。
+    paragraphs:
+      - 《韦塔拉二十五故事》（Vetala Panchavimsati，印地语常称 Baital Pachisi）是印度古典叙事传统中极具代表性的套层框架故事。故事以传说中的乌贾因明君维克拉玛蒂亚为主角：他受苦行僧所托，须于暗夜前往火葬场，从树上取下一具附着尸鬼韦塔拉（Vetala）的尸体，且在背负归途中保持绝对沉默。
+      - 每当国王背起尸体启程，附体其上的韦塔拉便开始讲述一则奇案或人伦故事，并在结尾抛出一个法律、伦理或继承归属上的两难谜题，同时警告国王若知答案却缄口不言便会头颅爆裂。维克拉玛蒂亚因秉性公正而屡次开口作答，一旦破戒发声，尸鬼便立刻飞回树梢，令整个背尸与解谜循环重复二十五轮。
+      - 现存最古老的梵语散韵本保存在十一世纪克什米尔诗人索玛德瓦的《故事海》（Kathasaritsagara）中，另有克什门德拉等人的传本及十九世纪英译本《维克拉姆与吸血鬼》。尸鬼与火葬场为全书提供了奇诡外壳，真正的核心则是以谜题检验王权裁断、宗法伦理与智慧边界。
+    sources:
+      - {citation: 'Encyclopædia Britannica, Somadeva.', type: institutional_account, url: 'https://www.britannica.com/biography/Somadeva', locator: 《故事海》作者与克什米尔梵语故事集编纂}
+      - {citation: 'John T. Platts (trans.), The Baitâl Pachchisi; Or, The Twenty-Five Tales of a Sprite, Project Gutenberg.', type: primary_text, url: 'https://www.gutenberg.org/ebooks/54697', locator: 二十五则韦塔拉谜题框架英译本全文}
+      - {citation: 'Vetala Pancavimsatika, Sanskrit text digitized archive, Internet Archive.', type: primary_text, url: 'https://archive.org/details/vetala-pancavimsatika', locator: 梵语《韦塔拉二十五故事》传本文献}
+    motifs: [index_berezkin_k27z8, index_berezkin_m196a]
+    bridge: {entry: LIT-2-0002, cluster: sid_crypt, trail: all, label: 套层框架与伦理悖论, rationale: 从背尸赶路与一问一答的循环结构入手，阅读古典套层叙事如何把法理、亲属与身份困境编入故事。}
+
+  - id: case_np_khumbu_yeti_lore
+    title: 尼泊尔昆布｜夏尔巴寺院与雪人传说
+    aliases: [Yeti, Miche, Pangboche, Tengboche, 雪人, 昆布谷地]
+    genre: memorate
+    credibility_tier: B
+    note_kind: legend
+    location: {lat: 27.8475, lng: 86.7918, precision: culture_region, location_name: 尼泊尔 · 昆布潘波切与腾波切一带, culture_region: 南亚 · 尼泊尔喜马拉雅}
+    location_note: 坐标取昆布谷地潘波切与腾波切寺院所在区域作文化参考；夏尔巴山谷护法与雪人记忆涵盖更广的高海拔藏传佛教圣地（Beyul）。
+    paragraphs:
+      - 在尼泊尔东北部昆布谷地的夏尔巴口述传统中，高山雪线不仅是放牧与商旅通道，更是莲花生大师庇佑的隐秘圣地（Beyul）。当地称呼的“雪人”（Yeti 或 Miche，意近“人熊”）长期出现在高海拔岩洞与寺院周围的叙述里，与十七世纪宁玛派高僧桑瓦多吉在潘波切闭关时获雪人相助的宗教记忆交织，象征着人与荒野之间的脆弱平衡。
+      - 昆布的多座寺院曾珍藏被信众视作雪人遗存的宗教圣物，其中最知名的是昆琼寺的毛皮“头皮”以及潘波切寺的“干尸手掌”。自二十世纪五十年代起，伴随欧美登山队进入珠穆朗玛峰南坡，西方探险界与媒体将这些寺院圣物与雪地巨型脚印视作未知灵长类的实证；1950 年代末甚至出现外部探险者与中间人违规带走潘波切手掌指骨的文物流失风波。
+      - 随着高海拔考察和现代分子检测的推进，学界对来自喜马拉雅与青藏高原寺院及私人收藏的所谓雪人毛发、骨骼样品进行了多次比对：2017 年发表于《英国皇家学会学报 B》的线粒体基因组研究显示，多份受检样本实属当地喜马拉雅棕熊、西藏棕熊或黑熊及家犬。科学检验澄清了受检生物样品的物种归属，同时也提醒读者区分实验室标本鉴定与夏尔巴寺院叙事各自的文化位置。
+    sources:
+      - {citation: 'Tianyi Lan et al., Evolutionary history of enigmatic bears in the Tibetan Plateau–Himalaya region and the identity of the yeti, Proceedings of the Royal Society B 284, 2017.', type: academic_article, url: 'https://royalsocietypublishing.org/doi/10.1098/rspb.2017.1804', doi: '10.1098/rspb.2017.1804', locator: 喜马拉雅所谓雪人遗物样本的线粒体 DNA 鉴定与熊类演化分析}
+      - {citation: 'Trafficking Culture, Pangboche Hand, University of Glasgow.', type: academic_article, url: 'https://traffickingculture.org/encyclopedia/case-studies/pangboche-hand/', locator: 潘波切寺“雪人手掌”宗教背景、采样流散与文物归还争议}
+      - {citation: 'Michael Ward, Himalayan Scientific Expedition, 1960–61, Alpine Journal, 1961, 343–364.', type: primary_archive, url: 'https://www.alpinejournal.org.uk/Contents/Contents_1961_files/AJ%201961%20343-364%20Ward%20Himalayan%20Science.pdf', locator: 昆布谷地实地考察与雪人足迹及标本记录}
+    compare: [case_yeti_khumjung_scalp_1960]
+    motifs: [index_berezkin_k100f1]
+    bridge: {entry: FOR-2-0012, cluster: sid_crypt, trail: all, label: 寺院圣物与生物样本鉴定, rationale: 并读夏尔巴山谷护法叙事、圣物流散史与线粒体 DNA 鉴定，区分地方宗教象征与可检验的生物样本结论。}
+
+  - id: case_in_kerala_sarpakavu_naga
+    title: 印度喀拉拉邦｜蛇神圣林“萨帕卡武”与禁忌守护
+    aliases: [Sarpakavu, Kaavu, Nagaradhana, 萨帕卡武, 蛇神圣林, 那伽圣林]
+    genre: folktale
+    credibility_tier: A
+    note_kind: story
+    location: {lat: 10.5276, lng: 76.2144, precision: province, location_name: 印度 · 喀拉拉邦（圣林文化区参考）, culture_region: 南亚 · 印度喀拉拉邦}
+    location_note: 坐标取印度南部喀拉拉邦中部作省级文化参考；萨帕卡武圣林分散坐落于传统大家族宅院与村落周边。
+    paragraphs:
+      - 在印度南部的喀拉拉邦，许多传统大家族宅院（Taravad）旁曾保留一片不可随意砍伐的小片常绿林，称为“萨帕卡武”（Sarpakavu，意为“蛇神之林”）。林中供奉象征水脉、生育与家族福祉的蛇神那伽（Nagaraja 与 Nagayakshi）石像，周边常配有池塘与禁止惊扰爬行动物的习俗禁忌。
+      - 民间叙事与仪式实践紧密相连：在特定节期，社区会请专业诵唱者用天然矿物与植物粉末在林前绘制繁复的蛇神地画（Kalam），伴随“蛇神之舞”（Pambum Thullal）与供奉仪轨，祈求祛除家族灾病或平息冒犯圣林带来的厄运。违背护林禁忌招致惩罚的故事，长期在口述中强化了林地边界。
+      - 生态学与宗教学的跨学科田野调查发现，在人口密集且城市化迅速的喀拉拉邦，正是这些敬蛇禁忌使成百上千片小微林地免于农垦与砍伐，为本土植物、两栖类与蛇类保留了关键的生境斑块与水源涵养点。近年来大家族解体与土地分割正令不少圣林萎缩，也促使学者重新评估地方信仰在生物多样性保护中的实际作用。
+    sources:
+      - {citation: 'Devika B., The Sacred Groves of the Serpent Gods: Sarpakavus of Kerala as Indigenous Ecology, Rupkatha Journal on Interdisciplinary Studies in Humanities 16(1), 2024.', type: academic_article, url: 'https://doi.org/10.21659/rupkatha.v16n1.16', doi: '10.21659/rupkatha.v16n1.16', locator: 喀拉拉邦蛇神圣林的仪式表演、家族体系与本土生态伦理}
+      - {citation: 'Félix Landry Yuan, U. Prashanth Ballullaya, Ramesh Roshnath, Timothy C. Bonebrake & Palatty Allesh Sinu, Sacred groves and serpent-gods moderate human–snake relations, People and Nature 2(1), 2020.', type: academic_article, url: 'https://doi.org/10.1002/pan3.10059', doi: '10.1002/pan3.10059', locator: 蛇神信仰如何调节人蛇冲突并维系微生境保护}
+    compare: [case_th_mekong_naga_night_fisher, case_br_sao_paulo_curupira]
+    motifs: [index_berezkin_h5, index_berezkin_c26]
+    bridge: {entry: BIO-5-0009, cluster: sid_myth, trail: all, label: 蛇神圣林与生境斑块, rationale: 将喀拉拉邦敬蛇护林的民间规范与生态栖息地连通性并读，观察宗教禁忌如何客观保留微小生境块。}
+
+  - id: case_ca_ontario_windigo_lore
+    title: 加拿大安大略｜阿尔冈昆冬荒禁忌与温迪戈
+    aliases: [Windigo, Wendigo, Wiitiko, 温迪戈, 冬荒食人精怪]
+    genre: folktale
+    credibility_tier: A
+    note_kind: story
+    location: {lat: 49.7670, lng: -94.4894, precision: province, location_name: 加拿大 · 安大略西北部（文化区域参考）, culture_region: 北美 · 加拿大安大略}
+    location_note: 坐标取加拿大安大略西北部北方针叶林区作文化区域参考；温迪戈故事流传于五大湖及亚北极多支阿尔冈昆语民族之间。
+    paragraphs:
+      - 在安大略省及北美亚北极森林的奥吉布瓦、克里等阿尔冈昆语原住民族群口述传统里，温迪戈（Windigo，亦拼作 Wendigo 或 Wiitiko）是与严寒、极冬、密林孤立和饥荒紧扣的恐怖存在。它有时被讲述成吞噬人肉的冰心巨人，食量越大身躯越庞大；也有版本强调原本的凡人因在绝境中犯下食人禁忌，或因极端自私贪婪而心化寒冰、异变为温迪戈。
+      - 在原住民社群伦理中，温迪戈远非单纯的恐怖怪物，而是关于资源分配与集体求生的警示：北方漫长冬季里，食物匮乏迫使家庭小群分散狩猎，彼此分享与克制私欲是生存底线。讲述者借“贪婪者终将失去人性、沦为孤立食人魔”的叙事，将不共享、不节制界定为危险的越界。
+      - 二十世纪人类学与精神医学文献曾围绕所谓“温迪戈精神病”（Windigo psychosis）展开长期争论，学者卢·马拉诺等人在重检档案后批评早年外部观察者混淆了文化内的道德解释框架与临床诊断实体；而当代流行文化把温迪戈改绘为鹿角怪物，往往脱离了阿尔冈昆传统原本的冬荒社会语境。
+    sources:
+      - {citation: 'Steve Pitt, Windigo, The Canadian Encyclopedia, Historica Canada.', type: institutional_account, url: 'https://www.thecanadianencyclopedia.ca/en/article/windigo', locator: 阿尔冈昆口述中的温迪戈形象、社会禁忌与现代文化挪用辨析}
+      - {citation: 'Encyclopædia Britannica, Wendigo.', type: institutional_account, url: 'https://www.britannica.com/topic/wendigo', locator: 北美原住民传说脉络与冬荒食人禁忌概述}
+      - {citation: 'Lou Marano, Windigo Psychosis: The Anatomy of an Emic-Etic Confusion, Current Anthropology 23(4), 1982.', type: academic_article, url: 'https://doi.org/10.1086/202868', doi: '10.1086/202868', locator: 文化内部道德叙述与外部医学分类混用的学术反思}
+    motifs: [index_berezkin_b33d]
+    bridge: {entry: SOC-1-0003, cluster: sid_crypt, trail: all, label: 极寒饥荒禁忌与社群规范, rationale: 从阿尔冈昆严冬共享准则与贪婪戒律切入，理解精怪禁忌如何约束极端资源危机中的个体行为。}
+
+  - id: case_us_point_pleasant_mothman_1966
+    title: 波因特普莱森特｜1966 年目击叙述与“叙事劫持”
+    aliases: [Mothman, Point Pleasant, Silver Bridge, 天蛾人, 银桥坍塌]
+    genre: memorate
+    credibility_tier: B
+    note_kind: legend
+    location: {lat: 38.8445, lng: -82.1371, precision: city, location_name: 美国西弗吉尼亚州 · 波因特普莱森特, culture_region: 北美 · 美国阿巴拉契亚地区}
+    location_note: 坐标取美国西弗吉尼亚州波因特普莱森特城区作城市参考；最早的目击讲述集中在城北旧军火库（TNT 区）附近。
+    temporal: {year_start: 1966, year_end: 1967, era_label: 1966–1967 年目击潮与银桥坍塌事故, uncertainty_note: 1966 年 11 月 15 日晚出现首起公开目击报告，1967 年 12 月 15 日银桥坍塌后早期目击记忆被重新编排。}
+    paragraphs:
+      - 1966 年 11 月 15 日深夜，两对来自西弗吉尼亚州波因特普莱森特的年轻夫妇向警方报告，他们在城北二战遗留军火库（俗称“TNT 区”）附近遇见一个灰白色、长着巨翼且双眼泛红光的高大人形怪物。当地记者玛丽·海尔持续跟进报道，一年内累积了二十余起类似亲历叙述，“天蛾人”（Mothman）这一报刊绰号随之在阿巴拉契亚河谷传开。
+      - 1967 年 12 月 15 日傍晚高峰时段，连接西弗吉尼亚与俄亥俄州的俄亥俄河银桥突然断裂坍塌，导致四十六人遇难。美国国家运输安全委员会的工程调查早已查明，事故源于 1928 年建桥所用的 330 号眼杆悬链内部出现仅 0.1 英寸深的隐蔽应力裂纹，叠加重载与金属腐蚀所致；事故亦直接催生了美国现代国家桥梁安全检查制度。
+      - 民俗学与传播学研究者随后以波因特普莱森特为例分析“叙事劫持”（narrative hijacking）现象：由于目击报道恰好在塌桥后淡出，且 1975 年畅销书将两者编织为“灾异凶兆”，最初散落的夜间亲历讲述与工业基础设施悲剧被强行焊接为同一段都市传说，进而重塑了当地的公共纪念与节日旅游景观。
+    sources:
+      - {citation: 'Jack Daly, Narrative Hijacking: Mothman and the Silver Bridge Collapse, Utah State University Digital Commons.', type: academic_thesis, url: 'https://digitalcommons.usu.edu/gradreports/1402/', locator: 1966 年目击叙述、银桥工程事故与灾后叙事融合分析}
+      - {citation: 'Gordon Simmons, Mothman, e-WV: The West Virginia Encyclopedia, West Virginia Humanities Council.', type: institutional_account, url: 'https://www.wvencyclopedia.org/entries/1369', locator: 1966 年 TNT 厂区目击经过、报刊报道及后世民俗演变}
+      - {citation: 'West Virginia Public Broadcasting, Mothman Legacy Has Ties to Ancient Folklore.', type: journalism, url: 'https://wvpublic.org/mothman-legacy-has-ties-to-ancient-folklore/', locator: 阿巴拉契亚地方民间传统与当代波因特普莱森特记忆}
+    compare: [case_us_point_pleasant_mothman]
+    motifs: [motif_urban_ostension_liminal]
+    bridge: {entry: SOC-5-0001, cluster: sid_liminal, trail: all, label: 目击叙述如何接管灾难记忆, rationale: 对照早期目击口述、工程事故调查与民俗学“叙事劫持”概念，辨析灾后附会与媒体议程放大。}

@@ -8,6 +8,7 @@ import { genreContract, genreLabels, sourceTier } from './narrativeMetadata';
 import { storyShare, bindStoryShare } from './sharing';
 import { originalPageButton, bindOriginalPages } from './originalPages';
 import { engravingHeader, engravingBeam, engravingFrieze, engravingPatternForVolume, bindEngravingBeam } from '../engraving';
+import { resolvePrismForPair, renderPrismPhilosophyHTML, bindSensoryLabs } from './philosophicalPrism';
 
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const hasCoordinates = node => Number.isFinite(node.spatial?.lat) && Number.isFinite(node.spatial?.lng)
@@ -32,16 +33,25 @@ const readingText = node => {
   const original = edition ? `<h4>古籍原文</h4>${String(edition).split(/\n{2,}/).map(p=>`<p lang="zh-Hant">${escape(p)}</p>`).join('')}` : '';
   return paragraphs || original ? paragraphs + original : '<p>本条暂无站内正文，请查阅出处。</p>';
 };
-const matchLabel = row => ({curated:'精选对读',theme:'主题关联',guide:'阅读指引'})[row?.kind] ?? '自选对读';
-const matchReason = row => row?.kind === 'theme'
-  ? `共同主题词：${(row.terms ?? []).map(item=>`${item.term}${item.source === '正文' ? '（正文）' : ''}${item.source === '题名或别名' && item.term.toLocaleLowerCase() !== item.target.toLocaleLowerCase() ? ` / ${item.target}` : ''}`).join('、')}`
-  : row?.kind === 'guide' || row?.kind === 'curated' ? row.reason : '由用户选择的对读';
+const matchLabel = row => ({ curated: '精选对读', relay: '母题/结构传导', theme: '主题关联', guide: '阅读指引' })[row?.kind] ?? '自选对读';
+const matchReason = (row, byId) => {
+  if (row?.kind === 'theme') {
+    return `共同主题词：${(row.terms ?? []).map(item => `${item.term}${item.source === '正文' ? '（正文）' : item.source === '原文' ? '（原文）' : ''}${item.source === '题名或别名' && item.term.toLocaleLowerCase() !== item.target.toLocaleLowerCase() ? ` / ${item.target}` : ''}`).join('、')}`;
+  }
+  if (row?.kind === 'relay') {
+    const viaNode = row.via && byId?.get?.(row.via);
+    return viaNode ? `${row.reason}（经由 ${viaNode.title}）` : row.reason;
+  }
+  return row?.kind === 'guide' || row?.kind === 'curated' ? row.reason : '由用户选择的对读';
+};
 
 /** The second view uses the same public catalogue as the original atlas. */
-export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starMaterial, latLonToVec3, focusNode, onSelection, onPortal, onBrowseFolklore }) {
+export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starMaterial, latLonToVec3, focusNode, onSelection, onPortal, onBrowseFolklore, audio, getMembraneDepth, onObserve, onMatchesReady, onMatchesUpdated, software = false }) {
   let graph = null, byId = new Map(), indexById = new Map(), adjacency = new Map(), shards = null;
   const detailedNodes = new Map();
   let matchIndex = null, matchPromise = null, matchError = '';
+  let substantiveCount = dataset.match_summary?.stats?.substantive_nodes ?? null;
+  let prefetchedMatchBytes = null;
   let startPromise = null;
   let reverseEntryId = null, reverseQuery = '';
   let geoPoints = null, semanticPoints = null, networkLines = null, limit = 60;
@@ -74,18 +84,30 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
   function updateMatchCount() {
     const label = document.getElementById('stats-matches');
     if (!label || !matchIndex) return;
-    const count = Object.keys(matchIndex.matches).filter(id=>byId.has(id) && allowed(byId.get(id))).length;
+    const count = Object.entries(matchIndex.matches)
+      .filter(([id, rows]) => byId.has(id) && allowed(byId.get(id)) && rows.some(row => row.kind !== 'guide')).length;
+    substantiveCount = count;
     label.textContent = count.toLocaleString();
     const canvas = document.querySelector('#webgl-viewport canvas');
     if (canvas) canvas.dataset.matchCount = String(count);
+    onMatchesUpdated?.(count);
   }
 
   function ensureMatches() {
     if (!matchPromise) {
       matchError = '';
-      matchPromise = loadPortalMatches(root,dataset,book,graph).then(index=>{
-        matchIndex=index; updateMatchCount(); return index;
-      }).catch(error=>{ matchPromise=null; matchError=error.message; throw error; });
+      const bytesPromise = prefetchedMatchBytes;
+      matchPromise = loadPortalMatches(root, dataset, book, graph, bytesPromise).then(index => {
+        matchIndex = index;
+        updateMatchCount();
+        onMatchesReady?.(index);
+        return index;
+      }).catch(error => {
+        matchPromise = null;
+        prefetchedMatchBytes = null;
+        matchError = error.message;
+        throw error;
+      });
     }
     return matchPromise;
   }
@@ -93,11 +115,17 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
   function layerPosition(node, index) {
     let hash = 2166136261;
     for (const c of node.id) hash = Math.imul(hash ^ c.charCodeAt(0), 16777619);
-    const u = (hash >>> 0) / 4294967296;
-    const v = ((Math.imul(hash, 1597334677) >>> 0) / 4294967296);
+    // Scatter real catalogue nodes through a volume rather than compressing
+    // thousands of different records into four horizontal stripes.
+    const mix = value => {
+      value = Math.imul(value ^ (value >>> 16), 0x7feb352d);
+      value = Math.imul(value ^ (value >>> 15), 0x846ca68b);
+      return ((value ^ (value >>> 16)) >>> 0) / 4294967296;
+    };
+    const u = mix(hash), v = mix(hash ^ 0x9e3779b9), w = mix(hash ^ 0x85ebca6b);
     const layer = Math.max(1, Math.min(4, Number(node.z_layer) || 1));
-    const r = 22 + Math.sqrt(u) * 158, a = v * Math.PI * 2 + index * .0001;
-    return new THREE.Vector3(Math.cos(a) * r, (layer - 2.5) * 90 + Math.sin(a) * 19, Math.sin(a) * r * .58);
+    const r = 26 + Math.sqrt(u) * 164, a = v * Math.PI * 2 + index * .0001;
+    return new THREE.Vector3(Math.cos(a) * r, Math.sin(a) * r * .94, (w - .5) * 105 + (layer - 2.5) * 28);
   }
 
   function makePoints(mode) {
@@ -110,7 +138,7 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
       vector.toArray(pos, i * 3);
       palette[Math.max(0, Math.min(3, (Number(node.z_layer) || 1) - 1))].toArray(colors, i * 3);
       size[i] = mode === 'geo' ? 4.2 : 2.3; spike[i] = .03; phase[i] = i * .37;
-      hi[i] = allowed(node) && (mode !== 'geo' || hasCoordinates(node)) ? .72 : -1;
+      hi[i] = allowed(node) && (mode !== 'geo' || hasCoordinates(node)) ? (mode === 'geo' ? .72 : .24) : -1;
     });
     const geometry = new THREE.BufferGeometry();
     for (const [key, value, itemSize] of [['position',pos,3],['aColor',colors,3],['aSize',size,1],['aSpike',spike,1],['aHighlight',hi,1],['aPhase',phase,1]]) {
@@ -118,7 +146,7 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
     }
     geometry.computeBoundingSphere();
     const points = new THREE.Points(geometry, starMaterial);
-    points.userData.softwareStride = 1;
+    points.userData.softwareStride = software ? (mode === 'semantic' ? 3 : 2) : 1;
     points.userData.geoOcclusion = mode === 'geo';
     points.userData.geographicMarkers = mode === 'geo';
     points.visible = false; cosmosGroup.add(points);
@@ -132,7 +160,7 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
       const attr = points.geometry.getAttribute('aHighlight');
       graph.nodes.forEach((node,i) => {
         attr.array[i] = !allowed(node) || (geo && !hasCoordinates(node)) ? -1
-          : selected()?.id === node.id ? 2.1 : query && !matchesGraph(node, query) ? .12 : .72;
+          : selected()?.id === node.id ? 2.1 : query && !matchesGraph(node, query) ? .12 : (geo ? .72 : .24);
       });
       attr.needsUpdate = true;
     }
@@ -248,10 +276,10 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
     const renderRows = list => list.map(row=> {
       const entry=book.entries.find(item=>item.id === row.entry);
       if (!entry) return '';
-      return `<button class="syzygy-related" data-match-entry="${escape(entry.id)}"><span>${escape(entry.title)}</span><small class="syzygy-match-label" data-kind="${escape(row.kind)}">${escape(matchLabel(row))} · ${escape(matchReason(row))}</small></button>`;
+      return `<button class="syzygy-related" data-match-entry="${escape(entry.id)}"><span>${escape(entry.title)}</span><small class="syzygy-match-label" data-kind="${escape(row.kind)}">${escape(matchLabel(row))} · ${escape(matchReason(row, byId))}</small></button>`;
     }).join('');
-    slot.innerHTML = `${topics.length ? `<p class="syzygy-match-heading">主题关联 · ${topics.length}</p>${renderRows(topics)}` : ''}
-      ${guides.length ? `<p class="syzygy-match-heading">资料类型阅读指引 · ${guides.length}</p>${renderRows(guides)}` : ''}
+    slot.innerHTML = `${topics.length ? `<p class="syzygy-match-heading">星桥对照（精选 · 传导 · 主题）· ${topics.length}</p>${renderRows(topics)}` : ''}
+      ${guides.length ? `<details class="syzygy-guide-group"><summary>资料类型参考指引 · ${guides.length}</summary>${renderRows(guides)}</details>` : ''}
       ${!rows.length ? '<p class="syzygy-reference">暂无合适的自动对照，可以自行搜索原书。</p>' : ''}`;
     slot.querySelectorAll('[data-match-entry]').forEach(button=>button.addEventListener('click',()=>openPortal(node,button.dataset.matchEntry)));
   }
@@ -271,7 +299,7 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
     input.value=reverseEntryId === entry.id ? reverseQuery : '';
     const paint=()=>{
       const filtered=all.filter(row=>matchesGraph(byId.get(row.nodeId),input.value));
-      list.innerHTML=filtered.slice(0,shown).map(row=>{const node=byId.get(row.nodeId);return `<button class="syzygy-related" data-reverse-node="${escape(node.id)}"><span>${escape(node.title)}</span><small class="syzygy-match-label" data-kind="${escape(row.kind)}">${escape(matchLabel(row))} · ${escape(matchReason(row))}</small></button>`;}).join('')
+      list.innerHTML=filtered.slice(0,shown).map(row=>{const node=byId.get(row.nodeId);return `<button class="syzygy-related" data-reverse-node="${escape(node.id)}"><span>${escape(node.title)}</span><small class="syzygy-match-label" data-kind="${escape(row.kind)}">${escape(matchLabel(row))} · ${escape(matchReason(row, byId))}</small></button>`;}).join('')
         + (filtered.length>shown ? `<button class="syzygy-load-more" data-more-reverse>显示更多 · ${shown} / ${filtered.length.toLocaleString()}</button>` : '')
         + (!filtered.length ? '<p class="syzygy-reference">没有匹配条目。</p>' : '');
       list.querySelectorAll('[data-reverse-node]').forEach(button=>button.addEventListener('click',()=>openPortal(byId.get(button.dataset.reverseNode),entry.id)));
@@ -323,6 +351,7 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
     if (!node || !allowed(node)) return;
     if (state.pendingBook) { const pending = state.pendingBook; state.pendingBook = null; return openPortal(node,pending.id); }
     state.selectedGraph = node; state.selectedBridge = null; state.selectedBook = null;
+    onObserve?.({ type: 'mythos', id: node.id, label: node.title });
     renderNode(node, !!graph.details_file); updatePoints(); drawNeighborhood(node); onSelection();
     if (state.scopeTab === 'supplement' || state.dimension !== 'omnia' || state.searchQuery) renderDirectory();
     if (fly) focusNode(node, hasCoordinates(node) ? latLonToVec3(node.spatial.lat,node.spatial.lng,165) : null, semanticPositions[indexById.get(node.id)]);
@@ -344,6 +373,7 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
     if (!entry) return;
     if (reverseEntryId !== id) { reverseEntryId=id; reverseQuery=''; }
     state.selectedGraph = null; state.selectedBridge = null; state.selectedBook = entry; clearNeighborhood(); onSelection(); updatePoints();
+    onObserve?.({ type: 'physis', id: entry.id, label: entry.title });
     const container = document.getElementById('syzygy-card-container');
     const render = (body, loading) => {
       container.innerHTML = `<article class="engraving-codex">${engravingHeader('格物识微',entry.volume,undefined,engravingPatternForVolume(entry.volume))}<section class="physis-pane syzygy-full-card"><p class="syzygy-overline">下卷 · 格物识微 / ${escape(entry.volume)}</p><h3>${escape(entry.title)}</h3><p class="syzygy-reference">${escape(entry.id)} · PDF 第 ${escape(entry.page)} 页</p><div class="syzygy-read-links">${originalPageButton(entry.page)}</div><div class="syzygy-prose syzygy-book-body">${loading ? '正在读取原书正文…' : handbookText(body,root)}</div>${bookNavigation(entry,book.entries)}<div class="syzygy-read-links"><a href="${bookURL(entry.id)}">精查万象星枢</a><a href="${publicAssetUrl(root, 'knowledge/handbook.pdf')}#page=${encodeURIComponent(entry.page)}" target="_blank" rel="noopener">打开原书 PDF</a><button id="portal-choose-story" class="ctl-btn">✦ 选择民俗条目对读</button></div><div data-portal-reverse></div></section></article>`;
@@ -361,12 +391,14 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
     const entry = book.entries.find(item => item.id === id);
     if (!node || !entry || !allowed(node)) return;
     state.selectedGraph = node; state.selectedBridge = null; state.selectedBook = entry; state.pendingBook = null;
+    onObserve?.({ type: 'bridge', id: `${node.id}:${entry.id}`, label: `${node.title} ⇄ ${entry.title}` });
     onSelection(); updatePoints(); onPortal(node,entry);
     const container = document.getElementById('syzygy-card-container');
     const render = (story, body, loading) => {
       const row=(matchIndex?.matches[node.id] ?? []).find(item=>item.entry === entry.id);
       const label=matchIndex ? matchLabel(row) : matchError ? '对照依据暂不可用' : '正在读取对照依据';
-      const reason=matchIndex ? matchReason(row) : matchError ? '可继续阅读两侧资料，或稍后重试自动对照。' : '正在载入自动对照索引。';
+      const reason=matchIndex ? matchReason(row, byId) : matchError ? '可继续阅读两侧资料，或稍后重试自动对照。' : '正在载入自动对照索引。';
+      const prism = resolvePrismForPair({ node: story, entry, depth: getMembraneDepth?.() ?? 0.5 });
       container.innerHTML = `<article class="engraving-codex">${engravingHeader('民俗与格物对读',story.spatial?.location_name || '地点未记录',story.credibility_tier)}
         <div class="syzygy-overview-strip">
           <div class="syzygy-overview-pair">
@@ -385,7 +417,7 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
           </div>
         </div>
         ${engravingBeam(true)}
-        <section class="prism-pane syzygy-full-card" data-codex-section="prism"><p class="syzygy-overline">◐ 穿界星门 · ${escape(label)}</p><p class="syzygy-reference">${escape(reason)}</p>${mechanismMarkup(story)}</section>
+        <section class="prism-pane syzygy-full-card" data-codex-section="prism"><p class="syzygy-overline">◐ 穿界星门 · ${escape(label)}</p><p class="syzygy-reference">${escape(reason)}</p>${mechanismMarkup(story)}${renderPrismPhilosophyHTML(prism, book.entries)}</section>
         <div class="syzygy-dual-body">
           <section class="mythos-pane syzygy-full-card" data-codex-section="mythos"><p class="syzygy-overline">上卷 · L${escape(story.z_layer ?? '—')}</p>
             <h3>${escape(story.title)}</h3><p class="syzygy-reference">来源等级 ${escape(sourceTier(story) ?? '未记录')} · 体裁 ${escape(genreLabels[genreContract(story)])}${isFiction(story) ? ' · 虚构标记 F' : ''}</p><p class="syzygy-reference">${escape(story.spatial?.location_name || '地点未记录')}</p><div class="syzygy-prose">${readingText(story)}</div>
@@ -400,6 +432,7 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
       bindBookNavigation(container,next => openPortal(node,next));
       bindOriginalPages(container,root,book);
       bindEngravingBeam(container);
+      bindSensoryLabs(container, { audio, onOpenBook: (bookId) => openPortal(node, bookId) });
     };
     render(node,'',true);
     try {
@@ -431,7 +464,11 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
 
   function start() {
     if (!startPromise) startPromise = (async () => {
-      graph = await loadGraph(root, import.meta.env.VITE_PUBLIC_DEMO === '1');
+      if (!prefetchedMatchBytes && /^[a-f0-9]{64}$/.test(dataset.matches_sha256 ?? '')) {
+        const url = `${publicAssetUrl(root, 'syzygy/matches.json')}?v=${dataset.matches_sha256}`;
+        prefetchedMatchBytes = fetch(url).then(r => r.ok ? r.arrayBuffer() : null).catch(() => null);
+      }
+      graph = await loadGraph(root, import.meta.env.VITE_PUBLIC_DEMO === '1', dataset.snapshot_id);
       if (graph.snapshot_id !== dataset.snapshot_id) throw new Error('朔望数据与民俗目录版本不一致，请刷新。');
       shards = createReadingShards(root, graph, book);
       byId = new Map(graph.nodes.map(node=>[node.id,node])); indexById = new Map(graph.nodes.map((node,i)=>[node.id,i]));
@@ -439,7 +476,7 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
       graph.nodes.forEach((node,i) => semanticPositions.push(layerPosition(node,i)));
       geoPoints = makePoints('geo'); semanticPoints = makePoints('semantic'); updateDimension();
       rendererCount();
-      ensureMatches().catch(()=>{});
+      ensureMatches().catch(error => { console.warn('Automatic portal matches unavailable:', error); });
       return graph;
     })().catch(error=>{startPromise=null;throw error;});
     return startPromise;
@@ -475,6 +512,8 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
     },
     searchChanged() { limit = 60; updatePoints(); },
     getNode(id) { return byId.get(id); },
+    getMatchIndex() { return matchIndex; },
+    getSubstantiveCount() { return substantiveCount; },
     isVisible(node) { return !!node && allowed(node); },
     visibleCount() { return graph?.nodes.filter(allowed).length ?? 0; },
   };

@@ -34,8 +34,12 @@ def run(collection: Path = COLLECTION, created_at: date = date.fromisoformat('20
         raise ValueError('本批编号重复或已经入库；未覆盖已有资料。')
     knowledge_ids = {entry['id'] for entry in book['entries'] if entry.get('body', '').strip()}
     known_ids = existing_ids | set(new_ids)
-    if any(target not in known_ids or target == item['id'] for item in records for target in item.get('compare', [])):
-        raise ValueError('同题对照目标不存在或指向自身。')
+    for item in records:
+        ost = item.get('ostension_of')
+        ost_list = [ost] if isinstance(ost, str) else list(ost or [])
+        linked = list(item.get('compare') or []) + ost_list + list(item.get('motifs') or [])
+        if any(target not in known_ids or target == item['id'] for target in linked):
+            raise ValueError(f"关联目标不存在或指向自身: {item['id']}")
     if any(item['bridge']['entry'] not in knowledge_ids for item in records):
         raise ValueError('知识星桥指向不存在或无正文的知识条目。')
     if any(item['id'] in {bridge['case'] for bridge in bridges} for item in records):
@@ -48,14 +52,27 @@ def run(collection: Path = COLLECTION, created_at: date = date.fromisoformat('20
         node_id = item['id']
         refs = [Source.model_validate(source) for source in item['sources']]
         tier = item.get('credibility_tier', 'A')
+        ost = item.get('ostension_of')
+        ost_list = [ost] if isinstance(ost, str) else list(ost or [])
+        relations = [
+            {'type': 'COMPARED_WITH', 'target': target, 'weight': 1.0,
+             'note': '同题比较，非已证实的传播或因果关系。'}
+            for target in dict.fromkeys(item.get('compare') or [])
+        ] + [
+            {'type': 'OSTENSION_OF', 'target': target, 'weight': 1.0,
+             'note': '数字民俗示现与衍生叙事关联。'}
+            for target in dict.fromkeys(ost_list)
+        ] + [
+            {'type': 'HAS_MOTIF', 'target': target, 'weight': 1.0,
+             'note': '标准母题或比较索引对照。'}
+            for target in dict.fromkeys(item.get('motifs') or [])
+        ]
         meta = NodeMetadata.model_validate({
             'id': node_id, 'title': item['title'], 'aliases': item.get('aliases', []),
             'node_type': 'case', 'z_layer': 1, 'genre': item['genre'],
             'credibility_tier': tier, 'is_fictional_quarantine': tier == 'F',
-            'spatial': item['location'], 'temporal': None, 'standards': {},
-            'relations': [{'type': 'COMPARED_WITH', 'target': target, 'weight': 1.0,
-                           'note': '同题比较，非已证实的传播或因果关系。'}
-                          for target in item.get('compare', [])],
+            'spatial': item['location'], 'temporal': item.get('temporal'), 'standards': {},
+            'relations': relations,
             'sources': [ref.model_dump(mode='json') for ref in refs],
             'audit': {'created_at': created_at, 'reviewed_by_human': False},
         })
@@ -67,9 +84,14 @@ def run(collection: Path = COLLECTION, created_at: date = date.fromisoformat('20
         path = VAULT / card_directory(meta) / f'{node_id}.md'
         content = serialize_card(meta, body)
         parse_card(content.decode('utf-8'))
-        note = {'kind': 'history' if item['genre'] == 'historical_archive' else 'legend',
+        note_kind = item.get('note_kind') or (
+            'history' if item['genre'] == 'historical_archive'
+            else ('story' if item['genre'] in {'myth', 'folktale'} else 'legend')
+        )
+        note = {'kind': note_kind,
                 'paragraphs': item['paragraphs'], 'source_numbers': list(range(1, len(refs) + 1)),
-                'map_label': item['location']['location_name'], 'location_note': item['location_note']}
+                'map_label': item.get('map_label') or item['location']['location_name'],
+                'location_note': item['location_note']}
         EditorialNote.model_validate(note)
         planned[path], new_notes[node_id] = content, note
         spec = item['bridge']

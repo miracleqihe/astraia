@@ -17,13 +17,14 @@ export function matchesGraph(node, query) {
   return !words.length || words.every(word => graphText(node).includes(word));
 }
 
-export async function loadGraph(root, publicSite) {
-  const names = publicSite ? ['graph_index.json', 'graph_data.json'] : ['catalogue_data.json', 'graph_data.json'];
+export async function loadGraph(root, publicSite, expectedSnapshotId = null) {
+  const names = publicSite ? ['graph_index.json', 'graph_data.json'] : ['graph_index.json', 'catalogue_data.json', 'graph_data.json'];
   for (const name of names) {
     const response = await fetch(publicAssetUrl(root, `data/${name}`), { cache: 'no-cache' });
     if (!response.ok || !response.headers.get('content-type')?.includes('json')) continue;
     const graph = await response.json();
     if (graph.schema_version !== 1 || !Array.isArray(graph.nodes) || !Array.isArray(graph.links)) throw new Error('图谱数据格式不匹配。');
+    if (expectedSnapshotId && graph.snapshot_id !== expectedSnapshotId && name === 'graph_index.json') continue;
     return graph;
   }
   throw new Error('未找到图谱数据。');

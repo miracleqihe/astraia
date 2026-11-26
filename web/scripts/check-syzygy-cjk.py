@@ -13,7 +13,8 @@ from fontTools.ttLib import TTFont
 ROOT = Path(__file__).resolve().parents[2]
 DATA = (ROOT / 'web/public/data/graph_data.json', ROOT / 'web/public/knowledge/data.json',
         ROOT / 'web/src/syzygy/bridges.json', ROOT / 'web/src/syzygy/matching-rules.json',
-        ROOT / 'web/src/syzygy/matching-concepts.json', ROOT / 'web/src/syzygy/reading-paths.json')
+        ROOT / 'web/src/syzygy/matching-concepts.json', ROOT / 'web/src/syzygy/matching-relays.json',
+        ROOT / 'web/src/syzygy/reading-paths.json')
 UI = (list((ROOT / 'web/src/syzygy').glob('*.js')) + list((ROOT / 'web/src').glob('*.tsx'))
       + [ROOT / 'web/syzygy/index.html', ROOT / 'web/src/portalNavigation.ts',
          ROOT / 'web/src/engraving.ts'])

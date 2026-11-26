@@ -69,7 +69,7 @@
 #left-drawer {
   position: fixed;
   top: 64px;
-  bottom: 66px;
+  bottom: 108px;
   left: 14px;
   width: 248px;
   z-index: 20;
@@ -79,7 +79,7 @@
 #right-drawer {
   position: fixed;
   top: 64px;
-  bottom: 66px;
+  bottom: 108px;
   right: 14px;
   width: 424px;
   max-width: calc(100vw - 28px);
@@ -373,7 +373,11 @@ body > footer {
 .syzygy-mobile-results[hidden] { display: none !important; }
 .syzygy-match-heading { margin-top: 12px; color: var(--engrave-gold, #cfa962); font-size: 11px; letter-spacing: 0.04em; font-weight: 600; }
 .syzygy-match-label { color: #d8c294 !important; }
+.syzygy-match-label[data-kind='relay'] { color: #8ec8ca !important; }
 .syzygy-match-label[data-kind='guide'] { color: #a7b6be !important; }
+.syzygy-guide-group { margin-top: 10px; border-top: 1px solid var(--engrave-line-soft, rgba(207, 169, 98, 0.2)); padding-top: 6px; }
+.syzygy-guide-group summary { cursor: pointer; font-size: 11px; color: var(--engrave-muted, #a8a092); padding: 4px 0; }
+#right-drawer.parchment-scroll .syzygy-match-label[data-kind='relay'] { color: #175240 !important; }
 .syzygy-mechanism { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--engrave-line-soft, rgba(207, 169, 98, 0.2)); }
 .syzygy-mechanism p { margin-top: 6px; }
 .syzygy-evidence-link, .syzygy-inline-button { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
@@ -437,10 +441,13 @@ body[data-renderer='software'] .celestial-panel { background-color: rgba(11, 15,
   #context-banner h1 { font-size: 17px; }
   #context-banner > .flex { flex-wrap: wrap; gap: 4px; }
   #banner-desc { max-width: 92%; }
-  #left-drawer, #right-drawer { top: 122px; bottom: 72px; }
+  #left-drawer, #right-drawer { top: 122px; bottom: 112px; }
   #right-drawer, #right-drawer.codex-spread { width: min(424px, calc(100vw - 28px)); }
   #right-drawer.codex-spread .syzygy-dual-body { display: block; }
   #right-drawer.codex-spread .syzygy-dual-body > .physis-pane { border-left: 0; }
+  .realm-dock { flex-wrap: wrap; justify-content: center; gap: 4px 6px; padding: 4px 7px; }
+  .realm-lunar-pill { display: none; }
+  .observer-veil-hud { left: 14px; right: 14px; width: auto; top: 120px; transform: none; }
 }
 @media (max-width: 360px) {
   #syzygy-header .syzygy-brand { gap: 4px; }
@@ -450,4 +457,514 @@ body[data-renderer='software'] .celestial-panel { background-color: rgba(11, 15,
 }
 @media (prefers-reduced-motion: reduce) {
   .drawer-anim, #celestial-tooltip { transition-duration: 0s; }
+  .membrane-whisper { animation: none !important; opacity: 1; }
+}
+
+/* ============================================================================
+   UNDULATING MEMBRANE, REALM INSTRUMENT, PHILOSOPHICAL PRISM & FOURTH WALL
+   ============================================================================ */
+#membrane-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 6;
+  pointer-events: none;
+}
+#membrane-whispers {
+  position: fixed;
+  inset: 0;
+  z-index: 18;
+  pointer-events: none;
+  overflow: hidden;
+}
+.membrane-whisper {
+  position: fixed;
+  transform: translate(-50%, -100%);
+  padding: 4px 10px;
+  border: 1px solid var(--whisper-accent, rgba(207, 169, 98, 0.55));
+  background: rgba(6, 9, 16, 0.88);
+  color: #f5eedc;
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+  animation: membrane-whisper-float 2.2s ease-out forwards;
+}
+@keyframes membrane-whisper-float {
+  0% { opacity: 0; transform: translate(-50%, -65%); }
+  18% { opacity: 0.98; transform: translate(-50%, -105%); }
+  75% { opacity: 0.92; transform: translate(-50%, -128%); }
+  100% { opacity: 0; transform: translate(-50%, -152%); }
+}
+
+/* Bottom Realm Instrument Bar */
+.realm-dock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.realm-dock-buttons {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(207, 169, 98, 0.28);
+  background: rgba(5, 8, 17, 0.85);
+}
+.realm-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 8px;
+  font-size: 11px;
+  color: rgba(232, 224, 208, 0.74);
+  border-right: 1px solid rgba(207, 169, 98, 0.2);
+  white-space: nowrap;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+.realm-btn:last-child { border-right: none; }
+.realm-btn:hover { color: #fff8e8; background: rgba(207, 169, 98, 0.14); }
+.realm-btn.active {
+  color: #fff9eb;
+  background: linear-gradient(135deg, rgba(207, 169, 98, 0.26), rgba(176, 198, 224, 0.16));
+  box-shadow: inset 0 -2px 0 #f0d79c;
+}
+.realm-btn span:first-child {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  color: #d6b678;
+}
+.realm-slider-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  color: #bfb5a3;
+  white-space: nowrap;
+}
+.realm-slider-tag {
+  font-size: 10px;
+  color: #d6b678;
+  letter-spacing: 0.06em;
+}
+#membrane-depth-slider {
+  width: 86px;
+  accent-color: #d6b678;
+  cursor: pointer;
+}
+.realm-lunar-pill {
+  padding: 2px 7px;
+  border: 1px solid rgba(207, 169, 98, 0.26);
+  background: rgba(6, 9, 16, 0.72);
+  color: #e6d5ad;
+  font-family: 'JetBrains Mono', 'Noto Serif SC', monospace;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.realm-audio-btn {
+  padding: 3px 8px;
+  font-size: 10.5px;
+  white-space: nowrap;
+}
+
+/* Beyond-Membrane Non-Interference Frosting on Material Controls */
+body[data-beyond-membrane='true'] .syzygy-tier-rail,
+body[data-beyond-membrane='true'] .syzygy-genre-filter,
+body[data-beyond-membrane='true'] #btn-fiction,
+body[data-beyond-membrane='true'] #btn-proj-toggle {
+  opacity: 0.72;
+  border-style: dashed;
+  border-color: rgba(176, 198, 224, 0.48);
+}
+body[data-beyond-membrane='true'] #btn-fiction::after {
+  content: ' · 隔膜';
+  color: #b0c6e0;
+  font-size: 10px;
+}
+
+/* Fourth-Wall Observer Veil HUD (Realm V: 夷) */
+.observer-veil-hud {
+  position: fixed;
+  top: 124px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(500px, calc(100vw - 32px));
+  z-index: 19;
+  padding: 13px 16px;
+  border: 1px solid rgba(239, 233, 220, 0.42);
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.78), inset 0 0 0 1px rgba(207, 169, 98, 0.22);
+}
+.observer-veil-hud[hidden] { display: none !important; }
+.observer-veil-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.observer-veil-quote {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #f3ece0;
+  border-left: 2px solid #d6b678;
+  padding-left: 9px;
+}
+.observer-veil-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+  padding: 8px 0;
+  border-top: 1px solid rgba(207, 169, 98, 0.2);
+  border-bottom: 1px solid rgba(207, 169, 98, 0.2);
+}
+.observer-veil-grid small {
+  display: block;
+  font-size: 9.5px;
+  color: #a89e8c;
+}
+.observer-veil-grid strong {
+  display: block;
+  margin-top: 2px;
+  font-family: 'JetBrains Mono', 'Noto Serif SC', monospace;
+  font-size: 11px;
+  color: #f0d79c;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.observer-veil-balance {
+  margin-top: 9px;
+}
+.observer-veil-balance-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10.5px;
+  color: #cbbda6;
+}
+.observer-veil-bar {
+  position: relative;
+  height: 6px;
+  margin: 5px 0 6px;
+  background: linear-gradient(90deg, rgba(214, 182, 120, 0.45) 0%, rgba(165, 180, 252, 0.45) 100%);
+  border: 1px solid rgba(207, 169, 98, 0.35);
+}
+#obs-balance-marker {
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  width: 6px;
+  height: 10px;
+  transform: translateX(-50%);
+  background: #fff6e0;
+  border: 1px solid #050811;
+}
+.observer-veil-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 10px;
+}
+.observer-veil-actions .ctl-btn {
+  padding: 5px 9px;
+  font-size: 11px;
+}
+
+/* Philosophical Prism (LOGOS) & Collapsible Sensory Micro-Labs */
+.syzygy-prism-logos {
+  margin-top: 12px;
+  padding-top: 11px;
+  border-top: 1px solid var(--engrave-line-soft, rgba(207, 169, 98, 0.22));
+}
+.syzygy-prism-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.syzygy-prism-realm {
+  padding: 1px 6px;
+  border: 1px solid var(--engrave-line, rgba(207, 169, 98, 0.38));
+  font-family: 'JetBrains Mono', 'Noto Serif SC', monospace;
+  font-size: 10px;
+  color: var(--engrave-gold, #cfa962);
+}
+.syzygy-prism-statement {
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.72;
+  color: var(--engrave-ink, #efe9dc);
+}
+.syzygy-prism-question {
+  margin: 8px 0 0;
+  padding: 6px 10px;
+  border-left: 2px solid var(--engrave-gold, #cfa962);
+  background: rgba(207, 169, 98, 0.06);
+  font-size: 12.5px;
+  line-height: 1.68;
+  color: var(--engrave-bright, #f0d79c);
+}
+#right-drawer.parchment-scroll .syzygy-prism-question {
+  background: rgba(120, 85, 32, 0.08);
+  color: #3e2a0c;
+}
+.syzygy-prism-wall-note {
+  margin-top: 7px;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--engrave-muted, #b0a797);
+}
+.syzygy-prism-anchors {
+  margin-top: 6px;
+}
+.syzygy-sensory-lab {
+  margin-top: 10px;
+  border: 1px solid var(--engrave-line, rgba(207, 169, 98, 0.3));
+  background: rgba(6, 9, 16, 0.35);
+}
+#right-drawer.parchment-scroll .syzygy-sensory-lab {
+  background: rgba(231, 223, 208, 0.42);
+}
+.syzygy-sensory-lab summary {
+  padding: 7px 10px;
+  cursor: pointer;
+  font-size: 11.5px;
+  color: var(--engrave-gold, #cfa962);
+  font-weight: 600;
+}
+.syzygy-lab-body {
+  padding: 8px 10px 10px;
+  border-top: 1px solid var(--engrave-line-soft, rgba(207, 169, 98, 0.18));
+}
+.syzygy-lab-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 8px 0;
+  border: 1px solid var(--engrave-line-soft, rgba(207, 169, 98, 0.25));
+  background: #060a14;
+}
+.syzygy-lab-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 7px;
+}
+.syzygy-lab-actions .ctl-btn {
+  padding: 4px 8px;
+  font-size: 11px;
+}
+.syzygy-afterimage-stage {
+  margin: 8px 0;
+  padding: 14px 10px;
+  border: 1px solid var(--engrave-line, rgba(207, 169, 98, 0.3));
+  background: #070b14;
+  text-align: center;
+  transition: background-color 0.28s ease;
+}
+.syzygy-afterimage-stage[data-afterimage-stage='blank'] {
+  background: #f4efe4;
+  color: #1b2232;
+}
+.syzygy-afterimage-stage[data-afterimage-stage='blank'] .syzygy-afterimage-target {
+  opacity: 0;
+}
+.syzygy-afterimage-stage[data-afterimage-stage='blank'] .syzygy-afterimage-caption {
+  color: #1b2232;
+}
+.syzygy-afterimage-target {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.syzygy-afterimage-halo {
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(214, 182, 120, 0.85) 0%, rgba(165, 180, 252, 0.65) 55%, rgba(0, 0, 0, 0) 75%);
+}
+.syzygy-afterimage-cross {
+  position: relative;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: #050811;
+}
+.syzygy-afterimage-caption {
+  font-size: 11px;
+  color: #d6c9b2;
+}
+.syzygy-lab-slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 11px;
+}
+.syzygy-lab-slider input {
+  flex: 1;
+  accent-color: #d6b678;
+}
+.syzygy-bridge-section {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(207, 169, 98, 0.2);
+}
+.syzygy-hub-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+  padding: 1px 6px;
+  border: 1px solid rgba(207, 169, 98, 0.34);
+  background: rgba(207, 169, 98, 0.08);
+  color: #e6d1a3;
+  font-size: 10px;
+}
+
+/* SIDERA v3 controls stay in the clear space above the existing realm dock. */
+.sidera-v3-controls[hidden] { display: none !important; }
+.sidera-v3-controls {
+  position: fixed;
+  z-index: 24;
+  left: 276px;
+  right: 452px;
+  bottom: 108px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px 12px;
+  pointer-events: none;
+}
+.sidera-v3-row {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px;
+  border: 1px solid rgba(207, 169, 98, .26);
+  background: rgba(5, 8, 17, .92);
+  pointer-events: auto;
+}
+.sidera-v3-caption {
+  padding: 0 4px;
+  color: #af9464;
+  font: 10px 'JetBrains Mono', 'Noto Serif SC', monospace;
+  white-space: nowrap;
+}
+.sidera-v3-row button {
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 4px 6px;
+  color: #b7b1a4;
+  background: transparent;
+  font: 11px 'Noto Serif SC', serif;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.sidera-v3-row button:hover { color: #f5dfac; border-color: rgba(207, 169, 98, .4); }
+.sidera-v3-row button[aria-pressed='true'] {
+  color: #fff0c8;
+  border-color: #b8904b;
+  background: rgba(194, 157, 89, .18);
+}
+.sidera-v3-row button[data-v3-focus='sid_crypt'][aria-pressed='true'] {
+  color: #ffb49d;
+  border-color: #a93d2d;
+  background: rgba(158, 42, 43, .18);
+}
+.sidera-v3-divider { height: 16px; width: 1px; background: rgba(207, 169, 98, .28); margin: 0 3px; }
+.sidera-v3-directory-tip { margin: 3px 0 9px; color: #a9a18e; font-size: 11px; line-height: 1.5; }
+.sidera-v3-origin { margin: 5px 0 9px; padding: 9px; border-left: 2px solid #9e2a2b; background: rgba(158, 42, 43, .09); }
+.sidera-v3-origin strong { color: #f1cd9d; font-size: 11.5px; }
+.sidera-v3-origin p { margin: 5px 0; color: #c4b8a4; font-size: 11px; line-height: 1.55; }
+.sidera-v3-origin a { color: #e8c57b; font-size: 11px; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 1100px) {
+  .sidera-v3-controls { left: 16px; right: 16px; bottom: 112px; }
+}
+
+/* A quiet tool rail leaves the observatory unobstructed until a tool is requested. */
+#observatory-dock {
+  position: fixed;
+  z-index: 26;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2px;
+  max-width: calc(100vw - 24px);
+  padding: 4px;
+  border: 1px solid rgba(194, 157, 89, .25);
+  background: rgba(6, 9, 19, .9);
+}
+#observatory-dock button {
+  min-height: 30px;
+  border: 1px solid transparent;
+  padding: 4px 11px;
+  color: #c6bca9;
+  background: transparent;
+  font: 12px 'Noto Serif SC', serif;
+  white-space: nowrap;
+  cursor: pointer;
+}
+#observatory-dock button span { color: #c29d59; margin-right: 3px; }
+#observatory-dock button:hover,
+#observatory-dock button[aria-expanded='true'] {
+  color: #f8e9cb;
+  border-color: rgba(194, 157, 89, .55);
+  background: rgba(194, 157, 89, .12);
+}
+#observatory-dock button:focus-visible { outline: 1px solid #e6c888; outline-offset: 2px; }
+body:not([data-dimension='sidera']) #observatory-dock [data-sidera-only] { display: none; }
+
+.sidera-v3-controls {
+  display: none;
+  left: 50%;
+  right: auto;
+  bottom: 62px;
+  width: max-content;
+  max-width: calc(100vw - 24px);
+  transform: translateX(-50%);
+}
+body[data-observatory-panel='observe'] .sidera-v3-controls:not([hidden]),
+body[data-observatory-panel='bridges'] .sidera-v3-controls:not([hidden]) { display: flex; }
+.sidera-v3-controls [data-observatory-content] { display: none; }
+body[data-observatory-panel='observe'] [data-observatory-content='observe'],
+body[data-observatory-panel='bridges'] [data-observatory-content='bridges'] {
+  display: flex;
+  max-width: 100%;
+  overflow-x: auto;
+}
+body > #observatory-popovers { display: none; bottom: 62px; }
+body[data-observatory-panel='realm'] > #observatory-popovers,
+body[data-observatory-panel='trails'] > #observatory-popovers { display: flex; }
+#observatory-popovers #realm-dock,
+#observatory-popovers #trail-dock { display: none; }
+body[data-observatory-panel='realm'] #observatory-popovers #realm-dock,
+body[data-observatory-panel='trails'] #observatory-popovers #trail-dock { display: flex; }
+@media (max-width: 760px) {
+  #observatory-dock button { padding: 5px 8px; }
+  #observatory-popovers { width: calc(100vw - 24px); }
+  #observatory-popovers #realm-dock,
+  #observatory-popovers #trail-dock { max-width: 100%; }
+}
+@media (max-width: 500px) {
+  .sidera-cluster-tag .vol-plaque { padding: 3px 5px; }
+  .sidera-cluster-tag .vol-plaque .font-serif-sc { font-size: 10px; }
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  #syzygy-header { padding-inline: 10px; }
+  #syzygy-header > nav { flex-shrink: 0; }
+  #syzygy-header > nav .dim-tab { padding: 6px 5px; font-size: 10.5px; gap: 3px; }
+  #syzygy-header .syzygy-classic, #syzygy-header .syzygy-fiction,
+  #syzygy-header #btn-syzygy-toggle, #syzygy-header #btn-proj-toggle,
+  #syzygy-header #btn-reset-cam { padding-inline: 5px; font-size: 10px; }
+}
+@media (min-width: 761px) and (max-width: 820px) {
+  #syzygy-header #btn-reset-cam { display: none; }
 }

@@ -1,0 +1,364 @@
+# Original Chinese editorial summaries based on cited scholarly, institutional, and archival works.
+# All coordinates are regional, historical, or cultural reference points, not assertions of literal supernatural events.
+records:
+  - id: case_de_wittenberg_faust_pact
+    title: 德意志维滕贝格｜《浮士德博士传》与魔鬼契约早期印本
+    aliases: [Faust, Historia von D. Johann Fausten, Johann Spies, 浮士德, 魔鬼契约]
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location: {lat: 51.8667, lng: 12.6433, precision: city, location_name: 德国萨克森-安哈尔特州 · 维滕贝格（印本叙事中心参考）, culture_region: 欧洲 · 德国}
+    location_note: 坐标取德国萨克森-安哈尔特州维滕贝格作文化地理参考；1587 年首部《浮士德博士传》印本出版于法兰克福，文本则将维滕贝格大学与学者契约传闻置于叙事核心。
+    temporal: {year_start: 1587, year_end: 1592, era_label: 1587 年法兰克福斯皮斯印本与早期译介期, uncertainty_note: 历史原型人物约翰·格奥尔格·浮士德活跃于十六世纪前半叶；1587 年匿名德文民众读物定型了魔鬼契约叙事，1592 年出现英译本。}
+    paragraphs:
+      - 1587 年 9 月，法兰克福印刷商约翰·斯皮斯（Johann Spies）刊行匿名德文民众读物《浮士德博士传》（Historia von D. Johann Fausten）。这部“民众书”（Volksbuch）把十六世纪前半叶流传于德意志城市间关于游方术士约翰·格奥尔格·浮士德的零散轶闻收束为一整部连贯叙事，并将故事重心安放在宗教改革中心城市维滕贝格。
+      - 在叙事框架中，学识渊博却不满神学界限的浮士德博士于林间召请魔鬼使者墨菲斯托费勒斯（Mephistopheles），以血书立下二十四年契约，换取超常学识、旅行见闻与法术能力，期满后却在剧痛与惊骇中惨死。编译者通篇嵌入路德宗神学警诫，将浮士德描绘成傲慢与违背信仰戒律的反面警示，而非浪漫叛逆英雄。
+      - 这部通俗印本上市后迅速翻印并译成荷兰文与英文（1592 年《英文浮士德书》），随即滋养了克里斯托弗·马洛的戏剧《浮士德博士的悲剧》以及后来歌德的诗剧创作。对照民众印本、早期城市史料与剧场改写，能清楚分辨游方占卜师的零星史迹与近代早期书市共同塑造的“魔鬼契约”文学传统。
+    sources:
+      - {citation: 'Encyclopædia Britannica, Faust (legendary character).', type: institutional_account, url: 'https://www.britannica.com/topic/Faust-legend', locator: 历史人物原型、1587 年斯皮斯民众读本及后世戏剧文学流变}
+      - {citation: 'Historia von D. Johann Fausten (Frankfurt am Main, 1587), Deutsches Textarchiv (Berlin-Brandenburgische Akademie der Wissenschaften).', type: primary_text, url: 'https://www.deutschestextarchiv.de/fausten_historia_1587', locator: 1587 年德文初版数字化全文与文献著录}
+      - {citation: 'Historie van Doctor Jan Faustus, grooten tooveraer en zwarten konstenaer, Project Gutenberg eBook 53596.', type: primary_text, url: 'https://www.gutenberg.org/ebooks/53596', locator: 早期低地语言印本流传版本对照}
+    compare: [case_de_brocken_walpurgis_witches]
+    motifs: [index_ocm_754]
+    bridge: {entry: HIS-5-0001, cluster: sid_witch, trail: all, label: 魔鬼契约印本与书市传播, rationale: 从 1587 年《浮士德博士传》的刊行与跨语种译介切入，观察近代早期印刷市场怎样把零散民间异闻定型为跨国文学母题。}
+
+  - id: case_de_thuringia_wild_hunt_lore
+    title: 德国图林根｜荒野狂猎与“狂暴幽灵大军”夜游传说
+    aliases: [Wild Hunt, Wilde Jagd, Wütendes Heer, Frau Holle, 荒野狂猎, 狂暴幽灵大军]
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location: {lat: 50.9497, lng: 10.4517, precision: province, location_name: 德国 · 图林根赫瑟尔山一带（区域参考）, culture_region: 欧洲 · 德国图林根}
+    location_note: 坐标取德国图林根西部赫瑟尔山（Hörselberg）一带作省级参考；“荒野狂猎”与“狂暴幽灵大军”流传于德语区及欧洲多地，并非单一地点独有。
+    paragraphs:
+      - 在德国中部图林根与周边森林山区，流传着名为“荒野狂猎”（Wilde Jagd）或“狂暴幽灵大军”（Wütendes Heer）的夜间游行传说。讲述者描绘在冬夜狂风呼啸之际，大批亡灵骑士、猎犬与未受洗孩童的魂灵席卷树梢与原野，而在图林根赫瑟尔山一带常由“忠实的埃克哈特”走在前列示警路人俯卧避让，或由霍勒夫人（Frau Holle）率队穿行。
+      - 十九世纪民俗学家雅各布·格林在《德意志神话学》（Deutsche Mythologie, 1835）中系统编目了各地夜游队列的异文，并提出语源推测，认为“狂暴军团”（Wütendes Heer）可能是前基督教日耳曼主神沃丹军队（Wuotanes Heer）的民间遗存。这一解释此后长期主导欧洲浪漫主义与比较神话学对“狂猎”的阅读框架。
+      - 当代民俗史研究则对单一古神遗存说提出细致修正。历史学者罗纳德·赫顿（Ronald Hutton, 2014）梳理中世纪拉丁神职文献、近代早期巫术审判供词与十九世纪田野采录后指出，“荒野狂猎”实际上是由各地风暴幻听、亡灵行军劝诫故事、宗教裁判所夜间飞行审讯模板以及近代民俗汇编共同拼合而成的复合标签。
+    sources:
+      - {citation: "Ronald Hutton, The Wild Hunt and the Witches' Sabbath, Folklore 125(2), 2014, 161–178.", type: academic_article, url: 'https://doi.org/10.1080/0015587X.2014.896968', doi: '10.1080/0015587X.2014.896968', locator: 荒野狂猎传说与巫术安息夜文献谱系的史料重审}
+      - {citation: 'Jacob Grimm, Teutonic Mythology (trans. James Steven Stallybrass), Internet Archive.', type: primary_text, url: 'https://archive.org/details/teutonicmytholog01grimuoft', locator: 《德意志神话学》中关于 Wuotanes Heer 与图林根忠实埃克哈特的汇编}
+      - {citation: 'Encyclopædia Britannica, Herne the Hunter.', type: institutional_account, url: 'https://www.britannica.com/topic/Herne-the-Hunter', locator: 欧洲夜间狂猎母题的跨地域文学与民俗对照}
+    compare: [case_us_sleepy_hollow_headless_horseman, case_it_friuli_benandanti_1575]
+    motifs: [index_ocm_776]
+    bridge: {entry: HIS-6-0010, cluster: sid_witch, trail: all, label: 民间夜游传说与谱系辨析, rationale: 对读格林神话学重构与当代民俗史批判研究，体会将各地夜行传说归入同一“古日耳曼遗存”框架时的类比限度。}
+
+  - id: case_es_zugarramurdi_trials_1610
+    title: 西班牙纳瓦拉｜1610 年苏加拉穆尔迪猎巫案与裁判官质疑档案
+    aliases: [Zugarramurdi, Logroño Auto-da-fé, Alonso de Salazar Frías, 苏加拉穆尔迪, 萨拉萨尔]
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location: {lat: 43.2711, lng: -1.5425, precision: city, location_name: 西班牙纳瓦拉 · 苏加拉穆尔迪与洛格罗尼奥裁判区, culture_region: 欧洲 · 西班牙纳瓦拉}
+    location_note: 坐标取西班牙纳瓦拉北部苏加拉穆尔迪村（档案中所谓山洞聚会叙事核心村落）作参考；1610 年公开宣判仪式举行于洛格罗尼奥。
+    temporal: {year_start: 1609, year_end: 1614, era_label: 1609–1614 年巴斯克巫术审讯与宗教裁判所改制期, uncertainty_note: 1610 年 11 月洛格罗尼奥宣判后，裁判官阿隆索·德·萨拉萨尔·弗里亚斯于 1611–1614 年复核近两千份证词并促成最高宗教裁判所出台新规。}
+    paragraphs:
+      - 1609 至 1610 年间，紧邻比利牛斯山边界的西班牙纳瓦拉村镇苏加拉穆尔迪卷入大规模巫术指控潮。多名村民在恐慌与反复讯问下“供认”在当地石灰岩洞参加夜间巫魔聚会（Akelarre），促使洛格罗尼奥宗教裁判所于 1610 年 11 月举行公开宣判仪式（Auto-da-fé），判处六人火刑并焚烧五具已故者画像。
+      - 然而，与会资浅裁判官阿隆索·德·萨拉萨尔·弗里亚斯（Alonso de Salazar Frías）对大批缺乏旁证的口供深感怀疑。1611 至 1612 年间，他奉命巡查纳瓦拉各地，带回近两千份口供与大量翻供声明，并实地核查所谓飞天药膏成分、聚会洞穴与儿童证词，最终在报告中写下名言：没有找到哪怕一宗经独立观察证实的巫术事实。
+      - 丹麦学者古斯塔夫·亨宁森整理出版的萨拉萨尔档案显示，正是这位裁判官凭借详尽的经验核查与内部辩论，说服西班牙最高宗教裁判所于 1614 年颁布严格采证指令，禁止仅凭自白或他人转述定罪，令西班牙在欧洲大陆率先通过司法程序刹车大规模猎巫处决。
+    sources:
+      - {citation: 'Encyclopædia Britannica, Alonso Salazar de Frías.', type: institutional_account, url: 'https://www.britannica.com/biography/Alonso-Salazar-de-Frias', locator: 1610 年洛格罗尼奥审判异议、1611 年复查任务及 1614 年裁判所改革}
+      - {citation: 'Gustav Henningsen, The Papers of Alonso de Salazar Frias: A Spanish Witchcraft Polemic 1610–14, Temenos 5, 1969.', type: academic_article, url: 'https://doi.org/10.33356/temenos.6396', doi: '10.33356/temenos.6396', locator: 萨拉萨尔文书目录、翻供统计与最高宗教裁判所内部争论}
+      - {citation: 'Michaela Valente, Review of The Salazar Documents: Inquisitor Alonso de Salazar Frías and Others on the Basque Witch Persecution, The Sixteenth Century Journal, 2007.', type: academic_article, url: 'https://doi.org/10.1086/scj20478274', doi: '10.1086/scj20478274', locator: 巴斯克审讯卷宗史料批判与证据规则意义评述}
+    compare: [case_it_friuli_benandanti_1575, case_salem_1692]
+    motifs: [index_ocm_754]
+    bridge: {entry: HIS-6-0001, cluster: sid_witch, trail: all, label: 供词核验与证据门槛, rationale: 通过 1610 年洛格罗尼奥案与萨拉萨尔复核档案，学习区分诱导性集体口供与需要外部物证支持的史料审查标准。}
+
+  - id: case_fr_loudun_possessions_1634
+    title: 法国卢丹｜1634 年修道院附体风波与格兰迪耶审判档案
+    aliases: [Loudun Possessions, Urbain Grandier, Jeanne des Anges, 卢丹附体案, 格兰迪耶]
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location: {lat: 47.0094, lng: 0.0831, precision: city, location_name: 法国维埃纳省 · 卢丹（历史城址参考）, culture_region: 欧洲 · 法国}
+    location_note: 坐标取法国西部维埃纳省卢丹市镇作历史发生地参考；1632–1638 年圣厄休拉女修院群体附体与公开驱魔仪式均围绕当地展开。
+    temporal: {year_start: 1632, year_end: 1644, era_label: 1632–1638 年卢丹附体事件及 1644 年回忆录, uncertainty_note: 教区神父于尔班·格兰迪耶于 1634 年 8 月被处火刑；修道院长让娜·德·昂日于 1644 年写成自述手稿。}
+    paragraphs:
+      - 十七世纪三十年代初的法国卢丹正经历教派紧张与政治重塑：天主教多数派与胡格诺派新教社群摩擦不断，枢机主教黎塞留又下令拆除当地城墙并打击地方自治，加之 1632 年鼠疫阴影，城市气氛高度紧绷。在此背景下，圣厄休拉女修院院长让娜·德·昂日与多名修女相继出现剧烈抽搐、昏厥与异语发作，指称教区神父于尔班·格兰迪耶施法驱使恶魔附体。
+      - 素有才名却因讽刺文字与桃色风波树敌众多的格兰迪耶遭到王室特派法庭拘捕。尽管他在酷刑下始终否认施法，且当时已有医生质疑修女症状未必源于超自然力量，法庭仍凭借所谓“拉丁文魔鬼契约”证物与公开驱魔中的指认判定其有罪，并于 1634 年 8 月 18 日将其绑上火刑柱处死；此后卢丹的公开驱魔表演又持续了数年之久。
+      - 法国史学家米歇尔·德·塞托（Michel de Certeau）在《卢丹的附体》中指出，这批留下审讯小册子、教区日记与 1644 年院长自传的史料，记录了宗教驱魔、中央王权整肃、医界实证观察与印刷舆论之间如何互相争夺解释权。重读卢丹卷宗，有助于把修女痛苦的身体表达与政治法庭的构陷书写分层拆解。
+    sources:
+      - {citation: 'Interrogatoire de Maistre Urbain Grandier, curé de l’église Saint-Pierre du Marché de Loudun (Paris, 1634), Bibliothèque nationale de France, Gallica.', type: primary_archive, url: 'https://gallica.bnf.fr/ark:/12148/bpt6k84844d', locator: 1634 年巴黎刊行卢丹审讯与对质原始小册子}
+      - {citation: 'Michel de Certeau, The Possession at Loudun (trans. Michael B. Smith), University of Chicago Press, Internet Archive.', type: academic_article, url: 'https://archive.org/details/possessionatloud0000cert', locator: 1634 年附体档案中的政治权力、医学与宗教话语分析}
+      - {citation: "Antoinette Gimaret, L'Autobiographie de Jeanne des Anges (1644) : histoire d'une âme ou réécriture d'une affaire de possession ?, Études Épistémè 19, 2011.", type: academic_article, url: 'https://journals.openedition.org/episteme/626', locator: 修道院长 1644 年自述与事件事后改写研究}
+    compare: [case_salem_1692, case_es_zugarramurdi_trials_1610]
+    motifs: [index_ocm_754]
+    bridge: {entry: LIT-5-0007, cluster: sid_witch, trail: all, label: 驱魔剧场与档案重构, rationale: 并读 1634 年庭审小册子、修道院长自传与德·塞托的历史细读，看宗教权力与医学话语如何书写同一场附体危机。}
+
+  - id: case_jp_kifune_ushinokoku_mairi
+    title: 日本京都贵船神社｜丑时参拜与草人钉树诅咒民俗
+    aliases: [Ushinokoku Mairi, Ushi no toki mairi, Kifune Shrine, 丑时参拜, 丑之刻参, 贵船神社]
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location: {lat: 35.1216, lng: 135.7628, precision: city, location_name: 日本京都府京都市左京区 · 鞍马贵船一带, culture_region: 东亚 · 日本京都}
+    location_note: 坐标取京都市左京区贵船神社所在地一带作文化地点参考；“丑时参拜”民俗形象在江户时代流传至日本各地，并非贵船神社的现行常规祭仪。
+    paragraphs:
+      - 在日本民俗传说与江户以来的怪谈图文里，“丑时参拜”（Ushinokoku mairi，指凌晨一点至三点“丑时”前往神社参诣）通常呈现为高度固定化的夜间诅咒画面：白衣女子头戴倒扣铁三脚架、插上点燃的蜡烛，口衔梳子或怀藏铜镜，在人迹罕至的深夜以五寸铁钉将稻草人形（Waraningyo）钉在神社神木上，藉此咒杀怨恨对象。京都北山的贵船神社长期被视为这一传说最核心的地理依托。
+      - 宗教学与国文学研究则指出，这一“恐怖诅咒”定型并非自古如此。京都贵船神社主祀司雨龙神（Takaokami-no-kami），早期“丑年丑月丑日丑时参拜”本指信众趁神灵降临的吉时前去诚心祈愿；经过中世《平家物语》桥姬传说、能剧《铁轮》（Kanawa）的鬼女演绎，以及古代类人形木偶咒物记忆与江户草双纸插画的叠加，嫉妒怨妇、草人与铁钉才最终在近世凝结成通俗版“丑时参拜”。
+      - 尽管考古发掘在古代遗址中确曾出土钉入铁钉的人形木偶，近现代日本刑法教科书甚至常以“丑时参拜咒人”探讨“不能犯”法理边界，民俗学者仍提醒把通俗文艺定型与神社实际信仰区分开来：现今贵船神社的公开祭祀与参拜传统仍围绕司水祈雨与结缘祈福展开。
+    sources:
+      - {citation: 'Akari Narumi (鳴海あかり), Completion of the So-Called "Ushi no koku mairi": Jealous Women, Straw Dolls, Curse of Nails (いわゆる「丑の刻参り」の完成：妬婦・藁人形・呪釘), Kokugakuin Zasshi 125(3), 2024.', type: academic_article, url: 'https://doi.org/10.57529/0002000278', doi: '10.57529/0002000278', locator: 丑时参拜定型过程中嫉妒女性、草人与铁钉母题的历史合流}
+      - {citation: 'Tatsuya Yumiyama, Kuraokami, Takaokami, Kuramitsuha, Encyclopedia of Shinto, Kokugakuin University.', type: institutional_account, url: 'https://d-museum.kokugakuin.ac.jp/eos/detail/id=9367', locator: 贵船神社所祀水神神格与历史祭祀背景}
+      - {citation: 'Kifune Shrine (貴船神社), Official Website.', type: official_archive, url: 'https://kifunejinja.jp/', locator: 贵船神社正统水神信仰、沿革与当代参拜指引}
+    compare: [case_jp_kurama_tengu, case_china_soulstealers_1768]
+    motifs: [index_ocm_754]
+    bridge: {entry: REL-5-0077, cluster: sid_witch, trail: all, label: 神社祈愿与诅咒传说流变, rationale: 对照神社实际供奉与中世能剧、江户印本的加工，看原本的祈愿时空如何被塑造成固定的民间诅咒符号。}
+
+  - id: case_cl_chiloe_recta_provincia
+    title: 智利奇洛埃｜“正直行省”秘密巫社与 1880 年司法审判档案
+    aliases: [Recta Provincia, La Mayoría, Brujos de Chiloé, 正直行省, 奇洛埃巫社]
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location: {lat: -41.8689, lng: -73.8286, precision: city, location_name: 智利洛斯拉戈斯大区 · 安库德（1880 年审判地参考）, culture_region: 南美洲 · 智利奇洛埃群岛}
+    location_note: 坐标取智利奇洛埃岛北部安库德市（1880 年法庭审讯地点）作历史档案参考；“正直行省”传闻与涉案社群分布于奇洛埃群岛多座岛屿与海峡村落。
+    temporal: {year_start: 1880, year_end: 1881, era_label: 1880 年安库德“奇洛埃巫师案”司法审讯期, uncertainty_note: 组织渊源在口述中可追至十八世纪末；1880 年 2 月安库德法官启动正式刑事侦讯并留下供词卷宗。}
+    paragraphs:
+      - 1880 年 2 月，智利南部奇洛埃群岛安库德市法官马蒂尼亚诺·罗德里格斯对一个被称为“正直行省”（Recta Provincia，亦称“多数派”La Mayoría）的秘密结社展开大规模司法调查。由于当时智利已实行现代世俗刑法，国家法庭并未沿用殖民时期宗教异端罪名，而是依据 1874 年刑法典，以“非法结社”（asociación ilícita）与涉嫌下毒谋杀等刑事罪名起诉以原住民威利切人（Huilliche）为主体的组织骨干。
+      - 智利国家图书馆“智利记忆”（Memoria Chilena）数字化保存的审讯录《奇洛埃的巫师：安库德法庭著名审判》显示，当地民众口中的“正直行省”如同一套仿照国家行政体系运行的影子秩序：内部设有“国王”、分区“裁决官”、线人与医疗者，岛民会向其请求治病、裁断邻里纠纷或惩戒盗贼，民间传说甚至把该组织的成立溯源至十八世纪西班牙测绘员莫拉莱达与原住民女巫师奇尔皮拉斗法的故事。
+      - 二十一世纪智利历史学家对 1880 年审判卷宗的重读表明，这一案件集中体现了太平洋战争期间智利共和国加强边疆国家权力时，中央现代法制与原住民地方自治、传统医术及替代性司法权威之间的激烈冲突；审讯笔录中夹杂的施法与毒杀叙述，既反映了法庭对地方信仰的刑事化翻译，也把曾经真实的社群组织推向了神秘化的岛屿传说。
+    sources:
+      - {citation: 'Memoria Chilena, Los brujos de Chiloé: célebre proceso del juzgado de Ancud (1908), Biblioteca Nacional de Chile.', type: archival_catalogue, url: 'https://www.memoriachilena.gob.cl/602/w3-article-9617.html', locator: 1880 年安库德法院被告供词与审判卷宗数字化藏品}
+      - {citation: 'Memoria Chilena, Religiosidad, mito e identidad chilota, Biblioteca Nacional de Chile.', type: institutional_account, url: 'https://www.memoriachilena.gob.cl/602/w3-article-3672.html', locator: 奇洛埃岛屿宗教融合、巫术传闻与地方认同背景}
+      - {citation: 'Tomás Catepillán Tessi, La República de la Raza: Política indígena y brujería en el Chile del siglo XIX, Trashumante 13, 2019, 84–107.', type: academic_article, url: 'https://doi.org/10.17533/udea.trahs.n13a04', doi: '10.17533/udea.trahs.n13a04', locator: 十九世纪智利国家治理、威利切原住民政治与巫术审判研究}
+    compare: [case_cl_ancud_caleuche_ghost_ship, case_es_zugarramurdi_trials_1610]
+    motifs: [index_ocm_754]
+    bridge: {entry: GEO-METHOD-0113, cluster: sid_witch, trail: all, label: 群岛边缘社会与司法冲突, rationale: 结合奇洛埃群岛的地理孤立环境与 1880 年审判卷宗，观察现代国家法权与地方替代性社群秩序之间的碰撞。}
+
+  - id: case_ht_vodou_loa_possession
+    title: 海地伏都教｜罗瓦神灵“骑乘”附体与田野民族志档案
+    aliases: [Haitian Vodou, Loa, Lwa, Chwal, Monte chwal, 海地伏都教, 骑乘状态]
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location: {lat: 18.5944, lng: -72.3074, precision: city, location_name: 海地 · 太子港及周边圣殿区（民族志田野参考）, culture_region: 北美洲 · 加勒比海地}
+    location_note: 坐标取海地首都太子港作文化与民族志田野地点参考；海地伏都教（Vodou）仪式与罗瓦神灵降临传统通行于海地城乡及海外侨民社群。
+    temporal: {year_start: 1938, year_end: 1959, era_label: 二十世纪中期海地伏都教经典民族志记录期, uncertainty_note: 信仰传统形成于跨大西洋奴隶贸易与殖民时代；1938 年赫斯顿、1953 年德伦与 1959 年梅特罗的专著系统留存了田野观察。}
+    paragraphs:
+      - 海地伏都教（Vodou）是在大西洋奴隶贸易与殖民压迫背景下，由西非与中非流散族群吸收天主教圣徒象征及本地元素融合而成的宗教实践。在圣殿（ounfò）仪式中，信众借特定鼓点、圣歌与玉米粉地面圣图（vèvè）迎请被称为“罗瓦”（lwa / loa）的神灵沿中柱降临；进入恍惚状态的接神者被称为“马”（chwal），神灵降临则被形容为“骑乘上马”（monte chwal）。
+      - 二十世纪中期的经典人类学田野文献详细记录了这一仪轨秩序：作家兼人类学者佐拉·尼尔·赫斯顿于 1938 年出版《告诉我的马》（Tell My Horse），实验电影人与民族志学者玛雅·德伦在《神圣骑手》（Divine Horsemen, 1953）中细述不同罗瓦降临时接神者在步态、声调、饮食嗜好与服饰上的固定转换，阿尔弗雷德·梅特罗则在《海地伏都》（Voodoo in Haiti, 1959）中系统梳理了圣殿礼制与群体出神行为的社会分工。
+      - 在海地伏都社群内部，“骑乘”状态既不是失控疯癫，也不同于西方恐怖电影渲染的“黑魔法控尸”，而是有鼓乐节拍引导、有司仪护持并承担医病、和解与社群忠告功能的神圣沟通形式。比较内部民族志与外部妖魔化报道，可清晰看见殖民偏见与通俗影像如何曲解一套结构严密的民间宗教仪式。
+    sources:
+      - {citation: 'Encyclopædia Britannica, Vodou.', type: institutional_account, url: 'https://www.britannica.com/topic/Vodou', locator: 海地伏都教历史融合、罗瓦神灵体系与出神附体机制概述}
+      - {citation: 'Maya Deren, Divine Horsemen: The Living Gods of Haiti (1953), Internet Archive.', type: primary_text, url: 'https://archive.org/details/divinehorsementh00dere', locator: 海地圣殿田野观察及“神圣骑手”附体仪式描写}
+      - {citation: 'Alfred Métraux, Voodoo in Haiti (1959), Internet Archive.', type: academic_article, url: 'https://archive.org/details/voodooinhaiti00metr', locator: 伏都教仪式结构、社群功能与社会心理学田野记录}
+    compare: [case_ss_azande_witchcraft_oracle]
+    motifs: [index_ocm_776]
+    bridge: {entry: REL-6-0007, cluster: sid_witch, trail: all, label: 仪式附体与现象学民族志, rationale: 借助宗教经验的现象学与民族志方法，区分海地社群内部的“骑乘”仪式语义和外部流行文化的猎奇刻板印象。}
+
+  - id: case_ss_azande_witchcraft_oracle
+    title: 南苏丹阿赞德｜埃文斯-普里查德《巫术、神谕与魔法》田野档案
+    aliases: [Azande, Evans-Pritchard, Benge, Mangu, 阿赞德人, 毒药神谕]
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location: {lat: 4.5700, lng: 28.3956, precision: culture_region, location_name: 南苏丹 · 延比奥与西赤道州赞德兰地区（田野参考）, culture_region: 非洲 · 南苏丹赞德地区}
+    location_note: 坐标取今南苏丹西赤道州延比奥（赞德兰核心地带）作人类学田野地理参考；埃文斯-普里查德于 1926–1930 年间在英埃苏丹南部赞德社群完成田野考察。
+    temporal: {year_start: 1926, year_end: 1937, era_label: 1926–1930 年赞德兰田野调查与 1937 年专著出版, uncertainty_note: 1937 年牛津大学出版社刊行初版专著；当代南苏丹阿赞德地区针对巫术指控与社会变迁的田野研究仍在持续。}
+    paragraphs:
+      - 1926 至 1930 年间，英国社会人类学家 E. E. 埃文斯-普里查德在今南苏丹西南部的阿赞德（Azande）社群展开长期田野工作，并于 1937 年出版名著《阿赞德人的巫术、神谕与魔法》。他记录了当地人如何将体内无意识滋生灾厄的“巫术”（mangu）与借药物仪式施行的“魔法”（ngwa）严格区分，并借著名的“白蚁蛀塌谷仓”一例揭示双重因果逻辑：阿赞德人完全清楚谷仓因白蚁蛀蚀而倒塌的物理原因，但仍追问“为何偏偏在某人坐下乘凉的那一刻倒下”。
+      - 面对疾病、失窃或意外带来的社会怀疑，阿赞德社会并不随意动用私刑，而是依托白蚁占卜、搓板占卜及权威最高的“毒药神谕”（benge）处理争端。操作者向雏鸡喂食森林藤本植物提炼的毒液，同时用固定句式发问，并以反问复验确认雏鸡生死结果；被神谕指认为无意施巫者通常只需在仪礼中表示并无恶意、吐水示诚，即可化解家族嫌隙。
+      - 这份经典民族志深刻重塑了二十世纪人类学与科学哲学：它证明阿赞德的巫术与神谕体系并非“前逻辑的胡言乱语”，而是一套内部自洽、借助二次验证自圆其说并维持地方司法秩序的认知与调解机制；而 2024 年最新田野重访研究也展示了这一传统如何在现代战争、法庭与教会语境下继续演变。
+    sources:
+      - {citation: 'Encyclopædia Britannica, Witchcraft, Oracles and Magic Among the Azande.', type: institutional_account, url: 'https://www.britannica.com/topic/Witchcraft-Oracles-and-Magic-Among-the-Azande', locator: 1937 年经典民族志核心论点、双重因果观与社会功能概述}
+      - {citation: 'E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande (1937), Internet Archive.', type: primary_text, url: 'https://archive.org/details/witchcraftoracle0000evan_d5h2', locator: 阿赞德人毒药神谕操作步骤、谷仓论证与田野记述原文}
+      - {citation: 'Louisa Lombard, Bruno Braak & Isaac Waanzi Hillary, Revisiting the Azande, HAU: Journal of Ethnographic Theory 14(3), 2024, 588–596.', type: academic_article, url: 'https://doi.org/10.1086/732662', doi: '10.1086/732662', locator: 当代南苏丹赞德社群田野重访与制度变迁分析}
+    compare: [case_ht_vodou_loa_possession, case_salem_1692]
+    motifs: [index_ocm_754]
+    bridge: {entry: PHI-5-0005, cluster: sid_witch, trail: all, label: 双重归因与内部自洽系统, rationale: 从著名的“白蚁蛀塌谷仓”双重因果之问出发，理解阿赞德神谕如何为“为何恰在此时落到某人头上”提供社群认可的解释链条。}
+
+  - id: case_br_minas_pisadeira_nightmare
+    title: 巴西米纳斯吉拉斯｜踩胸老妇“皮萨代拉”压床传说
+    aliases: [Pisadeira, Pesadelo, 皮萨代拉, 巴西压床老妇]
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location: {lat: -19.9167, lng: -43.9345, precision: province, location_name: 巴西 · 米纳斯吉拉斯州（地方民俗区域参考）, culture_region: 南美洲 · 巴西米纳斯吉拉斯}
+    location_note: 坐标取巴西米纳斯吉拉斯州中部贝洛奥里藏特一带作省级文化参考；“皮萨代拉”传说通行于米纳斯吉拉斯、圣保罗及巴西东南部乡村。
+    paragraphs:
+      - 在巴西米纳斯吉拉斯州及东南部内陆的民间传说中，“皮萨代拉”（Pisadeira，词根源自葡萄牙语 pisar，意为“踩踏”）是一位身形枯瘦、指爪修长、披散乱发且双眼泛红光的老妇。传说她夜间潜伏在民居屋檐或房梁上，专挑晚餐饱食后仰面朝天入睡的人下手，悄然落到熟睡者胸口用力踩踏或蹲坐，令当事人瞬间无法动弹、呼吸窒息却发不出半点求救声音。
+      - 巴西民俗学奠基人路易斯·达卡马拉·卡斯库多在《巴西民俗词典》与《巴西神话地理》中收录了皮萨代拉故事，将其置于伊比利亚半岛“夜压梦魇”（pesadelo）与巴西乡村生活语境的交汇处考察，指出这类劝诫“切勿饱餐仰卧”的讲述长期兼具餐桌规训与睡眠惊惧解释的双重功能。
+      - 2016 年，巴西神经科学家若泽·费利佩·罗德里格斯·德萨与塞尔吉奥·阿图罗·莫塔-罗利姆在《心理学前沿》（Frontiers in Psychology）发表综述，专门比对巴西皮萨代拉传说与全球各地“压床女巫”形象，指出“仰卧诱发、意识清醒却全身失张力、胸口重压及清醒幻觉”与快速眼动期睡眠瘫痪的典型体验高度吻合；文章同时将传统叙事与当代临床机理加以界分，不将民间传说直接视为医学病例记录。
+    sources:
+      - {citation: 'José Felipe Rodriguez de Sá & Sérgio Arthuro Mota-Rolim, Sleep Paralysis in Brazilian Folklore and Other Cultures: A Brief Review, Frontiers in Psychology 7, 2016.', type: academic_article, url: 'https://doi.org/10.3389/fpsyg.2016.01294', doi: '10.3389/fpsyg.2016.01294', locator: 米纳斯吉拉斯及巴西东南部皮萨代拉传说与睡眠瘫痪比较综述}
+      - {citation: 'Luís da Câmara Cascudo, Dicionário do folclore brasileiro, Internet Archive.', type: primary_text, url: 'https://archive.org/details/dicionariodofolc0000unse', locator: 巴西民俗词典中关于 Pisadeira 的词条与地域流传概述}
+      - {citation: 'Luís da Câmara Cascudo, Geografia dos mitos brasileiros, Internet Archive.', type: primary_text, url: 'https://archive.org/details/GeografiaDosMitosBrasileiros', locator: 巴西神话地理分布与夜压精怪谱系梳理}
+    compare: [case_old_hag_sleep_paralysis_1982, case_br_belem_matinta_whistle]
+    motifs: [index_ocm_776]
+    bridge: {entry: HEA-009, cluster: sid_hag, trail: all, label: 仰卧压胸叙事与睡眠瘫痪, rationale: 对照米纳斯吉拉斯“饱食仰卧招致老妇踩胸”的民间叙述与睡眠科学研究，辨别身体体感、文化意象与临床机制。}
+
+  - id: case_se_scandinavia_mara_nightmare
+    title: 北欧瑞典｜“玛拉”夜骑压胸与梦魇词源传统
+    aliases: [Mara, Maran, Mardröm, Nightmare, 玛拉, 北欧梦魇]
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location: {lat: 59.8586, lng: 17.6389, precision: culture_region, location_name: 瑞典 · 乌普萨拉民俗档案采集区（北欧文化参考）, culture_region: 欧洲 · 北欧瑞典}
+    location_note: 坐标取瑞典乌普萨拉（瑞典语言与民俗档案馆所在地）作斯堪的纳维亚文化参考；“玛拉”夜压与骑马传说通行于瑞典、挪威及北欧多地。
+    paragraphs:
+      - 在瑞典及斯堪的纳维亚民间信仰里，“玛拉”（Mara 或 Maran）是专在夜间压迫睡者的灵体。古诺尔斯语与瑞典语中的 mara 正是现代瑞典语“噩梦”（mardröm）及英文“nightmare”的直接词源。在乡村口述中，玛拉常被讲成受嫉妒或诅咒驱使、灵魂在夜里离开躯壳的女子，或是能化作稻草丝、阴影从门锁孔与木板缝隙钻入卧室的变形存在，不仅坐压在熟睡者胸口令其喘息艰难，还常在夜间“骑乘”农舍马匹与牲畜，致使其清晨汗流浃背、鬃毛打结（称作“玛拉结”）。
+      - 瑞典语言与民俗档案馆（ISOF）保存了十九至二十世纪初大量来自瑞典乡村的回忆记录与避邪习俗：农人习惯在睡前把鞋子尖端朝向房门摆放、在枕下或门槛放置铁刀或钢剪，或在床畔倒置扫帚、悬吊带孔岩石，据说只要喊出疑为玛拉之人的真名或令其自报家门，便能打破夜压束缚。
+      - 宗教学者卡塔琳娜·劳德韦雷（Catharina Raudvere, 2021）在专著中指出，北欧玛拉故事一方面提供了理解睡眠窒息惊恐的文化外壳，另一方面也经常被用来解释马厩牲口莫名虚弱或表达邻里间针对女性的隐微猜忌。将其与加拿大纽芬兰“老巫婆夜访”（case_old_hag_sleep_paralysis_1982）并读，能清楚看到北美移民社会如何继承并转译北欧与大西洋沿岸的压床母题。
+    sources:
+      - {citation: 'Institutet för språk och folkminnen (ISOF), Mara, Väsen i folktron.', type: official_archive, url: 'https://www.isof.se/lar-dig-mer/kunskapsbanker/lar-dig-mer-om-vasen-i-folktron/vasengalleriet/mara', locator: 瑞典民俗档案中的玛拉夜压描述、牲畜马结及门缝辟邪做法}
+      - {citation: 'Catharina Raudvere, Narratives and Rituals of the Nightmare Hag in Scandinavian Folk Belief, Palgrave Macmillan, 2021.', type: academic_article, url: 'https://doi.org/10.1007/978-3-030-48919-9', doi: '10.1007/978-3-030-48919-9', locator: 斯堪的纳维亚梦魇老妇叙事、仪式对策与词源比较研究}
+    compare: [case_old_hag_sleep_paralysis_1982, case_italy_pandafeche_sleep_paralysis, case_se_dalarna_tomte_lore]
+    motifs: [index_ocm_776]
+    bridge: {entry: REL-5-0005, cluster: sid_hag, trail: all, label: 梦魇语源与北欧压床民俗, rationale: 并读瑞典民俗档案中的摆鞋辟邪口述与“nightmare”词源史，观察夜间身体不适如何塑造地方睡眠禁忌。}
+
+  - id: case_tr_karabasan_sleep_lore
+    title: 土耳其安纳托利亚｜夜间“黑压者”卡拉巴桑睡眠体验传说
+    aliases: [Karabasan, Karabasan basması, Bastırık, 卡拉巴桑, 黑压者]
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location: {lat: 39.9334, lng: 32.8597, precision: culture_region, location_name: 土耳其 · 安纳托利亚中部安卡拉（区域文化参考）, culture_region: 中东与西亚 · 土耳其安纳托利亚}
+    location_note: 坐标取土耳其安纳托利亚中部作文化地理参考；“卡拉巴桑”（Karabasan）说法普遍流传于土耳其各地及突厥语相关民俗社群。
+    paragraphs:
+      - 在安纳托利亚与当代土耳其日常用语中，人们在半梦半醒间突然浑身僵硬、胸口似有巨石压迫的经历，普遍被称为“卡拉巴桑”（Karabasan），词面由“黑”（kara）与“压迫者”（basan）组合而成。当地民间口述常把它形象化为夜间悄然进屋、坐在睡者胸前扼住喉咙或散发低语脚步声的黑影与精灵（cin）。
+      - 比较民俗学者阿赫迈特·塔杰特丁·哈拉奇与塞伊富拉·耶尔德勒姆（2024）梳理突厥语与高加索民俗词源发现，卡拉巴桑与阿尔巴斯提（Albastı）、诺盖人流传的“巴斯特勒克”（Bastırık）同属以动词 basmak（意为“按压、镇压”）命名的睡眠压迫灵体谱系；传统应对习惯包括在枕头下放置铁剪、面包、大蒜或写有祈福经文的护符袋（muska）。
+      - 在临床与跨文化精神医学调查中，巴兰·贾拉勒等学者（2021）对土耳其大学生样本进行访谈，发现高达百分之八十八曾经历过睡眠瘫痪的受访者会使用“卡拉巴桑”命名此次体验，并将胸闷恐惧感与呼吸窒息忧虑和诵念《古兰经》经文等宗教安抚策略联系起来；研究再次提示需将当事人的文化解释模型与可测量的睡眠生理过程分开记录。
+    sources:
+      - {citation: 'Baland Jalal, H. Sevde Eskici, Ceren Acarturk & Devon E. Hinton, Beliefs about sleep paralysis in Turkey: Karabasan attack, Transcultural Psychiatry 58(3), 2021.', type: academic_article, url: 'https://doi.org/10.1177/1363461520909616', doi: '10.1177/1363461520909616', locator: 土耳其样本中卡拉巴桑命名比例、躯体压迫感及宗教应对方式调查}
+      - {citation: 'Ahmet Tacetdin Hallaç & Seyfullah Yıldırım, "Basmak" Kökenine Dayanan Mitik Varlıklar ve Kafkaslardan Bir Uyku İblisi: "Bastırık", Folklor/Edebiyat 30(117), 2024, 65–84.', type: academic_article, url: 'https://doi.org/10.22559/folklor.2625', doi: '10.22559/folklor.2625', locator: 突厥与高加索语境中 basmak 词根睡眠压迫民俗谱系比较}
+    compare: [case_egypt_jinn_sleep_paralysis, case_tr_anatolia_nazar_amulet]
+    motifs: [index_ocm_776]
+    bridge: {entry: HEA-076, cluster: sid_hag, trail: all, label: “压迫”词根与夜间呼吸困扰, rationale: 将安纳托利亚“黑压者”口述、祈祷应对与跨文化睡眠调研对照，留意胸闷窒息感在不同文化下的身体表征。}
+
+  - id: case_jp_kanashibari_sleep_lore
+    title: 日本｜“金缚”从不动明王法咒到睡眠麻痹俗称的演变
+    aliases: [Kanashibari, 金缚, 不动明王, 鬼压床]
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location: {lat: 35.6762, lng: 139.6503, precision: culture_region, location_name: 日本 · 本州东京及民俗语汇流传区（文化参考）, culture_region: 东亚 · 日本}
+    location_note: 坐标取日本东京作文化流变与现代睡眠研究语境参考；“金缚”作为日常用语与睡眠体验俗称通行于日本全国。
+    paragraphs:
+      - 在日本现代日常语言里，指代睡眠麻痹的惯用词“金缚”（kanashibari，字面意为“像被金属铁链牢牢捆住”）最初并非描述卧室睡眠困厄的医学或怪谈名词。它的语源扎根于日本密教与修验道传统：不动明王法相中左手常持绳索“绢索”（kensaku），象征降伏与束缚邪祟烦恼；古代行者借持诵不动明王咒施展“金缚法”，旨在将妖魔或敌手定身封锁、使其寸步难行。
+      - 随着密教礼俗与山岳修行词汇逐渐进入近世庶民生活和怪谈书写，“如遭金属铁索捆束、浑身无法动弹”的意象发生了显著语义迁移：人们把半夜醒来时四肢麻木、听见室内异声或感知无形压迫的惊惧体验转称为“遭遇金缚”，并在江户至现代都市怪谈中将其与幽灵、狐狸作祟或凶宅传闻挂钩。
+      - 二十世纪八十年代末以来，日本睡眠学者福田一彦（1987）及宗泽岳史等（2011）针对大学生和全国青少年展开大规模问卷与多导睡眠监测研究，发现自陈经历“金缚”者占比颇高，且与熬夜作息紊乱及入睡期快速眼动睡眠（SOREMP）显著相关。一个源于佛教缚魔仪轨的宗教法词，由此完成了向现代跨文化睡眠麻痹标准民俗俗称的转型。
+    sources:
+      - {citation: 'Kazuhiko Fukuda, T. Miyasita, M. Inugami & K. Ishihara, High prevalence of isolated sleep paralysis: kanashibari phenomenon in Japan, Sleep 10(3), 1987, 279–286.', type: academic_article, url: 'https://pubmed.ncbi.nlm.nih.gov/3629091/', locator: 日本大学生群体中金缚现象的早期流行病学调查}
+      - {citation: 'Takeshi Munezawa et al., Nightmare and sleep paralysis among Japanese adolescents: a nationwide representative survey, Sleep Medicine 12(1), 2011, 56–64.', type: academic_article, url: 'https://pubmed.ncbi.nlm.nih.gov/20920888/', locator: 日本全国青少年噩梦与金缚睡眠麻痹调查统计}
+      - {citation: 'JAANUS (Japanese Architecture and Art Net Users System), Fudou Myouou.', type: institutional_account, url: 'https://www.aisf.or.jp/~jaanus/deta/f/fudoumyouou.htm', locator: 密教不动明王造像、降魔绢索与缚魔仪轨图标注记}
+    compare: [case_sleep_paralysis_lab_1992, case_cn_hk_ghost_oppression_wing_1994]
+    motifs: [index_ocm_776]
+    bridge: {entry: LAN-3-0004, cluster: sid_hag, trail: all, label: 宗教咒法语词与日常语义迁移, rationale: 追踪“金缚”从密教不动明王缚魔仪轨转为现代睡眠瘫痪俗称的历程，观察语言接触与语境转化如何重塑身体体验名称。}
+
+  - id: case_ru_kikimora_night_lore
+    title: 俄罗斯｜宅灵基基莫拉夜间纺纱与噩梦压迫民俗
+    aliases: [Kikimora, Кикимора, Shishimora, 基基莫拉, 宅灵]
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location: {lat: 59.2205, lng: 39.8915, precision: province, location_name: 俄罗斯 · 北方俄语民俗采集区（沃洛格达参考）, culture_region: 欧洲 · 俄罗斯东欧}
+    location_note: 坐标取俄罗斯北部沃洛格达一带作传统农舍信仰采录区参考；基基莫拉传说广泛流传于俄罗斯北方及东斯拉夫乡村。
+    paragraphs:
+      - 在俄罗斯与东斯拉夫民间信仰体系中，基基莫拉（Kikimora）是一位性格多变甚至令人畏惧的家宅女性灵体，常与男性宅神“多莫沃伊”（Domovoi）形成对应，有时也被讲成栖息在林沼边缘的精怪。词源学上，其名称后半部分的“mora”正与斯拉夫语里指代噩梦与夜间压迫灵体的古词根同源，直接联系着夜半窒息惊梦的体验。
+      - 民俗学者琳达·伊万尼茨在《俄罗斯民间信仰》以及安西莫娃与戈卢布科娃（2016）关于俄语词典与民族志的考述中记载：基基莫拉形貌瘦小凌乱，白昼蛰伏于农舍土炉背后、地窖或阁楼，夜晚则显现并摆弄未收好的纺锤。乡民普遍相信，若在深夜听见炉后传来细碎急速的纺纱声，往往预示家中即将有凶信或丧事；而半夜被乱线缠绕、被无形重物压住胸口难以翻身呼喊，或是家禽惊扰、碗碟碎响，亦常被归因于基基莫拉对懈怠主妇的恼怒。
+      - 从乡村社会生活来看，基基莫拉传说一方面以“睡前务必收拾纱线、勿在夜间纺麻”及看护孩童睡眠的家庭戒律维系室内劳动节奏，另一方面也把农舍夜间鼠响木裂与睡眠瘫痪压胸感编织进同一位“炉后夜纺者”的叙事形象中。
+    sources:
+      - {citation: 'Linda J. Ivanits, Russian Folk Belief (1989), Internet Archive.', type: academic_article, url: 'https://archive.org/details/russianfolkbelie0000ivan', locator: 俄罗斯农舍灵体分类、基基莫拉夜间纺纱禁忌与民族志采录}
+      - {citation: 'O. K. Ansimova & O. V. Golubkova, Mythological Characters of the Domestic Space in Russian Folk Beliefs: Lexicographic and Ethnographic Aspects, Archaeology, Ethnology & Anthropology of Eurasia 44(3), 2016, 130–138.', type: academic_article, url: 'https://doi.org/10.17746/1563-0110.2016.44.3.130-138', doi: '10.17746/1563-0110.2016.44.3.130-138', locator: 俄罗斯家宅空间神话角色的词典学与田野分布研究}
+    compare: [case_ru_karelia_baba_yaga, case_se_scandinavia_mara_nightmare]
+    motifs: [index_ocm_776]
+    bridge: {entry: REL-5-0007, cluster: sid_hag, trail: all, label: 炉灶家宅空间与夜间规训, rationale: 对比俄罗斯农舍炉灶背后的“基基莫拉”纺纱警示与家庭空间信仰，理解家宅叙事如何将夜声与日常劳动规范相连。}
+
+  - id: case_ma_maghreb_bou_kebbaz
+    title: 马格里布与摩洛哥｜夜间压胸灵体“布凯巴兹”睡眠传说
+    aliases: [Bou Kebbaz, Boukebbaz, Boughattat, Al-Jathoom, 布凯巴兹, 布加塔特, 马格里布夜压]
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location: {lat: 34.0209, lng: -6.8416, precision: culture_region, location_name: 摩洛哥及马格里布地区（拉巴特文化参考）, culture_region: 非洲 · 摩洛哥与马格里布}
+    location_note: 坐标取摩洛哥西部拉巴特作马格里布地区文化参考；“布凯巴兹”（Bou Kebbaz）与“布加塔特”（Boughattat）等夜间压胸俗称及传说通行于摩洛哥及北非多地方言社群。
+    paragraphs:
+      - 在摩洛哥及更广泛的北非马格里布方言口述里，睡醒交界之际骤然全身动弹不得、胸肺受重压窒息的经历常以具体夜压灵体相称，地方语汇中既见“布凯巴兹”（Bou Kebbaz / Boukebbaz）等呼号，在摩洛哥阿拉伯语里也广泛使用意为“覆压窒息者”的“布加塔特”（Boughattat）以及泛阿拉伯世界的“贾苏姆”（Al-Jathoom）。亲历者多讲述黑夜中有沉重黑影跨坐胸前，令人想呼喊却喉舌凝滞。
+      - 人类学与跨文化精神医学研究长期关注北非民众如何解释这类夜间侵扰。文森特·克拉潘扎诺（1975）在摩洛哥民族心理研究中分析了当地梦境、精灵（jnun）观念与个体危机的象征转译；而阿纳斯塔西娅·利姆等学者（2015）对穆斯林患者精灵归因的综述亦显示，在许多马格里布家庭的认知结构里，夜间压迫、幻听与感官异常首先被当作精灵接触问题，并借诵念《古兰经》护佑经文（如“宝座经文”）寻求安抚。
+      - 近年北非临床睡眠流行病学调查（如 2024 年突尼斯成年人睡眠习惯与障碍横断面研究）进一步表明，马格里布人群中的睡眠瘫痪发作频率与作息紊乱、焦虑及仰卧睡眠高度相关。田野访谈与睡眠调查互相参照，呈现了传统灵体名称与现代睡眠生理知识在当代北非社会中的长期并存。
+    sources:
+      - {citation: 'Vincent Crapanzano, Saints, Jnun, and Dreams: An Essay in Moroccan Ethnopsychology, Psychiatry 38(2), 1975, 145–159.', type: academic_article, url: 'https://pubmed.ncbi.nlm.nih.gov/1144570/', locator: 摩洛哥民族心理学中的精灵观念、梦境与夜间惊惧分析}
+      - {citation: 'Anastasia Lim, Hans W. Hoek & Jan Dirk Blom, The attribution of psychotic symptoms to jinn in Islamic patients, Transcultural Psychiatry 52(1), 2015, 18–32.', type: academic_article, url: 'https://pubmed.ncbi.nlm.nih.gov/25080427/', locator: 伊斯兰与北非文化背景中感官异象归因精灵的跨文化精神医学综述}
+      - {citation: 'Sameh Msaad et al., Sleep Habits and Disturbances Among Tunisian Adults: A Cross-Sectional Online Survey, Nature and Science of Sleep 16, 2024.', type: academic_article, url: 'https://doi.org/10.2147/NSS.S456879', doi: '10.2147/NSS.S456879', locator: 北非马格里布成年人群体睡眠紊乱与睡眠瘫痪相关横断面调查}
+    compare: [case_egypt_jinn_sleep_paralysis, case_ma_tangier_aisha_qandisha]
+    motifs: [index_ocm_776]
+    bridge: {entry: REL-5-0004, cluster: sid_hag, trail: all, label: 北非精灵阐释与睡瘫共存, rationale: 对读摩洛哥民族心理研究与北非睡眠调查，观察传统“布凯巴兹”和精灵观念怎样与现代睡眠医学并存于同一社群。}
+
+  - id: case_jp_kyoto_tsukumogami_lore
+    title: 日本京都｜室町《付丧神记》百年器物成精与百鬼夜行
+    aliases: [Tsukumogami, Tsukumogami-ki, Hyakki Yagyo, 付丧神, 付丧神记, 百鬼夜行]
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location: {lat: 35.0116, lng: 135.7681, precision: city, location_name: 日本京都府 · 京都市（室町叙事舞台参考）, culture_region: 东亚 · 日本京都}
+    location_note: 坐标取日本京都市中心作室町时代《付丧神记》叙事发生城市参考；其情节围绕京城街巷年末大扫除与旧器物被弃的都市情景展开。
+    temporal: {year_start: 1485, year_end: 1600, era_label: '室町时代（1485 年《实隆公记》确载《付丧神绘》）', uncertainty_note: '三条西实隆日记《实隆公记》文明十七年（1485）十月已有观览《付丧神绘》记载；现存写本画卷主要为江户时期传抄。'}
+    paragraphs:
+      - 日本室町时代流传下来的御伽草子绘卷《付丧神记》，把妖怪想象直接植根于京都庶民家庭的器物使用周期之中。故事讲述京城贵族与百姓在年末“煤拂”（大扫除）时，将服务将近百年、磨损残破的琵琶、茶釜、雨伞、草履与数珠一并丢弃在街角路旁；这些旧物怨愤人类忘恩负义，决意在立春前夜“节分”集结化妖，组成声势浩大的“百鬼夜行”在京都街巷作祟。
+      - 公卿三条西实隆的日记《实隆公记》于文明十七年（1485 年）明确记载曾在宫中观览上下两卷《付丧神绘》，而京都大学附属图书馆珍藏的江户抄本《付丧神绘卷》等馆藏也保存了这批图文谱系。研究日本宗教文学的学者野里子·T·赖德（Noriko T. Reider, 2009）指出，《付丧神记》绝非单纯的吓人怪谈，结尾处作祟器物被佛法降伏后经真言宗高僧点化而悉数成佛，实则以叙事寓言演绎了“草木国土悉皆成佛”与无情物（非情）亦可悟道的密教义理。
+      - 历经江户时代鸟山石燕等妖怪图鉴的再编目，“使用满九十九年或百年的旧器物会滋生灵性化作付丧神”逐渐脱离原本的真言宗说教外壳，成为日本民俗里广为人知的器物妖怪母题，反映出前现代社会惜物伦理、废弃焦虑与日常物质寿命之间的想象张力。
+    sources:
+      - {citation: 'Noriko T. Reider, Animating Objects: Tsukumogami ki and the Medieval Illustration of Shingon Truth, Japanese Journal of Religious Studies 36(2), 2009, 231–257.', type: academic_article, url: 'https://doi.org/10.18874/jjrs.36.2.2009.231-257', doi: '10.18874/jjrs.36.2.2009.231-257', locator: 室町《付丧神记》文本、1485 年文献着录与真言宗非情成佛阐释}
+      - {citation: 'Kyoto University Rare Materials Digital Archive, Tsukumogami Emaki (付喪神絵巻 2巻).', type: archival_catalogue, url: 'https://rmda.kulib.kyoto-u.ac.jp/item/rb00013599', locator: 京都大学图书馆藏两卷本《付丧神绘卷》数字化写本与书志记录}
+    compare: [case_jp_kurama_tengu]
+    motifs: [index_berezkin_c13, index_ocm_776]
+    bridge: {entry: HIS-4-0002, cluster: sid_crypt, trail: all, label: 器物传记与中世物怪想象, rationale: 借物质文化与器物传记视角阅读《付丧神记》，看被抛弃的日常器具如何承载寿命、劳作与宗教救度想象。}
+
+  - id: case_gb_scotland_kelpie_lore
+    title: 苏格兰高地｜湖沼变形水马“凯尔皮”警戒传说
+    aliases: [Kelpie, Each-uisge, Water horse, 凯尔皮, 苏格兰水马]
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location: {lat: 57.4778, lng: -4.2247, precision: culture_region, location_name: 英国苏格兰 · 高地河湖区（因弗内斯区域参考）, culture_region: 欧洲 · 英国苏格兰}
+    location_note: 坐标取苏格兰高地首府因弗内斯一带作高地河湖文化区参考；凯尔皮与盖尔语水马传说广泛分布于苏格兰河流、瀑布与淡水湖泊，并非指代近代尼斯湖水怪目击潮。
+    paragraphs:
+      - 不同于二十世纪三十年代后围绕尼斯湖公路与新闻照片兴起的近代“水怪目击潮”（case_gb_loch_ness_columba_water_beast），“凯尔皮”（苏格兰语 Kelpie，在盖尔语口述中常与更凶猛的“水马”Each-uisge 并称）是苏格兰低地与高地河川湖泊间传承数世纪的变形水灵。传说它常现身为毛色漆黑或雪白的俊美骏马静立渡口或深潭岸边，一旦迷路旅人或顽童骑上马背，皮肤便会牢牢黏附在马身之上，随其跃入激流深渊遭吞噬。
+      - 凯尔皮亦常幻化为英俊青年或披发水鬼诱惑涉水者，识别破绽在于其发丝间缠着水草泥沙或仍隐现马蹄。苏格兰民俗研究与盖尔语口述档案（如爱丁堡大学“苏格兰研究”学者罗纳德·布莱克对 Each-uisge 传统的考辨）收录了多类变体：也有讲述称若用刻有十字架或铁制的缰绳趁机套住凯尔皮头部，便可将其驯服用来搬运筑桥或建堡巨石；而在日常社区生活里，长辈更直接借“水马潜伏在深潭与急流”告诫孩童远离危险水域。
+      - 从 1674 年苏格兰地名文献的早期记载、罗伯特·彭斯 1786 年诗作《致魔鬼》的引用，到当代福尔柯克运河畔高三十米的钢雕《凯尔皮》（The Kelpies），这一形象始终属于充满地域警戒意味的民间水灵叙事，而不对应任何待确认的现生水生动物物种。
+    sources:
+      - {citation: 'Encyclopædia Britannica, Kelpie (mythological creature).', type: institutional_account, url: 'https://www.britannica.com/topic/Kelpie-mythological-creature', locator: 苏格兰水马凯尔皮形态特征、溺水警戒功能与彭斯诗作记载}
+      - {citation: 'Raghnall MacilleDhuibh (Ronald Black), An t-Each-Uisge, Scottish Studies 37, 2014.', type: academic_article, url: 'https://doi.org/10.2218/ss.v37i0.1801', doi: '10.2218/ss.v37i0.1801', locator: 苏格兰盖尔语口述档案中的水马（Each-uisge）与凯尔皮叙事研究}
+      - {citation: 'Historic Environment Scotland, Supernatural Creatures in Scottish Folklore, 2018.', type: institutional_account, url: 'https://blog.historicenvironment.scot/2018/10/supernatural-creatures-in-scottish-folklore/', locator: 凯尔皮与现代运河雕塑遗产背景介绍}
+    compare: [case_gb_loch_ness_columba_water_beast, case_ua_dnipro_rusalka_lore]
+    motifs: [index_berezkin_h51, index_berezkin_f27]
+    bridge: {entry: LIF-EMERG-0104, cluster: sid_crypt, trail: all, label: 危险水域警戒与水马变形, rationale: 区分苏格兰传统水域警戒故事“凯尔皮”与现代水怪目击潮，并思考激流深潭传说背后的涉水安全语境。}
+
+  - id: case_nz_waikato_taniwha_lore
+    title: 新西兰怀卡托河｜毛利口述“塔尼瓦”水守护兽传统
+    aliases: [Taniwha, Waikato taniwha rau, 塔尼瓦, 怀卡托河水兽]
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location: {lat: -37.7870, lng: 175.2793, precision: culture_region, location_name: 新西兰 · 怀卡托河流域（汉密尔顿一带区域参考）, culture_region: 大洋洲 · 新西兰怀卡托}
+    location_note: 坐标取新西兰北岛怀卡托河中游汉密尔顿一带作流域文化参考；毛利口述传统中的塔尼瓦分布在长达四百余公里河道的多处深潭与弯道。
+    paragraphs:
+      - 在新西兰毛利人（Māori）的口述传统里，“塔尼瓦”（Taniwha）是栖息于深水潭（rua taniwha）、急流旋涡、峡湾或海洞的强大水中存在，形态各异，时而呈巨型爬行动物、大鳗鱼、鲸鲨或漂流巨木状。贯穿北岛最长河流怀卡托河的著名毛利谚语“Waikato taniwha rau, he piko he taniwha”（“怀卡托有百尊塔尼瓦，每一个河弯就有一尊塔尼瓦”）同时具有双关意涵：既标记河道处处暗藏急流险滩，也比喻沿河各个部落（hapū）每一处河湾皆有大酋长（rangatira）坐镇护卫。
+      - 新西兰官方百科《Te Ara》梳理指出，毛利传统里的塔尼瓦不可简单套用欧洲“湖怪”或“邪恶怪兽”二分法。虽有古英雄斩杀食人恶兽的传说，但对大多数怀卡托部族而言，诸如卡鲁塔希（Karutahi）等有名有姓的塔尼瓦更接近与祖先谱系相连的保护神灵（kaitiaki），划独木舟或涉水经过其栖身深潭时必须遵循禁忌并念诵敬祷词（karakia），以示对河流力量的敬畏。
+      - 直到当代新西兰公共议程中，怀卡托流域的塔尼瓦口述传统仍在河流治理、公路改线与跨河桥梁选址磋商中发挥实际话语作用，用来标记易发洪涝与河岸坍塌的敏感水文弯段，而并不构成生物分类学意义上的未知水栖动物主张。
+    sources:
+      - {citation: 'Basil Keane, Taniwha, Te Ara – The Encyclopedia of New Zealand.', type: institutional_account, url: 'https://teara.govt.nz/en/taniwha', locator: 毛利口述中塔尼瓦的形态谱系、护卫神灵（kaitiaki）职能与现代水域协商}
+      - {citation: 'Te Ara – The Encyclopedia of New Zealand, Waikato tribes – Waikato landmarks.', type: institutional_account, url: 'https://teara.govt.nz/en/waikato-tribes/page-2', locator: 怀卡托河谚语“百尊塔尼瓦”与河湾酋长谱系地理}
+    compare: [case_gb_scotland_kelpie_lore, case_ca_okanagan_lake_ogopogo]
+    motifs: [index_ocm_776]
+    bridge: {entry: GEO-LAND-0021, cluster: sid_crypt, trail: all, label: 弯道深潭地貌与河灵守护, rationale: 将怀卡托河“每弯一尊塔尼瓦”的毛利口述与弯曲河道深潭水文地貌并读，体会河流险段如何沉淀为守护谱系。}
+
+  - id: case_br_amazon_mapinguari_lore
+    title: 巴西亚马孙｜独眼巨兽马平瓜里传说与更新世地懒假说
+    aliases: [Mapinguari, Mylodontidae, 马平瓜里, 巨型地懒假说]
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location: {lat: -8.7619, lng: -63.9039, precision: culture_region, location_name: 巴西 · 亚马孙西南部朗多尼亚一带（区域参考）, culture_region: 南美洲 · 巴西亚马孙}
+    location_note: 坐标取巴西西南部朗多尼亚州韦柳港一带（奥伦访谈与范德维尔登田野讨论所在的亚马孙西南部地区）作文化地理参考，并非实体动物发现坐标。
+    paragraphs:
+      - 在巴西亚马孙西南部朗多尼亚、阿克里及亚马孙州一带的原住民与割胶工（seringueiros）口述传统中，“马平瓜里”（Mapinguari）是一头身材高大、浑身披覆红褐色粗毛、散发出刺鼻臭味的林中巨怪。常见讲法描绘它额生独眼、腹部裂开巨口、双足朝后生长，厚实毛皮甚至刀枪不入，如同守林灵体库鲁皮拉（Curupira）一样专门惩罚过度捕猎或闯入深林禁地的猎人。
+      - 1993 年与 2001 年，鸟类学家戴维·C·奥伦（David C. Oren）先后在巴西格尔迪博物馆刊物与《贫齿类》（Edentata）发表论文，提出颇具争议的猜测：认为割胶工与原住民讲述的刺鼻巨爪、可弹开子弹的厚甲皮肤（类似真皮小骨板 osteoderms）与足迹特征，或源自更新世磨齿兽科（Mylodontidae）巨型地懒的残存或文化记忆。人类学家费利佩·费雷拉·范德维尔登（2016）则沿亚马孙西南部田野追踪了这一争论，揭示本土神灵宇宙观、地方口述与外来“神秘动物学”探险叙述之间的明显错位。
+      - 从古生物学与考古学现有实证来看，南美洲巨型地懒约在更新世末至全新世初（距今一万余年前）绝灭，迄今从未发现任何现生标本；不过 2023 年发表于《英国皇家学会学报 B》的巴西中部圣埃利纳岩棚研究确证，末次盛冰期人类曾与巨型地懒（Glossotherium）共存并打磨其骨质皮内成骨制作饰物。因此，“马平瓜里”究竟属于雨林禁忌精怪的跨文化拼合，抑或携带着极其久远的人兽共处生态回响，仍有赖古生态证据与民俗文本各自独立检验。
+    sources:
+      - {citation: 'David C. Oren, Does the Endangered Xenarthran Fauna of Amazonia Include Remnant Ground Sloths?, Edentata 4, 2001, 2–5.', type: academic_article, url: 'https://xenarthrans.org/files/papers/Edentata/Edentata_4/Edentata_4_2-5.pdf', locator: 亚马孙割胶工目击转述与磨齿兽科残存地懒假说论文}
+      - {citation: 'Felipe Ferreira Vander Velden, Realidade, ciência e fantasia nas controvérsias sobre o Mapinguari no sudoeste amazônico, Boletim do Museu Paraense Emílio Goeldi: Ciências Humanas 11(1), 2016, 209–224.', type: academic_article, url: 'https://doi.org/10.1590/1981.81222016000100011', doi: '10.1590/1981.81222016000100011', locator: 亚马孙西南部马平瓜里人类学争论与本土叙事辨析}
+      - {citation: 'Thaís Pansani et al., Evidence of artefacts made of giant sloth bones in central Brazil around the last glacial maximum, Proceedings of the Royal Society B 290, 2023.', type: academic_article, url: 'https://doi.org/10.1098/rspb.2023.1090', doi: '10.1098/rspb.2023.1090', locator: 巴西圣埃利纳遗址更新世晚期人类加工巨型地懒骨质皮内成骨饰物考古证据}
+    compare: [case_br_sao_paulo_curupira, case_np_khumbu_yeti_lore]
+    motifs: [index_ocm_776]
+    bridge: {entry: GEO-LAND-0017, cluster: sid_crypt, trail: all, label: 古生物化石证据与生态记忆假说, rationale: 并读亚马孙“马平瓜里”口述、地懒假说与巴西更新世骨器考古研究，区分地质化石实证与跨世代生物残存猜想。}

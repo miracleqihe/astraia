@@ -1,0 +1,118 @@
+# Layer 4 empirical mechanisms and folklore/anthropological theories for Phase 3.
+records:
+  - id: mech_pareidolia_apophenia
+    title: 空想性错视与模式过度识别
+    aliases: [Pareidolia, Apophenia, Face pareidolia, 空想性错视, 幻想性错觉, 妄想性关联]
+    node_type: mechanism
+    temporal: {year_start: 2014, year_end: 2020, era_label: 2014—2020 年脑成像与视知觉实验, uncertainty_note: 年代对应所引面孔错视与社会注意实验发表年份。}
+    paragraphs:
+      - 空想性错视（pareidolia）是指大脑在毫无规律或结构模糊的视觉刺激中，自动识别出熟悉图像——尤其是人脸或人形轮廓——的日常知觉倾向；更广义的模式过度识别（apophenia，最早由德国精神病学家 Klaus Conrad 于 1958 年提出）则涵盖在随机事件、噪点或巧合之间强行建立有意义关联的认知过程。人类视觉系统高度依赖先验预期进行自上而下的信号填补，在昏暗光影、斑驳墙渍、云层或树影中“看到面孔”，本质上是进化中宁可误报也不漏报社会性信号的保守识别策略。
+      - 在神经科学与行为实验层面，Liu 等人（2014）发表于《Cortex》的脑成像研究让受试者观察纯随机视觉噪点，并告知部分图像中“可能藏有人脸或字母”。结果显示，即使物理刺激完全是无规律噪声，被期待引导的受试者仍在约三分之一以上试次中报告看到面孔，同时前额叶与右侧梭状回面孔区（rFFA）呈现协同激活。Palmer 与 Clifford（2020）发表于《Psychological Science》的实验进一步证明，面对酷似人脸的日常物品照片时，观察者不仅触发面孔感知，还会自动调动眼神朝向与社会注意追踪机制。
+      - 经验边界在于，面孔错视与模式过度识别能够解释为何墙面水渍、模糊照片或低画质监控影像常被迅速读解为“人形”或“凝视”，但实验室中的纯噪点辨识任务并不等同于现实目击的全部内容。历史档案或口述故事里附着的人物身份、地方怨念与叙事因果，属于在初次错认之后经由社会传闻与文化记忆不断叠加的解释层，不能单靠知觉机制直接推断某个个案的完整成因。
+    sources:
+      - {citation: 'Liu, J., Li, J., Feng, L., Li, L., Tian, J., & Lee, K. (2014). Seeing Jesus in toast: Neural and behavioral correlates of face pareidolia. Cortex 53, 60–77.', type: peer_reviewed, url: 'https://doi.org/10.1016/j.cortex.2014.01.013', doi: '10.1016/j.cortex.2014.01.013', locator: 纯噪点面孔错视行为率与 rFFA 脑成像激活}
+      - {citation: 'Palmer, C. J., & Clifford, C. W. G. (2020). Face pareidolia recruits mechanisms for detecting human social attention. Psychological Science 31(8), 1001–1012.', type: peer_reviewed, url: 'https://pubmed.ncbi.nlm.nih.gov/32697673/', doi: '10.1177/0956797620924814', locator: 空想性面孔对视线方向适应与社会注意系统的募集}
+    compare: [mech_suggestibility_bias, mech_auditory_evp_apophenia]
+
+  - id: mech_hypnagogic_hypnopompic
+    title: 入睡前与醒后移行幻觉
+    aliases: [Hypnagogic hallucination, Hypnopompic hallucination, 入睡前幻觉, 醒后幻觉, 睡眠移行期幻觉]
+    node_type: mechanism
+    temporal: {year_start: 1996, year_end: 1999, era_label: 1996—1999 年大样本调查与睡眠移行研究, uncertainty_note: 年代对应所引英国大样本访谈及睡眠瘫痪关联幻觉调查发表年。}
+    paragraphs:
+      - 入睡前幻觉（hypnagogic）与醒后幻觉（hypnopompic）是指发生在清醒与睡眠相互转换的移行阶段、极具临场感的视觉、听觉或躯体触觉体验。不同于日常清醒状态下的幻觉，这类现象通常出现于躺卧熄灯、即将入睡或刚刚转醒的短短数秒至数分钟内，由于快速眼动期（REM）的梦境意象与尚未完全退去的现实房间感知交叠在一起，亲历者往往确信床边真有人影站立、听见呼唤或感到脚步靠近。
+      - Ohayon 等人（1996）发表于《British Journal of Psychiatry》对近五千名英国普通成年人开展的大样本代表性调查显示，约 37% 的受访者报告曾经历过入睡前幻觉，约 12.5% 报告曾经历过醒后幻觉，说明此类移行体验在非精神疾病人群中相当常见，并与睡眠剥夺、作息紊乱及焦虑负荷显著相关。Cheyne、Rueffer 与 Newby-Clark（1999）发表于《Consciousness and Cognition》的研究进一步区分了睡眠过渡期间的三类典型幻觉结构：入侵者存在感、胸廓压迫与前庭运动幻觉。
+      - 该机制的适用边界在于，虽能有力说明许多“半夜床前现身”“醒来时听到陌生人低语”的亲历口述为何不需要预设超自然实体或严重精神病理，但在缺乏当时多导睡眠脑电记录与精确时间线的情况下，后人无法对历史记录或未注明睡眠状态的访谈强行下医学诊断，亦不应忽视不同文化语境赋予这些夜间体验的社会功能与叙述传统。
+    sources:
+      - {citation: 'Ohayon, M. M., Priest, R. G., Caulet, M., & Guilleminault, C. (1996). Hypnagogic and hypnopompic hallucinations: pathological phenomena? British Journal of Psychiatry 169(4), 459–467.', type: peer_reviewed, url: 'https://pubmed.ncbi.nlm.nih.gov/8894197/', doi: '10.1192/bjp.169.4.459', locator: 普通成年人群体流行率调查与病理边界}
+      - {citation: 'Cheyne, J. A., Rueffer, S. D., & Newby-Clark, I. R. (1999). Hypnagogic and hypnopompic hallucinations during sleep paralysis: neurological and cultural construction of the night-mare. Consciousness and Cognition 8(3), 319–337.', type: peer_reviewed, url: 'https://pubmed.ncbi.nlm.nih.gov/10487786/', doi: '10.1006/ccog.1999.0404', locator: 入侵者、压迫感与前庭幻觉三因子结构}
+    compare: [mech_sleep_paralysis, mech_grief_bereavement_hallucination]
+
+  - id: mech_mass_psychogenic_illness
+    title: 群体心因性反应与社会传染
+    aliases: [Mass psychogenic illness, Mass sociogenic illness, 群体心因性疾病, 集体心因性反应, 社会传染]
+    node_type: mechanism
+    temporal: {year_start: 1997, year_end: 2002, era_label: 1997—2002 年临床与流行病学综述, uncertainty_note: 年代对应所引两项群体心因性事件系统回顾论文的发表时间。}
+    paragraphs:
+      - 群体心因性反应（mass psychogenic illness，学界亦常称 mass sociogenic illness）指在紧密联系的学校、工厂、修道院或社区群体中，由于高压情绪、环境担忧或传闻触发，成员在没有共同器质性病原体、毒物或物理侵害的前提下，通过视觉观察、口头传播与群体焦虑迅速扩散相似的真实躯体症状（如眩晕、恶心、呼吸急促、抽搐或昏厥）以及相伴的灵异、毒气或魔鬼附体指控。
+      - Bartholomew 与 Wessely（2002）在《British Journal of Psychiatry》梳理了从中世纪修院狂躁到现代学校及办公楼群发中毒恐慌的历史谱系，指出这类事件往往呈现出鲜明的共同规律：症状通常沿人际关系与视线接触迅速蔓延、急发急止、女性或下级承压群体中常见、且现场毒理和环境检测反复呈阴性。Boss（1997）发表于《Epidemiologic Reviews》的综述亦从公共卫生调查方法出发，强调在排除真正低剂量化学品泄漏与食物污染前不可草率下定论，但一旦环境采样与临床检验反复排除客观毒源，社会传染和预期焦虑便成为关键解释路径。
+      - 就研究边界而言，称某场群体恐慌符合心因性社会传染特征，并不意味当事人“装病”或“故意造假”：受试者在剧烈压力与自主神经唤起下体验到的胸闷、震颤和感知错位均属真实生理反应。另一方面，历史档案（如早期猎巫审讯记录）常常缺席现代流行病学采样条件，且夹杂司法逼供与地方权力冲突，因此只能作为比较参考框架，而不能简单覆盖全部复杂社会史实。
+    sources:
+      - {citation: 'Bartholomew, R. E., & Wessely, S. (2002). Protean nature of mass sociogenic illness: from possessed nuns to chemical and biological terrorism fears. British Journal of Psychiatry 180(4), 300–306.', type: peer_reviewed, url: 'https://pubmed.ncbi.nlm.nih.gov/11925351/', doi: '10.1192/bjp.180.4.300', locator: 历史与现代群体心因性爆发谱系及诊断特征}
+      - {citation: 'Boss, L. P. (1997). Epidemic hysteria: a review of the published literature. Epidemiologic Reviews 19(2), 233–243.', type: peer_reviewed, url: 'https://pubmed.ncbi.nlm.nih.gov/9494785/', doi: '10.1093/oxfordjournals.epirev.a017955', locator: 群体心因性事件的公共卫生调查与鉴别标准}
+    compare: [mech_suggestibility_bias]
+
+  - id: mech_optical_mirage_refraction
+    title: 大气折射、海市蜃楼与光学错觉
+    aliases: [Atmospheric refraction, Mirage, Fata Morgana, 大气折射, 海市蜃楼, 复杂蜃景]
+    node_type: mechanism
+    temporal: {year_start: 1979, year_end: 1981, era_label: 1979—1981 年大气光学与传说复原研究, uncertainty_note: 年代对应 Lehn 关于湖怪与北欧海妖的光学建模论文发表年。}
+    paragraphs:
+      - 当光线穿过存在剧烈垂直温度梯度的大气层时（例如冰冷湖面、海面上方形成强逆温层），空气折射率随高度发生非线性变化，使原本贴近水面或位于地平线以外的漂浮物、礁石、船只与远岸轮廓发生向上弯折、拉伸、倒置甚至多重复影——这正是下现蜃景、上现蜃景以及复杂“法塔·莫尔加纳”（Fata Morgana）蜃景形成的几何光学基础。
+      - 加拿大工程学者 W. H. Lehn 在 1979 年发表于《Science》的论文中以光线追迹模型计算证明，晴朗平静但存在逆温层的冷水面可将远处的普通木桩、水鸟或小块浮冰垂直拉长成高耸弯曲的黑色柱状轮廓，与多个湖泊中流传的“直立脖子水怪”目击描述高度吻合。1981 年 Lehn 与 Schroeder 在《Nature》进一步分析北欧中世纪文献《王镜》（Konungs skuggsjá）记录的格陵兰海妖与“海壁”（hafgerðingar）记载，展示特定角度下的极地逆温蜃景如何把浮冰或远处海岸扭曲为耸立海面的类人形柱体与无尽巨墙。
+      - 经验界限在于，大气光学建模揭示的是极端气象条件下物体表观形态被剧烈放缩失真的物理可能，能够为海怪、幽灵船及远岸浮城传说提供有气象依据的自然解释路径；但某次具体海上或湖畔叙述究竟是否真由逆温折射引起，仍取决于当时是否存在确切气温剖面、观测仰角与距离记录，不能直接反推出所有水怪故事均由蜃景触发。
+    sources:
+      - {citation: 'Lehn, W. H. (1979). Atmospheric refraction and lake monsters. Science 205(4402), 183–185.', type: peer_reviewed, url: 'https://doi.org/10.1126/science.205.4402.183', doi: '10.1126/science.205.4402.183', locator: 冷湖逆温层光线弯曲模型与湖怪垂直拉伸轮廓}
+      - {citation: 'Lehn, W. H., & Schroeder, I. (1981). The Norse merman as an optical phenomenon. Nature 289, 362–366.', type: peer_reviewed, url: 'https://doi.org/10.1038/289362a0', doi: '10.1038/289362a0', locator: 极地海域上现蜃景与北欧古籍海妖记述的光学比对}
+    compare: [mech_pareidolia_apophenia]
+
+  - id: mech_auditory_evp_apophenia
+    title: 听觉空想性错视与低信噪比误读
+    aliases: [Auditory pareidolia, Electronic voice phenomenon, EVP, 听觉错视, 电子语音现象, 语音幻觉]
+    node_type: mechanism
+    temporal: {year_start: 1998, year_end: 2016, era_label: 1998—2016 年听觉启动与脑电实验, uncertainty_note: 年代跨越所引感知归因、语境启动及皮层电位研究。}
+    paragraphs:
+      - 听觉空想性错视（auditory pareidolia）指人类听觉系统在面对信噪比极低的宽带白噪声、电台杂音、磁带嘶声、空调风扇或水流环境音时，将原本不具语义的随机频谱起伏强行切分为熟悉母语词汇或短句的知觉倾向。在民间灵异调查中常被称作“电子语音现象”（EVP）的录音片段，多是在高增益降噪或跨频带调谐背景下抓取的短暂声音片段。
+      - Nees 与 Phillips（2015）发表于《Applied Cognitive Psychology》的对照实验显示，当受试者听取同样一段含混环境噪声或据称录有“灵异语音”的音频时，事先接收到特定语境提示（例如“这里可能藏着某句话”或被告知与幽灵有关）的组别，报告听到清晰人声与可辨词语的比例显著升高。Schepers 等人（2016）发表于《BMC Neuroscience》的脑电研究检测了普通人群在白噪声任务中出现“语音错觉”时的皮层响应，证实早期听觉皮层电位波动与主观听见言语之间存在关联；Lange 与 Houran（1998）则检验了情境恐惧与认知期待如何共同放大对普通环境响动的异常归因。
+      - 这种机制清楚界定了音频取证的解释界限：当原始音频缺乏多轨同步对照、环境电磁屏蔽记录和盲听一致性检验时，仅凭后期反复回放、带字幕引导或在低信噪比片段中“听出词句”，极易落入语音错觉与确认偏误的陷阱；相反，若确有可复现的无线电串台或外部声源入侵，则需以客观频谱波形与物理信道检验为准，而不能一概凭主观“听感”定性。
+    sources:
+      - {citation: 'Nees, M. A., & Phillips, C. (2015). Auditory pareidolia: Effects of contextual priming on perceptions of purportedly paranormal and ambiguous auditory stimuli. Applied Cognitive Psychology 29(1), 129–134.', type: peer_reviewed, url: 'https://doi.org/10.1002/acp.3068', doi: '10.1002/acp.3068', locator: 语境启动对模糊噪声及 EVP 录音听辨的影响}
+      - {citation: 'Schepers, E., Bodar, L., van Os, J., & Lousberg, R. (2016). Cortical processes of speech illusions in the general population. BMC Neuroscience 17, 65.', type: peer_reviewed, url: 'https://doi.org/10.1186/s12868-016-0301-8', doi: '10.1186/s12868-016-0301-8', locator: 普通群体白噪声语音错觉的事件相关电位研究}
+      - {citation: 'Lange, R., & Houran, J. (1998). Delusions of the paranormal: a haunting question of perception. Journal of Nervous and Mental Disease 186(10), 637–645.', type: peer_reviewed, url: 'https://pubmed.ncbi.nlm.nih.gov/9788641/', doi: '10.1097/00005053-199810000-00008', locator: 模糊感知、情境恐惧与异常体验归因路径}
+    compare: [mech_pareidolia_apophenia, mech_haunt_infrasound_field_hypothesis]
+
+  - id: mech_grief_bereavement_hallucination
+    title: 哀伤期在场感与丧亲幻觉
+    aliases: [Bereavement hallucination, Post-bereavement hallucinatory experiences, 丧亲幻觉, 哀伤期在场感, 亡亲感知]
+    node_type: mechanism
+    temporal: {year_start: 1971, year_end: 2020, era_label: 1971—2020 年丧亲感知临床与流行病学综述, uncertainty_note: 涵盖 Rees 经典访谈及近年来跨文化系统综述。}
+    paragraphs:
+      - 哀伤期在场感与丧亲幻觉（post-bereavement hallucinatory experiences，缩写 PBHEs）是指人在失去配偶、父母或至亲之后的一段时期内，在完全清醒状态下清晰感到逝者仍在房中、听见熟悉的呼唤或脚步声、乃至看见其短暂显现的常见身心反应。现代临床心理学认为，这与多年共同生活塑造的深层依恋预测模型、日常感官习惯尚未撤除以及情绪失落共同作用有关，而不等同于精神分裂症等精神病性症状。
+      - 英国医师 W. Dewi Rees（1971）在《British Medical Journal》发表经典田野调查，系统访谈了威尔士当地近三百名丧偶男女，发现接近半数受访者在丧偶后曾体验到逝者的在场感或视听幻觉，且多数受访者感到这些体验带来慰藉、以往很少主动向他人甚至医生提起。Castelnovo 等人（2015）发表于《Journal of Affective Disorders》及 Kamp 等人（2020）发表于《Schizophrenia Bulletin》的系统综述综合多项人群数据指出，丧亲人群中感觉或准感觉体验的报告率普遍介于三成至六成之间，跨越不同年龄、性别与文化背景。
+      - 区分边界同样至关重要：临床与流行病学数据证明“看到或感到亡故亲友”在普通哀伤历程中极其普遍，无需假定真实物理亡魂干预，也不能轻易视为精神病态；然而在民俗学与社会史层面，此类高度个人化的慰藉性感知往往又与各地丧葬忌讳、祭祀礼仪及托梦传统交织在一起，解读时需并重生理心理机制与亲历者所属文化的意义表达。
+    sources:
+      - {citation: 'Rees, W. D. (1971). The hallucinations of widowhood. British Medical Journal 4(5778), 37–41.', type: peer_reviewed, url: 'https://pubmed.ncbi.nlm.nih.gov/5098656/', doi: '10.1136/bmj.4.5778.37', locator: 丧偶人群在场感与视听体验访谈比例及慰藉效应}
+      - {citation: 'Castelnovo, A., Cavallotti, S., Gambini, O., & D''Agostino, A. (2015). Post-bereavement hallucinatory experiences: A critical overview of population and clinical studies. Journal of Affective Disorders 186, 266–274.', type: peer_reviewed, url: 'https://pubmed.ncbi.nlm.nih.gov/26254619/', doi: '10.1016/j.jad.2015.07.032', locator: 人群流行率范围与非病理区分标准综述}
+      - {citation: 'Kamp, K. S., Steffen, E. M., Alderson-Day, B., Allen, P., Austad, A., Hayes, J., Larøi, F., Ratcliffe, M., & Sabucedo, P. (2020). Sensory and quasi-sensory experiences of the deceased in bereavement: An interdisciplinary and integrative review. Schizophrenia Bulletin 46(6), 1367–1381.', type: peer_reviewed, url: 'https://pubmed.ncbi.nlm.nih.gov/33104192/', doi: '10.1093/schbul/sbaa113', locator: 跨学科机制整合与文化调节模型}
+    compare: [mech_tpj_body_signal_integration, mech_hypnagogic_hypnopompic]
+
+  - id: theory_ostension_legend_tripping
+    title: 示现理论与传说朝圣行为
+    aliases: [Ostension, Legend tripping, Reverse ostension, 示现理论, 传说朝圣, 反向展演]
+    node_type: theory
+    temporal: {year_start: 1983, year_end: 2013, era_label: 1983—2013 年民俗示现与网络民俗理论, uncertainty_note: 跨越 Dégh 与 Vázsonyi 奠基论文至数字时代反向展演研究。}
+    paragraphs:
+      - 民俗学中的“示现”（ostension）借用符号学术语，专门描述人们不再只是用口头语言“转述”一则传说，而是通过身体行动、物品布置、实地探访或拍照发帖将传说情节直接“表演”到现实生活中的传播方式。与其密切相连的“传说朝圣”（legend tripping）则指青年或探索者结伴前往废弃建筑、墓地、旧桥或隧道等传闻地点，通过履行特定夜间仪式来试探胆量并制造亲历新故事。
+      - Linda Dégh 与 Andrew Vázsonyi（1983）在《Journal of Folklore Research》首次系统将示现引入当代都市传说研究，指出日常模仿或恶作剧常把虚构母题转成轰动新闻；Bill Ellis（1989）进一步探讨过“伪示现”与过度演绎在引发恐慌或犯罪指控时的社会风险，而 S. Elizabeth Bird（1994）发表于《Western Folklore》的论文则从游戏理论和青年亚文化视角分析了传说朝圣如何充当安全试错的仪式舞台。到了互联网时代，Jeffrey A. Tolbert（2013）在《Semiotic Review》借“瘦长人”创作提出“反向示现”（reverse ostension）：创作者故意先伪造出仿佛真实传说残留物证的旧照片、录像与档案条目，由群体协同续写反向生成一个此前并不存在的“新民间传说”。
+      - 理论应用边界在于，示现与传说朝圣擅长说明恐怖故事如何跨越纸面或屏幕、转化成实地探险指南与伪文献游戏（例如《后室》《大理石黄蜂》及各地废墟探灵路线），但它属于传播形式与社会行动学分析框架，不能用来代替对某个真实历史地点是否发生过事故、或某个个体遭遇背后生理物理成因的独立实证核查。
+    sources:
+      - {citation: 'Dégh, L., & Vázsonyi, A. (1983). Does the word ''dog'' bite? Ostensive action: A means of legend-telling. Journal of Folklore Research 20(1), 5–34.', type: peer_reviewed, url: 'https://www.jstor.org/stable/3814298', locator: 示现概念与行动式传说讲述的奠基论证}
+      - {citation: 'Ellis, B. (1989). Death by folklore: Ostension, contemporary legend, and murder. Western Folklore 48(3), 201–220.', type: peer_reviewed, url: 'https://www.jstor.org/stable/1499739', doi: '10.2307/1499739', locator: 示现、伪示现与当代恐慌案例分析}
+      - {citation: 'Bird, S. E. (1994). Playing with fear: Interpreting the adolescent legend trip. Western Folklore 53(3), 191–209.', type: peer_reviewed, url: 'https://www.jstor.org/stable/1499808', locator: 青少年传说朝圣的群体规则与游戏结构}
+      - {citation: 'Tolbert, J. A. (2013). The case of Slender Man. Semiotic Review 2.', type: peer_reviewed, url: 'https://doi.org/10.71743/g5pn4v44', doi: '10.71743/g5pn4v44', locator: 数字共创中的“反向示现”理论}
+    compare: [theory_mci_recall_experiments, theory_liminality_rites_passage]
+
+  - id: theory_liminality_rites_passage
+    title: 阈限理论与过渡礼仪结构
+    aliases: [Liminality, Rites of passage, Communitas, 阈限理论, 过渡礼仪, 交融感]
+    node_type: theory
+    temporal: {year_start: 1909, year_end: 2009, era_label: 1909—2009 年过渡礼仪与阈限概念谱系, uncertainty_note: 起于范·热内普《过渡礼仪》，经维克多·特纳扩展并延及当代空间与社会研究。}
+    paragraphs:
+      - 阈限（liminality，源自拉丁语 limen，意为“门槛”）理论最初脱胎于法国民俗与人类学者阿诺德·范·热内普（Arnold van Gennep）在 1909 年《过渡礼仪》（Les Rites de Passage）中提出的三阶段模型：任何涉及人生节点、身份转换或空间跨越的仪式通常依次经历“分离”（与原初位置脱离）、“边缘/阈限”（处于旧身份已废、新身份未立的悬置门槛阶段）以及“聚合”（重新纳入社会秩序并确认新位阶）。
+      - 英国人类学家维克多·特纳（Victor Turner）在 1960 年代对赞比亚恩登布人（Ndembu）仪式的田野工作以及 1969 年名著《仪式过程：结构与反结构》（The Ritual Process）中，将核心目光聚焦于以往学者最容易忽略的中间“阈限期”。特纳指出，处于阈限中的人“既不在此也不在彼”（betwixt and between），暂时剥除日常财产、等级与身份标尺，既伴随危险、神圣与模糊性，也可能在同历者之间涌现超越常规等级的“交融感”（communitas）；晚近学者如 Bjørn Thomassen（2009）又将阈限维度系统拓展至时间、空间（桥梁、交叉路口、走廊、边境）与现代媒体文化分析之中。
+      - 在本知识库的应用边界上，阈限理论能够为桥头遇鬼、夜间山路、废墟朝圣乃至网络“后室”“泳池空间”等空间叙事提供跨文化的文化象征语法——它们共享“失去正常通行目的、停滞在既非起点亦非终点的通道”这一结构特征；但“阈限”是人文社科用来理解象征与社会结构的解释概念，并不等于所有通道型建筑都存在特殊物理场或超常现象。
+    sources:
+      - {citation: 'Encyclopaedia Britannica, "Rite of passage".', type: institutional_account, url: 'https://www.britannica.com/topic/rite-of-passage', locator: 范·热内普过渡礼仪三阶段结构与阈限期定义}
+      - {citation: 'Encyclopaedia Britannica, "The Ritual Process: Structure and Anti-Structure".', type: institutional_account, url: 'https://www.britannica.com/topic/The-Ritual-Process-Structure-and-Anti-Structure', locator: 维克多·特纳反结构、阈限与交融感核心论点}
+      - {citation: 'Thomassen, B. (2009). The uses and meanings of liminality. International Political Anthropology 2(1), 5–28.', type: peer_reviewed, url: 'https://portal.ruc.dk/en/publications/the-uses-and-meaning-of-liminality', locator: 阈限概念的空间、时间与跨学科分析谱系}
+    compare: [theory_ostension_legend_tripping]
