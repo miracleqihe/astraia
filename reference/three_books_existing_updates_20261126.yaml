@@ -1,0 +1,45 @@
+records:
+- id: case_cn_zibuyu_v08_s038
+  paragraphs:
+  - 清代《子不语》里，杭州人赵清尧喜爱下棋，在一处庵里遇到一个棋艺不佳却自称“炼师”的道人。赵没有与他深交，当晚却看见帐边鬼火，随后又听见床边传来的声音。
+  - 故事说，声音来自受了冷落的道人；他想以恐吓索财，但赵始终没有按他的意愿求饶。结尾交代道人自伤身亡，留下有关报应与先知的种种说法。邓启耀在书中引用这一故事；它属于古代志怪叙事。
+  location:
+    lat: 30.2741
+    lng: 120.1551
+    precision: city
+    location_name: 浙江杭州城区参考点
+    culture_region: 东亚 · 中国
+  location_note: 坐标取杭州城市参考点；《子不语》故事中的二圣庵和人物住处未定位，情节不可当作已核案件。
+  additional_sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025 年 4 月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第三章第一节“杀魂夺命”，转引《子不语》“道士作祟自毙”段；本次核读电子书，链接为书目页面、非书中正文；纸书页码未核。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_witch
+    trail: all
+    label: 棋局、卧室与夜半异声
+    rationale: 观察故事怎样从旁观一场棋局延伸到卧室里的恐惧；不将小说结局当成历史事实。
+- id: case_cn_zibuyu_v10_s008
+  paragraphs:
+  - 《子不语》“张大帝”记下一则墓地故事：一位道士想改变别人家坟地的风水，在羊角里藏入东西，悄悄埋在坟旁。两家此后的变化被故事解释成这一行为的结果。
+  - 清明迎神队伍经过墓旁时，神像突然停下。众人按叙事中神灵的指示搜寻，找到羊角并将道士送官；邓启耀以此讨论风水争夺的地方传说。神像、风水效力与审判细节均属于志怪叙事。
+  location:
+    lat: 26.0745
+    lng: 119.2965
+    precision: culture_region
+    location_name: 福建省（福州省域参考点）
+    culture_region: 东亚 · 中国 · 福建
+  location_note: 原文只说“安溪相公坟，在闽之某山”，未核定坟墓所在山或安溪县。点位为福州省会作福建区域参考，不是坟址。
+  additional_sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025 年 4 月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第四章第二节“风水魇镇”，转引《子不语》“安溪相公坟”段；本次核读电子书，链接为书目页面、非书中正文；纸书页码未核。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_witch
+    trail: all
+    label: 墓地、迎神与故事转折
+    rationale: 对读山中坟地、迎神队伍与埋藏物如何组成志怪场景，不推断真实墓址或超自然因果。

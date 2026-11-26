@@ -1,6 +1,17 @@
 @import './palette.css';
 
 @font-face {
+  font-family: 'Astraia CJK Supplemental'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('/fonts/astraia-cjk-994a-20261126-400.woff2') format('woff2');
+  unicode-range: U+994A;
+}
+@font-face {
+  font-family: 'Astraia CJK Supplemental'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('/fonts/astraia-cjk-994a-20261126-600.woff2') format('woff2');
+  unicode-range: U+994A;
+}
+
+@font-face {
   font-family: 'Astraia Handbook Glyphs'; font-style: normal; font-weight: 400; font-display: swap;
   src: url('/fonts/astraia-handbook-400.woff2') format('woff2');
   unicode-range: U+44EC, U+68AB, U+7B65, U+9FEB;

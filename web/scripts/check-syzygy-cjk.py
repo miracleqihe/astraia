@@ -39,7 +39,8 @@ for weight in ('400', '600'):
         raise SystemExit('Noto Serif SC is missing. Install the web dependencies first.')
     fonts += [ROOT / f'web/public/fonts/astraia-cjk-supplement-{weight}.woff2',
               ROOT / f'web/public/fonts/astraia-handbook-{weight}.woff2',
-              ROOT / f'web/public/fonts/astraia-cjk-rare-{weight}.woff2']
+              ROOT / f'web/public/fonts/astraia-cjk-rare-{weight}.woff2',
+              ROOT / f'web/public/fonts/astraia-cjk-994a-20261126-{weight}.woff2']
     covered = set()
     for path in fonts:
         with TTFont(path) as font:

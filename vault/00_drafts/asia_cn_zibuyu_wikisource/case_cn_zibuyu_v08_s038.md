@@ -9,11 +9,11 @@ genre: unclassified
 credibility_tier: B
 is_fictional_quarantine: false
 spatial:
-  lat: null
-  lng: null
-  precision: culture_region
-  location_name: 中国志怪文献；各篇发生地与采录地待核
-  culture_region: East Asia · China
+  lat: 30.2741
+  lng: 120.1551
+  precision: city
+  location_name: 浙江杭州城区参考点
+  culture_region: 东亚 · 中国
 temporal: null
 standards:
   atu_types: []
@@ -65,6 +65,9 @@ audit:
   reviewer: null
   reviewed_at: null
   review_note: null
+  public_release: false
+  public_rights_note: null
+  public_content_sha256: null
 ---
 
 ## 来源字段

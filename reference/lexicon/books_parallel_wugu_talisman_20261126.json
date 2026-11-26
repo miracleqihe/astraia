@@ -199,7 +199,10 @@
           "locator": "关于民俗雕版木刻及 2009 年云南巍山图像的说明；并非书中同一次访谈的逐句证明"
         }
       ],
-      "secondary_ref": "邓启耀：《巫蛊：中国文化的历史暗流》，广西师范大学出版社，2025，第二章第二节“蛊界”；电子书按章节定位。"
+      "secondary_ref": "邓启耀：《巫蛊：中国文化的历史暗流》，广西师范大学出版社，2025，第二章第二节“蛊界”；电子书按章节定位。",
+      "case_id": "case_cn_wugu_weishan_paperhorse_interview_2009",
+      "knowledge_id": "REL-5-0009",
+      "knowledge_note": "对读仪式物件的制作、购买与知识传承，不把访谈中的功效叙述当作实验证明。"
     },
     {
       "id": "lex_deng_stone_lions_dispute",
@@ -219,7 +222,10 @@
           "locator": "第九章第二节“当代‘魇魅’纠纷”，1993 年石家庄石狮事件，转述《法制日报》及地方文件"
         }
       ],
-      "secondary_ref": "邓启耀：《巫蛊：中国文化的历史暗流》，广西师范大学出版社，2025 年 4 月，ISBN 9787559879943。第九章第二节“当代‘魇魅’纠纷”，1993 年石家庄石狮事件，转述《法制日报》及地方文件；电子书为流式内容，按章节及叙事锚点定位，未核纸书页码。"
+      "secondary_ref": "邓启耀：《巫蛊：中国文化的历史暗流》，广西师范大学出版社，2025 年 4 月，ISBN 9787559879943。第九章第二节“当代‘魇魅’纠纷”，1993 年石家庄石狮事件，转述《法制日报》及地方文件；电子书为流式内容，按章节及叙事锚点定位，未核纸书页码。",
+      "case_id": "case_cn_wugu_shijiazhuang_lions_dispute_1993",
+      "knowledge_id": "SOC-5-0005",
+      "knowledge_note": "将书中转引、原始报道和后续政策区分开，观察一件物品如何进入城市纠纷。"
     },
     {
       "id": "lex_deng_bai_shadow_theft",
@@ -266,7 +272,8 @@
       ],
       "secondary_ref": "陶思炎：《中国镇物》，台北：东大图书，1998，ISBN 957-19-2210-2。印页 64。",
       "knowledge_id": "REL-5-0033",
-      "knowledge_note": "从门笺转读剪纸和刻纸技艺。"
+      "knowledge_note": "从门笺转读剪纸和刻纸技艺。",
+      "case_id": "case_cn_tao_subei_fish_door_paper"
     },
     {
       "id": "lex_zhenwu_qixi_fuzhen",
@@ -293,7 +300,8 @@
       ],
       "secondary_ref": "陶思炎：《中国镇物》，台北：东大图书，1998，ISBN 957-19-2210-2。印页 119–120。",
       "knowledge_id": "CHE-1-0005",
-      "knowledge_note": "对读液体性质与表面张力；针影吉凶仍属于民俗解释。"
+      "knowledge_note": "对读液体性质与表面张力；针影吉凶仍属于民俗解释。",
+      "case_id": "case_cn_tao_danyang_qixi_floating_needle"
     },
     {
       "id": "lex_zhenwu_chuanggong_chuangmu",
@@ -320,7 +328,8 @@
       ],
       "secondary_ref": "陶思炎：《中国镇物》，台北：东大图书，1998，ISBN 957-19-2210-2。印页 148。",
       "knowledge_id": "REL-3-0007",
-      "knowledge_note": "从护儿与安寝祈愿转读人生礼仪。"
+      "knowledge_note": "从护儿与安寝祈愿转读人生礼仪。",
+      "case_id": "case_cn_tao_nanjing_bed_gods_new_year"
     },
     {
       "id": "lex_zhenwu_saoqingniang",
@@ -346,7 +355,8 @@
       ],
       "secondary_ref": "陶思炎：《中国镇物》，台北：东大图书，1998，ISBN 957-19-2210-2。印页 321–322。",
       "knowledge_id": "GEO-CLIM-0005",
-      "knowledge_note": "并读天气与气候尺度，比较祈晴叙事和天气观察。"
+      "knowledge_note": "并读天气与气候尺度，比较祈晴叙事和天气观察。",
+      "case_id": "case_cn_tao_suzhou_sweeping_sun_woman"
     },
     {
       "id": "lex_zhenwu_sishen_wadang",
@@ -399,7 +409,8 @@
       ],
       "secondary_ref": "陶思炎：《中国镇物》，台北：东大图书，1998，ISBN 957-19-2210-2。印页 146。",
       "knowledge_id": "REL-5-0001",
-      "knowledge_note": "从地方讲述转读民俗实践与传承，比较不同叙事的地域语境。"
+      "knowledge_note": "从地方讲述转读民俗实践与传承，比较不同叙事的地域语境。",
+      "case_id": "case_cn_tao_seoul_yagwang_ghost_shoes"
     },
     {
       "id": "lex_zhenwu_kuixing_diandou",
@@ -452,7 +463,8 @@
       ],
       "secondary_ref": "陶思炎：《中国镇物》，台北：东大图书，1998，ISBN 957-19-2210-2。印页 203–204。",
       "knowledge_id": "FOR-1-0003",
-      "knowledge_note": "区分砖上手印的观察记录与不同解释。"
+      "knowledge_note": "区分砖上手印的观察记录与不同解释。",
+      "case_id": "case_cn_tao_gaochun_handprint_brick"
     },
     {
       "id": "lex_zhenwu_huer_baoshu",
@@ -475,7 +487,8 @@
       ],
       "secondary_ref": "陶思炎：《中国镇物》，台北：东大图书，1998，ISBN 957-19-2210-2。印页 147。",
       "knowledge_id": "REL-3-0007",
-      "knowledge_note": "将护儿保书与人生阶段中的家庭仪式并读。"
+      "knowledge_note": "将护儿保书与人生阶段中的家庭仪式并读。",
+      "case_id": "case_cn_tao_lishui_child_protection_banner"
     },
     {
       "id": "lex_zhenwu_shi_popuo",
@@ -519,7 +532,8 @@
       ],
       "secondary_ref": "陶思炎：《中国镇物》，台北：东大图书，1998，ISBN 957-19-2210-2。印页 217。",
       "knowledge_id": "ARC-2-0008",
-      "knowledge_note": "从旧磨盘的转用了解建筑材料再使用。"
+      "knowledge_note": "从旧磨盘的转用了解建筑材料再使用。",
+      "case_id": "case_cn_tao_sunan_road_millstones"
     },
     {
       "id": "lex_zhenwu_zhangtufu_guoqiao",
@@ -565,7 +579,8 @@
       ],
       "secondary_ref": "陶思炎：《中国镇物》，台北：东大图书，1998，ISBN 957-19-2210-2。印页 238。",
       "knowledge_id": "REL-5-0001",
-      "knowledge_note": "从水乡祭祀和地方神灵转读民俗实践与传承。"
+      "knowledge_note": "从水乡祭祀和地方神灵转读民俗实践与传承。",
+      "case_id": "case_cn_tao_jiangsu_anhui_yangsi_water_god"
     },
     {
       "id": "lex_zhenwu_gengqigong_water_guardian",
@@ -587,7 +602,8 @@
       ],
       "secondary_ref": "陶思炎：《中国镇物》，台北：东大图书，1998，ISBN 957-19-2210-2。印页 238–239。",
       "knowledge_id": "REL-5-0001",
-      "knowledge_note": "从地方讲述转读民俗实践与传承，比较不同叙事的地域语境。"
+      "knowledge_note": "从地方讲述转读民俗实践与传承，比较不同叙事的地域语境。",
+      "case_id": "case_cn_tao_gaoyou_gengqigong_lake_robe"
     },
     {
       "id": "lex_zhenwu_weibagong_water_guardian",
@@ -632,7 +648,8 @@
       ],
       "secondary_ref": "陶思炎：《中国镇物》，台北：东大图书，1998，ISBN 957-19-2210-2。印页 228。",
       "knowledge_id": "SOC-5-0009",
-      "knowledge_note": "从纸马图式差异转读图像语境。"
+      "knowledge_note": "从纸马图式差异转读图像语境。",
+      "case_id": "case_cn_tao_yunnan_paper_horse_two_forms"
     },
     {
       "id": "lex_zhenwu_dunhuang_zhenzhaiyao",
@@ -654,7 +671,8 @@
       ],
       "secondary_ref": "陶思炎：《中国镇物》，台北：东大图书，1998，ISBN 957-19-2210-2。印页 176。",
       "knowledge_id": "SCR-4-0001",
-      "knowledge_note": "对读文献材料和文本保存，不把祈愿视为功效。"
+      "knowledge_note": "对读文献材料和文本保存，不把祈愿视为功效。",
+      "case_id": "case_cn_tao_dunhuang_house_stone_mixture"
     },
     {
       "id": "lex_zhenwu_fengxiang_scorpion_talisman",
@@ -677,7 +695,8 @@
       ],
       "secondary_ref": "陶思炎：《中国镇物》，台北：东大图书，1998，ISBN 957-19-2210-2。印页 323–324。",
       "knowledge_id": "REL-5-0008",
-      "knowledge_note": "从谷雨蝎符转读节气、生态知识与仪式日历。"
+      "knowledge_note": "从谷雨蝎符转读节气、生态知识与仪式日历。",
+      "case_id": "case_cn_tao_fengxiang_rooster_scorpion_charm"
     },
     {
       "id": "lex_zhenwu_yan_you_bang",
@@ -699,7 +718,8 @@
       ],
       "secondary_ref": "陶思炎：《中国镇物》，台北：东大图书，1998，ISBN 957-19-2210-2。印页 324。",
       "knowledge_id": "REL-5-0008",
-      "knowledge_note": "将地方虫榜放在节令和家居生活的脉络中阅读。"
+      "knowledge_note": "将地方虫榜放在节令和家居生活的脉络中阅读。",
+      "case_id": "case_cn_tao_sunan_insect_notice"
     }
   ]
 }

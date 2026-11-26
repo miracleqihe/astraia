@@ -1,5 +1,5 @@
-@font-face { font-family: Cinzel; src: url('../../public/fonts/cinzel-400.ttf') format('truetype'); font-weight: 400; font-display: swap; }
-@font-face { font-family: Cinzel; src: url('../../public/fonts/cinzel-600.ttf') format('truetype'); font-weight: 600; font-display: swap; }
+@font-face { font-family: Cinzel; src: url('/fonts/cinzel-400.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: Cinzel; src: url('/fonts/cinzel-600.ttf') format('truetype'); font-weight: 600; font-display: swap; }
 .font-serif-sc, html, body { font-family: 'Astraia Handbook Glyphs', 'Astraia CJK Supplemental', 'Noto Serif SC', serif; }
 .font-cormorant { font-family: 'Astraia Handbook Glyphs', 'Astraia CJK Supplemental', 'Cormorant Garamond', 'Noto Serif SC', serif; }
 .font-cinzel { font-family: Cinzel, 'Astraia Handbook Glyphs', 'Astraia CJK Supplemental', 'Noto Serif SC', serif; }
