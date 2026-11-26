@@ -282,11 +282,11 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
 
   useEffect(() => {
     const key = (event: KeyboardEvent) => {
-      if (!loading && !lifeMode && (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); setSearchOpen(true); }
+      if (!lifeMode && (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); setSearchOpen(true); }
     };
     window.addEventListener('keydown', key);
     return () => window.removeEventListener('keydown', key);
-  }, [lifeMode, loading]);
+  }, [lifeMode]);
 
   function toggle<T>(setter: Dispatch<SetStateAction<Set<T>>>, value: T) {
     setter((old) => { const next = new Set(old); if (next.has(value)) next.delete(value); else next.add(value); return next; });
@@ -367,7 +367,7 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
           aria-expanded={directoryOpen && directoryScope === 'modern'} onClick={() => openDirectory('modern')}>现代异闻 <span>{modernCount}</span></button>}
         <ControlRail mode={mode} layers={layers} tiers={tiers} activeLayer={activeLayer} soloLayer={soloLayer} spread={spread}
           onLayer={(layer) => setActiveLayer((previous) => previous === layer ? null : layer)} onToggleLayer={(layer) => toggle(setLayers, layer)}
-          onSolo={toggleSolo} onTier={(tier) => toggle(setTiers, tier)} onSpread={setSpread} onSearch={() => { if (!loading) setSearchOpen(true); }} />
+          onSolo={toggleSolo} onTier={(tier) => toggle(setTiers, tier)} onSpread={setSpread} onSearch={() => setSearchOpen(true)} />
         <Suspense fallback={<div className="stage-message" role="status">正在载入三维视图…</div>}>
           {mode === 'geo'
             ? <GeoView graph={graph} selection={sceneSelection} codeIds={codeIds} focus={mapFocus}
@@ -423,7 +423,7 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
             </div>}
         </div>}
     </div>}
-    {!lifeMode && searchOpen && <QuickSearch nodes={searchableNodes} onClose={() => setSearchOpen(false)} onSelect={(id) => {
+    {!lifeMode && searchOpen && <QuickSearch nodes={searchableNodes} loading={loading} onClose={() => setSearchOpen(false)} onSelect={(id) => {
       onNeedDetails();
       setTiers(new Set(ALL_TIERS.filter((tier) => tier !== 'F' || tiers.has('F')))); setLayers(new Set(ALL_LAYERS)); setYears(null);
       if (comparePicking && selected && id !== selected.id) {

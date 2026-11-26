@@ -100,8 +100,8 @@ export function Chronology({ bounds, value, ticks, onChange }: TimelineProps) {
   </div>;
 }
 
-export function QuickSearch({ nodes, onClose, onSelect }: {
-  nodes: GraphNode[]; onClose: () => void; onSelect: (id: string) => void;
+export function QuickSearch({ nodes, loading = false, onClose, onSelect }: {
+  nodes: GraphNode[]; loading?: boolean; onClose: () => void; onSelect: (id: string) => void;
 }) {
   const [query, setQuery] = useState('');
   const deferredQuery = useDeferredValue(query);
@@ -135,7 +135,7 @@ export function QuickSearch({ nodes, onClose, onSelect }: {
         onChange={(event) => setQuery(event.target.value)} />
       <div className="quick-search-results">{matching.map((node) => <button key={node.id} type="button"
         onClick={() => { onSelect(node.id); onClose(); }}><b>L{node.z_layer}</b><span>{node.title}</span></button>)}
-        {!matching.length && <p>没有找到匹配资料。</p>}</div>
+        {!matching.length && <p role={loading ? 'status' : undefined}>{loading ? '正在载入资料…' : '没有找到匹配资料。'}</p>}</div>
     </section>
   </div>;
 }
