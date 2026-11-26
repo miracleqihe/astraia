@@ -6,7 +6,7 @@
 
 - **◈ 精查图谱（经典学术工作台）**：[https://miracleqihe.github.io/astraia/](https://miracleqihe.github.io/astraia/)
 - **◐ 朔望叠影（三维双界天文台）**：[https://miracleqihe.github.io/astraia/syzygy/](https://miracleqihe.github.io/astraia/syzygy/)
-- **最近一次线上发布核验记录**：[SIDERA v3 发布核验](docs/verification/2026-11-25-sidera-v3-release.md)（已同步至 GitHub Pages 与 Cloudflare R2，全量检验 `9,718` 个 R2 对象与 `128` 桶 SHA-256 分片）
+- **网站状态**：已上线，支持资料按需加载与完整性校验。
 
 | 核心维度 | 现行线上规模 |
 | --- | --- |
@@ -85,7 +85,7 @@ Astraia 不把神话、鬼故事和数字都市传说简单“证伪成错觉”
 1. **◇ `UMBRA · 坤舆异志`（实测矢量地图）**：Natural Earth 全球概览衔接 OpenFreeMap / OpenStreetMap 街区水系缩放，支持重叠点位聚合展开、「此处条目」列表、年代跨度轴筛选及直达单条定位。
 2. **+ `SIDERA · 玄象星络`（四层立体星图）**：以 L1（个案）→ L2（文本/档案组）→ L3（标准码母题）→ L4（学术机制/理论）为 Z 轴四层结构；支持单层孤立、任意层 `2D 平铺`、`同码星座` 标引高亮以及左右分栏**双卷宗对比阅读**。
 3. **✦ `OMNIA · 万象星枢`（独立知识星图）**：专注 2,266 篇《格物识微》条目的 3D 星系 / 2D 星盘浏览，支持共鸣星弦高亮、**长按节点聚拢原书内部引用网络**、本地「观测星标」与个人笔记本（存留于浏览器 `localStorage`），并在文内直接点击放大插图或嵌页预览原版 PDF。
-4. **本地专属 `资料复核` 工作台（`/review/index.html`）**：仅供本地仓库审校待批草稿、核对坐标/标准码差异并导出签核 JSON；公开部署产物（`VITE_PUBLIC_DEMO=1`）自动剥离复核页面以保持线上纯净。
+4. **资料复核工作台**：在本地审校草稿、核对坐标与标准码，并导出复核结果。
 
 ---
 
@@ -129,7 +129,7 @@ Astraia 不把神话、鬼故事和数字都市传说简单“证伪成错觉”
 - **右侧 `朔望手卷 · SYZYGY CODEX`**：
   - **`深空金错` / `古拓羊皮`**：一键切换阅读卷宗纸面昼夜/碑拓双主题（偏好自动记忆）。
   - **`展卷并读` / `单卷阅读`**：桌面端拓宽卷宗为双栏并排（`codex-spread`），同步对读**上卷 · 玄象志怪**与**下卷 · 格物识微**（自动联动收起左侧栏避免拥挤）。
-  - **手卷内快捷锚点**：`上卷 · 志怪` / `◐ 折光依据` / `下卷 · 格物` 平滑跳转；`查看原典页图` 加载按需 WebP 原书扫图；`打开原书 PDF` 经 R2 资产解析跳转准确页码；`✦ 格物星点 / + 玄象星络 / ◇ 坤舆坐标` 反飞三维定位；点击任意民俗条目的**「✦ 穿界星门」**可在站内自动推荐与搜索 2,266 篇《格物识微》条目的基础上建立你自己的「自选星桥」（或从书目点击 `✦ 选择民俗条目对读` 反向配对），并生成可分享静态短链。
+  - **手卷内快捷锚点**：`上卷 · 志怪` / `◐ 折光依据` / `下卷 · 格物` 平滑跳转；`查看原典页图` 加载按需 WebP 原书扫图；`打开原书 PDF` 并跳转至对应页码；`✦ 格物星点 / + 玄象星络 / ◇ 坤舆坐标` 反飞三维定位；点击任意民俗条目的**「✦ 穿界星门」**可在站内自动推荐与搜索 2,266 篇《格物识微》条目的基础上建立你自己的「自选星桥」（或从书目点击 `✦ 选择民俗条目对读` 反向配对），并生成可分享静态短链。
   - **第四面墙浮窗（身处 `Ⅴ 夷` 阶时弹出）**：可点选 `✦ 典籍示范：《子不语·为聻》⇄《道家名言边界》` 直达经典范例，或 `◇ 返膜入人界` 回归实存操作态。
 
 ### 4. 「精查图谱」与经典「万象星枢」按键及深链参数
@@ -183,17 +183,13 @@ Astraia 不把神话、鬼故事和数字都市传说简单“证伪成错觉”
 
 ---
 
-## 五、轻量化双层部署架构（GitHub Pages + Cloudflare R2）
+## 五、访问与阅读体验
 
-为使万人节点、两千余篇格物条目、原版 PDF 及多语插图在浏览器极速开启，同时规避单仓库静态托管膨胀，发布流采取以下分层优化：
-
-1. **轻量页面层（GitHub Pages `miracleqihe.github.io/astraia/`）**：托管精简 HTML/JS/CSS 入口、经典精查快照索引与朔望首屏摘要（`syzygy/boot.json` 含 287 座星桥预览与匹配统计，总首屏包体紧致快速），同时保留历史带哈希脚本避免强缓存页面断链；并为每条新增/既有 L1 记录生成静态分享页。
-2. **大体积资源层（Cloudflare R2 对象存储）**：大体积全文包、原书高清 PDF、文内插图、原典扫描页图（WebP）以及 **128 个经 SHA-256 校验的按需阅读分片桶（`syzygy/shards/`）** 均由网站发布流水线同步并核验至 R2；前端通过 [publicAssetUrl.js](web/src/publicAssetUrl.js) 根据页面内嵌 `astraia-r2-assets` 资产清单按需拉取，并妥善处理中文路径百分比编码与 `Range` 分段读取 PDF。
-3. **双渲染通道与零缺字字体包**：前端探测到可靠硬件加速时使用 `WebGL2`，检测到软件光栅化（SwiftShader/llvmpipe/WARP）或无 GPU 环境时自动切换为轻量 Canvas 2D 星点光晕投射（[renderer.js](web/src/syzygy/renderer.js)），并遵循系统 `prefers-reduced-motion`；所有中文由随站打包的 `Noto Serif SC`（400/600）、`Noto Sans SC`、`Noto Sans Thai/Lao/Khmer/Buginese`、`SIL Charis` 与自研扩展字形子集承载，确保 **6,356+ 汉字零缺失**。
+图谱与阅读资料按需加载，支持不同设备上的浏览。三维视图会根据设备能力选择合适的渲染方式，并遵循系统的减少动态效果设置。
 
 ---
 
-## 六、仓库结构与本地开发、导入及发布指南
+## 六、仓库结构与本地开发
 
 ### 仓库结构总览
 | 路径 | 用途说明 |
@@ -201,11 +197,11 @@ Astraia 不把神话、鬼故事和数字都市传说简单“证伪成错觉”
 | `vault/` | Obsidian 可直开的 UTF-8 Markdown 知识库：`00_drafts/`（待审草稿）、`01_cases/`（L1 个案）、`02_myth_corpora/`（L2 语料）、`03_motifs_standards/`（L3 母题）、`04_mechanisms_theories/`（L4 机理/理论）、`05_quarantine_fiction/`（F 级虚构隔离）。 |
 | `reference/` | `reading_notes.yaml` 正文与出处补充、各批次导入 YAML（神话/世界民俗/现代灵异/中国典籍/机制理论）、标准码映射 `standards.json` 及各专题研究说明。 |
 | `knowledge/` | 《格物识微》源稿（[handbook.qmd](knowledge/handbook.qmd)）与 2,266 篇逐条 Markdown `entries/`。 |
-| `pipeline/` | Python Pydantic 校验模型（`node_model.py`）、单条摄取器（`ingest_agent.py`）、区域与机制批量导入器（`import_regional_folklore.py` / `import_phase3_mechanisms.py`）、复核流水线（`review_queue.py` / `review_approval.py`）、图谱编纂（`build_graph.py` / `catalogue.py`）、手册与页图构建及 Pages 发布脚本（`publish_site.py`）。 |
+| `pipeline/` | Python Pydantic 校验模型（`node_model.py`）、单条摄取器（`ingest_agent.py`）、区域与机制批量导入器（`import_regional_folklore.py` / `import_phase3_mechanisms.py`）、复核流水线（`review_queue.py` / `review_approval.py`）、图谱编纂（`build_graph.py` / `catalogue.py`）、手册与页图构建脚本。 |
 | `web/` | React + TypeScript + Three.js 前端应用（`/` 经典精查工作台、`syzygy/` 朔望叠影天文台、`review/` 本地复核页）、数据与分片构建脚本（`web/scripts/`）及自动化测试套件（`web/tests/`）。 |
-| `schema/`、`tests/`、`docs/` | 从 Pydantic 导出的 [node_schema.json](schema/node_schema.json)、209 项 Python 单元测试以及设计与发布核验文档。 |
+| `schema/`、`tests/`、`docs/` | 从 Pydantic 导出的 [node_schema.json](schema/node_schema.json)、209 项 Python 单元测试以及设计与数据说明文档。 |
 
-> **说明**：[research_coverage.md](reference/research_coverage.md) 汇总了各批数据源覆盖边界与许可条款；本地私有采录原始快照与待核索引默认存放在 `.local/`（不进入公开网页包），迁移环境需自行补齐原始快照后方可重建全量采集批次。
+> **说明**：[research_coverage.md](reference/research_coverage.md) 汇总了各批资料的覆盖范围与许可条款。
 
 ### 1. 本地首次配置与启动开发服务器（PowerShell）
 
@@ -267,7 +263,7 @@ npm.cmd run dev
 ### 3. 全量数据、字体与自动化测试
 
 ```powershell
-# 重建前端数据、星桥、匹配、128 桶阅读分片与首屏 boot.json
+# 重建前端数据、星桥与阅读索引
 node web/scripts/build-graph-index.mjs
 node web/scripts/build-syzygy-data.mjs
 node web/scripts/build-portal-matches.mjs
@@ -292,18 +288,9 @@ npm.cmd --prefix web run build
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-### 4. 发布至 GitHub Pages 与 Cloudflare R2
+### 4. 线上访问
 
-```powershell
-# 1) 本地预检公开图谱体裁、范围与许可边界（不推送）
-.\.venv\Scripts\python.exe -X utf8 -m pipeline.publish_site
-
-# 2) 构建生产版本、重建分享页与原典页图，并推送到托管仓库以触发 R2 + Pages 自动部署
-.\.venv\Scripts\python.exe -X utf8 -m pipeline.publish_site --publish
-# （如仅需打包已完成人工公开许可复核的卡片，可追加 --reviewed-only）
-```
-
-> 公开部署会自动剔除 `review/` 本地复核页与 `.local/` 私有快照；托管仓库的 GitHub Actions 随后增量校验并同步大体积 PDF/分片/页图到 R2，验证通过后部署至 [https://miracleqihe.github.io/astraia/](https://miracleqihe.github.io/astraia/)。
+可通过 [Astraia 网站](https://miracleqihe.github.io/astraia/)浏览图谱与阅读资料。
 
 ---
 
