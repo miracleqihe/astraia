@@ -7,6 +7,10 @@ import {
   coordinatesOf, dossierCodes, EVIDENCE, geographicCases, isFiction, LAYERS, linkKey, locationPrecision, mapLabel, otherEnd,
   readingLabel, RELATIONS, shortNodeLabel, STANDARDS, type Citation, type GraphIndex, type GraphNode,
 } from './graph';
+import {
+  filterLexiconEntries, getHubLexiconInfo, loadLexiconShard, loadTaxonomy,
+  type LexiconEntry, type TaxonomyData,
+} from './syzygy/lexiconShards.js';
 
 const RELATION_PAGE_SIZE = 80;
 
@@ -49,7 +53,8 @@ function loadPortalPreviewMap(): Promise<Map<string, PortalPreviewItem>> {
 
 const SOURCE_TYPES: Record<string, string> = {
   primary_archive: '原始档案', archival_catalogue: '档案目录', scholarly_database: '学术数据库',
-  gazetteer: '地名录', peer_reviewed: '同行评议论文', monograph: '学术专著', official_standard: '官方索引',
+  gazetteer: '地名录', geographic_reference: '地理参考', reference_book: '参考书', primary_text: '原典',
+  peer_reviewed: '同行评议论文', monograph: '学术专著', official_standard: '官方索引',
   research_dataset: '研究数据', user_supplied_outline: '用户提供的研究提纲',
   historical_reference: '调查库登记的史料线索',
   newspaper_report: '报刊报道', field_report: '现场采访', interview: '人物访谈',
@@ -201,6 +206,15 @@ export function NodeInspector({ node, graph, portalHref, onSelect, onClose, onCo
   const [relationLimit, setRelationLimit] = useState(RELATION_PAGE_SIZE);
   const [activeSection, setActiveSection] = useState<string>('reading');
   const [portalPreview, setPortalPreview] = useState<PortalPreviewItem | null>(null);
+  const [taxonomy, setTaxonomy] = useState<TaxonomyData | null>(null);
+  const [lexiconState, setLexiconState] = useState<{ loading: boolean; error: string; entries: LexiconEntry[] }>({
+    loading: false,
+    error: '',
+    entries: [],
+  });
+  const [lexiconQuery, setLexiconQuery] = useState('');
+  const [lexiconCategory, setLexiconCategory] = useState('');
+  const [lexiconRetryKey, setLexiconRetryKey] = useState(0);
   const contentRef = useRef<HTMLDivElement>(null);
   const links = graph.adjacency.get(node.id) ?? [];
   const layer = LAYERS[node.z_layer];
@@ -228,6 +242,51 @@ export function NodeInspector({ node, graph, portalHref, onSelect, onClose, onCo
     });
     return () => { active = false; };
   }, [node.id]);
+
+  useEffect(() => {
+    let active = true;
+    void loadTaxonomy(import.meta.env.BASE_URL).then((data) => {
+      if (active) setTaxonomy(data);
+    });
+    return () => { active = false; };
+  }, []);
+
+  const hubInfo = useMemo(() => getHubLexiconInfo(taxonomy, node.id), [taxonomy, node.id]);
+
+  useEffect(() => {
+    setLexiconQuery('');
+    setLexiconCategory('');
+  }, [node.id]);
+
+  useEffect(() => {
+    if (!taxonomy || !hubInfo || !hubInfo.shard) {
+      setLexiconState({ loading: false, error: '', entries: [] });
+      return;
+    }
+    let active = true;
+    setLexiconState({ loading: true, error: '', entries: [] });
+    void loadLexiconShard(import.meta.env.BASE_URL, taxonomy, hubInfo.domain_id)
+      .then((shard) => {
+        if (!active) return;
+        const hubEntries = shard.entries.filter((entry) => entry.hub_id === node.id);
+        setLexiconState({ loading: false, error: '', entries: hubEntries });
+      })
+      .catch((error: unknown) => {
+        if (!active) return;
+        const message = error instanceof Error ? error.message : '专题辞条载入失败';
+        setLexiconState({ loading: false, error: message, entries: [] });
+      });
+    return () => { active = false; };
+  }, [node.id, taxonomy, hubInfo, lexiconRetryKey]);
+
+  const lexiconCategories = useMemo(
+    () => [...new Set(lexiconState.entries.map((entry) => entry.category).filter(Boolean))],
+    [lexiconState.entries],
+  );
+  const filteredLexicon = useMemo(
+    () => filterLexiconEntries(lexiconState.entries, lexiconQuery, lexiconCategory),
+    [lexiconState.entries, lexiconQuery, lexiconCategory],
+  );
 
   const orderedLinks = [...links].sort((left, right) => {
     const a = graph.byId.get(otherEnd(left, node.id))?.z_layer === 4 ? 0 : 1;
@@ -303,6 +362,7 @@ export function NodeInspector({ node, graph, portalHref, onSelect, onClose, onCo
       <nav className="inspector-nav" aria-label="节点详情分区">
         {hasOverview && <button type="button" aria-pressed={activeSection === 'reading'} onClick={() => jump('[data-section="reading"]')}>阅读</button>}
         {hasText && <button type="button" aria-pressed={activeSection === 'text'} onClick={() => jump('[data-section="text"]')}>原文</button>}
+        {hubInfo && <button type="button" aria-pressed={activeSection === 'lexicon'} onClick={() => jump('[data-section="lexicon"]')}>辞条 <span>{lexiconState.entries.length || hubInfo.count}</span></button>}
         <button type="button" aria-pressed={activeSection === 'facts'} onClick={() => jump('[data-section="facts"]')}>概况</button>
         <button type="button" aria-pressed={activeSection === 'sources'} onClick={() => jump('[data-section="sources"]')}>出处 <span>{node.sources.length}</span></button>
         {links.length > 0 && <button type="button" aria-pressed={activeSection === 'relations'} onClick={() => jump('[data-section="relations"]')}>关联 <span>{links.length}</span></button>}
@@ -342,6 +402,105 @@ export function NodeInspector({ node, graph, portalHref, onSelect, onClose, onCo
           </section>
           : !hasText && <CatalogueOverview node={node} />}
         <DossierOriginal node={node} />
+        {hubInfo && (
+          <section data-section="lexicon" className="inspector-section inspector-lexicon" aria-label="专题辞条汇典">
+            <div className="inspector-lexicon-head">
+              <div>
+                <span className="inspector-lexicon-kicker">专题辞条汇典 · {hubInfo.domain_name}</span>
+                <h4>关联辞条分片</h4>
+              </div>
+              <span className="inspector-lexicon-badge">
+                {lexiconState.entries.length || hubInfo.count} 辞条
+              </span>
+            </div>
+            {!hubInfo.shard ? (
+              <p className="inspector-lexicon-status">该专题辞条分片已列入后续编纂波次，暂可浏览下方关联资料。</p>
+            ) : (
+              <>
+                <div className="inspector-lexicon-controls">
+                  <input
+                    className="inspector-lexicon-search"
+                    type="search"
+                    value={lexiconQuery}
+                    onChange={(event) => setLexiconQuery(event.target.value)}
+                    placeholder="检索辞条、别名、地域、时代或释义"
+                    aria-label="检索专题辞条"
+                  />
+                  {lexiconCategories.length > 1 && (
+                    <div className="inspector-lexicon-cats" role="group" aria-label="辞条分类筛选">
+                      <button type="button" aria-pressed={lexiconCategory === ''} onClick={() => setLexiconCategory('')}>
+                        全部
+                      </button>
+                      {lexiconCategories.map((cat) => (
+                        <button
+                          key={cat}
+                          type="button"
+                          aria-pressed={lexiconCategory === cat}
+                          onClick={() => setLexiconCategory((prev) => (prev === cat ? '' : cat))}
+                        >
+                          {cat}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                {lexiconState.loading && <p className="inspector-lexicon-status">正在校验并载入辞条分片…</p>}
+                {lexiconState.error && (
+                  <p className="inspector-lexicon-status">
+                    辞条分片载入失败：{lexiconState.error}{' '}
+                    <button type="button" onClick={() => setLexiconRetryKey((key) => key + 1)}>重试</button>
+                  </p>
+                )}
+                {!lexiconState.loading && !lexiconState.error && (
+                  filteredLexicon.length > 0 ? (
+                    <div className="inspector-lexicon-list">
+                      {filteredLexicon.map((entry) => (
+                        <details key={entry.id} className="inspector-lexicon-card">
+                          <summary>
+                            <span>{entry.term}</span>
+                            <small>{[entry.category, entry.region, entry.era].filter(Boolean).join(' · ')}</small>
+                          </summary>
+                          <div className="inspector-lexicon-body">
+                            {entry.aliases?.length > 0 && (
+                              <p className="inspector-lexicon-aliases">别称：{entry.aliases.join('、')}</p>
+                            )}
+                            {entry.summary.split(/\n\s*\n/).filter(Boolean).map((paragraph, index) => (
+                              <p key={`${entry.id}-paragraph-${index}`}>{paragraph}</p>
+                            ))}
+                            {entry.case_id && <p><a href={`${import.meta.env.BASE_URL}?view=map&story=${encodeURIComponent(entry.case_id)}`}>查看地图故事 ↗</a></p>}
+                            {entry.knowledge_id && <p><a href={`${import.meta.env.BASE_URL}?view=life&entry=${encodeURIComponent(entry.knowledge_id)}`}>知识对读 · 主题关联 ↗</a> {entry.knowledge_note}</p>}
+                            {entry.primary_sources?.length > 0 && (
+                              <div className="inspector-lexicon-sources">
+                                {entry.primary_sources.map((src, idx) => {
+                                  const url = webUrl(src.url);
+                                  const label = [src.citation || src.url || '原典出处', src.locator].filter(Boolean).join(' · ');
+                                  return url ? (
+                                    <a key={`${entry.id}-src-${idx}`} href={url} target="_blank" rel="noopener noreferrer">
+                                      {label} ↗
+                                    </a>
+                                  ) : (
+                                    <span key={`${entry.id}-src-${idx}`}>{label}</span>
+                                  );
+                                })}
+                              </div>
+                            )}
+                            {entry.secondary_ref && (
+                              <p className="inspector-lexicon-secondary">书目参照：{entry.secondary_ref}</p>
+                            )}
+                          </div>
+                        </details>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="inspector-lexicon-status">
+                      {lexiconState.entries.length ? '没有匹配当前检索的辞条。' : '本节点暂无关联辞条。'}
+                    </p>
+                  )
+                )}
+              </>
+            )}
+          </section>
+        )}
         <dl className="record-facts" data-section="facts">
           {node.spatial && <div><dt>地点</dt><dd>{node.spatial.location_name}</dd></div>}
           {coordinates && <div><dt>点位</dt><dd><span className="numeric">{coordinates[1].toFixed(node.spatial?.precision === 'exact' ? 5 : 2)}°, {coordinates[0].toFixed(node.spatial?.precision === 'exact' ? 5 : 2)}°</span>

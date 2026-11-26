@@ -3,10 +3,13 @@ import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 
+const allowMissingTaxonomy = process.argv.includes('--allow-missing-taxonomy')
+  || process.argv.includes('--skip-taxonomy');
 const root = fileURLToPath(new URL('../', import.meta.url));
 const load = async path => JSON.parse(await readFile(path, 'utf8'));
 const graph = await load(`${root}/public/data/graph_data.json`);
 const index = await load(`${root}/public/data/graph_index.json`);
+assert.equal(index.compact_defaults, true, 'graph_index.json must be built with compact_defaults: true');
 const detailBytes = await readFile(`${root}/public/data/${index.details_file}`);
 const details = JSON.parse(detailBytes.toString('utf8'));
 const bookBytes = await readFile(`${root}/public/knowledge/data.json`);
@@ -178,4 +181,202 @@ for (const bridge of portal.bridges) {
     assert.equal(bridge.edge?.type ?? null, edge?.type ?? null);
   }
 }
-console.log(JSON.stringify({ nodes: graph.nodes.length, links: graph.links.length, book_entries: book.entries.length, curated: portal.bridges.length, matches: matchIndex.stats, snapshot: graph.snapshot_id }));
+
+const taxonomyPath = `${root}/public/syzygy/taxonomy.json`;
+const lexiconManifestPath = `${root}/public/syzygy/lexicon/manifest.json`;
+let taxonomyBytes = null;
+try {
+  taxonomyBytes = await readFile(taxonomyPath);
+} catch (error) {
+  if (error.code !== 'ENOENT' || !allowMissingTaxonomy) {
+    throw new Error(`Missing syzygy/taxonomy.json (${error.message}). Run build-taxonomy-lexicon.mjs first.`);
+  }
+}
+function assertNonEmptyString(value, message) {
+  assert.ok(typeof value === 'string' && value.trim().length > 0, message);
+}
+
+function validateEditorialPreface(preface) {
+  assert.ok(preface && typeof preface === 'object' && !Array.isArray(preface),
+    'taxonomy.editorial_preface must be an object');
+  assertNonEmptyString(preface.title, 'editorial_preface.title must be a non-empty string');
+  assertNonEmptyString(preface.subtitle, 'editorial_preface.subtitle must be a non-empty string');
+  assert.ok(
+    Array.isArray(preface.paragraphs)
+      && preface.paragraphs.length >= 2
+      && preface.paragraphs.every(p => typeof p === 'string' && p.trim().length > 0),
+    'editorial_preface.paragraphs must contain >= 2 non-empty strings',
+  );
+  assert.ok(
+    Array.isArray(preface.principles) && preface.principles.length >= 3,
+    'editorial_preface.principles must contain >= 3 items',
+  );
+  for (const [idx, item] of preface.principles.entries()) {
+    assert.ok(item && typeof item === 'object' && !Array.isArray(item),
+      `editorial_preface.principles[${idx}] must be an object`);
+    assertNonEmptyString(item.label, `editorial_preface.principles[${idx}].label must be a non-empty string`);
+    assertNonEmptyString(item.text, `editorial_preface.principles[${idx}].text must be a non-empty string`);
+  }
+}
+
+function validateEditorialIntro(intro, domainId) {
+  assert.ok(intro && typeof intro === 'object' && !Array.isArray(intro),
+    `${domainId}: editorial_intro must be an object`);
+  assertNonEmptyString(intro.heading, `${domainId}: editorial_intro.heading must be a non-empty string`);
+  assertNonEmptyString(intro.epigraph_thesis, `${domainId}: editorial_intro.epigraph_thesis must be a non-empty string`);
+  assert.ok(
+    Array.isArray(intro.paragraphs)
+      && intro.paragraphs.length >= 2
+      && intro.paragraphs.every(p => typeof p === 'string' && p.trim().length > 0),
+    `${domainId}: editorial_intro.paragraphs must contain >= 2 non-empty strings`,
+  );
+  assert.ok(
+    Array.isArray(intro.lenses)
+      && intro.lenses.length >= 1
+      && intro.lenses.every(tag => typeof tag === 'string' && tag.trim().length > 0),
+    `${domainId}: editorial_intro.lenses must be a non-empty array of non-empty strings`,
+  );
+}
+
+let taxonomySummary = null;
+if (taxonomyBytes) {
+  const taxonomy = JSON.parse(taxonomyBytes.toString('utf8'));
+  const manifestBytes = await readFile(lexiconManifestPath);
+  const manifest = JSON.parse(manifestBytes.toString('utf8'));
+  assert.equal(taxonomy.version, 1);
+  assert.equal(manifest.version, 1);
+  assert.equal(taxonomy.lexicon_manifest_sha256, digest(manifestBytes));
+  if (taxonomy.snapshot_id) assert.equal(taxonomy.snapshot_id, graph.snapshot_id);
+  assert.ok(Array.isArray(taxonomy.domains) && taxonomy.domains.length === 7,
+    `Expected 7 taxonomy domains, got ${taxonomy.domains?.length}`);
+  const domainIds = new Set(taxonomy.domains.map(domain => domain.id));
+  assert.equal(domainIds.size, 7, 'Duplicate taxonomy domain ids');
+
+  const manifestEntries = Object.entries(manifest.domains ?? {});
+  assert.ok(manifestEntries.length >= 1 && manifestEntries.length <= taxonomy.domains.length,
+    `Expected 1..${taxonomy.domains.length} active shards in lexicon manifest, got ${manifestEntries.length}`);
+
+  const hasEditorialPreface = taxonomy.editorial_preface != null;
+  const hasAnyDomainIntro = taxonomy.domains.some(domain => domain?.editorial_intro != null);
+  const hasAnyChapterIntro = taxonomy.domains.some(domain =>
+    Array.isArray(domain?.groups) && domain.groups.some(group => group?.chapter_intro != null),
+  );
+  const requireEditorial = hasEditorialPreface
+    || hasAnyDomainIntro
+    || hasAnyChapterIntro
+    || manifestEntries.length > 1
+    || process.argv.includes('--require-editorial');
+
+  if (hasEditorialPreface || requireEditorial) {
+    validateEditorialPreface(taxonomy.editorial_preface);
+  }
+
+  for (const domain of taxonomy.domains) {
+    assert.ok(domain.id && domain.name && Array.isArray(domain.groups), `Invalid domain ${domain?.id}`);
+    assert.ok(Number.isInteger(domain.node_count) && domain.node_count >= 0, `Invalid node_count on ${domain.id}`);
+    assert.ok(Number.isInteger(domain.lexicon_count) && domain.lexicon_count >= 0, `Invalid lexicon_count on ${domain.id}`);
+    if (domain.editorial_intro != null || requireEditorial) {
+      validateEditorialIntro(domain.editorial_intro, domain.id);
+    }
+    for (const [groupIdx, group] of domain.groups.entries()) {
+      assert.ok(group && typeof group === 'object', `${domain.id}: invalid group at index ${groupIdx}`);
+      assertNonEmptyString(group.id, `${domain.id}: group[${groupIdx}].id must be a non-empty string`);
+      assertNonEmptyString(group.title, `${domain.id}/${group.id}: title must be a non-empty string`);
+      assertNonEmptyString(group.description, `${domain.id}/${group.id}: description must be a non-empty string`);
+      if (group.chapter_intro != null || requireEditorial) {
+        assertNonEmptyString(group.chapter_intro, `${domain.id}/${group.id}: chapter_intro must be a non-empty string`);
+      }
+    }
+    const manifestShard = manifest.domains?.[domain.id];
+    if (domain.lexicon_shard || manifestShard) {
+      assert.ok(domain.lexicon_shard && manifestShard, `Mismatched shard metadata for ${domain.id}`);
+      assert.equal(domain.lexicon_shard.file, manifestShard.file);
+      assert.equal(domain.lexicon_shard.sha256, manifestShard.sha256);
+      assert.equal(domain.lexicon_shard.count, manifestShard.count);
+      assert.deepEqual(domain.lexicon_shard.categories, manifestShard.categories);
+      assert.deepEqual(domain.lexicon_shard.hub_ids, manifestShard.hub_ids);
+      assert.equal(domain.lexicon_count, manifestShard.count);
+    }
+  }
+
+  let totalLexiconEntries = 0;
+  const seenLexiconIds = new Set();
+  for (const [domainId, shardMeta] of manifestEntries) {
+    assert.ok(domainIds.has(domainId), `Unknown domain in lexicon manifest: ${domainId}`);
+    assert.match(shardMeta.file ?? '', /^lexicon\/[a-z0-9_]+-[a-f0-9]{12}\.json$/);
+    const shardBytes = await readFile(`${root}/public/syzygy/${shardMeta.file}`);
+    assert.equal(shardBytes.length, shardMeta.bytes, `Byte size mismatch for ${shardMeta.file}`);
+    assert.equal(digest(shardBytes), shardMeta.sha256, `SHA-256 mismatch for ${shardMeta.file}`);
+    const shard = JSON.parse(shardBytes.toString('utf8'));
+    assert.equal(shard.version, 1, `Invalid shard version for ${shardMeta.file}`);
+    assert.equal(shard.domain_id, domainId);
+    assert.ok(Array.isArray(shard.entries) && shard.entries.length > 0 && shard.entries.length === shardMeta.count,
+      `Entry count mismatch for ${shardMeta.file}`);
+
+    const shardCategories = [];
+    const seenShardCategories = new Set();
+    const shardHubCounts = new Map();
+    for (const entry of shard.entries) {
+      assert.match(entry?.id ?? '', /^lex_[a-z0-9_]+$/, `Invalid lexicon entry id: ${entry?.id}`);
+      assertNonEmptyString(entry.hub_id, `Invalid hub_id on ${entry.id}`);
+      assertNonEmptyString(entry.term, `Invalid term on ${entry.id}`);
+      assertNonEmptyString(entry.summary, `Invalid summary on ${entry.id}`);
+      assert.ok(Array.isArray(entry.primary_sources) && entry.primary_sources.length > 0,
+        `Missing primary_sources on ${entry.id}`);
+      let hasHttps = false;
+      let hasLocatedPrintSource = false;
+      for (const src of entry.primary_sources) {
+        assert.ok(src && typeof src === 'object', `Invalid primary_sources item on ${entry.id}`);
+        assertNonEmptyString(src.citation, `Missing primary_sources.citation on ${entry.id}`);
+        if (src.url) {
+          assert.match(src.url, /^https?:\/\//i, `Invalid primary_sources.url on ${entry.id}`);
+          if (/^https:\/\//i.test(src.url.trim())) hasHttps = true;
+        } else {
+          assertNonEmptyString(src.locator, `Missing page or chapter on ${entry.id}`);
+          hasLocatedPrintSource = true;
+        }
+      }
+      assert.ok(hasHttps || hasLocatedPrintSource, `${entry.id} needs an HTTPS or located print source`);
+      if (entry.case_id) {
+        const story = nodes.get(entry.case_id);
+        assert.ok(story?.z_layer === 1 && Number.isFinite(story?.spatial?.lat) && Number.isFinite(story?.spatial?.lng),
+          `${entry.id} references a missing or unlocated story`);
+      }
+      if (entry.knowledge_id) {
+        assert.ok(entries.get(entry.knowledge_id)?.body?.trim(), `${entry.id} references missing knowledge text`);
+        assertNonEmptyString(entry.knowledge_note, `Missing thematic reading note on ${entry.id}`);
+      } else {
+        assert.ok(!entry.knowledge_note, `${entry.id} has a note without a knowledge reference`);
+      }
+      assert.ok(!seenLexiconIds.has(entry.id), `Duplicate lexicon entry ${entry.id}`);
+      seenLexiconIds.add(entry.id);
+
+      const category = typeof entry.category === 'string' ? entry.category.trim() : '';
+      if (category && !seenShardCategories.has(category)) {
+        seenShardCategories.add(category);
+        shardCategories.push(category);
+      }
+      shardHubCounts.set(entry.hub_id, (shardHubCounts.get(entry.hub_id) ?? 0) + 1);
+    }
+
+    assert.deepEqual(shardMeta.categories, shardCategories, `Category index mismatch in ${shardMeta.file}`);
+    assert.deepEqual(shardMeta.hub_ids, [...shardHubCounts.keys()], `Hub index mismatch in ${shardMeta.file}`);
+    for (const [hubId, count] of shardHubCounts.entries()) {
+      const mHub = manifest.hub_to_domain?.[hubId];
+      const tHub = taxonomy.hub_to_domain?.[hubId];
+      assert.ok(mHub && mHub.domain_id === domainId && mHub.count === count,
+        `manifest.hub_to_domain mismatch for ${hubId}`);
+      assert.ok(tHub && tHub.domain_id === domainId && tHub.count === count && tHub.shard?.file === shardMeta.file,
+        `taxonomy.hub_to_domain mismatch for ${hubId}`);
+    }
+    totalLexiconEntries += shard.entries.length;
+  }
+  taxonomySummary = {
+    domains: taxonomy.domains.length,
+    shards: manifestEntries.length,
+    lexicon_entries: totalLexiconEntries,
+    editorial_preface: Boolean(taxonomy.editorial_preface),
+  };
+}
+
+console.log(JSON.stringify({ nodes: graph.nodes.length, links: graph.links.length, book_entries: book.entries.length, curated: portal.bridges.length, matches: matchIndex.stats, taxonomy: taxonomySummary, snapshot: graph.snapshot_id }));

@@ -4,7 +4,8 @@ import { loadGraph, matchesGraph } from './graphBridge';
 import { loadPortalMatches } from './portalMatches';
 import { handbookText, bookNavigation, bindBookNavigation } from './readable';
 import { createReadingShards } from './readingShards';
-import { genreContract, genreLabels, sourceTier } from './narrativeMetadata';
+import { loadTaxonomy, loadLexiconShard, getHubLexiconInfo, filterLexiconEntries } from './lexiconShards.js';
+import { genreContract, narrativeDisplay } from './narrativeMetadata';
 import { storyShare, bindStoryShare } from './sharing';
 import { originalPageButton, bindOriginalPages } from './originalPages';
 import { engravingHeader, engravingBeam, engravingFrieze, engravingPatternForVolume, bindEngravingBeam } from '../engraving';
@@ -54,6 +55,8 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
   let prefetchedMatchBytes = null;
   let startPromise = null;
   let reverseEntryId = null, reverseQuery = '';
+  let hubLexiconNodeId = null, hubLexiconQuery = '';
+  const safeLexiconUrl = value => (/^https?:\/\//i.test(value ?? '') ? value : null);
   let geoPoints = null, semanticPoints = null, networkLines = null, limit = 60;
   const semanticPositions = [];
   const selected = () => state.selectedGraph;
@@ -308,9 +311,94 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
     input.addEventListener('input',()=>{reverseEntryId=entry.id;reverseQuery=input.value;shown=10;paint();}); paint();
   }
 
+  async function paintHubLexicon(node, slot) {
+    if (!slot?.isConnected) return;
+    const taxonomy = await loadTaxonomy(root);
+    if (!slot.isConnected || selected()?.id !== node.id) return;
+    const info = getHubLexiconInfo(taxonomy, node.id);
+    if (!info) {
+      slot.hidden = true;
+      slot.innerHTML = '';
+      return;
+    }
+
+    slot.hidden = false;
+    if (!info.shard) {
+      slot.innerHTML = `<div class="syzygy-lexicon-head"><p class="syzygy-overline">专题辞条汇典 · ${escape(info.domain_name)}</p><span class="syzygy-badge syzygy-badge-context">规划分片</span></div>
+        <p class="syzygy-reference" style="margin-top:6px">该专题辞条分片已列入后续编纂波次，可先浏览上方跨层关联条目。</p>`;
+      return;
+    }
+
+    slot.innerHTML = `<div class="syzygy-lexicon-head"><p class="syzygy-overline">专题辞条汇典 · ${escape(info.domain_name)}</p><span class="syzygy-badge syzygy-badge-context" data-hub-lexicon-count>${escape(info.count)} 辞条</span></div>
+      <details class="syzygy-lexicon-drawer" open>
+        <summary>展开检索本枢纽辞条</summary>
+        <input class="syzygy-portal-search" data-hub-lexicon-search type="search" placeholder="检索辞条、别名、地域或释义" autocomplete="off">
+        <div class="syzygy-lexicon-cards" data-hub-lexicon-list><p class="syzygy-reference">正在校验并载入辞条分片…</p></div>
+      </details>`;
+
+    const searchInput = slot.querySelector('[data-hub-lexicon-search]');
+    const listEl = slot.querySelector('[data-hub-lexicon-list]');
+    const countEl = slot.querySelector('[data-hub-lexicon-count]');
+    if (searchInput) searchInput.value = hubLexiconNodeId === node.id ? hubLexiconQuery : '';
+
+    try {
+      const shard = await loadLexiconShard(root, taxonomy, info.domain_id);
+      if (!slot.isConnected || selected()?.id !== node.id) return;
+      const hubEntries = shard.entries.filter(entry => entry.hub_id === node.id);
+      if (countEl) countEl.textContent = `${hubEntries.length} 辞条`;
+
+      const renderCards = () => {
+        if (!listEl?.isConnected) return;
+        const filtered = filterLexiconEntries(hubEntries, searchInput?.value ?? '');
+        if (!filtered.length) {
+          listEl.innerHTML = `<p class="syzygy-reference">${hubEntries.length ? '没有匹配的专题辞条。' : '本枢纽暂无对应辞条。'}</p>`;
+          return;
+        }
+        listEl.innerHTML = filtered.map(entry => {
+          const aliases = Array.isArray(entry.aliases) && entry.aliases.length
+            ? `<p class="syzygy-reference">别称：${escape(entry.aliases.join('、'))}</p>`
+            : '';
+          const meta = [entry.category, entry.region, entry.era].filter(Boolean).join(' · ');
+          const sources = (entry.primary_sources ?? []).map(src => {
+            const url = safeLexiconUrl(src?.url);
+            const label = escape([src?.citation || src?.url || '原典出处', src?.locator].filter(Boolean).join(' · '));
+            return url ? `<li><a href="${escape(url)}" target="_blank" rel="noopener noreferrer">${label} ↗</a></li>` : `<li>${label}</li>`;
+          }).join('');
+          const secondary = entry.secondary_ref ? `<p class="syzygy-reference" style="margin-top:6px">书目参照：${escape(entry.secondary_ref)}</p>` : '';
+          return `<details class="syzygy-lexicon-card">
+            <summary><span>${escape(entry.term)}</span><small>${escape(meta)}</small></summary>
+            <div class="syzygy-lexicon-card-body">
+              ${aliases}
+              ${entry.summary.split(/\n\s*\n/).filter(Boolean).map(paragraph => `<p>${escape(paragraph)}</p>`).join('')}
+              ${entry.case_id ? `<p><a class="syzygy-evidence-link" href="${classicURL('map', entry.case_id)}">查看地图故事 ↗</a></p>` : ''}
+              ${entry.knowledge_id ? `<p><a class="syzygy-evidence-link" href="${root}?view=life&amp;entry=${encodeURIComponent(entry.knowledge_id)}">知识对读 · 主题关联 ↗</a> ${escape(entry.knowledge_note || '')}</p>` : ''}
+              ${sources ? `<ul class="syzygy-source-list">${sources}</ul>` : ''}
+              ${secondary}
+            </div>
+          </details>`;
+        }).join('');
+      };
+
+      searchInput?.addEventListener('input', () => {
+        hubLexiconNodeId = node.id;
+        hubLexiconQuery = searchInput.value;
+        renderCards();
+      });
+      renderCards();
+    } catch (error) {
+      if (!slot.isConnected || selected()?.id !== node.id || !listEl) return;
+      listEl.innerHTML = `<p class="syzygy-reference">辞条分片载入失败：${escape(error.message)} <button type="button" class="syzygy-inline-button" data-hub-lexicon-retry>重试</button></p>`;
+      listEl.querySelector('[data-hub-lexicon-retry]')?.addEventListener('click', () => paintHubLexicon(node, slot));
+    }
+  }
+
   function renderNode(node, loading = false) {
     const container = document.getElementById('syzygy-card-container');
     const searchDraft=container.dataset.nodeId === node.id ? container.querySelector('#portal-book-search')?.value ?? '' : '';
+    if (hubLexiconNodeId !== node.id) {
+      hubLexiconNodeId = node.id;
+      hubLexiconQuery = '';
+    }
     container.dataset.nodeId=node.id;
     const coords = hasCoordinates(node) ? `${node.spatial.lat.toFixed(3)}, ${node.spatial.lng.toFixed(3)}` : '未记录坐标';
     const edges = (adjacency.get(node.id) ?? []).filter(edge => allowed(byId.get(edge.source === node.id ? edge.target : edge.source) ?? {}));
@@ -320,13 +408,14 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
     }).join('');
     container.innerHTML = `<article class="engraving-codex">${engravingHeader('民俗与个案',node.spatial?.location_name || '地点未记录',node.credibility_tier)}<section class="mythos-pane syzygy-full-card"><p class="syzygy-overline">上卷 · 民俗与个案 / L${escape(node.z_layer ?? '—')}</p>
       <h3>${escape(node.title)}</h3><div class="syzygy-codes">${codePills(node)}</div>
-      <p class="syzygy-reference">来源等级 ${escape(sourceTier(node) ?? '未记录')} · 体裁 ${escape(genreLabels[genreContract(node)])}${isFiction(node) ? ' · 虚构标记 F' : ''}</p>
+      <p class="syzygy-reference">${escape(narrativeDisplay(node))}</p>
       <p class="syzygy-reference">${escape(node.spatial?.location_name || '地点未记录')} · ${escape(coords)}</p>
       <div class="syzygy-prose">${readingText(node)}</div>
       <h4>出处</h4>${loading ? '<p class="syzygy-reference">正在读取完整正文与出处…</p>' : sourceList(node)}
       <div class="syzygy-read-links"><a href="${classicURL('map',node.id)}">精查地图</a><a href="${classicURL('graph',node.id)}">精查星络</a></div>${storyShare(root,node)}</section>
       ${engravingBeam(false)}<section class="prism-pane syzygy-full-card"><p class="syzygy-overline">跨层关联 · 原图谱记录 ${edges.length}</p>
       ${mechanismMarkup(node)}${relations || '<p class="syzygy-reference">暂无关联节点。</p>'}${edges.length>20 ? `<p class="syzygy-reference">展示前 20 条，完整关系请在精查星络中查看。</p>` : ''}</section>
+      <section class="physis-pane syzygy-full-card syzygy-hub-lexicon" data-hub-lexicon hidden></section>
       <section class="physis-pane syzygy-full-card"><p class="syzygy-overline">✦ 穿界星门 · 格物主题对读</p>
       <p class="syzygy-reference">主题候选依据共同词汇；阅读指引依据资料类型。</p><div data-portal-suggestions></div>
       <label class="syzygy-reference" for="portal-book-search">搜索全部 ${book.entries.length.toLocaleString()} 条格物资料</label>
@@ -334,6 +423,7 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
     container.querySelectorAll('[data-related]').forEach(button => button.addEventListener('click', () => { const next=byId.get(button.dataset.related); if (next) select(next,true); }));
     bindStoryShare(container);
     paintSuggestions(node,container.querySelector('[data-portal-suggestions]'));
+    void paintHubLexicon(node, container.querySelector('[data-hub-lexicon]'));
     const input = container.querySelector('#portal-book-search'), results = container.querySelector('#portal-book-results');
     input.addEventListener('input', () => {
       const q = input.value.trim().normalize('NFKC').toLocaleLowerCase(); results.innerHTML = '';
@@ -420,7 +510,7 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
         <section class="prism-pane syzygy-full-card" data-codex-section="prism"><p class="syzygy-overline">◐ 穿界星门 · ${escape(label)}</p><p class="syzygy-reference">${escape(reason)}</p>${mechanismMarkup(story)}${renderPrismPhilosophyHTML(prism, book.entries)}</section>
         <div class="syzygy-dual-body">
           <section class="mythos-pane syzygy-full-card" data-codex-section="mythos"><p class="syzygy-overline">上卷 · L${escape(story.z_layer ?? '—')}</p>
-            <h3>${escape(story.title)}</h3><p class="syzygy-reference">来源等级 ${escape(sourceTier(story) ?? '未记录')} · 体裁 ${escape(genreLabels[genreContract(story)])}${isFiction(story) ? ' · 虚构标记 F' : ''}</p><p class="syzygy-reference">${escape(story.spatial?.location_name || '地点未记录')}</p><div class="syzygy-prose">${readingText(story)}</div>
+            <h3>${escape(story.title)}</h3><p class="syzygy-reference">${escape(narrativeDisplay(story))}</p><p class="syzygy-reference">${escape(story.spatial?.location_name || '地点未记录')}</p><div class="syzygy-prose">${readingText(story)}</div>
             <h4>文献出处</h4>${loading ? '<p class="syzygy-reference">正在读取…</p>' : sourceList(story)}<div class="syzygy-read-links"><a href="${classicURL('map',story.id)}">精查地图</a><a href="${classicURL('graph',story.id)}">精查星络</a></div>${storyShare(root,story)}</section>
           <section class="physis-pane syzygy-full-card" data-codex-section="physis"><div class="engraving-reading-band">${engravingFrieze(engravingPatternForVolume(entry.volume),'engraving-reading-band')}</div><p class="syzygy-overline">下卷 · 格物识微 / ${escape(entry.volume)}</p><h3>${escape(entry.title)}</h3><p class="syzygy-reference">${escape(entry.id)} · PDF 第 ${escape(entry.page)} 页</p><div class="syzygy-read-links">${originalPageButton(entry.page)}</div><div class="syzygy-prose syzygy-book-body">${loading ? '正在读取原书正文…' : handbookText(body,root)}</div>${bookNavigation(entry,book.entries)}<div class="syzygy-read-links"><a href="${bookURL(entry.id)}">精查万象星枢</a><a href="${publicAssetUrl(root, 'knowledge/handbook.pdf')}#page=${encodeURIComponent(entry.page)}" target="_blank" rel="noopener">打开原书 PDF</a><button id="portal-change-book" class="ctl-btn">更换对读</button></div></section>
         </div></article>`;

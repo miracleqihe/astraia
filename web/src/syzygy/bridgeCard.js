@@ -4,6 +4,7 @@ import { storyShare, bindStoryShare } from './sharing';
 import { originalPageButton, bindOriginalPages } from './originalPages';
 import { engravingHeader, engravingBeam, engravingFrieze, engravingPatternForVolume, bindEngravingBeam } from '../engraving';
 import { resolvePrismForPair, renderPrismPhilosophyHTML, bindSensoryLabs } from './philosophicalPrism';
+import { narrativeDisplay } from './narrativeMetadata';
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]);
 const sources = node => {
   const items = node?.sources ?? [];
@@ -65,6 +66,7 @@ export function renderBridgeCard(bridge, { root, onJump, onSelectRelated, onRead
       <section class="mythos-pane syzygy-full-card" data-codex-section="mythos">
         <p class="syzygy-overline">上卷 · 玄象志怪 / ${esc(node.genre)} · ${esc(node.credibility_tier ?? '—')} 级</p>
         <h3>${esc(node.title)}</h3>
+        <p class="syzygy-reference">${esc(narrativeDisplay(node))}</p>
         <div class="syzygy-codes">${codes}</div>
         <p class="syzygy-reference">${esc(bridge.umbraGeo.place)}${bridge.hasCoordinates ? ` · ${bridge.umbraGeo.lat.toFixed(3)}, ${bridge.umbraGeo.lon.toFixed(3)}` : ' · 未记录坐标'}</p>
         <div class="syzygy-prose">${paragraphs(node)}</div>

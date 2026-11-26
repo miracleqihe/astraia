@@ -1,0 +1,177 @@
+# Phase 5B Layer 3 & Layer 2 supplement: zhenwu material taxonomy & imperial wugu legal corpus.
+# Original academic simplified Chinese syntheses grounded in public-domain classics, statutes, and heritage archives.
+records:
+  - id: motif_cn_zhenwu_material_taxonomy
+    title: 中国镇物三相载体与六维功能分类母题群
+    aliases:
+      - 镇物分类母题群
+      - 三相载体六维功能
+      - 镇风止煞镇物
+      - Zhenwu material taxonomy
+    node_type: motif_index
+    z_layer: 3
+    genre: academic_model
+    credibility_tier: A
+    trail: all
+    spatial:
+      precision: culture_region
+      location_name: 中国黄河、长江流域及闽台滇传统镇物分布区
+      culture_region: 中国 · 传统镇物与器物民俗区
+    temporal:
+      year_start: -200
+      year_end: 1998
+      era_label: 战国秦汉随葬关津镇物至明清民居厌胜与当代遗产保护时期
+      uncertainty_note: 涵盖马王堆汉墓帛画、东吴魂瓶买地券、唐宋蒲津铁牛，以及金门风狮爷、云南瓦猫、闽南送王船等跨越两千年的物质民俗谱系。
+    paragraphs:
+      - 中国传统“镇物”体系在长期演化中呈现出高度系统化的分类结构，可依“三相载体”与“六维功能”加以梳理。就物质载体而言，可分为取材山川草木矿石的“自然镇物”（如泰山石、桃梗、艾叶、雄黄、朱砂）、贴身佩戴或随身护佑的“身之镇物”（如五彩长命缕、百家锁、马王堆帛画随葬衣饰）以及经过匠艺铸雕画印的“人工造作镇物”（如金门石雕风狮爷、云南屋脊瓦猫、蒲津渡铸铁牛、东吴魂瓶与买地券、闽南王船）。
+      - 就社会与空间功能而言，镇物全面嵌入人类生存的六大场域：其一“岁时节令”辟邪（端午悬艾、岁暮桃符），其二“护身安命”收魂（长命缕、杂禁方佩符），其三“家宅屋宇”镇宅（瓦猫、照壁、吞口、八卦镜），其四“路道关津”镇水挡风（石敢当、风狮爷、镇河铁牛），其五“婚丧墓葬”界隔阴阳（婚俗红盖头跨火盆、汉代非衣帛画、六朝魂瓶买地券），其六“御凶驱疫”清场（大傩面具、闽南及马六甲送王船巡境送煞）。
+      - 本母题在分类框架上参照陶思炎《中国镇物》（台北：东大图书公司“沧海美术·艺术特辑”，1998 年，ISBN 957-19-2210-2）之体系线索，具体论述依据《后汉书·礼仪志》《鲁班经》及国内外考古与非物质文化遗产公开档案独立撰写。比较分析各类型镇物时，应辨明金属铸造与桥梁锚重等工程物理价值、聚落风土防风需求以及传统空间象征防护信仰之间的不同层次。
+    note_kind: research
+    sources:
+      - citation: 〔南朝宋〕范晔等撰，《后汉书·志第五·礼仪志中》，维基文库二十四史校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E5%BE%8C%E6%BC%A2%E6%9B%B8/%E5%BF%97%E7%AC%AC%E4%BA%94
+        locator: 仲夏“朱索、五色印为门户饰，以难止恶气”等汉代镇物礼制
+      - citation: 'Wikipedia, "Mawangdui" (Western Han tombs, silk manuscripts and painted T-shaped funerary banner).'
+        type: encyclopedia
+        url: https://en.wikipedia.org/wiki/Mawangdui
+        locator: 马王堆汉墓非衣帛画、帛书《杂禁方》及随葬制度考古综述
+      - citation: 'Wikipedia, "Wind Lion God" (Fengshiye apotropaic guardian statues of Kinmen and Southern Fujian).'
+        type: encyclopedia
+        url: https://en.wikipedia.org/wiki/Wind_Lion_God
+        locator: 金门与闽南村落风狮爷镇风辟邪石雕谱系
+      - citation: 'UNESCO Intangible Cultural Heritage, "Ong Chun/Wangchuan/Wangkang ceremony, rituals and related practices for maintaining the sustainable connection between man and the ocean".'
+        type: official_standard
+        url: https://ich.unesco.org/en/RL/ong-chun
+        locator: 闽南与马六甲“送王船”驱疫护海非物质文化遗产档案
+    relations:
+      - type: EXPLAINED_BY
+        target: mech_zhenwu_symbolic_materialization
+        weight: 1.0
+        status: contested
+        note: 三相载体与六维功能镇物系统集中体现符号物化与空间边界重构防御机制，但部分器物兼具实际建筑或水利锚定功能。
+      - type: EXPLAINED_BY
+        target: mech_apotropaic_boundary_seal
+        weight: 1.0
+        status: contested
+        note: 家宅门庭、关津路口及墓葬界面镇物高度契合边界象征封闭心理防御模型。
+      - type: COMPARED_WITH
+        target: motif_cn_yansheng_talisman_seal
+        weight: 1.0
+        note: 关联母题对照：工匠厌胜法式与建筑辟邪镇物。
+      - type: COMPARED_WITH
+        target: motif_cn_household_apotropaic_guardians
+        weight: 1.0
+        note: 关联母题对照：门神桃符、墓葬镇墓兽与岁时驱傩守护神系。
+      - type: COMPARED_WITH
+        target: index_ocm_776
+        weight: 1.0
+        note: 跨文化比较索引对照：OCM 776（神灵、护佑形象与非人力量观念）。
+      - type: COMPARED_WITH
+        target: case_cn_kinmen_qionglin_fengshiye
+        weight: 1.0
+        note: 闽台村落风狮爷镇风止煞核心实证个案。
+      - type: COMPARED_WITH
+        target: case_cn_taishan_shigandang
+        weight: 1.0
+        note: 自然石碑镇宅与路冲挡煞典型个案。
+      - type: COMPARED_WITH
+        target: case_cn_luban_yansheng
+        weight: 1.0
+        note: 传统营造木作镇物与解厌规范对照案例。
+
+  - id: corpus_cn_imperial_wugu_statutes
+    title: 历代巫蛊律令与习惯法双轨文献群
+    aliases:
+      - 历代巫蛊律令
+      - 造畜蛊毒法典
+      - 双轨习惯法文献群
+      - Imperial Chinese Gu statutes
+    node_type: myth_corpus
+    z_layer: 2
+    genre: historical_archive
+    credibility_tier: A
+    trail: all
+    spatial:
+      precision: culture_region
+      location_name: 中国历代中央成文法典辐射区与西南基层习惯法传习区
+      culture_region: 中国 · 历代刑律与乡土习惯法区
+    temporal:
+      year_start: -312
+      year_end: 1949
+      era_label: 战国《诅楚文》与秦汉律令至唐宋明清法典及近世田野习惯法时期
+      uncertainty_note: 串联战国盟诅石刻、西汉巫蛊案卷、《唐律疏议》《宋刑统》《大明律》《大清律例》以及西南口头采录之习惯法防蛊规范。
+    paragraphs:
+      - 本文献群汇集中国帝制时期国家成文刑律与地方乡土习惯法应对“巫蛊”“厌魅”“造畜蛊毒”的“双轨法制”史料。官方正律一脉上承秦代盟诅（如《诅楚文》）与西汉《汉书·江充传》所载严厉政治镇压，自《唐律疏议·卷十八》《宋刑统》定型“诸造畜蛊毒及教令者，绞；造畜者同居家口虽不知情、里正知而不纠者，皆流三千里；虽会赦不免”之重典，至《大明律》《大清律例·刑律·人命》复将“造畜蛊毒、采生折割、魇魅”列入十恶“不道”，处斩并籍没家产、妻孥流配，将私自施术与暗中放毒同视为颠覆帝国纲常的极刑重罪。
+      - 与国家峻法并行不悖的，是民间社会基于畏惧、排斥与纠纷自力救济运作的“习惯法”轨道。从地方志与近现代民族志及口语录音（如云南永宁纳语《蛊与巫术》采录文本，亦或清代江南“叫魂”妖术案档案）均可观察到：乡里遇到突发重疾或疑案时，常借“滚蛋/滚蛊”占验指认所谓“蛊户”，通过限定通婚范围（划定“蛊界”）、绝交孤立、拆毁房屋、乃至私行“禳蛊叫魂”或逐出村寨加以制裁；这些非正式规范有时比成文法更持久地维持了边地社群内部的污名隔离。
+      - 本文献群在学术分类线索上参照邓启耀《巫蛊：中国文化的历史暗流》（桂林：广西师范大学出版社，2025 年，ISBN 978-7-5598-7994-3）关于律令与民间双轨制裁之梳理，各部法典条文及史实均依据公版古籍校本、国际音像档案与田海（2006）、孔飞力（1990）等学术专著独立撰述。使用本组史料时，切须分辨历代法条中的政治防患逻辑、刑讯逼供下的供词虚实以及地方乡俗中针对边缘妇女与外族邻居的替罪倾向。
+    note_kind: research
+    sources:
+      - citation: 〔唐〕长孙无忌等撰，《唐律疏议·卷第十八·贼盗·造畜蛊毒》，维基文库校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E5%94%90%E5%BE%8B%E7%96%8F%E8%AD%B0/%E5%8D%B7%E7%AC%AC%E5%8D%81%E5%85%AB
+        locator: 卷十八造畜蛊毒及教令者绞刑、同居家口与里正连坐流放条文
+      - citation: 〔北宋〕窦仪等撰，《宋刑统》，维基文库校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E5%AE%8B%E5%88%91%E7%B5%B1
+        locator: 宋代沿袭唐律“造畜蛊毒”罪名、不免赦令及妇女配流规定
+      - citation: 〔明〕敕撰，《大明律》，维基文库校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E5%A4%A7%E6%98%8E%E5%BE%8B
+        locator: 名例十恶“不道”与刑律人命造畜蛊毒、造厌魅符书杀伤条
+      - citation: 〔清〕敕撰，《大清律例》，维基文库校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E5%A4%A7%E6%B8%85%E5%BE%8B%E4%BE%8B
+        locator: 刑律人命“造畜蛊毒杀人”斩刑、财产入官与家口流安置律例
+      - citation: 'Barend J. ter Haar (2006). Telling Stories: Witchcraft and Scapegoating in Chinese History. Brill.'
+        type: academic_monograph
+        url: https://doi.org/10.1163/9789047417231
+        doi: 10.1163/9789047417231
+        locator: 中国历代妖术律令演变与基层谣言审判互动机制研究
+    relations:
+      - type: ATTESTS_MOTIF
+        target: motif_cn_wugu_poison_complex
+        weight: 1.0
+        note: 唐宋明清律令与地方习惯法记录共同实证巫蛊指控、蓄蛊禁治与社会隔离母题。
+      - type: ATTESTS_MOTIF
+        target: motif_cn_yansheng_talisman_seal
+        weight: 1.0
+        note: 《大明律》《大清律例》明确并惩“魇魅符书”与“造畜蛊毒”，反映国家对厌胜害人法术的刑律防范。
+      - type: ATTESTS_MOTIF
+        target: index_ocm_754
+        weight: 1.0
+        note: 帝国成文法典与乡村习惯法制裁体系直接对应 OCM 754（巫术罪名与司法应对）。
+      - type: EXPLAINED_BY
+        target: mech_gu_sorcery_social_scapegoat
+        weight: 1.0
+        status: contested
+        note: 国家十恶重刑与乡里连坐孤立机制在危机时易被转化为针对特定边缘人群的替罪工具。
+      - type: EXPLAINED_BY
+        target: theory_altered_states_wugu_psychiatry
+        weight: 1.0
+        status: contested
+        note: 地方习惯法中的“滚蛊”“禳蛊叫魂”实践常介入急性心身失常或解离症状之社群处理过程。
+      - type: COMPARED_WITH
+        target: corpus_cn_zhubing_gu_toxicology
+        weight: 1.0
+        note: 隋唐医书证候分类与历代法典刑律轨道并列对读。
+      - type: COMPARED_WITH
+        target: case_china_soulstealers_1768
+        weight: 1.0
+        note: 清乾隆三十三年“叫魂”妖术谣言、司法严刑与官僚追查实证案例。
+      - type: COMPARED_WITH
+        target: case_cn_xiangxi_gu_poison
+        weight: 1.0
+        note: 方志蓄蛊记述与刑律条文交互对照档案。
+      - type: COMPARED_WITH
+        target: case_cn_yongning_na_0004928
+        weight: 1.0
+        note: 云南永宁纳语关于放蛊传闻与乡村禁忌的田野口述录音之一。
+      - type: COMPARED_WITH
+        target: case_cn_yongning_na_0004929
+        weight: 1.0
+        note: 云南永宁纳语关于放蛊传闻与社群防卫的田野口述录音之二。
+      - type: COMPARED_WITH
+        target: case_cn_yongning_na_0004930
+        weight: 1.0
+        note: 云南永宁纳语关于放蛊习俗认知的田野口述录音之三。

@@ -1,0 +1,89 @@
+# Phase 5B Layer 4 supplement: altered states / cross-cultural psychiatry & zhenwu symbolic materialization.
+# Original academic simplified Chinese syntheses grounded in public-domain classics and peer-reviewed studies.
+records:
+  - id: theory_altered_states_wugu_psychiatry
+    title: 非常意识状态与巫蛊心身症候跨文化精神医学理论
+    aliases:
+      - Altered states of consciousness
+      - ASC
+      - Cultural concepts of distress
+      - 非常意识状态
+      - 巫蛊心身症候
+      - 附体解离跨文化精神医学
+    node_type: theory
+    temporal:
+      year_start: 1966
+      year_end: 2016
+      era_label: 1966—2016 年非常意识状态与跨文化精神医学研究
+      uncertainty_note: 涵盖路德维希（1966）ASC 临床界定、布尔吉尼翁（1973）全球附体出神样本及晚近解离附体医学综述。
+    paragraphs:
+      - 在临床精神医学与文化人类学交叉领域，阿诺德·路德维希（Arnold M. Ludwig，1966）最早系统提出“非常意识状态”（altered states of consciousness，简称 ASC）框架，用以描述由生理负荷、极端情绪唤醒、专注仪式、感官剥夺或神经药理作用诱发的知觉、时空感与自我边界显著偏离日常基线的状态；埃里卡·布尔吉尼翁（Erika Bourguignon，1973）通过对数百个社会民族志档案的跨文化统计，进一步区分非附体型出神（trance）与附体型出神（possession trance），说明社会如何将剧烈的解离或心身失常编码为外力侵入、神灵附体或魂魄离散的文化惯用表达（cultural idioms of distress）。
+      - 将该框架运用于中国古典医典与地方田野语料可见清晰对应：从战国秦汉《黄帝内经·素问·移精变气论》以“移精变气、祝由”安神定志，到隋代《诸病源候论》分述“卒魇”“中恶”“蛊毒病”，再到西南田野中关于“落洞”“魅惑失魂”或“滚蛊认邪”的口述体验，当事人在剧烈应激、长期家庭压抑、惊恐发作或湿热寄生虫与植物毒物导致的谵妄状态下，常出现语无伦次、躯体疼痛、僵直或暂时性自我感丧失。此时，围绕“禳蛊”“叫魂”或“符禁收惊”展开的社群仪式，实际上通过情绪宣泄、权威再确认与家庭关系重联来调节症状感受。
+      - 该理论的研究与临床边界十分严格：跨文化精神医学（如 Bhavsar 等，2016）既反对不顾文化语境把一切民间仪式性出神简单贴上精神病性障碍标签，也反对直接照单全收“巫蛊鬼魅致病”的超自然因果主张；现代评估遇到类似心身症候时，须优先排查神经系统病变、代谢紊乱与药物毒物中毒等器质性病因。在专题分类归目上，本条目参照邓启耀《巫蛊：中国文化的历史暗流》（桂林：广西师范大学出版社，2025 年，ISBN 978-7-5598-7994-3）相关心身与文化脉络线索，正文内容依据公版古典医籍与当代同行评审文献独立撰写。
+    sources:
+      - citation: 'Arnold M. Ludwig (1966). Altered States of Consciousness. Archives of General Psychiatry 15(3), 225–234.'
+        type: peer_reviewed
+        url: https://doi.org/10.1001/archpsyc.1966.01730150001001
+        doi: 10.1001/archpsyc.1966.01730150001001
+        locator: 非常意识状态（ASC）的临床界定、诱发因素与知觉特征
+      - citation: 'Erika Bourguignon (ed., 1973). Religion, Altered States of Consciousness, and Social Change. Ohio State University Press.'
+        type: academic_monograph
+        url: https://kb.osu.edu/handle/1811/6294
+        locator: 跨文化出神与附体状态的比较民族志框架
+      - citation: 'Vishal Bhavsar et al. (2016). Dissociative trance and spirit possession: Challenges for cultures in transition. Psychiatry and Clinical Neurosciences 70(12), 551–559.'
+        type: peer_reviewed
+        url: https://pubmed.ncbi.nlm.nih.gov/27485275/
+        doi: 10.1111/pcn.12425
+        locator: 解离性出神、附体体验与文化转型期鉴别边界综述
+      - citation: 《黄帝内经·素问·移精变气论篇第十三》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: https://ctext.org/huangdi-neijing/yi-jing-bian-qi-lun
+        locator: 古典医经关于精神情志、祝由与移精变气疗法的原典阐释
+    compare:
+      - mech_gu_sorcery_social_scapegoat
+      - mech_sleep_paralysis
+      - mech_mass_psychogenic_illness
+      - mech_suggestibility_bias
+      - theory_sympathetic_contagious_magic_cn
+
+  - id: mech_zhenwu_symbolic_materialization
+    title: 镇物符号物化与空间边界重构防御机制
+    aliases:
+      - Symbolic materialization
+      - Apotropaic material agency
+      - 镇物符号物化
+      - 空间边界重构
+      - 厌胜器物防御机制
+    node_type: mechanism
+    temporal:
+      year_start: 1995
+      year_end: 2002
+      era_label: 1995—2002 年物质文化能动性与古代信仰空间研究
+      uncertainty_note: 涵盖巫鸿早期中国礼仪艺术建筑研究（1995）、蒲慕州个人福佑研究（1998）与盖尔物质能动性理论（1998）。
+    paragraphs:
+      - 在传统村落、宅居、关津与墓葬营建中，人们面对季风风沙、江河洪涝、疫疠流行或路冲宅煞等难以彻底消除的环境风险，往往通过“镇物符号物化”（symbolic materialization）把抽象的防卫诉求锚定到具体物质实体之上，借此重构生活空间的秩序与心理边界。从《史记·封禅书》《后汉书·礼仪志中》记载的朱索桃印、厌胜埋物，到跨越自然石材（泰山石敢当）、随身佩物（长命缕、百家锁）与大型人工造物（金门石雕风狮爷、云南屋脊瓦猫、黄河蒲津渡铸铁牛、汉墓非衣帛画与东吴魂瓶买地券），物理介质成为划定“护佑之内”与“凶煞之外”的可见界碑。
+      - 人类学与艺术史研究揭示了这一防御机制的运作方式。阿尔弗雷德·盖尔（Alfred Gell，1998）在《艺术与能动性》中指出，经由特定工艺塑造、刻铭与安放仪轨的器物会在社会关系网中扮演“次级能动者”（secondary agent），持续向外投射制造者与社群的防御意图；巫鸿（1995）考察先秦两汉礼仪艺术与墓葬纪念碑性时亦证明，随葬帛画、镇墓器物与冥契文书共同构建了生者与逝者各安其位的宇宙空间框架。这种物化机制不仅在认知上降低空间失控感，也常与实质工程功能彼此嵌套——例如河畔铸铁牛同时充当浮桥锚定配重，海岛石狮则兼具村落风口标志与空间方位界标作用。
+      - 评估该机制的科学边界时，应清晰划分三层维度：第一，镇物作为文化符号与社会记忆载体，能凝聚宗族或社区共同防灾的心理认同；第二，部分大型镇物确实附带测量、导风、镇重或警示等实用工程属性；第三，器物本身的造型威慑或冥契文字并不具备改变洪水流体力学、建筑结构载荷或病原传播链的超自然效力。本条目在分类框架上参照陶思炎《中国镇物》（台北：东大图书公司，1998 年，ISBN 957-19-2210-2）之书目线索，正文内容依据历史志书与当代物质文化研究独立撰成。
+    sources:
+      - citation: 'Alfred Gell (1998). Art and Agency: An Anthropological Theory. Clarendon Press / Internet Archive.'
+        type: academic_monograph
+        url: https://archive.org/details/artagencyanthropol0000gell
+        locator: 器物次级能动性、保护意象物化与社会关系网络理论
+      - citation: 'Wu Hung (1995). Monumentality in Early Chinese Art and Architecture. Stanford University Press / Internet Archive.'
+        type: academic_monograph
+        url: https://archive.org/details/monumentalityine0000wuhu
+        locator: 战国秦汉礼仪艺术、墓葬空间重构与随葬物象功能考察
+      - citation: 〔南朝宋〕范晔等撰，《后汉书·志第五·礼仪志中》，维基文库二十四史校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E5%BE%8C%E6%BC%A2%E6%9B%B8/%E5%BF%97%E7%AC%AC%E4%BA%94
+        locator: 东汉仲夏朱索桃印禁蛊、立秋傩仪等国家岁时物化防卫制度
+      - citation: 〔西汉〕司马迁撰，《史记·卷二十八·封禅书》，维基文库二十四史校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E5%8F%B2%E8%A8%98/%E5%8D%B7028
+        locator: 秦汉国家镇祭名山大川、祠祀礼器与方士物象制度记录
+    compare:
+      - mech_apotropaic_boundary_seal
+      - theory_sympathetic_contagious_magic_cn
+      - theory_liminality_rites_passage
+      - case_cn_kinmen_qionglin_fengshiye
+      - case_cn_taishan_shigandang

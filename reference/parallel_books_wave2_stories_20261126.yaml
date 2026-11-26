@@ -1,0 +1,1738 @@
+records:
+- id: case_cn_dict_w2_taizhou_doubt
+  title: 江苏 · 泰州市｜智破讨债计
+  aliases:
+  - 李红朝化险
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 32.455
+    lng: 119.923
+    precision: city
+    location_name: 江苏 · 泰州市
+    culture_region: 东亚 · 中国江苏
+  location_note: 泰州地域参考点；书中张家坝、鲍家沟和小石桥均未定位。
+  paragraphs:
+  - 赶集的李红朝走过一座小石桥，听见两个女鬼商量寻找替身。他将谈话记在心里，第二天赶到一户刚遭丧事的人家，劝住正在争吵的婆媳。
+  - 他又走访另一户办喜事的人家，帮助新娘找到遗失的手镯，化解危机。辞典将它记为泰州流传的鬼话；故事中的两处村落与桥梁没有经过定位。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 480（PDF 第 595 页），条目“智破讨债计”
+  - citation: 江苏 · 泰州市，地域参考资料。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E6%B3%B0%E5%B7%9E%E5%B8%82
+    locator: 坐标用于表示城市或县区流传范围，不指认故事中的具体地点。
+  bridge:
+    entry: REL-5-0005
+    cluster: sid_liminal
+    trail: all
+    label: 故事、地方与叙事
+    rationale: 以地方叙事与知识条目作主题对读，区分书中的故事版本与已核实的地域事实。
+- id: case_cn_dict_w2_manzhouli_yanluo
+  title: 内蒙古 · 满洲里市｜阎王爷的由来
+  aliases:
+  - 阎罗寻救人之路
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 49.588
+    lng: 117.481
+    precision: city
+    location_name: 内蒙古 · 满洲里市
+    culture_region: 东亚 · 中国内蒙古
+  location_note: 满洲里城市参考点；辞典所记为流传范围，不是人物行程定位。
+  paragraphs:
+  - 一个名叫阎罗的年轻人离开故乡，想为遭受苦难的人们寻找出路。路上两位老人向他提出考验，他历经曲折，终于完成托付。
+  - 老人显出神仙身份，安排他掌管人间生死；后来他又因骄纵而由仙降为鬼，却仍管生死簿。辞典将这则缘起叙事记为满洲里流传的一种讲法。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 481（PDF 第 596 页），条目“阎王爷的由来”
+  - citation: 内蒙古 · 满洲里市，地域参考资料。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E6%BB%A1%E6%B4%B2%E9%87%8C%E5%B8%82
+    locator: 坐标用于表示城市或县区流传范围，不指认故事中的具体地点。
+  bridge:
+    entry: REL-5-0002
+    cluster: sid_liminal
+    trail: all
+    label: 故事、地方与叙事
+    rationale: 以地方叙事与知识条目作主题对读，区分书中的故事版本与已核实的地域事实。
+- id: case_cn_dict_w2_shangqiu_water_ghost
+  title: 河南 · 商丘市｜酒鬼和水鬼
+  aliases:
+  - 渔人与水鬼酒友
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 34.4146
+    lng: 115.6558
+    precision: city
+    location_name: 河南 · 商丘市
+    culture_region: 东亚 · 中国河南
+  location_note: 商丘地域参考点；辞典未给出河流、居所或讲述者。
+  paragraphs:
+  - 喜欢饮酒的渔人发现，自己近来捕鱼常常满载，可酒瓶里的酒却越来越少。原来有个同样嗜酒的水鬼在暗中饮酒，后来二者竟成了朋友。
+  - 水鬼一度想找替身，渔人多次劝阻，它终于放弃害人。待渔人生活困顿时，水鬼又拿出银钱相助；这是一则关于人鬼情谊的地方叙事。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 481（PDF 第 596 页），条目“酒鬼和水鬼”
+  - citation: 河南 · 商丘市，地域参考资料。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E5%95%86%E4%B8%98%E5%B8%82
+    locator: 坐标用于表示城市或县区流传范围，不指认故事中的具体地点。
+  bridge:
+    entry: LIT-2-0001
+    cluster: sid_liminal
+    trail: all
+    label: 故事、地方与叙事
+    rationale: 以地方叙事与知识条目作主题对读，区分书中的故事版本与已核实的地域事实。
+- id: case_cn_dict_w2_xishui_chiboshen
+  title: 湖北黄冈 · 浠水县｜赤膊神
+  aliases:
+  - 浠水赤膊神
+  - 水鬼弃恶
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 30.45207
+    lng: 115.26512
+    precision: city
+    location_name: 湖北黄冈 · 浠水县
+    culture_region: 东亚 · 中国湖北
+  location_note: 浠水县域参考点；辞典未定位故事中的渡口、井或庙。
+  paragraphs:
+  - 相传水鬼到了寻找替身的期限，先后遇见过河的母亲、财主的儿子和汲水老人。每次看到他们背后的家人，它都不忍心夺走对方性命。
+  - 故事最后说，水鬼改而行善，得到封号。辞典将这则神灵缘起记为浠水流传的鬼话，并另引文彦生《中国鬼话》；后者原件未核。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 482–483（PDF 第 597–598 页），条目“赤膊神”
+  - citation: 湖北黄冈 · 浠水县，地域参考资料。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E6%B5%A0%E6%B0%B4%E5%8E%BF
+    locator: 坐标用于表示城市或县区流传范围，不指认故事中的具体地点。
+  bridge:
+    entry: REL-5-0002
+    cluster: sid_liminal
+    trail: all
+    label: 故事、地方与叙事
+    rationale: 以地方叙事与知识条目作主题对读，区分书中的故事版本与已核实的地域事实。
+- id: case_cn_dict_w2_fuqing_lantern_child
+  title: 福建福州 · 福清市｜小顽童
+  aliases:
+  - 走马灯里的小孩
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 25.72
+    lng: 119.38
+    precision: city
+    location_name: 福建福州 · 福清市
+    culture_region: 东亚 · 中国福建
+  location_note: 福清市域参考点；私塾和戏班活动地点未定位。
+  paragraphs:
+  - 村里戏班开演，书童和乡人都去看戏，留下私塾先生独自在屋里读书。一个胖乎乎的孩子突然在他身边跑跳，先生觉得奇怪，却继续读书。
+  - 看戏的人散场回来，孩子也消失了。先生随后在一盏破旧走马灯上见到相似的人像，故事将这次相遇解释为旧画成精。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 485（PDF 第 600 页），条目“小顽童”
+  - citation: 福建福州 · 福清市，地域参考资料。
+    type: geographic_reference
+    url: https://ungegn.un.org/dashboard/cities/details?id=2021
+    locator: 坐标用于表示城市或县区流传范围，不指认故事中的具体地点。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 故事、地方与叙事
+    rationale: 以地方叙事与知识条目作主题对读，区分书中的故事版本与已核实的地域事实。
+- id: case_cn_dict_w2_xingning_zhongkui
+  title: 广东梅州 · 兴宁市｜五鬼闹钟馗
+  aliases:
+  - 五鬼戏钟馗
+  - 两面鬼设宴
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 24.1680556
+    lng: 115.6669444
+    precision: city
+    location_name: 广东梅州 · 兴宁市
+    culture_region: 东亚 · 中国广东
+  location_note: 兴宁市范围参考点；故事未给出可核实的湖泊。
+  paragraphs:
+  - 钟馗追赶两面鬼不成，暂时住下。两面鬼找来四个同伴，假扮衙役，携酒菜上门；钟馗没有识破，酒后被他们摆布。
+  - 五鬼正要把钟馗扔进湖里，他的两个手下赶来，将两面鬼杀死、其余四鬼擒住。辞典将这则讽谑鬼话列为兴宁流传的版本。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 486（PDF 第 601 页），条目“五鬼闹钟馗”
+  - citation: 广东梅州 · 兴宁市，地域参考资料。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E5%85%B4%E5%AE%81%E5%B8%82
+    locator: 坐标用于表示城市或县区流传范围，不指认故事中的具体地点。
+  bridge:
+    entry: REL-5-0002
+    cluster: sid_liminal
+    trail: all
+    label: 故事、地方与叙事
+    rationale: 以地方叙事与知识条目作主题对读，区分书中的故事版本与已核实的地域事实。
+- id: case_cn_dict_w2_shiyan_spring_child
+  title: 湖北 · 十堰市｜阎罗王和土地爷
+  aliases:
+  - 春娃与龙潭坪土地爷
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 32.6295
+    lng: 110.7983
+    precision: city
+    location_name: 湖北 · 十堰市
+    culture_region: 东亚 · 中国湖北
+  location_note: 十堰地域参考点；龙潭坪具体位置尚未核实。
+  paragraphs:
+  - 龙潭坪土地爷不满阎罗横行，却遭到陷害，只好请年轻的春娃帮忙。春娃依照土地爷的指点，救下无辜的人，并设法赶走判官和小鬼。
+  - 他又夺得阎罗的马和官服，最终扭转局面。故事写玉帝有意重用春娃，他却推荐土地爷担当职务；词典称此故事流传于十堰。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 489（PDF 第 604 页），条目“阎罗王和土地爷”
+  - citation: 湖北 · 十堰市，地域参考资料。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E5%8D%81%E5%A0%B0%E5%B8%82
+    locator: 坐标用于表示城市或县区流传范围，不指认故事中的具体地点。
+  bridge:
+    entry: REL-5-0002
+    cluster: sid_liminal
+    trail: all
+    label: 故事、地方与叙事
+    rationale: 以地方叙事与知识条目作主题对读，区分书中的故事版本与已核实的地域事实。
+- id: case_cn_dict_w2_zhongxian_ghost_city
+  title: 重庆 · 忠县｜抢先修鬼城
+  aliases:
+  - 益王与鬼城
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 30.29916
+    lng: 108.03568
+    precision: city
+    location_name: 重庆 · 忠县
+    culture_region: 东亚 · 中国重庆
+  location_note: 忠县县域参考点；八德场、鬼城和祭祀地点均未定位。
+  paragraphs:
+  - 传说益王来到八德场相看建都之地，随从认为这里地势吉利。不料一阵阴风将众人带进阴间，他们发现阎君早已抢先建起一座鬼城。
+  - 益王只得另择地点，故事又把当地祭祀日期的缘起与这次遭遇相连。辞典出版时写“四川忠县”，忠县今属重庆；故事中的场址和祭祀实践未作实地核验。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 489（PDF 第 604 页），条目“抢先修鬼城”
+  - citation: 重庆 · 忠县，地域参考资料。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E5%BF%A0%E5%8E%BF
+    locator: 坐标用于表示城市或县区流传范围，不指认故事中的具体地点。
+  bridge:
+    entry: REL-5-0008
+    cluster: sid_liminal
+    trail: all
+    label: 故事、地方与叙事
+    rationale: 以地方叙事与知识条目作主题对读，区分书中的故事版本与已核实的地域事实。
+- id: case_cn_dict_w2_lincang_carpenter
+  title: 云南 · 临沧市｜智制吊死鬼
+  aliases:
+  - 临沧彝族木匠与墨线
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 23.8841
+    lng: 100.0889
+    precision: city
+    location_name: 云南 · 临沧市
+    culture_region: 东亚 · 中国云南
+  location_note: 临沧地区城市参考点；辞典未说明山寨、山坳及采录点。
+  paragraphs:
+  - 辞典所记临沧彝族山寨故事里，木匠的妻子反复梦到吊颈鬼，并被引向后山。木匠后来察觉异样，假装求教，趁机用墨线制住来者。
+  - 鬼被带回家做农活，过了几代才因墨线被洗掉而逃走。它与其他匠人借工具制鬼的故事有相似情节，但目前没有证据证明版本之间存在传播关系。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 493（PDF 第 608 页），条目“智制吊死鬼”
+  - citation: 云南 · 临沧市，地域参考资料。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E4%B8%B4%E6%B2%A7%E5%B8%82
+    locator: 坐标用于表示城市或县区流传范围，不指认故事中的具体地点。
+  bridge:
+    entry: REL-5-0009
+    cluster: sid_liminal
+    trail: all
+    label: 故事、地方与叙事
+    rationale: 以地方叙事与知识条目作主题对读，区分书中的故事版本与已核实的地域事实。
+- id: case_cn_dict_w2_yangquan_ghost_money
+  title: 山西 · 阳泉市｜鬼票
+  aliases:
+  - 小店里的纸钱
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 37.8573
+    lng: 113.5804
+    precision: city
+    location_name: 山西 · 阳泉市
+    culture_region: 东亚 · 中国山西
+  location_note: 阳泉地域参考点；店铺、墓地和具体社群未定位。
+  paragraphs:
+  - 一家小店屡次在收来的钱里发现纸钱，店主查到一位年轻顾客，便悄悄跟随。走到坟地附近时，那人消失了，店主将他理解为墓中出生的鬼孩。
+  - 辞典的结尾还记有与孕亡者葬俗有关的忌讳性说法。这是故事叙事的一部分，不能据此推定某种做法在阳泉普遍存在。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 494（PDF 第 609 页），条目“鬼票”
+  - citation: 山西 · 阳泉市，地域参考资料。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E9%98%B3%E6%B3%89%E5%B8%82
+    locator: 坐标用于表示城市或县区流传范围，不指认故事中的具体地点。
+  bridge:
+    entry: REL-3-0010
+    cluster: sid_liminal
+    trail: all
+    label: 故事、地方与叙事
+    rationale: 以地方叙事与知识条目作主题对读，区分书中的故事版本与已核实的地域事实。
+- id: case_cn_dict_w2_jingzhou_rice_ghosts
+  title: 湖北 · 荆州市｜换粮济贫
+  aliases:
+  - 游林侠鬼换粮
+  - 粮商与纸锭
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 30.335
+    lng: 112.24
+    precision: city
+    location_name: 湖北 · 荆州市
+    culture_region: 东亚 · 中国湖北
+  location_note: 荆州地域参考点；粮行与故事事件均不可定位。
+  paragraphs:
+  - 故事将情节放在明末荆州：灾荒中，粮商囤积米粮，打算抬价。一群自称商人的来客买下大米，又低价转给受困的百姓。
+  - 粮商后来发现收到的银钱变成纸锭，试图勾结官府夺回粮食，再度中了计。结尾揭示，这群来客是仗义济人的鬼；明末是叙事设定，非已核事件日期。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 496（PDF 第 611 页），条目“换粮济贫”
+  - citation: 湖北 · 荆州市，地域参考资料。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E8%8D%86%E5%B7%9E%E5%B8%82
+    locator: 坐标用于表示城市或县区流传范围，不指认故事中的具体地点。
+  bridge:
+    entry: LIT-2-0001
+    cluster: sid_liminal
+    trail: all
+    label: 故事、地方与叙事
+    rationale: 以地方叙事与知识条目作主题对读，区分书中的故事版本与已核实的地域事实。
+- id: case_cn_dict_w2_chifeng_good_ghost
+  title: 内蒙古 · 赤峰市｜善鬼济人
+  aliases:
+  - 柴木村善鬼
+  - 水缸铜钱
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 42.2579
+    lng: 118.887
+    precision: city
+    location_name: 内蒙古 · 赤峰市
+    culture_region: 东亚 · 中国内蒙古
+  location_note: 赤峰地域参考点；柴木村、水井、泉水位置未核。
+  paragraphs:
+  - 柴木村的财主占有水井，村民发现新泉后，他又将泉水据为己有。夜里一个白衣身影从他家取出铜钱，钱散落到各家水缸和米缸里。
+  - 故事说，水米随之增长，财主试图追回钱财反被淹没，乡人把施助者称为“南海大士”。辞典只记故事流传赤峰，不能据此确认柴木村的位置或实际祭祀。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 497（PDF 第 612 页），条目“善鬼济人”
+  - citation: 内蒙古 · 赤峰市，地域参考资料。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E8%B5%A4%E5%B3%B0%E5%B8%82
+    locator: 坐标用于表示城市或县区流传范围，不指认故事中的具体地点。
+  bridge:
+    entry: REL-5-0002
+    cluster: sid_liminal
+    trail: all
+    label: 故事、地方与叙事
+    rationale: 以地方叙事与知识条目作主题对读，区分书中的故事版本与已核实的地域事实。
+- id: case_cn_dict_w2_xichang_impermanence
+  title: 四川凉山 · 西昌市｜无二爷与麻老三
+  aliases:
+  - 麻老三的无常鬼友
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 27.8983
+    lng: 102.2706
+    precision: city
+    location_name: 四川凉山 · 西昌市
+    culture_region: 东亚 · 中国四川
+  location_note: 西昌城市参考点；故事所称城隍庙与烟馆未定位。
+  paragraphs:
+  - 住在城隍庙里的麻老三抽鸦片时，故事里的无常无二爷从神坛上走下来讨烟，两人竟成了烟友。无二爷还借他一顶隐身帽，使他能自由出入烟馆。
+  - 后来无二爷认识到吸烟有害，提议一起戒掉；麻老三起初不愿，最终答应。鬼友离开后，他成家立业，仍记挂这段相遇。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 498（PDF 第 613 页），条目“无二爷与麻老三”
+  - citation: 四川凉山 · 西昌市，地域参考资料。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E8%A5%BF%E6%98%8C%E5%B8%82
+    locator: 坐标用于表示城市或县区流传范围，不指认故事中的具体地点。
+  bridge:
+    entry: REL-5-0007
+    cluster: sid_liminal
+    trail: all
+    label: 故事、地方与叙事
+    rationale: 以地方叙事与知识条目作主题对读，区分书中的故事版本与已核实的地域事实。
+- id: case_cn_dict_w2_tanghe_rice_ball
+  title: 河南南阳 · 唐河县｜“汤圆王”与阎王
+  aliases:
+  - 汤圆王
+  - 王老汉斗群鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 32.68937
+    lng: 112.83402
+    precision: city
+    location_name: 河南南阳 · 唐河县
+    culture_region: 东亚 · 中国河南
+  location_note: 唐河县域参考点；“长安街”是故事叙事地名，未作现实定位。
+  paragraphs:
+  - 故事说，一位卖汤圆的王老汉手艺好，名声连阴间都听到了。阎王派来的鬼先后上门，老汉见招拆招，让他们无功而返。
+  - 阎王最后亲自带兵前来时，老汉已经离开。辞典将它记为唐河流传的故事，叙事背景设在明末“长安街”；这不是已经核实的事发地点与年代。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 500（PDF 第 615 页），条目““汤圆王”与阎王”
+  - citation: 河南南阳 · 唐河县，地域参考资料。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E5%94%90%E6%B2%B3%E5%8E%BF
+    locator: 坐标用于表示城市或县区流传范围，不指认故事中的具体地点。
+  bridge:
+    entry: LIT-2-0001
+    cluster: sid_liminal
+    trail: all
+    label: 故事、地方与叙事
+    rationale: 以地方叙事与知识条目作主题对读，区分书中的故事版本与已核实的地域事实。
+- id: case_cn_dict_w2_chaling_gaojiangpi
+  title: 湖南株洲 · 茶陵县｜高犟皮煨阎王
+  aliases:
+  - 高犟皮和黑鸡
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 26.78619
+    lng: 113.53824
+    precision: city
+    location_name: 湖南株洲 · 茶陵县
+    culture_region: 东亚 · 中国湖南
+  location_note: 茶陵县域参考点；高家住所未定位。
+  paragraphs:
+  - 阎王听说高犟皮胆大，派判官和黑鬼去捉他。两者刚躲在门后，就听高犟皮斥骂家中黑鸡；黑鬼误以为说的是自己，慌忙逃走。
+  - 阎王亲自前来时，又把高犟皮责骂偷肉小狗的话听作对自己的威胁，也吓得离开。辞典用这则茶陵鬼话把误听和胆量写成喜剧。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 502（PDF 第 617 页），条目“高犟皮煨阎王”
+  - citation: 湖南株洲 · 茶陵县，地域参考资料。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E8%8C%B6%E9%99%B5%E5%8E%BF
+    locator: 坐标用于表示城市或县区流传范围，不指认故事中的具体地点。
+  bridge:
+    entry: LIT-2-0001
+    cluster: sid_liminal
+    trail: all
+    label: 故事、地方与叙事
+    rationale: 以地方叙事与知识条目作主题对读，区分书中的故事版本与已核实的地域事实。
+- id: case_cn_dict_w2_dunhua_yanluo_relocates
+  title: 吉林延边 · 敦化市｜阎罗殿搬迁
+  aliases:
+  - 阎王寻医与冥府搬迁
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 43.3667
+    lng: 128.2333
+    precision: city
+    location_name: 吉林延边 · 敦化市
+    culture_region: 东亚 · 中国吉林
+  location_note: 敦化市域参考点；故事中的医馆及阎罗殿均未定位。
+  paragraphs:
+  - 这则敦化地区的故事说，阎罗殿原先设在人间。阎王眼睛不适，差人找大夫，发现许多医生门前都有自称冤死的鬼。
+  - 他挑中门前只有一个鬼的新医生，却不知道那正是医生第一个病人。阎王接受治疗后失明，传说中的阎罗殿因此搬到阴间；故事借误判制造讽刺。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 504（PDF 第 619 页），条目“阎罗殿搬迁”
+  - citation: 吉林延边 · 敦化市，地域参考资料。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E6%95%A6%E5%8C%96%E5%B8%82
+    locator: 坐标用于表示城市或县区流传范围，不指认故事中的具体地点。
+  bridge:
+    entry: LIT-2-0001
+    cluster: sid_liminal
+    trail: all
+    label: 故事、地方与叙事
+    rationale: 以地方叙事与知识条目作主题对读，区分书中的故事版本与已核实的地域事实。
+- id: case_cn_dict_w2_shaoyang_aunt_ghost
+  title: 湖南 · 邵阳市｜庵堂里的女鬼
+  aliases:
+  - 刘玉与庵堂姑母
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 27.239
+    lng: 111.4675
+    precision: city
+    location_name: 湖南 · 邵阳市
+    culture_region: 东亚 · 中国湖南
+  location_note: 邵阳地域参考点；庵堂具体位置未核。
+  paragraphs:
+  - 生活困顿的书生刘玉与人打赌，决定在一座传说闹鬼的庵堂过夜，以赢得百两银子。半夜果然出现一位老妇，他先是吓坏，随后被对方认出是自己的侄子。
+  - 姑侄叙旧时，鬼姑母劝他振作。刘玉后来苦读、做官，并修葺庵堂；辞典将其列为邵阳故事，未给出庵堂所在地。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 507（PDF 第 622 页），条目“庵堂里的女鬼”
+  - citation: 湖南 · 邵阳市，地域参考资料。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E9%82%B5%E9%98%B3%E5%B8%82
+    locator: 坐标用于表示城市或县区流传范围，不指认故事中的具体地点。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 故事、地方与叙事
+    rationale: 以地方叙事与知识条目作主题对读，区分书中的故事版本与已核实的地域事实。
+- id: case_cn_dict_w2_jiuquan_duxiu
+  title: 甘肃 · 酒泉市｜杜秀复仇
+  aliases:
+  - 杜秀与柳林
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 39.734
+    lng: 98.494
+    precision: city
+    location_name: 甘肃 · 酒泉市
+    culture_region: 东亚 · 中国甘肃
+  location_note: 酒泉地域参考点；荒坟、柳林以及人物生平未核。
+  paragraphs:
+  - 地方故事中的杜秀遭地主强抢，拒绝屈服，含冤而死。半年后，地主途经荒坟再遇杜秀，仍起歹意，故事让化作鬼的她杀死了对方。
+  - 地主家人追来，杜秀又变化形貌，将他们引到柳林并惩处。辞典将它记作酒泉流传的复仇叙事；坟地、柳林和人物均没有可核实地址。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 508（PDF 第 623 页），条目“杜秀复仇”
+  - citation: 甘肃 · 酒泉市，地域参考资料。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E9%85%92%E6%B3%89%E5%B8%82
+    locator: 坐标用于表示城市或县区流传范围，不指认故事中的具体地点。
+  bridge:
+    entry: LIT-2-0001
+    cluster: sid_liminal
+    trail: all
+    label: 故事、地方与叙事
+    rationale: 以地方叙事与知识条目作主题对读，区分书中的故事版本与已核实的地域事实。
+- id: case_cn_dict2_jilin_jian_helpful_ghost
+  title: 吉林通化 · 集安市｜被鬼救走的两个人
+  aliases:
+  - 鬼戏人
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 41.12411
+    lng: 126.18315
+    precision: city
+    location_name: 吉林通化 · 集安市
+    culture_region: 东亚 · 中国吉林
+  location_note: 地图点是集安市公开行政区或城市参考点；词典仅称此故事流传于当地，故事的具体地点、采录者与采录年代均未确定。
+  temporal:
+    era_label: 1994 年辞典所录民间叙事
+    uncertainty_note: 辞典将其归为当代鬼话；故事流传、采录和设定的具体年份未注明。
+  paragraphs:
+  - 严家小姐与杨宏相爱，家人却另有安排，还借官府之手将杨宏关进牢里。小姐想不开时，一位被称为秃发鬼的角色出现了。
+  - 故事里，这位鬼设法让杨宏脱身，又把小姐从婚事中救走。高家后来请人追究，它却没有因此怨恨；辞典将其归入吉林集安流传的“当代鬼话”。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 512（PDF 第 627 页），词条“鬼戏人”
+  - citation: OpenStreetMap：吉林通化 · 集安市 地域参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/node/2340232921
+    locator: 公开地名点或行政区代表点；用于流传地域参考，不是故事发生地点。
+  bridge:
+    entry: SOC-1-0003
+    cluster: sid_liminal
+    trail: all
+    label: 婚事、权势与故事中的帮手
+    rationale: 按主题并读地方故事与知识条目；故事中的超自然情节与传播范围不构成已证实的因果或传播关系。
+- id: case_cn_dict2_zhejiang_xianju_invisible_cap
+  title: 浙江台州 · 仙居县｜辗转易手的水鬼帽
+  aliases:
+  - 水鬼帽
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 28.84996
+    lng: 120.7251
+    precision: city
+    location_name: 浙江台州 · 仙居县
+    culture_region: 东亚 · 中国浙江
+  location_note: 地图点是仙居县公开行政区或城市参考点；词典仅称此故事流传于当地，故事的具体地点、采录者与采录年代均未确定。
+  temporal:
+    era_label: 1994 年辞典所录民间叙事
+    uncertainty_note: 辞典将其归为当代鬼话；故事流传、采录和设定的具体年份未注明。
+  paragraphs:
+  - 仙居流传的故事中，吴书贵成了水鬼，一次偶然得到龙王的帽子。帽子可以使佩戴者隐身，后来又转到了木匠李梓人手里。
+  - 木匠利用帽子偷窃，事情败露后，宝物经过县官、阎王之手，最终被龙王取回。故事沿着一件物品的流转，把欲望和争夺串在一起。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 516（PDF 第 631 页），词条“水鬼帽”
+  - citation: OpenStreetMap：浙江台州 · 仙居县 地域参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3478386
+    locator: 公开地名点或行政区代表点；用于流传地域参考，不是故事发生地点。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 道具如何推动故事
+    rationale: 按主题并读地方故事与知识条目；故事中的超自然情节与传播范围不构成已证实的因果或传播关系。
+- id: case_cn_dict2_guangdong_gaozhou_redress_temple
+  title: 广东茂名 · 高州市｜古庙里诉冤的花香
+  aliases:
+  - 伸冤庙
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 21.92131
+    lng: 110.84893
+    precision: city
+    location_name: 广东茂名 · 高州市
+    culture_region: 东亚 · 中国广东
+  location_note: 地图点是高州市公开行政区或城市参考点；词典仅称此故事流传于当地，故事的具体地点、采录者与采录年代均未确定。
+  temporal:
+    era_label: 1994 年辞典所录民间叙事
+    uncertainty_note: 辞典将其归为当代鬼话；故事流传、采录和设定的具体年份未注明。
+  paragraphs:
+  - 赴京赶考的包公在古庙歇夜，一位叫花香的女子向他诉说冤情：她与明哥相爱，却被想霸占她的人拆散，最终失去了生命。
+  - 包公当时无力替她讨回公道；故事说他后来取得功名，救出了明哥，也追究了加害者。辞典将这一版本的流传范围记为广东高州。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 518（PDF 第 633 页），词条“伸冤庙”
+  - citation: OpenStreetMap：广东茂名 · 高州市 地域参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/node/5043309938
+    locator: 公开地名点或行政区代表点；用于流传地域参考，不是故事发生地点。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 庙宇、冤情与叙事空间
+    rationale: 按主题并读地方故事与知识条目；故事中的超自然情节与传播范围不构成已证实的因果或传播关系。
+- id: case_cn_dict2_jiangsu_yangzhou_butcher_yama
+  title: 江苏 · 扬州市｜阎罗听错了什么
+  aliases:
+  - 张屠夫吓退阎罗王
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 32.39686
+    lng: 119.40777
+    precision: city
+    location_name: 江苏 · 扬州市
+    culture_region: 东亚 · 中国江苏
+  location_note: 地图点是扬州市公开行政区或城市参考点；词典仅称此故事流传于当地，故事的具体地点、采录者与采录年代均未确定。
+  temporal:
+    era_label: 1994 年辞典所录民间叙事
+    uncertainty_note: 辞典将其归为当代鬼话；故事流传、采录和设定的具体年份未注明。
+  paragraphs:
+  - 张屠夫病重时，故事让阴差前来捉人。他在屋里说的话接连被听错：让家人拿柜子换米，鬼以为要把自己拿去典当；听见屋梁木件的名称，判官又以为性命不保。
+  - 最后连阎王也因一句与自己名号相近的话落荒而逃。这个扬州故事以方言中的近音和误会制造笑料；它与另一则“张屠夫过桥”故事情节不同。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 518（PDF 第 633 页），词条“张屠夫吓退阎罗王”
+  - citation: OpenStreetMap：江苏 · 扬州市 地域参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/4430826
+    locator: 公开地名点或行政区代表点；用于流传地域参考，不是故事发生地点。
+  bridge:
+    entry: LAN-5-0006
+    cluster: sid_liminal
+    trail: all
+    label: 方言词语与故事笑点
+    rationale: 按主题并读地方故事与知识条目；故事中的超自然情节与传播范围不构成已证实的因果或传播关系。
+- id: case_cn_dict2_jiangsu_yancheng_guesthouse_couplet
+  title: 江苏 · 盐城市｜客店里的对联
+  aliases:
+  - 秀才对鬼联
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 33.34956
+    lng: 120.1577
+    precision: city
+    location_name: 江苏 · 盐城市
+    culture_region: 东亚 · 中国江苏
+  location_note: 地图点是盐城市公开行政区或城市参考点；词典仅称此故事流传于当地，故事的具体地点、采录者与采录年代均未确定。
+  temporal:
+    era_label: 1994 年辞典所录民间叙事
+    uncertainty_note: 辞典将其归为当代鬼话；故事流传、采录和设定的具体年份未注明。
+  paragraphs:
+  - 一位姓李的赶考人没找到住处，只得在传闻闹鬼的客店过夜。店主说，曾有秀才因答不上对联而死，夜里常有声音来问下联。
+  - 那晚声音果然出现。李秀才望见墙边的秤杆，临时想出相应的句子；故事说此后客店恢复平静。叙事中的客店没有具体地址。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 521（PDF 第 636 页），词条“秀才对鬼联”
+  - citation: OpenStreetMap：江苏 · 盐城市 地域参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3473496
+    locator: 公开地名点或行政区代表点；用于流传地域参考，不是故事发生地点。
+  bridge:
+    entry: LAN-5-0006
+    cluster: sid_liminal
+    trail: all
+    label: 对联与日常器物
+    rationale: 按主题并读地方故事与知识条目；故事中的超自然情节与传播范围不构成已证实的因果或传播关系。
+- id: case_cn_dict2_hubei_chibi_forest_ghost
+  title: 湖北咸宁 · 赤壁市｜老鬼送出的金磨
+  aliases:
+  - 林中老鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 29.72817
+    lng: 113.89512
+    precision: city
+    location_name: 湖北咸宁 · 赤壁市
+    culture_region: 东亚 · 中国湖北
+  location_note: 辞典所称湖北蒲圻，1998 年更名为赤壁；点位为行政区域参考，不标称森林地点。
+  temporal:
+    era_label: 1994 年辞典所录民间叙事
+    uncertainty_note: 辞典将其归为当代鬼话；故事流传、采录和设定的具体年份未注明。
+  paragraphs:
+  - 辞典称湖北蒲圻流传一则故事：少年王小五听说林中有鬼，便主动去见它。鬼见他大胆，送他一台能够不断取出财物的金磨。
+  - 皇帝得知后也想占有宝物。王小五不愿它落入一人手里，将物件扔进海中；故事最后让老鬼改过、转而负责降雨。蒲圻已更名为赤壁，图上仅标流传地区。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 525（PDF 第 640 页），词条“林中老鬼”
+  - citation: OpenStreetMap：湖北咸宁 · 赤壁市 地域参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3084896
+    locator: 公开地名点或行政区代表点；用于流传地域参考，不是故事发生地点。
+  - citation: 咸宁市水利和湖泊局：《西凉湖：如何抚平你的伤痛》，2019。
+    type: institutional_account
+    url: https://slj.xianning.gov.cn/ztzl/zahh/swh/201905/t20190520_1715058.shtml
+    locator: 文中“历史钩沉”说明蒲圻于 1998 年更名为赤壁。
+  bridge:
+    entry: SOC-1-0003
+    cluster: sid_liminal
+    trail: all
+    label: 宝物、权力与公共利益
+    rationale: 按主题并读地方故事与知识条目；故事中的超自然情节与传播范围不构成已证实的因果或传播关系。
+- id: case_cn_dict2_zhejiang_qingtian_puppet_ghost
+  title: 浙江丽水 · 青田县｜演不完的木偶戏
+  aliases:
+  - 木偶团的来历
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 28.14275
+    lng: 120.28521
+    precision: city
+    location_name: 浙江丽水 · 青田县
+    culture_region: 东亚 · 中国浙江
+  location_note: 地图点是青田县公开行政区或城市参考点；词典仅称此故事流传于当地，故事的具体地点、采录者与采录年代均未确定。
+  temporal:
+    era_label: 1994 年辞典所录民间叙事
+    uncertainty_note: 辞典将其归为当代鬼话；故事流传、采录和设定的具体年份未注明。
+  paragraphs:
+  - 金家庆寿时请来木偶戏班，家中小姐看戏后因相思而亡。传说她变成妖怪，化作父亲的模样，把深山装点成另一处人间，又请戏班前来。
+  - 戏接连演了多场，天却始终不亮，戏班觉出不对。有人取出包公木偶，故事让这个戏中人物驱走群妖、救下众人。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 526（PDF 第 641 页），词条“木偶团的来历”
+  - citation: OpenStreetMap：浙江丽水 · 青田县 地域参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/node/694036638
+    locator: 公开地名点或行政区代表点；用于流传地域参考，不是故事发生地点。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 戏台与深山的双重场景
+    rationale: 按主题并读地方故事与知识条目；故事中的超自然情节与传播范围不构成已证实的因果或传播关系。
+- id: case_cn_dict2_guizhou_zhijin_banishing_mirror
+  title: 贵州毕节 · 织金县｜冬生与镇邪镜
+  aliases:
+  - 镇邪镜
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 26.66725
+    lng: 105.7667
+    precision: city
+    location_name: 贵州毕节 · 织金县
+    culture_region: 东亚 · 中国贵州
+  location_note: 地图点是织金县公开行政区或城市参考点；词典仅称此故事流传于当地，故事的具体地点、采录者与采录年代均未确定。
+  temporal:
+    era_label: 1994 年辞典所录民间叙事
+    uncertainty_note: 辞典将其归为当代鬼话；故事流传、采录和设定的具体年份未注明。
+  paragraphs:
+  - 一个独居老妇请求与少年冬生同住。后来村里接连有孩子失踪，老妇屋中半夜也传出动静；冬生查探后，故事揭开了她的鬼怪身份。
+  - 冬生先被救下，学艺归来后再次与她相斗。故事最后让他化成一面镇邪镜，危机才结束。辞典记载的是贵州织金的传说，并未标明具体村落。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 528（PDF 第 643 页），词条“镇邪镜”
+  - citation: OpenStreetMap：贵州毕节 · 织金县 地域参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/node/2372334712
+    locator: 公开地名点或行政区代表点；用于流传地域参考，不是故事发生地点。
+  bridge:
+    entry: REL-5-0002
+    cluster: sid_liminal
+    trail: all
+    label: 镜子与护身物的地方想象
+    rationale: 按主题并读地方故事与知识条目；故事中的超自然情节与传播范围不构成已证实的因果或传播关系。
+- id: case_cn_dict2_guangxi_baise_mosquito_net
+  title: 广西 · 百色市｜守灵夜里的洗碗声
+  aliases:
+  - 蚊帐上的血针
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 23.90536
+    lng: 106.61488
+    precision: city
+    location_name: 广西 · 百色市
+    culture_region: 东亚 · 中国广西
+  location_note: 地图点是百色市公开行政区或城市参考点；词典仅称此故事流传于当地，故事的具体地点、采录者与采录年代均未确定。
+  temporal:
+    era_label: 1994 年辞典所录民间叙事
+    uncertainty_note: 辞典将其归为当代鬼话；故事流传、采录和设定的具体年份未注明。
+  paragraphs:
+  - 王朴的妻子去世后，他守灵时总在夜里听见洗碗声，也觉得身边有人。仔细察看时，他以为来者是亡妻。
+  - 后来一位外乡人前来借宿，听说此事后将一根针挂在蚊帐上。这个百色故事以家中微小的声音与陌生人的办法，解释一种地方说法的由来。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 528（PDF 第 643 页），词条“蚊帐上的血针”
+  - citation: OpenStreetMap：广西 · 百色市 地域参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/2773986
+    locator: 公开地名点或行政区代表点；用于流传地域参考，不是故事发生地点。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 夜间声响与家庭空间
+    rationale: 按主题并读地方故事与知识条目；故事中的超自然情节与传播范围不构成已证实的因果或传播关系。
+- id: case_cn_dict2_hubei_yingcheng_thread_whip
+  title: 湖北孝感 · 应城市｜麦地里的线鞭
+  aliases:
+  - 线鞭打鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 30.93336
+    lng: 113.56648
+    precision: city
+    location_name: 湖北孝感 · 应城市
+    culture_region: 东亚 · 中国湖北
+  location_note: 地图点是应城市公开行政区或城市参考点；词典仅称此故事流传于当地，故事的具体地点、采录者与采录年代均未确定。
+  temporal:
+    era_label: 1994 年辞典所录民间叙事
+    uncertainty_note: 辞典将其归为当代鬼话；故事流传、采录和设定的具体年份未注明。
+  paragraphs:
+  - 王老头家的麦子眼看要收获，却被传说中的鬼破坏，他自己也受惊生病。儿子王馗听说后，用线结成鞭子去迎战。
+  - 鬼被打得现出形状，求王馗放它回去；故事中，王馗却让它留下帮忙。辞典把这则应城故事归为对农田习俗的民间解释。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 533（PDF 第 648 页），词条“线鞭打鬼”
+  - citation: OpenStreetMap：湖北孝感 · 应城市 地域参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3216404
+    locator: 公开地名点或行政区代表点；用于流传地域参考，不是故事发生地点。
+  bridge:
+    entry: REL-5-0001
+    cluster: sid_liminal
+    trail: all
+    label: 农田工具与地方叙事
+    rationale: 按主题并读地方故事与知识条目；故事中的超自然情节与传播范围不构成已证实的因果或传播关系。
+- id: case_cn_dict2_shaanxi_lintong_qin_ghost_market
+  title: 陕西西安 · 临潼区｜秦陵附近的鬼市
+  aliases:
+  - 鬼市
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 34.36844
+    lng: 109.20929
+    precision: city
+    location_name: 陕西西安 · 临潼区
+    culture_region: 东亚 · 中国陕西
+  location_note: 地图点是临潼区公开行政区或城市参考点；词典仅称此故事流传于当地，故事的具体地点、采录者与采录年代均未确定。
+  temporal:
+    era_label: 1994 年辞典所录民间叙事
+    uncertainty_note: 辞典将其归为当代鬼话；故事流传、采录和设定的具体年份未注明。
+  paragraphs:
+  - 陕西临潼的一则故事想象秦陵建成后，受害的人们向阴间申诉；冥府无力解决，又将诉求交到天上。
+  - 故事让他们在皇陵附近重开市集，各自继续原来的营生，偶尔还有活人误入。这是围绕帝陵的民间叙事，不是对具体殉葬规模或鬼市存在的历史证据。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 533（PDF 第 648 页），词条“鬼市”
+  - citation: OpenStreetMap：陕西西安 · 临潼区 地域参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3226094
+    locator: 公开地名点或行政区代表点；用于流传地域参考，不是故事发生地点。
+  bridge:
+    entry: HIS-6-0007
+    cluster: sid_liminal
+    trail: all
+    label: 纪念地点与历史讲述
+    rationale: 按主题并读地方故事与知识条目；故事中的超自然情节与传播范围不构成已证实的因果或传播关系。
+- id: case_cn_dict2_hebei_renqiu_night_comb
+  title: 河北沧州 · 任丘市｜夜里那把玉梳
+  aliases:
+  - 流子鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 38.70638
+    lng: 116.10622
+    precision: city
+    location_name: 河北沧州 · 任丘市
+    culture_region: 东亚 · 中国河北
+  location_note: 地图点是任丘市公开行政区或城市参考点；词典仅称此故事流传于当地，故事的具体地点、采录者与采录年代均未确定。
+  temporal:
+    era_label: 1994 年辞典所录民间叙事
+    uncertainty_note: 辞典将其归为当代鬼话；故事流传、采录和设定的具体年份未注明。
+  paragraphs:
+  - 故事里的晚西施发现侍女小翠用了自己的玉梳，争执中梳子摔坏，她又残酷地惩罚了小翠。小翠死后，玉梳在故事中竟恢复了原样。
+  - 晚西施再用梳子时，头发逐渐变白脱落；类似遭遇也被故事安排给欺压侍女的人。辞典称这则任丘流传的鬼话用来解释夜间梳妆的禁忌。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 534（PDF 第 649 页），词条“流子鬼”
+  - citation: OpenStreetMap：河北沧州 · 任丘市 地域参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/5679064
+    locator: 公开地名点或行政区代表点；用于流传地域参考，不是故事发生地点。
+  bridge:
+    entry: SOC-1-0003
+    cluster: sid_liminal
+    trail: all
+    label: 家庭权力与故事中的惩罚
+    rationale: 按主题并读地方故事与知识条目；故事中的超自然情节与传播范围不构成已证实的因果或传播关系。
+- id: case_cn_dict2_guangxi_wuxuan_peach_branch
+  title: 广西来宾 · 武宣县｜放牛少年与桃枝
+  aliases:
+  - 鬼怕桃树枝
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 23.59658
+    lng: 109.65835
+    precision: city
+    location_name: 广西来宾 · 武宣县
+    culture_region: 东亚 · 中国广西
+  location_note: 地图点是武宣县公开行政区或城市参考点；词典仅称此故事流传于当地，故事的具体地点、采录者与采录年代均未确定。
+  temporal:
+    era_label: 1994 年辞典所录民间叙事
+    uncertainty_note: 辞典将其归为当代鬼话；故事流传、采录和设定的具体年份未注明。
+  paragraphs:
+  - 一个少年放牛时遇见凶恶的鬼。他试着用石头应对，却没有效果；手里的一根桃枝反倒让对方退却。
+  - 传说由此把桃枝与驱邪联系起来。词典将它记作广西武宣流传的故事，未给出放牛地点或采录年份。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 535（PDF 第 650 页），词条“鬼怕桃树枝”
+  - citation: OpenStreetMap：广西来宾 · 武宣县 地域参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/2775861
+    locator: 公开地名点或行政区代表点；用于流传地域参考，不是故事发生地点。
+  bridge:
+    entry: REL-5-0002
+    cluster: sid_liminal
+    trail: all
+    label: 植物与护身象征
+    rationale: 按主题并读地方故事与知识条目；故事中的超自然情节与传播范围不构成已证实的因果或传播关系。
+- id: case_cn_dict2_hubei_qichun_carrying_ghost
+  title: 湖北黄冈 · 蕲春县｜野塘路上的挑担人
+  aliases:
+  - 幸运鬼挑担，倒霉鬼弄绊
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 30.24215
+    lng: 115.43813
+    precision: city
+    location_name: 湖北黄冈 · 蕲春县
+    culture_region: 东亚 · 中国湖北
+  location_note: 地图点是蕲春县公开行政区或城市参考点；词典仅称此故事流传于当地，故事的具体地点、采录者与采录年代均未确定。
+  temporal:
+    era_label: 1994 年辞典所录民间叙事
+    uncertainty_note: 辞典将其归为当代鬼话；故事流传、采录和设定的具体年份未注明。
+  paragraphs:
+  - 傻二从塘边回家，一位女子提醒他落下了工具，又陪他同行、替他挑担，请他吃饭休息。等他醒来，才发现自己身处坟地附近。
+  - 乡绅听说后也想碰上同样的奇遇，却被打得狼狈；故事交代，女子正是曾遭他逼害的小翠。这则蕲春版本用两人的不同遭遇解释一句俗语。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 536（PDF 第 651 页），词条“幸运鬼挑担，倒霉鬼弄绊”
+  - citation: OpenStreetMap：湖北黄冈 · 蕲春县 地域参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/node/4789380323
+    locator: 公开地名点或行政区代表点；用于流传地域参考，不是故事发生地点。
+  bridge:
+    entry: SOC-1-0003
+    cluster: sid_liminal
+    trail: all
+    label: 同一相遇中的不同关系
+    rationale: 按主题并读地方故事与知识条目；故事中的超自然情节与传播范围不构成已证实的因果或传播关系。
+- id: case_cn_dict2_hebei_cixian_ghost_mill
+  title: 河北邯郸 · 磁县｜瘦鬼学着推磨
+  aliases:
+  - 鬼推磨
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 36.3675
+    lng: 114.37175
+    precision: city
+    location_name: 河北邯郸 · 磁县
+    culture_region: 东亚 · 中国河北
+  location_note: 地图点是磁县公开行政区或城市参考点；词典仅称此故事流传于当地，故事的具体地点、采录者与采录年代均未确定。
+  temporal:
+    era_label: 1994 年辞典所录民间叙事
+    uncertainty_note: 辞典将其归为当代鬼话；故事流传、采录和设定的具体年份未注明。
+  paragraphs:
+  - 一只瘦鬼羡慕另一只鬼丰足，对方告诉它，替人推磨能换来供奉。瘦鬼先去穷人家，主人连自己的饭都难以保证，没能款待它。
+  - 它听从建议转去富户家，主人因心里害怕而献上食物。这个磁县故事借两只鬼的处境，讽刺人对财富与亏心事的不同反应。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 538（PDF 第 653 页），词条“鬼推磨”
+  - citation: OpenStreetMap：河北邯郸 · 磁县 地域参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/5674420
+    locator: 公开地名点或行政区代表点；用于流传地域参考，不是故事发生地点。
+  bridge:
+    entry: SOC-1-0003
+    cluster: sid_liminal
+    trail: all
+    label: 人情、资源与角色互换
+    rationale: 按主题并读地方故事与知识条目；故事中的超自然情节与传播范围不构成已证实的因果或传播关系。
+- id: case_cn_dict2_shandong_chengwu_night_watch_ghosts
+  title: 山东菏泽 · 成武县｜土地庙里的两只鬼
+  aliases:
+  - 打更鬼和催火鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 34.9534
+    lng: 115.8843
+    precision: city
+    location_name: 山东菏泽 · 成武县
+    culture_region: 东亚 · 中国山东
+  location_note: 地图点是成武县公开行政区或城市参考点；词典仅称此故事流传于当地，故事的具体地点、采录者与采录年代均未确定。
+  temporal:
+    era_label: 1994 年辞典所录民间叙事
+    uncertainty_note: 辞典将其归为当代鬼话；故事流传、采录和设定的具体年份未注明。
+  paragraphs:
+  - 两位财主死后在故事中成了打更鬼和催火鬼，因做事不力被赶出阴间，只好在土地庙偷吃供品。
+  - 村民日子艰难，供品渐少；两鬼搬走时遇到土地夫妇，见到银子后反而互相争斗。辞典把这一版本记在山东成武，并未说明具体庙址。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 538（PDF 第 653 页），词条“打更鬼和催火鬼”
+  - citation: OpenStreetMap：山东菏泽 · 成武县 地域参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3284910
+    locator: 公开地名点或行政区代表点；用于流传地域参考，不是故事发生地点。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 庙宇里的幽默与讽刺
+    rationale: 按主题并读地方故事与知识条目；故事中的超自然情节与传播范围不构成已证实的因果或传播关系。
+- id: case_cn_dict2_jiangsu_huaian_brave_three_demons
+  title: 江苏 · 淮安市｜老宅里的三个夜晚
+  aliases:
+  - 小大胆斗三妖
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 33.59782
+    lng: 119.0197
+    precision: city
+    location_name: 江苏 · 淮安市
+    culture_region: 东亚 · 中国江苏
+  location_note: 地图点是淮安市公开行政区或城市参考点；词典仅称此故事流传于当地，故事的具体地点、采录者与采录年代均未确定。
+  temporal:
+    era_label: 1994 年辞典所录民间叙事
+    uncertainty_note: 辞典将其归为当代鬼话；故事流传、采录和设定的具体年份未注明。
+  paragraphs:
+  - 富户张有财不喜欢敢与自己作对的侄子，便让他住进一座传闻有妖的宅院，盼着借此摆脱他。乡人叫这个侄子“小大胆”。
+  - 三夜里，小大胆先后借助金砖和葫芦应付来者。叔父见他平安出来，也不敢再轻举妄动；故事中的宅院没有被定位为真实建筑。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 539（PDF 第 654 页），词条“小大胆斗三妖”
+  - citation: OpenStreetMap：江苏 · 淮安市 地域参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3429722
+    locator: 公开地名点或行政区代表点；用于流传地域参考，不是故事发生地点。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 三次相遇与故事节奏
+    rationale: 按主题并读地方故事与知识条目；故事中的超自然情节与传播范围不构成已证实的因果或传播关系。
+- id: case_cn_dict2_hubei_yangxin_theatregoer_river
+  title: 湖北黄石 · 阳新县｜河心里的背人者
+  aliases:
+  - 老戏迷治鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 29.83282
+    lng: 115.20984
+    precision: city
+    location_name: 湖北黄石 · 阳新县
+    culture_region: 东亚 · 中国湖北
+  location_note: 地图点是阳新县公开行政区或城市参考点；词典仅称此故事流传于当地，故事的具体地点、采录者与采录年代均未确定。
+  temporal:
+    era_label: 1994 年辞典所录民间叙事
+    uncertainty_note: 辞典将其归为当代鬼话；故事流传、采录和设定的具体年份未注明。
+  paragraphs:
+  - 老戏迷听说河对岸来了戏班，正准备涉水，忽然有人提出背他过去。他高兴地答应，却发现对方越走越往河心。
+  - 戏迷察觉不对，用帽子制住对方，要求背自己回家。第二天出门，他发现门外是一块棺木。辞典将这场夜行记作湖北阳新的地方鬼话。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 540（PDF 第 655 页），词条“老戏迷治鬼”
+  - citation: OpenStreetMap：湖北黄石 · 阳新县 地域参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3086394
+    locator: 公开地名点或行政区代表点；用于流传地域参考，不是故事发生地点。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 夜路、渡河与故事悬念
+    rationale: 按主题并读地方故事与知识条目；故事中的超自然情节与传播范围不构成已证实的因果或传播关系。
+- id: case_cn_dict2_jianshui_wait
+  title: 云南红河 · 建水县｜建水山路上的“等等我”
+  aliases:
+  - 建水县“等等我”
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 23.6850155
+    lng: 102.9050114
+    precision: city
+    location_name: 云南红河 · 建水县
+    culture_region: 东亚 · 中国云南
+  temporal:
+    era_label: 1994 年辞典所记地方故事
+    uncertainty_note: 故事发生或形成的具体年代不详；辞典出版年份不等于事件发生时间。
+  location_note: 建水县行政区域参考点，坐标来自 OpenStreetMap 行政区对象；表示辞典所记的流传区域，非故事中具体发生地点。
+  paragraphs:
+  - 村里人说，山上堵水浇田时常会遇鬼，因此谁也不愿夜里去。一个壮汉独自上山办完事，回程忽听身后有人喊“等等我”。他等了片刻，认定来者是鬼，反而将它背起，一路往村里跑。
+  - 天快亮时，背上的鬼请求下来，他没有答应；到家一看，背回的却是一块棺木。壮汉把木板改作厕板，妻子仍说在那里见到鬼，他才将木板劈开烧掉。辞典记这则故事流传于建水，没有给出具体山路。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 542（PDF 第 657 页），条目““等等我””。
+  - citation: OpenStreetMap 贡献者：建水县行政区对象（ODbL）。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/2719409
+    locator: 用于核对行政区代表点；不代表民俗故事的具体发生地点。
+  bridge:
+    entry: REL-5-0005
+    cluster: sid_liminal
+    trail: all
+    label: 山路上的口述故事
+    rationale: 从这则地方故事对读口述传统与记忆传承；主题相近不等于已证实传播或因果关系。
+- id: case_cn_dict2_xingning_competition
+  title: 广东梅州 · 兴宁市｜兴宁农夫与鬼的比赛
+  aliases:
+  - 兴宁市比赛
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 24.2579216
+    lng: 115.7531534
+    precision: city
+    location_name: 广东梅州 · 兴宁市
+    culture_region: 东亚 · 中国广东
+  temporal:
+    era_label: 1994 年辞典所记地方故事
+    uncertainty_note: 故事发生或形成的具体年代不详；辞典出版年份不等于事件发生时间。
+  location_note: 兴宁市行政区域参考点，坐标来自 OpenStreetMap 行政区对象；表示辞典所记的流传区域，非故事中具体发生地点。
+  paragraphs:
+  - 一个鬼要和农夫比力气，在石头上捏出指印；农夫却拿萝卜冒充石头，轻轻一捏就出了水。鬼又提出比力气和跑步，农夫说让自己的“儿子”熊和“女儿”兔子代赛，鬼接连输了两场。
+  - 最后鬼取出祖传金钮扣比谁抛得高，农夫说要等云来了抛到云里。鬼担心输掉宝物，赶紧收起钮扣，不再比试。故事在辞典中记作流传于广东兴宁，以接连错位的比赛呈现机智。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 543（PDF 第 658 页），条目“比赛”。
+  - citation: OpenStreetMap 贡献者：兴宁市行政区对象（ODbL）。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3233742
+    locator: 用于核对行政区代表点；不代表民俗故事的具体发生地点。
+  bridge:
+    entry: REL-5-0005
+    cluster: sid_liminal
+    trail: all
+    label: 较量与机智故事
+    rationale: 从这则地方故事对读口述传统与记忆传承；主题相近不等于已证实传播或因果关系。
+- id: case_cn_dict2_suiping_qiyuan
+  title: 河南驻马店 · 遂平县｜齐元斩鬼：小庙里的误认
+  aliases:
+  - 遂平县齐元斩鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 33.1598563
+    lng: 113.8983142
+    precision: city
+    location_name: 河南驻马店 · 遂平县
+    culture_region: 东亚 · 中国河南
+  temporal:
+    era_label: 1994 年辞典所记地方故事
+    uncertainty_note: 故事发生或形成的具体年代不详；辞典出版年份不等于事件发生时间。
+  location_note: 遂平县行政区域参考点，坐标来自 OpenStreetMap 行政区对象；表示辞典所记的流传区域，非故事中具体发生地点。
+  paragraphs:
+  - 齐元自夸懂武艺，一位老人便请他到小庙里除鬼。夜里他看到黑影晃动，硬着头皮举剑砍去；听见另一边又有脚步声，情急之下再砍一剑。
+  - 天亮后老人带他去看，所谓的鬼竟是他自己的斗笠和小灰驴。齐元的邀功变成一场尴尬，此后不敢再夸耀。辞典将它记为河南遂平流传的故事。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 544（PDF 第 659 页），条目“齐元斩鬼”。
+  - citation: OpenStreetMap 贡献者：遂平县行政区对象（ODbL）。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3259361
+    locator: 用于核对行政区代表点；不代表民俗故事的具体发生地点。
+  bridge:
+    entry: FOR-1-0003
+    cluster: sid_liminal
+    trail: all
+    label: 夜间观察与事后辨认
+    rationale: 对读夜间观察与事后辨认；作为主题联系，不据此证明故事情节的因果、传播或真实性。
+- id: case_cn_dict2_guzhen_donkey_debt
+  title: 安徽蚌埠 · 固镇县｜舅舅变驴来收债
+  aliases:
+  - 固镇县毛驴收债
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 33.3200747
+    lng: 117.3108526
+    precision: city
+    location_name: 安徽蚌埠 · 固镇县
+    culture_region: 东亚 · 中国安徽
+  temporal:
+    era_label: 1994 年辞典所记地方故事
+    uncertainty_note: 故事发生或形成的具体年代不详；辞典出版年份不等于事件发生时间。
+  location_note: 固镇县行政区域参考点，坐标来自 OpenStreetMap 行政区对象；表示辞典所记的流传区域，非故事中具体发生地点。
+  paragraphs:
+  - 阮成常接济舅舅莫祥，舅舅感念他的照顾，说来世要变成驴报答。后来家中出生了一头小驴，夫妻俩把它看作舅舅转生，对它格外照顾。
+  - 赶集时，小驴突然踩坏一个卖碗坛的摊子。商人本要索赔，听说这驴被称为“舅舅”后却改口，说自己生前欠过莫祥的钱。辞典将这个以转生讲述人情与债务的故事记为安徽固镇传闻。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 547（PDF 第 662 页），条目“毛驴收债”。
+  - citation: OpenStreetMap 贡献者：固镇县行政区对象（ODbL）。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3262328
+    locator: 用于核对行政区代表点；不代表民俗故事的具体发生地点。
+  bridge:
+    entry: REL-5-0005
+    cluster: sid_liminal
+    trail: all
+    label: 转生、欠账与地方叙事
+    rationale: 从这则地方故事对读口述传统与记忆传承；主题相近不等于已证实传播或因果关系。
+- id: case_cn_dict2_xiangyang_ghost_shadow
+  title: 湖北 · 襄阳市｜鬼为什么没有影子
+  aliases:
+  - 襄阳市鬼无影的来历
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 32.010998
+    lng: 112.1163785
+    precision: city
+    location_name: 湖北 · 襄阳市
+    culture_region: 东亚 · 中国湖北
+  temporal:
+    era_label: 1994 年辞典所记地方故事
+    uncertainty_note: 故事发生或形成的具体年代不详；辞典出版年份不等于事件发生时间。
+  location_note: 襄阳市行政区域参考点，坐标来自 OpenStreetMap 行政区对象；表示辞典所记的流传区域，非故事中具体发生地点。
+  paragraphs:
+  - 传说恶名远扬的财主张古被新任知县杜郑和处死后，一心复仇。他先化作女子接近知县未果，又扮作村妇在路上等待，最终害死杜郑和。
+  - 知县死后向天庭申诉，太上老君提出让鬼不再有影子，以便人与鬼区分。从此鬼没有影子，便成了这则襄阳故事给出的想象性解释；人物与天庭情节都属于讲述。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 547（PDF 第 662 页），条目“鬼无影的来历”。
+  - citation: OpenStreetMap 贡献者：襄阳市行政区对象（ODbL）。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3216590
+    locator: 用于核对行政区代表点；不代表民俗故事的具体发生地点。
+  bridge:
+    entry: REL-5-0002
+    cluster: sid_liminal
+    trail: all
+    label: 鬼影与解释故事
+    rationale: 对读鬼影与解释故事；作为主题联系，不据此证明故事情节的因果、传播或真实性。
+- id: case_cn_dict2_taojiang_egg_ghost
+  title: 湖南益阳 · 桃江县｜田令光与蛋壳鬼
+  aliases:
+  - 桃江县田令光
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 28.5200908
+    lng: 112.148511
+    precision: city
+    location_name: 湖南益阳 · 桃江县
+    culture_region: 东亚 · 中国湖南
+  temporal:
+    era_label: 1994 年辞典所记地方故事
+    uncertainty_note: 故事发生或形成的具体年代不详；辞典出版年份不等于事件发生时间。
+  location_note: 桃江县行政区域参考点，坐标来自 OpenStreetMap 行政区对象；表示辞典所记的流传区域，非故事中具体发生地点。
+  paragraphs:
+  - 贫困的田令光每天捡蛋壳放在供桌上，感动了一位被称为蛋壳鬼的存在。故事说，供桌渐渐变大，家里缺少的器物都有了，田令光也过上安稳日子。
+  - 生活变好后，他不再捡蛋壳，还要求得到官职；做了知县后又胡作非为。蛋壳鬼收回馈赠，他重回贫困。辞典记它流传于湖南桃江，情节把受惠后的变化写成一则反转故事。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 548（PDF 第 663 页），条目“田令光”。
+  - citation: OpenStreetMap 贡献者：桃江县行政区对象（ODbL）。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3202590
+    locator: 用于核对行政区代表点；不代表民俗故事的具体发生地点。
+  bridge:
+    entry: REL-5-0001
+    cluster: sid_liminal
+    trail: all
+    label: 供奉、赠与与地方讲述
+    rationale: 对读供奉、赠与与地方讲述；作为主题联系，不据此证明故事情节的因果、传播或真实性。
+- id: case_cn_dict2_zhangjiakou_ghost_market
+  title: 河北 · 张家口市｜刘成赶鬼市
+  aliases:
+  - 张家口市刘成赶鬼市
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 40.8171433
+    lng: 114.8782861
+    precision: city
+    location_name: 河北 · 张家口市
+    culture_region: 东亚 · 中国河北
+  temporal:
+    era_label: 1994 年辞典所记地方故事
+    uncertainty_note: 故事发生或形成的具体年代不详；辞典出版年份不等于事件发生时间。
+  location_note: 张家口市行政区域参考点，坐标来自 OpenStreetMap 行政区对象；表示辞典所记的流传区域，非故事中具体发生地点。
+  paragraphs:
+  - 刘成想买便宜褂子，来到传说里涿鹿城的鬼市，用一吊小钱换到一件衣服。等天亮细看，褂子却化成灰，根本穿不得。他只好再次进市寻找卖衣的人。
+  - 卖主原来被讲作鬼，因妻子分娩急需钱才出来做买卖。他把钱还给刘成，还劝他以后少来鬼市，免得被坏人算计。辞典说此故事流传于张家口，并不证明故事中的夜市位置。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 548–549（PDF 第 663–664 页），条目“刘成赶鬼市”。
+  - citation: OpenStreetMap 贡献者：张家口市行政区对象（ODbL）。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3295555
+    locator: 用于核对行政区代表点；不代表民俗故事的具体发生地点。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 夜市空间与鬼市叙事
+    rationale: 对读夜市空间与鬼市叙事；作为主题联系，不据此证明故事情节的因果、传播或真实性。
+- id: case_cn_dict2_handan_misjudged_fate
+  title: 河北 · 邯郸市｜王三与老槐树里的酒友
+  aliases:
+  - 邯郸市阴差阳错
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 36.6107711
+    lng: 114.4857072
+    precision: city
+    location_name: 河北 · 邯郸市
+    culture_region: 东亚 · 中国河北
+  temporal:
+    era_label: 1994 年辞典所记地方故事
+    uncertainty_note: 故事发生或形成的具体年代不详；辞典出版年份不等于事件发生时间。
+  location_note: 邯郸市行政区域参考点，坐标来自 OpenStreetMap 行政区对象；表示辞典所记的流传区域，非故事中具体发生地点。
+  paragraphs:
+  - 王三死后在阴间做了差官，仍来看望生前酒友李四。他感谢李四照顾自己的家人，还提前告诉对方死期将至：只要藏到午时三刻以后，就可能躲过一劫。
+  - 李四钻进老槐树洞，王三则命手下磨刀拖延时辰。不料试刀时偏偏砍向槐树，反而害了躲在树里的酒友。辞典把这段好心却酿成悲剧的阴间故事记为邯郸所传。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 549（PDF 第 664 页），条目“阴差阳错”。
+  - citation: OpenStreetMap 贡献者：邯郸市行政区对象（ODbL）。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3290701
+    locator: 用于核对行政区代表点；不代表民俗故事的具体发生地点。
+  bridge:
+    entry: LIT-2-0005
+    cluster: sid_liminal
+    trail: all
+    label: 预告与反转叙事
+    rationale: 对读预告与反转叙事；作为主题联系，不据此证明故事情节的因果、传播或真实性。
+- id: case_cn_dict2_qitaihe_judge_head_swap
+  title: 黑龙江 · 七台河市｜七台河的判官换头
+  aliases:
+  - 七台河市换头
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 45.7703578
+    lng: 131.0066556
+    precision: city
+    location_name: 黑龙江 · 七台河市
+    culture_region: 东亚 · 中国东北
+  temporal:
+    era_label: 1994 年辞典所记地方故事
+    uncertainty_note: 故事发生或形成的具体年代不详；辞典出版年份不等于事件发生时间。
+  location_note: 七台河市行政区域参考点，坐标来自 OpenStreetMap 行政区对象；表示辞典所记的流传区域，非故事中具体发生地点。
+  paragraphs:
+  - 广交和妻子生活和睦，一位与他交好的酒友却嫌妻子的容貌不美。这酒友原来是阴间判官，竟自作主张，将广交妻子与张尚书女儿的头换了位置。
+  - 张尚书四处寻找女儿，最终在广交家弄清事情经过；阎王得知后处罚判官，广交又用一车纸钱救下这位朋友。辞典将它记为七台河流传的故事，情节中的越界出于判官自己的判断。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 549（PDF 第 664 页），条目“换头”。
+  - citation: OpenStreetMap 贡献者：七台河市行政区对象（ODbL）。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/199174
+    locator: 用于核对行政区代表点；不代表民俗故事的具体发生地点。
+  bridge:
+    entry: LIT-2-0003
+    cluster: sid_liminal
+    trail: all
+    label: 人物关系与鬼差故事
+    rationale: 对读人物关系与鬼差故事；作为主题联系，不据此证明故事情节的因果、传播或真实性。
+- id: case_cn_dict2_zhaoping_magic_mill
+  title: 广西贺州 · 昭平县｜昭平的神磨与旱年
+  aliases:
+  - 昭平县神磨
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 24.12362
+    lng: 110.96062
+    precision: city
+    location_name: 广西贺州 · 昭平县
+    culture_region: 东亚 · 中国广西
+  temporal:
+    era_label: 1994 年辞典所记地方故事
+    uncertainty_note: 故事发生或形成的具体年代不详；辞典出版年份不等于事件发生时间。
+  location_note: 昭平县行政区域参考点，坐标来自 OpenStreetMap 行政区对象；表示辞典所记的流传区域，非故事中具体发生地点。
+  paragraphs:
+  - 传说石盘山上有一座神磨，石头和树叶放进去，便能变出米和清水。一年大旱，村里颗粒无收，李老汉为帮助乡亲，说服看守神磨的黑汉鬼拿出粮水。
+  - 地主愤恨，从阴间一路买通到天上，雷公劈毁了神磨。后来乡亲建庙祈雨，故事以再次降雨作结。辞典记它流传于广西昭平；石盘山的具体位置未作核定。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 551（PDF 第 666 页），条目“神磨”。
+  - citation: OpenStreetMap 贡献者：昭平县行政区对象（ODbL）。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/2773739
+    locator: 用于核对行政区代表点；不代表民俗故事的具体发生地点。
+  bridge:
+    entry: SOC-4-0010
+    cluster: sid_liminal
+    trail: all
+    label: 旱年生计与神磨传说
+    rationale: 对读旱年生计与神磨传说；作为主题联系，不据此证明故事情节的因果、传播或真实性。
+- id: case_cn_dict2_fengning_liuxiang
+  title: 河北承德 · 丰宁满族自治县｜猎人和气与柳香
+  aliases:
+  - 丰宁满族自治县柳香
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 41.2194964
+    lng: 116.6340777
+    precision: city
+    location_name: 河北承德 · 丰宁满族自治县
+    culture_region: 东亚 · 中国河北
+  temporal:
+    era_label: 1994 年辞典所记地方故事
+    uncertainty_note: 故事发生或形成的具体年代不详；辞典出版年份不等于事件发生时间。
+  location_note: 丰宁满族自治县行政区域参考点，坐标来自 OpenStreetMap 行政区对象；表示辞典所记的流传区域，非故事中具体发生地点。
+  paragraphs:
+  - 猎人和气天黑时在山野求宿，遇见名叫柳香的女子。她留他吃饭过夜，随后请他回家延媒成亲。婚后柳香帮助乡人治病，大家都敬重她。
+  - 柳香后来告诉和气自己原是鬼，因驱走恶鬼而须离开。她嘱咐和气迎娶与自己相貌相似的张小玉，随后不见；众人在山野只找到一座荒坟。辞典将这段人鬼姻缘记为丰宁地方故事。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 552（PDF 第 667 页），条目“柳香”。
+  - citation: OpenStreetMap 贡献者：丰宁满族自治县行政区对象（ODbL）。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/2989029
+    locator: 用于核对行政区代表点；不代表民俗故事的具体发生地点。
+  bridge:
+    entry: LIT-2-0003
+    cluster: sid_liminal
+    trail: all
+    label: 婚缘与离别故事
+    rationale: 对读婚缘与离别故事；作为主题联系，不据此证明故事情节的因果、传播或真实性。
+- id: case_cn_dict2_xingan_friend_ghosts
+  title: 广西桂林 · 兴安县｜兴安坟场里的两位朋友
+  aliases:
+  - 兴安县朋友鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 25.6144075
+    lng: 110.6682355
+    precision: city
+    location_name: 广西桂林 · 兴安县
+    culture_region: 东亚 · 中国广西
+  temporal:
+    era_label: 1994 年辞典所记地方故事
+    uncertainty_note: 故事发生或形成的具体年代不详；辞典出版年份不等于事件发生时间。
+  location_note: 兴安县行政区域参考点，坐标来自 OpenStreetMap 行政区对象；表示辞典所记的流传区域，非故事中具体发生地点。
+  paragraphs:
+  - 王得灵和陈得灵生前是好友，死后仍在一起帮助路人。故事说，一位猎人夜里迷路，两人接他留宿；后来又有客商在坟场附近腹痛，他们把他接回去照料。
+  - 客商康复后带着礼物寻找恩人，村里老人告诉他两人早已去世，他再到旧地，只看见坟墓。客商于是焚礼致谢，传说有两只青蛙衔走灰烬。辞典记这则朋友鬼故事流传于广西兴安。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 552（PDF 第 667 页），条目“朋友鬼”。
+  - citation: OpenStreetMap 贡献者：兴安县行政区对象（ODbL）。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/2773822
+    locator: 用于核对行政区代表点；不代表民俗故事的具体发生地点。
+  bridge:
+    entry: REL-5-0005
+    cluster: sid_liminal
+    trail: all
+    label: 善鬼互助与口述记忆
+    rationale: 从这则地方故事对读口述传统与记忆传承；主题相近不等于已证实传播或因果关系。
+- id: case_cn_dict2_laoshan_magistrate_ghost_clerks
+  title: 山东青岛 · 崂山区｜除夕夜的周县令与鬼差
+  aliases:
+  - 崂山区周县令和鬼差
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 36.1059695
+    lng: 120.4645782
+    precision: city
+    location_name: 山东青岛 · 崂山区
+    culture_region: 东亚 · 中国山东
+  temporal:
+    era_label: 1994 年辞典所记地方故事
+    uncertainty_note: 故事发生或形成的具体年代不详；辞典出版年份不等于事件发生时间。
+  location_note: 崂山区行政区域参考点，坐标来自 OpenStreetMap 行政区对象；表示辞典所记的流传区域，非故事中具体发生地点。
+  paragraphs:
+  - 除夕夜，周县令听到两个鬼差抱怨：死前当差，死后还得抓人。他认出他们是旧时捕头，也听出要带走的人是刘老汉的女儿桂花，便赶去寻找她。
+  - 桂花因家中争执正在寻死，父亲和县令及时将她带回。鬼差没法交差，县令便在差案上写明放人并为他们开脱。辞典记这则故事流传于崂山，阴间办差与人间救人交织在一起。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 553（PDF 第 668 页），条目“周县令和鬼差”。
+  - citation: OpenStreetMap 贡献者：崂山区行政区对象（ODbL）。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/5655516
+    locator: 用于核对行政区代表点；不代表民俗故事的具体发生地点。
+  bridge:
+    entry: REL-5-0002
+    cluster: sid_liminal
+    trail: all
+    label: 阴间差役与人间公文
+    rationale: 对读阴间差役与人间公文；作为主题联系，不据此证明故事情节的因果、传播或真实性。
+- id: case_cn_dict2_dongfang_jawless_ghost
+  title: 海南 · 东方市｜东方夜河边的无颌鬼
+  aliases:
+  - 东方市无颌鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 19.0979286
+    lng: 108.6482353
+    precision: city
+    location_name: 海南 · 东方市
+    culture_region: 东亚 · 中国海南
+  temporal:
+    era_label: 1994 年辞典所记地方故事
+    uncertainty_note: 故事发生或形成的具体年代不详；辞典出版年份不等于事件发生时间。
+  location_note: 东方市行政区域参考点，坐标来自 OpenStreetMap 行政区对象；表示辞典所记的流传区域，非故事中具体发生地点。
+  paragraphs:
+  - 潘仁夜里听见有人叫他捉鱼，便跟着对方到河边。那人吃起烤鱼，却一边吃一边往下掉；潘仁这才看见，对方没有下颌，样貌也逐渐变得可怖。
+  - 受惊的潘仁回去后病了一场。辞典记，地方上由此讲起半夜听到呼唤不要贸然应声的说法；河边的地点和故事发生时间都没有在条目里交代。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 553（PDF 第 668 页），条目“无颌鬼”。
+  - citation: OpenStreetMap 贡献者：东方市行政区对象（ODbL）。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/2784612
+    locator: 用于核对行政区代表点；不代表民俗故事的具体发生地点。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 夜河与地方禁忌
+    rationale: 对读夜河与地方禁忌；作为主题联系，不据此证明故事情节的因果、传播或真实性。
+- id: case_cn_dict2_xiushui_jar_ghosts
+  title: 江西九江 · 修水县｜修水六个挑谷的夜客
+  aliases:
+  - 修水县请“君”入瓮
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 29.0020824
+    lng: 114.3947889
+    precision: city
+    location_name: 江西九江 · 修水县
+    culture_region: 东亚 · 中国江西
+  temporal:
+    era_label: 1994 年辞典所记地方故事
+    uncertainty_note: 故事发生或形成的具体年代不详；辞典出版年份不等于事件发生时间。
+  location_note: 修水县行政区域参考点，坐标来自 OpenStreetMap 行政区对象；表示辞典所记的流传区域，非故事中具体发生地点。
+  paragraphs:
+  - 半夜里，一个单身汉遇见六名挑箩筐的人，正往刘家大屋运谷。他们递给他一副扁担，邀他同行。连挑三次之后，他意识到这伙人在偷别人粮食，又怀疑自己碰上了戏弄人的鬼。
+  - 再见面时，他骗六名夜客说刘家请人来捉他们，趁他们求救，把他们引进坛子封住。辞典将这则以谷物、夜行和机智为线索的故事记作流传于江西修水。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 560（PDF 第 675 页），条目“请“君”入瓮”。
+  - citation: OpenStreetMap 贡献者：修水县行政区对象（ODbL）。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3190450
+    locator: 用于核对行政区代表点；不代表民俗故事的具体发生地点。
+  bridge:
+    entry: LIT-2-0003
+    cluster: sid_liminal
+    trail: all
+    label: 夜客、谷物与人物机智
+    rationale: 对读夜客、谷物与人物机智；作为主题联系，不据此证明故事情节的因果、传播或真实性。
+- id: case_cn_dict2_haiyan_boat_passenger
+  title: 浙江嘉兴 · 海盐县｜年夜船上的查账人
+  aliases:
+  - 海盐县乘船人
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 30.5276676
+    lng: 120.9420572
+    precision: city
+    location_name: 浙江嘉兴 · 海盐县
+    culture_region: 东亚 · 中国浙江
+  temporal:
+    era_label: 1994 年辞典所记地方故事
+    uncertainty_note: 故事发生或形成的具体年代不详；辞典出版年份不等于事件发生时间。
+  location_note: 海盐县行政区域参考点，坐标来自 OpenStreetMap 行政区对象；表示辞典所记的流传区域，非故事中具体发生地点。
+  paragraphs:
+  - 手艺人阿仁乘船回家过年，听见岸上一家穷人争吵，便上岸赠银解困。夜里又有两人上船查账，他瞥见账簿上写着自己正月十五将死，才知道对方被讲作阴间查账的鬼。
+  - 年后阿仁再次经过那家，见只有两个孩子，又留下银钱。到了约定的日子，他躺在门板上等候，查账鬼却来告知阎王因他心善添了寿。辞典把这则因果故事记为浙江海盐所传。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 560–561（PDF 第 675–676 页），条目“乘船人”。
+  - citation: OpenStreetMap 贡献者：海盐县行政区对象（ODbL）。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/4590573
+    locator: 用于核对行政区代表点；不代表民俗故事的具体发生地点。
+  bridge:
+    entry: LIT-2-0005
+    cluster: sid_liminal
+    trail: all
+    label: 预言与善行的故事结构
+    rationale: 对读预言与善行的故事结构；作为主题联系，不据此证明故事情节的因果、传播或真实性。
+- id: case_cn_dict2_yueqing_clam_tide
+  title: 浙江温州 · 乐清市｜蒲岐滩涂与捉白蛤的女子
+  aliases:
+  - 乐清市捉白蛤
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 28.1164115
+    lng: 120.9809977
+    precision: city
+    location_name: 浙江温州 · 乐清市
+    culture_region: 东亚 · 中国浙江
+  temporal:
+    era_label: 1994 年辞典所记地方故事
+    uncertainty_note: 故事发生或形成的具体年代不详；辞典出版年份不等于事件发生时间。
+  location_note: 乐清市行政区域参考点，坐标来自 OpenStreetMap 行政区对象；表示辞典所记的流传区域，非故事中具体发生地点。
+  paragraphs:
+  - 传说蒲岐滩涂生有白蛤，人们纷纷下海采捉，也有人被潮水卷走。一次捉蛤时，出现一名女子，向前方引路，自称住在东海水晶宫。
+  - 她用婚姻和长生的承诺引诱青年与老人，两人随着她走向潮头，再没有回来。辞典记故事流传于乐清；滩涂与潮水是叙事背景，不能据此把故事人物认作可核实事故。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 559–560（PDF 第 674–675 页），条目“捉白蛤”。
+  - citation: OpenStreetMap 贡献者：乐清市行政区对象（ODbL）。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3289422
+    locator: 用于核对行政区代表点；不代表民俗故事的具体发生地点。
+  bridge:
+    entry: GEO-CLIM-0016
+    cluster: sid_liminal
+    trail: all
+    label: 滩涂故事与潮汐观察
+    rationale: 对读滩涂故事与潮汐观察；作为主题联系，不据此证明故事情节的因果、传播或真实性。
+- id: case_cn_dict2_shangyu_executioner_pipe
+  title: 浙江绍兴 · 上虞区｜刽子手与烟管头
+  aliases:
+  - 上虞区杀头鬼讨头
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 30.0357
+    lng: 120.8640628
+    precision: city
+    location_name: 浙江绍兴 · 上虞区
+    culture_region: 东亚 · 中国浙江
+  temporal:
+    era_label: 1994 年辞典所记地方故事
+    uncertainty_note: 故事发生或形成的具体年代不详；辞典出版年份不等于事件发生时间。
+  location_note: 上虞区行政区域参考点，坐标来自 OpenStreetMap 行政区对象；表示辞典所记的流传区域，非故事中具体发生地点。
+  paragraphs:
+  - 一个刽子手曾听处决的囚犯喊冤，说死后也要来找他。后来黄昏穿过弄堂时，他听见身后有人追喊“还我的头”，吓得一路奔逃，逢人便讲自己遇到了讨头的鬼。
+  - 茶店里，一位锡箔师傅听到后揭开误会：先前刽子手踢落了他的烟管头，他追着喊的正是要对方赔还烟管头。辞典记这则语言误会故事流传于浙江上虞。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: 鬼话·当代部分，印页 562（PDF 第 677 页），条目“杀头鬼讨头”。
+  - citation: OpenStreetMap 贡献者：上虞区行政区对象（ODbL）。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3316524
+    locator: 用于核对行政区代表点；不代表民俗故事的具体发生地点。
+  bridge:
+    entry: FOR-1-0003
+    cluster: sid_liminal
+    trail: all
+    label: 惊惧、误会与事后辨认
+    rationale: 对读惊惧、误会与事后辨认；作为主题联系，不据此证明故事情节的因果、传播或真实性。

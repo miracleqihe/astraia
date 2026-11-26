@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "domain_id": "underworld_bureaucracy",
+  "title": "三部参考书的增补与对读",
+  "entries": [
+    {
+      "id": "lex_underworld_dict_boyiting",
+      "hub_id": "motif_cn_underworld_bureaucracy_system",
+      "term": "剥衣亭",
+      "aliases": [
+        "剝衣亭"
+      ],
+      "category": "冥途关隘与审判叙事",
+      "region": "文献中的想象空间，不设现实坐标",
+      "era": "清代小说及近代辞典所载",
+      "summary": "剥衣亭是一些冥途叙事中的关口。《青楼梦》第三十四回借一位人物游历阴间，写鬼卒解释亭中刑罚；《中国鬼文化大辞典》也收录这一名称。两种文本对受罚对象的描述并不完全相同，应放在各自的故事与时代背景里理解。",
+      "primary_sources": [
+        {
+          "citation": "《青楼梦》第三十四回，维基文库在线转录。",
+          "url": "https://zh.wikisource.org/wiki/%E9%9D%92%E6%A8%93%E5%A4%A2/34"
+        }
+      ],
+      "secondary_ref": "徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994（年份据后记；印页 730，PDF 第 845 页）。"
+    }
+  ]
+}

@@ -20,6 +20,15 @@ MANIFEST = ROOT / 'web/src/syzygy/bridges.json'
 VAULT = ROOT / 'vault'
 
 
+def format_source(index: int, source: Source) -> str:
+    parts = [f'{index}. {source.citation}']
+    if source.locator:
+        parts.append(source.locator)
+    if source.url:
+        parts.append(f'[来源]({source.url})')
+    return ' '.join(parts)
+
+
 def run(collection: Path = COLLECTION, created_at: date = date.fromisoformat('2026-11-25')):
     records = yaml.load(collection.read_text(encoding='utf-8'), Loader=FrontmatterLoader)['records']
     graph = json.loads((ROOT / 'web/public/data/graph_data.json').read_text(encoding='utf-8'))
@@ -79,7 +88,7 @@ def run(collection: Path = COLLECTION, created_at: date = date.fromisoformat('20
         body = '\n## 故事梗概\n\n' + '\n\n'.join(item['paragraphs'])
         body += '\n\n## 地图与年代\n\n' + item['location_note']
         body += '\n\n## 出处\n\n' + '\n'.join(
-            f"{i}. {ref.citation} {ref.locator or ''} [来源]({ref.url})"
+            format_source(i, ref)
             for i, ref in enumerate(refs, 1)) + '\n'
         path = VAULT / card_directory(meta) / f'{node_id}.md'
         content = serialize_card(meta, body)

@@ -1,0 +1,669 @@
+records:
+- id: case_cn_dict3_dandong_actor
+  title: 辽宁丹东｜西厢房里的花脸
+  aliases:
+  - 戏子吹鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 40.12917
+    lng: 124.39472
+    precision: city
+    location_name: 辽宁丹东
+    culture_region: 东亚 · 中国
+  location_note: 地图为辞典所记流传地的市县参考点，故事中的屋舍、道路及坟墓未定位。辞典栏目名为“当代鬼话”，不等于故事发生或采录年代已知。
+  paragraphs:
+  - 丹东一带有一则被辞典收入的故事：唱花脸的戏子听说西厢房闹鬼，偏要在那里过夜。夜深后，纸窗破洞里伸进一条腿，他一把抓住，发现来的是一名女子。
+  - 女子想吓走戏子，变出鬼脸；戏子便用自己的脸谱回应。她又吹来阴气，他不肯退让，最后女子认输。戏台上的装扮，在这里成了人鬼相互试胆的道具。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 539（PDF 第 654 页）；辞典转引文彦生《中国鬼话》，转引书未在本次独立核查。
+  - citation: 辽宁丹东地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/2037886/
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 戏台脸谱与夜宿故事
+    rationale: 对读戏子、厢房和脸谱如何共同构成故事场景；不把鬼怪当作目击事实。
+- id: case_cn_dict3_ruzhou_wang_yong
+  title: 河南汝州｜王勇背鬼到天明
+  aliases:
+  - 王勇斗鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 34.16167
+    lng: 112.82972
+    precision: city
+    location_name: 河南汝州
+    culture_region: 东亚 · 中国
+  location_note: 地图为辞典所记流传地的市县参考点，故事中的屋舍、道路及坟墓未定位。辞典栏目名为“当代鬼话”，不等于故事发生或采录年代已知。
+  paragraphs:
+  - 临汝地方故事中，王勇听说弟弟被乱坟附近出没的女鬼害死，决心面对她。一天夜里，他将前来的女鬼背在身上，继续干活，一直坚持到天快亮。
+  - 女子想回阴间，先恐吓、再挣扎，王勇仍不放手。天亮后她化成一块旧木板；村人起初不相信，后来在长者帮助下将木板烧掉。辞典以旧地名临汝标示流传范围。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 539（PDF 第 654 页）；辞典转引文彦生《中国鬼话》，转引书未在本次独立核查。
+  - citation: 河南汝州地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1803359/
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  - citation: 汝州市人民政府：建置沿革。
+    type: geographic_reference
+    url: https://www.ruzhou.gov.cn/contents/37757/502020.html
+    locator: 记临汝县于 1988 年撤县设汝州市。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 夜路与空间叙事
+    rationale: 对读夜路、坟地和天明揭晓所构成的情节；不将故事当作真实死亡记录。
+- id: case_cn_dict3_hengzhou_scholar_nail
+  title: 广西横州｜秀才与坟边的约定
+  aliases:
+  - 秀才钉坟
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 22.68955
+    lng: 109.2674
+    precision: city
+    location_name: 广西横州
+    culture_region: 东亚 · 中国
+  location_note: 地图为辞典所记流传地的市县参考点，故事中的屋舍、道路及坟墓未定位。辞典栏目名为“当代鬼话”，不等于故事发生或采录年代已知。
+  paragraphs:
+  - 一群无赖打赌，要人在夜里到坟上钉钉子，接着又逼一名秀才代劳。秀才来到坟边，坟中女子现身，向他倾诉自己在阴间遭遇的不公。
+  - 两人商定对付无赖；第二天秀才把他们引到坟地，故事以无赖受惩、女子还阳收尾。辞典记其流传于旧称横县的地方，记述的是一则故事而非可核验的案件。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 539–540（PDF 第 654–655 页）；辞典转引文彦生《中国鬼话》，转引书未在本次独立核查。
+  - citation: 广西横州地理参考。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E6%A8%AA%E5%B7%9E%E5%B8%82
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: LIT-2-0004
+    cluster: sid_liminal
+    trail: all
+    label: 故事中的冤屈与报偿
+    rationale: 比较地方故事如何讲述胁迫、冤屈与报偿，保留文学叙事和历史事实的界限。
+- id: case_cn_dict3_hailun_who_saved_whom
+  title: 黑龙江海伦｜谁救了谁
+  aliases:
+  - 谁救了谁
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 47.44663
+    lng: 126.92475
+    precision: city
+    location_name: 黑龙江海伦
+    culture_region: 东亚 · 中国
+  location_note: 地图为辞典所记流传地的市县参考点，故事中的屋舍、道路及坟墓未定位。辞典栏目名为“当代鬼话”，不等于故事发生或采录年代已知。
+  paragraphs:
+  - 海伦流传的故事里，一名书生收留了自称无家可归的女子。过了一阵，他在集市遇见僧人；僧人认为女子并非寻常来客，送给他三样护身物。
+  - 夜里女子现出另一副面目，护身物随之起作用；故事最后揭示她是狐狸所变。书生原以为自己救助了陌生人，后来却感谢那位提醒他的人，题目因此留下互相救助的反问。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 541（PDF 第 656 页）；辞典转引文彦生《中国鬼话》，转引书未在本次独立核查。
+  - citation: 黑龙江海伦地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/2037069/
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: REL-5-0002
+    cluster: sid_myth
+    trail: all
+    label: 人与异类的地方想象
+    rationale: 以地方志怪中的变形角色比较民间信仰与叙事，不指认现实中的任何人。
+- id: case_cn_dict3_biyang_spinning_ghost
+  title: 河南泌阳｜夜纺与小鬼
+  aliases:
+  - 童养媳坑恶鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 32.73087
+    lng: 113.32195
+    precision: city
+    location_name: 河南泌阳
+    culture_region: 东亚 · 中国
+  location_note: 地图为辞典所记流传地的市县参考点，故事中的屋舍、道路及坟墓未定位。辞典栏目名为“当代鬼话”，不等于故事发生或采录年代已知。
+  paragraphs:
+  - 辞典所记泌阳故事中，一位年轻媳妇白天忙于家务，夜里还被要求纺线。深夜有个小鬼上门，劝她去做替身；她意识到对方的意图，没有照办。
+  - 她借口先要烧水洗脚，让小鬼靠近，趁机用热水把它赶除。故事说，家人从此不再逼她夜间纺线；这里呈现的是带有家庭劳役背景的民间故事，而非一宗被证实的事件。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 547（PDF 第 662 页）；辞典转引文彦生《中国鬼话》，转引书未在本次独立核查。
+  - citation: 河南泌阳地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1816315/
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: LIT-2-0004
+    cluster: sid_liminal
+    trail: all
+    label: 家庭劳役与故事视角
+    rationale: 从叙事视角观察人物如何应对不平等处境，不把文本情节当作历史个案。
+- id: case_cn_dict3_liping_wuchang
+  title: 贵州黎平｜阿妞与失约的书生
+  aliases:
+  - 吴伥鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 26.23111
+    lng: 109.13139
+    precision: city
+    location_name: 贵州黎平
+    culture_region: 东亚 · 中国
+  location_note: 地图为辞典所记流传地的市县参考点，故事中的屋舍、道路及坟墓未定位。辞典栏目名为“当代鬼话”，不等于故事发生或采录年代已知。
+  paragraphs:
+  - 书生张胜经过一间酒家，与店主阿妞约定婚事；临别时她还给他盘缠。到了约定的时候，张胜却把承诺忘了。辞典中的故事说，阿妞死后化为鬼，再次找到他。
+  - 二人后来成婚，村里发生孩子失踪的怪事，一位长者向张胜提醒妻子的来历。故事以张胜无法摆脱鬼魅而身亡收场。人物命运、失踪与鬼怪都是民间叙事情节，不是现实指控。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 547–548（PDF 第 662–663 页）；辞典转引文彦生《中国鬼话》，转引书未在本次独立核查。
+  - citation: 贵州黎平地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1813033/
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: LIT-2-0004
+    cluster: sid_liminal
+    trail: all
+    label: 失约、报复与叙事伦理
+    rationale: 比较故事里承诺与后果的安排；人物和情节不构成现实指控。
+- id: case_cn_dict3_fuyang_jade_brother
+  title: 安徽阜阳｜半块玉佩与鬼弟
+  aliases:
+  - 鬼弟
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 32.9
+    lng: 115.81667
+    precision: city
+    location_name: 安徽阜阳
+    culture_region: 东亚 · 中国
+  location_note: 地图为辞典所记流传地的市县参考点，故事中的屋舍、道路及坟墓未定位。辞典栏目名为“当代鬼话”，不等于故事发生或采录年代已知。
+  paragraphs:
+  - 故事说，接生婆夜里替一户人家接生，主人以一对龙凤玉佩作为信物：一块给接生婆的孩子张龙，一块留给自家孩子王麟。后来张龙家境败落，手持另一块玉佩的王麟前来相助。
+  - 张龙得知对方是“鬼弟”，仍接受他的提醒，重新读书做人。后来他因玉佩结识伴侣；王麟辞去时化为青烟，张龙每见旧物便想起这段情谊。辞典记其流传于阜阳一带。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 552（PDF 第 667 页）；辞典转引文彦生《中国鬼话》，转引书未在本次独立核查。
+  - citation: 安徽阜阳地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1810845/
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: HIS-4-0002
+    cluster: sid_liminal
+    trail: all
+    label: 玉佩、身份与物的传记
+    rationale: 以成对玉佩连接人物的叙事，对读物件如何承载关系和记忆。
+- id: case_cn_dict3_jinzhou_ghost_gambling
+  title: 辽宁锦州｜赌局后的纸钱
+  aliases:
+  - 和鬼赌钱
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 41.10778
+    lng: 121.14167
+    precision: city
+    location_name: 辽宁锦州
+    culture_region: 东亚 · 中国
+  location_note: 地图为辞典所记流传地的市县参考点，故事中的屋舍、道路及坟墓未定位。辞典栏目名为“当代鬼话”，不等于故事发生或采录年代已知。
+  paragraphs:
+  - 锦州一则故事里，嗜赌的人赢钱后喝了酒，夜间来到一间土屋，看见床上躺着一人，便邀对方赌钱。他先赢后输，辞别而去。
+  - 第二天，他发现口袋里是纸钱，急忙回到昨夜的地方，却只见土坟和倒下的石碑。坟边还有先前赢到的银元；他这才相信昨晚赌局的对手不是常人，受惊之后戒了赌。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 553–554（PDF 第 668–669 页）；辞典转引文彦生《中国鬼话》，转引书未在本次独立核查。
+  - citation: 辽宁锦州地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/2036427/
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 场景反转与纸钱
+    rationale: 对读夜屋与白日坟墓的场景反转，区分故事逻辑和可核查地点。
+- id: case_cn_dict3_pingdu_five_fingerprints
+  title: 山东平度｜空屋里的五个指印
+  aliases:
+  - 五个手指印
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 36.78444
+    lng: 119.94639
+    precision: city
+    location_name: 山东平度
+    culture_region: 东亚 · 中国
+  location_note: 地图为辞典所记流传地的市县参考点，故事中的屋舍、道路及坟墓未定位。辞典栏目名为“当代鬼话”，不等于故事发生或采录年代已知。
+  paragraphs:
+  - 书生周生进京赶考，与两名同伴受一位白衣女子指引，在空房中留宿。半夜，同伴醒来发现脸上有五道红印，说自己在睡梦中被可怖的人打了一巴掌。
+  - 周生随后听见女子诉说冤屈，请他将来替自己伸冤。故事说他考中后查办了害死她的人；空屋、掌印与诉冤共同构成辞典收录的平度地方叙事。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 555（PDF 第 670 页）；辞典转引文彦生《中国鬼话》，转引书未在本次独立核查。
+  - citation: 山东平度地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1798821/
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: LIT-2-0008
+    cluster: sid_liminal
+    trail: all
+    label: 线索与诉冤叙事
+    rationale: 比较指印、夜宿与诉冤如何构成故事线索，不将推断当成案件证据。
+- id: case_cn_dict3_changyi_red_children
+  title: 山东昌邑｜坟场里的红袄孩子
+  aliases:
+  - 穿红袄的小孩
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 36.85361
+    lng: 119.39083
+    precision: city
+    location_name: 山东昌邑
+    culture_region: 东亚 · 中国
+  location_note: 地图为辞典所记流传地的市县参考点，故事中的屋舍、道路及坟墓未定位。辞典栏目名为“当代鬼话”，不等于故事发生或采录年代已知。
+  paragraphs:
+  - 一位商人酒后赶夜路，经过坟场时听到笑声，看见许多孩子在坟头玩耍，围着他要背。孩子们有的爬到肩上，有的钻进背囊，他背着他们走了大半夜。
+  - 鸡叫时，孩子们要求下来，商人却坚持带回家。到了家里，他发现背上是一块棺材板，背囊里只剩纸钱；夫妻随后去坟地烧纸，此后再没遇见同样的事。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 555（PDF 第 670 页）；辞典转引文彦生《中国鬼话》，转引书未在本次独立核查。
+  - citation: 山东昌邑地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1815482/
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: REL-5-0005
+    cluster: sid_liminal
+    trail: all
+    label: 夜路故事与口述记忆
+    rationale: 把坟场夜路的讲述与地方口述传承并读，不将鬼孩视为真实目击。
+- id: case_cn_dict3_qinzhou_mojun
+  title: 广西钦州｜莫俊与灶灰下的骨头
+  aliases:
+  - 莫俊
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 21.98247
+    lng: 108.65061
+    precision: city
+    location_name: 广西钦州
+    culture_region: 东亚 · 中国
+  location_note: 地图为辞典所记流传地的市县参考点，故事中的屋舍、道路及坟墓未定位。辞典栏目名为“当代鬼话”，不等于故事发生或采录年代已知。
+  paragraphs:
+  - 钦州地方故事里，莫俊在夜路上遇到一个以钱财相诱的吊颈鬼。道士察觉不对，叫他赶去姐姐家，从灶灰里取出一块人骨，好让鬼无法施展法术。
+  - 莫俊到家时，鬼正用金钱引诱姐姐。姐姐没有上当，莫俊揭穿后鬼现出原形；道士赶来，故事以鬼被驱除结束。辞典没有提供这处住宅的具体位置。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 555–556（PDF 第 670–671 页）；辞典转引文彦生《中国鬼话》，转引书未在本次独立核查。
+  - citation: 广西钦州地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1797551/
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: HIS-4-0002
+    cluster: sid_liminal
+    trail: all
+    label: 家中器物与故事线索
+    rationale: 把灶灰、骨头和金钱看作叙事道具，对读器物与地方故事的关系。
+- id: case_cn_dict3_weining_flower_shoes
+  title: 贵州威宁｜客栈里的一双花鞋
+  aliases:
+  - 大花脸
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 26.8659
+    lng: 104.284
+    precision: city
+    location_name: 贵州威宁
+    culture_region: 东亚 · 中国
+  location_note: 地图为辞典所记流传地的市县参考点，故事中的屋舍、道路及坟墓未定位。辞典栏目名为“当代鬼话”，不等于故事发生或采录年代已知。
+  paragraphs:
+  - 商人“大花脸”深夜住进客栈，见一个鬼取下獠牙、摘头梳发，又出门拜月。商人把獠牙安在自己嘴上；鬼回来误以为遇见鬼王，慌忙献上一双花鞋逃走。
+  - 穿上鞋后，他发现自己可以隐身，起初拿它捉弄店伙计，后来竟去偷财主的钱。县官与他打赌，也被花鞋戏弄；两人最终因偷窃受罚。故事把夜宿惊遇接成了一则关于贪念的怪谈。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 561（PDF 第 676 页）；辞典转引文彦生《中国鬼话》，转引书未在本次独立核查。
+  - citation: 贵州威宁地理参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/node/5933782426
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: LIT-2-0004
+    cluster: sid_liminal
+    trail: all
+    label: 隐身鞋与叙事转折
+    rationale: 比较神异物件如何改变人物选择；寓言情节并非现实犯罪记录。
+- id: case_cn_tengchong_paper_horse_interview_2001
+  title: 云南腾冲｜纸马店里的失物疑虑
+  aliases:
+  - 和顺甲马访谈
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 25.017
+    lng: 98.483
+    precision: city
+    location_name: 云南腾冲
+    culture_region: 东亚 · 中国
+  location_note: 地图为所属市县的参考点，不是受访者住址或纸马店的精确位置。2001 年是书中所记采访年，不代表习俗起源年份。
+  paragraphs:
+  - 2001 年，邓启耀在腾冲和顺访问纸马店。一位店主向他介绍，有人怀疑家中财物反复失窃时，会把甲马纸供起来，希望借此让旁人不敢再取。
+  - 受访者还谈到人们在争执中使用纸马的说法。书中保留的是一位店主的解释，而不是证明纸马可以辨认小偷；访谈地点和年份也不能代表云南所有人的做法。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025。
+    type: reference_book
+    locator: 第二章第二节“蛊界”，甲马纸符访谈；用户提供电子版，本次直接核读。
+  - citation: 云南腾冲地理参考。
+    type: geographic_reference
+    url: https://en.wikipedia.org/wiki/Tengchong
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: REL-5-0002
+    cluster: sid_witch
+    trail: all
+    label: 地方信仰与访谈
+    rationale: 比较器物在地方讲述中的用途；受访者的信念不等于已验证的因果。
+  temporal:
+    year_start: 2001
+    year_end: 2001
+    era_label: 2001 年田野访谈
+    uncertainty_note: 书中记录的采访年份，并非习俗起源年份。
+- id: case_cn_lianghe_paper_horse_dispute_2001
+  title: 云南梁河｜寺庙里的失物誓言
+  aliases:
+  - 水箐村甲马访谈
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 24.80975
+    lng: 98.2961
+    precision: city
+    location_name: 云南德宏 · 梁河县
+    culture_region: 东亚 · 中国
+  location_note: 地图为所属市县的参考点，不是受访者住址或纸马店的精确位置。2001 年是书中所记采访年，不代表习俗起源年份。
+  paragraphs:
+  - 同在 2001 年的一次梁河访谈中，受访村民讲述：如果东西丢失，怀疑的人和被怀疑的人又各执一词，双方可能带着甲马纸到寺庙，向神灵陈说并发誓。
+  - 这则口述把纸符放在无法取得证据的争执中；作者随后讨论它可能具有象征性的裁决功能。它属于受访者所描述的地方实践，不证明誓言可以查明失物，也不应泛化为整个地区的共同做法。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025。
+    type: reference_book
+    locator: 第二章第二节“蛊界”，甲马纸符访谈；用户提供电子版，本次直接核读。
+  - citation: 云南德宏 · 梁河县地理参考。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E9%81%AE%E5%B2%9B%E9%95%87
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: HIS-6-0002
+    cluster: sid_witch
+    trail: all
+    label: 访谈与证据界限
+    rationale: 对照单次田野访谈与可证实事实，保留讲述者范围及其语境。
+  temporal:
+    year_start: 2001
+    year_end: 2001
+    era_label: 2001 年田野访谈
+    uncertainty_note: 书中记录的采访年份，并非习俗起源年份。
+- id: case_cn_gaochun_road_stone_grandmother
+  title: 江苏高淳｜村道旁的石婆婆
+  aliases:
+  - 高淳石婆婆
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 31.32969
+    lng: 118.88713
+    precision: city
+    location_name: 江苏南京 · 高淳区
+    culture_region: 东亚 · 中国
+  location_note: 高淳区参考点仅表示书中田野所涉区域，不是庙宇、桥梁或旧村的精确坐标；具体地点及现状未独立核实。
+  paragraphs:
+  - 陶思炎记下，高淳旧称双塔乡的一条朝北村道旁有座小庙，供着当地人称为“石婆婆”的石像。村人说，她与北风有关；石像朝着路的方向，寄托着为村落挡风护路的愿望。
+  - 作者讨论她是否与石将军信仰相连，同时明确起源难以考定。村人的解释、书中记录的石像和研究者的推测属于不同层次，不能据此断定神像能够治疗疾病或改变天气。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 216（PDF 第 246 页）；用户提供扫描本，本次目视核读。
+  - citation: 江苏南京 · 高淳区地理参考。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E9%AB%98%E6%B7%B3%E5%8C%BA
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: REL-5-0002
+    cluster: sid_witch
+    trail: all
+    label: 道路、石像与地方信仰
+    rationale: 区分村人所讲神像作用、田野记述和作者对起源的推测。
+- id: case_cn_gaochun_danhu_bridge_ghost_1987
+  title: 江苏高淳｜桥中央的借路者
+  aliases:
+  - 张屠夫捉鬼
+  - 丹湖桥鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 31.32969
+    lng: 118.88713
+    precision: city
+    location_name: 江苏南京 · 高淳区
+    culture_region: 东亚 · 中国
+  location_note: 高淳区参考点仅表示书中田野所涉区域，不是庙宇、桥梁或旧村的精确坐标；具体地点及现状未独立核实。
+  paragraphs:
+  - 黄昏里，张屠夫走到村口桥边，一位女子请他背自己过桥。她说要去村里看戏，却不敢独自通过；张屠夫留意到她异样的眼睛，仍答应背她上桥。
+  - 到了桥中央，他停下来追问她来意，并说如果不回答就把她留在桥上。陶思炎记下这个故事片段，用来讨论鬼畏桥梁的地方观念；书中所记 1987 年是采录年，故事发生时间不详。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 218（PDF 第 248 页）；用户提供扫描本，本次目视核读。
+  - citation: 江苏南京 · 高淳区地理参考。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E9%AB%98%E6%B7%B3%E5%8C%BA
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: LIT-4-0007
+    cluster: sid_witch
+    trail: all
+    label: 采录时间与口述叙事
+    rationale: 对读故事片段和口述史编辑，区分采录年份与叙述中事件的年代。
+  temporal:
+    year_start: 1987
+    year_end: 1987
+    era_label: 1987 年采录
+    uncertainty_note: 采录年，不是故事发生年份。
+- id: case_cn_gaochun_wei_bagong_lake
+  title: 江苏高淳｜石臼湖上的魏八公
+  aliases:
+  - 魏八公
+  - 魏宗八公
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 31.32969
+    lng: 118.88713
+    precision: city
+    location_name: 江苏南京 · 高淳区
+    culture_region: 东亚 · 中国
+  location_note: 高淳区参考点仅表示书中田野所涉区域，不是庙宇、桥梁或旧村的精确坐标；具体地点及现状未独立核实。
+  paragraphs:
+  - 地方传说里，一名押粮官在石臼湖遇见大风浪，许愿如果船队能平安完成任务，返途便以自身答谢水神。待粮船平安抵达，他再次经过湖面时兑现了誓言。
+  - 陶思炎记述当地人后来为他建庙，船民在水上劳作或远行前会到庙中祈求平安。押粮与誓愿属于地方传说；书中另记录了供奉与出行祈愿的习俗。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 239（PDF 第 269 页）；用户提供扫描本，本次目视核读。
+  - citation: 江苏南京 · 高淳区地理参考。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E9%AB%98%E6%B7%B3%E5%8C%BA
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: REL-5-0001
+    cluster: sid_witch
+    trail: all
+    label: 水上行旅与地方祭祀
+    rationale: 比较湖上叙事和船民祈愿，把传说人物经历与祭祀记录分别阅读。
+- id: case_cn_hk_king_george_park_child
+  title: 香港西营盘｜公园坡道上的背影
+  aliases:
+  - 佐治五世纪念公园的男童
+  genre: urban_legend
+  credibility_tier: C
+  location:
+    lat: 22.285475
+    lng: 114.144462
+    precision: city
+    location_name: 香港西营盘 · 佐治五世纪念公园
+    culture_region: 东亚 · 中国
+  location_note: 坐标表示香港岛西营盘公园的位置，非传闻中孩子的精确站位；叙述事件的年份不详。
+  paragraphs:
+  - 西营盘街坊在一次社区鬼故导览中讲起童年回忆：大人坐在公园长椅上照看孩子，瞥见一名陌生男童沿着坡道跑远；可他的背影似乎没有随着斜坡逐渐降低。
+  - 讲述者说，故事传开后，部分家长因此不安。2016 年《明报》采访把它与附近街区历史一起保存下来；这是一则受访者转述的社区传闻，原始目击时间及经过无法核实。
+  sources:
+  - citation: 《明报》：西营盘鬼故团，收复社区魂，2016 年 7 月 29 日。
+    type: journalism
+    url: https://cache.org.hk/blog/CACHeGHOST_20160729_MINGPAO/
+    locator: “老街坊的魅影回忆”；长春社文化古迹资源中心转载。
+  - citation: 香港西营盘 · 佐治五世纪念公园地理参考。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E4%BD%90%E6%B2%BB%E4%BA%94%E4%B8%96%E7%B4%80%E5%BF%B5%E5%85%AC%E5%9C%92
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: HIS-6-0007
+    cluster: sid_liminal
+    trail: all
+    label: 社区记忆与公园空间
+    rationale: 比较街坊转述、空间记忆和可独立核查的历史资料；传闻不等于目击事实。
+- id: case_cn_hk_pingshek_night_worker
+  title: 香港坪石邨｜天井里的夜归人
+  aliases:
+  - 坪石邨夜香婆传闻
+  genre: urban_legend
+  credibility_tier: C
+  location:
+    lat: 22.3333
+    lng: 114.209
+    precision: city
+    location_name: 香港九龙 · 坪石邨
+    culture_region: 东亚 · 中国
+  location_note: 标点是公共屋邨的整体参考位置，不代表故事中某栋住宅或个人住址。
+  paragraphs:
+  - 一个香港屋邨鬼故说，年轻人夜里送女朋友回家，经过井字形大楼的天井，看见一位挑着两个大桶的老妇与自己擦身而过。他疑惑地问，为什么这里还有人做这种旧式清运工作。
+  - 同行的女友说自己什么也没看见；两人回头，老妇已不在原处。2017 年《东方日报》采访一位讲述者时记录了这个版本，所述相遇时间与人物身份没有独立证明。
+  sources:
+  - citation: 《东方日报》：URBAN LEGEND 梗有一个喺左近，2017 年 8 月 22 日。
+    type: journalism
+    url: https://orientaldaily.on.cc/cnt/lifestyle/20170822/00321_001.html
+    locator: “坪石邨是闹鬼热点？”受访者转述版本。
+  - citation: 香港九龙 · 坪石邨地理参考。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E5%9D%AA%E7%9F%B3%E9%82%A8
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: ARC-4-0006
+    cluster: sid_liminal
+    trail: all
+    label: 屋邨天井与城市日常
+    rationale: 把传闻中的天井与城市公共空间并读，不推断建筑形状产生了超自然现象。
+- id: case_cn_hk_victoria_prison_night_call
+  title: 香港中环｜旧监狱里的叫醒声
+  aliases:
+  - 域多利监狱夜巡传闻
+  genre: urban_legend
+  credibility_tier: C
+  location:
+    lat: 22.28086
+    lng: 114.1539
+    precision: city
+    location_name: 香港中环 · 域多利监狱旧址
+    culture_region: 东亚 · 中国
+  location_note: 坐标指旧监狱园区参考点，具体地下房间和传闻中的位置未定位。
+  paragraphs:
+  - 香港旧监狱的夜巡故事中，有值勤者在昏暗的地下空间困倦打盹，仿佛听见身边有人提醒自己该醒来了。另一些人说，某道铁门前需先做出特定动作才敢开门。
+  - 香港政府文物导览手册收录了这些说法，并转引中西区地方传说资料。监狱作为历史建筑的存在可以查证，声音、铁门习俗及相关灵异解释则仍是手册所载的传闻。
+  sources:
+  - citation: 香港文物保育专员办事处：《Notes of a Heritage Visitor》，A Scary Journey。
+    type: institutional_publication
+    url: https://www.heritage.gov.hk/filemanager/heritage/Publication/en/upload/4/heritageBookletEng.pdf
+    locator: 印页 49–50，Victoria Prison Compound；该手册转引《中西区风物志》资料。
+  - citation: 香港古物古迹办事处：前域多利监狱建筑群。
+    type: institutional_reference
+    url: https://www.amo.gov.hk/en/historic-buildings/monuments/hong-kong-island/monuments_55/index.html
+    locator: 历史建筑资料；不作为超自然传闻真实性的证据。
+  - citation: 香港中环 · 域多利监狱旧址地理参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/way/148461540
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  bridge:
+    entry: ARC-4-0004
+    cluster: sid_liminal
+    trail: all
+    label: 旧建筑与城市记忆
+    rationale: 对读历史建筑保育与地方故事，区分监狱历史与关于声响的传闻。
+- id: case_cn_jintang_rooftop_planter_2026
+  title: 四川金堂｜楼顶花坛与“坟堆”传闻
+  aliases:
+  - 金堂楼顶花坛传闻
+  genre: urban_legend
+  credibility_tier: C
+  location:
+    lat: 30.8563
+    lng: 104.43606
+    precision: city
+    location_name: 四川成都 · 金堂县
+    culture_region: 东亚 · 中国
+  location_note: 为保护居民隐私，标点仅采用金堂县城参考位置，不标记小区或住宅。2026 年是报道与调查时间。
+  paragraphs:
+  - 2026 年，一则消息称成都金堂某小区楼顶的土堆里埋着一名孩子。带着牙齿的碎片照片被传播后，楼顶花坛变成了令人不安的“坟堆”故事。
+  - 当地警方通报称，现场是被杂物覆盖的花坛，没有发现墓葬设施；送检残片符合畜禽骨骼和鱼类咽齿特征，关于男童坟墓的说法没有事实依据。这里保存的是传播与核查过程，并非失踪儿童事件。
+  sources:
+  - citation: 封面新闻：男子编造楼顶有“坟堆”谣言，警方通报，2026 年 10 月 8 日。
+    type: journalism
+    url: https://www.thecover.cn/news/toSTkcAbmJ%2BH90qSdq8Jkw%3D%3D
+    locator: 转述 2026 年 10 月 8 日金堂县公安局警情通报。
+  - citation: 四川成都 · 金堂县地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1784811/
+    locator: 所列点仅作城市、县区或公共场所参考；详见地图精度说明。
+  - citation: 宣城市人民政府转载中国互联网联合辟谣平台，2026 年 10 月 10 日。
+    type: institutional_reference
+    url: https://www.xuancheng.gov.cn/Content/show/1732315.html
+    locator: 转述金堂县公安局现场勘验和送检结果。
+  bridge:
+    entry: SOC-5-0010
+    cluster: sid_liminal
+    trail: all
+    label: 网络传播与核查
+    rationale: 对读图像和传言的扩散与官方核查；图像引发的想象不构成事实。
+  temporal:
+    year_start: 2026
+    year_end: 2026
+    era_label: 2026 年传闻与调查
+    uncertainty_note: 警方调查及报道发生于 2026 年；传闻中的儿童墓葬未被证实。

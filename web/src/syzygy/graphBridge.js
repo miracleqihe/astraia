@@ -1,4 +1,103 @@
 import { publicAssetUrl } from '../publicAssetUrl.js';
+import { genreContract, sourceTier } from './narrativeMetadata.js';
+
+const LAYER_DEFAULT_NODE_TYPE = {
+  1: 'case',
+  2: 'myth_corpus',
+  3: 'motif_index',
+  4: 'mechanism',
+};
+
+function hydrateSpatial(spatial) {
+  if (!spatial || typeof spatial !== 'object') return null;
+  return {
+    lat: spatial.lat ?? null,
+    lng: spatial.lng ?? null,
+    precision: spatial.precision,
+    location_name: spatial.location_name,
+    culture_region: spatial.culture_region ?? null,
+  };
+}
+
+function hydrateTemporal(temporal) {
+  if (!temporal || typeof temporal !== 'object') return null;
+  return {
+    year_start: temporal.year_start ?? null,
+    year_end: temporal.year_end ?? null,
+    era_label: temporal.era_label,
+    uncertainty_note: temporal.uncertainty_note ?? null,
+  };
+}
+
+function hydrateReading(reading) {
+  if (!reading || typeof reading !== 'object') return undefined;
+  return {
+    ...reading,
+    paragraphs: Array.isArray(reading.paragraphs) ? reading.paragraphs : [],
+    source_numbers: Array.isArray(reading.source_numbers) ? reading.source_numbers : [1],
+    ...(reading.edition ? {
+      edition: {
+        text: typeof reading.edition.text === 'string' ? reading.edition.text : '',
+        source_number: reading.edition.source_number,
+      },
+    } : {}),
+  };
+}
+
+export function hydrateGraphIndex(graph) {
+  if (!graph || typeof graph !== 'object' || !Array.isArray(graph.nodes) || !Array.isArray(graph.links)) {
+    return graph;
+  }
+  const linkNotes = Array.isArray(graph.link_notes) ? graph.link_notes : null;
+  const nodes = graph.nodes.map((node) => {
+    const zLayer = Number(node.z_layer) || 1;
+    const reading = hydrateReading(node.reading);
+    return {
+      ...node,
+      z_layer: zLayer,
+      z: node.z ?? (zLayer - 1) * 120,
+      node_type: node.node_type ?? LAYER_DEFAULT_NODE_TYPE[zLayer] ?? 'case',
+      aliases: Array.isArray(node.aliases) ? node.aliases : [],
+      genre_contract: genreContract(node),
+      source_tier: sourceTier(node),
+      is_fictional_quarantine: typeof node.is_fictional_quarantine === 'boolean'
+        ? node.is_fictional_quarantine
+        : node.credibility_tier === 'F',
+      spatial: hydrateSpatial(node.spatial),
+      temporal: hydrateTemporal(node.temporal),
+      standards: {
+        atu_types: Array.isArray(node.standards?.atu_types) ? node.standards.atu_types : [],
+        thompson_motifs: Array.isArray(node.standards?.thompson_motifs) ? node.standards.thompson_motifs : [],
+        berezkin_codes: Array.isArray(node.standards?.berezkin_codes) ? node.standards.berezkin_codes : [],
+        ocm_codes: Array.isArray(node.standards?.ocm_codes) ? node.standards.ocm_codes : [],
+        macro_phylogeny: node.standards?.macro_phylogeny ?? null,
+      },
+      sources: Array.isArray(node.sources) ? node.sources : [],
+      markdown: typeof node.markdown === 'string' ? node.markdown : '',
+      source_path: typeof node.source_path === 'string' ? node.source_path : '',
+      audit: {
+        reviewed_by_human: false,
+        is_sample: false,
+        ...(node.audit && typeof node.audit === 'object' ? node.audit : {}),
+      },
+      motifs: Array.isArray(node.motifs) ? node.motifs : [],
+      mechanisms: Array.isArray(node.mechanisms) ? node.mechanisms : [],
+      tags: Array.isArray(node.tags) ? node.tags : [],
+      relations: Array.isArray(node.relations) ? node.relations : [],
+      ...(reading ? { reading } : {}),
+    };
+  });
+  const links = graph.links.map((link) => ({
+    ...link,
+    status: link.status ?? null,
+    note: typeof link.note === 'number' && linkNotes ? (linkNotes[link.note] ?? null) : (link.note ?? null),
+    is_fictional_quarantine: Boolean(link.is_fictional_quarantine),
+    matched_codes: Array.isArray(link.matched_codes) ? link.matched_codes : [],
+  }));
+  const { link_notes: _linkNotes, ...rest } = graph;
+  return { ...rest, nodes, links };
+}
+
 const normalize = value => String(value ?? '').normalize('NFKC').toLocaleLowerCase();
 const textCache = new WeakMap();
 
@@ -25,7 +124,7 @@ export async function loadGraph(root, publicSite, expectedSnapshotId = null) {
     const graph = await response.json();
     if (graph.schema_version !== 1 || !Array.isArray(graph.nodes) || !Array.isArray(graph.links)) throw new Error('图谱数据格式不匹配。');
     if (expectedSnapshotId && graph.snapshot_id !== expectedSnapshotId && name === 'graph_index.json') continue;
-    return graph;
+    return hydrateGraphIndex(graph);
   }
   throw new Error('未找到图谱数据。');
 }

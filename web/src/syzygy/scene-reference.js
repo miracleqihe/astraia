@@ -29,6 +29,7 @@ import {
   animateOmniaGalaxies,
 } from './constellationSculpts';
 import { SIDERA_V3_DESIGN, sampleV3Anchor, sampleV3Dust, createSideraV3Sculpts } from './sideraV3Sculpts';
+import { filterLexiconEntries, loadLexiconShard, loadTaxonomy } from './lexiconShards.js';
 
 const THREE = { ...THREECore, OrbitControls };
 const root = import.meta.env.BASE_URL;
@@ -1198,7 +1199,15 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       is2DPlanisphere: false,
       membraneDepth: initialRealm ? initialRealm.depth : DEFAULT_MEMBRANE_DEPTH,
       observerHudDismissed: false,
-      scopeTab: 'all',        // 'all' | 'volumes' | 'supplement' | 'bridges'
+      scopeTab: 'all',        // 'all' | 'volumes' | 'supplement' | 'bridges' | 'reading' | 'taxonomy'
+      lastNonTaxonomyScope: 'all',
+      taxonomyData: null,
+      taxonomyPromise: null,
+      taxonomyLoading: false,
+      taxonomySelectedDomainId: null,
+      taxonomyLexiconQuery: '',
+      taxonomyLexiconCategory: '',
+      taxonomyShardState: new Map(),
       activeVolId: null,
       activeDiscId: null,
       activeTrail: 'all',
@@ -1339,10 +1348,9 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         updateHighlightsAndFilters(); updateClassicLink(); syncViewURL(); setRightDrawerCollapsed(false);
       },
       onBrowseFolklore() {
-        appState.scopeTab = 'supplement';
         appState.searchQuery = ''; searchInput.value = ''; btnClearQuery.classList.add('hidden'); mobileResults.hidden = true;
-        fullAtlas.searchChanged(); updateHighlightsAndFilters();
-        document.querySelectorAll('.scope-tab').forEach(tab=>tab.classList.toggle('active',tab.getAttribute('data-scope') === 'supplement'));
+        setScopeTab('supplement');
+        fullAtlas.searchChanged();
         setLeftDrawerCollapsed(false); flashToast('在左侧目录选择民俗条目。');
       },
       onPortal(node, entry) {
@@ -1741,6 +1749,33 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
           button.addEventListener('click', () => selectSyzygyBridge(bridge, true));
           container.append(button);
         }
+        return;
+      }
+
+      if (appState.scopeTab === 'taxonomy' && !appState.searchQuery.trim()) {
+        const heading = document.createElement('p');
+        heading.className = 'syzygy-directory-heading';
+        heading.textContent = '专题谱系 · 七大主题域';
+        container.append(heading);
+        const domains = appState.taxonomyData?.domains ?? [];
+        if (!domains.length) {
+          const note = document.createElement('p');
+          note.className = 'syzygy-reference';
+          note.textContent = appState.taxonomyLoading ? '正在载入专题谱系…' : '专题谱系暂未编译，可在主视窗查看详情。';
+          container.append(note);
+          return;
+        }
+        domains.forEach((domain) => {
+          const button = document.createElement('button');
+          button.className = 'syzygy-directory-row';
+          if (appState.taxonomySelectedDomainId === domain.id) button.classList.add('is-selected');
+          const lexLabel = domain.lexicon_shard
+            ? `${domain.lexicon_count ?? domain.lexicon_shard.count} 辞条`
+            : '规划分片';
+          button.innerHTML = `<b>${escapeHTML(domain.name)}</b><span>${escapeHTML(String(domain.node_count ?? 0))} 节点 · ${escapeHTML(lexLabel)}</span>`;
+          button.addEventListener('click', () => openTaxonomyDomain(domain.id));
+          container.append(button);
+        });
         return;
       }
 
@@ -2458,19 +2493,468 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       });
     });
 
-    // Left Scope Filter Tabs
-    document.querySelectorAll('.scope-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.scope-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        appState.scopeTab = tab.getAttribute('data-scope');
-        if (appState.scopeTab === 'volumes' && appState.dimension !== 'omnia') switchDimension('omnia');
-        appState.activeVolId = null;
-        appState.activeDiscId = null;
-        renderLeftAtlasTree();
-        updateHighlightsAndFilters();
-        fullAtlas.updatePoints();
+    // Left Scope Filter Tabs & Thematic Taxonomy Explorer
+    const taxonomyExplorer = document.getElementById('taxonomy-explorer');
+    const taxonomyDockBtn = document.getElementById('btn-taxonomy-dock');
+    const safeAccent = value => (/^#[0-9a-fA-F]{3,8}$/.test(String(value ?? '').trim()) ? String(value).trim() : '#cfa962');
+    const safeExtUrl = value => (/^https?:\/\//i.test(value ?? '') ? value : null);
+    const taxonomyNodeLabel = id => {
+      const node = fullAtlas.getNode(id);
+      if (node) return { title: node.title, layer: `L${node.z_layer ?? '—'}` };
+      const entry = book.entries.find(item => item.id === id);
+      if (entry) return { title: entry.title, layer: entry.id };
+      return { title: id, layer: '节点' };
+    };
+
+    function formatBibliographyNote(taxonomy) {
+      const items = Array.isArray(taxonomy?.bibliography) ? taxonomy.bibliography : [];
+      const citations = items
+        .map(item => (typeof item === 'string' ? item : (item?.citation || item?.title || '')))
+        .filter(Boolean);
+      const baseNote = '辞条释义依据传世典籍与公版史料原创编纂，原始出处均可核验。';
+      return citations.length ? `${baseNote} 书目参照：${citations.join('；')}。` : baseNote;
+    }
+
+    function ensureTaxonomyData() {
+      if (appState.taxonomyData) return Promise.resolve(appState.taxonomyData);
+      if (!appState.taxonomyPromise) {
+        appState.taxonomyLoading = true;
+        appState.taxonomyPromise = loadTaxonomy(root).then(data => {
+          appState.taxonomyLoading = false;
+          appState.taxonomyData = data;
+          if (!data) appState.taxonomyPromise = null;
+          if (appState.scopeTab === 'taxonomy') {
+            renderLeftAtlasTree();
+            renderTaxonomyExplorer();
+          }
+          return data;
+        }).catch(() => {
+          appState.taxonomyLoading = false;
+          appState.taxonomyPromise = null;
+          return null;
+        });
+      }
+      return appState.taxonomyPromise;
+    }
+
+    async function navigateToTaxonomyNode(nodeId) {
+      try {
+        await fullAtlas.start();
+      } catch (error) {
+        flashToast(`图谱载入失败：${error.message}`);
+        return;
+      }
+      const node = fullAtlas.getNode(nodeId);
+      if (!node) {
+        const entry = book.entries.find(item => item.id === nodeId);
+        if (entry) {
+          setScopeTab(appState.lastNonTaxonomyScope || 'all');
+          fullAtlas.selectBook(entry.id);
+          return;
+        }
+        flashToast('该节点尚未并入当前星图快照，请先查阅下方辞条或稍后刷新。');
+        return;
+      }
+      if (!fullAtlas.isVisible(node)) {
+        flashToast('该条目被当前信源或体裁筛选隐藏，请先调整左侧筛选。');
+        return;
+      }
+      const curated = SYZYGY_BRIDGES.find(bridge => bridge.mythos.id === nodeId && bridgeAllowed(bridge));
+      setScopeTab(appState.lastNonTaxonomyScope || 'all');
+      if (curated) selectSyzygyBridge(curated, true);
+      else fullAtlas.select(node, true);
+    }
+
+    function renderTaxonomyLexiconEntries(domain) {
+      if (!taxonomyExplorer) return;
+      const listSlot = taxonomyExplorer.querySelector('[data-taxonomy-lexicon-list]');
+      const countSlot = taxonomyExplorer.querySelector('[data-taxonomy-lexicon-count]');
+      if (!listSlot) return;
+
+      const shardState = appState.taxonomyShardState.get(domain.id);
+      if (!domain.lexicon_shard) return;
+      if (!shardState || shardState.loading) {
+        listSlot.innerHTML = '<p class="syzygy-reference">正在校验 SHA-256 并载入专题辞条分片…</p>';
+        return;
+      }
+      if (shardState.error) {
+        listSlot.innerHTML = `<p class="syzygy-reference">辞条分片载入失败：${escapeHTML(shardState.error)} <button type="button" class="syzygy-inline-button" data-taxonomy-retry>重试</button></p>`;
+        listSlot.querySelector('[data-taxonomy-retry]')?.addEventListener('click', () => {
+          appState.taxonomyShardState.delete(domain.id);
+          openTaxonomyDomain(domain.id, true);
+        });
+        return;
+      }
+
+      const entries = shardState.data?.entries ?? [];
+      const filtered = filterLexiconEntries(entries, appState.taxonomyLexiconQuery, appState.taxonomyLexiconCategory);
+      if (countSlot) {
+        countSlot.textContent = filtered.length === entries.length
+          ? `${entries.length} 辞条`
+          : `${filtered.length} / ${entries.length} 辞条`;
+      }
+
+      if (!filtered.length) {
+        listSlot.innerHTML = '<p class="syzygy-reference">没有匹配当前筛选条件的辞条。</p>';
+        return;
+      }
+
+      listSlot.innerHTML = filtered.map(entry => {
+        const meta = [entry.category, entry.region, entry.era].filter(Boolean).join(' · ');
+        const aliases = Array.isArray(entry.aliases) && entry.aliases.length
+          ? `<div class="taxonomy-lexicon-aliases">别称：${escapeHTML(entry.aliases.join('、'))}</div>`
+          : '';
+        const sources = (entry.primary_sources ?? []).map(src => {
+          const url = safeExtUrl(src?.url);
+          const label = escapeHTML([src?.citation || src?.url || '原典出处', src?.locator].filter(Boolean).join(' · '));
+          return url
+            ? `<a href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">${label} ↗</a>`
+            : `<span>${label}</span>`;
+        }).join('');
+        const hubChip = entry.hub_id
+          ? `<button type="button" class="taxonomy-node-chip" data-taxonomy-node="${escapeHTML(entry.hub_id)}"><span>关联枢纽：${escapeHTML(taxonomyNodeLabel(entry.hub_id).title)}</span><small>定位</small></button>`
+          : '';
+        const storyChip = entry.case_id
+          ? `<a class="taxonomy-node-chip" href="${root}?view=map&amp;story=${encodeURIComponent(entry.case_id)}"><span>地图故事</span><small>查看 ↗</small></a>`
+          : '';
+        const relatedBook = entry.knowledge_id ? book.entries.find(item => item.id === entry.knowledge_id) : null;
+        const knowledgeChip = relatedBook
+          ? `<button type="button" class="taxonomy-node-chip" data-taxonomy-node="${escapeHTML(entry.knowledge_id)}"><span>知识对读：${escapeHTML(relatedBook.title)}</span><small>主题关联</small></button>`
+          : '';
+        const secondary = entry.secondary_ref
+          ? `<div class="taxonomy-lexicon-secondary">书目参照：${escapeHTML(entry.secondary_ref)}</div>`
+          : '';
+        return `<details class="taxonomy-lexicon-card">
+          <summary>
+            <span class="taxonomy-lexicon-term">${escapeHTML(entry.term)}</span>
+            <span class="taxonomy-lexicon-meta">${escapeHTML(meta)}</span>
+          </summary>
+          <div class="taxonomy-lexicon-body">
+            ${aliases}
+            ${entry.summary.split(/\n\s*\n/).filter(Boolean).map(paragraph => `<p>${escapeHTML(paragraph)}</p>`).join('')}
+            ${hubChip || storyChip || knowledgeChip ? `<div class="taxonomy-node-chips">${hubChip}${storyChip}${knowledgeChip}</div>` : ''}
+            ${entry.knowledge_note ? `<div class="taxonomy-lexicon-secondary">${escapeHTML(entry.knowledge_note)}</div>` : ''}
+            ${sources ? `<div class="taxonomy-lexicon-sources">${sources}</div>` : ''}
+            ${secondary}
+          </div>
+        </details>`;
+      }).join('');
+
+      listSlot.querySelectorAll('[data-taxonomy-node]').forEach(btn => {
+        btn.addEventListener('click', () => navigateToTaxonomyNode(btn.dataset.taxonomyNode));
       });
+    }
+
+    function openTaxonomyDomain(domainId, forceReload = false) {
+      appState.taxonomySelectedDomainId = domainId;
+      if (!forceReload) {
+        appState.taxonomyLexiconQuery = '';
+        appState.taxonomyLexiconCategory = '';
+      }
+      renderLeftAtlasTree();
+      renderTaxonomyExplorer();
+
+      const taxonomy = appState.taxonomyData;
+      const domain = taxonomy?.domains?.find(item => item.id === domainId);
+      if (!domain || !domain.lexicon_shard) return;
+
+      const existing = appState.taxonomyShardState.get(domainId);
+      if (!forceReload && existing && (existing.loading || existing.data)) return;
+
+      appState.taxonomyShardState.set(domainId, { loading: true, error: '', data: null });
+      if (appState.scopeTab === 'taxonomy' && appState.taxonomySelectedDomainId === domainId) {
+        renderTaxonomyExplorer();
+      }
+
+      loadLexiconShard(root, taxonomy, domainId).then(shard => {
+        appState.taxonomyShardState.set(domainId, { loading: false, error: '', data: shard });
+        if (appState.scopeTab === 'taxonomy' && appState.taxonomySelectedDomainId === domainId) {
+          renderTaxonomyExplorer();
+        }
+      }).catch(error => {
+        appState.taxonomyShardState.set(domainId, { loading: false, error: error.message, data: null });
+        if (appState.scopeTab === 'taxonomy' && appState.taxonomySelectedDomainId === domainId) {
+          renderTaxonomyExplorer();
+        }
+      });
+    }
+
+    function renderTaxonomyExplorer() {
+      if (!taxonomyExplorer) return;
+      const hidden = appState.scopeTab !== 'taxonomy';
+      taxonomyExplorer.hidden = hidden;
+      if (hidden) return;
+
+      const taxonomy = appState.taxonomyData;
+      const domains = Array.isArray(taxonomy?.domains) ? [...taxonomy.domains].sort((a, b) => (a.order ?? 0) - (b.order ?? 0)) : [];
+      const selectedDomain = domains.find(item => item.id === appState.taxonomySelectedDomainId) ?? null;
+
+      const headHTML = `<header class="taxonomy-explorer-head">
+        <div>
+          <div class="taxonomy-explorer-eyebrow">THEMATIC TAXONOMY · 七大专题谱系</div>
+          <h2 class="taxonomy-explorer-title">中国鬼神与跨文化民俗专题谱系总览</h2>
+        </div>
+        <button type="button" id="btn-close-taxonomy" class="ctl-btn px-2.5 py-1 text-xs">✕ 返回星图</button>
+      </header>`;
+
+      if (!taxonomy && appState.taxonomyLoading) {
+        taxonomyExplorer.innerHTML = `${headHTML}<div class="taxonomy-detail-pane"><p class="syzygy-reference">正在载入七大专题谱系索引…</p></div>`;
+        taxonomyExplorer.querySelector('#btn-close-taxonomy')?.addEventListener('click', () => setScopeTab(appState.lastNonTaxonomyScope || 'all'));
+        return;
+      }
+
+      if (!taxonomy || !domains.length) {
+        taxonomyExplorer.innerHTML = `${headHTML}<div class="taxonomy-detail-pane"><p class="syzygy-reference">专题谱系索引暂不可用或尚未编译，请稍后重试，或继续在星图与典籍中浏览。</p></div>`;
+        taxonomyExplorer.querySelector('#btn-close-taxonomy')?.addEventListener('click', () => setScopeTab(appState.lastNonTaxonomyScope || 'all'));
+        return;
+      }
+
+      const domainCardsHTML = domains.map(domain => {
+        const isSel = selectedDomain?.id === domain.id;
+        const accent = safeAccent(domain.accent);
+        const groupTags = (domain.groups ?? []).map(group => `<span class="taxonomy-tag">${escapeHTML(group.title)}</span>`).join('');
+        const lexBadge = domain.lexicon_shard
+          ? `<span class="taxonomy-metric-pill">${escapeHTML(String(domain.lexicon_count ?? domain.lexicon_shard.count))} 辞条</span>`
+          : `<span class="taxonomy-metric-pill is-planned">规划分片 · 待编纂</span>`;
+        return `<button type="button" class="taxonomy-domain-card${isSel ? ' is-selected' : ''}" data-taxonomy-domain="${escapeHTML(domain.id)}">
+          <span class="taxonomy-domain-accent" style="background:${accent}"></span>
+          <div class="taxonomy-domain-top">
+            <span class="taxonomy-domain-order">${String(domain.order ?? '').padStart(2, '0')} · ${escapeHTML(domain.english_name)}</span>
+          </div>
+          <div class="taxonomy-domain-name">${escapeHTML(domain.name)}</div>
+          <div class="taxonomy-domain-en">${escapeHTML(domain.subtitle)}</div>
+          <p class="taxonomy-domain-summary">${escapeHTML(domain.summary)}</p>
+          ${groupTags ? `<div class="taxonomy-domain-tags">${groupTags}</div>` : ''}
+          <div class="taxonomy-domain-metrics">
+            <span class="taxonomy-metric-pill">${escapeHTML(String(domain.node_count ?? 0))} 节点</span>
+            ${lexBadge}
+          </div>
+        </button>`;
+      }).join('');
+
+      let detailHTML = '';
+      if (!selectedDomain) {
+        const preface = taxonomy.editorial_preface && typeof taxonomy.editorial_preface === 'object'
+          ? taxonomy.editorial_preface
+          : null;
+        let prefaceHTML = '';
+        if (preface && (preface.title || (Array.isArray(preface.paragraphs) && preface.paragraphs.length))) {
+          const prefaceParagraphsHTML = (Array.isArray(preface.paragraphs) ? preface.paragraphs : [])
+            .filter(p => typeof p === 'string' && p.trim())
+            .map(p => `<p>${escapeHTML(p.trim())}</p>`)
+            .join('');
+          const principlesHTML = (Array.isArray(preface.principles) ? preface.principles : [])
+            .filter(item => item && typeof item === 'object' && (item.label || item.text))
+            .map(item => `<div class="taxonomy-principle-card">
+              <div class="taxonomy-principle-label">${escapeHTML(item.label ?? '')}</div>
+              <p class="taxonomy-principle-text">${escapeHTML(item.text ?? '')}</p>
+            </div>`)
+            .join('');
+          prefaceHTML = `<article class="taxonomy-preface-card">
+            <div class="taxonomy-explorer-eyebrow">EDITORIAL PREFACE · 编纂总序与方法论</div>
+            ${preface.title ? `<h3 class="taxonomy-preface-title">${escapeHTML(preface.title)}</h3>` : ''}
+            ${preface.subtitle ? `<p class="taxonomy-preface-subtitle">${escapeHTML(preface.subtitle)}</p>` : ''}
+            ${prefaceParagraphsHTML ? `<div class="taxonomy-preface-prose">${prefaceParagraphsHTML}</div>` : ''}
+            ${principlesHTML ? `<div class="taxonomy-principles-grid">${principlesHTML}</div>` : ''}
+          </article>`;
+        }
+        detailHTML = `${prefaceHTML}
+        <div class="taxonomy-detail-hero">
+          <div class="taxonomy-explorer-eyebrow">SELECT A DOMAIN · 择域观览</div>
+          <h3>七大专题谱系与按需辞条分片</h3>
+          <p>请点击左侧任意专题域，检视其谱系分组、核心图谱枢纽与典范个案；具备专题辞条分片的领域将在打开时按需载入并校验 SHA-256 摘要，不影响星图首屏渲染。</p>
+        </div>
+        <div class="taxonomy-bibliography">${escapeHTML(formatBibliographyNote(taxonomy))}</div>`;
+      } else {
+        const accent = safeAccent(selectedDomain.accent);
+        const discPills = (selectedDomain.disciplines ?? []).map(disc => `<span class="taxonomy-tag">${escapeHTML(disc)}</span>`).join('');
+        const intro = selectedDomain.editorial_intro && typeof selectedDomain.editorial_intro === 'object'
+          ? selectedDomain.editorial_intro
+          : null;
+        let editorialIntroHTML = '';
+        if (intro && (intro.heading || intro.epigraph_thesis || (Array.isArray(intro.paragraphs) && intro.paragraphs.length))) {
+          const introParagraphsHTML = (Array.isArray(intro.paragraphs) ? intro.paragraphs : [])
+            .filter(p => typeof p === 'string' && p.trim())
+            .map(p => `<p>${escapeHTML(p.trim())}</p>`)
+            .join('');
+          const lensesHTML = (Array.isArray(intro.lenses) ? intro.lenses : [])
+            .filter(tag => typeof tag === 'string' && tag.trim())
+            .map(tag => `<span class="taxonomy-lens-pill">${escapeHTML(tag.trim())}</span>`)
+            .join('');
+          editorialIntroHTML = `<details class="taxonomy-editorial-card" open>
+            <summary class="taxonomy-editorial-summary">
+              <div>
+                <div class="taxonomy-explorer-eyebrow">METHODOLOGICAL INTRO · 导言与方法论总论</div>
+                <h4 class="taxonomy-editorial-heading">${escapeHTML(intro.heading || `${selectedDomain.name}导言`)}</h4>
+              </div>
+              <span class="taxonomy-editorial-toggle" aria-hidden="true">
+                <span class="is-open">收起 ▴</span>
+                <span class="is-closed">展开导言 ▾</span>
+              </span>
+            </summary>
+            <div class="taxonomy-editorial-body">
+              ${intro.epigraph_thesis ? `<blockquote class="taxonomy-editorial-epigraph" style="border-left-color:${accent}">${escapeHTML(intro.epigraph_thesis)}</blockquote>` : ''}
+              ${introParagraphsHTML ? `<div class="taxonomy-editorial-prose">${introParagraphsHTML}</div>` : ''}
+              ${lensesHTML ? `<div class="taxonomy-editorial-lenses"><span class="taxonomy-editorial-lenses-label">理论视域</span>${lensesHTML}</div>` : ''}
+            </div>
+          </details>`;
+        }
+        const groupsHTML = (selectedDomain.groups ?? []).map(group => {
+          const nodeIds = [...new Set([...(group.hub_ids ?? []), ...(group.featured_nodes ?? [])])];
+          const chipsHTML = nodeIds.map(id => {
+            const info = taxonomyNodeLabel(id);
+            return `<button type="button" class="taxonomy-node-chip" data-taxonomy-node="${escapeHTML(id)}">
+              <small>${escapeHTML(info.layer)}</small>
+              <span>${escapeHTML(info.title)}</span>
+            </button>`;
+          }).join('');
+          const catsHTML = (group.lexicon_categories ?? []).map(cat => `<span class="taxonomy-tag">${escapeHTML(cat)}</span>`).join('');
+          const chapterIntroHTML = typeof group.chapter_intro === 'string' && group.chapter_intro.trim()
+            ? `<div class="taxonomy-group-lead" style="border-left-color:${accent}">${escapeHTML(group.chapter_intro.trim())}</div>`
+            : '';
+          return `<article class="taxonomy-group-card">
+            <h4>${escapeHTML(group.title)}</h4>
+            ${chapterIntroHTML}
+            <p>${escapeHTML(group.description)}</p>
+            ${catsHTML ? `<div class="taxonomy-domain-tags" style="margin-top:6px">${catsHTML}</div>` : ''}
+            ${chipsHTML ? `<div class="taxonomy-node-chips">${chipsHTML}</div>` : ''}
+          </article>`;
+        }).join('');
+
+        let lexiconSectionHTML = '';
+        if (!selectedDomain.lexicon_shard) {
+          lexiconSectionHTML = `<section class="taxonomy-lexicon-panel">
+            <div class="taxonomy-lexicon-head">
+              <div>
+                <div class="taxonomy-explorer-eyebrow">LEXICON SHARD · 专题辞条分片</div>
+                <h4 class="text-sm font-semibold text-[#f5eedc] mt-0.5">规划中波次 · 暂未载入分片</h4>
+              </div>
+              <span class="taxonomy-metric-pill is-planned">后续波次编纂</span>
+            </div>
+            <p class="syzygy-reference" style="margin-top:8px">本专题域的辞条分片尚未发布；您仍可通过上方「谱系分组」点击核心节点芯片直接跳转星图与卷宗研读。</p>
+          </section>`;
+        } else {
+          const shardState = appState.taxonomyShardState.get(selectedDomain.id);
+          const loadedEntries = shardState?.data?.entries ?? [];
+          const rawCategories = selectedDomain.lexicon_shard.categories?.length
+            ? selectedDomain.lexicon_shard.categories
+            : [...new Set(loadedEntries.map(item => item.category).filter(Boolean))];
+          const catChipsHTML = rawCategories.length
+            ? `<div class="taxonomy-category-bar" role="group" aria-label="辞条分类筛选">
+                <button type="button" class="taxonomy-cat-chip" data-taxonomy-cat="" aria-pressed="${appState.taxonomyLexiconCategory === ''}">全部</button>
+                ${rawCategories.map(cat => `<button type="button" class="taxonomy-cat-chip" data-taxonomy-cat="${escapeHTML(cat)}" aria-pressed="${appState.taxonomyLexiconCategory === cat}">${escapeHTML(cat)}</button>`).join('')}
+              </div>`
+            : '';
+          const shaShort = (shardState?.data?.sha256 || selectedDomain.lexicon_shard.sha256 || '').slice(0, 12);
+          lexiconSectionHTML = `<section class="taxonomy-lexicon-panel">
+            <div class="taxonomy-lexicon-head">
+              <div>
+                <div class="taxonomy-explorer-eyebrow">LEXICON SHARD · 专题辞条分片</div>
+                <h4 class="text-sm font-semibold text-[#f5eedc] mt-0.5">${escapeHTML(selectedDomain.name)} · 辞条检索</h4>
+              </div>
+              <div class="flex items-center gap-1.5">
+                ${shaShort ? `<span class="taxonomy-tag font-mono-tech">SHA ${escapeHTML(shaShort)}</span>` : ''}
+                <span class="taxonomy-metric-pill" data-taxonomy-lexicon-count>${escapeHTML(String(selectedDomain.lexicon_count ?? selectedDomain.lexicon_shard.count))} 辞条</span>
+              </div>
+            </div>
+            <div class="taxonomy-lexicon-controls">
+              <input id="taxonomy-lexicon-search" class="syzygy-portal-search" type="search" value="${escapeHTML(appState.taxonomyLexiconQuery)}" placeholder="检索辞条、别名、地域、时代或释义..." autocomplete="off">
+              ${catChipsHTML}
+            </div>
+            <div class="taxonomy-lexicon-list" data-taxonomy-lexicon-list></div>
+            <div class="taxonomy-bibliography">${escapeHTML(formatBibliographyNote(taxonomy))}</div>
+          </section>`;
+        }
+
+        detailHTML = `<div class="taxonomy-detail-hero" style="border-left-color:${accent}">
+          <div class="taxonomy-explorer-eyebrow">${String(selectedDomain.order ?? '').padStart(2, '0')} · ${escapeHTML(selectedDomain.english_name)}</div>
+          <h3>${escapeHTML(selectedDomain.name)}</h3>
+          <div class="taxonomy-domain-tags" style="margin-top:6px">
+            <span class="taxonomy-metric-pill">${escapeHTML(String(selectedDomain.node_count ?? 0))} 节点</span>
+            ${discPills}
+            ${selectedDomain.sidera_id ? `<button type="button" class="taxonomy-node-chip" data-taxonomy-sidera="${escapeHTML(selectedDomain.sidera_id)}">定位玄象星群 ↗</button>` : ''}
+          </div>
+          <p>${escapeHTML(selectedDomain.summary)}</p>
+        </div>
+        ${editorialIntroHTML}
+        <section>
+          <div class="taxonomy-explorer-eyebrow mb-2">SPECTRAL GROUPS · 谱系分组与核心节点</div>
+          <div class="taxonomy-group-grid">${groupsHTML}</div>
+        </section>
+        ${lexiconSectionHTML}`;
+      }
+
+      taxonomyExplorer.innerHTML = `${headHTML}
+        <div class="taxonomy-explorer-body">
+          <div class="taxonomy-domain-list astro-scroll">${domainCardsHTML}</div>
+          <div class="taxonomy-detail-pane astro-scroll">${detailHTML}</div>
+        </div>`;
+
+      taxonomyExplorer.querySelector('#btn-close-taxonomy')?.addEventListener('click', () => setScopeTab(appState.lastNonTaxonomyScope || 'all'));
+      taxonomyExplorer.querySelectorAll('[data-taxonomy-domain]').forEach(btn => {
+        btn.addEventListener('click', () => openTaxonomyDomain(btn.dataset.taxonomyDomain));
+      });
+      taxonomyExplorer.querySelectorAll('[data-taxonomy-node]').forEach(btn => {
+        btn.addEventListener('click', () => navigateToTaxonomyNode(btn.dataset.taxonomyNode));
+      });
+      taxonomyExplorer.querySelector('[data-taxonomy-sidera]')?.addEventListener('click', btnEvent => {
+        const sideraId = btnEvent.currentTarget.dataset.taxonomySidera;
+        setScopeTab(appState.lastNonTaxonomyScope || 'all');
+        switchDimension('sidera', false);
+        const focusBtn = document.querySelector(`[data-v3-focus="${sideraId}"]`);
+        focusBtn?.click();
+      });
+
+      if (selectedDomain?.lexicon_shard) {
+        const searchEl = taxonomyExplorer.querySelector('#taxonomy-lexicon-search');
+        searchEl?.addEventListener('input', () => {
+          appState.taxonomyLexiconQuery = searchEl.value;
+          renderTaxonomyLexiconEntries(selectedDomain);
+        });
+        taxonomyExplorer.querySelectorAll('[data-taxonomy-cat]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const nextCat = btn.dataset.taxonomyCat ?? '';
+            appState.taxonomyLexiconCategory = appState.taxonomyLexiconCategory === nextCat ? '' : nextCat;
+            taxonomyExplorer.querySelectorAll('[data-taxonomy-cat]').forEach(chip => {
+              chip.setAttribute('aria-pressed', String((chip.dataset.taxonomyCat ?? '') === appState.taxonomyLexiconCategory));
+            });
+            renderTaxonomyLexiconEntries(selectedDomain);
+          });
+        });
+        renderTaxonomyLexiconEntries(selectedDomain);
+      }
+    }
+
+    function setScopeTab(nextScope) {
+      const scope = nextScope || 'all';
+      if (scope !== 'taxonomy') appState.lastNonTaxonomyScope = scope;
+      appState.scopeTab = scope;
+      document.querySelectorAll('.scope-tab').forEach(tab => {
+        tab.classList.toggle('active', tab.getAttribute('data-scope') === scope);
+      });
+      if (taxonomyDockBtn) {
+        taxonomyDockBtn.setAttribute('aria-expanded', String(scope === 'taxonomy'));
+      }
+      if (scope === 'volumes' && appState.dimension !== 'omnia') switchDimension('omnia');
+      if (scope === 'taxonomy') {
+        setObservatoryPanel('');
+        void ensureTaxonomyData();
+        renderTaxonomyExplorer();
+      } else if (taxonomyExplorer) {
+        taxonomyExplorer.hidden = true;
+      }
+      appState.activeVolId = null;
+      appState.activeDiscId = null;
+      renderLeftAtlasTree();
+      updateHighlightsAndFilters();
+      fullAtlas.updatePoints();
+    }
+
+    document.querySelectorAll('.scope-tab').forEach(tab => {
+      tab.addEventListener('click', () => setScopeTab(tab.getAttribute('data-scope')));
+    });
+    taxonomyDockBtn?.addEventListener('click', () => {
+      setScopeTab(appState.scopeTab === 'taxonomy' ? (appState.lastNonTaxonomyScope || 'all') : 'taxonomy');
     });
 
     // Collapsible Left & Right Panels + Dynamic Drawer-Aware Camera Framing
@@ -2498,7 +2982,12 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       setObservatoryPanel('');
     });
     document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') setObservatoryPanel('');
+      if (event.key === 'Escape') {
+        setObservatoryPanel('');
+        if (appState.scopeTab === 'taxonomy') {
+          setScopeTab(appState.lastNonTaxonomyScope || 'all');
+        }
+      }
     });
     for (const [drawer,id] of [[leftDrawer,'engraving-left-heading'],[rightDrawer,'engraving-right-heading']]) {
       const heading=drawer.querySelector(':scope > div');
@@ -2545,6 +3034,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       if (!collapsed && window.innerWidth < 768 && !rightDrawer.classList.contains('drawer-right-hidden')) {
         setRightDrawerCollapsed(true);
       }
+      document.body.dataset.leftOpen = String(!collapsed);
       leftDrawer.classList.toggle('drawer-left-hidden', collapsed);
       leftDrawer.inert = collapsed;
       btnOpenLeft.classList.toggle('hidden', !collapsed);
@@ -3010,6 +3500,9 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         clearPersonalPortal(); fullAtlas.clearNeighborhood(); renderDualPaneSyzygyCard(null);
       }
       appState.scopeTab='supplement';
+      appState.lastNonTaxonomyScope='supplement';
+      if (taxonomyExplorer) taxonomyExplorer.hidden = true;
+      if (taxonomyDockBtn) taxonomyDockBtn.setAttribute('aria-expanded', 'false');
       document.querySelectorAll('.scope-tab').forEach(tab=>tab.classList.toggle('active',tab.dataset.scope === 'supplement'));
       fullAtlas.refreshFilters(); updateHighlightsAndFilters(); renderLeftAtlasTree(); updateClassicLink(); syncViewURL();
       appState.needsBridgeRebuild=true;
@@ -3215,6 +3708,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     requestAnimationFrame(animateLoop);
     setTimeout(() => fullAtlas.start().then(() => {
       renderLeftAtlasTree();
+      if (appState.scopeTab === 'taxonomy') renderTaxonomyExplorer();
       if (appState.selectedBridge) renderDualPaneSyzygyCard(appState.selectedBridge);
       if (!appState.restoringDeepLink || routeSequence) return;
       const storyId = initial.get('story');

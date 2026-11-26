@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "domain_id": "ghost_rituals_nuo",
+  "title": "三部参考书的增补与对读",
+  "entries": [
+    {
+      "id": "lex_nuo_dict_yijihui",
+      "hub_id": "motif_cn_nuo_funeral_liminal_rites",
+      "term": "义祭会",
+      "aliases": [
+        "義祭會",
+        "义祭坛"
+      ],
+      "category": "祭祀组织与社区丧俗",
+      "region": "词典记浙北；浦江地方资料为另一地域实例",
+      "era": "民俗资料记载年代待进一步核定",
+      "summary": "《中国鬼文化大辞典》将义祭会列作浙江北部一种祭祀组织，并提及由会众管理祭祀与会产。浦江地方文献也记有祭奠无主亡者的义祭会和义祭坛；两地记录可并列阅读，不能仅凭名称相同认定制度完全一致。",
+      "primary_sources": [
+        {
+          "citation": "《浦江风俗专辑》，“祭祀”相关段落，浦江县政府公开扫描本，印页 90。",
+          "url": "https://www.pj.gov.cn/module/download/downfile.jsp?classid=0&filename=154ad8c6e93141d2b2c635b23a6f3926.pdf"
+        }
+      ],
+      "secondary_ref": "徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994（年份据后记；印页 641，PDF 第 756 页）。"
+    }
+  ]
+}

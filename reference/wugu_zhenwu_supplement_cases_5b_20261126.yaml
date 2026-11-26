@@ -1,0 +1,575 @@
+# Original simplified Chinese academic essays grounded in public-domain primary texts, statutory codes, museum catalogues, and open scholarship.
+# All map coordinates are historical, archaeological, or regional cultural reference points, not assertions of literal supernatural efficacy.
+records:
+  - id: case_cn_qin_zuchu_wen_curse
+    title: 战国秦地｜《诅楚文》石刻盟誓与巫咸神前诅楚考实
+    aliases:
+      - 诅楚文
+      - 秦祀巫咸神文
+      - 大沉厥湫诅楚文
+      - 亚驼诅楚文
+      - Qin Curse Against Chu
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location:
+      lat: 34.5210
+      lng: 107.3950
+      precision: city
+      location_name: 中国陕西宝鸡凤翔（古雍州与北宋《诅楚文》石刻出土旧域）
+      culture_region: 中国 · 关中秦国石刻与先秦盟誓史料区
+    location_note: 北宋嘉祐年间在陕西凤翔府开元寺及渭水畔先后发现《诅楚文》三通石刻（或据传为宋代传拓复刻本），坐标取今陕西凤翔作秦故地文献参照点。
+    temporal:
+      year_start: -313
+      year_end: 1064
+      era_label: 战国秦惠文王后期（约前 313–前 312 年）盟誓刻石至北宋欧阳修《集古录》考订时期
+      uncertainty_note: 《诅楚文》成文于战国秦楚交兵之际（学界多系于秦惠文王伐楚前夕，前 313–前 312 年），原石已佚，传世文本依赖北宋欧阳修《集古录》及《绛帖》《汝帖》刻本保存。
+    paragraphs:
+      - 《诅楚文》是中国金石学与古代巫祝文献史上年代最早的实物型政治诅咒盟书之一。现存铭文分向“巫咸”“大沈久湫”“亚驼”三神申诉祈告，北宋嘉祐年间先后现世于陕西凤翔等地，经欧阳修收录于《集古录跋尾》、苏轼咏于《凤翔八观》并详加考释。全篇以古拙石鼓字体式的秦篆勒石，陈述昔日秦穆公与楚成王“率诸侯而会，以百世不绝之盟”刻玉沉璧为信，指控当代楚王熊相倍十八世之诅盟、率诸侯之兵以临加秦境。
+      - 值得注意的宗教行为学细节在于，铭文并未停留在口头咒骂，而是依托一套高度程序化的“神明诉讼”礼仪：秦王自称以“吉玉宣璧”献祭于巫咸、水神与山川大神之前，逐条举证楚方毁约夺地、内乱败德之罪，请神祇降罚“使之底败军旅、扑灭其社稷”，将外交背盟与战争动员转化为神前裁决的合法诉求。北宋欧阳修已敏锐比勘《史记·楚世家》，发现铭文所斥“熊相”并不直见于司马迁所记楚王世系，从而开启长达千年的古文字释读与历史人名互证辩论。
+      - 当代出土文献与先秦礼制研究指出，与侯马盟书“埋牲书辞于坎”同源，《诅楚文》以石刻沉盟的形式把早期“以巫祝制敌”的巫术习惯纳入国家军政制度，折射出战国后期“巫蛊咒诅”在降为汉唐私室禁律之前，曾作为国与国交战前公开执行的宗庙仪式而存在。
+    sources:
+      - citation: 《诅楚文》（巫咸神文、大沈久湫神文、亚驼神文），维基文库金石传本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E8%A9%9B%E6%A5%9A%E6%96%87'
+        locator: 三体石刻全文“有秦嗣王敢用吉玉宣璧，使其宗祝邵馨布忠告于不显大神巫咸”段落
+      - citation: 〔北宋〕欧阳修撰，《集古录跋尾》，维基文库四库全书校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E9%9B%86%E5%8F%A4%E9%8C%84%E8%B7%8B%E5%B0%BE'
+        locator: 〈秦祀巫咸神文〉凤翔出土著录及“熊相”与《史记》世系比勘
+      - citation: 〔西汉〕司马迁撰，《史记·卷四十·楚世家》，维基文库二十四史校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E5%8F%B2%E8%A8%98/%E5%8D%B7040'
+        locator: 卷四十楚怀王、顷襄王世系及秦楚丹阳、蓝田之战史料对照
+    compare:
+      - corpus_cn_imperial_wugu_statutes
+      - theory_sympathetic_contagious_magic_cn
+      - case_cn_han_wugu_91bce
+      - case_cn_tang_code_gu_statute
+    motifs:
+      - motif_cn_wugu_poison_complex
+      - motif_cn_yansheng_talisman_seal
+      - index_ocm_754
+    bridge:
+      entry: SCR-2-0003
+      cluster: sid_witch
+      trail: all
+      label: 古石刻铭文与世系互证方法
+      rationale: 将《诅楚文》秦篆铭文与《集古录》《史记·楚世家》对“熊相”名号的比勘，同古文字字形演变与历史文献互证释读规范并置阅读。
+
+  - id: case_cn_tang_code_gu_statute
+    title: 历代刑律｜唐宋至明清“造畜蛊毒”与“采生折割”双轨禁律
+    aliases:
+      - 造畜蛊毒律
+      - 造厌魅律
+      - 采生折割人
+      - 唐明清巫蛊法制
+      - Imperial Gu Statutes
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location:
+      lat: 34.2650
+      lng: 108.9540
+      precision: culture_region
+      location_name: 中国陕西西安与北京（唐长安至明清京师刑部成文法典颁行中心）
+      culture_region: 中国 · 历代成文法典与巫蛊禁律史料区
+    location_note: 唐永徽律定本于长安，明清律典由南京、北京刑部颁行天下并涵盖州县司法复核，坐标取长安遗址作历代法制主轴参照。
+    temporal:
+      year_start: 653
+      year_end: 1740
+      era_label: 唐永徽四年《唐律疏议》（653 年）至清乾隆五年《大清律例》（1740 年）时期
+      uncertainty_note: 《唐律疏议》卷十八定立“造畜蛊毒”“厌魅”，明洪武《大明律》增入“采生折割人”重条并归入十恶不道，清乾隆五年《大清律例》续以附例规范边省州县复审。
+    paragraphs:
+      - 自唐宋至明清，帝国成文法典对“巫蛊”与“毒蛊”始终维持高度戒备与跨代连续性，在《唐律疏议》《大明律》及《大清律例》中将其列为十恶之“不道”重罪。唐律《贼盗》卷十八明文规定：“诸造畜蛊毒及教令者，绞”，并追究同居亲属与里正坊正不纠之责；《大明律》与《大清律例》进一步将“造畜蛊毒杀人”升格为斩立决、财产入官及妻子同居人口流放二千里，并在“谋杀”“贼盗”旁增立专门严惩毁残幼童以行厌魅的“采生折割人”条（凌迟处死）。
+      - 值得注意的是，尽管国家成文法对“蛊毒”与“厌魅”保持严厉高压，州县基层司法实践却长期存在“严律与慎勘”的双轨张力。清代《大清律例》附例及《洗冤录》系司法验尸手册在实务中反复告诫地方官吏：审理蛊毒或妖术控告必须详查实据、核验毒药实物与致死因果，严防奸民借“蓄蛊”“厌魅”诬告陷害良民或夺产报复；而在云贵桂湘苗疆与边远乡里，民间却仍常依据习惯法由乡老、宗族或寨规私下调停、驱逐乃至私刑处置被怀疑放蛊之人。
+      - 当代中国法制史研究指出，将唐明清律典正条与乾隆三十三年（1768 年）江南“叫魂”大案的刑部复核奏折对读，可清晰辨析两条并行不悖的线索：朝廷既将地下“造畜、厌魅、剪发造符”视作潜在颠覆纲常与地方治安的威胁，又不得不在司法核验层面防范无据妖言引起的冤狱失控。这种制度性的张力，正是理解古代中国民间巫蛊恐慌为何反复涌现却又屡屡受阻于高等司法复审的关键所在。
+    sources:
+      - citation: 〔唐〕长孙无忌等撰（653 年），《唐律疏议·卷第十八·贼盗》，维基文库校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E5%94%90%E5%BE%8B%E7%96%8F%E8%AD%B0/%E5%8D%B7%E7%AC%AC%E5%8D%81%E5%85%AB'
+        locator: 卷十八“造畜蛊毒”“憎恶造厌魅”正条与疏议注疏
+      - citation: 《大明律·刑律》，维基文库明律校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E5%A4%A7%E6%98%8E%E5%BE%8B'
+        locator: 《刑律·人命·造畜蛊毒杀人》及《采生折割人》条文
+      - citation: 《大清律例》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/da-qing-lv-li'
+        locator: 《刑律·人命·造畜蛊毒杀人》《采生折割人》及历朝定例
+      - citation: 《大清律例》，维基文库四库及通行本校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E5%A4%A7%E6%B8%85%E5%BE%8B%E4%BE%8B'
+        locator: 清代造畜蛊毒与巫师左道禁例全篇对照
+    compare:
+      - corpus_cn_imperial_wugu_statutes
+      - corpus_cn_zhubing_gu_toxicology
+      - mech_gu_sorcery_social_scapegoat
+      - theory_poison_panic_projection
+      - case_china_soulstealers_1768
+      - case_cn_sui_dugu_tuo_maogui
+    motifs:
+      - motif_cn_wugu_poison_complex
+      - index_ocm_754
+    bridge:
+      entry: HIS-6-0006
+      cluster: sid_witch
+      trail: all
+      label: 律令严刑与州县司法档案沉默
+      rationale: 对比唐明清成文法中严惩“造畜蛊毒”的重刑条文与州县民间习惯法私下调处之间的落差，从档案保存制度与史料可见性视角检视巫蛊冤狱记录。
+
+  - id: case_cn_kunming_gungu_egg_rite
+    title: 云南滇中｜昆明与西南“滚蛋收魂”验蛊祈禳及非常意识状态民俗志
+    aliases:
+      - 滚蛋收魂
+      - 滚蛊
+      - 滚鸡蛋验蛊
+      - 滇中叫魂祈禳
+      - Egg Rolling Divination
+    genre: memorate
+    credibility_tier: B
+    note_kind: legend
+    location:
+      lat: 25.0406
+      lng: 102.7123
+      precision: culture_region
+      location_name: 中国云南昆明及滇中高原 · 西南“滚蛋收魂”民俗采集区
+      culture_region: 中国 · 云南滇中及西南民族民俗志区
+    location_note: “滚鸡蛋”除祟验蛊及叫魂收惊在昆明、滇中城乡及云贵桂西南多民族村落均有记述，坐标取昆明盆地作西南田野民俗文化参照点。
+    temporal:
+      year_start: 1920
+      year_end: 2015
+      era_label: 近现代西南民俗调查记录至当代医学人类学考察时期
+      uncertainty_note: 借煮熟鸡蛋、银针或稻米作体表滚动与占卜的习俗散见于近现代地方风俗志与民族医药田野笔记，在西南民间兼有收惊与辨识“中蛊”双重用途。
+    paragraphs:
+      - 在云南昆明及滇中、黔桂多民族交融的城乡民俗中，流行一种兼具“收魂驱惊”与“测蛊辨邪”双重意涵的体表仪轨——“滚蛋”（或称滚鸡蛋、滚蛊）。当幼童夜啼惊厥、成人突发昏眩、胃痛胸闷或陷入神情呆滞的恍惚状态时，家人或民间师婆常煮熟一枚完整去壳（或带壳）热鸡蛋，有时内嵌一枚银元或银簪，自受惊者额头、胸腹至四肢反复滚动念咒，随即将蛋剥开或剖半查验：若见蛋黄表面出现暗青发黑斑点或银色发暗，便归判为“中了蛊气、撞了邪煞”或“丢了魂”，随后将蛋弃于路隅以示送走灾厄。
+      - 从物质化学与临床医学的角度加以拆解，热蛋在体表滚压首先相当于一种温和的局部热敷按摩，能在紧张痉挛或受寒腹痛时提供暂时的舒适与安抚；而剥开熟蛋常见蛋黄表层呈青灰暗色，本质上是蛋白质含硫氨基酸（如半胱氨酸）在高温久煮过程中释放硫化氢，与蛋黄中的铁离子结合生成硫化亚铁的寻常厨房化学反应，若再裹入银器，硫化氢亦同样使银表发黑。传统社会不知其化学成因，遂将正常硫化变黑视作“吸出体内蛊毒或邪气”的可见铁证。
+      - 在医学人类学与跨文化精神医学视野里，被西南“滚蛋”和各地“收惊叫魂”仪轨所指涉的晕厥、抽搐、剧烈惊恐发作或解离性失神状态，均属于受文化语言编码的“文化绑定非常意识状态（ASC）”。亲友围护与按压咒念虽能借仪式的群体在场感提供显著的情绪安慰与社会支持，却也容易把亟待急诊排查的急性传染病、脑血管异常或中毒症状延误成“冲煞中蛊”。
+    sources:
+      - citation: 维基百科，〈收惊〉（民间叫魂、摸米与滚蛋收惊民俗比较）。
+        type: encyclopedia
+        url: 'https://zh.wikipedia.org/wiki/%E6%94%B6%E9%A9%9A'
+        locator: 民间收惊仪轨、物象占验与社会心理抚慰机制概述
+      - citation: Wikipedia, "Culture-bound syndrome".
+        type: encyclopedia
+        url: 'https://en.wikipedia.org/wiki/Culture-bound_syndrome'
+        locator: 医学人类学中的文化苦痛概念（cultural concepts of distress）与解离躯体归因
+      - citation: H. Y. Feng & J. K. Shryock, "The Black Magic in China Known as Ku", Journal of the American Oriental Society 55(1), 1935, pp. 1–30.
+        type: peer_reviewed
+        url: 'https://doi.org/10.2307/594297'
+        doi: '10.2307/594297'
+        locator: 西南地区放蛊恐惧、银器验毒俗信与民族志记录评析
+    compare:
+      - theory_altered_states_wugu_psychiatry
+      - mech_gu_sorcery_social_scapegoat
+      - case_cn_xiangxi_luodong_nu_ritual
+      - case_cn_yongning_na_0004928
+    motifs:
+      - motif_cn_wugu_poison_complex
+      - motif_cn_zhuyou_incantation_craft
+      - index_ocm_776
+    bridge:
+      entry: HEA-075
+      cluster: sid_hag
+      trail: all
+      label: 滚蛋收魂与惊恐发作评估
+      rationale: 将民间用热蛋滚压体表、看蛋黄硫化黑斑诊断“中蛊惊魂”的仪轨，同现代医学对惊恐样发作及突发躯体不适的科学评估与安全求助指南并读。
+
+  - id: case_cn_fengshui_yansheng_dispute
+    title: 闽粤与江南｜明清州县“风水厌胜讼案”与邻里镇物斗法司法档案
+    aliases:
+      - 风水厌胜讼案
+      - 斗煞厌胜
+      - 镇物涉讼
+      - 屋脊冲煞诉讼
+      - Fengshui Litigation
+    genre: historical_archive
+    credibility_tier: B
+    note_kind: history
+    location:
+      lat: 24.4798
+      lng: 118.0894
+      precision: culture_region
+      location_name: 中国福建厦门与闽粤赣州县 · 明清民间风水厌胜涉讼档案区
+      culture_region: 中国 · 闽粤与江南州县诉讼文献区
+    location_note: 明清地方判牍及德·格罗特（J. J. M. de Groot）19 世纪末闽南田野民族志集中记载邻里因墙脊、照妖镜与墓穴风水“厌胜”涉讼之案，坐标取福建厦门作东南方志参照区。
+    temporal:
+      year_start: 1644
+      year_end: 1911
+      era_label: 明清地方州县判牍至 19 世纪末闽南民俗田野调查时期
+      uncertainty_note: 虽然《大清律例》并未把堪舆风水列为独立实体法，清代各地衙门仍屡屡受理因修造墙檐、树碑及悬镜厌胜引爆的邻里土地与房屋诉讼。
+    paragraphs:
+      - 在明清至清末的乡土社会里，宅舍修造与墓地迁葬往往不仅是土木产权之争，更屡屡演变为围绕“厌胜压脉”的激烈司法诉讼。荷兰汉学家德·格罗特（J. J. M. de Groot）在《中国的宗教体系》第三卷《坟墓与风水》及第六卷中详记他在福建厦门、泉州一带目睹的实例：一旦某户新筑高墙的飞檐尖角直指邻家屋顶、大门改向对准对门巷口，或在山脊竖石立碑，邻里便可能指控其故意施放“形煞”或暗行厌胜以损人丁财气；诉讼无果者甚至各自在门楣挂起更大的八卦镜、剪刀、兽牌吞口或反向竖竿，形成街巷“斗煞”。
+      - 在清代地方州县的司法判牍（如官箴书与地方档案）中，地方官面对此类“风水厌胜”呈词往往颇感棘手：一方面朝廷正统律例并不承认风水学说具有强制效力，另一方面若一味斥为荒诞不经而草率驳回，极易激化宗族械斗或诱发夜间毁墙拆碑的刑事案件。因此州县官常以“不涉妖言、兼顾乡情”为原则，勘验屋檐排水、采光侵界与通行阻塞等实体邻接损害，再责令修低墙头、改换门向或令乡约居中画界，将“厌胜恐惧”转译为可调节的邻接不动产秩序。
+      - 把这批地方讼案同乾隆三十三年（1768 年）江浙“叫魂”巫术恐慌对照，可以发现极富启发性的制度反差：涉及皇权或异端邪教的“削发藏符”会引发自上而下的跨省搜捕，而日常邻里间针对墙脊、镜煞与坟茔的“风水厌胜讼案”，则被基层司法体系稳健地约束在民事和解、地界勘丈与礼俗缓冲之中。
+    sources:
+      - citation: 'J. J. M. de Groot, The Religious System of China, Vol. 3: The Grave & Fung-shui, E. J. Brill, Leiden, 1897.'
+        type: academic_monograph
+        url: 'https://archive.org/details/in.ernet.dli.2015.69779'
+        locator: 闽南乡村与城市围绕屋脊、墙向及墓地风水的厌胜争端与涉讼实例
+      - citation: 'J. J. M. de Groot, The Religious System of China, Vol. 6: The War Against Spectres, E. J. Brill, Leiden, 1910.'
+        type: academic_monograph
+        url: 'https://archive.org/details/religioussystemofchina06degruoft'
+        locator: 邻里悬镜、符牌斗煞及民间化解厌胜程序记述
+      - citation: Wikipedia, "Fengshui".
+        type: encyclopedia
+        url: 'https://en.wikipedia.org/wiki/Fengshui'
+        locator: 传统堪舆边界规范与历史土地建筑纠纷研究综述
+    compare:
+      - corpus_cn_imperial_wugu_statutes
+      - mech_zhenwu_symbolic_materialization
+      - mech_apotropaic_boundary_seal
+      - case_china_soulstealers_1768
+      - case_cn_house_taiji_bagua_mirror
+      - case_cn_kinmen_qionglin_fengshiye
+    motifs:
+      - motif_cn_yansheng_talisman_seal
+      - motif_cn_zhenwu_material_taxonomy
+      - index_ocm_754
+    bridge:
+      entry: SOC-4-0007
+      cluster: sid_witch
+      trail: all
+      label: 屋脊厌胜与邻里空间外部性
+      rationale: 把明清州县关于飞檐冲煞、悬镜斗法与遮挡地脉的风水诉讼档案，与现代城市社会学“土地使用分区与邻里效应”中的空间外部性管理对读。
+
+  - id: case_cn_mawangdui_zajin_love_charm
+    title: 西汉长沙｜马王堆三号墓木简《杂禁方》魅合厌镇方术文献
+    aliases:
+      - 杂禁方
+      - 马王堆杂禁方
+      - 魅合方术
+      - 西汉厌镇木简
+      - Mawangdui Za Jin Fang
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location:
+      lat: 28.2080
+      lng: 113.0250
+      precision: city
+      location_name: 中国湖南长沙（马王堆三号汉墓出土遗址）
+      culture_region: 中国 · 湖南长沙秦汉简帛出土区
+    location_note: 西汉《杂禁方》木简 1973 年出土于湖南省长沙市芙蓉区马王堆三号汉墓（约前 168 年下葬），坐标取马王堆汉墓遗址精确参照点。
+    temporal:
+      year_start: -200
+      year_end: -168
+      era_label: 西汉初期（前 168 年入葬封存）马王堆三号汉墓木简时期
+      uncertainty_note: 马王堆三号墓墓主下葬纪年明确为汉文帝前元十二年（前 168 年），《杂禁方》共十一支木简，与《天下至道谈》同卷收贮，写定于前 2 世纪初以前。
+    paragraphs:
+      - 1973 年于湖南长沙马王堆三号汉墓出土的木简《杂禁方》，是迄今所见年代最早、未经后世传抄篡改的中国实用厌胜与人际魅合方术第一手档案。全篇虽仅十一枚木简、寥寥百余字，却毫不掩饰地记载了西汉初年社会下层乃至贵族私宅流通的法术配方，内容涵盖“令夫妻相爱”“令男女相悦”“避他人怨恶”“止小儿夜啼”以及防犬吠、止梦魇与取门限之木、雄鸡羽翼等操作。
+      - 其中最引人瞩目的“魅合”之方（如用雌雄鸡羽或取男女双履之底书其姓名、以特定方向佩带），直观呈现了先秦两汉巫术的核心运行规则——借由贴身衣物（履底）、门槛木屑（空间边界物质）与姓名文字书写建立“接触”与“象征”关联，以期遥控他人情感归附或平息家庭口角；同墓另出的帛书《五十二病方》亦包含大量“祝由”“禹步”与以槐木、桃弓治疮疡的“禁咒”条目，印证汉代巫术与方技医疗本就共享一套物质与言语交感框架。
+      - 历史学者（如唐纳德·哈珀《早期中国医学文献》）指出，将《杂禁方》这批战国秦汉地下真本与《汉书》所载后世宫廷“巫蛊桐人”并读，可看清中国古代厌胜术的完整谱系：在严酷宫廷政治将其斥为“诅咒大逆”之前，取名书履、借物求和与厌梦避恶原本广泛植根于民间家庭关系协调、婚姻稳固焦虑与日常起居防御之中。
+    sources:
+      - citation: 'Donald Harper, Early Chinese Medical Literature: The Mawangdui Medical Manuscripts, Kegan Paul International, 1998.'
+        type: academic_monograph
+        url: 'https://archive.org/details/early-chinese-medical-literature-mawangdui-manuscripts-donald-harper'
+        locator: 马王堆三号墓木简《杂禁方》（Za jin fang）全篇英译、文本校注与方术谱系分析
+      - citation: 维基百科，〈马王堆汉墓〉。
+        type: encyclopedia
+        url: 'https://zh.wikipedia.org/wiki/%E9%A6%AC%E7%8E%8B%E5%A0%86%E6%BC%A2%E5%A2%93'
+        locator: 三号汉墓前 168 年纪年、简帛医药方术典籍发掘概况
+      - citation: Wikipedia, "Mawangdui Silk Texts".
+        type: encyclopedia
+        url: 'https://en.wikipedia.org/wiki/Mawangdui_Silk_Texts'
+        locator: 马王堆出土简帛医书、房中书及方术文本组合档案
+    compare:
+      - theory_sympathetic_contagious_magic_cn
+      - corpus_cn_imperial_wugu_statutes
+      - case_cn_han_wugu_91bce
+      - case_cn_han_mawangdui_feiyi_soul_banner
+    motifs:
+      - motif_cn_yansheng_talisman_seal
+      - motif_cn_zhuyou_incantation_craft
+      - index_ocm_754
+    bridge:
+      entry: SCR-4-0001
+      cluster: sid_witch
+      trail: all
+      label: 汉墓简帛载体与方术原件保存
+      rationale: 结合马王堆木简《杂禁方》在封闭墓室中的千年存留，与“书写材料与文本保存”研究对照，认识出土简帛如何纠正传世正史对早期民间巫术的单一化叙事。
+
+  - id: case_cn_yunnan_wamao_roof_guardian
+    title: 云南滇中｜传统民居屋脊陶塑“瓦猫”镇宅吞煞民俗
+    aliases:
+      - 瓦猫
+      - 镇宅瓦猫
+      - 屋脊瓦猫
+      - 云南瓦猫民俗
+      - Wamao Roof Guardian
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 25.0389
+      lng: 102.7183
+      precision: province
+      location_name: 中国云南昆明及大理剑川 · 云南传统民居“瓦猫”屋脊镇物区
+      culture_region: 中国 · 云南滇中及滇西白族汉族民居区
+    location_note: 屋脊陶塑瓦猫广泛分布于云南昆明、玉溪、楚雄、大理及丽江等滇中滇西传统民居屋顶，坐标取昆明市作云南瓦猫民俗圈中心参照。
+    temporal:
+      year_start: 1700
+      year_end: 2010
+      era_label: 清代云南乡土营造风俗至当代滇中滇西活态陶艺民俗时期
+      uncertainty_note: 瓦猫源流兼及西南少数民族虎崇拜与中原建筑脊兽、泰山石敢当传统，现存实物与窑口技艺主要可溯至清代至近现代民居遗址。
+    paragraphs:
+      - 在云南滇中与滇西的传统土木结构民居屋顶正脊中央、或大门照壁与门楼之上，常稳踞着一尊粗陶或琉璃烧制的奇异蹲兽——“瓦猫”。其虽以“猫”为名，造型却多作狮首虎态：圆眼怒瞪、双耳高竖、阔口大张如吞吸四方气流，前爪按伏筒瓦，胸腹往往开有通气孔洞。当地民谚素称“猫容虎劲”，一旦新屋落成或邻近遇有道路直冲、屋脊相射，主人须择吉延请工匠诵祝“开光”，将瓦猫稳安于屋脊之上。
+      - 民间相传瓦猫具备“吞煞纳福”的双重神通：其阔口面向屋外街巷或对面飞檐，能将冲向家宅的妖邪疫病与灾异阴风一并吞入腹中消化，同时把过往财气与喜讯吸纳留驻屋内。从比较区域民俗可见，这一习俗与闽台金门蹲踞村口、屋顶的石雕“风狮爷”，以及川渝黔门楣木雕“吞口”遥相呼应，同属在建筑高处与边界节点安放猛兽造像来镇压“路冲”“风煞”的物质化镇物传统。
+      - 建筑民俗学与西南民族史学者进一步梳理出瓦猫背后的多重文化层：其“猫名为虎”一方面承接了云南彝族、白族等西南族群古老的白虎图腾与山林避忌（避讳直呼虎名而借猫呼之，以示驯服家居之用），另一方面又依托本地传统土陶窑工的制瓦工艺，把屋脊交接处的防漏封口构件与家庭心理防御象征巧妙熔为一炉。
+    sources:
+      - citation: 维基百科，〈瓦猫〉。
+        type: encyclopedia
+        url: 'https://zh.wikipedia.org/wiki/%E7%93%A6%E7%8C%AB'
+        locator: 云南屋脊陶塑瓦猫形制、放置方位、虎崇拜渊源与镇宅民俗概述
+      - citation: 维基百科，〈吞口〉。
+        type: encyclopedia
+        url: 'https://zh.wikipedia.org/wiki/%E5%90%9E%E5%8F%A3'
+        locator: 西南兽首镇宅物“吞口”与地域厌胜器物对比
+      - citation: 维基百科，〈风狮爷〉。
+        type: encyclopedia
+        url: 'https://zh.wikipedia.org/wiki/%E9%A2%A8%E7%8D%85%E7%88%BA'
+        locator: 闽台屋顶与聚落狮像镇风止煞民俗跨地域参照
+    compare:
+      - mech_zhenwu_symbolic_materialization
+      - mech_apotropaic_boundary_seal
+      - case_cn_house_taiji_bagua_mirror
+      - case_cn_kinmen_qionglin_fengshiye
+      - case_cn_taishan_shigandang
+    motifs:
+      - motif_cn_zhenwu_material_taxonomy
+      - motif_cn_household_apotropaic_guardians
+      - index_ocm_776
+    bridge:
+      entry: ARC-3-0020
+      cluster: sid_crypt
+      trail: all
+      label: 云南院落构筑与屋脊镇物
+      rationale: 将滇中、大理传统民居屋脊安放陶塑“瓦猫”的镇宅民俗，与大理喜洲“三坊一照壁”等云南院落屋顶、照壁及防风营造结构并置阅读。
+
+  - id: case_cn_puzhou_iron_ox_flood_ward
+    title: 山西永济｜唐开元蒲津渡镇河铁牛工程地锚与河神压胜志
+    aliases:
+      - 蒲津渡铁牛
+      - 黄河镇水铁牛
+      - 开元铁牛地锚
+      - 镇河铁犀
+      - Pujin Iron Oxen
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location:
+      lat: 34.8430
+      lng: 110.2810
+      precision: city
+      location_name: 中国山西运城永济（唐代蒲津渡黄河东岸遗址）
+      culture_region: 中国 · 晋陕黄河蒲津渡水利考古区
+    location_note: 唐开元十二年（724 年）所铸四尊大型铁牛与铁人、铁柱 1989 年于山西省永济市蒲州古城西蒲津渡遗址发掘出土，坐标取遗址精确地点。
+    temporal:
+      year_start: 724
+      year_end: 1989
+      era_label: 唐开元十二年（724 年）铸造铁牛浮桥至 1989 年蒲津渡遗址考古出土
+      uncertainty_note: 《新唐书》《资治通鉴》记开元十二年铸造蒲津渡铁牛以固浮梁，1989 年文物部门于黄河故道淤泥下发掘出四牛四铁人及七星铁柱完整群像。
+    paragraphs:
+      - 在中国古代治水史与“路道镇物”谱系中，1989 年于山西永济蒲津渡遗址发掘重现的唐开元铁牛群，堪称实用大型机械工程与民间镇水压胜信仰合流的典范。据史籍与考古实测，唐玄宗开元十二年（724 年），为稳固沟通关中与河东交通要道、横跨黄河天险的蒲津浮桥，唐廷调集全国生铁在两岸各铸四尊体长约三米、重逾三十至六十吨的巨型铁牛，配以牵牛铁人、两座铁山及深埋地下的“七星铁柱”，以铁链锚定浮桥船身抵抗暴涨洪流。
+      - 然而随着金元以后浮桥废弃、黄河河道西徙摆动，这批巨型铸铁锚具逐渐被厚厚的泥沙淤埋；在历代方志与沿河民众口述记忆里，体量惊人的唐代铁牛，连同开封、荆州、蜀中各地河堤铸造的镇河铁犀与铜犀，逐渐脱离原本浮桥地锚的力学语境，被普遍重述为古代圣君名臣依五行“土克水、铁镇蛟龙”之理铸造的“镇水神兽”，借神兽伏波之威震慑黄河水患与河伯决堤。
+      - 英国科学史家李约瑟在《中国科学技术史》第四卷三分册高度评价蒲津渡铁牛铸造所体现的唐代大型整体浇铸与滑轮架桥技术。将唐代水运工程档案、泥沙淤埋与黄河改道地貌史同“镇水铁牛压胜传说”对读，能清晰观察一件纯正的大型基础设施构件，如何在河道变迁与民间灾害焦虑中，转化成兼具生态敬畏与镇河神话意味的地域地标。
+    sources:
+      - citation: 维基百科，〈蒲津渡铁牛〉。
+        type: encyclopedia
+        url: 'https://zh.wikipedia.org/wiki/%E8%92%B2%E6%B4%A5%E6%B8%A1%E9%90%B5%E7%89%9B'
+        locator: 唐开元十二年铸铁牛规格、1989 年蒲津渡遗址发掘及浮桥锚固史实
+      - citation: 'Joseph Needham, Wang Ling & Lu Gwei-Djen, Science and Civilisation in China, Vol. 4, Part 3: Civil Engineering and Nautics, Cambridge University Press, 1971.'
+        type: academic_monograph
+        url: 'https://archive.org/details/sciencecivilisat0000jose'
+        locator: 唐代蒲津渡铁牛锚固浮桥与古代水利工程技术考察
+      - citation: Wikipedia, "List of Chinese inventions".
+        type: encyclopedia
+        url: 'https://en.wikipedia.org/wiki/List_of_Chinese_inventions'
+        locator: 蒲津渡大型铸铁浮桥锚定技术与冶金史概览
+    compare:
+      - mech_zhenwu_symbolic_materialization
+      - mech_apotropaic_boundary_seal
+      - case_cn_taishan_shigandang
+    motifs:
+      - motif_cn_zhenwu_material_taxonomy
+      - motif_cn_yansheng_talisman_seal
+      - index_ocm_776
+    bridge:
+      entry: GEO-LAND-0021
+      cluster: sid_myth
+      trail: all
+      label: 蒲津铁牛地锚与河道迁徙史
+      rationale: 对读唐开元蒲津渡铁牛如何因黄河河床摆动与沙洲淤积遭深埋、并在民间口述中演变为“镇水神牛”，结合河流地貌演变理解历史水利设施遗存。
+
+  - id: case_cn_han_mawangdui_feiyi_soul_banner
+    title: 西汉长沙｜马王堆一号墓 T 形“非衣”帛画引魂升仙与丧葬镇护制
+    aliases:
+      - 马王堆 T 形帛画
+      - 非衣帛画
+      - 辛追铭旌招魂幡
+      - 汉墓引魂帛画
+      - Mawangdui Feiyi Banner
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location:
+      lat: 28.2082
+      lng: 113.0252
+      precision: city
+      location_name: 中国湖南长沙（马王堆一号汉墓辛追墓葬遗址）
+      culture_region: 中国 · 湖南长沙汉墓文物考古区
+    location_note: T 形“非衣”彩绘帛画 1972 年出土于湖南长沙马王堆一号汉墓（墓主为西汉初期长沙国丞相利苍之妻辛追），坐标取一号汉墓遗址。
+    temporal:
+      year_start: -186
+      year_end: -163
+      era_label: 西汉初期长沙国丞相利苍夫人辛追墓葬（前 2 世纪前中期）
+      uncertainty_note: 据同墓族属年代序列，一号墓下葬略晚于前 168 年入葬的三号墓或相近于汉文帝中后期，随葬帛画保存于多重漆棺最内层椁棺之上。
+    paragraphs:
+      - 1972 年湖南长沙马王堆一号汉墓发掘出土的 T 形彩绘帛画，现存高逾两米，出土时正面朝下平覆于墓主辛追的内棺棺盖之上。据同墓遣策简文记载，此物在入葬仪礼中名曰“非衣”（形似宽袖长袍却非生人所服），兼具古礼《仪礼》出殡导行之“铭旌”名号标识与丧葬招魂镇护之功用，是中国迄今发现保存最完好、宇宙图像最系统的汉初大型丧葬招魂幡。
+      - 全画以对称中轴精密排布天界、人间、地下三重结界：最上端左右分绘托举太阳的金乌扶桑与奔兔蟾蜍新月，正中烛龙人首蛇身俯瞰群灵，两扇天门由天门神守卫并配以豹兽镇关，意在清扫通往昆仑仙境的阻碍；中段核心绘墓主老妇柱杖立于帛台之上，前有侍从捧案跪迎、后随奴婢护持，外围双龙穿绕象征天地通道的玉璧，构成灵魂飞升的引导轨迹；底层则绘力士赤身踏于双鳌背上、双手奋力托举人间大地，下方盘绕巨蛇龟鱼与怪兽，隐喻镇压地下幽冥妖魅、稳固墓葬空间秩序。
+      - 考古学与图像学研究长期探讨“引魂升天”与“镇护尸身”在汉初丧葬中的共生关系：与后世纯以凶猛怪兽威吓鬼魅不同，马王堆一号墓先以厚重多重套棺、木炭白膏泥封固尸身，再以绘满日月天门、双龙玉璧与托地神人的“非衣”帛画笼罩棺盖，既指引精神魂魄安稳脱出墓室登仙，又护佑留存墓底的形骸不被地底魑魅侵扰。
+    sources:
+      - citation: 维基百科，〈马王堆汉墓〉。
+        type: encyclopedia
+        url: 'https://zh.wikipedia.org/wiki/%E9%A6%AC%E7%8E%8B%E5%A0%86%E6%BC%A2%E5%A2%93'
+        locator: 一号墓辛追内棺出土“非衣”T 形帛画天界、人间、地下三层图像志
+      - citation: Wikipedia, "Mawangdui".
+        type: encyclopedia
+        url: 'https://en.wikipedia.org/wiki/Mawangdui'
+        locator: 长沙马王堆一号墓保存结构、覆棺帛画与汉初丧葬礼制档案
+      - citation: 'Donald Harper, Early Chinese Medical Literature: The Mawangdui Medical Manuscripts, Kegan Paul International, 1998.'
+        type: academic_monograph
+        url: 'https://archive.org/details/early-chinese-medical-literature-mawangdui-manuscripts-donald-harper'
+        locator: 马王堆汉墓群的早期灵魂观念、宇宙空间秩序与庇护仪礼语境
+    compare:
+      - mech_zhenwu_symbolic_materialization
+      - case_cn_grave_zhenmushou_tomb
+      - case_cn_eastern_wu_hunping_maidiquan
+      - case_cn_kunlun_xiwangmu
+      - case_cn_mawangdui_zajin_love_charm
+    motifs:
+      - motif_cn_zhenwu_material_taxonomy
+      - motif_cn_household_apotropaic_guardians
+      - index_ocm_776
+    bridge:
+      entry: REL-5-0003
+      cluster: sid_myth
+      trail: all
+      label: 铭旌非衣与祖先祭祀纪念
+      rationale: 结合马王堆一号墓覆棺 T 形“非衣”帛画从出殡铭旌转为棺上魂幡的双重仪节，对读宗教民俗学对祖先纪念、生死过渡与家庭祭祀空间的研究。
+
+  - id: case_cn_eastern_wu_hunping_maidiquan
+    title: 江左六朝｜东吴两晋青瓷魂瓶与买地券冥界契约镇墓制
+    aliases:
+      - 青瓷魂瓶
+      - 堆塑谷仓罐
+      - 六朝买地券
+      - 镇墓解谪文
+      - Hunping Soul Jar
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location:
+      lat: 31.8000
+      lng: 119.5000
+      precision: culture_region
+      location_name: 中国浙江绍兴与江苏南京（孙吴两晋越窑青瓷魂瓶与买地券集中出土区）
+      culture_region: 中国 · 江南孙吴六朝丧葬考古区
+    location_note: 越窑青瓷魂瓶（堆塑罐）及砖刻、铅板买地券大量出土于三国东吴至两晋时期的南京、镇江、绍兴、上虞等江南墓葬，坐标取太湖以西宁镇绍核心考古带。
+    temporal:
+      year_start: 222
+      year_end: 420
+      era_label: 三国东吴（222–280 年）至两晋（265–420 年）江南墓葬时期
+      uncertainty_note: 东汉末年五斗米道与镇墓瓶开启“买地解除”券文传统，三国东吴至西晋到达堆塑青瓷魂瓶的工艺巅峰，东晋以后逐渐衰歇。
+    paragraphs:
+      - 三国东吴至西晋时期的江南长江下游与浙东墓葬中，流行一种造型极为繁复华美的青瓷随葬器物——“魂瓶”（考古界亦称堆塑罐、谷仓罐），现存如纽约大都会艺术博物馆所藏西晋越窑青瓷魂瓶（藏品编号 1992.165.21）即其代表。器身下半部保留古代贮藏五谷的“仓罐”实用轮廓，上半部则高高堆塑出飞檐楼阁、胡人乐舞俑、飞鸟辟邪兽、龟趺碑碣乃至早期佛像，常在罐腹小碑刻写“仓满五谷、招魂定魄、千秋万岁”等吉语，为离体魂魄提供丰衣足食且不受惊扰的微缩灵界居所。
+      - 与实体青瓷魂瓶相表里的，则是同期墓室随葬的铅券、砖刻或玉石“买地券”（兼含镇墓解谪文）。此类文书完全模仿汉晋人间田宅买卖契约格式：载明亡者姓名、购置墓地“东至青龙、西至白虎、南至朱雀、北至玄武”的四至边界与出钱数万买自“土公/地下五帝/武夷王”的交易细节，请日月星辰或东王公、西王母为证人，末句赫然勒以道教式律令“死生异路，不得相注，急急如律令”。
+      - 从宗教史与法文化视角综合观察，魂瓶与买地券共同标志着中国古代丧葬镇护观从纯粹兽形威慑迈向“官僚契约化”：墓葬不再仅仅依靠镇墓兽面目狰狞吓退鬼怪，而是借世俗地契和仓储明器将地下幽冥纳入文书合法管辖，一方面安抚亡灵勿再“注连”祸及生人，另一方面以法律凭证阻绝地下小鬼侵占墓田的危机。
+    sources:
+      - citation: The Metropolitan Museum of Art, "Funerary urn (hunping)" (Western Jin dynasty, late 3rd century, Accession 1992.165.21).
+        type: archival_catalogue
+        url: 'https://www.metmuseum.org/art/collection/search/44733'
+        locator: 馆藏西晋越窑青瓷堆塑魂瓶形制、贴塑楼阁瑞兽与丧葬功能著录
+      - citation: 维基百科，〈魂瓶〉。
+        type: encyclopedia
+        url: 'https://zh.wikipedia.org/wiki/%E9%AD%82%E7%93%B6'
+        locator: 东汉至两晋江南魂瓶（谷仓罐）演进脉络、佛道杂糅纹饰及出土分布
+      - citation: 维基百科，〈买地券〉。
+        type: encyclopedia
+        url: 'https://zh.wikipedia.org/wiki/%E8%B2%B7%E5%9C%B0%E5%88%B8'
+        locator: 汉晋至宋元铅砖石质买地券文书体例、冥界四至与“急急如律令”辞式
+      - citation: Wikipedia, "Hunping".
+        type: encyclopedia
+        url: 'https://en.wikipedia.org/wiki/Hunping'
+        locator: 六朝江南青瓷魂瓶国际艺术史与考古学研究综述
+    compare:
+      - mech_zhenwu_symbolic_materialization
+      - corpus_cn_imperial_wugu_statutes
+      - case_cn_grave_zhenmushou_tomb
+      - case_cn_han_mawangdui_feiyi_soul_banner
+    motifs:
+      - motif_cn_zhenwu_material_taxonomy
+      - motif_cn_yansheng_talisman_seal
+      - index_ocm_776
+    bridge:
+      entry: REL-5-0036
+      cluster: sid_crypt
+      trail: all
+      label: 江南青瓷魂瓶与龙泉窑烧造脉络
+      rationale: 把三国东吴至西晋越窑堆塑青瓷魂瓶的制坯施釉与契约随葬观，同浙江龙泉青瓷“坯、釉与窑火”工艺传统并读，理解材料技术与宗教想象的互动。
+
+  - id: case_cn_minnan_wangchuan_plague_ship
+    title: 闽南沿海｜送王船代天巡狩、收瘟押煞木舟仪轨与海洋非遗志
+    aliases:
+      - 送王船
+      - 烧王船
+      - 代天巡狩王爷祭
+      - 闽南王船驱疫仪
+      - Wangchuan Ceremony
+    genre: folktale
+    credibility_tier: A
+    note_kind: story
+    location:
+      lat: 24.4798
+      lng: 118.0894
+      precision: culture_region
+      location_name: 中国福建厦门与泉州湾 · 闽南送王船仪式核心分布区
+      culture_region: 中国 · 闽南厦泉沿海民俗仪礼区
+    location_note: “送王船”发源于闽南厦门湾、泉州湾沿海渔港并跨海流播至台湾与马来西亚马六甲，坐标取厦门湾作闽南母体社区文化参照区。
+    temporal:
+      year_start: 1500
+      year_end: 2020
+      era_label: 明清闽南沿海送王船逐疫仪礼至 2020 年联合国人类非物质文化遗产名录时期
+      uncertainty_note: 明代以降闽南沿海在瘟神信仰与海神护航结合下定型木造彩绘王船仪轨，2020 年中国与马来西亚联合申报列入人类非物质文化遗产代表作名录。
+    paragraphs:
+      - 绵延于福建厦门、泉州、漳州沿海宫庙并远播台湾与东南亚华埠的“送王船”（或称王醮、烧王船），是集社区公共防疫焦虑、海洋护境信仰与大型器物厌胜于一体的宏大仪式传统。每逢三至五年一届定期大醮，当地信众延请造船匠师严格按古帆船比例打造彩绘木质王船（亦称“王舡”），船内配备精微的舱房、水手偶人、米粮日用、铜锣旗帜乃至官印符箓，迎接“代天巡狩”诸姓王爷驻跸庙宇。
+      - 在仪式高潮“普渡”与“抢孤/添载”之后，整套程序的核心落脚于“收瘟押煞”的驱逐逻辑：道士或执事手持法鞭巡绕各家街巷，象征性地将潜藏在社区的五方疫鬼、夭亡孤魂（“好兄弟”）及船难厉魄一并驱赶收束、装入王船舱内并贴封条禁锢；继而民众列队护送王船前往海滨空旷沙滩（早期亦有装帆顺风放流大海之俗，近世多改于海滩堆筑金纸木柴举行“化吉”火化），火光升腾之际所有仪仗退走不准回头，寓意瘟疫与凶煞已随王船彻底押送出海、不复返归社区。
+      - 民俗史学者及德·格罗特《中国的宗教体系》第六卷均留意到，沿海地区湿热交蒸、古代舟楫往来频繁易暴发季节性瘟疫与海难，送王船在心理与社会治理层面恰恰把无形的疫病危机感，转化为一场全村社动员、分工修船清扫街巷并共同送走灾厄的净化仪式。2020 年联合国教科文组织将其列入名录时，亦特别关注其在当今海洋文化传承与跨国社群团结中的现代转型。
+    sources:
+      - citation: UNESCO Intangible Cultural Heritage, "Ong Chun/Wangchuan/Wangkang ceremony, rituals and related practices for maintaining the sustainable connection between man and the ocean" (RL 01608, inscribed 2020).
+        type: official_archive
+        url: 'https://ich.unesco.org/en/RL/ong-chun-wangchuan-wangkang-ceremony-rituals-and-related-practices-for-maintaining-the-sustainable-connection-between-man-and-the-ocean-01608'
+        locator: 闽南与马六甲“送王船”非遗档案、请王驱疫与海滨化吉仪节说明
+      - citation: 维基百科，〈送王船〉。
+        type: encyclopedia
+        url: 'https://zh.wikipedia.org/wiki/%E9%80%81%E7%8E%8B%E8%88%B9'
+        locator: 闽南王爷瘟神信仰、添载收瘟、放流与烧王船仪式演变
+      - citation: 'J. J. M. de Groot, The Religious System of China, Vol. 6: The War Against Spectres, E. J. Brill, Leiden, 1910.'
+        type: academic_monograph
+        url: 'https://archive.org/details/religioussystemofchina06degruoft'
+        locator: 19 世纪末闽南沿海送瘟王船、符箓封舱与驱疫巡境田野记载
+    compare:
+      - mech_zhenwu_symbolic_materialization
+      - mech_apotropaic_boundary_seal
+      - case_cn_chizhou_wuchang_nuo
+      - case_cn_house_taiji_bagua_mirror
+    motifs:
+      - motif_cn_zhenwu_material_taxonomy
+      - motif_cn_household_apotropaic_guardians
+      - index_ocm_776
+    bridge:
+      entry: REL-5-0012
+      cluster: sid_hag
+      trail: all
+      label: 送王船驱疫与海洋社区仪礼
+      rationale: 直接衔接百科“送王船：闽南与马六甲的海洋仪式”条目，对照代天巡狩收瘟押煞的厌胜逻辑与非遗语境下跨海域社群认同的当代转型。

@@ -1,0 +1,177 @@
+# Layer 4 mechanisms and theories for Wave 1: 巫蛊、放蛊与厌胜符箓.
+# Original simplified Chinese academic syntheses grounded in public-domain Chinese classics and peer-reviewed scholarship.
+records:
+  - id: mech_gu_sorcery_social_scapegoat
+    title: 蛊毒指控与边缘群体社会替罪机制
+    aliases:
+      - Gu sorcery scapegoating
+      - Social scapegoat mechanism
+      - 蛊毒替罪机制
+      - 放蛊污名化
+      - 巫术替罪羊
+    node_type: mechanism
+    temporal:
+      year_start: 1935
+      year_end: 2006
+      era_label: 1935—2006 年历史人类学与替罪羊机制研究
+      uncertainty_note: 涵盖冯汉骥与施赖奥克（1935）、戴雅门（1988）至田海（2006）对蛊毒及社会替罪机制的实证与文本分析。
+    paragraphs:
+      - “蛊”字早在商代甲骨卜辞与《春秋左传·昭公元年》“于文，皿虫为蛊”即有记述；至《汉书·江充传》载征和二年巫蛊大狱、《隋书·地理志下》言“五月五日聚百种虫合置器中”，以及《唐律疏议·贼盗》专立“造畜蛊毒”绞刑与连坐流放条文，蛊毒叙事在帝制中国逐步凝固为兼跨医理、刑律与妖术恐慌的复合话语。社会机制层面，所谓“放蛊”“蓄猫鬼”指控往往并不对应真实的虫毒制作工艺，而是在瘟疫、猝死、家道中落或政治清洗危机爆发时，将难以归因的集体焦虑集中转嫁至特定弱势或边缘者身上。
+      - 人类学与历史学比较研究揭示了这一替罪机制的结构性规律。埃文斯—普里查德（E. E. Evans-Pritchard，1937）指出，阿赞德巫术观念承担着解释“为何偏偏此时此人遭祸”的社会归因功能；勒内·吉拉尔（René Girard，1982）分析历史“迫害文本”时说明，群体危机常通过锁定单一“替罪羊”来恢复脆弱秩序；而在中国史语境中，冯汉骥与施赖奥克（1935）、戴雅门（Norma Diamond，1988）与田海（Barend ter Haar，2006）证明，蛊毒与妖术谣言的矛头频繁指向边陲族群、外来行旅、寡居妇女或宗族边缘成员，并通过刑讯招供与邻里防卫把污名化推向制度性冤狱。
+      - 该机制的适用边界在于：指出“放蛊恐慌”具有显著的替罪与标签化机制，并不否认古代地方社会确实存在真假难辨的投毒案、草药误服或家族财产冲突；同时，并非每次突发疫情或灾荒都会触发针对特定群体的暴力清洗。分析具体个案时，须将司法档案的逼供文本、医学毒理线索与基层社群内部的婚姻、地权及通婚禁忌逐一剥离，避免把一切历史中毒记述简约为单一心理公式。
+    sources:
+      - citation: 'H. Y. Feng & J. K. Shryock (1935). The Black Magic in China Known as Ku. Journal of the American Oriental Society 55(1), 1–30.'
+        type: peer_reviewed
+        url: https://doi.org/10.2307/594297
+        doi: 10.2307/594297
+        locator: 中国蓄蛊文献谱系、方志地域流变与生物常识辨析
+      - citation: 'Norma Diamond (1988). The Miao and Poison: Interactions on China''s Southwest Frontier. Ethnology 27(1), 1–25.'
+        type: peer_reviewed
+        url: https://doi.org/10.2307/3773558
+        doi: 10.2307/3773558
+        locator: 西南边疆族群互动中的放蛊指控与婚姻污名机制
+      - citation: 'Barend J. ter Haar (2006). Telling Stories: Witchcraft and Scapegoating in Chinese History. Brill.'
+        type: academic_monograph
+        url: https://doi.org/10.1163/9789047417231
+        doi: 10.1163/9789047417231
+        locator: 中国历史上的妖术传闻、恐惧叙事与替罪羊迫害模式
+      - citation: 〔唐〕长孙无忌等撰，《唐律疏议·卷第十八·贼盗·造畜蛊毒》，维基文库校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E5%94%90%E5%BE%8B%E7%96%8F%E8%AD%B0/%E5%8D%B7%E7%AC%AC%E5%8D%81%E5%85%AB
+        locator: 卷十八“诸造畜蛊毒及教令者绞”与同居家口、里正连坐条文
+    compare:
+      - mech_mass_psychogenic_illness
+      - mech_suggestibility_bias
+      - theory_poison_panic_projection
+      - case_cn_xiangxi_gu_poison
+      - case_china_soulstealers_1768
+
+  - id: mech_apotropaic_boundary_seal
+    title: 门户边界象征封闭与厌胜心理防御机制
+    aliases:
+      - Apotropaic boundary seal
+      - Symbolic boundary closure
+      - 门户厌胜封闭机制
+      - 门槛防御心理
+      - 辟邪镇宅防御
+    node_type: mechanism
+    temporal:
+      year_start: 1966
+      year_end: 2002
+      era_label: 1966—2002 年象征边界人类学与营造民俗研究
+      uncertainty_note: 涵盖玛丽·道格拉斯《洁净与危险》（1966）至鲁克思《鲁班经》及司马虚中国仪礼研究。
+    paragraphs:
+      - 中国传统民俗中的“厌胜”与门户镇物体系——从东汉《风俗通义·祀典》与南朝《荆楚岁时记》所载桃符、苇索、画鸡画虎、朱砂五彩缕，到后世宅院照妖八卦镜、泰山石敢当、屋脊吞口、婚俗红盖头与跨火盆——其共同结构是围绕空间边界与生命过渡节点构筑“象征封闭”。大门、门槛、巷口、屋脊、墓圹与新嫁娘行轿等处，既是物理出入通道，也被文化认知视作外部“煞气”“凶邪”与内部安宁秩序交锋的脆弱隘口。
+      - 从认知与象征人类学来看，玛丽·道格拉斯（Mary Douglas，1966）在《洁净与危险》中阐明，社会通过界定“洁净”与“越界污染”来建立可预测的分类秩序，一切跨越边界的失序威胁都需借仪式划界加以封闭；阿诺德·范·热内普与维克多·特纳进一步指出，门槛与过渡期因处于“既非内亦非外”的悬置状态而最易引发不安全感。荷兰汉学家鲁克思（Klaas Ruitenbeek，1993）考察明刊《鲁班经》则揭示了厌胜的双向社会机制：门楣梁柱既是防御外邪的屏障，也可在工匠与雇主劳资失衡时反转为“暗埋厌胜镇物”的威慑手段，迫使双方依循礼俗与契约。
+      - 这一防御机制的经验边界十分明确：在心理与社群层面，立石、贴符、悬镜与跨火盆能显著缓解面对未知疾病、宅居安全或人生转型时的失控焦虑，并划定邻里巷道的空间礼仪边界；然而，象征封闭并不能替代真实的建筑防灾、抗震结构或疾病防护，有时屋檐木构干缩爆裂或巷道风压异响反而会被误读为“镇物失效”或“工匠施厌”，解读时须把认知安慰、社会制约与建筑物理现象清晰分界。
+    sources:
+      - citation: 'Encyclopaedia Britannica, "Purity and Danger" (Mary Douglas, 1966).'
+        type: encyclopedia
+        url: https://www.britannica.com/topic/Purity-and-Danger
+        locator: 象征边界、分类秩序与污染禁忌人类学框架
+      - citation: 'Klaas Ruitenbeek (1993). Carpentry and Building in Late Imperial China: A Study of the Fifteenth-Century Carpenter''s Manual Lu Ban Jing. Brill.'
+        type: academic_monograph
+        url: https://archive.org/details/carpentrybuildin0000ruit
+        locator: 明代《鲁班经》木工镇宅符式、厌胜法术与劳资规范分析
+      - citation: 〔东汉〕应劭撰，《风俗通义·祀典》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: https://ctext.org/fengsu-tongyi/si-dian
+        locator: 岁暮饰桃人、垂苇茭、画虎于门及五彩长命缕辟兵鬼记载
+      - citation: 〔南朝梁〕宗氏原撰，《荆楚岁时记》，维基文库校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E8%8D%86%E6%A5%9A%E6%AD%B2%E6%99%82%E8%A8%98
+        locator: 正月贴画鸡置桃符与五月五日采艾悬户、系五色丝岁时辟邪礼俗
+    compare:
+      - theory_liminality_rites_passage
+      - theory_sympathetic_contagious_magic_cn
+      - case_cn_luban_yansheng
+      - case_cn_taishan_shigandang
+
+  - id: theory_poison_panic_projection
+    title: 疫疠毒性焦虑与跨族群他者投射理论
+    aliases:
+      - Poison panic projection
+      - Epidemic scapegoating theory
+      - 毒性恐慌投射理论
+      - 疫病他者化理论
+      - 放蛊与投毒谣言
+    node_type: theory
+    temporal:
+      year_start: 1988
+      year_end: 2021
+      era_label: 1988—2021 年疫病恐慌、西南蛊毒与中古毒药医学史研究
+      uncertainty_note: 综合戴雅门（1988）、科恩疫病史研究（2007、2018）及刘焱中古中国毒药医学史（2021）。
+    paragraphs:
+      - 在前现代医疗条件尚无法识别微生物病原体、寄生虫生活史与微量化合毒物之前，突发烈性传染病、地方慢性消耗病或急性中毒群发往往使群体陷入无从防守的生存恐慌。“疫疠毒性焦虑与跨族群他者投射理论”指出，社会面对这类难以定位的“无形剧毒”时，倾向于把自然病理或毒理风险拟人化为暗中作祟的“投毒者”或“放蛊者”，并将该角色投射到地理边疆、异质风俗或文化语言陌生的“他者”群体之上，从而在心理上获得“只要隔绝或惩戒他者即可止毒”的掌控错觉。
+      - 中外跨文化史料呈现出惊人的结构平行性。在中国文献脉络中，隋巢元方《诸病源候论·卷二十六》将蛇蛊、金蚕蛊、挑生蛊纳入病因门类，刘焱（Yan Liu，2021）在《以毒疗疾》中说明中古医学一方面以乌头、砒石、斑蝥（芫菁）入药攻邪，另一方面将湿热南方的瘴疠与不可控慢性腹胀消瘦想象为异域巫蛊；戴雅门（1988）则追踪明清至近代西南方志如何把汉族与少数民族在山地开发、贸易及通婚上的摩擦转译为“苗人放蛊”的集体恐惧。对照欧洲中世纪黑死病史（Samuel K. Cohn Jr.，2007），城市爆发鼠疫之际亦屡次出现针对犹太人或麻风病人的“向水井投毒”谣言与暴力清洗。
+      - 该理论的研究边界在于避免将“疫病必然导致他者迫害”当作放之四海而皆准的铁律。科恩（2018）在跨世纪疫病史比较中强调，多数大疫期同样存在跨阶层救助与制度协作，暴发大规模投毒替罪恐慌通常还需叠加强烈的政治动荡、既有族群等级裂缝与谣言动员条件；此外，研究《本草纲目》或《诸病源候论》时也须区分客观存在的植物碱、斑蝥素或寄生虫病灶与社会想象叠加的巫术叙述。
+    sources:
+      - citation: 'Norma Diamond (1988). The Miao and Poison: Interactions on China''s Southwest Frontier. Ethnology 27(1), 1–25.'
+        type: peer_reviewed
+        url: https://doi.org/10.2307/3773558
+        doi: 10.2307/3773558
+        locator: 族群边界、通婚避忌与南方放蛊谣言投射分析
+      - citation: 'Yan Liu (2021). Healing with Poisons: Potent Medicines in Medieval China. University of Washington Press.'
+        type: academic_monograph
+        url: https://library.oapen.org/handle/20.500.12657/50014
+        locator: 中古医学对“毒”与“蛊”的病理建构及地域他者想象
+      - citation: 'Samuel K. Cohn Jr. (2007). The Black Death and the Burning of Jews. Past & Present 196(1), 3–36.'
+        type: peer_reviewed
+        url: https://doi.org/10.1093/pastj/gtm005
+        doi: 10.1093/pastj/gtm005
+        locator: 黑死病时期欧洲水井投毒谣言与族群替罪清洗比较研究
+      - citation: 〔隋〕巢元方等撰（610 年），《巢氏诸病源候总论·卷二十六·蛊毒病诸候下》，维基文库四库全书校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E5%B7%A2%E6%B0%8F%E8%AB%B8%E7%97%85%E6%BA%90%E5%80%99%E7%B8%BD%E8%AB%B8(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B726
+        locator: 卷二十六《蛊毒病诸候》对蛇蛊、金蚕蛊、挑生蛊等症状分类原文
+    compare:
+      - mech_gu_sorcery_social_scapegoat
+      - mech_mass_psychogenic_illness
+      - motif_wolf_stranger_ghosts
+      - index_ocm_754
+
+  - id: theory_sympathetic_contagious_magic_cn
+    title: 交感巫术、符篆署名与气脉象征律则
+    aliases:
+      - Sympathetic and contagious magic
+      - Talismanic signature and qi symbolism
+      - 交感巫术理论
+      - 符篆署名律则
+      - 相似律与接触律
+    node_type: theory
+    temporal:
+      year_start: 1890
+      year_end: 2002
+      era_label: 1890—2002 年交感巫术比较宗教学与中国符咒医学史
+      uncertainty_note: 从弗雷泽《金枝》（1890）、莫斯《巫术一般理论》（1902）及坦比亚咒语理论至司马虚《中国法术医学》（2002）。
+    paragraphs:
+      - 英国人类学家弗雷泽（J. G. Frazer）在《金枝》中归纳出“交感巫术”（sympathetic magic）的两条基本法则：“相似律”（同类相生，模仿或损毁肖像即可作用于对象本身）与“接触律”（凡曾接触过同一身体或属物的部分，分离后仍可互相感应）；法国社会学者马塞尔·莫斯（Marcel Mauss，1902）与英籍人类学者坦比亚（S. J. Tambiah，1968）进一步修正其进化论前提，指出巫术并非孤立的前科学谬误，而是一套借助象征符号、仪式手势与“言语施事行为”（performative utterance）在社群语境中运作的意义系统。
+      - 将该比较框架引入中国巫蛊与符箓传统，可见两条法则与本土“官僚文书—气脉感应”观念深度嵌合：西汉巫蛊案掘出的“桐木偶人”、后世“草人书名钉刺”与“借生辰八字或衣发施厌”体现典型的相似与接触联想；而道教及民间祝由十三科之“符篆”更揉合了汉代兵符“符契凭证”传统与《黄帝内经·素问·移精变气论》“移精变气、祝由而已”的气脉观。正如司马虚（Michel Strickmann，2002）所论证，朱砂画符之所以常在末端敕写鬼神名讳与“急急如律令”，正是以冥界官僚文书署名方式行施驱劾，继而借禹步、掐诀、焚灰饮水完成身体内外的象征净化。
+      - 这一理论的严格边界在于：交感法则、言语施事性与“符篆署名”解释的是仪式文本和民俗器件内部的象征逻辑与心理暗示机制，并不意味着替身木偶、咒语或符灰水具有超距物理因果效力或独立药理疗效；相反，若焚符调药中夹杂矿物朱砂（硫化汞）或不明草药，反而可能带来真实的重金属或植物毒性暴露风险，必须将宗教学文本诠释与现代医学毒理验证区分看待。
+    sources:
+      - citation: 'James George Frazer, The Golden Bough: A Study in Magic and Religion, Chapter 3: Sympathetic Magic, Wikisource.'
+        type: primary_text
+        url: https://en.wikisource.org/wiki/The_Golden_Bough/Sympathetic_Magic
+        locator: 交感巫术之顺势相似律（homeopathic）与接触传染律（contagious）经典论述
+      - citation: 'Marcel Mauss (trans. Robert Brain), A General Theory of Magic, Routledge / Internet Archive.'
+        type: academic_monograph
+        url: https://archive.org/details/ageneraltheoryof00maus
+        locator: 巫术仪式动作、集体表象与社会效力的整体社会事实分析
+      - citation: 'S. J. Tambiah (1968). The Magical Power of Words. Man (New Series) 3(2), 175–208.'
+        type: peer_reviewed
+        url: https://www.jstor.org/stable/2798500
+        doi: 10.2307/2798500
+        locator: 咒语、仪式象征与言语施事效力（performative speech acts）分析
+      - citation: 'Michel Strickmann (ed. Bernard Faure, 2002). Chinese Magical Medicine. Stanford University Press / Internet Archive.'
+        type: academic_monograph
+        url: https://archive.org/details/chinesemagicalmedicinemichealstrickmann_202003_619_c
+        locator: 中国中古法术医学、符篆署名、冥府文书与驱鬼治疗体系研究
+      - citation: 《黄帝内经·素问·移精变气论》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: https://ctext.org/huangdi-neijing/yi-jing-bian-qi-lun
+        locator: “古之治病，惟其移精变气，可祝由而已”古典医经文本
+    compare:
+      - mech_apotropaic_boundary_seal
+      - theory_bascom_prose_genres
+      - theory_ostension_legend_tripping
+      - mech_suggestibility_bias

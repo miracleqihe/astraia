@@ -1,0 +1,333 @@
+# 独立候选。正文为原创中文梗概，三本中国专著不作为未查阅的东亚材料出处。
+records:
+  - id: case_kr_hongseong_legend_garden_taxi_2012
+    title: 洪城｜雨夜出租车上的白衣乘客
+    aliases: [전설가든 귀신, 택시기사와 전설가든 귀신]
+    genre: urban_legend
+    credibility_tier: B
+    location: {lat: 36.5994, lng: 126.6628, precision: city, location_name: 韩国 · 忠清南道洪城郡, culture_region: 东亚 · 韩国}
+    location_note: 洪城郡城镇参考点，表示 2012 年采录地域；故事里提到的庭园与上下车地点未定位。
+    temporal: {year_start: 2012, year_end: 2012, era_label: 采录时间, uncertainty_note: 故事经历的具体年份不详。}
+    paragraphs:
+      - 雨夜里，一位穿白衣的女子拦下出租车，到一座旧宅门前下车。她说进屋拿钱，司机等了许久不见人出来，便进门询问。屋里的人告诉他，女儿已去世多年，恰好今天是祭日，并替她付了车费。
+      - 2012 年洪城的访谈中，讲述者说这是自己听来的“传说庭园”附近的故事；在场听众也加入补充。记录保存的是一次地方讲述，不能据此确认乘车经过或女子身份。
+    sources:
+      - {citation: '韩国学中央研究院，《韩国口碑文学大系》：“出租车司机与传说庭园的鬼”，2012 年 2 月 6 日采录。', type: oral_history_archive, url: 'https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.2_18287', locator: 采录信息、共同讲述与全文}
+      - {citation: '洪城郡地理参考。', type: geographic_reference, url: 'https://en.wikipedia.org/wiki/Hongseong_County', locator: 郡级参考坐标}
+    compare: [case_kr_goyang_jayuro_hollow_eyes, case_jp_ishinomaki_taxi_winter_coat]
+    bridge: {entry: HIS-6-0002, cluster: sid_liminal, trail: trail5, label: 雨夜乘客与口述现场, rationale: 对读访谈现场与转述链，区分乘客故事、听众补充和可独立核实的事实。}
+
+  - id: case_kr_taebaek_sangdong_pass_taxi_2012
+    title: 太白采录｜山口出租车与祭日归客
+    aliases: [귀신을 태운 택시기사, 상동재 택시]
+    genre: urban_legend
+    credibility_tier: B
+    location: {lat: 37.1641, lng: 128.9856, precision: city, location_name: 韩国 · 江原道太白市, culture_region: 东亚 · 韩国}
+    location_note: 太白市中心为访谈地域参考；故事中的上东山口、目的地住宅和路线未准确定位。
+    temporal: {year_start: 2012, year_end: 2012, era_label: 采录时间, uncertainty_note: 讲述者只说故事发生在十余年前，未核具体日期。}
+    paragraphs:
+      - 一位拎包的女子在上东山口拦下出租车，让司机送她去堤川。到家后她推门进去拿车费，却一直没有出来；司机向屋里的人询问，双方因此争执。
+      - 家中长辈听过她的衣着后，说她是多年前在山口遇事故去世的儿媳，当晚恰逢祭日。2012 年在太白采录的这个版本里，司机留宿一夜才回家，后来大病一场；这些都是讲述内容，而非独立查证的事件。
+    sources:
+      - {citation: '韩国学中央研究院，《韩国口碑文学大系》：“载鬼的出租车司机”，2012 年 6 月 2 日采录。', type: oral_history_archive, url: 'https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.2_17441', locator: 太白市采录信息及完整讲述}
+      - {citation: '韩国气象厅太白观测点，地点参考。', type: geographic_reference, url: 'https://data.kma.go.kr/tmeta/stn/selectStnDetail.do?isSelectStn=Y&pgmNo=82&stdStnNo=216', locator: 太白市参考点，非叙事山口}
+    compare: [case_kr_hongseong_legend_garden_taxi_2012, case_jp_ishinomaki_taxi_winter_coat]
+    bridge: {entry: HIS-6-0002, cluster: sid_liminal, trail: trail5, label: 归客、祭日与讲述地点, rationale: 比较两则载客故事的路线与祭日细节，同时分清采录地和叙事中的地点。}
+
+  - id: case_kr_ansan_daebu_dark_road_2011
+    title: 大阜岛｜雨夜挡住道路的黑影
+    aliases: [귀신 본 이야기, 영전경로당 귀신]
+    genre: memorate
+    credibility_tier: B
+    location: {lat: 37.24, lng: 126.58, precision: city, location_name: 韩国 · 安山市大阜岛, culture_region: 东亚 · 韩国}
+    location_note: 大阜岛区域参考点，采录于岛上长者活动场所，所述山路未定位。
+    temporal: {year_start: 2011, year_end: 2011, era_label: 采录时间, uncertainty_note: 丈夫经历发生在采录前，年份不详。}
+    paragraphs:
+      - 一名妇人回忆，丈夫过去总说人比鬼可怕。某夜他喝酒后冒雨回家，在山下停下来点烟，路边却黑得几乎看不见；他挥拳驱赶黑影，一直走到村里的堂树附近才辨清道路。
+      - 丈夫回家后改变了原先的说法，称途中像遇见了鬼。2011 年大阜岛访谈保留的是妻子对丈夫叙述的回忆，讲述者同时说明自己从未亲眼看见这类东西。
+    sources:
+      - {citation: '韩国学中央研究院，《韩国口碑文学大系》：“见鬼的故事”，2011 年 1 月 18 日采录。', type: oral_history_archive, url: 'https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.2_14456', locator: 大阜岛访谈及丈夫夜行叙述}
+    bridge: {entry: FOR-5-0011, cluster: sid_hag, trail: trail5, label: 雨夜转述与观察条件, rationale: 将夜路讲述与记忆、照明及转述条件并读，不据此认定所见影子的来源。}
+
+  - id: case_kr_wonju_lost_thorn_path_2010
+    title: 原州｜荆棘丛中走了一整夜
+    aliases: [도깨비에 홀린 사람, 원주 도깨비 홀림]
+    genre: memorate
+    credibility_tier: B
+    location: {lat: 37.3422, lng: 127.9202, precision: city, location_name: 韩国 · 江原道原州市, culture_region: 东亚 · 韩国}
+    location_note: 原州市中心为指定面访谈地域参考，故事里的山谷和荆棘丛未定位。
+    temporal: {year_start: 2010, year_end: 2010, era_label: 采录时间, uncertainty_note: 故事时间不详。}
+    paragraphs:
+      - 一个人在夜里跟着某个东西走了很久，穿过灌木和带刺的草丛，天亮时脸上留下许多伤痕。当地讲述者把这样的迷路经历称作受到了“多怪比”的迷惑；多怪比是朝鲜半岛传说中的精怪。
+      - 2010 年在原州访谈中，讲述者又说人们常在喝酒以后讲起这类遭遇。采录保存了一种地方解释，并没有足够信息判定那一夜的路线或引路事物。
+    sources:
+      - {citation: '韩国学中央研究院，《韩国口碑文学大系》：“受多怪比迷惑的人”，2010 年 12 月 18 日采录。', type: oral_history_archive, url: 'https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.2_12625', locator: 原州采录、夜行与荆棘叙述}
+    bridge: {entry: FOR-5-0011, cluster: sid_hag, trail: trail5, label: 迷路故事与夜间记忆, rationale: 将讲述者提及的饮酒、黑暗与记忆边界并读，不将一般因素当作该次事件的确定原因。}
+
+  - id: case_kr_geumsan_irrigation_goblin_2009
+    title: 锦山｜夜灌后挂在门上的蛇与青蛙
+    aliases: [뱀과 개구리를 달아 놓고 간 도깨비, 금산 농수로 도깨비]
+    genre: folktale
+    credibility_tier: B
+    location: {lat: 36.1081, lng: 127.4882, precision: city, location_name: 韩国 · 忠清南道锦山郡, culture_region: 东亚 · 韩国}
+    location_note: 锦山郡城镇参考点，采录地点为富利面，道路与住家未定位。
+    temporal: {year_start: 2009, year_end: 2009, era_label: 采录时间, uncertainty_note: 故事发生年代不详。}
+    paragraphs:
+      - 天旱时，农人忙到夜里才给田里引够水。回家路上，一个被称作多怪比的精怪跟着他，不停要把肉塞给他；他害怕极了，跑回屋里闩上门。
+      - 第二天早上，门上挂着蛇和青蛙。2009 年锦山的讲述者说这是长辈讲过的事，故事把灌溉、夜路和难以辨认的食物连在一起。
+    sources:
+      - {citation: '韩国学中央研究院，《韩国口碑文学大系》：“留下蛇和青蛙的多怪比”，2009 年 2 月 16 日采录。', type: oral_history_archive, url: 'https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.2_26350', locator: 富利面采录与完整口述}
+    bridge: {entry: REL-5-0005, cluster: sid_hag, trail: trail2, label: 夜灌故事与长辈传述, rationale: 对读一次讲述中的劳作场景与长辈转述，关注多怪比形象如何嵌入地方生活。}
+
+  - id: case_kr_gwangju_potlid_gas_station_2012
+    title: 京畿广州｜锅盖和夜里的响声
+    aliases: [솥뚜껑을 솥 안에 넣은 도깨비, 광주 도깨비 장난]
+    genre: memorate
+    credibility_tier: B
+    location: {lat: 37.4292, lng: 127.2550, precision: city, location_name: 韩国 · 京畿道广州市, culture_region: 东亚 · 韩国}
+    location_note: 京畿道广州市参考点，不是全罗南道的光州；采录地超越邑的加油站与宅院未定位。
+    temporal: {year_start: 2012, year_end: 2012, era_label: 采录时间, uncertainty_note: 被讲述的事件未标具体年份。}
+    paragraphs:
+      - 夜里厨房传来碰撞声，开灯却看不见人。一次人们发现锅盖卡进铁锅里拔不出来，过一会儿再看，锅盖又已被取出；在场的几位讲述者把这类动静说作民间精怪多怪比的恶作剧。
+      - 这段 2012 年京畿广州市的集体访谈还留下了不同意见：有人认为人们喝酒后会看错，另一些人则继续说起夜间的声音。记录展示的是现场如何共同讲述与争论。
+    sources:
+      - {citation: '韩国学中央研究院，《韩国口碑文学大系》：“把锅盖塞进锅里的多怪比”，2012 年 1 月 11 日采录。', type: oral_history_archive, url: 'https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.2_20172', locator: 共同讨论、厨房声音与锅盖}
+    bridge: {entry: HIS-6-0002, cluster: sid_hag, trail: trail5, label: 锅盖异响与集体叙述, rationale: 对照访谈中的不同声音，观察听众补充与怀疑怎样改变共同讲述。}
+
+  - id: case_kr_jangheung_following_lights_2013
+    title: 长兴｜村口追上来的几盏光
+    aliases: [도깨비불, 장흥 운주마을 도깨비불]
+    genre: memorate
+    credibility_tier: B
+    location: {lat: 34.681, lng: 126.907, precision: city, location_name: 韩国 · 全罗南道长兴郡, culture_region: 东亚 · 韩国}
+    location_note: 长兴郡城镇参考点；采录在龙山面云舟村，光点与夜路的具体位置未测定。
+    temporal: {year_start: 2013, year_end: 2013, era_label: 采录时间, uncertainty_note: 讲述所指夜晚年份不详。}
+    paragraphs:
+      - 一位村民说，自己夜里饮酒归家，走到村口时看见一点光；光似乎分成几处，沿着路移动并跟着他。他害怕得加快脚步，仍觉得那几盏光在靠近。
+      - 2013 年的长兴村落访谈中，旁边的听众把它称为“多怪比火”，即与民间精怪相关的火光。对照记录可看到本人叙述与听众命名的差别；光的来源并未获得现场检验。
+    sources:
+      - {citation: '韩国学中央研究院，《韩国口碑文学大系》：“多怪比火”，2013 年 1 月 31 日采录。', type: oral_history_archive, url: 'https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.2_22804', locator: 云舟村讲述与听众回应}
+    bridge: {entry: FOR-5-0011, cluster: sid_hag, trail: trail5, label: 村口光点与观察记忆, rationale: 对读夜间观察和后来命名，保留光的真实来源未知这一界限。}
+
+  - id: case_kr_namhae_coastal_road_light_2011
+    title: 南海郡｜修路时绕行海边遇见的火
+    aliases: [새 길을 내는 바닷가 길에서 귀신불을 만난 이야기, 남해 바닷길 귀신불]
+    genre: memorate
+    credibility_tier: B
+    location: {lat: 34.8374, lng: 127.8926, precision: city, location_name: 韩国 · 庆尚南道南海郡, culture_region: 东亚 · 韩国}
+    location_note: 南海邑为郡级参考点；采录地为南面加川村，故事中海岸旧路并未确定。
+    temporal: {year_start: 2011, year_end: 2011, era_label: 采录时间, uncertainty_note: 夜行故事的具体年代不详。}
+    paragraphs:
+      - 海边开新路时，山坡尚在施工，人们只得绕行旧海岸路。当地讲述里，一名男子夜行经过这段被认为不安宁的路，遇见被称作鬼火的东西，于是划亮火柴将它驱走。
+      - 2011 年在南海郡加川村受访的讲述者明确说，这故事来自长辈，自己并未见到。道路修建、口述故事与光的成因，需要分别寻找证据。
+    sources:
+      - {citation: '韩国学中央研究院，《韩国口碑文学大系》：“修建新路时在海边遇见鬼火”，2011 年 1 月 25 日采录。', type: oral_history_archive, url: 'https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.2_13458', locator: 加川村采录与故事提要}
+      - {citation: 'Namhae County，南海郡地理参考。', type: geographic_reference, url: 'https://en.wikipedia.org/wiki/Namhae_County', locator: 南海郡行政中心坐标}
+    bridge: {entry: ARC-4-0009, cluster: sid_liminal, trail: trail5, label: 旧海路与地方记忆, rationale: 对读海岸道路变迁和人们赋予路线的故事，不以访谈代替道路工程记录。}
+
+  - id: case_kr_gwangmyeong_broom_dokkaebi_2013
+    title: 光明｜白天是一把扫帚
+    aliases: [피 묻은 빗자루에서 변하는 도깨비, 광명 빗자루 도깨비]
+    genre: folktale
+    credibility_tier: B
+    location: {lat: 37.4786, lng: 126.8646, precision: city, location_name: 韩国 · 京畿道光明市, culture_region: 东亚 · 韩国}
+    location_note: 光明市中心为采录地域参考，故事并无确定住宅或具体地点。
+    temporal: {year_start: 2013, year_end: 2013, era_label: 采录时间, uncertainty_note: 故事流传年代不详。}
+    paragraphs:
+      - 受访者回忆，长辈说过沾了血的扫帚到了夜里会变成精怪多怪比或鬼，白天又还原为普通扫帚。这样的传闻让人们从熟悉的日用物品里想象夜间出行的怪物。
+      - 这是一段 2013 年在光明市采集的简短口述，没有人物相遇或具体住址。它可与日本器物成精故事并读，但相似形象不自动意味着两个地方存在传播关系。
+      - 陶思炎《中国镇物》还讨论了朝鲜岁时传闻中的夜光鬼：人们以筛子应对偷鞋的鬼。这是另一则与家用器具相关的材料，书中没有记载本条光明市扫帚口述，二者只作主题比较。
+    sources:
+      - {citation: '韩国学中央研究院，《韩国口碑文学大系》：“由沾血扫帚变成的多怪比”，2013 年 2 月 14 日采录。', type: oral_history_archive, url: 'https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.2_23598', locator: 光明市口述原文}
+      - {citation: '陶思炎：《中国镇物》，台北：东大图书，1998。', type: reference_book, locator: 印页 146，引朝鲜《京都杂志》“元日”与夜光鬼筛子；为主题对读，不是光明扫帚故事的来源}
+    compare: [case_jp_kyoto_tsukumogami_lore]
+    bridge: {entry: REL-5-0005, cluster: sid_hag, trail: all, label: 扫帚变形与口述传统, rationale: 对读日常器物形象与口述环境，避免把题材相似当作传播证据。}
+
+  - id: case_kr_seocheon_cotton_hill_2010
+    title: 舒川｜山口散落一地的棉花
+    aliases: [재수없는 땅고개 귀신, 서천 땅고개 도깨비]
+    genre: memorate
+    credibility_tier: B
+    location: {lat: 36.0806, lng: 126.6919, precision: city, location_name: 韩国 · 忠清南道舒川郡, culture_region: 东亚 · 韩国}
+    location_note: 舒川郡中心为韩山面采录区域参考，故事所说山口未精确定位。
+    temporal: {year_start: 2010, year_end: 2010, era_label: 采录时间, uncertainty_note: 女儿出嫁与夜间行路的日期不详。}
+    paragraphs:
+      - 一位父亲到群山买棉花，准备让女儿出嫁时使用。夜里回来经过山口，棉包一再被扔落，他捡起来背上，又掉下去；天亮后，田间散落着被撕开的棉花。
+      - 2010 年的舒川访谈里，有听众说这不是遥远的古事，而是他们年轻时听闻或见过的事；讲述者将棉包的反复掉落说成与多怪比角力。其确切经过并无独立记录。
+    sources:
+      - {citation: '韩国学中央研究院，《韩国口碑文学大系》：“令人不安的山口鬼”，2010 年 1 月 26 日采录。', type: oral_history_archive, url: 'https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.2_25882', locator: 韩山面讲述及听众补充}
+    bridge: {entry: HIS-6-0002, cluster: sid_hag, trail: trail5, label: 夜路棉花与听众记忆, rationale: 对照讲述者和听众的不同表述，审视地方经历如何进入共同记忆。}
+
+  - id: case_kr_haman_mountain_ritual_2013
+    title: 咸安｜仪式中始终看不清的脸
+    aliases: [굿판 도중 나타난 산신령, 함안 산신령]
+    genre: memorate
+    credibility_tier: B
+    location: {lat: 35.2725, lng: 128.4066, precision: city, location_name: 韩国 · 庆尚南道咸安郡, culture_region: 东亚 · 韩国}
+    location_note: 咸安郡行政区参考点；采录在中村村会馆，故事中夜间仪式的具体地点未知。
+    temporal: {year_start: 2013, year_end: 2013, era_label: 采录时间, uncertainty_note: 仪式发生年代未注明。}
+    paragraphs:
+      - 一位讲述者回忆自己夜里跟着旁人去看巫俗仪式，仪式进行时出现了他认为是山神的身影。他试着从不同角度看清那人的面孔，甚至俯到地上，最后仍没有看清。
+      - 2013 年在咸安的采访中，他还用动作示范当时的姿势。资料记录了个人经验及仪式后的解释，并不能独立证实神灵现身。
+    sources:
+      - {citation: '韩国学中央研究院，《韩国口碑文学大系》：“仪式中出现的山神”，2013 年 1 月 23 日采录。', type: oral_history_archive, url: 'https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.2_21256', locator: 中村采录提要及演示情形}
+    bridge: {entry: REL-5-0005, cluster: sid_hag, trail: trail2, label: 仪式、动作与一次见闻, rationale: 将口述文字与讲述时的动作和仪式语境并读，分别看待经历与解释。}
+
+  - id: case_kr_yeongjong_snow_road_1982
+    title: 永宗岛｜雪路上不答话的白衣人
+    aliases: [도깨비 이야기 2, 영종도 냄새피는 도깨비]
+    genre: memorate
+    credibility_tier: B
+    location: {lat: 37.49, lng: 126.53, precision: city, location_name: 韩国 · 仁川永宗岛, culture_region: 东亚 · 韩国}
+    location_note: 永宗岛区域参考，1982 年采录于云北里；旧时夜路未测定。
+    temporal: {year_start: 1982, year_end: 1982, era_label: 采录时间, uncertainty_note: 故事中的雪夜年代不详。}
+    paragraphs:
+      - 一名男子祭祖后踏雪独行，远远看见两名穿白衣的人。他几次招呼，希望与他们结伴，对方却始终不应声；他冲过去撞踢，眼前的人影便消失了。
+      - 他回忆自己喝过酒，事后才发现衣服破损、鼻子流血。1982 年永宗岛的采录把这次经历放进附近“发出怪味的多怪比”传闻里，事情究竟如何发生并无独立验证。
+    sources:
+      - {citation: '韩国学中央研究院，《韩国口碑文学大系》：“多怪比故事（二）”，1982 年 7 月 16 日采录。', type: oral_history_archive, url: 'https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.1_4508', locator: 永宗岛云北里田野记录}
+    bridge: {entry: FOR-5-0011, cluster: sid_hag, trail: trail5, label: 雪夜身影与观察条件, rationale: 并读低照度、降雪和讲述中的饮酒信息，不将其指定为该经历的确定解释。}
+
+  - id: case_kr_sinan_ghost_friend_1984
+    title: 新安群岛｜与人一起吃告别饭的鬼
+    aliases: [귀신을 친구로 사귄 사람, 암태도 귀신 친구]
+    genre: folktale
+    credibility_tier: B
+    location: {lat: 34.839, lng: 126.09, precision: city, location_name: 韩国 · 全罗南道新安群岛岩泰岛, culture_region: 东亚 · 韩国}
+    location_note: 岩泰岛区域参考；故事里的洞窟与巨石未单独定位。
+    temporal: {year_start: 1984, year_end: 1984, era_label: 采录时间, uncertainty_note: 口述故事发生年代不详。}
+    paragraphs:
+      - 岛上一名男子有时会突然不见，回来后说曾被鬼背着渡海。后来，与他交好的那个存在表示要回故乡，请他备好食物、酒和糕，在山谷巨石旁作最后一顿聚餐。
+      - 1984 年在岩泰岛采录的这个故事中，来客席间才说出自己的身份与离别缘由。它让鬼成为能同行、受人招待并郑重告别的朋友，而不是只会惊吓人的形象。
+    sources:
+      - {citation: '韩国学中央研究院，《韩国口碑文学大系》：“与鬼结为朋友的人”，1984 年 6 月 9 日采录。', type: oral_history_archive, url: 'https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.1_20976', locator: 岩泰面道昌里口述全文}
+    bridge: {entry: REL-5-0005, cluster: sid_hag, trail: trail2, label: 海岛鬼友与送别, rationale: 以共同饮食和告别场景阅读地方口述，区分资料记载与故事世界中的人物身份。}
+
+  - id: case_jp_tono_obakobuchi_kappa_horse
+    title: 远野｜被马拖上岸的河童
+    aliases: [姥子淵の河童, 遠野物語第58話, Kappa horse Tono]
+    genre: folktale
+    credibility_tier: B
+    location: {lat: 39.3279, lng: 141.533, precision: city, location_name: 日本 · 岩手县远野市, culture_region: 东亚 · 日本}
+    location_note: 远野市中心为区域参考；《远野物语》称地点为小乌濑川姥子渊，与其他河童淵景点不可混作一个精确点。
+    temporal: {year_start: 1910, year_end: 1910, era_label: 文献出版时间, uncertainty_note: 传说发生时间不详。}
+    paragraphs:
+      - 孩子把马牵到小乌濑川边洗凉，转身玩耍时，河童想把马拖进水里，反而被马拉回屋舍。家里人掀开倒扣的马槽，看见下面伸出一只手，村民便聚拢商议如何处置它。
+      - 大家最终让河童承诺不再戏弄村里的马，将它放走。柳田国男《远野物语》第 58 则记录这一地方故事；不同河童淵如今也与观光活动相连，但本条不把所有地点视为同一水域。
+    sources:
+      - {citation: '远野市，远野土渊山口集落介绍：“河童淵（姥子淵）”及《远野物语》第 58 则。', type: institutional_account, url: 'https://www.city.tono.iwate.jp/handlers/printcontent.cfm?ContentID=47710&EntryCode=6904&GroupID=48&ThisPageURL=https%3A%2F%2Fwww.city.tono.iwate.jp%2Findex.cfm%2F48%2C47710%2C303%2Chtml', locator: 姥子淵、河童与马的地方版本}
+      - {citation: '远野市观光协会，〈远野物语の日に歩く――物語の舞台・山口集落〉。', type: institutional_account, url: 'https://tonojikan.jp/feature/tonomonogatari-day/', locator: 区分山口姥子淵与旅游地点}
+    compare: [case_jp_tono_zashiki_warashi_1910]
+    bridge: {entry: REL-5-0006, cluster: sid_myth, trail: trail2, label: 河童故事与地方展示, rationale: 把 1910 年文本与今天的地方解释并读，观察故事如何被联系到可游览的场所。}
+
+  - id: case_jp_yotsuya_oiwa_kabuki
+    title: 东京四谷｜阿岩的复仇与舞台故事
+    aliases: [四谷怪談, Yotsuya Kaidan, Oiwa, 阿岩]
+    genre: fabulate
+    credibility_tier: F
+    note_kind: story
+    location: {lat: 35.6879, lng: 139.72, precision: city, location_name: 日本 · 东京四谷, culture_region: 东亚 · 日本}
+    location_note: 四谷地区参考点；稻荷神社与舞台中人物的命运并非可以互证的真实现场。
+    temporal: {year_start: 1825, year_end: 1825, era_label: 歌舞伎初演, uncertainty_note: 剧作首演年份，不是虚构情节发生年份。}
+    paragraphs:
+      - 歌舞伎《四谷怪谈》中，伊右卫门想抛弃妻子阿岩，与他人合谋用毒药加害她。阿岩容貌受损后死去，她带着怨恨归来，持续纠缠负心的丈夫，令他最终走向毁灭。
+      - 这是一部 1825 年首演的舞台戏剧，属于虚构作品。东京四谷有与阿岩故事相关的稻荷神社和地方说法；剧中情节与神社的现实历史应分开阅读。
+    sources:
+      - {citation: 'Donny Kimball, “Haunted Yotsuya: Hidden Ghost Stories in Tokyo”, Japan National Tourism Organization, 2021.', type: institutional_account, url: 'https://www.japan.travel/en/blog/haunted-yotsuya-hidden-ghost-stories-in-tokyo/', locator: 剧情、四谷及阿岩稻荷}
+      - {citation: '歌舞伎美人，〈怪談と歌舞伎〉。', type: cultural_institution, url: 'https://www.kabuki-bito.jp/special/more/theme-kabuki/post-horror2/', locator: 1825 年首演、毒药与复仇情节}
+    bridge: {entry: LIT-2-0001, cluster: sid_hag, trail: all, label: 舞台复仇与叙事顺序, rationale: 把背叛、死亡和复仇作为戏剧叙事分析，避免以舞台情节替代现实人物史。}
+
+  - id: case_kr_jeju_gimnyeong_snake_cave
+    title: 济州｜金宁蛇窟与获救的少女
+    aliases: [김녕사굴 전설, Gimnyeongsagul snake legend, 金宁蛇窟]
+    genre: folktale
+    credibility_tier: B
+    location: {lat: 33.528346, lng: 126.771623, precision: city, location_name: 韩国 · 济州岛金宁窟与万丈窟地区, culture_region: 东亚 · 韩国济州}
+    location_note: 政府开放数据中金宁窟及万丈窟保护范围的代表点；旅游与洞窟资料坐标不一致，不作为金宁蛇窟洞口或传说场面的精确位置。
+    paragraphs:
+      - 济州地方故事说，金宁蛇窟中有一条巨蛇，人们相信它会招来风雨，于是每年向它献祭少女。传说中一位新任判官带人前来，在巨蛇扑向少女时将其斩杀，救下了她。
+      - 同一传说又讲，判官返途中被一道红光照到背部，此后患病去世。当地旅游资料将它作为洞窟传说介绍；熔岩洞穴的地质事实与故事中的献祭、巨蛇和因果需要分开。
+    sources:
+      - {citation: '济州旅游公社，〈金宁蛇窟〉。', type: institutional_account, url: 'https://m.visitjeju.net/kr/detail/view?contentsid=CNTS_000000000019979', locator: 洞窟介绍及判官退蛇传说}
+      - {citation: 'Show Caves of the World, Gimnyeongsagul.', type: geographic_reference, url: 'https://www.showcaves.com/english/kr/caves/Gimnyeong.html', locator: 洞窟区域坐标}
+      - {citation: '韩国公共数据门户，金宁窟及万丈窟文化遗产开放数据。', type: geographic_reference, url: 'https://www.data.go.kr/data/15021147/standard.do', locator: 保护范围代表点；与旅游资料和洞窟网站坐标不一致}
+    bridge: {entry: GEO-LAND-0010, cluster: sid_myth, trail: all, label: 蛇窟传说与熔岩洞, rationale: 从故事转向洞穴形成，认识熔岩管与地下水溶蚀洞穴的区别；地质解释不决定传说人物是否真实。}
+
+  - id: case_kr_jeju_sanbang_tears
+    title: 济州山房山｜化为岩石的山房德
+    aliases: [산방덕 설화, Sanbangdeok tears, 山房德]
+    genre: folktale
+    credibility_tier: B
+    location: {lat: 33.24167, lng: 126.31306, precision: city, location_name: 韩国 · 济州岛山房山, culture_region: 东亚 · 韩国济州}
+    location_note: 标记山房山山体参考坐标，洞内滴水点并未定位。
+    paragraphs:
+      - 在济州山房山的故事里，美丽的山神山房德与一名凡人相爱。贪恋她的官员将她的爱人流放，她逃到山中，悲伤地化为岩石。
+      - 山房窟寺洞顶的水滴被地方讲述称作她不曾止息的眼泪。山体与洞窟可以观察，山神与人间的遭遇属于地方传说。
+    sources:
+      - {citation: '济州旅游公社，Iconic landmarks and sites in Jeju：Sanbangsan and the Sanbanggulsa Grotto.', type: institutional_account, url: 'https://www.visitjeju.net/en/themtour/view?contentsid=CNTS_200000000012775', locator: 山房德、爱人与洞窟水滴的地方版本}
+      - {citation: 'Sanbangsan，山体地理参考。', type: geographic_reference, url: 'https://en.wikipedia.org/wiki/Sanbangsan', locator: 山体坐标}
+    bridge: {entry: GEO-LAND-0002, cluster: sid_myth, trail: all, label: 山房山故事与火成岩, rationale: 从地方叙事对读火成岩的形成和岩石循环；故事人物与地质研究回答不同问题。}
+
+  - id: case_kr_jeju_dragon_head_stone
+    title: 济州龙头岩｜没能飞入天空的龙
+    aliases: [용두암 전설, Yongduam dragon, 龙头岩传说]
+    genre: folktale
+    credibility_tier: B
+    location: {lat: 33.5149624, lng: 126.5116869, precision: city, location_name: 韩国 · 济州岛龙头岩, culture_region: 东亚 · 韩国济州}
+    location_note: 龙头岩海岸地标的参考坐标，不指故事中龙的实际活动路径。
+    paragraphs:
+      - 济州一则故事说，一条盼望成龙的蛇在海底等待漫长岁月，终于升向天空时，却被汉拿山神射下。它浮出海面仰头长啸，随后化成岩石；这便是人们指认的龙头岩。
+      - 济州旅游公社的地点介绍还提及龙从附近龙渊升天化石的说法。当地岩石外形与风浪侵蚀可以观察，关于龙的动机和结局则随讲述而变化。
+    sources:
+      - {citation: '济州旅游公社，〈Yongduam Rock〉。', type: institutional_account, url: 'https://www.visitjeju.net/en/detail/view?contentsid=CONT_000000000500469', locator: 升天失败、山神射箭与岩石说明}
+    bridge: {entry: LIT-2-0001, cluster: sid_myth, trail: all, label: 成龙失败的不同版本, rationale: 比较多个讲述的动机与结局，练习区分故事版本与自然景观本身。}
+
+  - id: case_kr_jeju_oedolgae_grandmother
+    title: 济州独立岩｜海边等待归人的老妇
+    aliases: [외돌개 할망바위, Oedolgae Grandmother Rock, 济州独立岩]
+    genre: folktale
+    credibility_tier: B
+    location: {lat: 33.23921, lng: 126.54486, precision: city, location_name: 韩国 · 济州岛西归浦独立岩, culture_region: 东亚 · 韩国济州}
+    location_note: 西归浦独立岩海岸地标参考坐标；老妇人的经历属于地方传说。
+    paragraphs:
+      - 一位老人出海捕鱼，迟迟没有归来。妻子在岸边不断眺望，最终也化作海上的一根石柱；靠近水面的一块石头，则被故事说成遇难的丈夫。
+      - 济州的同一石柱还有被将军用作威吓敌军的另一传说，因此有不同名字。旅游资料也将它解释为海浪侵蚀海岸岩体后留下的海蚀柱；这与等待归人的故事属于不同层次的解释。
+    sources:
+      - {citation: '济州旅游公社，〈Oedolgae Sea Stack〉。', type: institutional_account, url: 'https://www.visitjeju.net/en/detail/view?contentsid=CNTS_000000000018409', locator: 老妇、丈夫与另一将军故事}
+      - {citation: 'Oedolgae，西归浦地标地理参考。', type: geographic_reference, url: 'https://en.wikipedia.org/wiki/Oedolgae', locator: 海岸岩柱坐标}
+    bridge: {entry: GEO-LAND-0005, cluster: sid_myth, trail: all, label: 海蚀柱传说与海岸变化, rationale: 对照等待归人的故事和海岸侵蚀的地学研究，分别讨论叙事意义与海岸环境。}
+
+  - id: case_mn_ub_courtyard_white_visitor
+    title: 乌兰巴托｜院子里叫不停的狗
+    aliases: [Denjiin Myanga ghost, 达希家的夜间访客]
+    genre: urban_legend
+    credibility_tier: B
+    location: {lat: 47.92194, lng: 106.91528, precision: city, location_name: 蒙古 · 乌兰巴托, culture_region: 东亚 · 蒙古}
+    location_note: 乌兰巴托市中心参考点；研究文章提到登吉因明嘎一带，未公开具体住宅地址。
+    temporal: {year_start: 2006, year_end: 2006, era_label: 故事出版时间, uncertainty_note: 研究者引述的故事于 2006 年出版或再版，传言指向 1980 年代。}
+    paragraphs:
+      - 一家人搬进旧院落后，养来看门的狗夜里不断奔跑狂吠。男主人从窗里看出去，见一名白衣男子站在院中；他出声询问，来客便消失了。后来家人又听见一个人声，像是在寻找自己的车马和财物。
+      - 研究者格雷戈里·德拉普拉斯分析过一则 2006 年出版的乌兰巴托故事：家人请宗教人士处理之后，狗和夜声都安静下来。文章讨论了这类叙事里的历史记忆与族群刻板印象；故事对来客身份的归因不构成对任何现实族群的判断。
+    sources:
+      - {citation: 'Grégory Delaplace, “Chinese Ghosts in Mongolia”, Inner Asia 12(1), 2010, pp. 127–141.', type: academic_article, url: 'https://www.academia.edu/592639/Chinese_Ghosts_in_Mongolia_2010_', doi: '10.1163/146481710792710282', locator: 第 131–132 页：2006 年故事集第 7 卷所引旧院落叙事；此处通过研究文章转述}
+      - {citation: 'Grégory Delaplace, “Neighbours and Their Ruins”, in Frontier Encounters, Open Book Publishers, 2012.', type: academic_book, url: 'https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/19/46/78/08/2019467808/2019467808.pdf', locator: 第 211 页起的历史记忆研究；补充语境，非此具体故事出处}
+      - {citation: 'Ulaanbaatar，城市地理参考。', type: geographic_reference, url: 'https://en.wikipedia.org/wiki/Ulaanbaatar', locator: 市中心参考坐标}
+    bridge: {entry: HIS-6-0001, cluster: sid_hag, trail: trail5, label: 院落传闻与来源层次, rationale: 把故事集、研究者的转述和城市历史分别当作不同来源，留意故事中的族群刻板印象。}
+
+  - id: case_mn_ub_neighbor_nightly_coins
+    title: 乌兰巴托｜隔壁院子里的讨钱声
+    aliases: [Ulaanbaatar courtyard money ghost, 乌兰巴托院落的夜声]
+    genre: urban_legend
+    credibility_tier: B
+    location: {lat: 47.92194, lng: 106.91528, precision: city, location_name: 蒙古 · 乌兰巴托, culture_region: 东亚 · 蒙古}
+    location_note: 乌兰巴托市中心参考点；研究所引故事对住宅使用匿名处理，具体住址未知。
+    temporal: {year_start: 2003, year_end: 2003, era_label: 故事出版时间, uncertainty_note: 研究者引述 2003 年故事集，故事所述事件日期不详。}
+    paragraphs:
+      - 一名男子发现隔壁住户总是住不长久。某夜，他听见院墙另一边有人反复讨钱；他与邻居打听旧屋的过去，又尝试请人举行仪式，声音仍时有出现。
+      - 故事里，邻居偶然朝院子扔下一枚硬币，声音短暂平息，后来却不得不一次次照做，最后搬离。人类学文章据 2003 年故事集转述这一匿名版本，并提醒读者留意其中关于外来者的刻板印象；它不是可核实的闹鬼事件。
+    sources:
+      - {citation: 'Grégory Delaplace, “Chinese Ghosts in Mongolia”, Inner Asia 12(1), 2010, pp. 127–141.', type: academic_article, url: 'https://www.academia.edu/592639/Chinese_Ghosts_in_Mongolia_2010_', doi: '10.1163/146481710792710282', locator: 第 132–133 页：转述 2003 年故事集第 2 卷的匿名院落故事}
+      - {citation: 'Grégory Delaplace, “Neighbours and Their Ruins”, in Frontier Encounters, Open Book Publishers, 2012.', type: academic_book, url: 'https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/19/46/78/08/2019467808/2019467808.pdf', locator: 第 211 页起的历史记忆研究；补充语境，非此具体故事出处}
+      - {citation: 'Ulaanbaatar，城市地理参考。', type: geographic_reference, url: 'https://en.wikipedia.org/wiki/Ulaanbaatar', locator: 市中心参考坐标}
+    compare: [case_mn_ub_courtyard_white_visitor]
+    bridge: {entry: LIT-2-0006, cluster: sid_hag, trail: trail5, label: 院墙、夜声与讲述视角, rationale: 以院墙和邻居的视角阅读空间叙事；同时区分文学分析、来源转述及现实事件。}

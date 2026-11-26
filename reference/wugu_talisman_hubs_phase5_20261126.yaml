@@ -1,0 +1,417 @@
+# Layer 3 motif hubs (4) and Layer 2 myth/document corpora (2) for Wave 1: 巫蛊、放蛊与厌胜符箓.
+# Original simplified Chinese academic summaries grounded in public-domain Chinese classics and peer-reviewed scholarship.
+records:
+  - id: motif_cn_wugu_poison_complex
+    title: 巫蛊毒术与放蛊谣谚母题群
+    aliases:
+      - 巫蛊母题群
+      - 蓄蛊放蛊
+      - 造畜蛊毒
+      - Gu sorcery complex
+    node_type: motif_index
+    z_layer: 3
+    genre: academic_model
+    credibility_tier: A
+    trail: all
+    spatial:
+      precision: culture_region
+      location_name: 中国关中、江南与西南边疆传统巫蛊文献区
+      culture_region: 中国 · 巫蛊与放蛊史志文献区
+    temporal:
+      year_start: -541
+      year_end: 1935
+      era_label: 先秦《左传》至隋唐律医典籍与近代民族志时期
+      uncertainty_note: 《左传·昭公元年》“皿虫为蛊”为早期核心文本，汉代巫蛊大狱、隋唐医典律令与明清方志逐步叠合形成复合母题。
+    paragraphs:
+      - “巫蛊”与“放蛊”在中国文献传统中横跨政治巫术、毒理学、刑律禁令与边疆族群想象四重语域。先秦《左传·昭公元年》释“皿虫为蛊”，《周礼·秋官》设“庶氏”掌除毒蛊；汉武帝征和二年“巫蛊之祸”（《汉书·江充传》《武五子传》）则将暗埋桐偶人行厌胜诅咒推向朝廷政治清洗的顶峰；及至隋唐，《隋书·地理志下》《诸病源候论·卷二十六》与《唐律疏议·卷十八》定型了“五月五日聚百虫合置器中相啖”的蓄蛊叙事及严酷刑律，涵盖蛇蛊、猫鬼、金蚕蛊、挑生蛊与落洞等地方变体。
+      - 比较民俗学与历史人类学研究表明，各地流传的“放蛊试毒”“嫁金蚕”及“入寨忌食防蛊”谣谚，常常将湿热地区的寄生虫病、食物腐败中毒（或斑蝥、乌头、钩吻等真实动植物毒素暴露）与社会偏见缠绕在一起。由于中下层社群及异乡商旅缺乏病原菌与毒理辨识工具，遂借“暗中放蛊”归因来解释突发性腹胀、消瘦或暴毙，并把恐惧集中投射至山居边民、未婚或寡居女性身上，酿成婚姻隔离与司法冤狱。
+      - 本母题枢纽在谱系分类上参照徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994，ISBN 978-7-5363-2780-1）关于蛊俗与巫术谣谚之书目线索，正文则依据《汉书》《隋书》《唐律疏议》等公共领域原典及冯汉骥、施赖奥克（1935）、戴雅门（1988）、刘焱（2021）等当代学术成果独立撰写。检视成员个案时，须将历史毒理与政治冤狱档案分别对待，切勿混同传闻描述与客观致病事实。
+    note_kind: research
+    sources:
+      - citation: 〔东周〕左丘明传，《春秋左传·昭公元年》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: https://ctext.org/chun-qiu-zuo-zhuan/zhao-gong-yuan-nian
+        locator: 昭公元年医和论“于文，皿虫为蛊，谷之飞亦为蛊”
+      - citation: 〔东汉〕班固撰，《汉书·卷四十五·江充传》，维基文库校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E6%BC%A2%E6%9B%B8/%E5%8D%B7045
+        locator: 卷四十五江充掘地求桐木偶人与征和二年巫蛊大狱始末
+      - citation: 〔唐〕长孙无忌等撰，《唐律疏议·卷第十八·贼盗·造畜蛊毒》，维基文库校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E5%94%90%E5%BE%8B%E7%96%8F%E8%AD%B0/%E5%8D%B7%E7%AC%AC%E5%8D%81%E5%85%AB
+        locator: 卷十八“造畜蛊毒”条疏议辨析蛇蛊、猫鬼及连坐绞流刑罚
+      - citation: 'H. Y. Feng & J. K. Shryock (1935). The Black Magic in China Known as Ku. Journal of the American Oriental Society 55(1), 1–30.'
+        type: peer_reviewed
+        url: https://doi.org/10.2307/594297
+        doi: 10.2307/594297
+        locator: 蓄蛊文献源流、方志区域迁移与近代祛魅考辨
+    relations:
+      - type: EXPLAINED_BY
+        target: mech_gu_sorcery_social_scapegoat
+        weight: 1.0
+        status: contested
+        note: 多数蓄蛊谣谚与巫蛊大狱呈现显著的社会替罪羊结构，但具体个案仍需核查真实毒物中毒或政治斗争背景。
+      - type: EXPLAINED_BY
+        target: theory_poison_panic_projection
+        weight: 1.0
+        status: contested
+        note: 疫疠与寄生虫病引发的毒性焦虑常通过跨族群他者投射固化为“放蛊”传闻，适用边界须结合地方医疗史判定。
+      - type: COMPARED_WITH
+        target: index_ocm_754
+        weight: 1.0
+        note: 跨文化比较索引对照：OCM 754（巫术观念、施术指控与社会制裁）。
+      - type: COMPARED_WITH
+        target: motif_wolf_stranger_ghosts
+        weight: 1.0
+        note: 同题并列阅读：外来者污名、妖术恐慌与《叫魂》司法传播模式。
+      - type: COMPARED_WITH
+        target: case_cn_xiangxi_gu_poison
+        weight: 1.0
+        note: 核心地方志与医典蓄蛊个案入口。
+      - type: COMPARED_WITH
+        target: case_china_soulstealers_1768
+        weight: 1.0
+        note: 妖术谣言、司法追查与政治恐慌对照案例。
+
+  - id: motif_cn_yansheng_talisman_seal
+    title: 厌胜辟邪与工匠镇物母题群
+    aliases:
+      - 厌胜母题群
+      - 鲁班厌胜
+      - 镇宅厌胜器物
+      - Yansheng apotropaia
+    node_type: motif_index
+    z_layer: 3
+    genre: academic_model
+    credibility_tier: A
+    trail: all
+    spatial:
+      precision: culture_region
+      location_name: 中国中原、齐鲁与东南沿海传统营造厌胜文化区
+      culture_region: 中国 · 厌胜镇物与工匠民俗区
+    temporal:
+      year_start: -40
+      year_end: 1993
+      era_label: 汉代石刻与厌胜钱至明清《鲁班经》及现代建筑民俗研究时期
+      uncertainty_note: 涵盖西汉《急就章》“石敢当”、汉唐厌胜钱币与明刊《鲁班经匠家镜》所载木工镇物与解镇法式。
+    paragraphs:
+      - “厌胜”（亦作压胜）是中国古代器物文化与建筑民俗中兼具“防御辟邪”与“暗中压制”双重面向的核心母题。一方面，宅院巷冲立“泰山石敢当”、门楣屋脊置瓦将军、吞口、太极八卦凸镜、五帝钱或厌胜钱，意在以象征性边界封印挡煞保安；另一方面，明代《鲁班经匠家镜》及清代笔记《清稗类钞》所录“鲁班厌胜”，则叙述木匠、泥瓦匠因劳资或款待龃龉而在梁柱、门坎或墙体内部暗埋木偶、倒钉、破碗或反符，以期引发宅主祸患或反制解厌。
+      - 民俗史与建筑人类学分析表明，两类厌胜做法共同围绕“建筑与器物的边界控制”展开：工匠掌握结构隐蔽部位的营建知识，使“暗埋镇物”传说成为传统流动手工业缺少书面契约保障时的博弈威慑；而宅主在合脊上梁仪式或日后居住遇异响、漏水、木构干缩爆裂时，又透过悬挂八卦镜、石碑或请匠“解厌”来重建空间安全感。
+      - 本母题梳理参照徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994，ISBN 978-7-5363-2780-1）有关厌胜与器物辟邪之分类线索，正文依据公共领域经典文本及鲁克思（Klaas Ruitenbeek，1993）等学界成果独立编纂。成员卡片并列读取时，须严格区分社会规范威慑、木材湿胀干缩等建筑物理成因与象征心理安慰机制。
+    note_kind: research
+    sources:
+      - citation: 'Klaas Ruitenbeek (1993). Carpentry and Building in Late Imperial China: A Study of the Fifteenth-Century Carpenter''s Manual Lu Ban Jing. Brill.'
+        type: academic_monograph
+        url: https://archive.org/details/carpentrybuildin0000ruit
+        locator: 《鲁班经匠家镜》厌胜镇物、解厌法式与工匠雇主规范分析
+      - citation: Wikimedia Commons Digital Plates, 《新镌京版工师雕造正式鲁班木经匠家镜》古籍图版汇存。
+        type: archival_catalogue
+        url: https://commons.wikimedia.org/wiki/Category:Luban_Shu
+        locator: 明清刊本鲁班经镇宅符式与营造图样数字化图版
+      - citation: 中国非物质文化遗产网，《泰山石敢当习俗》（项目编号 X-53），2006 年公布。
+        type: official_standard
+        url: https://www.ihchina.cn/project_details/15017.html
+        locator: 泰山石敢当立石挡巷冲与民居镇宅习俗档案
+    relations:
+      - type: EXPLAINED_BY
+        target: mech_apotropaic_boundary_seal
+        weight: 1.0
+        status: contested
+        note: 门户、巷冲与梁柱镇物符合空间边界象征封闭防御机制，但其施工争议亦常受具体劳资习惯与木构物理老化影响。
+      - type: EXPLAINED_BY
+        target: theory_sympathetic_contagious_magic_cn
+        weight: 1.0
+        status: contested
+        note: 隐蔽木偶、倒钉与符式镇物遵循相似律、接触律及署名符号逻辑，不具有超自然物理因果效力。
+      - type: COMPARED_WITH
+        target: index_ocm_754
+        weight: 1.0
+        note: 跨文化比较索引对照：OCM 754（术数害人与反制巫术观念）。
+      - type: COMPARED_WITH
+        target: case_cn_luban_yansheng
+        weight: 1.0
+        note: 明清木作《鲁班经》厌胜与化解民俗代表个案。
+      - type: COMPARED_WITH
+        target: case_cn_taishan_shigandang
+        weight: 1.0
+        note: 立石镇宅与巷冲厌胜代表个案。
+
+  - id: motif_cn_zhuyou_incantation_craft
+    title: 祝由咒禁与方术医疗母题群
+    aliases:
+      - 祝由十三科
+      - 咒禁科
+      - 符水收惊
+      - Zhuyou incantation healing
+    node_type: motif_index
+    z_layer: 3
+    genre: academic_model
+    credibility_tier: A
+    trail: all
+    spatial:
+      precision: culture_region
+      location_name: 中国历代太常太医院制度及江南西南民间方术传习区
+      culture_region: 中国 · 祝由符禁与传统医疗民俗区
+    temporal:
+      year_start: -168
+      year_end: 1920
+      era_label: 汉代马王堆《五十二病方》及《黄帝内经》至宋元太医局与清民符本时期
+      uncertainty_note: 从马王堆帛书禹步祝唾方与《素问·移精变气论》“祝由”，历经隋唐太医署咒禁博士、元代太医院祝由十三科延及晚近民间收惊。
+    paragraphs:
+      - “祝由”与“咒禁”构成了中国古代官修医学制度与民间疗愈传统长期并存的特殊母题群。《黄帝内经·素问·移精变气论》记“古之治病，惟其移精变气，可祝由而已”，马王堆汉墓帛书《五十二病方》已载大量禹步、唾吐与言语祝诅方术；隋唐太医署设“咒禁科”，《元史·百官志四》记载太医院分十三科而设“祝由科（书禁）”。在民间社会中，该母题囊括朱砂画符、符胆敕印、掐诀步罡、敕水净坛、焚符饮灰及儿童“收惊叫魂”等多元操作。
+      - 宗教学与医学史学者（如 Donald Harper，1998；Michel Strickmann，2002）剖析指出，祝由与符禁体系把“病因”视为鬼神侵扰、惊吓失魂或冥府讼累，其操作依靠双层编码：一方面以汉代兵符契约般的“符篆署名”与冥界官僚文书形式召唤神将逐邪，另一方面通过高度程序化的呼吸节奏、手诀、咒语和亲属陪护营造强力的心理暗示与情绪安抚。
+      - 本母题在书目归类上参照徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994，ISBN 978-7-5363-2780-1）相关方术与符咒条目线索，正文依据传世医经、史志与现代汉学医学史文献独立编写。阅读相关资料时，需明确区分符号安慰效应与现代循证医学疗效，并警惕焚符吞灰或外敷朱砂（硫化汞）等矿物方剂带来的重金属中毒风险。
+    note_kind: research
+    sources:
+      - citation: 《黄帝内经·素问·移精变气论篇第十三》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: https://ctext.org/huangdi-neijing/yi-jing-bian-qi-lun
+        locator: “古之治病，惟其移精变气，可祝由而已”古典医学论述
+      - citation: 〔明〕宋濂等撰，《元史·卷八十八·百官志四·太医院》，维基文库校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E5%85%83%E5%8F%B2/%E5%8D%B7088
+        locator: 元代太医院诸科建置与“祝由书禁”制度史料
+      - citation: 'Michel Strickmann (ed. Bernard Faure, 2002). Chinese Magical Medicine. Stanford University Press / Internet Archive.'
+        type: academic_monograph
+        url: https://archive.org/details/chinesemagicalmedicinemichealstrickmann_202003_619_c
+        locator: 祝由、印诀、符箓治病与中古道佛法术医学传统研究
+      - citation: 'Donald Harper (1998). Early Chinese Medical Literature: The Mawangdui Medical Manuscripts. Kegan Paul / Internet Archive.'
+        type: academic_monograph
+        url: https://archive.org/details/early-chinese-medical-literature-mawangdui-manuscripts-donald-harper
+        locator: 马王堆帛书祝由、禹步与先秦两汉巫医并存谱系考证
+    relations:
+      - type: EXPLAINED_BY
+        target: theory_sympathetic_contagious_magic_cn
+        weight: 1.0
+        status: contested
+        note: 符胆署名、步罡掐诀与饮符水体现交感律则及言语施事象征语法，而非物理或药理直接治疗作用。
+      - type: EXPLAINED_BY
+        target: mech_suggestibility_bias
+        weight: 1.0
+        status: contested
+        note: 仪式场域、权威祝辞与预期引导可产生一定心理安慰和暗示感受调节，但不能替代器质性疾病诊治。
+      - type: COMPARED_WITH
+        target: index_ocm_776
+        weight: 1.0
+        note: 跨文化比较索引对照：OCM 776（神灵、招魂与超自然存在介入观念）。
+      - type: COMPARED_WITH
+        target: case_cn_zigu_divination
+        weight: 1.0
+        note: 扶乩降笔与民间仪礼沟通传统对照案例。
+      - type: COMPARED_WITH
+        target: case_cn_zhubing_mengyan
+        weight: 1.0
+        note: 中古医典中鬼魅病因与身体病理阐释并存个案。
+
+  - id: motif_cn_household_apotropaic_guardians
+    title: 门户守护神系与驱傩厌胜母题群
+    aliases:
+      - 门神与驱傩母题群
+      - 桃符钟馗
+      - 镇墓兽与傩仪
+      - Household apotropaic guardians
+    node_type: motif_index
+    z_layer: 3
+    genre: academic_model
+    credibility_tier: A
+    trail: all
+    spatial:
+      precision: culture_region
+      location_name: 中国黄河、长江流域至皖南湘西岁时门户与驱傩民俗区
+      culture_region: 中国 · 门神守护与驱傩礼俗区
+    temporal:
+      year_start: -400
+      year_end: 2006
+      era_label: 先秦《周礼》方相氏大傩、汉魏神荼郁垒桃符至唐宋钟馗及地方傩仪时期
+      uncertainty_note: 涵盖《周礼·夏官》方相氏、《论衡》《风俗通义》度朔山门神、《梦溪笔谈》钟馗画仪与明清生命礼俗挡煞配件。
+    paragraphs:
+      - 中国家户与丧婚礼俗中围绕“门户与过渡边界”形成了一套绵延两千余年的守护神系与驱傩厌胜母题。战国至汉魏时期，《周礼·夏官·方相氏》记载黄金四目蒙熊皮的逐疫大傩与入圹驱方良制，东汉《论衡·订鬼》与《风俗通义·祀典》复详述度朔山大桃树下神荼、郁垒阅领万鬼以及岁暮立桃梗、悬苇索、画虎门上的门卫制度，同时战国楚墓至隋唐墓葬亦流行镇墓兽压胜随葬；唐宋以降，门户守护谱系进一步扩展出秦琼、尉迟恭门神年画、终南进士钟馗啖鬼图（见宋沈括《梦溪笔谈》补笔谈），并与民间“百家锁”“五彩长命缕”、婚礼红盖头跨火盆以及皖南池州五猖驱疫傩舞共同构成日常与生命节点的防护网络。
+      - 从礼俗演变与人类学视角考察，这套守护神系鲜明呈现“从恐惧威慑向民俗年节和家族庇护转化”的轨迹：先秦大傩与墓葬镇墓兽重在以狰狞兽面与武装威仪清扫瘟疫凶煞；而桃符演为春联、门神转为纳福迎祥、长命缕与百家锁系于童稚颈腕，则将原本严肃的界域驱鬼转化为邻里祈安与亲情联结。
+      - 本母题梳理参考徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994，ISBN 978-7-5363-2780-1）之门神、岁时辟邪与傩俗条目体系，正文立足于传世文献及非遗调查独立写成。对相关镇尸、赶尸或镇宅传闻进行研究时，需区分地方口述叙事、戏曲仪式演剧性与早期丧葬考古实证。
+    note_kind: research
+    sources:
+      - citation: 《周礼·夏官司马·方相氏》，维基文库校本。
+        type: primary_text
+        url: https://zh.wikisource.org/wiki/%E5%91%A8%E7%A6%AE/%E5%A4%8F%E5%AE%98%E5%8F%B8%E9%A6%AC
+        locator: 方相氏黄金四目索室驱疫与入圹击方良记载
+      - citation: 〔东汉〕王充撰，《论衡·订鬼》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: https://ctext.org/lunheng/ding-gui
+        locator: 援引《山海经》度朔山神荼、郁垒与画神悬苇索制鬼文本
+      - citation: 〔东汉〕应劭撰，《风俗通义·祀典》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: https://ctext.org/fengsu-tongyi/si-dian
+        locator: 桃梗、苇茭、画虎于门与五月五日五彩辟兵缕记载
+      - citation: 〔北宋〕沈括撰，《梦溪笔谈·卷二十一·异事》（附补笔谈钟馗条），维基文库校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E5%A4%A2%E6%BA%AA%E7%AD%86%E8%AB%87/%E5%8D%B721
+        locator: 宋代笔记关于唐皇室画钟馗啖鬼岁暮赐臣民俗考源
+    relations:
+      - type: EXPLAINED_BY
+        target: mech_apotropaic_boundary_seal
+        weight: 1.0
+        status: contested
+        note: 门神、桃符、镇墓兽与婚俗跨火盆均围绕宅门、墓室与生命门槛构建象征封闭防御边界。
+      - type: EXPLAINED_BY
+        target: theory_liminality_rites_passage
+        weight: 1.0
+        status: contested
+        note: 岁除更替、童稚保命、嫁娶入宅与丧葬入圹对应典型的“分离—阈限—聚合”过渡礼仪危险期。
+      - type: COMPARED_WITH
+        target: index_ocm_776
+        weight: 1.0
+        note: 跨文化比较索引对照：OCM 776（家宅守护神祇与驱邪存在观念）。
+      - type: COMPARED_WITH
+        target: case_cn_qimen_mulian_opera
+        weight: 1.0
+        note: 皖南宗族目连戏与驱傩迎神演剧仪式对照案例。
+      - type: COMPARED_WITH
+        target: case_cn_tw_keelung_zhongyuan
+        weight: 1.0
+        note: 岁时普度、边界祭祀与社区消灾礼俗对照。
+
+  - id: corpus_cn_zhubing_gu_toxicology
+    title: 隋唐医书与律令所载蛊毒文献群
+    aliases:
+      - 隋唐蛊毒医律文献
+      - 诸病源候论与唐律蛊毒
+      - Sui-Tang Gu medical and legal corpus
+    node_type: myth_corpus
+    z_layer: 2
+    genre: historical_archive
+    credibility_tier: A
+    trail: all
+    spatial:
+      precision: culture_region
+      location_name: 中国洛阳、长安与江南岭南官修医典及律令辐射区
+      culture_region: 中国 · 隋唐医典与刑律文献区
+    temporal:
+      year_start: 610
+      year_end: 1596
+      era_label: 隋大业六年《诸病源候论》（610 年）至唐律及明代《本草纲目》（1596 年）时期
+      uncertainty_note: 核心成书涵盖公元 610 年巢元方《诸病源候论》、653 年《唐律疏议》、656 年《隋书》及 1596 年李时珍《本草纲目》汇考。
+    paragraphs:
+      - 本专类文献群汇集隋唐国家编纂的史志、病因医典、刑事法典以及宋明药学对“蛊毒”的系统文本建构，是研究中国古代如何以医学证候、法律罪名与地理分类共同界定“蛊”的基干史料群。代表文献包括隋巢元方等《诸病源候论·卷二十六·蛊毒病诸候下》、唐魏征等《隋书·卷三十一·地理志下》、长孙无忌等《唐律疏议·卷第十八·贼盗·造畜蛊毒》条，以及宋人《夷坚志》《岭外代答》与明李时珍《本草纲目》中的相关药物解毒集解。
+      - 通过将医典与律令对读可见，《诸病源候论》首次把蛇蛊、飞蛊、金蚕蛊与挑生蛊拆解为腹痛、吐血、咽喉刺痒、渐次羸瘦等可辨症状，同时并列方药与鬼祟病因；而《唐律疏议》“造畜蛊毒”条不仅对制蛊及教令者处以绞刑，甚至连不知情的同居家口与知而不纠的里正亦一并流放三千里且不适用常赦，深刻塑造了后世《宋刑统》《大明律》《大清律例》对待蓄蛊、挑生及猫鬼案的司法重刑模板。
+      - 校勘与阅读本文献群时，需注意各书之间的文本互引与地域迁移：例如《隋书·地理志》原本把蓄蛊记在古扬州江南数郡，唐宋以后才逐渐南移、西迁至福建泉州与西南苗瑶山区；而《本草纲目》收录黑大豆、桑木心、芫青（斑蝥）等解毒与有毒虫草条文，亦提醒现代读者将古代真实的植物碱/昆虫毒理事件同刑律制造的妖术冤案分开审视。
+    note_kind: research
+    sources:
+      - citation: 〔隋〕巢元方等撰（610 年），《巢氏诸病源候总论·卷二十六·蛊毒病诸候下》，维基文库四库全书校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E5%B7%A2%E6%B0%8F%E8%AB%B8%E7%97%85%E6%BA%90%E5%80%99%E7%B8%BD%E8%AB%B8(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B726
+        locator: 卷二十六蛊毒、蛇蛊、金蚕蛊、挑生等病候分类及医理叙述
+      - citation: 〔唐〕魏征等撰，《隋书·卷三十一·地理志下》，维基文库二十四史校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E9%9A%8B%E6%9B%B8/%E5%8D%B731
+        locator: 卷三十一江南数郡“聚百种虫合置器中”蓄蛊民俗记述
+      - citation: 〔唐〕长孙无忌等撰，《唐律疏议·卷第十八·贼盗》，维基文库校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E5%94%90%E5%BE%8B%E7%96%8F%E8%AD%B0/%E5%8D%B7%E7%AC%AC%E5%8D%81%E5%85%AB
+        locator: “造畜蛊毒”条律文、疏议及同居家口流刑规定
+      - citation: 〔明〕李时珍撰，《本草纲目》，维基文库校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E6%9C%AC%E8%8D%89%E7%B6%B1%E7%9B%AE
+        locator: 虫部、草部与谷部黑大豆、桑木心、犀角等解蛊及毒虫集解
+    relations:
+      - type: ATTESTS_MOTIF
+        target: motif_cn_wugu_poison_complex
+        weight: 1.0
+        note: 《诸病源候论》《隋书》《唐律疏议》与《本草纲目》构成蓄蛊证候、造畜刑律与解毒方药之核心原典群。
+      - type: ATTESTS_MOTIF
+        target: motif_cn_zhuyou_incantation_craft
+        weight: 1.0
+        note: 隋唐官修医典及本草文献兼载针药、祝禁与辟邪方物，实证方术医疗与本草毒理并存局面。
+      - type: ATTESTS_MOTIF
+        target: index_ocm_754
+        weight: 1.0
+        note: 历代造畜蛊毒法条与方志记载直接对应 OCM 754（巫术指控与法律惩治）。
+      - type: EXPLAINED_BY
+        target: theory_poison_panic_projection
+        weight: 1.0
+        status: contested
+        note: 医律文献对蛊毒症候及地理流变的建构，支持疫病焦虑向特定边地群体投射之解释框架。
+      - type: COMPARED_WITH
+        target: case_cn_xiangxi_gu_poison
+        weight: 1.0
+        note: 隋唐至明清蓄蛊方志流变综合个案。
+      - type: COMPARED_WITH
+        target: case_cn_zhubing_mengyan
+        weight: 1.0
+        note: 同书《诸病源候论》关于卒魇与鬼邪症候的医学叙述对照。
+
+  - id: corpus_cn_suishi_talisman_almanacs
+    title: 岁时民俗与厌胜符箓文献群
+    aliases:
+      - 岁时厌胜符箓文献
+      - 荆楚岁时记与鲁班经文献群
+      - Almanacs and apotropaic talismans corpus
+    node_type: myth_corpus
+    z_layer: 2
+    genre: historical_archive
+    credibility_tier: A
+    trail: all
+    spatial:
+      precision: culture_region
+      location_name: 中国江汉荆楚、江南两浙与南北传统匠作文献文化带
+      culture_region: 中国 · 岁时记注与厌胜符本区
+    temporal:
+      year_start: 80
+      year_end: 1850
+      era_label: 汉魏《论衡》《风俗通义》、六朝《荆楚岁时记》至宋明《梦溪笔谈》《鲁班经》时期
+      uncertainty_note: 串联东汉风俗批判、南朝梁荆楚岁时记注及明清工匠符式、日用类书中的岁时厌胜档案。
+    paragraphs:
+      - 本文献群系统串联中国传统“岁时礼俗记注”与“工匠及民间厌胜符箓手册”两大文本脉络：前者上承东汉王充《论衡·订鬼》《解除》与应劭《风俗通义·祀典》对岁暮驱傩、桃梗苇索、五月五日长命缕的考辨，经南朝梁《荆楚岁时记》确立元旦画鸡桃符与端午采艾悬户之节令范式，至宋代沈括《梦溪笔谈》及吴自牧《梦粱录》记录都市门神画仪与婚丧挡煞岁俗；后者则以明刊《鲁班经匠家镜》及清代笔记所录镇宅符式、工匠木偶解法、太岁避煞条规为大宗。
+      - 并列检阅这两类文本可以发现，中国传统“符箓与厌胜”并非神秘孤立的秘传书，而是高度嵌入农时节气（元旦、立春、端午、中元、除夕）与人生营建周期（动土、上梁、成婚、葬墓）的日常日历系统：岁时记重点记录节令节点上全社区共享的预防性避煞动作，而工匠符本与家藏日用类书则提供遇到异常声响、病患或建筑冲突时的应急操作模板。
+      - 在版本校勘与使用边界方面，《荆楚岁时记》等六朝名著存在隋唐《艺文类聚》《初学记》及后世辑佚注本的层累增删，明清《鲁班经》各坊刻本所附“符式与厌胜法”亦屡经书商杂糅增广；研究者征引相关符箓条目时，须标明具体辑本与刊刻卷次，切忌将后世增补的坊间符图误作先秦汉魏早期制度定本。
+    note_kind: research
+    sources:
+      - citation: 〔南朝梁〕宗氏原撰，《荆楚岁时记》，维基文库校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E8%8D%86%E6%A5%9A%E6%AD%B2%E6%99%82%E8%A8%98
+        locator: 正月贴画鸡置桃符、端午采艾悬户与系五彩长命缕节令记录
+      - citation: 〔东汉〕王充撰，《论衡·解除》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: https://ctext.org/lunheng/jie-chu
+        locator: 东汉解除祭礼、驱疫厌胜习俗与王充自然主义辨正
+      - citation: 〔东汉〕应劭撰，《风俗通义·祀典》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: https://ctext.org/fengsu-tongyi/si-dian
+        locator: 桃梗苇茭画虎与夏至端午避兵鬼礼俗原典
+      - citation: 'Klaas Ruitenbeek (1993). Carpentry and Building in Late Imperial China: A Study of the Fifteenth-Century Carpenter''s Manual Lu Ban Jing. Brill.'
+        type: academic_monograph
+        url: https://archive.org/details/carpentrybuildin0000ruit
+        locator: 明清《鲁班经》各刊本源流、镇宅符篆与木作厌胜版本校勘
+    relations:
+      - type: ATTESTS_MOTIF
+        target: motif_cn_yansheng_talisman_seal
+        weight: 1.0
+        note: 《风俗通义》与《鲁班经》各刊本实证汉代至明清厌胜镇物及解镇符式的演化谱系。
+      - type: ATTESTS_MOTIF
+        target: motif_cn_household_apotropaic_guardians
+        weight: 1.0
+        note: 《荆楚岁时记》与《论衡》详细保存门户桃符、画虎、采艾与五彩长命缕等岁时守护实践。
+      - type: ATTESTS_MOTIF
+        target: motif_cn_zhuyou_incantation_craft
+        weight: 1.0
+        note: 民间日用历书与匠作符本兼收符胆画式、解除祝辞与疗疾避煞法门。
+      - type: ATTESTS_MOTIF
+        target: index_ocm_776
+        weight: 1.0
+        note: 岁时迎神逐鬼与门户守护形象对应 OCM 776（神灵与超自然防护实践）。
+      - type: EXPLAINED_BY
+        target: mech_apotropaic_boundary_seal
+        weight: 1.0
+        status: contested
+        note: 岁时历法与营造节点上的符箓镇物具有明确的边界封闭与焦虑缓解心理机制。
+      - type: COMPARED_WITH
+        target: case_cn_luban_yansheng
+        weight: 1.0
+        note: 《鲁班经》木作厌胜与化解核心代表案例。
+      - type: COMPARED_WITH
+        target: case_cn_taishan_shigandang
+        weight: 1.0
+        note: 门巷立石挡煞民俗代表案例。
+      - type: COMPARED_WITH
+        target: case_cn_tw_keelung_zhongyuan
+        weight: 1.0
+        note: 岁时普度与地方节令驱厄礼俗并置阅读。

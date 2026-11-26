@@ -1,0 +1,833 @@
+{
+  "version": 1,
+  "domain_id": "classical_zhiguai_opera",
+  "title": "三部参考书的增补与对读",
+  "entries": [
+    {
+      "id": "lex_zhiguai_dict_zhengqi_road_inn",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "郑奇与西门亭",
+      "aliases": [
+        "郑奇",
+        "汝阳西门亭"
+      ],
+      "category": "古典志怪与原典对读",
+      "region": "故事所称汝阳；古今地名对应待核",
+      "era": "《太平广记》卷 317 所引《风俗通》",
+      "summary": "郡吏郑奇途中搭载一位女子，在汝阳西门亭住宿。天亮后亭卒发现女子已经死去，后来赶路的郑奇也因腹痛去世。故事把旅途中的陌生人、客舍禁忌与事后的辨认连在一起；它是古书中的志怪叙事，而非可验证的现场报道。",
+      "primary_sources": [
+        {
+          "citation": "《太平广记》卷 317“鄭奇”，维基文库在线转录。",
+          "url": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BB%A3%E8%A8%98/%E5%8D%B7%E7%AC%AC317#%E9%84%AD%E5%A5%87"
+        }
+      ],
+      "secondary_ref": "徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994（年份据后记；印页 2，PDF 第 117 页）。"
+    },
+    {
+      "id": "lex_zhiguai_dict_wenying_dream_grave",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "文颖与水边湿棺",
+      "aliases": [
+        "文颖移棺",
+        "文穎"
+      ],
+      "category": "古典志怪与原典对读",
+      "region": "故事所称甘陵地区；具体地点待核",
+      "era": "《太平广记》卷 317 所引《搜神记》",
+      "summary": "文颖夜宿水边，梦中有人两次请求他将遭水浸的棺木迁到干处。天明后他依梦中所述寻找，发现朽棺并安排改葬。故事以水患、梦境与照料亡者的行动构成情节，可与其他托梦改葬记述比较。",
+      "primary_sources": [
+        {
+          "citation": "《太平广记》卷 317“文穎”，维基文库在线转录。",
+          "url": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BB%A3%E8%A8%98/%E5%8D%B7%E7%AC%AC317#%E6%96%87%E7%A9%8E"
+        }
+      ],
+      "secondary_ref": "徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994（年份据后记；印页 4，PDF 第 119 页）。"
+    },
+    {
+      "id": "lex_zhiguai_dict_niyansi_house_spirit",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "倪彦思与屋梁上的声音",
+      "aliases": [
+        "倪彦思",
+        "倪彥思",
+        "嘉兴鬼魅"
+      ],
+      "category": "古典志怪与原典对读",
+      "region": "故事所称嘉兴",
+      "era": "《太平广记》卷 317 所引《搜神记》",
+      "summary": "嘉兴的倪彦思家中据说有个看不见形体的来客，能交谈，也会捉弄前来驱逐的道士。家人私下议论它时，屋梁突然传来响声；点火检查，梁却并未断裂。故事还写到它揭发官吏藏粮，几年的扰动之后便不知所终。",
+      "primary_sources": [
+        {
+          "citation": "《太平广记》卷 317“倪彥思”，维基文库在线转录。",
+          "url": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BB%A3%E8%A8%98/%E5%8D%B7%E7%AC%AC317#%E5%80%AA%E5%BD%A5%E6%80%9D"
+        }
+      ],
+      "secondary_ref": "徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994（年份据后记；印页 4–5，PDF 第 119–120 页）。"
+    },
+    {
+      "id": "lex_zhiguai_dict_qin_jubo_mistaken_ghost",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "秦巨伯夜路误认",
+      "aliases": [
+        "秦巨伯",
+        "秦巨伯与两孙"
+      ],
+      "category": "古典志怪与原典对读",
+      "region": "故事所称琅邪、蓬山庙；具体地点未核",
+      "era": "《太平广记》卷 317 所引《搜神记》",
+      "summary": "秦巨伯夜经庙旁，遇见形似孙儿的人对他施暴；家人怀疑是精怪，于是他再到庙边试探。后来他带刀夜行，真正的孙儿担心他而前来迎接，却被他误认并杀害。叙事的悲剧来自连续的身份判断失误，不能据此证明鬼魅存在。",
+      "primary_sources": [
+        {
+          "citation": "《太平广记》卷 317“秦巨伯”，维基文库在线转录。",
+          "url": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BB%A3%E8%A8%98/%E5%8D%B7%E7%AC%AC317#%E7%A7%A6%E5%B7%A8%E4%BC%AF"
+        }
+      ],
+      "secondary_ref": "徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994（年份据后记；印页 5，PDF 第 120 页）。"
+    },
+    {
+      "id": "lex_zhiguai_dict_feiji_hairpin_dream",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "费季、金钗与误传的死讯",
+      "aliases": [
+        "费季",
+        "費季",
+        "门楣金钗"
+      ],
+      "category": "古典志怪与原典对读",
+      "region": "故事所称吴地与庐山旅途；具体家址不详",
+      "era": "《太平广记》卷 316 所引《搜神记》",
+      "summary": "远行经商的费季在旅途中对同伴说，临行时把妻子的金钗留在门楣。妻子当夜梦见丈夫，说他已遇盗身亡，并用金钗所在处作为凭据。她找到钗后相信了梦中消息，但一年多以后费季平安回来。故事并未交代梦为何出现。",
+      "primary_sources": [
+        {
+          "citation": "《太平广记》卷 316“費季”，维基文库在线转录。",
+          "url": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BB%A3%E8%A8%98/%E5%8D%B7%E7%AC%AC316#%E8%B2%BB%E5%AD%A3"
+        }
+      ],
+      "secondary_ref": "徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994（年份据后记；印页 4，PDF 第 119 页）。"
+    },
+    {
+      "id": "lex_zhiguai_dict_shixu_disciple_ghost",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "施续门生与来客辩鬼",
+      "aliases": [
+        "施续门生",
+        "施續門生",
+        "无鬼论来客"
+      ],
+      "category": "古典志怪与原典对读",
+      "region": "故事所称吴兴",
+      "era": "《太平广记》卷 323 所引《搜神记》",
+      "summary": "施续的一名门生坚持世上无鬼，一位身穿白衣的来客与他辩论后，却自称奉命来取他的性命。门生恳求对方放过自己，并指出另有一个与他相似的人；故事继而写那个替代者遭到伤害。它以辩论与不公的替代来制造惊惧。",
+      "primary_sources": [
+        {
+          "citation": "《太平广记》卷 323“施續門生”，维基文库在线转录。",
+          "url": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BB%A3%E8%A8%98/%E5%8D%B7%E7%AC%AC323#%E6%96%BD%E7%BA%8C%E9%96%80%E7%94%9F"
+        }
+      ],
+      "secondary_ref": "徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994（年份据后记；印页 3，PDF 第 118 页）。"
+    },
+    {
+      "id": "lex_zhiguai_dict_donglai_chen_shackles",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "东莱陈家与门边的枷锁",
+      "aliases": [
+        "东莱陈氏",
+        "東萊陳氏"
+      ],
+      "category": "古典志怪与原典对读",
+      "region": "故事所称东莱；原文未给可定位村址",
+      "era": "《太平广记》卷 323 所引《搜神记》",
+      "summary": "东莱陈家煮饭时锅里冒出一个白头人，有人建议家人制备枷锁、闭门不出。后来来客察看门内的枷锁后离开，转而寻找另一户同姓人家，故事写那一家随后遭到灭门。这个近乎残酷的结局，把自保与由谁承担代价放在一起。",
+      "primary_sources": [
+        {
+          "citation": "《太平广记》卷 323“東萊陳氏”，维基文库在线转录。",
+          "url": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BB%A3%E8%A8%98/%E5%8D%B7%E7%AC%AC323#%E6%9D%B1%E8%90%8A%E9%99%B3%E6%B0%8F"
+        }
+      ],
+      "secondary_ref": "徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994（年份据后记；印页 4，PDF 第 119 页）。"
+    },
+    {
+      "id": "lex_zhiguai_dict_wang_zhaoping_night_cart",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "王昭平与夜行的车",
+      "aliases": [
+        "王昭平",
+        "新蔡王昭平",
+        "夜行犊车"
+      ],
+      "category": "古典志怪与原典对读",
+      "region": "故事所称新蔡；具体地点不详",
+      "era": "《太平广记》卷 322 所引《搜神记》",
+      "summary": "王昭平家里的车夜间自行出入房间，又有呼喊与攻击声从四面传来。他召集人手，循声音方向射箭；文本写到箭矢落地，却没有继续解释异响或来者。故事将家宅中的物件、声音与无法确认的目标并列。",
+      "primary_sources": [
+        {
+          "citation": "《太平广记》卷 322“新蔡王昭平”，维基文库在线转录。",
+          "url": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BB%A3%E8%A8%98/%E5%8D%B7%E7%AC%AC322#%E6%96%B0%E8%94%A1%E7%8E%8B%E6%98%AD%E5%B9%B3"
+        }
+      ],
+      "secondary_ref": "徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994（年份据后记；印页 4，PDF 第 119 页）。"
+    },
+    {
+      "id": "lex_zhiguai_dict_yuanxue_parent_funeral",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "远学诸生与夜里的车马",
+      "aliases": [
+        "远学诸生",
+        "遠學諸生",
+        "魂车木马"
+      ],
+      "category": "古典志怪与原典对读",
+      "region": "故事所称琅邪；父母住处未给出",
+      "era": "《太平广记》卷 322 所引《续搜神记》",
+      "summary": "一名在外求学的人夜里忽然回到父母面前，自称已经病逝，来接父母参加次日的殡殓。父母登车后像睡着一般，天明时抵达儿子停灵处，才看见所乘车马是随葬的形制。故事承接亲人远隔千里的焦虑与赶不上告别的哀伤。",
+      "primary_sources": [
+        {
+          "citation": "《太平广记》卷 322“遠學諸生”，维基文库在线转录。",
+          "url": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BB%A3%E8%A8%98/%E5%8D%B7%E7%AC%AC322#%E9%81%A0%E5%AD%B8%E8%AB%B8%E7%94%9F"
+        }
+      ],
+      "secondary_ref": "徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994（年份据后记；印页 6，PDF 第 121 页）。"
+    },
+    {
+      "id": "lex_zhiguai_dict_fengshu_four_porters",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "冯述与抬马过河的四人",
+      "aliases": [
+        "冯述",
+        "馮述",
+        "四人抬马过河"
+      ],
+      "category": "古典志怪与原典对读",
+      "region": "故事所称上党与虎牢归途；渡河地点不详",
+      "era": "《太平广记》卷 320 所引《续搜神记》",
+      "summary": "冯述骑马返乡时遇到四个持绳杖的人，他们抓住马脚，竟将人马带上河面。冯述只听见水声，却感觉不到河水；快到岸边时四人认为他不洁，准备离开，他赶紧策马登岸。故事通过听觉、渡河和差一点被留下的危险构造幽明边界。",
+      "primary_sources": [
+        {
+          "citation": "《太平广记》卷 320“馮述”，维基文库在线转录。",
+          "url": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BB%A3%E8%A8%98/%E5%8D%B7%E7%AC%AC320#%E9%A6%AE%E8%BF%B0"
+        }
+      ],
+      "secondary_ref": "徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994（年份据后记；印页 6，PDF 第 121 页）。"
+    },
+    {
+      "id": "lex_zhiguai_dict_suoxun_borrowed_boat",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "索逊船上的陌生乘客",
+      "aliases": [
+        "索逊",
+        "索遜",
+        "索逊载客"
+      ],
+      "category": "古典志怪与原典对读",
+      "region": "故事所称徐州至晋陵水路；河段不详",
+      "era": "《太平广记》卷 320 所引《续搜神记》",
+      "summary": "索逊夜里乘船，有自称脚痛的人请求搭载。上岸后那人消失在坟间，又向墓里的另一位借物报复；不久岸上有巨大赤色物体朝船而来，索逊高声回应，对方旋即消失。借船、牵船与邻里争执被写进幽冥世界。",
+      "primary_sources": [
+        {
+          "citation": "《太平广记》卷 320“索遜”，维基文库在线转录。",
+          "url": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BB%A3%E8%A8%98/%E5%8D%B7%E7%AC%AC320#%E7%B4%A2%E9%81%9C"
+        }
+      ],
+      "secondary_ref": "徐华龙主编：《中国鬼文化大辞典》，广西民族出版社，1994（年份据后记；印页 6，PDF 第 121 页）。"
+    },
+    {
+      "id": "lex_modern_dict_zhuhua",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "竹花",
+      "aliases": [
+        "二渡河鬼妻",
+        "耶罗与竹花"
+      ],
+      "region": "广西罗城仫佬族（辞典所记流传范围）",
+      "summary": "一位农人在河边结识名叫竹花的女子。她说自己要寻找替身，才能离开水边；当一位洗衣妇人将要落水时，农人却不忍见她丧命，将人救下。\n\n竹花于是说出自己受害的冤情。故事让农人带来作恶的财主，最终将冤情交由阴间审理；竹花得以还阳。它是辞典归入“当代部分”的罗城地方故事，河流名称来自叙事，尚未核实具体河段。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 467（PDF 第 582 页），条目“竹花”"
+        }
+      ],
+      "secondary_ref": "词典印页 467；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_zhuhua",
+      "knowledge_id": "REL-5-0005",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_jinhan_liemei",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "金汉和列妹",
+      "aliases": [
+        "金汉列妹",
+        "列妹寻夫"
+      ],
+      "region": "贵州、湖南、广西毗邻侗乡（辞典所记流传范围）",
+      "summary": "金汉与列妹相识后结为伴侣。金汉途中被两名亡者带往阴间，列妹闻讯追去，一路面对诸多险阻，只为寻回丈夫。\n\n她反复追寻，并求助更高的神灵；故事最后写金汉恢复生命，夫妻和好。辞典说侗乡亦有戏曲及琵琶叙事长歌的讲法，此处只概述辞典所保存的版本，不推定不同文本完全一致。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 467–468（PDF 第 582–583 页），条目“金汉和列妹”"
+        }
+      ],
+      "secondary_ref": "词典印页 467–468；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。"
+    },
+    {
+      "id": "lex_modern_dict_carpenter_ghost",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "木匠收鬼",
+      "aliases": [
+        "杨木匠与女鬼"
+      ],
+      "region": "四川成都（辞典所记流传范围）",
+      "summary": "夜里，一个木匠经过石板桥，遇见哭泣的女子，背她回家后才知道她被讲作鬼。故事里他用墨斗作记号，把她留在家中干活。\n\n女子趁木匠外出时逃走，后来再相遇，又被吓得赶紧离开。故事把熟悉的匠人工具带入夜路奇遇；辞典没有说明石板桥的具体位置和采录者。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 468（PDF 第 583 页），条目“木匠收鬼”"
+        }
+      ],
+      "secondary_ref": "词典印页 468；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_carpenter_ghost",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_ghost_catches_master",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "鬼收端公",
+      "aliases": [
+        "端公夜路疑声"
+      ],
+      "region": "四川成都（辞典所记流传范围）",
+      "summary": "刘端公以收鬼闻名，一次替人办事后酒足饭饱，独自走在回家的路上。身后忽然响起声音，他以为有漏掉的鬼追来报复，急忙逃回家。\n\n这一短篇把驱鬼者与害怕者的位置倒转。词典仅记其在成都流传，没有给出发生日期或可查的具体夜路。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 468（PDF 第 583 页），条目“鬼收端公”"
+        }
+      ],
+      "secondary_ref": "词典印页 468；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_ghost_catches_master",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_beggar_ghost",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "讨口子吓鬼",
+      "aliases": [
+        "乞儿与产难鬼"
+      ],
+      "region": "四川成都（辞典所记流传范围）",
+      "summary": "一个四处乞食的孩子，夜里遇到传说中要伤害产妇的鬼。对方数次变换样子想将孩子吓走，孩子始终没有退让。\n\n天亮之后，产妇平安生下孩子，家人听说经过后给予孩子住所与田地。故事是地方传说，不可把产妇的遭遇或鬼怪的解释当作医学事实。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 468（PDF 第 583 页），条目“讨口子吓鬼”"
+        }
+      ],
+      "secondary_ref": "词典印页 468；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_beggar_ghost",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_niba_ghost_dance",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "泥巴鬼舞的来历",
+      "aliases": [
+        "泥巴鬼舞",
+        "刘麻子"
+      ],
+      "region": "四川重庆（辞典所记流传范围）",
+      "summary": "重庆一则传说把泥巴鬼舞的来历讲成对地方恶人的回应：一个人因赌害乡里，遭到乡人惩处，死后仍被说成不肯离去。\n\n故事说乡人因此以舞蹈制服他的魂魄。辞典记述的是舞蹈缘起的地方说法；是否对应某种现存仪式、谁在何时讲述，尚须查找田野资料。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 469（PDF 第 584 页），条目“泥巴鬼舞的来历”"
+        }
+      ],
+      "secondary_ref": "词典印页 469；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_niba_ghost_dance",
+      "knowledge_id": "REL-5-0005",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_yama_hired_teacher",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "阎罗王聘师",
+      "aliases": [
+        "阴间私塾",
+        "阎罗之子拜师"
+      ],
+      "region": "上海金山（辞典所记流传范围）",
+      "summary": "一个屡试未中的秀才在家乡教书，相传有一天被阎罗王请去教孩子。学生临时离开前嘱他不要去西楼，他却推门看见妻子守着自己的遗体哭泣。\n\n阎罗王后来安排他借另一具新亡者的身体回去；两家人也因此成为亲属。故事把私塾与家庭生活搬进阴间，但辞典没有给出具体讲述者。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 470（PDF 第 585 页），条目“阎罗王聘师”"
+        }
+      ],
+      "secondary_ref": "词典印页 470；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_yama_hired_teacher",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_ghost_long_robe",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "地方鬼的长衫",
+      "aliases": [
+        "无常鬼长衫",
+        "隐身长衫"
+      ],
+      "region": "浙江杭州（辞典所记流传范围）",
+      "summary": "一个年轻人夜里拉胡琴，听众中有位地方鬼。故事说鬼走时遗落了长衫，年轻人披上衣服后，发现它能使自己隐身，于是起了偷窃的念头。\n\n长衫后来烧出破洞，虽经补缀，他行窃时仍被人看见并受到惩罚。辞典用“地方鬼”称呼此处的无常鬼；这不是能够定位的现实案件。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 470（PDF 第 585 页），条目“地方鬼的长衫”"
+        }
+      ],
+      "secondary_ref": "词典印页 470；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_ghost_long_robe",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_ghost_fears_bao",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "鬼怕包公",
+      "aliases": [
+        "包公戏吓鬼",
+        "戏台坟头"
+      ],
+      "region": "浙江杭州（辞典所记流传范围）",
+      "summary": "一个戏班被请到山里演戏，约定天亮才散场。班子演了一场又一场，却始终见不到天亮，众人认定其中有古怪。\n\n班主改演包公戏，包公角色一上台，天便亮了。众人这才发现戏台搭在坟头，四周是一片荒草；辞典把它记为杭州一带的故事，并未说明具体山址。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 470（PDF 第 585 页），条目“鬼怕包公”"
+        }
+      ],
+      "secondary_ref": "词典印页 470；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_ghost_fears_bao",
+      "knowledge_id": "REL-5-0005",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_lake_ghost_fooled",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "渥煞鬼受骗",
+      "aliases": [
+        "淹死鬼车水",
+        "车水骗鬼"
+      ],
+      "region": "浙江杭州（辞典所记流传范围）",
+      "summary": "一位老人夜里在田边车水，听见水中有人叫他下去洗澡。他认出这是传说中寻找替身的水鬼，便说要先把水车好。\n\n故事里的鬼上岸帮忙，天亮时显出木头的原形；老人把木头带回，做成猪食槽。它将农事工具与河边禁忌编进幽默的斗智故事。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 470–471（PDF 第 585–586 页），条目“渥煞鬼受骗”"
+        }
+      ],
+      "secondary_ref": "词典印页 470–471；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_lake_ghost_fooled",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_hanging_ghost_mill",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "吊死鬼拉磨",
+      "aliases": [
+        "丁大胆与磨坊"
+      ],
+      "region": "浙江杭州（辞典所记流传范围）",
+      "summary": "丁大胆捉住一名吊死鬼，发现对方能替人拉磨，便经营起磨坊。邻村财主听说后，以银钱买下能使鬼劳作的物件。\n\n财主不知道绳子需要更换，两天后绳断，鬼也逃走了。这个短篇将获利、劳动和贪念转化为喜剧，辞典没有给出坊址或讲述者。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 471（PDF 第 586 页），条目“吊死鬼拉磨”"
+        }
+      ],
+      "secondary_ref": "词典印页 471；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_hanging_ghost_mill",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_wang_laoshi",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "王老实怕鬼的故事",
+      "aliases": [
+        "王老实夜路虚惊"
+      ],
+      "region": "湖南泸溪（辞典所记流传范围）",
+      "summary": "王老实夜里经过坟地，觉得有人不断抽打自己的腿和背；他越跑越快，身后的敲击也愈加明显，到家后急忙请妻子查看。\n\n妻子发现，原来一根长竹和一截稻草挂在他的辫梢与鞋后。地方故事把夜路上的恐惧与回家后的辨认放在一处，结尾揭示原来是虚惊。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 471（PDF 第 586 页），条目“王老实怕鬼的故事”"
+        }
+      ],
+      "secondary_ref": "词典印页 471；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_wang_laoshi",
+      "knowledge_id": "FOR-5-0011",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_shuanghunpo",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "双魂坡",
+      "aliases": [
+        "乔逸生玉芹",
+        "双魂坡传说"
+      ],
+      "region": "四川重庆（辞典所记流传范围）",
+      "summary": "书生乔逸生与表妹玉芹青梅竹马，后来离乡。多年后他遇到玉芹，二人相聚，一夜之后她却不见了；他后来才知道她早已去世。\n\n故事说乔逸生悲痛而亡，附近的人将两人葬在一起，地名由此而来。辞典另标《中国民间故事集成重庆市卷》下册为出处；本次尚未查到该册原件，也未定位山坡。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 472（PDF 第 587 页），条目“双魂坡”。辞典另注来源：《中国民间故事集成重庆市卷》下册，科学技术文献出版社重庆分社，1990 年版；该来源原件尚未核验。"
+        }
+      ],
+      "secondary_ref": "词典印页 472；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_shuanghunpo",
+      "knowledge_id": "HIS-6-0007",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_wrong_rebirth",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "我才真的投错了胎",
+      "aliases": [
+        "魏土地误投胎"
+      ],
+      "region": "四川重庆（辞典所记流传范围）",
+      "summary": "戏班里的魏土地死后来到城隍庙，判官说他阳寿未尽，派人带他还魂。他却进入一位刚去世的老妇身体，随后被老妇家人接走照料。\n\n故事借错认身体制造尴尬与幽默。辞典另引《中国民间故事集成重庆市卷》下册；其原件及具体讲述者尚待核对。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 472（PDF 第 587 页），条目“我才真的投错了胎”。辞典另注来源：《中国民间故事集成重庆市卷》下册，科学技术文献出版社重庆分社，1990 年版；该来源原件尚未核验。"
+        }
+      ],
+      "secondary_ref": "词典印页 472；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_wrong_rebirth",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_litianlong",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "李天龙",
+      "aliases": [
+        "李扯谎与李天龙"
+      ],
+      "region": "四川重庆（辞典所记流传范围）",
+      "summary": "一个川戏班里的艺人与名叫李天龙的鬼称兄道弟，后来听说对方在山洞里藏有财宝。他动了独吞的念头，忘记了原先答应照顾对方母亲的事。\n\n传说中的李天龙化成猫，被艺人买下带到旅店后又现形，惩罚了失信的他。辞典另引重庆故事集成，原始口述的采录信息尚未核验。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 472（PDF 第 587 页），条目“李天龙”。辞典另注来源：《中国民间故事集成重庆市卷》下册，科学技术文献出版社重庆分社，1990 年版；该来源原件尚未核验。"
+        }
+      ],
+      "secondary_ref": "词典印页 472；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_litianlong",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_zuoluocuoluo",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "作洛搓罗",
+      "aliases": [
+        "乌木与作洛搓罗"
+      ],
+      "region": "云南红河哈尼族（辞典所记流传范围）",
+      "summary": "辞典收录的一则故事说，大神乌木外出时，一个魔鬼来到他所管辖的地方伤人。乌木回到家乡，得知亲人与村人遭遇后，派人多次与魔鬼交手，却未获胜。\n\n后来他与灶神及不同动植物协力，终于制服魔鬼。辞典另引《哈尼族神话传说集成》；本条是词典转述的单一版本，不代表所有哈尼族社群的讲述。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 472–473（PDF 第 587–588 页），条目“作洛搓罗”。辞典另注来源：云南省民间文学集成办公室编《哈尼族神话传说集成》，中国民间文艺出版社，1990 年版；该来源原件尚未核验。"
+        }
+      ],
+      "secondary_ref": "词典印页 472–473；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。"
+    },
+    {
+      "id": "lex_modern_dict_mountain_spirit_ziche",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "山神资车",
+      "aliases": [
+        "资车与山鬼",
+        "资车祭山"
+      ],
+      "region": "云南元江哈尼族（辞典所记流传范围）",
+      "summary": "相传资车力气很大，乡人辛苦种下的谷物接连受损，他发现人们把原因归于山鬼。资车为了阻止山鬼，搬到山上，却因为长期无人送食而力竭。\n\n后来乡人再次纪念资车，并将敬奉山神的活动与丰收联系起来。辞典所记是地方祭山故事，不能当作作物受损原因或所有地方仪式的统一解释。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 473（PDF 第 588 页），条目“山神资车”。辞典另注来源：云南省民间文学集成办公室编《哈尼族神话传说集成》，中国民间文艺出版社，1990 年版；该来源原件尚未核验。"
+        }
+      ],
+      "secondary_ref": "词典印页 473；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_mountain_spirit_ziche",
+      "knowledge_id": "REL-5-0005",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_borrow_rice",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "借稻种",
+      "aliases": [
+        "洛巴族借稻种",
+        "山鬼与姐妹"
+      ],
+      "region": "西藏珞巴族（辞典所记流传范围）",
+      "summary": "一位姑娘向姐姐借来稻种，收获前却发现稻谷被割走。她寻找盗贼时来到山洞，遇见山鬼，从那里得到金银手杖，生活因而有了转机。\n\n姐姐得知后也去寻找，却遇到了不一样的结局。辞典说这则故事见《民间文学》1993 年第 6 期；该期刊及具体讲述者尚未核对。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 475（PDF 第 590 页），条目“借稻种”。辞典另注来源：《民间文学》1993 年第 6 期；该来源原件尚未核验。"
+        }
+      ],
+      "secondary_ref": "词典印页 475；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。"
+    },
+    {
+      "id": "lex_modern_dict_cowherd_spirit",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "牧牛人和鬼交朋友",
+      "aliases": [
+        "牧牛人与寄命石"
+      ],
+      "region": "西藏珞巴族（辞典所记流传范围）",
+      "summary": "鬼来到牧牛人家中，牧牛人劝它等到夏天再吃自己。到了约定时节，鬼见他仍守着约定，反而与他交上朋友，还帮他做家务。\n\n后来牧牛人得知鬼把性命寄托在石头上，决定带走那块石头；鬼一路追赶。辞典注明《民间文学》1993 年第 6 期，原期刊和口述版本目前未取得。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 474–475（PDF 第 589–590 页），条目“牧牛人和鬼交朋友”。辞典另注来源：《民间文学》1993 年第 6 期；该来源原件尚未核验。"
+        }
+      ],
+      "secondary_ref": "词典印页 474–475；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。"
+    },
+    {
+      "id": "lex_modern_dict_ghost_and_butcher",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "鬼怕杀猪佬",
+      "aliases": [
+        "建德凉亭女鬼"
+      ],
+      "region": "浙江建德（辞典所记流传范围）",
+      "summary": "一个杀猪的人夜里回家，经过凉亭时遇见女子。女子在故事中不断变化面貌，试图吓退他，却没能成功。\n\n最后反而是她先逃走。短篇以夜路相遇和角色反转制造笑意；词典只给出建德的流传范围，凉亭位置没有得到确认。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 474（PDF 第 589 页），条目“鬼怕杀猪佬”"
+        }
+      ],
+      "secondary_ref": "词典印页 474；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_ghost_and_butcher",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_scald_tousled_ghost",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "火烫蓬头鬼",
+      "aliases": [
+        "看山老头与蓬头鬼",
+        "火烫蓬火鬼"
+      ],
+      "region": "浙江淳安（辞典所记流传范围）",
+      "summary": "看山的老人夜里遇到蓬头鬼，故事里的鬼把头取下搁在腿上梳理。老人说头发打结了，提议替它烫一烫，鬼答应了。\n\n老人把炉中的热灰倒过去，鬼疼得抱头逃走。辞典将它归为淳安地方鬼话；地名说明流传范围，不能用于推定具体住所。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 474（PDF 第 589 页），条目“火烫蓬火鬼”（标题原印如此，正文称“蓬头鬼”）"
+        }
+      ],
+      "secondary_ref": "词典印页 474；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_scald_tousled_ghost",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_impermanence_straw_shoes",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "无常草鞋",
+      "aliases": [
+        "无常鬼借鞋",
+        "善行与草鞋"
+      ],
+      "region": "浙江杭州（辞典所记流传范围）",
+      "summary": "一人多年在外，回家途中遇到来捉他的无常鬼。无常见他上有父母、下无子女，便借鞋给他，让他先回家与亲人相聚；他穿上后走得飞快。\n\n途中他又帮助一名书生的妻子偿还债务。故事最后，无常带来阎王免他一死的消息。辞典记这则故事流传于杭州，未注明讲述者和采录时间。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 468（PDF 第 583 页），条目“无常草鞋”"
+        }
+      ],
+      "secondary_ref": "词典印页 468；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_impermanence_straw_shoes",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_yama_judges_ghost",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "阎罗王审鬼",
+      "aliases": [
+        "阴间审善恶",
+        "阎王审问无善无恶之人"
+      ],
+      "region": "江苏苏州（辞典所记流传范围）",
+      "summary": "一人死后来到阴间，阎罗王亲自审问，得知他活着时没有做过坏事，也没有做过好事。故事里的阎王因此发怒，命人重打他四十大板。\n\n辞典用这个短篇说明其所概括的劝善寓意，并注明《苏州民间故事》为来源；该书原件和采录者尚未核对。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 473（PDF 第 588 页），条目“阎罗王审鬼”。辞典另注来源：《苏州民间故事》，中国民间文艺出版社，1989 年版；该来源原件尚未核验。"
+        }
+      ],
+      "secondary_ref": "词典印页 473；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_yama_judges_ghost",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_turtle_catcher_false_ghost",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "抲鳖佬捉“鬼”",
+      "aliases": [
+        "抓鳖人捉假鬼",
+        "客店与两只鳖"
+      ],
+      "region": "浙江桐庐（辞典所记流传范围）",
+      "summary": "一个捉鳖的人夜宿客店，发现有人装成女鬼偷他的钱。次夜他又住进同一间房，待那人把手伸进荷包时，藏在袋中的两只鳖咬住了她的手指。\n\n故事揭晓：所谓女鬼是客店里负责烧水和扫地的帮工假扮。辞典将它记为桐庐地方鬼话；“抲”在条目中释为抓，客店地址未给出。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 474（PDF 第 589 页），条目“抲鳖佬捉“鬼””"
+        }
+      ],
+      "secondary_ref": "词典印页 474；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_turtle_catcher_false_ghost",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_chestnuts_defeat_zombie",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "杀僵尸",
+      "aliases": [
+        "栗子与僵尸",
+        "村人合力打僵尸"
+      ],
+      "region": "浙江临安（辞典所记流传范围）",
+      "summary": "辞典收录的故事说，村东出现一个见人便吃的僵尸，乡人因而不安。一个胆大的人找来十几位年轻人，抬来一筐筐栗子，准备共同应对。\n\n僵尸出现后在栗子上滑倒，众人一拥而上制服了它。辞典只记故事流传于临安，未提供村名；这是民间叙事中的情节。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 474（PDF 第 589 页），条目“杀僵尸”"
+        }
+      ],
+      "secondary_ref": "词典印页 474；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_chestnuts_defeat_zombie",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_ghost_in_gourd",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "鬼进葫芦",
+      "aliases": [
+        "葫芦里的唱戏鬼",
+        "变鼠鬼与苞谷"
+      ],
+      "region": "浙江淳安（辞典所记流传范围）",
+      "summary": "一人夜里背着装有苞谷的葫芦去磨粉，遇见变成老鼠的鬼。他骗对方钻进葫芦后将其关住，鬼请求放它出来，那人却要求它唱戏。\n\n故事说鬼为他唱了三年戏；后来此人缺少娶亲的钱，便将装鬼的葫芦卖给徽州朝奉。辞典只给出淳安的流传范围，没有磨坊或交易地点的资料。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 474（PDF 第 589 页），条目“鬼进葫芦”"
+        }
+      ],
+      "secondary_ref": "词典印页 474；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_ghost_in_gourd",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    },
+    {
+      "id": "lex_modern_dict_hunter_eats_ghost_gall",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "category": "地方故事与当代编目",
+      "era": "辞典“当代部分”归类，故事发生年代不详",
+      "term": "猎人吃鬼胆",
+      "aliases": [
+        "猎人与鬼胆",
+        "凉亭女子与棺材"
+      ],
+      "region": "浙江桐庐（辞典所记流传范围）",
+      "summary": "一个猎人天黑回家，看到凉亭里坐着一名女子。她说自己因夫妻争吵离家，猎人便背她回去；途中他认定她是鬼，故事写他开枪后，对方变成了棺材。\n\n猎人劈开棺材，吞下其中一颗“鬼胆”。此后他自以为能看见各种鬼，反倒吓得不敢出门。辞典只记其流传于桐庐，未给出凉亭位置或讲述者。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "鬼话·当代部分，印页 474（PDF 第 589 页），条目“猎人吃鬼胆”"
+        }
+      ],
+      "secondary_ref": "词典印页 474；故事情节和流传范围为该辞典的编辑叙述，未核对口述版本及采录时间。",
+      "case_id": "case_cn_dict_hunter_eats_ghost_gall",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读地方叙事与资料保存，区分传说中的情节、书中所记流传范围及可核实的采录事实。"
+    }
+  ]
+}

@@ -12,6 +12,17 @@
 }
 
 @font-face {
+  font-family: 'Astraia CJK Supplemental'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('/fonts/astraia-cjk-rare-400.woff2') format('woff2');
+  unicode-range: U+62B2;
+}
+@font-face {
+  font-family: 'Astraia CJK Supplemental'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('/fonts/astraia-cjk-rare-600.woff2') format('woff2');
+  unicode-range: U+62B2;
+}
+
+@font-face {
   font-family: "Astraia CJK Supplemental"; font-style: normal; font-weight: 400; font-display: swap;
   src: url("/fonts/astraia-cjk-supplement-400.woff2?v=227") format("woff2");
   unicode-range: U+3AFB, U+4CDF, U+5000, U+50AA, U+50B4, U+50C2, U+50C9, U+513B, U+5244, U+5268, U+526E, U+527A, U+5488,
@@ -845,6 +856,139 @@ h1, h2, h3, p, dl, dd { margin: 0; }
 .inspector-loading h2 { font: 600 1.35rem/1.45 var(--font-editorial); }
 .inspector-loading p { margin-top: 12px; font-size: .86rem; }
 .inspector-loading .quiet-button { color: var(--ink-prussian); border-color: var(--ink-prussian); }
+
+/* Phase 5: Dark Scholarly Lexicon Section inside NodeInspector */
+.inspector-lexicon {
+  margin-top: 18px;
+  padding: 13px 14px;
+  background: #0b0f18;
+  color: #efe9dc;
+  border: 1px solid rgba(207, 169, 98, 0.36);
+}
+.inspector-lexicon a {
+  color: #f0d79c;
+}
+.inspector-lexicon-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(207, 169, 98, 0.24);
+}
+.inspector-lexicon-head h4 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #f7f0e2;
+  font: 600 0.96rem/1.4 var(--font-editorial);
+}
+.inspector-lexicon-kicker {
+  display: block;
+  color: #cfa962;
+  font: 10px/1.3 var(--font-astrometric);
+  letter-spacing: 0.08em;
+}
+.inspector-lexicon-badge {
+  padding: 2px 7px;
+  border: 1px solid rgba(207, 169, 98, 0.44);
+  background: rgba(207, 169, 98, 0.14);
+  color: #f0d79c;
+  font: 600 11px/1.35 var(--font-astrometric);
+}
+.inspector-lexicon-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 10px;
+}
+.inspector-lexicon-search {
+  width: 100%;
+  padding: 6px 9px;
+  border: 1px solid rgba(207, 169, 98, 0.34);
+  background: #060910;
+  color: #f4ede0;
+  font-size: 0.8rem;
+}
+.inspector-lexicon-search::placeholder {
+  color: #9e9688;
+}
+.inspector-lexicon-cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.inspector-lexicon-cats button {
+  padding: 2px 7px;
+  border: 1px solid rgba(207, 169, 98, 0.28);
+  background: #111725;
+  color: #cfc6b5;
+  font-size: 0.72rem;
+}
+.inspector-lexicon-cats button[aria-pressed='true'] {
+  border-color: #f0d79c;
+  background: rgba(207, 169, 98, 0.22);
+  color: #fff8e8;
+}
+.inspector-lexicon-status {
+  margin-top: 9px;
+  color: #b7ae9e;
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+.inspector-lexicon-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 10px;
+}
+.inspector-lexicon-card {
+  padding: 8px 10px;
+  border: 1px solid rgba(207, 169, 98, 0.24);
+  background: #111725;
+}
+.inspector-lexicon-card summary {
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 8px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #f7f0e2;
+}
+.inspector-lexicon-card summary small {
+  color: #cbb88f;
+  font-size: 0.72rem;
+  font-weight: 400;
+}
+.inspector-lexicon-body {
+  margin-top: 7px;
+  padding-top: 7px;
+  border-top: 1px solid rgba(207, 169, 98, 0.16);
+  font-size: 0.82rem;
+  line-height: 1.68;
+  color: #e2dac9;
+}
+.inspector-lexicon-aliases {
+  margin-bottom: 4px;
+  font-size: 0.74rem;
+  color: #b2a896;
+}
+.inspector-lexicon-sources {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+  font-size: 0.74rem;
+}
+.inspector-lexicon-secondary {
+  margin-top: 5px;
+  font-size: 0.72rem;
+  color: #9e9688;
+}
 
 @media (max-width: 1000px) {
   .workspace.with-inspector { grid-template-columns: minmax(0, 1fr) minmax(275px, 36%); }

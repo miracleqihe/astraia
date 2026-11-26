@@ -1,0 +1,300 @@
+# 东南亚候选：原文核对后独立撰写，不附带来源原文或受限图像。
+# 坐标均为地域参考；星桥是主题对读，不表示已证实的因果或传播。
+records:
+  - id: case_bn_seria_coast_white_woman_2006
+    title: 文莱诗里亚｜夜路前的白衣人
+    aliases: [Seria coastal road white lady]
+    genre: memorate
+    credibility_tier: C
+    location: {lat: 4.617, lng: 114.317, precision: city, location_name: 文莱 · 诗里亚地区, culture_region: 东南亚 · 文莱}
+    location_note: 诗里亚是家人驾车前往的城镇参考点，原文未记具体道路或出现位置。
+    paragraphs:
+      - 文莱作者回忆，姨妈一家深夜驾车回诗里亚时，看见路边有个人招手。车开近后，白衣身影仿佛站到车前；汽车没能停住，继续驶过，再回头已看不见那人。
+      - 这段讲述发表于 2006 年的个人文章，是作者转述家人的经历。文章同时提到沿海公路上的许多不同传闻；没有现场调查材料，不能把夜间所见或道路事故的成因定为某一种解释。
+    sources:
+      - {citation: 'The Daily Brunei Resources, Ghosts in Brunei, 16 June 2006.', type: personal_account, url: 'https://bruneiresources.blogspot.com/2006/06/ghosts-in-brunei.html', locator: 作者姨妈一家赴 Seria 的转述}
+      - {citation: 'Museum of New Zealand Te Papa Tongarewa, Seria.', type: geographic_reference, url: 'https://collections.tepapa.govt.nz/place/2240155', locator: 诗里亚地名与地区坐标}
+    compare: [case_cn_beijing_ghost_bus]
+    bridge: {entry: FOR-5-0011, cluster: sid_liminal, trail: trail5, label: 夜路传闻与目击回忆, rationale: 对读夜路家人转述与记忆研究，区分经历者叙述、后来的转述和未核实的成因。}
+
+  - id: case_bn_meragang_beach_chase_2006
+    title: 文莱 Meragang 海滩｜追上车的东西
+    aliases: [Meragang Beach chase, Maragang Beach ghost]
+    genre: memorate
+    credibility_tier: C
+    location: {lat: 5.041, lng: 115.0427, precision: city, location_name: 文莱 · Meragang 海滩, culture_region: 东南亚 · 文莱}
+    location_note: 坐标为 Meragang 海滩一处公开采样点，仅代表海滩区域，具体地点未记录。
+    paragraphs:
+      - 一群年轻人在海滩停留后忽然跑回车上：据转述，某种东西从附近追出来，一路跟着汽车，直到他们驶上公路。讲述者将其与他们在海滩的不当举动联系起来。
+      - 2006 年文章称，这个故事由作者的司机讲给作者；司机并非文中明确的亲历者。它保留的是一个有关海边禁忌的传闻，而不是可独立证实的追逐事件。
+    sources:
+      - {citation: 'The Daily Brunei Resources, Ghosts in Brunei, 16 June 2006.', type: personal_account, url: 'https://bruneiresources.blogspot.com/2006/06/ghosts-in-brunei.html', locator: 作者司机转述 Maragang 海滩故事}
+      - {citation: 'Brunei Ministry of Defence, Frontier, coastal sampling locations.', type: geographic_reference, url: 'https://mindef.gov.bn/Buku%20Program/Frontier/Vol.%203/Frontier%20%28Malay%20Version%29.pdf', locator: Meragang Beach WGS84 海滩采样点}
+    bridge: {entry: REL-5-0005, cluster: sid_liminal, trail: trail5, label: 海滩禁忌与转述, rationale: 将海边传闻与口述传统并读，留意谁听谁讲以及故事中的行为规范。}
+
+  - id: case_bn_damuan_tutong_fresh_meat_2006
+    title: 文莱都东路｜车里的生肉与咀嚼声
+    aliases: [Jalan Tutong Damuan Park meat taboo]
+    genre: memorate
+    credibility_tier: C
+    location: {lat: 4.8668, lng: 114.9244, precision: city, location_name: 文莱 · 达慕安一带, culture_region: 东南亚 · 文莱}
+    location_note: 达慕安地区河道采样点仅作公园附近区域参考，不代表某次汽车经过位置。
+    paragraphs:
+      - 一位文莱作者记得叔父说过，黄昏经过达慕安公园前的都东路时，车里最好不要带生肉，否则可能听见有人在咀嚼。这个提醒使普通的食物和一段熟悉的道路都染上了夜间禁忌的意味。
+      - 作者还谈到自己见过附近车辆急转，却承认不知道司机为何转向。叔父的提醒和作者看到的事故是两种不同材料，无法据此断言事故与传闻有关。
+    sources:
+      - {citation: 'The Daily Brunei Resources, Ghosts in Brunei, 16 June 2006.', type: personal_account, url: 'https://bruneiresources.blogspot.com/2006/06/ghosts-in-brunei.html', locator: Jalan Tutong、Damuan Park 与叔父的提醒}
+      - {citation: 'Brunei Ministry of Defence, Frontier, river sampling locations.', type: geographic_reference, url: 'https://mindef.gov.bn/Buku%20Program/Frontier/Vol.%203/Frontier%20%28English%20Version%29.pdf', locator: Damuan 水域采样点，非道路事故地点}
+    bridge: {entry: HIS-6-0002, cluster: sid_liminal, trail: trail5, label: 叔父的提醒与街道记忆, rationale: 对读家人转述与口述史方法，分辨叙事中的禁忌、目击和事故证据。}
+
+  - id: case_bn_berambang_spinning_top_rock
+    title: 文莱河｜飞过水面的石陀螺
+    aliases: [Batu Gasing Awang Semaun, Berambang spinning top]
+    genre: folktale
+    credibility_tier: B
+    location: {lat: 4.8586, lng: 114.9813, precision: city, location_name: 文莱河 · Berambang 岛, culture_region: 东南亚 · 文莱}
+    location_note: 坐标取 Berambang 岛区域参考点；石头的确切位置和陀螺飞行路线不按传说绘制。
+    paragraphs:
+      - 文莱地方故事里，战士 Awang Semaun 与侄子在淡布隆的山上比赛转陀螺。轮到他时，两只陀螺撞在一起，其中一只竟飞出山地，在文莱河水面弹跳，最后倒落在 Berambang 岛边，旋转着变成一块大石。
+      - 文莱旅游部门把这块陀螺石列入河流文化路线。这个故事用游戏与变化解释地貌；景点和有关它的传说可以共同阅读，不必把石头的形成经过当成可验证事实。
+    sources:
+      - {citation: 'Brunei Tourism, Brunei River Heritage Trail, History, Myths & Legends.', type: institutional_account, url: 'https://www.bruneitourism.com/wp-content/uploads/2025/03/Brunei-River-Heritage-Trail_compressed.pdf', locator: Batu Gasing Awang Semau 段落}
+      - {citation: 'Explore Brunei, Recreational Brunei-Muara.', type: institutional_account, url: 'https://www.explorebrunei.gov.bn/recreational-brunei-muara/', locator: Berambang 附近石陀螺文化景点}
+    bridge: {entry: LIT-2-0001, cluster: sid_myth, trail: all, label: 石陀螺与地名叙事, rationale: 阅读游戏、远飞与化为石头的故事次序，区分地方叙事和地貌研究。}
+
+  - id: case_la_nabong_returned_jar_2000
+    title: 老挝纳蓬村｜埋回河岸的陶罐
+    aliases: [Ban Nabong returned jar, Nam Ngum phii jar]
+    genre: memorate
+    credibility_tier: B
+    location: {lat: 18.1763, lng: 102.8785, precision: city, location_name: 老挝万象府 · 纳蓬村, culture_region: 东南亚 · 老挝}
+    location_note: 纳蓬村地图节点只表示访谈所述村庄范围，不是陶罐出土点或住址。
+    paragraphs:
+      - 修水渠时，一名村民在南俄河边发现破损的大罐，里面还有一只完整的小罐。他把小罐洗净，带去万象市场卖掉，回来后却夜不能寐，相信自己受到 phii 的干扰。
+      - 讲述里，他又去市场买回小罐，把它埋回最初发现的地方，此后才安心入睡。考古学者 Anna Karlström 说明，这不是发现者本人直接讲给她的经历，而是 2000 年当地调查时由其他村民转述的故事。
+    sources:
+      - {citation: 'Anna Karlström, Preserving Impermanence: The Creation of Heritage in Vientiane, Laos, Uppsala University, 2009.', type: academic_thesis, url: 'https://uu.diva-portal.org/smash/get/diva2%3A212009/FULLTEXT01.pdf', locator: 第 141 页，Ban Nabong 陶罐及访谈来源}
+      - {citation: 'Lao News Agency, Billionaire announces support for Nam Ngum bridge, 2014.', type: geographic_reference, url: 'https://kpl.gov.la/en/detail.aspx?id=3808', locator: 纳蓬村与南俄河、Pak Ngum 地理关联}
+    bridge: {entry: HIS-6-0002, cluster: sid_hag, trail: all, label: 河岸陶罐与当地记忆, rationale: 从村民的转述进入口述史与考古语境，区分物件、梦中解释与证据。}
+
+  - id: case_la_lao_pako_forest_voices_2003
+    title: 老挝南俄河｜林中无人的声音
+    aliases: [Lao Pako forest voices, Nor Ountagok story]
+    genre: folktale
+    credibility_tier: B
+    location: {lat: 18.1585, lng: 102.8579, precision: city, location_name: 老挝 · Lao Pako 河岸, culture_region: 东南亚 · 老挝}
+    location_note: 坐标为研究文献给出的 Lao Pako 遗址地区参考，并非故事中的具体树木或坟墓。
+    paragraphs:
+      - 在老挝南俄河边的一段地方叙述中，村民去林子里找食物时，听到像人说话的声音；走近一看，却找不到说话的人。人们于是把林地理解为灵体所在之处，并将其保留为安葬亡者的地方。
+      - 2003 年，Nor Ountagok 询问附近长者后整理了这段故事，考古学者 Anna Källén 将之收入论文。研究把地方讲述、墓地记忆和考古材料并置，说明同一处河岸可以承载不同的过去。
+    sources:
+      - {citation: 'Anna Källén, And Through Flows the River: Archaeology and the Pasts of Lao Pako, Uppsala University, 2004.', type: academic_thesis, url: 'https://www.diva-portal.org/smash/get/diva2%3A165462/FULLTEXT01.pdf', locator: 第 225–227 页，Nor Ountagok 2003 年叙述；遗址坐标另见该文的地区说明}
+    bridge: {entry: HIS-6-0007, cluster: sid_hag, trail: all, label: 河岸森林、墓地与集体记忆, rationale: 把地方叙述与考古研究并列，观察同一地点如何在不同时代被记忆。}
+
+  - id: case_th_nakhon_phanom_sammati_river_2025
+    title: 泰国那空帕侬｜向河岸守护灵求寻的人
+    aliases: [Chao Pho Sammati, Sammati and On Kham]
+    genre: memorate
+    credibility_tier: B
+    location: {lat: 17.408, lng: 104.778, precision: city, location_name: 泰国 · 那空帕侬市, culture_region: 东南亚 · 泰国湄公河沿岸}
+    location_note: 那空帕侬市区参考点，非溺水位置或某一户家庭的所在地。
+    paragraphs:
+      - 湄公河边的那空帕侬有人向守护灵 Chao Pho Sammati 请求帮助，盼望找到落水亲人的遗体。一名居民向研究者讲述，亲属久久未能找到溺水的表亲，家人向守护灵供奉祈求后，才在不久后寻回遗体。
+      - 研究者 Vatthana Pholsena 在考察跨河战争记忆时，也记录了当地对守护灵来历的其他版本。祈愿与寻获遗体之间在叙述中相连，不能单凭这一回忆认定因果；人们纪念亡者的方式则值得认真保存。
+    sources:
+      - {citation: 'Vatthana Pholsena, The Battle of Thakhek, 21 March 1946: Traces of a colonial massacre on the Lao–Thai border, Memory Studies, 2025.', type: academic_article, url: 'https://journals.sagepub.com/doi/full/10.1177/17506980231224764', doi: '10.1177/17506980231224764', locator: Chao Pho Sammati 神龛、寻人讲述及不同起源版本}
+    bridge: {entry: HIS-6-0007, cluster: sid_hag, trail: all, label: 湄公河守护灵与纪念, rationale: 对读河岸供奉、寻人叙述与战争记忆，区分地方说法和可独立核验的历史。}
+
+  - id: case_mm_pyin_oolwin_hotel_witness_2012
+    title: 缅甸彬乌伦｜花节旅馆里的脚步
+    aliases: [Pyin Oo Lwin flower festival bungalow, Myanmar Times 2012]
+    genre: memorate
+    credibility_tier: B
+    location: {lat: 22.035, lng: 96.456, precision: city, location_name: 缅甸 · 彬乌伦, culture_region: 东南亚 · 缅甸}
+    location_note: 坐标为彬乌伦市区参考点，受访者未公开旅馆名称或房间位置。
+    paragraphs:
+      - 花节期间，来自仰光的一家人好不容易找到一间旅馆平房。夜里，一名女子觉得有人不断从浴室走过床边，起初以为是亲人；天亮前家人交谈时，才发现彼此也记得脚步、敲墙声或难以动弹的片刻。
+      - 2012 年《缅甸时报》刊出 Ma Phyo Phyo 对记者的讲述，并称这趟旅行发生在约三年前。报道保存了她和家人的回忆，但不能独立检验每个人当夜的感受，也不能仅凭叙述诊断睡眠状态。
+    sources:
+      - {citation: 'Pinky, Myanmar ghosts don’t need Halloween for a good haunting, The Myanmar Times, 29 October–4 November 2012.', type: newspaper_report, url: 'https://uzo.sakura.ne.jp/burma/mmt/mmt_data/mmt_2012/mmt_11_2012/mmt_650-01_11_2012.pdf', locator: 第 40 页，Ma Phyo Phyo 关于彬乌伦花节住宿的采访}
+    compare: [case_egypt_jinn_sleep_paralysis, case_cn_hk_ghost_oppression_wing_1994]
+    bridge: {entry: HIS-6-0002, cluster: sid_hag, trail: trail2, label: 夜宿经历与采访记忆, rationale: 对读多个家庭成员的回忆与访谈方法；相似的睡眠经历不等于完成个案诊断。}
+
+  - id: case_my_alor_setar_giant_fence_1914
+    title: 马来西亚亚罗士打｜篱笆外的高大身影
+    aliases: [Alor Setar hantu raya mother 1914]
+    genre: memorate
+    credibility_tier: B
+    location: {lat: 6.121, lng: 100.3601, precision: city, location_name: 马来西亚吉打 · 亚罗士打, culture_region: 东南亚 · 马来西亚}
+    location_note: 亚罗士打城市参考点；文章没有提供祖母住宅的可核实街道坐标。
+    paragraphs:
+      - 一则家族讲述发生在黄昏：年轻女子坐在屋外的台阶上，看见篱笆外有个异常高大的人影。她想从正门进去，却发现门锁着，只好绕向侧门；沿篱笆移动的身影仿佛一直与她同行。
+      - 她进入屋内再向外看时，身影已经不见。Haji Zain Tajudin 在 1991 年发表的英文转述中，把这件母亲讲给他的往事放在 1914 年亚罗士打，并称它是家中关于 hantu raya 的一个故事。
+    sources:
+      - {citation: 'Haji Zain Tajudin, as told to Thomas A. Lyman, The Hantu Raya: A Malay Demon, Journal of the Siam Society 79(2), 1991.', type: academic_article, url: 'https://thesiamsociety.org/wp-content/uploads/1991/03/JSS_079_2e_ZainTajudin_HantuRayaMalayDemon.pdf', locator: 第 37 页，母亲在祖母住宅前看到的身影}
+    bridge: {entry: HIS-6-0002, cluster: sid_hag, trail: all, label: 高大身影与家族回忆, rationale: 比较母亲的经历与儿子多年后的转述，保留时间和讲述层次。}
+
+  - id: case_my_alor_setar_rain_follower_1943
+    title: 马来西亚亚罗士打｜雨夜并肩的白影
+    aliases: [Alor Setar hantu raya 1943 rainy road]
+    genre: memorate
+    credibility_tier: B
+    location: {lat: 6.121, lng: 100.3601, precision: city, location_name: 马来西亚吉打 · 亚罗士打, culture_region: 东南亚 · 马来西亚}
+    location_note: 亚罗士打城市参考点；作者只说道路在祖母家另一侧，未给出道路名称。
+    paragraphs:
+      - 作者回忆 1943 年一个细雨的深夜，自己沿乡间道路独行，突然觉得颈后发冷。一道裹着白布的身影从路边林中出现，与他并肩前行，还不时侧过脸看他。
+      - 他记起父亲教过的经文，低声念过后，身影便不见了。次日父亲将此解释为 hantu raya；这是一份由讲述者本人回忆、后经翻译发表的经历，不是对来者身份的证明。
+    sources:
+      - {citation: 'Haji Zain Tajudin, as told to Thomas A. Lyman, The Hantu Raya: A Malay Demon, Journal of the Siam Society 79(2), 1991.', type: academic_article, url: 'https://thesiamsociety.org/wp-content/uploads/1991/03/JSS_079_2e_ZainTajudin_HantuRayaMalayDemon.pdf', locator: 第 37–38 页，1943 年雨夜自述与父亲解释}
+    compare: [case_cn_shenzhen_xianhu_fog_road_2007]
+    bridge: {entry: FOR-5-0011, cluster: sid_liminal, trail: trail5, label: 雨夜同行者与回忆, rationale: 并读夜间经历与目击记忆研究，关注环境、回忆时间与解释之间的差异。}
+
+  - id: case_my_alor_setar_bamboo_sand_prank_1938
+    title: 马来西亚亚罗士打｜竹丛里飞出的沙子
+    aliases: [Alor Setar bamboo prank 1938]
+    genre: memorate
+    credibility_tier: B
+    location: {lat: 6.121, lng: 100.3601, precision: city, location_name: 马来西亚吉打 · 亚罗士打, culture_region: 东南亚 · 马来西亚}
+    location_note: 亚罗士打城市参考点，竹丛和祖母家的旧址无法由资料精确定位。
+    paragraphs:
+      - 斋月的一天傍晚，男孩提着空饭盒回家，走近祖母院子旁的竹丛时，沙子接连打在身上。他大声呼救，哥哥跑出门来，顺着他指出的方向在树枝上发现一个矮小的轮廓。
+      - 哥哥朝旁边故意投出石子，树上的邻家朋友立刻喊出自己名字，原来是一场恶作剧。讲述者将这件 1938 年往事与家族中的灵体故事一起发表，也留下了一次由人解释的虚惊。
+    sources:
+      - {citation: 'Haji Zain Tajudin, as told to Thomas A. Lyman, The Hantu Raya: A Malay Demon, Journal of the Siam Society 79(2), 1991.', type: academic_article, url: 'https://thesiamsociety.org/wp-content/uploads/1991/03/JSS_079_2e_ZainTajudin_HantuRayaMalayDemon.pdf', locator: 第 38 页，1938 年竹丛恶作剧}
+    compare: [case_cn_dict_wang_laoshi]
+    bridge: {entry: LIT-2-0001, cluster: sid_liminal, trail: all, label: 竹丛虚惊与故事反转, rationale: 并读中国辞典中的夜路虚惊与马来西亚家族回忆，比较揭示原因的叙事顺序，不推断传播关系。}
+
+  - id: case_my_alor_setar_stone_knocking_1950
+    title: 马来西亚吉打｜墙上连夜响起的敲击
+    aliases: [Kampong Ulu Seberang Perak jin tanah 1950]
+    genre: historical_archive
+    credibility_tier: B
+    location: {lat: 6.121, lng: 100.3601, precision: city, location_name: 马来西亚吉打 · 亚罗士打地区, culture_region: 东南亚 · 马来西亚}
+    location_note: 报道给出亚罗士打附近村名，城市坐标仅为区域参考，住宅和村名具体对应待核。
+    paragraphs:
+      - 1950 年一则报纸转述说，亚罗士打附近一户人家接连听见墙壁和地板的敲击，并有人说看见石头飞来。消息传开后，好奇的村民前来观看，也请人主持驱除仪式。
+      - 报道记下村民把声音与一名来访女孩联系起来的推测，但没有独立证明声音来源。保留这份历史报道的意义在于观察当时的解释与围观，不能据此指认女孩或认定超自然原因。
+    sources:
+      - {citation: 'The Singapore Free Press, Ghost follows girl, 13 March 1950.', type: newspaper_report, url: 'https://eresources.nlb.gov.sg/newspapers/digitised/issue/freepress19500313-1', locator: 当日刊列该篇报道；全文遵守新加坡国立图书馆使用条件}
+      - {citation: 'Poltergeist Archive, Kampung Seberang, Malaysia (1950), archived transcription.', type: folklore_archive, url: 'https://poltergeistarchive.co.uk/kampung-seberang-malaysia-1950/', locator: 对上述报纸的转录，部分地区可能访问受限}
+    bridge: {entry: HIS-6-0001, cluster: sid_hag, trail: trail2, label: 敲击报道与史料边界, rationale: 区分报纸转述、村民的判断与没有查明的声音来源。}
+
+  - id: case_my_penang_western_road_picture_glass_1930
+    title: 槟城旧路｜被取下的画框玻璃
+    aliases: [Penang Western Road picture glass 1930]
+    genre: historical_archive
+    credibility_tier: B
+    location: {lat: 5.4141, lng: 100.3288, precision: city, location_name: 马来西亚槟城 · 乔治市, culture_region: 东南亚 · 马来西亚}
+    location_note: 乔治市区域参考点；旧报只说住宅在 Western Road 近墓地，无法确定门牌。
+    paragraphs:
+      - 两名年轻人住进槟城一幢住宅后，报纸说他们两次在卧室发现画框的玻璃被取下，放在地板上；最终，两人决定搬走。厨工虽然觉得房子不寻常，仍表示主人若留下，他也会留下。
+      - 1930 年报道还称，之前独居的住客曾在这里平静住了半年。画框如何被移动并未由可用材料查明；旧报采用了耸动的“鬼屋”写法，阅读时可以同时留意其叙事方式。
+    sources:
+      - {citation: 'The Straits Budget, Penang’s Ghost, 21 August 1930.', type: newspaper_report, url: 'https://eresources.nlb.gov.sg/newspapers/digitised/issue/straitsbudget19300821-1', locator: 当日刊列该篇报道；全文遵守新加坡国立图书馆使用条件}
+      - {citation: 'Poltergeist Archive, Penang, Malaysia (1930), archived transcription.', type: folklore_archive, url: 'https://poltergeistarchive.co.uk/penang-malaysia-1930/', locator: 报纸全文转录；部分地区可能访问受限}
+    bridge: {entry: HIS-6-0001, cluster: sid_hag, trail: trail2, label: 旧画框与报纸叙述, rationale: 将旧报的标题、转述与可验证的物件变化分开，练习判断史料能够回答什么。}
+
+  - id: case_my_sungai_way_sock_seller_2013
+    title: 雪兰莪双溪威｜卖袜子的蒙面老人
+    aliases: [hantu stokin, Sungai Way sock ghost]
+    genre: urban_legend
+    credibility_tier: B
+    location: {lat: 3.0883, lng: 101.6131, precision: city, location_name: 马来西亚雪兰莪 · 双溪威, culture_region: 东南亚 · 马来西亚}
+    location_note: 坐标为双溪威社区参考点，不指向任何住宅或真实摊贩。
+    paragraphs:
+      - 双溪威流传的一种讲法里，一名戴着黑色面纱的老妇挨家卖袜子；人们说她脸上藏着可怖的变化，还给她编出了伤害少女的来历。关于这个人物，当地还有其他不同版本。
+      - 2013 年访问中，一位在双溪威长大的居民否认自己见过鬼，并认为这些是人们编出的故事。可以阅读传闻如何把陌生访客变成恐惧对象，也应避免把故事投射到现实中的卖货者身上。
+    sources:
+      - {citation: 'Dazman Manan, Travelling back in town, Unreserved, February 2013.', type: journalism, url: 'https://mpi.my/wp/wp-content/HKM%202013/artikel/F-12.pdf', locator: 第 6 页，Sungai Way 的 hantu stokin 与居民回应}
+      - {citation: 'OpenStreetMap place record, Sungai Way / Seri Setia.', type: geographic_reference, url: 'https://my.geoview.info/sungai_way%2C4715896523n', locator: 双溪威社区坐标}
+    bridge: {entry: SOC-5-0002, cluster: sid_liminal, trail: all, label: 蒙面商贩与传闻核查, rationale: 对读流言及不同居民的回应，避免将虚构的威胁归到现实职业群体。}
+
+  - id: case_my_sabah_batu_tulug_coffin_visitor_2023
+    title: 沙巴京那巴当岸｜夜里摇晃的床
+    aliases: [Agop Batu Tulug coffin visitor, coffin hill Sabah]
+    genre: memorate
+    credibility_tier: C
+    location: {lat: 5.4162, lng: 117.9422, precision: city, location_name: 马来西亚沙巴 · Batu Tulug 洞穴, culture_region: 东南亚 · 马来西亚沙巴}
+    location_note: 坐标指墓葬洞穴一带；夜宿旅馆在另一城市且名称未公开，不应混作一处。
+    paragraphs:
+      - 沙巴一篇地方文章转述，三名旅人参观 Batu Tulug 的古代木棺洞穴时，其中一人试着抬起两只木棺。到了另一座城市的旅馆，他夜里醒来，觉得床被摇动，又看见两个高矮不同的身影。
+      - 次日，旅人把夜间经历与此前触碰木棺联系起来，并返回洞穴外道歉。州旅游部门确认洞穴保存有历史木棺；地方网站所记经历大约在 2005 或 2006 年，2023 年为后来的电视传播时间。个人讲述不足以诊断或认定因果。
+    sources:
+      - {citation: 'MySabah, Ancient Ghosts from the Coffin Hill of Kinabatangan.', type: personal_account, url: 'https://www.mysabah.com/wordpress/ghost-story-coffin-hill/', locator: 三名旅人、夜间经历与回访的叙述}
+      - {citation: 'Sabah Tourism Board, Agop Batu Tulug Cave.', type: institutional_account, url: 'https://sabahtourism.com/destination/batu-tulug/', locator: 洞穴、木棺与博物馆地点}
+      - {citation: 'Sabah Forestry Department, Pin Supu Forest Reserve management plan 2018–2027.', type: geographic_reference, url: 'https://pinsupu.sabah.gov.my/images/publication/3.2-fmp-pinsupufr-2018-2027.pdf', locator: Batu Tulug 地点坐标，地理参考}
+    compare: [case_egypt_jinn_sleep_paralysis]
+    bridge: {entry: REL-5-0003, cluster: sid_hag, trail: all, label: 洞穴葬俗与访客讲述, rationale: 将真实洞穴葬俗和旅客的个人经历分开，与家庭纪念和尊重亡者的实践并读。}
+
+  - id: case_my_johor_petrie_perfume_bus_1956
+    title: 新山｜带着香气上车的乘客
+    aliases: [Johore Bahru perfume ghost bus 1956, Jalan Petrie bus ghost]
+    genre: urban_legend
+    credibility_tier: B
+    location: {lat: 1.4927, lng: 103.7414, precision: city, location_name: 马来西亚柔佛 · 新山市, culture_region: 东南亚 · 马来西亚}
+    location_note: 新山市区参考点；报道提及 Jalan Petrie 附近墓地，但没有给出可信的上车点或完整路线。
+    paragraphs:
+      - 新山曾流传一名白衣女子在接近午夜时登上九号公交，身上带着浓烈香气。故事说她像普通乘客一样付钱落座，车经过墓地附近时，座位上却突然空了。
+      - 1956 年《海峡时报》报道此传闻时，也询问了当地人与司机、售票员；报道说他们并未承认见过这位乘客。社会学论文将报纸剪报保存下来，让流言及当时的怀疑回应都能被阅读。
+    sources:
+      - {citation: 'Nur ‘Adlina Maulod, The Haunting of Fatimah Rock, National University of Singapore, 2009.', type: academic_thesis, url: 'https://bpb-us-w2.wpmucdn.com/web.sas.upenn.edu/dist/b/160/files/2017/04/nuradlinam-2-2le75il.pdf', locator: '附录 A5 收录 The Straits Times, 23 March 1956, p. 5'}
+      - {citation: 'Magonia, The Phantom Hitch-hiker on Public Transport.', type: folklore_archive, url: 'https://magoniamagazine.blogspot.com/2013/11/the-phantom-hitch-hiker-on-public.html', locator: 新山香水乘客的另一份 1956 年报纸转述}
+    compare: [case_cn_beijing_ghost_bus]
+    bridge: {entry: SOC-5-0002, cluster: sid_liminal, trail: trail5, label: 公交传闻与不同回应, rationale: 同题比较不同时代的公交传闻，并把未目击者的回应与传闻并列。}
+
+  - id: case_sg_nee_soon_returned_woman_1949
+    title: 新加坡义顺旧村｜被寻找的归家女子
+    aliases: [Nee Soon 1949 ghost woman, The Ghost Who Wasn't There]
+    genre: historical_archive
+    credibility_tier: B
+    location: {lat: 1.4304, lng: 103.8354, precision: city, location_name: 新加坡 · 义顺地区, culture_region: 东南亚 · 新加坡}
+    location_note: 坐标是今日义顺地区参考点；1949 年旧村庄的具体住宅没有确证。
+    paragraphs:
+      - 1949 年，Nee Soon 村流传一名女子从坟墓归来，重新回到丈夫身边，只是无法说话。传言传到其他村落后，许多人赶来打听，甚至向警局询问她的住处。
+      - 《海峡时报》的报道说，警员按流言给出的线索前往调查，没有找到女子或她的丈夫。新加坡国立大学论文保存了这份剪报；它记录的是流言与回应，不能证明有任何人死而复生。
+    sources:
+      - {citation: 'Nur ‘Adlina Maulod, The Haunting of Fatimah Rock, National University of Singapore, 2009.', type: academic_thesis, url: 'https://bpb-us-w2.wpmucdn.com/web.sas.upenn.edu/dist/b/160/files/2017/04/nuradlinam-2-2le75il.pdf', locator: '附录 A5b：The Straits Times, The Ghost Who Wasn’t There, 26 October 1949, p. 7'}
+    bridge: {entry: SOC-5-0010, cluster: sid_liminal, trail: all, label: 旧村流言如何扩散, rationale: 追踪传闻从村庄进入邻近社区及警局的过程，不把扩散当成证实。}
+
+  - id: case_sg_woodlands_snack_auntie_sms_2009
+    title: 新加坡兀兰｜短信中的卖零食阿姨
+    aliases: [Nenek Keropok, Mak Cik Keropok, snack auntie chain SMS]
+    genre: urban_legend
+    credibility_tier: B
+    location: {lat: 1.436, lng: 103.786, precision: city, location_name: 新加坡 · 兀兰地区, culture_region: 东南亚 · 新加坡}
+    location_note: 兀兰是流传短信中提及的地区之一，不表示传闻人物的住址或真实活动地点。
+    paragraphs:
+      - 一则 2009 年在新加坡流传的短信提醒收件人，小心一位上门卖零食的年长女子；不同版本给她附会了恐怖的随从和威胁，并催促人们将提醒继续转发。
+      - 新加坡国立大学论文转述了当年的报纸讨论：有人把它当作都市传说，也有人担心这种故事造成不必要的恐慌。短信里的地区名和人物形象不能证明有这样一位危险的人，更不应套到现实中的售货者身上。
+    sources:
+      - {citation: 'Nur ‘Adlina Maulod, The Haunting of Fatimah Rock, National University of Singapore, 2009.', type: academic_thesis, url: 'https://bpb-us-w2.wpmucdn.com/web.sas.upenn.edu/dist/b/160/files/2017/04/nuradlinam-2-2le75il.pdf', locator: 第 13 页及附录 A1，Berita Minggu 2009 年报道与受访者回应}
+    bridge: {entry: SOC-5-0010, cluster: sid_liminal, trail: all, label: 连锁短信与都市传闻, rationale: 对读短信转发、媒体报道及对真实小贩的影响，不把流言中的人物当成已证实对象。}
+
+  - id: case_sg_pickering_shop_rumor_1954
+    title: 新加坡旧街｜商店门前的鬼屋传闻
+    aliases: [Upper Pickering Street shopkeepers ghost 1954]
+    genre: historical_archive
+    credibility_tier: B
+    location: {lat: 1.286, lng: 103.846, precision: city, location_name: 新加坡 · 芳林公园附近, culture_region: 东南亚 · 新加坡}
+    location_note: 坐标是旧 Upper Pickering Street 所在市中心区域参考点，并非某一商铺位置。
+    paragraphs:
+      - 1954 年，新加坡旧 Upper Pickering Street 的商户向当局要求降低租金，理由之一是公寓周围的鬼故事让顾客不敢前来。对商户来说，流言不仅发生在夜里，也进入了白天的生计与议价。
+      - 《海峡时报》记下商户的说法；报纸能证明他们当时提出过这样的理由，却不能单独证明客流减少的原因或所谓鬼影存在。如今街区已发生变化，地图点只标旧街所在的大致范围。
+    sources:
+      - {citation: 'The Straits Times, Ghosts scare our clients away, shopkeepers, 26 March 1954.', type: newspaper_report, url: 'https://eresources.nlb.gov.sg/newspapers/digitised/issue/straitstimes19540326-1', locator: 报纸当日刊的该篇报道；单篇全文需遵守馆方使用条件}
+    bridge: {entry: HIS-6-0001, cluster: sid_liminal, trail: all, label: 鬼屋流言与商业记录, rationale: 从一份报纸中的租金请求出发，区分可核实的社会行动和无法直接确认的原因。}
+
+  - id: case_vn_hanoi_hang_trong_banyan_2012
+    title: 河内还剑湖｜屋顶垂下的榕树
+    aliases: [Hàng Trống house banyan, Hanoi banyan rooftop legend]
+    genre: urban_legend
+    credibility_tier: B
+    location: {lat: 21.026, lng: 105.8504, precision: city, location_name: 越南河内 · 还剑湖西侧, culture_region: 东南亚 · 越南}
+    location_note: 坐标为还剑湖西侧街区参考点；旧屋已重建，不能作为现存建筑门牌的精确定位。
+    paragraphs:
+      - 河内还剑湖附近一处旧屋的屋顶曾长出榕树，枝叶和气根垂下来。居民讲述中，有人从远处把树影看成一名长发女子，也有人说夜里听见女子哭泣；另一个版本为她编出等待丈夫归来的悲剧。
+      - 2012 年报道同时记下旧屋被拆除后故事仍在传播的情形。树木、建筑变迁与关于女子的叙事需要分别核对；不同讲法的存在本身，已经展现了一座城市怎样记住消失的房子。
+    sources:
+      - {citation: 'Lao Động, Những ngôi nhà ma rùng rợn giữa lòng Hà Nội, republished by Ngôi sao, 30 November 2012.', type: newspaper_report, url: 'https://ngoisao.vnexpress.net/nhung-ngoi-nha-ma-rung-ron-giua-long-ha-noi-2627915.html', locator: Hàng Trống 旧屋、榕树、不同传闻与拆建}
+    compare: [case_vn_hanoi_kim_ma_photo]
+    bridge: {entry: FOR-5-0011, cluster: sid_liminal, trail: all, label: 树影、旧屋与观看条件, rationale: 对读不同人对树影的说法与视觉记忆研究，不对单次目击作事后诊断。}

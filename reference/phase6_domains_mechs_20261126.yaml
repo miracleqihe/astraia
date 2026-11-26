@@ -1,0 +1,96 @@
+# Phase 6 Layer 4 mechanisms and theories across Domains 1-6.
+# Original simplified Chinese academic syntheses grounded in public-domain classics and peer-reviewed scholarship.
+records:
+  - id: theory_zhenwu_four_pervasiveness
+    title: 镇物心化器物、三载体六域与“四无通贯”象征人类学理论
+    aliases:
+      - Zhenwu four-fold pervasiveness
+      - Mind-shaped apotropaic objects
+      - 镇物四无通贯理论
+      - 心化的器物与物化的精神
+      - 三载体六域模型
+    node_type: theory
+    credibility_tier: A
+    temporal:
+      year_start: 1948
+      year_end: 1998
+      era_label: 1948—1998 年象征人类学与中国物质镇物比较理论
+      uncertainty_note: 综合马林诺夫斯基功能心理论（1948）、莱斯利·怀特符号文化论（1949）、盖尔器物能动性理论（1998）及中国镇物体系比较研究。
+    paragraphs:
+      - 人类在面对旱涝虫疫、门庭路煞与生老病死等难以彻底掌控的自然及社会变数时，往往借助具体物质实体来安顿群体秩序与心理期待。英国人类学者马林诺夫斯基（Bronisław Malinowski，1948）在《巫术、科学与宗教》中揭示，仪式与护物并非盲目的前科学替代品，而是在实用技术到达能力边界后承担缓解焦虑、重建行动信心的文化装置；美国人类学者莱斯利·怀特（Leslie A. White，1949）在《文化的科学》中进一步阐明，人之所以生活在区别于单纯生物环境的意义宇宙中，关键在于人类拥有为平常石木器物赋予“符号化”共享语义的独特能力，从而将内心的祈愿与戒备外化为可触摸、可安放的实体秩序。
+      - 将这一象征人类学框架运用于中国数千年的镇物民俗谱系可见，镇物的本质正是“心化的器物”与“物化的精神”双向互构：一方面是观念向器物凝结，另一方面是器物以空间标定反塑群体心智。就物质载体而论，自然界的山石草木（泰山石、桃梗、艾叶、灰弓药材）、人体随身的佩饰衣冠（五彩长命缕、百家锁、虎头鞋帽）以及工匠雕铸的造作器物（青瓷魂瓶、风狮爷、瓦猫、镇水铁牛）构成“自然·身之·人工”三相载体；就社会时空场域而论，则全面嵌入“岁时节令、护身安命、家宅屋宇、路道关津、婚丧墓葬、御凶驱疫”六大功能域，并呈现出时间上“无时不有”、空间上“无处不在”、取材上“无物不用”、主体上“无人不与”的“四无通贯”普及格局。
+      - 该理论的学术适用边界与历史演进视角同等重要：随着农业、公共卫生与营造技术进步，许多原本带有强烈畏煞防灾意味的厌胜镇物逐步向“纳福祈祥、节令娱乐与民俗装饰”淡化转型（例如除夕压祟向压岁礼俗演化、门神桃符向年画春联流变）。本文在专题分类与理论命题线索上参照陶思炎《中国镇物》（台北：东大图书公司“沧海美术·艺术特辑”，1998 年，ISBN 957-19-2210-2）之体系成果，并结合《后汉书·礼仪志》等公版文献及国际人类学名著独立撰写；研究具体个案时，须将文化符号的心理凝聚效用同工程物理防护与现代医学防灾严格区隔。
+    sources:
+      - citation: 'Leslie A. White (1949). The Science of Culture: A Study of Man and Civilization. Farrar, Straus and Company / Internet Archive.'
+        type: academic_monograph
+        url: https://archive.org/details/scienceofculture0000lesl_r9o2
+        locator: 人类符号化能力（symboling）与物质器物文化意义赋义理论
+      - citation: 'Bronisław Malinowski (1948). Magic, Science and Religion, and Other Essays. Beacon Press / Internet Archive.'
+        type: academic_monograph
+        url: https://archive.org/details/magicsciencereli0000bron
+        locator: 实用知识边界、心理焦虑调节与仪式护物社会功能分析
+      - citation: 'Alfred Gell (1998). Art and Agency: An Anthropological Theory. Clarendon Press / Internet Archive.'
+        type: academic_monograph
+        url: https://archive.org/details/artagencyanthropol0000gell
+        locator: 工艺制品次级能动性及意向物化关系网络分析
+      - citation: 〔南朝宋〕范晔等撰，《后汉书·志第五·礼仪志中》，维基文库二十四史校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E5%BE%8C%E6%BC%A2%E6%9B%B8/%E5%BF%97%E7%AC%AC%E4%BA%94
+        locator: 汉代仲夏朱索桃印禁蛊、先腊大傩等国家岁时器物厌胜制度
+    compare:
+      - mech_zhenwu_symbolic_materialization
+      - mech_apotropaic_boundary_seal
+      - theory_sympathetic_contagious_magic_cn
+      - theory_liminality_rites_passage
+      - motif_cn_zhenwu_material_taxonomy
+      - case_cn_kinmen_qionglin_fengshiye
+      - case_cn_taishan_shigandang
+
+  - id: mech_underworld_bureaucratic_projection
+    title: 帝制官僚文书与司法行政向幽冥世界的制度投影与心理代偿机制
+    aliases:
+      - Underworld bureaucratic projection
+      - Celestial bureaucracy compensation
+      - 幽冥官僚投影机制
+      - 冥府司法代偿
+      - 阴司文书与阳间秩序
+    node_type: mechanism
+    credibility_tier: A
+    temporal:
+      year_start: 1915
+      year_end: 2009
+      era_label: 1915—2009 年宗教社会学、幽冥司法史与东亚民俗比较研究
+      uncertainty_note: 涵盖韦伯《中国的宗教》（1915）、杨庆堃制度与弥散性宗教论（1961）、武雅士神鬼祖谱系（1974）及太史文、康豹冥府司法研究（1994—2009）。
+    paragraphs:
+      - 帝制时代中国及其周边东亚文化圈的幽冥想象，既非单纯的鬼魅恐怖幻象，亦非全盘照搬域外宗教图景，而是将人间的州县衙门、文书公案、官吏考课与司法审判程序高度同构地投射至死后世界。汉魏出土镇墓券文已出现“地下丞”“墓伯”等阴官职衔；历经南北朝至唐五代《佛说十王经》对印度阎摩神话的官僚化改写，复经宋明清泰山七十六司、城隍庙夜巡查案、道佛放赦文牒以及劝善书《玉历宝钞》的普及，地府演化出一套设殿分司、逐七递解、执簿核罪、可凭冥契替偿且接受生人“告阴状”申冤的完整行政机器。
+      - 社会学与历史人类学研究揭示了这种“制度投影”与“心理代偿”的双重机理。马克斯·韦伯（Max Weber）在《中国的宗教》中指出帝制家产官僚制把社会伦理与宇宙秩序统摄于等级分明的职司体系；杨庆堃（C. K. Yang，1961）阐明“弥散性宗教”如何把世俗官府结构嵌入民间神明崇拜；武雅士（Arthur P. Wolf，1974）更通过对台湾田野的观察提出经典命题：神明对应有印信俸禄的“帝国官吏”、祖先对应宗族“亲属”、游魂厉鬼则对应流离的“陌生人”。太史文（Stephen F. Teiser，1994）与康豹（Paul R. Katz，2009）则从《十王经》写卷与城隍神判史料出发，证明当阳间州县衙门因路远费昂、官商勾结或证据匮乏而难伸冤情时，“阴曹不徇私情、明镜高悬、六月飞雪”的幽冥司法便成为庶民慰藉屈辱、重建因果正义感的关键代偿机制，甚至反过来对基层调解、盟誓发愿与乡约约束产生真实威慑。
+      - 本机制的经验解释边界须严密限定：将十殿阎罗、城隍案卷与鬼魂诉冤戏曲理解为帝国行政秩序的象征投影与社会正义代偿，并不意味着历史上存在真实超自然的阴司裁决，也不说明每宗“阴审”“托梦破案”故事都记录了客观案件侦破；同时，如《聊斋志异·考城隍》或清代公案戏曲所讽喻，民间对冥吏贪贿、烧纸通融与错拘替身的想象，本身也折射出庶民对现实衙门吏治腐败的深层不信任。在专题分类对照上，本条目参考徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994，ISBN 978-7-5363-2780-1）之冥神与幽冥诉讼分类脉络，正文依据传世史籍及学术专著独立撰成。
+    sources:
+      - citation: 'Arthur P. Wolf (ed., 1974). Religion and Ritual in Chinese Society. Stanford University Press / Internet Archive.'
+        type: academic_monograph
+        url: https://archive.org/details/religionritualin0000unse
+        locator: 神明官僚隐喻、“神—鬼—祖先”三分结构与地方祭祀秩序分析
+      - citation: 'C. K. Yang (1961). Religion in Chinese Society: A Study of Contemporary Social Functions of Religion and Some of Their Historical Factors. University of California Press / Internet Archive.'
+        type: academic_monograph
+        url: https://archive.org/details/religioninchines0000yang_p2q9
+        locator: 弥散性宗教结构、天庭阴司官僚映射与世俗伦理整合机制
+      - citation: 'Max Weber (trans. Hans H. Gerth, 1951). The Religion of China: Confucianism and Taoism. Free Press / Internet Archive.'
+        type: academic_monograph
+        url: https://archive.org/details/TheReligionOfChinaConfucianismAndTaoism
+        locator: 家产官僚体制理性化、神灵等级秩序与社会文化基础分析
+      - citation: 'Stephen F. Teiser (1994). The Scripture on the Ten Kings and the Making of Purgatory in Medieval Chinese Buddhism. University of Hawaii Press / Internet Archive.'
+        type: academic_monograph
+        url: https://archive.org/details/scriptureontenki0000teis
+        locator: 敦煌《佛说十王经》写卷、官僚文牒体裁与中国化冥府审判生成考证
+      - citation: 'Paul R. Katz (2009). Divine Justice: Religion and the Development of Chinese Legal Culture. Routledge.'
+        type: academic_monograph
+        url: https://doi.org/10.4324/9780203881460
+        doi: 10.4324/9780203881460
+        locator: 城隍、东岳司与神判宣誓在中国传统司法文化中的代偿及制约功能
+    compare:
+      - motif_wolf_stranger_ghosts
+      - mech_gu_sorcery_social_scapegoat
+      - theory_zhenwu_four_pervasiveness
+      - case_sg_haw_par_ten_courts
+      - case_asia_liaozhai_kaochenghuang
+      - case_cn_tw_tainan_chenghuang_night_patrol

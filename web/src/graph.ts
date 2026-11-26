@@ -28,6 +28,7 @@ export interface GraphNode {
   id: string;
   title: string;
   aliases: string[];
+  node_type?: string;
   z_layer: Layer;
   z: number;
   genre: string;
@@ -51,6 +52,7 @@ export interface GraphNode {
     thompson_motifs: string[];
     berezkin_codes: string[];
     ocm_codes: string[];
+    macro_phylogeny?: string | null;
   };
   sources: Citation[];
   audit: { reviewed_by_human: boolean; is_sample: boolean; reviewer?: string | null;
@@ -59,6 +61,10 @@ export interface GraphNode {
   markdown: string;
   source_path: string;
   reading?: ReadingNote;
+  motifs?: string[];
+  mechanisms?: unknown[];
+  tags?: string[];
+  relations?: unknown[];
 }
 
 export interface GraphLink {
@@ -73,11 +79,13 @@ export interface GraphLink {
 
 export interface GraphSnapshot {
   schema_version: 1;
+  compact_defaults?: boolean;
   snapshot_id: string;
   nodes: GraphNode[];
   links: GraphLink[];
   details_file?: string;
   details_sha256?: string;
+  link_notes?: string[];
 }
 
 export interface GraphDetails {
@@ -103,9 +111,10 @@ export type CodeFocus = { system: string; code: string };
 export function codeKey({ system, code }: CodeFocus): string { return `${system}:${code}`; }
 
 export function dossierCodes(node: GraphNode) {
-  return Object.entries(STANDARDS).flatMap(([system, label]) => (
-    node.standards[system as keyof GraphNode['standards']].map((code) => ({ system, code, label: `${label} ${code}` }))
-  ));
+  return Object.entries(STANDARDS).flatMap(([system, label]) => {
+    const values = node.standards[system as 'atu_types' | 'thompson_motifs' | 'berezkin_codes' | 'ocm_codes'];
+    return Array.isArray(values) ? values.map((code) => ({ system, code, label: `${label} ${code}` })) : [];
+  });
 }
 
 export function geographicCases(graph: GraphIndex, node: GraphNode | null): GraphNode[] {
@@ -304,6 +313,103 @@ export function matchesQuery(node: GraphNode, query: string): boolean {
   return normalized.split(/\s+/).every((word) => text.includes(word));
 }
 
+const LAYER_DEFAULT_NODE_TYPE: Record<number, string> = {
+  1: 'case',
+  2: 'myth_corpus',
+  3: 'motif_index',
+  4: 'mechanism',
+};
+
+export function hydrateGraphIndex(snapshot: GraphSnapshot): GraphSnapshot {
+  if (!snapshot || typeof snapshot !== 'object' || !Array.isArray(snapshot.nodes) || !Array.isArray(snapshot.links)) {
+    return snapshot;
+  }
+  const linkNotes = Array.isArray(snapshot.link_notes) ? snapshot.link_notes : null;
+  const nodes: GraphNode[] = snapshot.nodes.map((raw) => {
+    const node = raw as unknown as Record<string, unknown>;
+    const rawLayer = Number(node.z_layer) || 1;
+    const zLayer = (rawLayer >= 1 && rawLayer <= 4 ? rawLayer : 1) as Layer;
+    const rawSpatial = node.spatial as GraphNode['spatial'] | null | undefined;
+    const rawTemporal = node.temporal as GraphNode['temporal'] | null | undefined;
+    const rawStandards = (node.standards ?? {}) as Partial<GraphNode['standards']>;
+    const rawAudit = (node.audit && typeof node.audit === 'object' ? node.audit : {}) as Partial<GraphNode['audit']>;
+    const rawReading = node.reading as Partial<ReadingNote> | undefined;
+    const reading: ReadingNote | undefined = rawReading && typeof rawReading === 'object' ? {
+      ...rawReading,
+      kind: (rawReading.kind ?? 'archive') as ReadingKind,
+      paragraphs: Array.isArray(rawReading.paragraphs) ? rawReading.paragraphs : [],
+      source_numbers: Array.isArray(rawReading.source_numbers) ? rawReading.source_numbers : [1],
+      ...(rawReading.edition ? {
+        edition: {
+          text: typeof rawReading.edition.text === 'string' ? rawReading.edition.text : '',
+          source_number: rawReading.edition.source_number,
+        },
+      } : {}),
+    } : undefined;
+    const tier = (node.credibility_tier ?? 'B') as Tier;
+    return {
+      ...(node as unknown as GraphNode),
+      z_layer: zLayer,
+      z: typeof node.z === 'number' ? node.z : (zLayer - 1) * 120,
+      node_type: typeof node.node_type === 'string' ? node.node_type : (LAYER_DEFAULT_NODE_TYPE[zLayer] ?? 'case'),
+      aliases: Array.isArray(node.aliases) ? (node.aliases as string[]) : [],
+      credibility_tier: tier,
+      is_fictional_quarantine: typeof node.is_fictional_quarantine === 'boolean'
+        ? node.is_fictional_quarantine
+        : tier === 'F',
+      spatial: rawSpatial && typeof rawSpatial === 'object' ? {
+        lat: rawSpatial.lat ?? null,
+        lng: rawSpatial.lng ?? null,
+        precision: rawSpatial.precision,
+        location_name: rawSpatial.location_name,
+        culture_region: rawSpatial.culture_region ?? null,
+      } : null,
+      temporal: rawTemporal && typeof rawTemporal === 'object' ? {
+        year_start: rawTemporal.year_start ?? null,
+        year_end: rawTemporal.year_end ?? null,
+        era_label: rawTemporal.era_label,
+        uncertainty_note: rawTemporal.uncertainty_note ?? null,
+      } : null,
+      standards: {
+        atu_types: Array.isArray(rawStandards.atu_types) ? rawStandards.atu_types : [],
+        thompson_motifs: Array.isArray(rawStandards.thompson_motifs) ? rawStandards.thompson_motifs : [],
+        berezkin_codes: Array.isArray(rawStandards.berezkin_codes) ? rawStandards.berezkin_codes : [],
+        ocm_codes: Array.isArray(rawStandards.ocm_codes) ? rawStandards.ocm_codes : [],
+        macro_phylogeny: rawStandards.macro_phylogeny ?? null,
+      },
+      sources: Array.isArray(node.sources) ? (node.sources as Citation[]) : [],
+      markdown: typeof node.markdown === 'string' ? node.markdown : '',
+      source_path: typeof node.source_path === 'string' ? node.source_path : '',
+      audit: {
+        reviewed_by_human: false,
+        is_sample: false,
+        ...rawAudit,
+      },
+      motifs: Array.isArray(node.motifs) ? (node.motifs as string[]) : [],
+      mechanisms: Array.isArray(node.mechanisms) ? (node.mechanisms as unknown[]) : [],
+      tags: Array.isArray(node.tags) ? (node.tags as string[]) : [],
+      relations: Array.isArray(node.relations) ? (node.relations as unknown[]) : [],
+      ...(reading ? { reading } : {}),
+    };
+  });
+  const links: GraphLink[] = snapshot.links.map((raw) => {
+    const link = raw as unknown as Record<string, unknown>;
+    return {
+      ...(link as unknown as GraphLink),
+      status: (link.status ?? null) as EvidenceStatus | null,
+      note: typeof link.note === 'number' && linkNotes
+        ? (linkNotes[link.note] ?? null)
+        : ((link.note as string | null | undefined) ?? null),
+      is_fictional_quarantine: Boolean(link.is_fictional_quarantine),
+      matched_codes: Array.isArray(link.matched_codes)
+        ? (link.matched_codes as Array<{ system: string; code: string }>)
+        : [],
+    };
+  });
+  const { link_notes: _linkNotes, ...rest } = snapshot;
+  return { ...rest, nodes, links };
+}
+
 export async function loadSnapshot(signal: AbortSignal): Promise<GraphSnapshot> {
   const candidates = import.meta.env.VITE_PUBLIC_DEMO === '1'
     ? ['graph_index.json', 'graph_data.json'] : ['catalogue_data.json', 'graph_data.json'];
@@ -335,7 +441,7 @@ export async function loadSnapshot(signal: AbortSignal): Promise<GraphSnapshot> 
     || !('links' in data) || !Array.isArray(data.links)) {
     throw new Error('图谱快照格式不匹配。请用当前版本重新编译。');
   }
-  return data as GraphSnapshot;
+  return hydrateGraphIndex(data as GraphSnapshot);
 }
 
 export async function loadGraphDetails(snapshot: GraphSnapshot, signal: AbortSignal): Promise<GraphDetails> {

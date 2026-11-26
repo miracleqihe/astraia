@@ -129,6 +129,14 @@ def cache_material(material: Material, vault: Path) -> str:
                 os.link(staged, target)
             except FileExistsError:
                 pass
+            except PermissionError:
+                if os.name != "nt":
+                    raise
+                try:
+                    with target.open("xb") as handle:
+                        handle.write(raw)
+                except FileExistsError:
+                    pass
     with target.open("rb") as stream:
         if file_digest(stream, "sha256").hexdigest() != material.content_sha256:
             raise IntakeError(f"同名来源快照内容不一致，已保留原文件。{target}")

@@ -1,0 +1,912 @@
+# Original simplified Chinese academic essays grounded in public-domain primary classics, museum catalogues, and open scholarship.
+# All map coordinates are historical, archival, or regional folklore reference points, not literal assertions of supernatural efficacy.
+records:
+  - id: case_cn_han_wugu_91bce
+    title: 西汉长安｜征和二年巫蛊之祸与桐人案牍档案
+    aliases:
+      - 巫蛊之祸
+      - 征和二年巫蛊案
+      - 桐木偶人巫蛊
+      - 江充巫蛊狱
+      - Witchcraft Crisis of 91 BC
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location:
+      lat: 34.3000
+      lng: 108.8700
+      precision: city
+      location_name: 中国陕西西安（汉长安城未央宫与甘泉宫政治档案中心区）
+      culture_region: 中国 · 关中汉代都城政治档案区
+    location_note: 西汉征和二年（前 91 年）巫蛊大狱围绕长安未央宫、太子宫及皇帝避暑的甘泉宫展开，坐标取汉长安城遗址中心作历史档案地理参照。
+    temporal:
+      year_start: -92
+      year_end: -89
+      era_label: 西汉太始末至征和二年（前 92–前 91 年）及轮台诏前后
+      uncertainty_note: 《汉书》载太始年间公孙贺案已起巫蛊之狱，征和二年七月长安城内兵变爆发并连坐数万人，征和四年汉武帝作《轮台罪己诏》并察知江充诈伪后族灭其党。
+    paragraphs:
+      - 据东汉班固《汉书》卷六十三《武五子传》与卷四十五《蒯伍江息夫传》载，汉武帝晚年多病疑忌，自甘泉宫起即以“巫蛊”为名清查内外朝臣。宠臣江充借机受命按治巫蛊，先掘丞相公孙贺及诸公主宅邸，继而率胡巫入皇宫、皇后与戾太子刘据宫室掘地搜检，宣称在太子宫中所得桐木偶人最多，且另有帛书不道之辞。
+      - 太子刘据自知陷入绝境而汉武帝远在甘泉宫无法面陈，遂听从少傅石德之议矫诏发兵，捕斩江充及胡巫于上林苑，并引兵与丞相官军激战于长安街市五日。战斗致死者数万，太子兵败东奔湖县（今河南灵宝）自缢，卫皇后与诸皇孙亦先后遇害；后壶关三老茂及高寝郎田千秋上书讼冤，汉武帝方悔悟并兴建思子宫。
+      - 征和二年之变在中国古代巫蛊史上具有奠基意义：它表明“刻木偶埋地、咒诅君亲”在汉代不仅被视作私室厌胜，更已被制度化为可启动连坐诛夷的最高政治罪名。史学与社会学研究多指出，此类大狱往往在老迈君主猜忌、外戚与法吏角力以及传染病与灾异恐慌叠加时爆发，将难以验证的“巫蛊物证”转化为政治清洗与替罪机制的合法通道。
+    sources:
+      - citation: 〔东汉〕班固撰，《汉书·卷六十三·武五子传·戾太子据》，维基文库二十四史校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E6%BC%A2%E6%9B%B8/%E5%8D%B7063'
+        locator: 卷六十三《戾太子传》掘得桐木人、长安兵变及田千秋讼冤全文
+      - citation: 〔东汉〕班固撰，《汉书·卷四十五·蒯伍江息夫传·江充》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/han-shu/kuai-wu-jiang-xi-fu-zhuan'
+        locator: 江充奉诏治巫蛊、率胡巫掘地搜捕与伏诛始末
+      - citation: Wikipedia, "Witchcraft crisis of 91 BC".
+        type: encyclopedia
+        url: 'https://en.wikipedia.org/wiki/Witchcraft_crisis_of_91_BC'
+        locator: 西汉征和二年巫蛊之祸时间线、人物谱系与史学评述
+    compare:
+      - corpus_cn_zhubing_gu_toxicology
+      - mech_gu_sorcery_social_scapegoat
+      - theory_poison_panic_projection
+      - case_china_soulstealers_1768
+      - case_cn_sui_dugu_tuo_maogui
+    motifs:
+      - motif_cn_wugu_poison_complex
+      - motif_cn_yansheng_talisman_seal
+      - index_ocm_754
+    bridge:
+      entry: HIS-1-0001
+      cluster: sid_witch
+      trail: all
+      label: 汉代大狱与国家礼法整合
+      rationale: 将征和二年长安巫蛊之祸的政局、法吏按狱与外戚消长，同秦汉帝国中央集权治理与危机处置脉络并读，厘清政治清洗如何借助巫术罪名运作。
+
+  - id: case_cn_sui_dugu_tuo_maogui
+    title: 隋代长安｜独孤陀猫鬼蛊狱与《唐律疏议》厌魅禁律
+    aliases:
+      - 独孤陀猫鬼案
+      - 猫鬼蛊
+      - 徐阿尼祭猫鬼
+      - 造猫鬼
+      - 隋唐巫蛊律令
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location:
+      lat: 34.2600
+      lng: 108.9500
+      precision: city
+      location_name: 中国陕西西安（隋大兴城宫廷与大理寺审案中心）
+      culture_region: 中国 · 关中隋唐律令史料区
+    location_note: 隋文帝开皇年间独孤陀猫鬼案发生并审理于隋大兴城（唐长安城，今西安），《唐律疏议》亦定本于长安，坐标取隋唐长安城中心位置。
+    temporal:
+      year_start: 598
+      year_end: 653
+      era_label: 隋开皇后期猫鬼狱案至唐永徽四年《唐律疏议》（653 年）成书期
+      uncertainty_note: 《隋书·外戚传》详录开皇年间独孤陀猫鬼蛊案，653 年颁行的《唐律疏议·贼盗》正式将“造猫鬼”与“造畜蛊毒”并列条文。
+    paragraphs:
+      - 《隋书·卷七十九·外戚传·独孤陀》与《北史》记载，隋文帝文献皇后异母弟独孤陀“性好左道”，其外祖母高氏家世相传“事猫鬼”，后转入独孤陀私宅。开皇年间，文献皇后与尚书左仆射杨素妻郑氏同时骤病，御医诊视均称“此猫鬼疾”；隋文帝疑独孤陀所为，乃命朝臣与大理官员合审其家婢女徐阿尼，供称每于子日夜静祭祀猫鬼，若咒某人即令猫鬼摄害其命、暗移其财入主家。
+      - 供词甚至描述官署试法之时，婢女置粥器以匙叩呼猫鬼，旋即目睹如猫之形出现而呈惊悸之状；隋文帝怒极欲赐独孤陀夫妇死刑，因文献皇后三日绝食哀请，且其弟独孤整伏阙叩头流血求免，最终改判独孤陀除名为民，其妻杨氏落发为尼，并诏令天下搜捕严禁私蓄猫鬼者，流配边远。
+      - 这宗宫廷公案直接促成中古法制对“蛊毒”与“厌魅”的精细定罪。《唐律疏议·卷第十八·贼盗》专设“造畜蛊毒”律条，其疏议明确点出“谓造合成蛊，堪以害人者，并造猫鬼之类”，规定造畜及教令者皆绞，不知情之同居亲属与知而不纠的里正坊正亦须流三千里。医学史研究者指出，所谓“猫鬼疾”在当时常对应骤发心腹痛或惊厥急症，而酷刑问供则往往把侍婢、女性家眷及边缘族裔推入“蓄鬼害主”的司法框架。
+    sources:
+      - citation: 〔唐〕魏征等撰，《隋书·外戚传·独孤陀》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/sui-shu/wai-qi'
+        locator: 《外戚·独孤陀》猫鬼蛊由来、徐阿尼供状与减死除名原文
+      - citation: 〔唐〕长孙无忌等撰（653 年），《唐律疏议·卷第十八·贼盗》，维基文库校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E5%94%90%E5%BE%8B%E7%96%8F%E8%AD%B0/%E5%8D%B7%E7%AC%AC%E5%8D%81%E5%85%AB'
+        locator: 卷十八“造畜蛊毒”正条及疏议明列“造猫鬼之类”刑罚规定
+      - citation: 'Yan Liu, Healing with Poisons: Potent Medicines in Medieval China, University of Washington Press, 2021.'
+        type: academic_monograph
+        url: 'https://library.oapen.org/handle/20.500.12657/50014'
+        locator: 中古律令、蛊毒与猫鬼概念在医政边界中的演变分析
+    compare:
+      - corpus_cn_zhubing_gu_toxicology
+      - mech_gu_sorcery_social_scapegoat
+      - theory_poison_panic_projection
+      - case_cn_han_wugu_91bce
+      - case_cn_xiangxi_gu_poison
+    motifs:
+      - motif_cn_wugu_poison_complex
+      - index_ocm_754
+    bridge:
+      entry: REL-2-0010
+      cluster: sid_witch
+      trail: all
+      label: 造猫鬼狱与中古律令边界
+      rationale: 从《隋书》独孤陀猫鬼公案到《唐律疏议》“造猫鬼之类”绞刑条文，结合国家法典与民间信仰治理关系，辨析皇权如何界定非法术数。
+
+  - id: case_cn_quanzhou_jincan_gu
+    title: 福建泉州｜宋明笔记中的金蚕蛊传闻与“嫁金蚕”民俗
+    aliases:
+      - 金蚕蛊
+      - 嫁金蚕
+      - 泉州金蚕
+      - 福清金蚕讼
+      - Jincan Gu
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location:
+      lat: 24.8740
+      lng: 118.6750
+      precision: province
+      location_name: 中国福建泉州与闽南沿海 · 宋明笔记“金蚕蛊”及“嫁金蚕”流播区
+      culture_region: 中国 · 闽南及东南沿海巫蛊文献区
+    location_note: 宋代蔡绦《铁围山丛谈》、洪迈《夷坚志》及明清闽南志书重点载述福建泉州、福清等地“金蚕蛊”与“嫁金蚕”传闻，坐标取泉州古城作东南沿海民俗文献参照点。
+    temporal:
+      year_start: 1110
+      year_end: 1644
+      era_label: 北宋《铁围山丛谈》至南宋《夷坚志》、明末《赤雅》记载时期
+      uncertainty_note: 蔡绦《铁围山丛谈》记北宋末至南宋初闽蜀金蚕风闻与福清官司，洪迈《夷坚志》收福建诸州金蚕怪谈，明邝露《赤雅》与李时珍《本草纲目》续记南方变体。
+    paragraphs:
+      - 宋代以降，东南沿海与西南山地出现一种专以“致富反噬”为特征的蛊术传说——金蚕蛊。北宋蔡绦《铁围山丛谈》卷六载，金蚕毒传自蜀中，渐盛于湖广与闽粤：畜主若无力再供其噬咬人命，须以金银钗钏、锦缎裹挟金蚕弃置路旁诱人拾取，谓之“嫁金蚕”；凡贪财捡拾者即成新主，原主方得脱身。文中更记福建福清县民曾因遭邻人诬控“放金蚕害死人命”陷入重狱，老吏教以密引刺猬入室搜捕，因传闻“金蚕畏猬”。
+      - 南宋洪迈《夷坚志》继录多则泉州、福州与漳州民间“畜金蚕”“买金蚕”及路拾锦囊致祸的故事；明末邝露《赤雅》则将广西所传夜间熠熠飞行如流星的“飞蛊”并入“金蚕”谱系，李时珍《本草纲目·虫部》亦专门采录民间传说并列石榴根皮等解毒旧方，可见这一观念在数百年间不断吸附各地域的毒虫、致富焦虑与邻里猜忌。
+      - 当代民俗史与社会学研读指出，“嫁金蚕”绝非真实昆虫饲养术，而是乡土熟人社会对“暴富”与“外来不明财货”的道德警世叙事：凡一家忽然殷富或与外地客商往来密切，便极易遭邻里疑为“暗养金蚕吸人精血”；而捡拾路边遗物招灾的禁忌，亦在客观上折射出防备不明投毒物与规训非分贪念的双重心理机制。
+    sources:
+      - citation: 〔宋〕蔡绦撰，《铁围山丛谈·卷六》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/tie-wei-shan-cong-tan'
+        locator: 卷六“金蚕毒始蜀中”“嫁金蚕”及福清县刺猬捉蛊案原文
+      - citation: 〔南宋〕洪迈撰，《夷坚志·夷坚甲志》，维基文库四库全书校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E5%A4%B5%E5%A0%85%E5%BF%97/%E5%A4%B5%E5%A0%85%E7%94%B2%E5%BF%97'
+        locator: 宋代闽浙民间蓄蛊、异闻采录体例及地方传闻参照
+      - citation: 〔明〕邝露撰，《赤雅》，维基文库校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E8%B5%A4%E9%9B%85'
+        locator: 卷上广西畜蛊俗信及飞蛊化为金蚕诸条
+      - citation: H. Y. Feng & J. K. Shryock, "The Black Magic in China Known as Ku", Journal of the American Oriental Society 55(1), 1935, pp. 1–30.
+        type: peer_reviewed
+        url: 'https://doi.org/10.2307/594297'
+        doi: '10.2307/594297'
+        locator: 金蚕蛊文献谱系、嫁金蚕民俗与东南地域传播分析
+    compare:
+      - corpus_cn_zhubing_gu_toxicology
+      - mech_gu_sorcery_social_scapegoat
+      - theory_poison_panic_projection
+      - case_cn_xiangxi_gu_poison
+      - case_cn_lingnan_tiaosheng_gu
+    motifs:
+      - motif_cn_wugu_poison_complex
+      - index_ocm_754
+    bridge:
+      entry: SOC-1-0009
+      cluster: sid_witch
+      trail: all
+      label: 嫁金蚕传闻与乡土污名机制
+      rationale: 将闽南“畜金蚕暴富、路遗嫁祸”的民间叙事，与社会学中关于社会污名与标签化过程的研究并读，剖析暴富焦虑如何转化为妖术指控。
+
+  - id: case_cn_lingnan_tiaosheng_gu
+    title: 岭南广西｜宋代《岭外代答》挑生食蛊与历代畜蛊禁令档案
+    aliases:
+      - 挑生蛊
+      - 广南挑生
+      - 桂海畜蛊
+      - 雷州推官勘挑生案
+      - 造畜蛊毒律
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location:
+      lat: 25.2736
+      lng: 110.2902
+      precision: province
+      location_name: 中国广西桂林（宋静江府）与雷州广南西路 · 宋代挑生与解蛊方志区
+      culture_region: 中国 · 岭南与西南食蛊禁令史料区
+    location_note: 南宋范成大任静江府（今桂林）知府撰《桂海虞衡志》，周去非曾仕桂林等地撰《岭外代答》并录雷州推官勘验挑生事，坐标取桂林作宋代岭南文献核心参照点。
+    temporal:
+      year_start: 653
+      year_end: 1178
+      era_label: 唐代《唐律疏议》（653 年）至南宋乾道淳熙间《岭外代答》（1178 年）
+      uncertainty_note: 唐代律典以“造畜蛊毒”通缉岭表及各地毒药巫术，南宋范成大（1175 年）与周去非（1178 年）详细记述广南“挑生”食蛊与官府验案方式。
+    paragraphs:
+      - 宋代岭南风土名著周去非《岭外代答》卷十《志异门》与范成大《桂海虞衡志》均设专条记述当地“挑生”与“蛊毒”忌讳。《岭外代答》写道，广南所谓挑生，指以鱼肉款待远客之际暗行厌胜，令食入腹中之物“反生”作祟，致胸膈窒痛闷绝，传闻死者魂魄将阴役于施术者之家；书中所引雷州推官李寿翁审案时，甚至当庭令疑犯覆碗施法，启视鱼肉竟呈毛发滋生之状，遂依法定罪。
+      - 在政书与医药记录层，唐代《唐律疏议·贼盗》“造畜蛊毒”条早已严惩投毒与巫术合流，清代《大清律例》亦沿袭严刑；而周去非同条既录民间“饮客先尝”之戒，又记当地以升麻、郁金等草药催吐泄下，以及“咀嚼生黄豆不腥、含银针不变黑”的古老验蛊法，反映宋代士大夫试图在惊疑传闻与药物实效之间寻找可操作的应对规程。
+      - 从现代热带医学与毒理学视角再读宋代“挑生”档案，岭南湿热气候下鱼贝淡水食源极易携带华支睾吸虫、肺吸虫等寄生虫或产生微生物腐败毒素；生冷鱼肉饮食后突发急性剧烈腹痛、呕吐乃至肠绞痛，极易被客商误判为“鱼肉在腹中活转咬噬”，再叠加异乡语言隔阂与食宿戒心，便凝结成经久不衰的食蛊恐惧。
+    sources:
+      - citation: 〔南宋〕周去非撰（1178 年），《岭外代答·卷十·志异门·挑生》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/ling-wai-dai-da'
+        locator: 卷十《挑生》广南鱼肉延客、雷州推官勘验及升麻郁金解毒条
+      - citation: 〔南宋〕范成大撰（1175 年），《桂海虞衡志》，维基文库校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E6%A1%82%E6%B5%B7%E8%99%9E%E8%A1%A1%E5%BF%97'
+        locator: 宋代广西风俗志异及地方毒物与民俗记录
+      - citation: 〔唐〕长孙无忌等撰（653 年），《唐律疏议·卷第十八·贼盗》，维基文库校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E5%94%90%E5%BE%8B%E7%96%8F%E8%AD%B0/%E5%8D%B7%E7%AC%AC%E5%8D%81%E5%85%AB'
+        locator: 卷十八“造畜蛊毒”“以毒药药人”刑律条文
+    compare:
+      - corpus_cn_zhubing_gu_toxicology
+      - mech_gu_sorcery_social_scapegoat
+      - theory_poison_panic_projection
+      - case_cn_xiangxi_gu_poison
+      - case_cn_quanzhou_jincan_gu
+    motifs:
+      - motif_cn_wugu_poison_complex
+      - index_ocm_754
+    bridge:
+      entry: CHE-6-0031
+      cluster: sid_witch
+      trail: all
+      label: 银针验蛊与中毒检验边界
+      rationale: 把宋代官员覆碗验肉、含豆嚼银试蛊的旧法，与现代毒理检验中“表象检出”不等于“致病因果”的证据判断准则并置对读。
+
+  - id: case_cn_xiangxi_luodong_nu_ritual
+    title: 湖南湘西｜落洞习俗、洞神冥婚想象与现代精神医学民俗志
+    aliases:
+      - 落洞
+      - 落花洞女
+      - 湘西落洞
+      - 洞神娶亲
+      - Luodong
+    genre: memorate
+    credibility_tier: B
+    note_kind: legend
+    location:
+      lat: 28.3130
+      lng: 109.7380
+      precision: culture_region
+      location_name: 中国湖南湘西土家族苗族自治州（吉首、凤凰、永顺山区）· 落洞民俗采录区
+      culture_region: 中国 · 湘西武陵山区民俗志区
+    location_note: “落洞”民间叙事与民族志田野调查集中于湘西州凤凰、吉首、永顺、保靖等武陵喀斯特溶洞分布区，坐标取吉首与凤凰之间文化中心参照点。
+    temporal:
+      year_start: 1930
+      year_end: 2006
+      era_label: 民国沈从文散文纪实（1930 年代）至 2006 年人类学田野研究时期
+      uncertainty_note: 该俗在湘西乡土口传已久，20 世纪三四十年代沈从文散文多有记述，2006 年学者陆群《湘西落洞》以系统民族志方法详加考察。
+    paragraphs:
+      - 在湖南湘西苗族、土家族等山地村寨流传的口述民俗中，“落洞”（亦称“落花洞女”）常与赶尸、放蛊并称区域奇俗。当地旧俗传言，容貌秀丽、性情内向的未婚少女若突然神情恍惚、缄默绝食、独语不休或独自游荡于山涧溶洞之畔，便被视为遭山洞中的“洞神”看中而“勾魂迎娶”；若家人请巫师祈禳无效而女子最终郁结夭亡或投崖溺水，葬礼甚至照婚嫁“喜丧”仪规办理，称为完婚归神。
+      - 作家沈从文在《湘西》《凤凰》等作品中曾深刻指出，这一被外人渲染为玄秘鬼魅的习俗，实为“人神错综的悲剧”；2006 年民族学专著《湘西落洞》亦通过大量村寨田野访谈梳理指出，喀斯特山区遍布幽深溶洞的自然地貌为当地提供了“洞穴神灵”的信仰载体，而旧式包办婚姻、宗法礼教及早年山地戍屯社会压抑下女性难以排遣的情感困境，才是推高此类事件的核心土壤。
+      - 从当代民俗精神医学与文化绑定症候群视角检视，“落洞”体验高度吻合重度抑郁、分离性木僵或创伤性应激发作的临床过程。乡邻将其编码为“洞神垂青娶亲”，既替当事人在苛刻宗族秩序下提供了一层不被道德谴责的神圣外衣，却也因延误现代心理与医疗介入而酿成悲剧；阅读此类田野志时，需兼顾地方信仰逻辑与社会心理致因分析。
+    sources:
+      - citation: 维基百科，〈落洞〉（引述沈从文《湘西》及陆群《湘西落洞》，民族出版社，2006 年）。
+        type: encyclopedia
+        url: 'https://zh.wikipedia.org/wiki/%E8%90%BD%E6%B4%9E'
+        locator: 湘西“落洞”民俗表现、喜丧礼俗及民族志研究综述
+      - citation: 廖慧文、黄煌，《专访苗族史专家伍新福》，湖南日报·新湖南客户端。
+        type: newspaper_report
+        url: 'https://m.voc.com.cn/news/detail/29711312'
+        locator: 湘西苗族历史文化生态、山地族群与民间传说的学术辨析
+      - citation: 维基百科，〈冥婚〉（中国传统幽婚与“未婚早逝配神/配婚”礼俗比较）。
+        type: encyclopedia
+        url: 'https://zh.wikipedia.org/wiki/%E5%86%A5%E5%A9%9A'
+        locator: 传统社会对未婚夭折女性的安顿仪式与神婚民俗对照
+    compare:
+      - mech_gu_sorcery_social_scapegoat
+      - theory_poison_panic_projection
+      - case_cn_xiangxi_gu_poison
+      - case_cn_xiangxi_gan_shi_ritual
+    motifs:
+      - motif_cn_wugu_poison_complex
+      - index_ocm_776
+    bridge:
+      entry: HEA-027
+      cluster: sid_hag
+      trail: all
+      label: “落洞”神婚与心理压力支持
+      rationale: 把湘西山地女性因神情恍惚、缄默抑郁而被归因于“洞神娶亲”的民俗叙事，与现代心理健康中压力反应识别及社会支持入口知识并读。
+
+  - id: case_cn_han_taofu_shentu_yulei
+    title: 汉魏岁时｜度朔山神荼郁垒与桃符门神厌胜制
+    aliases:
+      - 神荼郁垒
+      - 度朔山桃木
+      - 桃符
+      - 桃梗苇茭
+      - Shentu and Yulei
+    genre: myth
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 34.6200
+      lng: 112.4500
+      precision: culture_region
+      location_name: 中国河南洛阳（汉魏都城岁时礼制参照点）与东海度朔山神话传统区
+      culture_region: 中国 · 汉魏中原岁时门神神话区
+    location_note: “度朔之山”为古代东海想象神山，而《论衡》《风俗通义》与汉魏腊祭桃符礼俗主要记述于洛阳等中原礼制中心，此坐标仅作文献文化参考点。
+    temporal:
+      year_start: 80
+      year_end: 550
+      era_label: 东汉《论衡》《风俗通义》至南朝梁《荆楚岁时记》定型时期
+      uncertainty_note: 东汉王充（约 80 年代）与应劭追述古《山海经》保存度朔山双神神话，6 世纪中叶宗懔《荆楚岁时记》明载岁旦悬桃板、贴神荼郁垒门神定制。
+    paragraphs:
+      - 东汉王充《论衡·订鬼》与应劭《风俗通义·祀典》均转引战国先秦古本《山海经》佚文称：沧海之中有度朔之山，上有大桃木，屈蟠三千里，其枝间东北角曰“鬼门”，乃万鬼出入之径；山上有二神人，一曰神荼，一曰郁垒，主阅领万鬼，凡遇无道妄为祸害者，即执以苇索、抛之食虎。正是这套早期神话，为后世千余年中国门户岁时厌胜奠定了神圣原型。
+      - 为将度朔山神威引入现实门庭，汉代腊月除夕官方与民间遂通行“桃符”之制：《风俗通义》记县官常于腊除夕饰桃人、垂苇茭、画虎于门以御凶魅；至南朝梁宗懔《荆楚岁时记》正月初一条，则形成“造桃板着户，谓之仙木；绘二神贴户左右，左神荼，右郁垒，俗谓之门神”的完备规制，五代后蜀孟昶题写联语于桃符，更为近世春联之直接先声。
+      - 民俗学与器物史研究解释“桃木畏鬼”的象征逻辑时指出：先秦《左传》已有“桃弧棘矢以除其灾”的礼俗，桃树早春先花后叶、枝叶味苦含微毒（桃仁含苦杏仁苷）且纹理细密，加之“桃”与“逃”谐音，使其兼具植物药性、巫术象征与门户物理界标三重属性，逐渐由驱鬼神人演变出祝颂岁首平安的门庭艺术。
+    sources:
+      - citation: 〔东汉〕王充撰，《论衡·订鬼》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/lunheng/ding-gui'
+        locator: 《订鬼》引《山海经》“沧海之中有度朔之山……神荼、郁垒”全文
+      - citation: 〔东汉〕应劭撰，《风俗通义·祀典》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/fengsutongyi/si-dian'
+        locator: 《祀典·桃梗苇茭画虎》腊除饰桃人垂苇索原文
+      - citation: 〔南朝梁〕宗懔撰，《荆楚岁时记》，维基文库校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E8%8D%8A%E6%A5%9A%E6%AD%B2%E6%99%82%E8%A8%98'
+        locator: 正月初一日“造桃板着户，谓之仙木……左神荼，右郁垒”条
+      - citation: Wikipedia, "Door god".
+        type: encyclopedia
+        url: 'https://en.wikipedia.org/wiki/Door_god'
+        locator: 神荼郁垒从度朔山桃符演变为历代门神画像脉络综述
+    compare:
+      - corpus_cn_suishi_talisman_almanacs
+      - mech_apotropaic_boundary_seal
+      - theory_sympathetic_contagious_magic_cn
+      - case_cn_tang_zhongkui_meng_expel
+    motifs:
+      - motif_cn_household_apotropaic_guardians
+      - motif_cn_yansheng_talisman_seal
+      - index_ocm_776
+    bridge:
+      entry: REL-5-0008
+      cluster: sid_myth
+      trail: all
+      label: 岁旦桃符与仪式日历循环
+      rationale: 将汉魏腊除换桃符、画神荼郁垒的门户辟邪仪轨，同地方节气与仪式日历中借时令交替更新空间秩序的宗教传统对读。
+
+  - id: case_cn_tang_zhongkui_meng_expel
+    title: 唐宋宫廷｜终南进士钟馗啖鬼梦兆与岁暮赐画镇宅仪
+    aliases:
+      - 钟馗啖鬼
+      - 钟馗捉鬼
+      - 唐玄宗梦钟馗
+      - 吴道子画钟馗
+      - Zhong Kui
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 34.0300
+      lng: 108.9200
+      precision: province
+      location_name: 中国陕西西安及终南山 · 唐明皇骊山梦兆与钟馗传说文化区
+      culture_region: 中国 · 关中唐宋岁时镇宅传说区
+    location_note: 唐代画题记述唐玄宗自骊山讲武还宫后于长安殿中梦钟馗，其自称“终南进士”，坐标取西安与终南山北麓之间文化区。
+    temporal:
+      year_start: 713
+      year_end: 1095
+      era_label: 唐开元传说至北宋《梦溪笔谈》《事物纪原》（11 世纪末）定型期
+      uncertainty_note: 敦煌莫高窟文书存五代唐末《除夕钟馗驱傩文》，北宋沈括《补笔谈》与高承《事物纪原》保存了开元梦兆与更早名物考证。
+    paragraphs:
+      - 北宋沈括《梦溪笔谈·补笔谈》卷三载，内府旧藏唐代吴道子所画《钟馗图》卷首题记述及一段名噪一时的宫廷梦异：唐玄宗开元间自骊山讲武还宫后患疟疾月余不愈，忽夜梦一大一小两鬼。小鬼窃取杨太真紫香囊及御玉笛绕殿狂奔，大鬼则戴帽穿蓝衫、袒露一臂、足蹬双靴，径直捉住小鬼剜目吞啖；大鬼自陈乃终南山不第武举进士钟馗，羞愤触阶而死后蒙高祖赐绿袍葬之，誓除天下妖孽。玄宗梦醒即瘥，急召吴道子依梦摹绘其貌，并成为岁暮皇室赏赐百官的镇宅画仪。
+      - 然而宋代学者早已敏锐指出，钟馗之名并非始于开元梦事。沈括在同一则笔记中考订，南北朝北齐已有宫人字“钟葵”者，人名多取“辟邪”吉义；清代顾炎武、赵翼等进一步指出，上古逐疫用具中有大椎名曰“终葵”（见《周礼·考工记》），因古音相同而人格化为执椎打鬼之神，开元题记与后世宋元明清民间《钟馗嫁妹》戏文皆是在古老驱疫法器与傩仪面具之上层累附会的文学演义。
+      - 自宋代雕版印刷普及后，岁除张贴《钟馗捉鬼》木版年画、端午悬朱砂钟馗像以避五毒，遂成为兼具宫廷御赐威仪与市井幽默色彩的宅门守护信仰。与故宫博物院及海外馆藏历代钟馗画轴对读，可清晰见证一件“终葵”礼器如何跨过文字训诂、帝王梦兆与木版年画，定型为中国民间最具辨识度的捉鬼宗师形象。
+    sources:
+      - citation: 〔北宋〕沈括撰，《梦溪笔谈·补笔谈卷三》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/mengxi-bi-tan/bu-bi-tan-juan-san/zh'
+        locator: 《补笔谈》引唐人吴道子《钟馗图》题记及“钟葵”考证原文
+      - citation: 〔宋〕高承撰，《事物纪原》，维基文库校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E4%BA%8B%E7%89%A9%E7%B4%80%E5%8E%9F'
+        locator: 宋代考证钟馗驱鬼赐画典故条目
+      - citation: Wikipedia, "Zhong Kui".
+        type: encyclopedia
+        url: 'https://en.wikipedia.org/wiki/Zhong_Kui'
+        locator: 钟馗名源“终葵”考辨、敦煌文书及东亚流播概述
+    compare:
+      - corpus_cn_suishi_talisman_almanacs
+      - mech_apotropaic_boundary_seal
+      - case_cn_han_taofu_shentu_yulei
+      - case_cn_chizhou_wuchang_nuo
+    motifs:
+      - motif_cn_household_apotropaic_guardians
+      - motif_cn_yansheng_talisman_seal
+      - index_ocm_776
+    bridge:
+      entry: REL-5-0034
+      cluster: sid_crypt
+      trail: all
+      label: 赐画镇宅与木版年画传播
+      rationale: 从宫廷画师吴道子的《钟馗图》到民间门庭岁暮张贴的木版套印年画，结合雕版彩绘民俗工艺，理解守护神图像的阶层下沉与普及。
+
+  - id: case_cn_grave_zhenmushou_tomb
+    title: 荆楚至中原｜战国楚汉至隋唐墓葬镇墓兽压胜随葬体系
+    aliases:
+      - 镇墓兽
+      - 楚墓漆木镇墓兽
+      - 唐三彩镇墓兽
+      - 方相氏戈盾辟邪
+      - Zhenmushou Tomb Guardian
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location:
+      lat: 30.3500
+      lng: 112.1900
+      precision: culture_region
+      location_name: 中国湖北荆州（楚故都纪南城）至中原洛阳 · 战国至隋唐镇墓兽出土核心区
+      culture_region: 中国 · 江汉楚墓与中原唐墓丧葬考古区
+    location_note: 战国彩绘漆木鹿角镇墓兽密集出土于湖北江陵（荆州）、河南信阳长台关等楚墓区，北朝至隋唐三彩镇墓兽则遍布中原洛阳与长安墓葬，坐标取楚故都荆州作早中期代表参照区。
+    temporal:
+      year_start: -450
+      year_end: 907
+      era_label: 战国中期楚墓漆木镇墓兽至隋唐三彩明器制度时期
+      uncertainty_note: 公元前 5 至前 3 世纪楚墓流行方座长舌真鹿角木雕镇墓兽；汉代转为镇墓瓶朱书文辞与陶俑；北朝至唐代再度盛行人面与兽面成对三彩镇墓兽并立于墓室入口。
+    paragraphs:
+      - 在中国先秦至隋唐千余年的地下墓葬空间里，置于墓室门前或棺椁近侧的“镇墓兽”，构成了墓葬压胜防御体系的物质核心。《周礼·夏官司马》记周代大丧之时，蒙熊皮、黄金四目、玄衣朱裳的“方相氏”执戈扬盾先柩而行，入墓穴后以戈击墓室四角驱逐罔两（魑魅）；当活态礼仪无法长久留存墓内时，古人遂以永久驻守地下明器延续这道空间结界。
+      - 考古出土实物清晰勾勒出两条前后衔接的造型传统：战国至汉初以江汉荆楚为中心的漆木镇墓兽，多以方形木座承托怪异蹲兽或双头躯体，首插真实多叉雄鹿角、吐长舌垂至胸腹，通体施黑漆绘朱黄云雷纹；经历汉代简省后，北魏至隋唐两京（洛阳、长安）贵族墓葬复以成对三彩陶质人面、兽面镇墓兽与天王俑并列墓道，张翅呲牙，如大都会艺术博物馆所藏唐代三彩镇墓兽（藏品编号 11.83.1）即其典型。
+      - 考古学与宗教学研究指出，战国楚墓的鹿角吐舌怪兽既融合了《楚辞·招魂》所咏“土伯九约”的地府守门神想象与鹿角再生象征，也反映早期丧葬中“既奉安亡灵、又防鬼魅侵扰尸骸或亡魂游出祟生”的双向恐惧。随着唐末宋初纸扎明器与墓葬观念转型，大型陶铸镇墓兽逐步退出丧葬礼制主流。
+    sources:
+      - citation: 《周礼·夏官司马·方相氏》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/zhou-li/xia-guan-si-ma'
+        locator: 《夏官司马·方相氏》“及墓，入圹，以戈击四隅，驱方良”条
+      - citation: The Metropolitan Museum of Art, "Tomb guardian" (Tang dynasty, late 7th–first half of 8th century, Accession 11.83.1).
+        type: archival_catalogue
+        url: 'https://www.metmuseum.org/art/collection/search/49196'
+        locator: 馆藏唐代三彩釉陶镇墓兽（Zhenmushou）形制、尺寸与明器制度说明
+      - citation: 维基百科，〈镇墓兽〉。
+        type: encyclopedia
+        url: 'https://zh.wikipedia.org/wiki/%E9%8E%AE%E5%A2%93%E7%8D%B8'
+        locator: 战国楚式漆木镇墓兽与北朝隋唐陶质镇墓兽分期演变概述
+    compare:
+      - corpus_cn_suishi_talisman_almanacs
+      - mech_apotropaic_boundary_seal
+      - case_cn_chizhou_wuchang_nuo
+    motifs:
+      - motif_cn_household_apotropaic_guardians
+      - motif_cn_yansheng_talisman_seal
+      - index_ocm_776
+    bridge:
+      entry: REL-3-0010
+      cluster: sid_crypt
+      trail: all
+      label: 镇墓明器与丧葬界域仪礼
+      rationale: 将战国楚墓鹿角漆兽与唐墓三彩镇墓兽的墓室护卫布置，置于丧葬仪式、哀悼规范与跨社群生死边界构建的比较宗教学框架中阅读。
+
+  - id: case_cn_house_taiji_bagua_mirror
+    title: 华南与闽台｜民居屋脊照妖八卦凸镜、兽牌吞口与冲煞镇宅俗
+    aliases:
+      - 八卦镜
+      - 照妖凸镜
+      - 吞口
+      - 兽牌
+      - 屋脊镇宅辟邪物
+      - Bagua Mirror
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 24.4800
+      lng: 118.0800
+      precision: culture_region
+      location_name: 中国福建闽南至西南川黔 · 传统民居门楣八卦镜与兽牌吞口民俗区
+      culture_region: 中国 · 闽台与西南民居压胜民俗区
+    location_note: 民居门楣八卦太极镜、风狮爷及屋脊兽牌镇物在闽南（泉州、厦门）、金门澎湖及西南地区保存最为集中，坐标取闽南厦门湾作华南沿海文化参照区。
+    temporal:
+      year_start: 1600
+      year_end: 2010
+      era_label: 明清乡土堪舆镇宅风俗至当代华南闽台民居活态民俗时期
+      uncertainty_note: 铜镜照妖见于六朝《抱朴子》，外嵌太极八卦木框的凸镜及门楣彩绘兽首“吞口”则主要定型于明清以后闽台、粤东及西南民间营造风俗。
+    paragraphs:
+      - 在闽南、粤东、台湾及西南部分地区的传统乡土聚落里，民居门楣上方与屋脊正中常见一组专司“挡冲煞、照妖邪”的建筑压胜装置：若宅门正对直巷、桥头或邻屋尖角（堪舆俗谓“路冲”“屋角煞”），屋主便会在檐口悬挂八角木框的太极八卦凸面镜或凹面镜，或在正梁大门钉挂口衔宝剑、彩绘怒目狮虎兽首的木雕“吞口”（台湾与西南地区亦呼为“兽牌”或“狮咬剑”）。
+      - 这些看似日常装饰的门额物事，综合了数层古老巫术与心理意象：早自晋葛洪《抱朴子·登涉》已称万物老魅唯“不敢以镜照之，照则显形”；唐宋以来道教又把《周易》先天八卦方位并入铜镜背铭；荷兰汉学家德·格罗特（J. J. M. de Groot）19 世纪末在厦门与泉州田野观察的《中国的宗教体系》第六卷，即详记了当地民宅如何以八卦镜、剪刀、红布及符字共筑防煞边界。
+      - 在当代建筑民俗与社区调解研究中，镜面反射、兽首咬剑或加装三叉刀形制，在过去往往成为触发邻里口角甚至诉讼的导火索——下家常因觉得对门凸镜或兽牌将“煞气反照入自家门庭”而群起抗议或加挂更大铜镜斗煞。这种围绕视觉方向与街巷边界的微妙博弈，说明压胜器物实质上在物理巷道格局中承担着空间威慑与邻里心理防线的功能。
+    sources:
+      - citation: 维基百科，〈八卦镜〉。
+        type: encyclopedia
+        url: 'https://zh.wikipedia.org/wiki/%E5%85%AB%E5%8D%A6%E9%95%9C'
+        locator: 凸面镜、凹面镜与平面八卦镜在门楣风俗中的化煞形制与邻里禁忌
+      - citation: 维基百科，〈吞口〉。
+        type: encyclopedia
+        url: 'https://zh.wikipedia.org/wiki/%E5%90%9E%E5%8F%A3'
+        locator: 睚眦兽首咬剑“吞口”门楣辟邪物与地方异名概述
+      - citation: 'J. J. M. de Groot, The Religious System of China, Vol. 6: The War Against Spectres, E. J. Brill, Leiden, 1910.'
+        type: academic_monograph
+        url: 'https://archive.org/details/religioussystemofchina06degruoft'
+        locator: 厦门与闽南民居门楣八卦镜、兽牌、红布与辟邪厌胜器物民族志记载
+      - citation: Wikipedia, "Bagua".
+        type: encyclopedia
+        url: 'https://en.wikipedia.org/wiki/Bagua'
+        locator: 八卦宇宙图式与堪舆风水避煞应用简介
+    compare:
+      - corpus_cn_suishi_talisman_almanacs
+      - mech_apotropaic_boundary_seal
+      - theory_sympathetic_contagious_magic_cn
+      - case_cn_taishan_shigandang
+      - case_cn_luban_yansheng
+    motifs:
+      - motif_cn_yansheng_talisman_seal
+      - motif_cn_household_apotropaic_guardians
+      - index_ocm_754
+    bridge:
+      entry: REL-5-0071
+      cluster: sid_witch
+      trail: all
+      label: 门楣镇物与符号现场记录
+      rationale: 对应田野调查中记录民居八卦凸镜、兽牌吞口等守护符号时先记录物件形制、悬挂方位与伴随铭文的规范方法，避免脱离语境孤立臆断。
+
+  - id: case_cn_luban_mujiu_stealth_hex
+    title: 明清营造｜匠作木偶厌胜秘法与《清稗类钞》暗埋镇物传说
+    aliases:
+      - 木匠厌胜
+      - 鲁班木偶术
+      - 柱础藏木偶
+      - 清稗类钞木匠厌胜
+      - 厌镇传说
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 31.3000
+      lng: 120.5800
+      precision: province
+      location_name: 中国江苏苏州与江南传统营造业行帮区 · 民间“木匠厌胜”叙事流播区
+      culture_region: 中国 · 江南与明清匠作传说区
+    location_note: 明清苏州及江南香山帮木作行业繁盛，徐珂《清稗类钞》亦汇录江南与各地木匠厌胜风俗，坐标取苏州作传统木作营造行帮文化参考区。
+    temporal:
+      year_start: 1500
+      year_end: 1917
+      era_label: 明代《鲁班经匠家镜》刊行至民国六年《清稗类钞》（1917 年）辑录时期
+      uncertainty_note: 明万历年间定型的《鲁班经》录有数十种“厌胜”“解镇”画样，1917 年徐珂《清稗类钞·迷信类》〈木匠厌胜〉专条总结清末民初雇主畏匠之俗。
+    paragraphs:
+      - 民国徐珂所纂《清稗类钞·迷信类》特设〈木匠厌胜〉一条记述清代建造宅第之惯例：凡雇佣木瓦石匠兴修屋宇，“必厚遇之”，尤其上梁合脊及峻工设宴不可稍有怠慢与克扣，只因民间深信工匠掌握《鲁班经》所传秘法，一旦怀恨在心，便可暗中在梁枋卯眼、墙体砖缝或柱础底下偷偷置入倒刻木偶、破碗、锈钉或反写符咒，使宅主家宅耗散、人丁不安甚至突罹病厄。
+      - 明代《鲁班经匠家镜》后卷绘列了“倒挂笔”“船上人”“死猫骨”乃至凿刻小木人反置斗拱内的种种“厌镇”与“解厌”图式，叙事中往往强调须另有师承更高的匠师查勘拆柱，方能寻出隐秘木偶并设坛化解。在许多地方故事里，木偶厌胜更成为讲述新居怪病、家道中落或梁柱夜鸣的万用叙事因由。
+      - 建筑史学家鲁克思（Klaas Ruitenbeek）等学者对照清代匠作契约档案与口述传说后指出，这种围绕“隐匿木偶与暗埋镇物”的恐惧，本质上是前现代流动建筑工人应对强权雇主、保障工价与食宿礼遇的“心理议价机制”：一旦工匠离场，雇主无法拆毁承重梁柱逐一搜检，只好以礼相待来消弭彼此猜疑；若房屋日后因木料干缩爆裂或地基不均匀沉降发出异响，也常被联想归罪于当年工匠的厌胜报复。
+    sources:
+      - citation: 〔民国〕徐珂编（1917 年），《清稗类钞·迷信类（第 084 册）》，维基文库校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E6%B8%85%E7%99%85%E9%A1%9E%CA%A2/084'
+        locator: 第 084 册《迷信类》〈木匠厌胜〉及清代工匠镇物俗信条文
+      - citation: 'Klaas Ruitenbeek, Carpentry and Building in Late Imperial China: A Study of the Fifteenth-Century Carpenter''s Manual Lu Ban Jing, Brill, 1993.'
+        type: academic_monograph
+        url: 'https://archive.org/details/carpentrybuildin0000ruit'
+        locator: 明刊《鲁班经》厌胜镇物图样、劳资约束与解除方法译注
+      - citation: Wikipedia, "Lu Ban".
+        type: encyclopedia
+        url: 'https://en.wikipedia.org/wiki/Lu_Ban'
+        locator: 鲁班匠祖信仰、建筑仪式及《鲁班经》厌胜民俗概况
+    compare:
+      - mech_apotropaic_boundary_seal
+      - theory_sympathetic_contagious_magic_cn
+      - case_cn_luban_yansheng
+      - case_cn_han_wugu_91bce
+    motifs:
+      - motif_cn_yansheng_talisman_seal
+      - index_ocm_754
+    bridge:
+      entry: SOC-1-0003
+      cluster: sid_witch
+      trail: all
+      label: 匠作暗镇与行业社会制裁
+      rationale: 从社会学“社会规范、角色与制裁”视角解读木匠厌胜传说，说明前现代手工业行帮如何借超自然威慑弥补书面契约保障的缺位。
+
+  - id: case_cn_zhuyou_shisan_ke_healing
+    title: 历代太医｜祝由十三科符禁疗疾与《素问》《元史》医官制度
+    aliases:
+      - 祝由十三科
+      - 祝由科
+      - 咒禁科
+      - 移精变气
+      - 太医院十三科
+    genre: historical_archive
+    credibility_tier: A
+    note_kind: history
+    location:
+      lat: 39.9040
+      lng: 116.4070
+      precision: city
+      location_name: 中国北京（元大都太医院及明清太医院旧址参照点）
+      culture_region: 中国 · 历代太医署与太医院制度文献区
+    location_note: 元代太医院定制与十三科考课制度颁行于元大都（今北京），明代至隆庆五年裁撤前亦沿设于北京太医院，坐标取北京城区中心作国家医制文献参考点。
+    temporal:
+      year_start: -200
+      year_end: 1571
+      era_label: 战国两汉《黄帝内经》至唐太医署、元代十三科与明隆庆五年废科（1571 年）
+      uncertainty_note: 《素问·移精变气论》首见“祝由”之名，《新唐书》载太医署四科含“咒禁师”，《元史》记太医院十三科并置祝由书禁，明隆庆五年（1571 年）裁革。
+    paragraphs:
+      - “祝由”作为中国古代方术医疗的重要概念，横跨早期医经、国家医官建制与道教符箓三大脉络。传世中医经典《黄帝内经·素问·移精变气论》以黄帝之问开篇：“余闻古之治病，惟其移精变气，可祝由而已”；唐王冰注阐释为不借毒药针石，唯借祝说病由与精神调摄而愈。其后隋代太医署设“祝禁博士”，《新唐书·卷四十八·百官志》明载唐代太医署所属四科即分医师、针师、按摩师与“咒禁师”，专司符禁汤药及驱除鬼祟之疾。
+      - 至元代，《元史·卷八十一·选举志》与《卷八十八·百官志》记太医院秩正二品并定制“十三科”，岁降十三科疑难题目考校诸路医学，其中即含“祝由科”（又与书禁并称祝由书禁科），使符水咒禁疗疾合法居于朝廷十三医科之列。直到明代隆庆五年（1571 年），礼部与太医院议改医制，方正式将祝由科裁出官定医学考试体系；清代医政亦禁绝之，该科遂彻底转入民间抄本（如托名《轩辕碑记医学祝由十三科》）与道坛传承。
+      - 当代医学史与心理医学学者指出，古代官私“祝由”实践中既包含借画符念咒、闭户静坐、数问病者隐情产生的心理暗示、安慰剂效应与轻度催眠解离，也常混用草药外敷、放血或火灸等物理干预；历史阅读时，既应如实肯定元明以前官方医政曾制度化接纳“咒禁祝由”的史实，也需明确现代医学对传染病及器质性急症必须依托循证诊疗的界限。
+    sources:
+      - citation: 《黄帝内经·素问·移精变气论》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/huangdi-neijing/yi-jing-bian-qi-lun'
+        locator: 《移精变气论》“惟其移精变气，可祝由而已”及静室问情段落
+      - citation: 〔明〕宋濂等撰，《元史·卷八十一·选举一》，维基文库二十四史校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E5%85%83%E5%8F%B2/%E5%8D%B7081'
+        locator: 卷八十一“太医院，每岁出降十三科疑难题目”医学课试档案
+      - citation: 〔北宋〕欧阳修、宋祁撰，《新唐书·卷四十八·百官三》，维基文库二十四史校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E6%96%B0%E5%94%90%E6%9B%B8/%E5%8D%B7048'
+        locator: 卷四十八《百官三》太医署“一曰医师，二曰针师，三曰按摩师，四曰咒禁师”原文
+    compare:
+      - corpus_cn_zhubing_gu_toxicology
+      - theory_sympathetic_contagious_magic_cn
+      - case_cn_zhubing_mengyan
+      - case_cn_zigu_divination
+    motifs:
+      - motif_cn_zhuyou_incantation_craft
+      - index_ocm_754
+    bridge:
+      entry: REL-5-0004
+      cluster: sid_witch
+      trail: all
+      label: 祝由医制与民间疗愈共存
+      rationale: 把《素问》《新唐书》《元史》所见“祝由十三科”的兴废史，同宗教学关于民间疗愈实践与现代医学共存边界的讨论对读，分清心理安慰机制与医学证伪要求。
+
+  - id: case_cn_child_baijia_suo_pendant
+    title: 江汉及民间｜端午五彩长命缕与幼童百家锁避煞收魂礼俗
+    aliases:
+      - 百家锁
+      - 长命锁
+      - 长命缕
+      - 续命缕
+      - 五色丝辟兵
+    genre: folktale
+    credibility_tier: A
+    note_kind: story
+    location:
+      lat: 30.5928
+      lng: 114.3055
+      precision: culture_region
+      location_name: 中国湖北武汉与江汉平原（荆楚端午岁时采录区）· 全国儿童护身锁民俗区
+      culture_region: 中国 · 荆楚岁时与儿童护身礼俗区
+    location_note: 五彩长命缕最早详载于东汉《风俗通义》与南朝《荆楚岁时记》，明清“百家锁”与寄名锁则遍及长江中下游及南北城乡，坐标取荆楚文化中心武汉作地理参照。
+    temporal:
+      year_start: 180
+      year_end: 1949
+      era_label: 东汉《风俗通义》五月五日五色丝至南朝《荆楚岁时记》及明清百家锁时期
+      uncertainty_note: 东汉应劭《风俗通义》记五月五日“以五采丝系臂，名曰辟兵”，南朝《荆楚岁时记》称“长命缕”，明清逐步演变为向乡邻凑钱打制的“百家锁”。
+    paragraphs:
+      - 在传统中国高婴幼儿夭折率与夏令疫病多发的历史背景中，围绕新生儿与幼童的护身厌胜礼俗形成了一条跨越两千年的长链。东汉应劭《风俗通义》佚文已载“五月五日，以五采丝系臂，名曰辟兵，令人不病瘟”；南朝梁宗懔《荆楚岁时记》于五月初五更明记“以五彩丝系臂，名曰辟兵，亦曰长命缕、续命缕、百索”，与采艾悬门、朱砂点额并行，成为端午季护幼避瘟的核心仪节。
+      - 至宋元明清时期，上述“长命缕”观念进一步物质化、宗族化为“百家锁”（或称“长命锁”“寄名锁”）：孩子满月、百日或虚弱多病时，父母携红纸沿邻里叩门募化百家少许铜钱（或各户碎银、米粒），凑齐百数后熔铸为一枚正面镌“长命富贵”、背面刻八卦或太岁符纹的银锁或铜锁，于庙宇或长辈前加锁戴颈；民间认为借“百家之福气”能把游移不定的幼童魂魄“锁”驻人间，令厉鬼痘神不敢近身夺命。
+      - 从历史人类学与公共卫生史重读这一礼俗可见，五色丝取青赤黄白黑五行相克相生以镇夏季瘴疠（五月端午前后正值蚊媒、肠道传染病高发期），而“百家锁”则以仪式化募捐动员整条街巷共同承担对脆弱幼童的关护与社区认同，将抚育焦虑转化成可见的邻里祝愿与群体护持纽带。
+    sources:
+      - citation: 〔南朝梁〕宗懔撰，《荆楚岁时记》，维基文库校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E8%8D%8A%E6%A5%9A%E6%AD%B2%E6%99%82%E8%A8%98'
+        locator: 五月五日“以五彩丝系臂，名曰辟兵，一名长命缕”原文
+      - citation: 〔东汉〕应劭撰，《风俗通义》，维基文库校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E9%A2%A8%E4%BF%97%E9%80%9A%E7%BE%A9'
+        locator: 《风俗通义》佚文记端午五采丝辟兵与厌胜避瘟俗信
+      - citation: 维基百科，〈长命锁〉。
+        type: encyclopedia
+        url: 'https://zh.wikipedia.org/wiki/%E9%95%B7%E5%91%BD%E9%8E%96'
+        locator: 百家锁募钱铸锁民俗、形制纹饰与“锁魂护幼”礼俗源流
+    compare:
+      - corpus_cn_suishi_talisman_almanacs
+      - mech_apotropaic_boundary_seal
+      - theory_sympathetic_contagious_magic_cn
+      - case_cn_red_sash_huasha_wedding
+    motifs:
+      - motif_cn_household_apotropaic_guardians
+      - motif_cn_zhuyou_incantation_craft
+      - index_ocm_776
+    bridge:
+      entry: REL-3-0007
+      cluster: sid_hag
+      trail: all
+      label: 百家锁与生命阶段礼仪
+      rationale: 将幼童佩戴五彩长命缕与募铸百家锁的收魂避煞礼俗，与跨文化生命礼仪如何标定人生脆弱阶段并凝聚亲邻保护网络对读。
+
+  - id: case_cn_xiangxi_gan_shi_ritual
+    title: 湘西辰州｜“赶尸”符箓铃铛传闻与客死归葬习俗的民俗学辨析
+    aliases:
+      - 湘西赶尸
+      - 赶尸符箓
+      - 辰州符
+      - 移尸归葬传闻
+      - Corpse Walking
+    genre: memorate
+    credibility_tier: B
+    note_kind: legend
+    location:
+      lat: 28.4540
+      lng: 110.3910
+      precision: culture_region
+      location_name: 中国湖南怀化沅陵（古辰州）至泸溪古驿道 · 湘西赶尸传闻辨析区
+      culture_region: 中国 · 湘西辰州民俗传闻区
+    location_note: “赶尸”与“辰州符”传闻多附会于湖南湘西沅陵（古辰州府）、泸溪、辰溪一带崇山驿道，坐标取沅陵作区域民俗辨析参照点（另设个案专析三人投宿母题）。
+    temporal:
+      year_start: 1917
+      year_end: 2021
+      era_label: 清末民初《清稗类钞》与沈从文散文至当代民俗学祛魅时期
+      uncertainty_note: 虽假托“辰州符箓”与茅山祝由，然正史与明清可靠方志均无“驱尸行走”实录，主要盛行于清末民初小报、笔记及 20 世纪三四十年代口述猎奇书写。
+    paragraphs:
+      - 在外人眼中的湘西三大神秘传闻里，“赶尸”（又称移灵）以高度戏剧化的视觉意象流传最广：传闻湘西山道崎岖难行舟车，客死他乡者家属遂重金延请会念“辰州符”的赶尸匠，夜深之际于尸首额前贴一道朱砂黄符，前人执摄魂铃、提灯笼引路，背后戴草帽、披黑袍的数具尸体便依铃声蹦跳或踏步前行，昼伏夜出投宿“死尸客栈”，直到千里归葬祖茔。
+      - 然而，民国沈从文散文已流露对“赶尸奇谈”的审慎态度，指出其间混杂了外地行旅对辰州苗乡山林险阻的畏惧与穿凿想象；当代苗族史学者伍新福及民间文学考据研究进一步查明，古代史志中并无任何“符箓驱使尸体自行走路”的实证记录，历史上湘西确因山路狭窄、客死还乡风俗盛行而出现过“竹竿双人背负扶行”（或大袍掩遮肩扛棺架、前人打灯避忌行人）的艰难运尸劳务，或兼作山林走私掩人耳目的江湖暗语。
+      - 把这份传闻与现代解剖学、尸体僵硬规律及“三人投宿”文学母题并置检视，可见僵硬尸躯既无肌肉神经供能支撑翻越武陵险岭，夜间高袍遮面、两人挟持竹架前行的远观剪影却极易在夜色恐惧中被过往旅人看作“死尸直立行走”，再借报刊笔记附会为“祝由赶尸符”绝技，完成从山道运丧苦力到猎奇志怪传奇的转化。
+    sources:
+      - citation: 呼延云，《叙诡笔记｜民国初年，对“赶尸真相”的两种“新解”》，澎湃新闻，2021 年。
+        type: newspaper_report
+        url: 'https://m.thepaper.cn/newsDetail_forward_13885742'
+        locator: 梳理徐珂《清稗类钞》、沈从文及民国报刊对“赶尸”运尸手法的辨析
+      - citation: 廖慧文、黄煌，《专访苗族史专家伍新福》，湖南日报·新湖南客户端。
+        type: newspaper_report
+        url: 'https://m.voc.com.cn/news/detail/29711312'
+        locator: 湘西田野调查与“湘西赶尸”历史背景考辨
+      - citation: 维基百科，〈湘西赶尸〉。
+        type: encyclopedia
+        url: 'https://zh.wikipedia.org/wiki/%E6%B9%98%E8%A5%BF%E8%B5%B6%E5%B1%8D'
+        locator: 辰州赶尸传闻要素、祝由科附会及背尸假说综述
+    compare:
+      - theory_sympathetic_contagious_magic_cn
+      - case_cn_hunan_yuanling_corpse_inn
+      - case_cn_jiangshi_huangfu_seal
+      - case_cn_xiangxi_luodong_nu_ritual
+    motifs:
+      - motif_cn_zhuyou_incantation_craft
+      - index_ocm_776
+    bridge:
+      entry: HIS-6-0002
+      cluster: sid_crypt
+      trail: all
+      label: 赶尸传闻与口述记忆边界
+      rationale: 将“辰州符赶尸”的跨代口述传闻与报刊再创作，同口述史方法中的访谈检验与记忆失真边界并读，分辨山道运丧苦力与猎奇想象。
+
+  - id: case_cn_jiangshi_huangfu_seal
+    title: 清代江南与直隶｜《子不语》《阅微草堂笔记》僵尸异变与黄符镇尸母题
+    aliases:
+      - 黄符镇尸
+      - 清代僵尸叙事
+      - 子不语僵尸
+      - 阅微草堂僵尸旱魃
+      - Jiangshi
+    genre: folktale
+    credibility_tier: B
+    note_kind: story
+    location:
+      lat: 32.0600
+      lng: 118.7900
+      precision: province
+      location_name: 中国江苏南京随园与河北献县 · 袁枚、纪昀清代志怪僵尸文献流播区
+      culture_region: 中国 · 清代江南与华北志怪文学区
+    location_note: 袁枚居南京随园辑《子不语》，纪昀籍直隶献县并居京师撰《阅微草堂笔记》，二书集中定型了清代僵尸叙述母题，坐标取南京作江南文本编纂地参照。
+    temporal:
+      year_start: 1788
+      year_end: 1800
+      era_label: 清乾隆五十三年《子不语》（1788 年）至嘉庆五年《阅微草堂笔记》（1800 年）刊行期
+      uncertainty_note: 袁枚与纪昀在 18 世纪末汇集百余则尸变、旱魃与僵尸故事；“黄纸朱砂符贴额即定”则主要在晚清通俗小说与 20 世纪香港僵尸影戏中高度程式化。
+    paragraphs:
+      - 中国志怪文学中的“僵尸”形象于清代乾嘉之际达到叙事高峰。袁枚《子不语》与纪昀《阅微草堂笔记》大量收录“尸变”“旱魃”故事：《阅微草堂笔记·卷十》总结“僵尸有二：其一新尸未敛者，忽跃起搏人；其一久葬不腐者，变形如魑魅，夜或出游，逢人即攫”，同书卷七并记华北旱灾时乡民掘出未腐干尸指为“旱魃”焚烧求雨之风；袁枚《子不语》更在《石门尸怪》《批僵尸颊》诸篇区分白僵、绿僵、毛僵与能腾空飞行之飞僵，记其闻鸡鸣则僵仆、畏大蒜竹帚敲击，须以赤枣或焚棺灭迹。
+      - 在历代镇压僵尸的母题演变里，清代笔记其实多记载借鸡鸣日出、铁钉钉柩、糯米或黑狗血及僧道法坛诵经相制，偶提及符咒亦多与封棺或驱邪通用；而今日大众印象中最醒目的“道士手持桃木剑、摇摄魂铃、以黄纸朱砂镇尸符贴于僵尸额头令其立定不动”，实为晚清民国通俗志怪与 20 世纪香港民俗恐怖喜剧电影高度提纯并定型化的符号套装。
+      - 当代民俗学者将清代僵尸文言笔记、旱魃焚尸档案与现代法医腐败学并读后发现，干燥碱土或密闭石灰松香棺木偶致尸体长久不腐（所谓“不腐白毛”常为墓室内菌丝或矿物结晶析出），加之未亡人骤停葬礼下的惊恐夜视与跨文化“活死人”焦虑，在文人志怪与近世影戏的双重重塑下，逐步凝结成畏光、畏鸡、畏黄符的一套自洽奇幻规则。
+    sources:
+      - citation: 〔清〕袁枚撰，《子不语·卷五·石门尸怪》，维基文库固定修订校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E5%AD%90%E4%B8%8D%E8%AA%9E/%E5%8D%B75'
+        locator: 卷五《石门尸怪》等篇清代僵尸变形与制伏叙事
+      - citation: 〔清〕纪昀撰，《阅微草堂笔记·卷十·如是我闻四》，维基文库校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E9%96%B1%E5%BE%AE%E8%8D%89%E5%A0%82%E7%AD%86%E8%A8%98/%E5%8D%B710'
+        locator: 卷十“僵尸有二”分类归纳及《卷七》掘焚旱魃记事
+      - citation: Wikipedia, "Jiangshi".
+        type: encyclopedia
+        url: 'https://en.wikipedia.org/wiki/Jiangshi'
+        locator: 僵尸从清代笔记向现代黄符镇尸民俗影戏的母题演化
+    compare:
+      - corpus_cn_suishi_talisman_almanacs
+      - mech_apotropaic_boundary_seal
+      - case_cn_zibuyu_v05_s008
+      - case_cn_zibuyu_v08_s016
+      - case_cn_zibuyu_v18_s033
+      - case_cn_chengdu_zombie_rumor
+    motifs:
+      - motif_cn_yansheng_talisman_seal
+      - motif_cn_zhuyou_incantation_craft
+      - index_ocm_776
+    bridge:
+      entry: LIT-2-0002
+      cluster: sid_crypt
+      trail: all
+      label: 清代僵尸到黄符母题流变
+      rationale: 追踪僵尸意象从《子不语》《阅微草堂笔记》的“新尸暴起与久葬旱魃”文言体例，流变为近现代“黄符贴额定身”大众类型套路的文本演化规律。
+
+  - id: case_cn_red_sash_huasha_wedding
+    title: 南宋至近世｜婚俗红盖头、跨马鞍与过火盆挡煞仪礼
+    aliases:
+      - 红盖头挡煞
+      - 跨火盆
+      - 跨马鞍
+      - 婚俗化煞礼
+      - 梦粱录嫁娶
+    genre: folktale
+    credibility_tier: A
+    note_kind: story
+    location:
+      lat: 30.2740
+      lng: 120.1550
+      precision: province
+      location_name: 中国浙江杭州（南宋临安《梦粱录》记录地）与传统婚嫁挡煞礼俗区
+      culture_region: 中国 · 江南与全国传统婚俗仪礼区
+    location_note: 南宋吴自牧《梦粱录》卷二十详载临安（今杭州）民间嫁娶蒙盖头及迎亲避煞礼俗，明清南北各地并行跨马鞍、过火盆，坐标取杭州作南宋礼志参考点。
+    temporal:
+      year_start: 1127
+      year_end: 1949
+      era_label: 宋代《梦粱录》（13 世纪）至明清近世地方婚礼民俗时期
+      uncertainty_note: 《梦粱录》与《东京梦华录》已确载青红罗盖头及入门吉仪，跨马鞍谐音“平安”、迈火盆化煞驱邪则随明清地方礼志广泛定型。
+    paragraphs:
+      - 在传统中国民间婚俗中，新娘出阁至跨入夫家门坎的过渡时刻向来被视作“吉凶交锋、煞气最易犯冲”的脆弱节点，由此孕育出一整套兼备祝吉与厌胜化煞功能的仪节。南宋吴自牧《梦粱录·卷二十·嫁娶》便已详载临安婚礼新妇上轿后以罗帕“盖头”遮面、迎亲门前拜天祭煞与择吉避讳；宋元以后，更普遍流行蒙大红方巾（红盖头）、进门前迈过置于门槛上的红炭火盆，以及跨越马鞍与苹果的礼俗，待入洞房方由新郎以秤杆挑去盖头。
+      - 民俗学对这组器物动作作出双重拆解：一方面是显性的吉祥谐音祝颂（如“跨马鞍”谐音“保平安”，“炭火旺盛”祝“家道红火兴旺”，“秤杆挑盖头”喻“称心如意”）；另一方面则是隐秘而严谨的“化煞厌胜”结构——红色属阳破阴，火盆之炽烈炭火用以烧净新妇沿途所带野鬼孤煞或两姓生辰“相冲”，遮面红盖头既防新妇与路遇“白虎神”“冲煞日”正面相撞，亦护持新妇在脱离娘家宗祠尚未正式拜入夫家祖堂之际免受外邪侵凌。
+      - 从宗教学“过渡礼仪与阈限理论”看，新娘出嫁恰处于身份剥离与重新归属之间的危险“阈限期”。红盖头、马鞍与火盆把原本无形的家庭秩序转换与血缘陌生焦虑，具象为一套可操作、可目击的净化结界，在欢庆锣鼓声中替两个陌生家族平滑度过心理磨合与仪式关口。
+    sources:
+      - citation: 〔南宋〕吴自牧撰，《梦粱录·卷二十·嫁娶》，维基文库四库全书校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E5%A4%A2%E7%B2%B1%E9%8C%84/%E5%8D%B720'
+        locator: 卷二十《嫁娶》南宋临安婚娶盖头、迎亲避忌及入门仪节
+      - citation: Wikipedia, "Chinese marriage".
+        type: encyclopedia
+        url: 'https://en.wikipedia.org/wiki/Chinese_marriage'
+        locator: 传统中式婚礼红盖头、跨火盆、迈马鞍及吉煞礼仪概述
+      - citation: 维基百科，〈盖头〉。
+        type: encyclopedia
+        url: 'https://zh.wikipedia.org/wiki/%E8%93%8B%E9%A0%AD'
+        locator: 婚礼红盖头从唐宋遮面巾帕向明清挑盖头避煞仪俗的演变
+    compare:
+      - corpus_cn_suishi_talisman_almanacs
+      - mech_apotropaic_boundary_seal
+      - theory_sympathetic_contagious_magic_cn
+      - case_cn_child_baijia_suo_pendant
+    motifs:
+      - motif_cn_household_apotropaic_guardians
+      - motif_cn_yansheng_talisman_seal
+      - index_ocm_776
+    bridge:
+      entry: SOC-1-0004
+      cluster: sid_hag
+      trail: all
+      label: 婚俗阈限与挡煞礼仪结构
+      rationale: 从社会学“社会化、身份形成与生命周期”切入，剖析红盖头、过火盆与跨马鞍如何把婚嫁过渡期的身份不确定性与冲煞恐惧转化为制度化安全边界。
+
+  - id: case_cn_chizhou_wuchang_nuo
+    title: 皖南池州｜宗族傩戏面具祭仪、五猖驱疫与《礼记·郊特牲》乡傩渊源
+    aliases:
+      - 池州傩戏
+      - 贵池傩戏
+      - 五猖驱疫
+      - 舞五猖
+      - 乡人逐疫傩仪
+    genre: myth
+    credibility_tier: A
+    note_kind: story
+    location:
+      lat: 30.6640
+      lng: 117.4910
+      precision: city
+      location_name: 中国安徽池州贵池区（姚街、刘街、梅街宗族傩堂）
+      culture_region: 中国 · 皖南池州宗族傩仪文化区
+    location_note: 池州傩戏主脉集中于安徽省池州市贵池区九华山麓刘街、梅街、姚街及青阳、石台诸村落宗族傩会，坐标取贵池区池州古城文化中心。
+    temporal:
+      year_start: -200
+      year_end: 2006
+      era_label: 先秦两汉《礼记·郊特牲》乡傩礼俗至明清宗族傩抄本及 2006 年国家级非遗
+      uncertainty_note: 《礼记·郊特牲》载孔子朝服立于阼阶观“乡人逐疫”，明清皖南池州诸大姓宗族以抄本保存傩仪、傩舞与正戏三段结构，2006 年列入首批国家级非物质文化遗产名录。
+    paragraphs:
+      - 安徽池州（尤以贵池区九华山麓姚街、刘街、梅街诸姓宗族聚落为核心）保存着中国戏曲史上极为完整的活态古傩传统。每逢农历正月初七至十五春祭，当地均以血缘宗族而非职业戏班为单位开坛设傩，整套法事分为“傩仪”“傩舞”“傩戏”三叠：既演目连救母与世俗忠孝正戏，更在核心驱疫环节请出樟木彩绘面具，由族中男丁戴上象征凶神猛将的五猖（东青、南红、西白、北黑、中黄五方瘟神或猖神）及钟馗、傩神像，伴以大锣大鼓粗犷踩踏罡步，绕村驱逐疫疠邪祟、祷祝五谷丰登。
+      - 这一乡土祭仪遥承先秦两汉的古傩礼制。《礼记·郊特牲》早有“乡人逐疫（乡人傩），孔子朝服而立于阼阶”的经典记载；《周礼·方相氏》更详述官傩持戈蒙熊皮搜室驱疫之仪。随着汉唐宫廷大傩向民间村落沉降，池州各大姓氏将逐疫“舞五猖”、洒鸡血符水、化纸船送瘟等仪式与明清徽剧、目连戏唱腔及祖传手抄傩书合流，形成“无傩不成村”的宗族防御仪轨。
+      - 戏剧人类学与非物质文化遗产研究表明，戴上面具的宗族演员并不以个人身份登台，而是借木雕面具与罡步完成神灵附位，把年初季节交替时村社对流行疫病、农业灾荒的集体恐慌，疏导进可掌控的锣鼓节奏与合族欢宴之中，既是活态宗教仪式，也是珍贵的古代村落戏剧史标本。
+    sources:
+      - citation: 《礼记·郊特牲》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: 'https://ctext.org/li-ji/jiao-te-sheng'
+        locator: 《郊特牲》“乡人逐疫，孔子朝服而立于阼阶”古傩渊源原文
+      - citation: 《礼记·郊特牲》，维基文库十三经注疏校本。
+        type: historical_text_transcription
+        url: 'https://zh.wikisource.org/wiki/%E7%A6%AE%E8%A8%98/%E9%83%8A%E7%89%B9%E7%89%B2'
+        locator: 《郊特牲》乡傩逐疫分段校勘文本
+      - citation: Wikipedia, "Nuo opera".
+        type: encyclopedia
+        url: 'https://en.wikipedia.org/wiki/Nuo_opera'
+        locator: 中国池州等地域傩戏、木雕驱疫面具及《礼记》礼俗源流概述
+    compare:
+      - corpus_cn_suishi_talisman_almanacs
+      - mech_apotropaic_boundary_seal
+      - case_cn_qimen_mulian_opera
+      - case_cn_han_taofu_shentu_yulei
+      - case_cn_tang_zhongkui_meng_expel
+    motifs:
+      - motif_cn_household_apotropaic_guardians
+      - motif_cn_zhuyou_incantation_craft
+      - index_ocm_776
+    bridge:
+      entry: REL-5-0058
+      cluster: sid_myth
+      trail: all
+      label: 池州傩戏与木面驱疫祭仪
+      rationale: 把皖南池州宗族春祭“舞五猖”驱疫面具仪与《礼记》乡傩传统，同江西万载傩戏面具、锣鼓及地方戏曲载体并读，对比地域傩戏保存形态。

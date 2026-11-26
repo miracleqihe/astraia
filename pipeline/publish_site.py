@@ -56,9 +56,10 @@ def deploy(vault: Path, code_table: Path, *, reviewed_only: bool = False) -> Non
 
         env = os.environ.copy()
         env['VITE_PUBLIC_DEMO'] = '1'
+        run(['node', str(root / 'web/scripts/build-taxonomy-lexicon.mjs')], root)
         npm = 'npm.cmd' if os.name == 'nt' else 'npm'
         run([npm, 'run', 'build', '--', '--base=/astraia/', '--outDir', str(built), '--emptyOutDir'], root / 'web', env=env)
-        for name in ('index.html', 'ui-review/index.html', 'syzygy/index.html', 'syzygy/data.json', 'syzygy/boot.json', 'syzygy/matches.json', 'syzygy/shards', 'assets', 'fonts', 'knowledge/index.json', 'knowledge/data.json',
+        for name in ('index.html', 'ui-review/index.html', 'syzygy/index.html', 'syzygy/data.json', 'syzygy/boot.json', 'syzygy/matches.json', 'syzygy/shards', 'syzygy/taxonomy.json', 'syzygy/lexicon/manifest.json', 'assets', 'fonts', 'knowledge/index.json', 'knowledge/data.json',
                      'knowledge/handbook.pdf', 'knowledge/inline-figures/manifest.json',
                      'knowledge/figures/font-report.json'):
             if not (built / name).exists():
@@ -104,6 +105,11 @@ def deploy(vault: Path, code_table: Path, *, reviewed_only: bool = False) -> Non
              str(site / 'syzygy/shards'), str(site / 'knowledge/data.json')], root)
         run(['node', str(root / 'web/scripts/build-syzygy-boot.mjs'), str(site / 'syzygy/data.json'),
              str(site / 'syzygy/boot.json')], root)
+        run(['node', str(root / 'web/scripts/build-taxonomy-lexicon.mjs'),
+             '--graph', str(site / 'data/graph_data.json'), '--out-dir', str(site / 'syzygy')], root)
+        for required_site in ('syzygy/taxonomy.json', 'syzygy/lexicon/manifest.json'):
+            if not (site / required_site).exists():
+                raise ValueError(f'站点构建缺少 {required_site}。')
         run(['node', str(root / 'web/scripts/build-share-pages.mjs'), str(site / 'data/graph_data.json'),
              str(site), 'https://miracleqihe.github.io/astraia/'], root)
         pages = site / 'knowledge/pages'

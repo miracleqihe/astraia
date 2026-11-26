@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { handbookText, bookNavigation } from '../src/syzygy/readable.js';
-import { genreContract, sourceTier } from '../src/syzygy/narrativeMetadata.js';
+import { genreContract, sourceTier, narrativeDisplay } from '../src/syzygy/narrativeMetadata.js';
 import { originalPageButton } from '../src/syzygy/originalPages.js';
 
 test('handbook text keeps Chinese and renders only local, safe original figures',()=>{
@@ -26,6 +26,8 @@ test('genre is never inferred from source rank or title, and F remains a fiction
   assert.equal(genreContract({genre:'creepypasta_ostension',credibility_tier:'F'}),'OSTENSION');
   assert.equal(sourceTier({credibility_tier:'F'}),null);
   assert.equal(sourceTier({credibility_tier:'A'}),'A');
+  assert.equal(narrativeDisplay({genre:'fabulate',credibility_tier:'F'}),'F 级虚构 · 体裁 虚构作品');
+  assert.equal(narrativeDisplay({genre:'memorate',credibility_tier:'B'}),'来源等级 B · 体裁 亲历叙述');
 });
 
 test('original page controls accept only positive physical PDF pages',()=>{

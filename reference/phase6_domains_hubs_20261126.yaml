@@ -1,0 +1,571 @@
+# Phase 6 Layer 3 motif hubs (5) and Layer 2 myth/document corpus (1) across Domains 2-6.
+# Original simplified Chinese academic syntheses grounded in public-domain primary classics, canonical indexes, and peer-reviewed scholarship.
+records:
+  - id: motif_cn_underworld_bureaucracy_system
+    title: 冥府官僚·十殿阎罗与城隍冥契母题群
+    aliases:
+      - 冥府官僚母题群
+      - 十殿阎罗
+      - 泰山七十六司
+      - 城隍与冥契
+      - Underworld bureaucracy motif complex
+    node_type: motif_index
+    z_layer: 3
+    genre: academic_model
+    credibility_tier: A
+    trail: all
+    spatial:
+      precision: culture_region
+      location_name: 中国泰山、川渝酆都、北京东岳庙及敦煌至闽台冥府文献文化区
+      culture_region: 中国 · 冥府官僚、十殿与城隍文献区
+    temporal:
+      year_start: -150
+      year_end: 1930
+      era_label: 汉代泰山治鬼与买地券至唐宋《十王经》《玉历宝钞》及明清城隍夜巡时期
+      uncertainty_note: 涵盖汉魏泰山府君与镇墓文、唐五代敦煌《佛说十王经》、元明北京东岳庙七十六司、清代《玉历宝钞》及近代城隍暗访祭仪。
+    paragraphs:
+      - 中国及东亚的幽冥想象在两千余年的演进中凝结为一套高度“官僚化与契约化”的死后世界模型，其主轴由泰山治鬼、东岳七十六司、十殿阎罗与地方城隍司四个层次叠加而成。早在汉代《后汉书·乌桓鲜卑传》与出土东吴六朝买地券中，亡魂便被视为需赴“泰山”登记户籍并以官文券契向地下神吏购地安身的主体；唐五代敦煌写卷《佛说十王经》将佛教地狱观念与中国州县公堂递解制度合流，塑造出头七至三年十次过堂审理的“十殿冥司”；宋明清以来，城隍神位入列国家祀典而如世俗知府知县掌理一邑阴阳刑名，北京东岳庙塑设统摄寿夭禄籍的“七十六司”，民间劝善书《玉历宝钞》更把孽镜台照罪、孟婆汤忘忧、奈何桥验行与焚化纸钱受生债编织进日常生死伦理。
+      - 从制度人类学与比较宗教学检视，这一母题群之所以深植民间社会，在于其同时承担了“道德奖惩规训”与“基层司法代偿”双重功能。如武雅士（Arthur P. Wolf，1974）与康豹（Paul R. Katz，2009）所论证，城隍夜巡暗访、考城隍文学寓言乃至“告阴状”“烧放赦牒”，都借拟人化的官僚簿籍表达普通民众对“程序清廉、冤屈终雪”的期盼；而在新加坡虎豹别墅等二十世纪公共展陈空间（参见相关个案），十殿苦刑雕像更转化为跨海华人社群进行家庭伦理劝诫的视觉剧场。
+      - 本母题枢纽在分类线索上参考徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994，ISBN 978-7-5363-2780-1）关于冥界神系、十王地狱与冥器纸钱之编目体系，正文则依据《玉历宝钞》、敦煌写卷目录、城隍非遗档案及太史文（Stephen F. Teiser，1994）等学术专著独立撰述。比较分析各成员节点时，须严格区分宗教劝善文本修辞、现实法制史料与文学寓言讽刺（如《聊斋》《子不语》），不可把阴司职官叙事直接视为历史上确实存在过的社会组织实体。
+    note_kind: research
+    sources:
+      - citation: 'Stephen F. Teiser (1994). The Scripture on the Ten Kings and the Making of Purgatory in Medieval Chinese Buddhism. University of Hawaii Press / Internet Archive.'
+        type: academic_monograph
+        url: https://archive.org/details/scriptureontenki0000teis
+        locator: 敦煌《佛说十王经》写本谱系、十王审判制度化与中国冥界观念转型
+      - citation: 《玉历宝钞》，维基文库古籍校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E7%8E%89%E6%AD%B7%E5%AF%B6%E9%88%94
+        locator: 十殿阎罗执掌分司、善恶果报与孟婆忘忧汤俗传劝善文本
+      - citation: 维基百科，〈玉历宝钞〉。
+        type: encyclopedia
+        url: https://zh.wikipedia.org/wiki/%E7%8E%89%E6%AD%B7%E5%AF%B6%E9%88%94
+        locator: 十殿结构、奈何桥孟婆叙事源流及清代劝善书刊刻史考辨
+      - citation: 'Paul R. Katz (2009). Divine Justice: Religion and the Development of Chinese Legal Culture. Routledge.'
+        type: academic_monograph
+        url: https://doi.org/10.4324/9780203881460
+        doi: 10.4324/9780203881460
+        locator: 城隍庙神判、告阴状与冥府官僚秩序对基层司法文化的影响
+    relations:
+      - type: EXPLAINED_BY
+        target: mech_underworld_bureaucratic_projection
+        weight: 1.0
+        status: contested
+        note: 十殿、城隍与冥契高度符合帝制官僚文书与司法程序向幽冥世界的制度投影和心理代偿模型，但各地具体信仰形态仍因时代与宗派教义而异。
+      - type: EXPLAINED_BY
+        target: theory_liminality_rites_passage
+        weight: 1.0
+        status: contested
+        note: 死后“七七”过殿、过奈何桥与饮忘魂汤对应亡灵从阳间亲属分离并重新整合入阴间谱系的典型过渡阈限期。
+      - type: COMPARED_WITH
+        target: corpus_cn_underworld_scriptures_opera
+        weight: 1.0
+        note: 关联冥界宝卷、十王经变与公案戏曲核心文献群。
+      - type: COMPARED_WITH
+        target: motif_wolf_stranger_ghosts
+        weight: 1.0
+        note: 并置阅读武雅士关于中国民间神明官僚、祖先与游魂陌生人三分认知图谱。
+      - type: COMPARED_WITH
+        target: index_ocm_776
+        weight: 1.0
+        note: 跨文化比较索引对照：OCM 776（神灵秩序与死后超自然存在观念）。
+      - type: COMPARED_WITH
+        target: corpus_theme_between_life_death
+        weight: 1.0
+        note: 同题专题群对照：人间与冥界戏剧、传说与记忆。
+      - type: COMPARED_WITH
+        target: case_sg_haw_par_ten_courts
+        weight: 1.0
+        note: 二十世纪东南亚华人公共展陈中的十殿阎罗视觉化代表个案。
+      - type: COMPARED_WITH
+        target: case_asia_liaozhai_kaochenghuang
+        weight: 1.0
+        note: 清代文言小说对阴曹科考与廉洁官僚品格的寓言化书写。
+      - type: COMPARED_WITH
+        target: case_cn_tw_tainan_chenghuang_night_patrol
+        weight: 1.0
+        note: 地方城隍暗访夜巡驱疫与官僚巡境民俗实证案例。
+      - type: COMPARED_WITH
+        target: case_cn_eastern_wu_hunping_maidiquan
+        weight: 1.0
+        note: 六朝买地券冥界文书契约考古实物代表。
+
+  - id: motif_cn_nuo_funeral_liminal_rites
+    title: 大傩驱疫·中元普度与招魂丧葬阈限仪典母题群
+    aliases:
+      - 大傩驱疫母题群
+      - 中元普度仪典
+      - 招魂与丧葬阈限
+      - Nuo and funerary liminality
+    node_type: motif_index
+    z_layer: 3
+    genre: academic_model
+    credibility_tier: A
+    trail: all
+    spatial:
+      precision: culture_region
+      location_name: 中国中原先秦礼制区、荆楚湘黔傩戏区及东南沿海与台湾中元祭祀圈
+      culture_region: 中国 · 大傩逐疫、中元普度与丧葬民俗区
+    temporal:
+      year_start: -400
+      year_end: 2006
+      era_label: 先秦《周礼》《礼记》《楚辞·招魂》至当代地方傩戏与中元非遗时期
+      uncertainty_note: 上溯《周礼》方相氏大傩、《礼记》乡人傩与《楚辞》招魂复礼，贯通汉代宫廷十二兽逐疫、唐宋盂兰盆中元普度及当代安顺地戏、池州五猖与基隆中元祭。
+    paragraphs:
+      - 本母题群聚焦中国社会应对“疫病凶煞”与“死亡断裂”的两大阈限仪典集群：其一是以清场逐疫为核心的“大傩与军傩”传统，其二是以招魂安灵、调解阴阳为主轴的“中元普度与丧葬仪轨”。在先秦两汉文献中，《周礼·夏官》与《礼记·郊特牲》记载方相氏披熊皮、黄金四目、率十二兽于岁终“索室驱疫”并入圹驱除墓中邪祟，东汉《后汉书·礼仪志》进一步记录百余名“少年童子”齐声和唱逐疫歌的宏大宫廷仪程；该脉络此后向民间演化为皖南池州五猖请神、贵州安顺屯堡军傩地戏“开光封箱”等面具祭演体系。与此同时，起自战国《楚辞·招魂》“魂兮归来”及《仪礼·士丧礼》登屋复魂之制，合流佛教目连救母与道教中元地官赦罪，演化出七月半放水灯、竖幡招引、做七回煞、烧纸扎冥器与孤魂普度的庞大仪式网络。
+      - 过渡礼仪理论与跨文化临床心理学为这一母题群提供了互补的阐释维度。依据范·热内普与维克多·特纳（Victor Turner，1969）的阈限结构分析，岁末新旧交替、中元鬼月开闭及亲人新丧“五七”之内均属日常结构暂停的危险悬置期，傩仪面具、纸幡结界与火盆水灯正是在脆弱边界上区分生人与亡者、界定可接触范围的文化符号；另一方面，临床丧亲在场感研究（Rees，1971；Kamp 等，2020）证实，头七“回煞”、梦中托嘱与水灯祭奠等集体哀悼仪式，为生者在经历丧亲幻觉或剧烈悲痛时提供了被社群接纳的情感缓冲。
+      - 本母题在类别整理上参照徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994，ISBN 978-7-5363-2780-1）及陶思炎《中国镇物》（1998，ISBN 957-19-2210-2）关于驱疫傩仪、婚丧镇护之文献线索，正文严格依据公版经传与当代人类学及非遗调查报告撰写。分析湘西“赶尸”、重丧避煞或面具附体等传闻时，必须将演剧性科仪、地方口述想象与真实公共卫生或临床哀伤心理分界说明。
+    note_kind: research
+    sources:
+      - citation: 《礼记·郊特牲》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: https://ctext.org/li-ji/jiao-te-sheng
+        locator: “乡人傩，孔子朝服立于阼阶”先秦乡傩敬礼原典
+      - citation: 《楚辞·招魂》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: https://ctext.org/chu-ci/zh
+        locator: 战国楚地“魂兮归来”四方警诫与召魂复礼诗篇
+      - citation: 〔南朝宋〕范晔等撰，《后汉书·志第五·礼仪志中》，维基文库二十四史校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E5%BE%8C%E6%BC%A2%E6%9B%B8/%E5%BF%97%E7%AC%AC%E4%BA%94
+        locator: 东汉腊前一日大傩逐疫十二神兽与逐疫童子和唱仪注全文
+      - citation: 中国非物质文化遗产网，《中元节：三节合一 源远流长》，2017。
+        type: official_standard
+        url: https://www.ihchina.cn/project_details/9857
+        locator: 道教地官赦罪、佛教盂兰盆会与民间祭祖普度合流非遗档案
+    relations:
+      - type: EXPLAINED_BY
+        target: theory_liminality_rites_passage
+        weight: 1.0
+        status: contested
+        note: 大傩年终清场、中元放灯与丧礼“五七”周期严格对应“分离—阈限—聚合”过渡礼仪结构，但各地域宗族实践细节差异显著。
+      - type: EXPLAINED_BY
+        target: mech_grief_bereavement_hallucination
+        weight: 1.0
+        status: contested
+        note: 头七回煞与招魂祭奠常承接丧亲期的正常在场感与哀伤情绪调适，不可将仪式体验径直视作超自然实证。
+      - type: EXPLAINED_BY
+        target: mech_apotropaic_boundary_seal
+        weight: 1.0
+        status: contested
+        note: 傩仪面具、丧礼桃木枝笤与跨火盆机制旨在封闭生死与洁秽交界隘口。
+      - type: COMPARED_WITH
+        target: motif_cn_household_apotropaic_guardians
+        weight: 1.0
+        note: 关联母题对照：家宅门神桃符与驱傩守护神系。
+      - type: COMPARED_WITH
+        target: index_ocm_776
+        weight: 1.0
+        note: 跨文化比较索引对照：OCM 776（祖灵归返、丧葬祭仪与护佑灵体）。
+      - type: COMPARED_WITH
+        target: corpus_theme_ancestor_returns
+        weight: 1.0
+        note: 同题比较语料群：东亚祖灵归来、迎送与祭奠礼俗。
+      - type: COMPARED_WITH
+        target: case_cn_chizhou_wuchang_nuo
+        weight: 1.0
+        note: 皖南池州宗族傩戏面具开光与五猖逐疫活态代表案例。
+      - type: COMPARED_WITH
+        target: case_cn_tw_keelung_zhongyuan
+        weight: 1.0
+        note: 基隆中元祭放水灯与跨族群普度孤魂代表案例。
+      - type: COMPARED_WITH
+        target: case_cn_zhongyuan_lantern_traditions
+        weight: 1.0
+        note: 各地中元河灯节引魂与社群水祭对照。
+      - type: COMPARED_WITH
+        target: case_cn_xiangxi_gan_shi_ritual
+        weight: 1.0
+        note: 湘西客死归葬、招魂引路传说与民俗学辨析案例。
+      - type: COMPARED_WITH
+        target: case_cn_han_mawangdui_feiyi_soul_banner
+        weight: 1.0
+        note: 西汉马王堆铭旌非衣帛画引魂升天考古实物。
+
+  - id: motif_cn_ethnic_spirits_marvels
+    title: 山海异兽·物候精怪与多民族神鬼谱系母题群
+    aliases:
+      - 山海精怪母题群
+      - 白泽精怪谱
+      - 多民族神鬼谱系
+      - Chinese marvels and ethnic spirits
+    node_type: motif_index
+    z_layer: 3
+    genre: academic_model
+    credibility_tier: A
+    trail: all
+    spatial:
+      precision: culture_region
+      location_name: 中国中原荒服博物想象圈、敦煌写卷区与西南多民族山水民俗带
+      culture_region: 中国 · 山海异兽、物候精怪与民族志神谱区
+    temporal:
+      year_start: -300
+      year_end: 2017
+      era_label: 战国《山海经》、汉魏《神异经》至唐代敦煌《白泽精怪图》与当代西南民族志文献时期
+      uncertainty_note: 横跨战国《山海经》异兽灾异体系、六朝“物老成精”博物观、法藏敦煌写卷 P.2682《白泽精怪图》及藏、彝、纳西、苗、壮等民族创世神鬼谱。
+    paragraphs:
+      - 中国古代至近世的“精灵物怪”知识体系呈现出“博物图谱制祟”与“多民族生态敬畏”双线交织的特征。先秦《山海经》与六朝托名东方朔的《神異经》系统铺陈九尾狐、毕方、山魈（独足鬼）、魑魅魍魉与刑天、西王母等荒外异象，往往把水旱疫火等物候灾兆编码为奇禽异兽之出现；及至晋葛洪《抱朴子·登涉》与敦煌藏经洞出土唐代彩绘写卷《白泽精怪图》（法国国家图书馆藏 P.2682 及英藏 S.6261 残片），更发展出“辨识精怪名讳即可破其妖祟”的百科全书式防御逻辑——凡老木之精名彭侯、山石器物久而成精、夜半呼名乃狐狸或老鸡化形，皆可通过呼其本名与顺应物候予以制伏。
+      - 另一方面，在云南、西藏、贵州及广西等西南山地与多民族交错带，神鬼与精怪谱系深深扎根于族群历史记忆与生态伦理之中：藏族《格萨尔》降魔叙事、彝族毕摩馆藏古文献（大英图书馆 EAP081 档案）与撒尼叙事诗《阿诗玛》、丽江纳西族东巴象形文《神路图》与护持水林的“署神”崇拜，以及港台闽浙民间关于狐仙、水鬼、黄鼠狼“讨封”与器物“付丧神”的口述故事，均将山林溪谷视作人类与非人自然生灵订立契约、共享疆界的生态共同体，一旦过度采伐污秽或冒犯禁忌，便在口述传统中被解释为遭精怪反噬或致病。
+      - 本母题梳理参照徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994，ISBN 978-7-5363-2780-1）及邓启耀《巫蛊：中国文化的历史暗流》（2025，ISBN 978-7-5598-7994-3）涉及自然物候崇拜与边疆民族神谱之归目线索，正文依据传世古籍、联合国记忆遗产及大英图书馆档案独立撰写。研究精怪传说时，需辨析早期自然灾异气象误读（如磷火鬼火、大气折射、野生动物夜鸣）与族群森林水源保护习惯法之间的功能差异。
+    note_kind: research
+    sources:
+      - citation: 《山海经·南山经》，中国哲学书电子化计划（CText）。
+        type: primary_text
+        url: https://ctext.org/shan-hai-jing/nan-shan-jing
+        locator: 山川神灵祭礼及九尾狐、凤凰等祥瑞灾异兽兆原典
+      - citation: 《神异经》，维基文库古籍校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E7%A5%9E%E7%95%B0%E7%B6%93
+        locator: 西方深山独足“山魈”（山臊）食虾蟹、畏爆竹惊声早期文献
+      - citation: 'Jao Tsung-i (2022). "Notes on the Dunhuang Manuscript of the Baize jingguai tu (P.2682 / S.6261)", in Treasured Oases: A Selection of Jao Tsung-i''s Dunhuang Studies. Brill.'
+        type: academic_monograph
+        url: https://doi.org/10.1163/9789004522558_008
+        doi: 10.1163/9789004522558_008
+        locator: 法藏敦煌《白泽精怪图》P.2682 与英藏残卷名讳制祟文献考辨
+      - citation: 'British Library Endangered Archives Programme, EAP081: Preservation and Digitisation of Yi Archives in Public and Private Collections in Yunnan, China.'
+        type: archival_catalogue
+        url: https://searcharchives.bl.uk/?f%5Bproject_collections_ssim%5D%5B%5D=Preservation+and+Digitisation+of+Yi+Archives+in+Public+and+Private+Collections+in+Yunnan%2C+China&per_page=100&sort=hierarchy
+        locator: 云南毕摩彝文经卷馆藏神鬼分类、献祭与地方生态仪典目录
+    relations:
+      - type: EXPLAINED_BY
+        target: theory_zhenwu_four_pervasiveness
+        weight: 1.0
+        status: contested
+        note: 《白泽图》呼名镇怪、爆竹惊山魈及民族山林禁忌均反映自然、身之与人工载体如何遍布时空的“四无通贯”防卫网络。
+      - type: EXPLAINED_BY
+        target: theory_altered_states_wugu_psychiatry
+        weight: 1.0
+        status: contested
+        note: 林间迷途幻觉、夜行磷火与民间“出马仙/附体讨封”口述涉及非常意识状态（ASC）与文化习惯表达，需排除器质与环境诱因。
+      - type: EXPLAINED_BY
+        target: mech_pareidolia_apophenia
+        weight: 1.0
+        status: contested
+        note: 山雾光影、枯木怪石及野生兽鸣在预期恐惧下易引发视听空想性错视。
+      - type: COMPARED_WITH
+        target: index_ocm_776
+        weight: 1.0
+        note: 跨文化比较索引对照：OCM 776（山精水怪与超自然生灵分类）。
+      - type: COMPARED_WITH
+        target: index_nichibun_tohoku_kappa
+        weight: 1.0
+        note: 东亚水域精怪比较：日文研东北北海道河童与汉族水鬼传说对照。
+      - type: COMPARED_WITH
+        target: corpus_cn_bl_eap081_project
+        weight: 1.0
+        note: 云南彝族毕摩神鬼与仪典写本目录群。
+      - type: COMPARED_WITH
+        target: corpus_cn_hk_fox_stories_fieldwork_2017
+        weight: 1.0
+        note: 近现代都市“狐仙”石像显灵与民间动物精怪叙事流变。
+      - type: COMPARED_WITH
+        target: case_cn_shanhai_jiuweihu
+        weight: 1.0
+        note: 九尾狐从太平瑞兽向魅惑妖异流变的双重谱系代表案例。
+      - type: COMPARED_WITH
+        target: case_cn_shanhai_bifang
+        weight: 1.0
+        note: 《山海经》独足怪鸟毕方兆火母题代表案例。
+      - type: COMPARED_WITH
+        target: case_cn_gesar_epic
+        weight: 1.0
+        note: 青藏高原《格萨尔》降魔叙事与藏族神魔观代表案例。
+      - type: COMPARED_WITH
+        target: case_cn_ashma_yi_epic
+        weight: 1.0
+        note: 彝族撒尼人长诗与山林回声文化记忆对照。
+      - type: COMPARED_WITH
+        target: case_cn_meigu_ghost_boards_1992
+        weight: 1.0
+        note: 凉山彝族鬼板田野记录与西南鬼灵仪典比较。
+
+  - id: motif_cn_zhiguai_ghost_opera
+    title: 志怪笔记叙事、目连鬼戏与冤鬼公案母题群
+    aliases:
+      - 志怪与鬼戏母题群
+      - 冤鬼公案母题
+      - 离魂与鬼婚母题
+      - Zhiguai and ghost opera complex
+    node_type: motif_index
+    z_layer: 3
+    genre: academic_model
+    credibility_tier: A
+    trail: all
+    spatial:
+      precision: culture_region
+      location_name: 中国六朝建康江左、两宋江南、元大都至明清徽州与闽台戏曲文化圈
+      culture_region: 中国 · 志怪笔记、目连鬼戏与公案文学区
+    temporal:
+      year_start: 300
+      year_end: 1920
+      era_label: 东晋《搜神记》至宋代《夷坚志》、元明戏曲及清代《聊斋》《子不语》时期
+      uncertainty_note: 贯通魏晋南北朝《搜神记》《幽明录》、唐宋《太平广记》《夷坚志》、元杂剧《窦娥冤》、明传奇《牡丹亭》及清代徽州目连戏与《聊斋》《子不语》《阅微草堂笔记》。
+    paragraphs:
+      - 中国古代关于鬼魂、精魅与死后复仇的叙事文学，沿着“史官实录式志怪—宋元市井传奇公案—明清文人拟托笔记与仪式鬼戏”三大脉络层累生成。魏晋南北朝干宝《搜神记》与刘义庆《幽明录》确立了宗定伯卖鬼、干将莫邪三王墓复仇、离魂赴约、亡灵报恩等基本母题框架；唐宋时期《太平广记》汇录鬼部千余条，洪迈《夷坚志》更以实录笔法广记街巷鬼市、冥感与鬼火奇闻；到了元明清时代，这一叙事传统同时向案头虚构与舞台演剧双向勃发——清代蒲松龄《聊斋志异》（《画皮》《聂小倩》《考城隍》）与袁枚《子不语》借狐鬼讽喻世态科场，纪昀《阅微草堂笔记》以礼理辩驳幽冥，而关汉卿《窦娥冤》的六月飞雪亢旱三年、传统戏曲《乌盆记》的陶盆寄声、汤显祖《牡丹亭》的冥司判婚还魂，以及徽州目连救母仪式鬼戏和台南《林投姐》，则将“冤鬼诉冤”与“冥途寻亲”铸成大众共同体验正义伸张的剧场模式。
+      - 在民俗叙事学与社会史研究视野中，巴斯科姆（William Bascom，1965）对神话、传说与民间故事的体裁界分有助于厘清这批材料的多重文本层位：许多早期志怪及《夷坚志》条目兼有地方“传说”实信色彩，而元明清戏曲及《聊斋》文本则高度自觉地运用“鬼魂入梦、物证发声、清官阴审”等戏剧成规。其共享核心结构往往体现出对阳世司法无力或礼教压抑的补偿性想象：当无权势的弱女子、被害行商或受屈书生无法通过常规诉讼洗冤时，鬼魂显形、血溅白练或梦诉包公便充当了维系伦理可信度的最后仲裁。
+      - 本母题在归目上参照徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994，ISBN 978-7-5363-2780-1）之鬼文学、公案戏曲与民俗故事编次线索，正文依据传世经典校本、丁乃通（1978）故事类型索引及近世戏曲史研究独立撰成。分析相关故事或戏曲时，须注意宗教仪式剧（如目连戏请神送煞规矩）与纯文学案头戏剧在演出禁忌及受众功能上的显著差别。
+    note_kind: research
+    sources:
+      - citation: 〔东晋〕干宝撰，《搜神记·第十一卷》，维基文库校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E6%90%9C%E7%A5%9E%E8%A8%98/%E7%AC%AC11%E5%8D%B7
+        locator: 干将莫邪、三王墓冤魂复仇与早期志怪实录叙事范本
+      - citation: 〔元〕关汉卿撰，《感天动地窦娥冤》，维基文库元曲校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E6%84%9F%E5%A4%A9%E5%8B%95%E5%9C%B0%E7%AB%87%E5%A8%A5%E5%86%A4
+        locator: 临刑三桩誓愿、六月飞雪与托梦父官复审冤鬼公案典范
+      - citation: 〔明〕汤显祖撰，《牡丹亭》，维基文库校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E7%89%A1%E4%B8%B9%E4%BA%AD
+        locator: 惊梦、魂游、冥判与离魂还魂传奇剧本原文
+      - citation: 中国非物质文化遗产保护中心，《目连戏（徽州目连戏）》。
+        type: official_standard
+        url: https://www.ihchina.cn/project_details/13370
+        locator: 徽州目连戏地府寻母、演剧逐疫仪轨与民间信仰交融档案
+    relations:
+      - type: EXPLAINED_BY
+        target: mech_underworld_bureaucratic_projection
+        weight: 1.0
+        status: contested
+        note: 《窦娥冤》《乌盆记》及《牡丹亭》冥判等文本鲜明体现阴司官僚审判对现实司法缺陷的心理代偿机制，同时受限于舞台戏曲美学修辞。
+      - type: EXPLAINED_BY
+        target: theory_bascom_prose_genres
+        weight: 1.0
+        status: contested
+        note: 区分六朝“实录体”志怪传说、元明传奇虚构文体与地方仪式戏剧在叙事可信度契约上的本质差异。
+      - type: EXPLAINED_BY
+        target: mech_grief_bereavement_hallucination
+        weight: 1.0
+        status: contested
+        note: 托梦鸣冤、亡妻重逢与“离魂”叙事往往借鉴了人类普遍的丧亲在场感与思念梦境心理体验。
+      - type: COMPARED_WITH
+        target: corpus_cn_underworld_scriptures_opera
+        weight: 1.0
+        note: 核心文献载体群：冥界宝卷、十王经变与冤魂戏曲。
+      - type: COMPARED_WITH
+        target: corpus_chinese_tale_catalogues
+        weight: 1.0
+        note: 丁乃通、刘守华与中国民间故事类型索引方法对照。
+      - type: COMPARED_WITH
+        target: corpus_asia_liaozhai_v1
+        weight: 1.0
+        note: 清代文言短篇《聊斋志异》鬼狐人情叙事核心语料。
+      - type: COMPARED_WITH
+        target: corpus_cn_zibuyu_wikisource
+        weight: 1.0
+        note: 袁枚《子不语》清代笔记志怪二十四卷核心语料。
+      - type: COMPARED_WITH
+        target: case_cn_soushen_ganjiang_moye
+        weight: 1.0
+        note: 早期志怪复仇与感应母题代表个案。
+      - type: COMPARED_WITH
+        target: case_cn_yijian_night_lantern
+        weight: 1.0
+        note: 两宋笔记《夷坚志》鬼市幽灯实录体例对照。
+      - type: COMPARED_WITH
+        target: case_asia_liaozhai_huapi
+        weight: 1.0
+        note: 聊斋“画皮”妖鬼变形与伦理警示代表案例。
+      - type: COMPARED_WITH
+        target: case_cn_qimen_mulian_opera
+        weight: 1.0
+        note: 皖南徽州目连救母仪式鬼戏与地府寻亲实证案例。
+      - type: COMPARED_WITH
+        target: case_cn_tw_lintoujie_gezaixi
+        weight: 1.0
+        note: 渡海冤魂追索与歌仔戏公案剧场演变对照。
+
+  - id: motif_global_comparative_myth_complex
+    title: 全球创世柱、下冥界试炼与附体猎巫比较母题群
+    aliases:
+      - 全球比较神话母题群
+      - 创世宇宙柱与下冥界
+      - 跨文化附体与猎巫
+      - Global comparative myth complex
+    node_type: motif_index
+    z_layer: 3
+    genre: academic_model
+    credibility_tier: A
+    trail: all
+    spatial:
+      precision: global
+      location_name: 跨大洲东亚、两河流域、尼罗河、地中海、北欧、南亚、美洲及大洋洲比较神话文献域
+      culture_region: 全球 · 跨文化创世、冥界试炼与巫术比较域
+    temporal:
+      year_start: -2100
+      year_end: 1970
+      era_label: 苏美尔及古埃及泥板纸草至近代早期猎巫档案与二十世纪跨文化民族志时期
+      uncertainty_note: 串联两河《埃努玛·埃利什》《伊南娜下冥界》、埃及《亡灵书》、印度《奥义书》、希腊北欧玛雅创世冥界文本及 1487—1736 年欧洲北美猎巫司法档案。
+    paragraphs:
+      - 从比较神话学与全球宗教史的宏观视野出发，人类不同文明在相互独立或跨大陆交往的谱系中，反复围绕三大结构母题展开叙述：其一是“原初水域、天地分离与宇宙柱”（如盘古开天、共工触不周山、两河劈分提阿玛特、毛利朗伊与帕帕分离、北欧世界树与诸神黄昏、潜沙取土创世）；其二是“英雄或神祇下冥界试炼与回望禁忌”（如伊南娜过七门、俄耳甫斯回望失妻、伊邪那岐赴黄泉比良坂、玻耳塞福涅食石榴籽、玛雅英雄双子过西巴尔巴、那奇凯塔问阎摩）；其三是“跨文化附体出神与妖术迫害”（如埃塞俄比亚扎尔灵、海地伏都教罗瓦骑乘、近世欧洲《女巫之锤》与苏格兰、塞勒姆猎巫审判，以及全球各地高度相似的“夜压鬼压床”体感叙事）。
+      - 面对跨洲神话的高度相似性，当代比较学界强调将“历史谱系传播假设”与“人类共性认知及社会机制”并行校验：一方面，维茨尔（Michael Witzel，2012）与别列兹金母题分布索引尝试追踪“劳亚型”和“冈瓦纳型”长时段口述迁移线索；另一方面，针对冥界试炼与巫术恐慌的对比研究显示，农业季节枯荣、丧亲失落、非常意识状态（ASC）中的解离出神以及快速眼动期睡眠瘫痪提供了跨文化的体验基底，而在遭遇宗教冲突、疫病动荡与审讯司法化（如 1487 年《女巫之锤》与 1768 年江南叫魂案的比较）时，相似的社会替罪焦虑又会在截然不同的文化外衣下爆发制度性迫害。
+      - 本母题枢纽在跨文化归类上衔接汤普森母题索引、OCM 754/776 编码及邓启耀《巫蛊：中国文化的历史暗流》（2025，ISBN 978-7-5598-7994-3）中有关中西巫术与心身状态对照之思考脉络，正文基于各文明公开典籍库与同行评审成果独立撰写。学术使用中务必严守类比限度：母题相似并不自动证明远古存在单一传播源，亦不可用任何医学假说（如塞勒姆麦角中毒说）粗暴替代复杂历史审判档案的社会史分析。
+    note_kind: research
+    sources:
+      - citation: 'Electronic Text Corpus of Sumerian Literature (ETCSL), University of Oxford, "Inana''s descent to the nether world" (c.1.4.1).'
+        type: primary_text
+        url: https://etcsl.orinst.ox.ac.uk/section1/tr141.htm
+        locator: 苏美尔伊南娜过七门下冥界、替身律法与复生泥板全文
+      - citation: 'Perseus Digital Library (Tufts University), Ovid, "Metamorphoses, Book 10" (Orpheus and Eurydice).'
+        type: primary_text
+        url: https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.02.0028%3Abook%3D10
+        locator: 古希腊罗马俄耳甫斯下冥界与回头禁忌古典文献
+      - citation: 'Encyclopaedia Britannica, "Malleus maleficarum" (1486/1487 inquisitorial witch-hunt treatise).'
+        type: encyclopedia
+        url: https://www.britannica.com/topic/Malleus-maleficarum
+        locator: 近代早期欧洲猎巫神学合法化、刑讯采证与性别偏见汇编综述
+      - citation: 'University of Edinburgh, "The Survey of Scottish Witchcraft, 1563–1736".'
+        type: scholarly_database
+        url: https://witches.hca.ed.ac.uk/about/
+        locator: 欧洲近代早期猎巫司法审判实证数据库与结构分析参照
+    relations:
+      - type: EXPLAINED_BY
+        target: theory_witzel_mythology_phylogeny
+        weight: 1.0
+        status: contested
+        note: 劳亚与冈瓦纳比较神话谱系假说尝试解释创世与宇宙树等跨洲宏大叙事的潜在历史渊源，在学界仍具方法争议。
+      - type: EXPLAINED_BY
+        target: theory_altered_states_wugu_psychiatry
+        weight: 1.0
+        status: contested
+        note: 跨文化附体仪典（如扎尔灵、罗瓦骑乘）多体现受文化仪式结构化的非常意识状态（ASC）与解离表达。
+      - type: EXPLAINED_BY
+        target: mech_gu_sorcery_social_scapegoat
+        weight: 1.0
+        status: contested
+        note: 欧美猎巫审讯、阿赞德神谕与东亚巫蛊恐慌均在群体危机下展现出替罪羊排斥与司法标签化结构。
+      - type: EXPLAINED_BY
+        target: mech_sleep_paralysis
+        weight: 1.0
+        status: contested
+        note: 北欧玛拉、巴西皮萨代拉、安纳托利亚卡拉巴桑与东亚鬼压床在神经生理层面共享 REM 肌张力失调基础。
+      - type: COMPARED_WITH
+        target: index_ocm_754
+        weight: 1.0
+        note: 跨文化比较索引对照：OCM 754（全球巫术指控、魔鬼契约与猎巫审判）。
+      - type: COMPARED_WITH
+        target: index_ocm_776
+        weight: 1.0
+        note: 跨文化比较索引对照：OCM 776（神灵、冥界与非人存在观念）。
+      - type: COMPARED_WITH
+        target: motif_cn_underworld_bureaucracy_system
+        weight: 1.0
+        note: 东亚官僚冥府模型与两河、古埃及、古希腊及印度冥界审判跨文化并置。
+      - type: COMPARED_WITH
+        target: corpus_theme_creation_worlds
+        weight: 1.0
+        note: 全球创世神话核心语料比较组。
+      - type: COMPARED_WITH
+        target: corpus_early_modern_witch_hunts
+        weight: 1.0
+        note: 近代早期欧美猎巫司法档案馆藏组。
+      - type: COMPARED_WITH
+        target: case_gr_thrace_orpheus_underworld
+        weight: 1.0
+        note: 古希腊下冥界回望禁忌经典代表个案。
+      - type: COMPARED_WITH
+        target: case_iq_uruk_gilgamesh_flood
+        weight: 1.0
+        note: 美索不达米亚洪水泥板与寻访不死神话代表个案。
+      - type: COMPARED_WITH
+        target: case_iq_sumer_inanna_underworld
+        weight: 1.0
+        note: 苏美尔伊南娜脱衣过七门下冥界经典个案。
+      - type: COMPARED_WITH
+        target: case_eg_thebes_weighing_heart
+        weight: 1.0
+        note: 古埃及《亡灵书》玛特之羽称心审判代表个案。
+      - type: COMPARED_WITH
+        target: case_salem_1692
+        weight: 1.0
+        note: 北美清教徒社区 1692 年塞勒姆猎巫审讯代表档案。
+      - type: COMPARED_WITH
+        target: case_ht_vodou_loa_possession
+        weight: 1.0
+        note: 海地伏都教“罗瓦骑乘”仪礼附体民族志代表个案。
+
+  - id: corpus_cn_underworld_scriptures_opera
+    title: 冥界宝卷、十王经变与冤魂公案戏曲文献群
+    aliases:
+      - 冥界宝卷与十王经变
+      - 冤魂公案戏曲文献群
+      - 十王经与目连戏剧
+      - Underworld scriptures and ghost opera corpus
+    node_type: myth_corpus
+    z_layer: 2
+    genre: historical_archive
+    credibility_tier: A
+    trail: all
+    spatial:
+      precision: culture_region
+      location_name: 中国敦煌写卷区、中原江南劝善书刻坊、皖南徽州及西北河西宝卷流传圈
+      culture_region: 中国 · 冥界宝卷、经变写本与公案戏曲区
+    temporal:
+      year_start: 900
+      year_end: 1940
+      era_label: 唐末五代敦煌《佛说十王经》写卷至元明清宝卷、公案杂剧及近代民间抄本时期
+      uncertainty_note: 跨越公元 10 世纪敦煌图绘经卷（如 S.3961）、元杂剧与明清传奇剧本、河西及吴地民间宝卷宣讲本及清末《玉历宝钞》木刻版画。
+    paragraphs:
+      - 本文献群汇集连接中国“幽冥宗教劝善文本”与“戏曲公案演剧传统”的四大核心史料脉络：第一脉为敦煌藏经洞出土唐五代《佛说十王经》图绘写卷（如大英图书馆藏 Or.8210/S.3961）及早期目连变文，首次以图文并茂的长卷形态定型亡灵七七过殿、奈何桥与判官审案的程序架构；第二脉为宋元明清流行于江南及西北河西走廊的“民间宝卷”（如吴地宝卷、河西宝卷与《血盆经》劝善唱本），借说唱宣卷把十王因果与孝道伦理带入村社妇孺听众；第三脉为元明清公案与还魂戏曲，包括关汉卿《窦娥冤》、汤显祖《牡丹亭》、传统剧目《乌盆记》以及清代“包公阴审”说唱剧本；第四脉则是贯穿明清至近世的通俗善书《玉历宝钞》及其附带地狱刑罚木刻版画。
+      - 将敦煌经卷、宝卷说唱与戏曲公案并置对读，能够清晰透视传统中国民间社会如何跨媒介生产“阴司正义”：宗教经变提供了死后世界的行政空间地图（十殿分司、生死簿籍、孟婆忘忧台），宝卷宣讲将抽象教义转译为押韵可吟诵的家庭道德剧本，而元杂剧与地方鬼戏（如徽州目连戏及歌仔戏《林投姐》）更进一步把阴差捉鬼、陶盆发声与判官批婚搬上宗祠或庙会舞台，使观众在敬畏鬼神与宣泄冤抑的双重情绪中完成对人间伦常的再确认。
+      - 在文献校勘与学术使用层面，研究者必须留意不同文本媒介的层累改写与版权边界：《佛说十王经》在敦煌各抄本间存在长短本、序赞增删及插图次序差异；元明杂剧传奇（如《窦娥冤》在《元曲选》与脉望馆抄本中的异文）经历过明代文人臧懋循等人的大幅润色；而各地宝卷与地方戏曲手抄本更是世代艺人口耳相传与坊刻杂糅的结晶，宜按具体藏本馆藏号与校勘版次逐一辨正。本群组编目参照徐华龙主编《中国鬼文化大辞典》（1994，ISBN 978-7-5363-2780-1）之戏曲宝卷书目线索独立撰写。
+    note_kind: research
+    sources:
+      - citation: 'Stephen F. Teiser (1994). The Scripture on the Ten Kings and the Making of Purgatory in Medieval Chinese Buddhism. University of Hawaii Press / Internet Archive.'
+        type: academic_monograph
+        url: https://archive.org/details/scriptureontenki0000teis
+        locator: 敦煌《佛说十王经》（含 S.3961 等写本）长短版本校勘及冥界官僚图像源流
+      - citation: 中国非物质文化遗产保护中心，《宝卷（靖江宝卷、河西宝卷）》。
+        type: official_standard
+        url: https://www.ihchina.cn/project_details/12192/
+        locator: 民间宣卷宝卷文献体裁、说唱仪轨与劝善流传空间档案
+      - citation: 〔元〕关汉卿撰，《感天动地窦娥冤》，维基文库元曲校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E6%84%9F%E5%A4%A9%E5%8B%95%E5%9C%B0%E7%AB%87%E5%A8%A5%E5%86%A4
+        locator: 元杂剧鬼魂诉冤与六月飞雪誓愿戏剧文献范本
+      - citation: 〔明〕汤显祖撰，《牡丹亭》，维基文库校本。
+        type: historical_text_transcription
+        url: https://zh.wikisource.org/wiki/%E7%89%A1%E4%B8%B9%E4%BA%AD
+        locator: 明代传奇《冥判》《魂游》《回生》戏曲剧本原文
+    relations:
+      - type: ATTESTS_MOTIF
+        target: motif_cn_underworld_bureaucracy_system
+        weight: 1.0
+        note: 敦煌《十王经》、宝卷宣讲文本及《玉历宝钞》系统实证十殿阎罗、判官簿录与冥契果报母题。
+      - type: ATTESTS_MOTIF
+        target: motif_cn_zhiguai_ghost_opera
+        weight: 1.0
+        note: 元明公案还魂戏曲、目连仪式剧与民间唱本集中实证鬼魂鸣冤、阴审断狱与离魂复生母题。
+      - type: ATTESTS_MOTIF
+        target: index_ocm_776
+        weight: 1.0
+        note: 冥界经卷与戏曲对幽冥神判及亡灵动机的系统描绘直接对应 OCM 776。
+      - type: EXPLAINED_BY
+        target: mech_underworld_bureaucratic_projection
+        weight: 1.0
+        status: contested
+        note: 经变写本的文牒体例与戏曲阴审剧场体现官僚司法结构向死后秩序的投射及冤情代偿。
+      - type: COMPARED_WITH
+        target: corpus_theme_between_life_death
+        weight: 1.0
+        note: 人间与冥界戏剧、传说及跨文化生死书写语料群对照。
+      - type: COMPARED_WITH
+        target: corpus_cn_ich_2006_13
+        weight: 1.0
+        note: 国家级非遗河西宝卷口传与抄本文献项目。
+      - type: COMPARED_WITH
+        target: corpus_cn_ich_2021_1381
+        weight: 1.0
+        note: 国家级非遗包公故事与民间公案断狱口传谱系。
+      - type: COMPARED_WITH
+        target: case_cn_qimen_mulian_opera
+        weight: 1.0
+        note: 徽州目连戏地府寻母仪式演剧代表案例。
+      - type: COMPARED_WITH
+        target: case_sg_haw_par_ten_courts
+        weight: 1.0
+        note: 《玉历宝钞》十殿体系在现代南洋雕像园林中的公共转化。
+      - type: COMPARED_WITH
+        target: case_cn_tw_lintoujie_gezaixi
+        weight: 1.0
+        note: 台湾地方戏曲《林投姐》冤魂追索剧本演变案例。

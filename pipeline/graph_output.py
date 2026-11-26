@@ -2,7 +2,9 @@
 
 from contextlib import closing
 import json
+import os
 from pathlib import Path
+import shutil
 import sqlite3
 from tempfile import TemporaryDirectory
 
@@ -93,4 +95,9 @@ def publish_graph(path: Path, graph: dict, output_format: str) -> None:
             staged.write_text(graph_json(graph, compact=True) + "\n", encoding="utf-8", newline="\n")
         else:
             write_sqlite(staged, graph)
-        staged.replace(path)
+        try:
+            staged.replace(path)
+        except PermissionError:
+            if os.name != "nt":
+                raise
+            shutil.copyfile(staged, path)

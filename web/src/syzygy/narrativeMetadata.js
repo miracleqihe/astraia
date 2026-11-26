@@ -10,3 +10,12 @@ export function genreContract(node) {
 export function sourceTier(node) {
   return ['S','A','B','C'].includes(node?.credibility_tier) ? node.credibility_tier : null;
 }
+
+// F describes a fictional work rather than a missing S–C source assessment.
+export function narrativeDisplay(node) {
+  const fiction = node?.credibility_tier === 'F' || node?.is_fictional_quarantine;
+  const contract = genreContract(node);
+  const rank = fiction ? 'F 级虚构' : `来源等级 ${sourceTier(node) ?? '未记录'}`;
+  const genre = fiction && contract === 'FABULATE' ? '虚构作品' : genreLabels[contract];
+  return `${rank} · 体裁 ${genre}`;
+}

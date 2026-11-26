@@ -847,5 +847,357 @@
     "entry": "REL-5-0001",
     "reason": "仪式阈限阶段与地方民间实践、传承结构并置对读",
     "propagate_edges": true
+  },
+  {
+    "id": "relay-node-wugu-law",
+    "trigger": "node_id",
+    "match": "motif_cn_wugu_poison_complex",
+    "entry": "LAW-CN-CRI-008",
+    "reason": "巫蛊指控刑律沿革对照刑事案件材料保全与证据时间线方法",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-wugu-hea",
+    "trigger": "node_id",
+    "match": "motif_cn_wugu_poison_complex",
+    "entry": "HEA-TOPIC-0002",
+    "reason": "蓄蛊传闻与现实疑似中毒的急救处置及毒物排查原则对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-yansheng-arc",
+    "trigger": "node_id",
+    "match": "motif_cn_yansheng_talisman_seal",
+    "entry": "ARC-3-0001",
+    "reason": "工匠厌胜镇物母题直连中国古建木结构体系与梁架构造常识",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-yansheng-his",
+    "trigger": "node_id",
+    "match": "motif_cn_yansheng_talisman_seal",
+    "entry": "HIS-4-0002",
+    "reason": "镇宅器物与木偶镇物母题对照物质文化研究及器物传记方法",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-zhuyou-rel",
+    "trigger": "node_id",
+    "match": "motif_cn_zhuyou_incantation_craft",
+    "entry": "REL-5-0004",
+    "reason": "祝由咒禁医疗母题对照民间疗愈、信仰实践与现代医疗共存",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-zhuyou-hea",
+    "trigger": "node_id",
+    "match": "motif_cn_zhuyou_incantation_craft",
+    "entry": "HEA-011",
+    "reason": "符禁疗疾传统与现代健康信息来源及证据等级标准对照",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-guardians-rel",
+    "trigger": "node_id",
+    "match": "motif_cn_household_apotropaic_guardians",
+    "entry": "REL-5-0007",
+    "reason": "门户守护神系与驱傩镇宅对照家庭神龛、圣像与日常宗教空间",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-guardians-arc",
+    "trigger": "node_id",
+    "match": "motif_cn_household_apotropaic_guardians",
+    "entry": "ARC-3-0011",
+    "reason": "宅院门户厌胜格局对照传统合院建筑的宅门、院落与空间界限",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-zhubing-gu-his",
+    "trigger": "node_id",
+    "match": "corpus_cn_zhubing_gu_toxicology",
+    "entry": "HIS-6-0001",
+    "reason": "隋唐医典与律令蛊毒文献群对照史料批判与文献来源评估方法",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-zhubing-gu-hea",
+    "trigger": "node_id",
+    "match": "corpus_cn_zhubing_gu_toxicology",
+    "entry": "HEA-070",
+    "reason": "古典蛊毒方药文献对照草药、补剂与处方药共同核对安全知识",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-suishi-rel",
+    "trigger": "node_id",
+    "match": "corpus_cn_suishi_talisman_almanacs",
+    "entry": "REL-5-0008",
+    "reason": "岁时辟邪与符箓文献群对照地方节气、生态知识与仪式日历",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-suishi-his",
+    "trigger": "node_id",
+    "match": "corpus_cn_suishi_talisman_almanacs",
+    "entry": "HIS-6-0009",
+    "reason": "岁时记注与民间符本抄件对照抄本异文、校勘与版本选择方法",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-gu-scapegoat-soc",
+    "trigger": "node_id",
+    "match": "mech_gu_sorcery_social_scapegoat",
+    "entry": "SOC-1-0009",
+    "reason": "蛊毒替罪机制直连社会污名、标签化过程与排斥后果分析",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-gu-scapegoat-law",
+    "trigger": "node_id",
+    "match": "mech_gu_sorcery_social_scapegoat",
+    "entry": "LAW-CN-CRI-005",
+    "reason": "历史巫蛊冤狱教训对照现代刑事辩护权与程序正义制度保障",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-boundary-seal-arc",
+    "trigger": "node_id",
+    "match": "mech_apotropaic_boundary_seal",
+    "entry": "ARC-5-0001",
+    "reason": "门户边界封闭心理对照住宅出入口、通道尺度与空间安全设计",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-boundary-seal-rel",
+    "trigger": "node_id",
+    "match": "mech_apotropaic_boundary_seal",
+    "entry": "REL-5-0007",
+    "reason": "门槛厌胜心理防御与日常宗教空间中的祈福避煞习俗并置阅读",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-poison-panic-his",
+    "trigger": "node_id",
+    "match": "theory_poison_panic_projection",
+    "entry": "HIS-3-0006",
+    "reason": "疫疠毒性焦虑投射理论对照历史疫情传播网络与人口实证证据",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-poison-panic-soc",
+    "trigger": "node_id",
+    "match": "theory_poison_panic_projection",
+    "entry": "SOC-5-0002",
+    "reason": "投毒放蛊集体恐慌对照谣言扩散、错误信息识别与事实核查",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-sympathetic-lit",
+    "trigger": "node_id",
+    "match": "theory_sympathetic_contagious_magic_cn",
+    "entry": "LIT-1-0002",
+    "reason": "交感巫术相似与接触律对照语言意象、隐喻联想与象征修辞机制",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-sympathetic-rel",
+    "trigger": "node_id",
+    "match": "theory_sympathetic_contagious_magic_cn",
+    "entry": "REL-5-0002",
+    "reason": "符篆署名与气脉象征律则对照民间信仰分类、混融与历史语境",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-zhenwu-arc",
+    "trigger": "node_id",
+    "match": "motif_cn_zhenwu_material_taxonomy",
+    "entry": "ARC-3-0015",
+    "reason": "中国镇物建筑与屋脊石雕形态直连闽南红砖古厝、石构件及屋脊构法",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-zhenwu-geo",
+    "trigger": "node_id",
+    "match": "motif_cn_zhenwu_material_taxonomy",
+    "entry": "GEO-LAND-0101",
+    "reason": "石敢当、风狮爷等自然与石雕镇物对照三大岩类结构及建筑石材观察",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-gu-statutes-law",
+    "trigger": "node_id",
+    "match": "corpus_cn_imperial_wugu_statutes",
+    "entry": "LAW-CN-CRI-015",
+    "reason": "历代巫蛊律令与供证审讯对照现代刑事案件证人线索记录与接触边界",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-gu-statutes-his",
+    "trigger": "node_id",
+    "match": "corpus_cn_imperial_wugu_statutes",
+    "entry": "HIS-6-0006",
+    "reason": "造畜蛊毒法典与基层习惯法制裁对照档案沉默、保存制度与历史可见性",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-asc-wugu-hea",
+    "trigger": "node_id",
+    "match": "theory_altered_states_wugu_psychiatry",
+    "entry": "HEA-075",
+    "reason": "非常意识状态与巫蛊心身症候对照惊恐样发作及器质性病因急诊鉴别",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-asc-wugu-soc",
+    "trigger": "node_id",
+    "match": "theory_altered_states_wugu_psychiatry",
+    "entry": "SOC-6-0002",
+    "reason": "跨文化出神与附体口述研究对照民族志访谈、田野观察与研究伦理",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-zhenwu-mech-rel",
+    "trigger": "node_id",
+    "match": "mech_zhenwu_symbolic_materialization",
+    "entry": "REL-5-0009",
+    "reason": "镇物符号物化机制直连民间仪式物制作、传统手工艺与地方传承实践",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-zhenwu-mech-lit",
+    "trigger": "node_id",
+    "match": "mech_zhenwu_symbolic_materialization",
+    "entry": "LIT-3-0008",
+    "reason": "镇物作为空间边界次级能动者对照戏剧道具、舞台指示与物质符号机制",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-underworld-law",
+    "trigger": "node_id",
+    "match": "motif_cn_underworld_bureaucracy_system",
+    "entry": "LAW-CN-PUB-008",
+    "reason": "冥府十殿判官文牒与放赦程序对照现代行政处罚文书事实、证据与决定核验",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-underworld-rel",
+    "trigger": "node_id",
+    "match": "motif_cn_underworld_bureaucracy_system",
+    "entry": "REL-2-0009",
+    "reason": "十殿阎罗与功过簿籍观念直连业与轮回观念的宗派差异及解释边界",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-nuo-liminal-rel",
+    "trigger": "node_id",
+    "match": "motif_cn_nuo_funeral_liminal_rites",
+    "entry": "REL-3-0010",
+    "reason": "大傩逐疫、中元普度与招魂丧葬母题直连丧葬仪式、哀悼规范与社群差异",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-nuo-liminal-hea",
+    "trigger": "node_id",
+    "match": "motif_cn_nuo_funeral_liminal_rites",
+    "entry": "HEA-074",
+    "reason": "丧葬招魂、回煞与祭奠仪典对照现代临床悲伤反应识别与心理支持资源",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-ethnic-spirits-geo",
+    "trigger": "node_id",
+    "match": "motif_cn_ethnic_spirits_marvels",
+    "entry": "GEO-LAND-0022",
+    "reason": "山海异兽、山林物候精怪与生态禁忌对照山坡朝向、日照与植被线索印证",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-ethnic-spirits-lit",
+    "trigger": "node_id",
+    "match": "motif_cn_ethnic_spirits_marvels",
+    "entry": "LIT-5-0006",
+    "reason": "多民族山水精灵谱系与白泽博物图谱对照生态批评与非人类叙事视角",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-zhiguai-opera-lit",
+    "trigger": "node_id",
+    "match": "motif_cn_zhiguai_ghost_opera",
+    "entry": "LIT-3-0001",
+    "reason": "志怪公案戏曲与目连鬼戏母题群直连戏剧结构与舞台行动逻辑分析",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-zhiguai-opera-for",
+    "trigger": "node_id",
+    "match": "motif_cn_zhiguai_ghost_opera",
+    "entry": "FOR-3-0001",
+    "reason": "冤魂公案与阴审断狱叙事对照现代法医病理学中死亡原因、机制与方式界分",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-global-myth-phi",
+    "trigger": "node_id",
+    "match": "motif_global_comparative_myth_complex",
+    "entry": "PHI-6-0004",
+    "reason": "跨大洲创世、冥界试炼与宇宙秩序母题对照跨传统哲学比较与历史语境方法",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-global-myth-his",
+    "trigger": "node_id",
+    "match": "motif_global_comparative_myth_complex",
+    "entry": "HIS-6-0010",
+    "reason": "全球神话谱系与欧亚非美猎巫附体比较直连历史比较、案例选择与类比限度",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-underworld-corpus-his",
+    "trigger": "node_id",
+    "match": "corpus_cn_underworld_scriptures_opera",
+    "entry": "HIS-6-0009",
+    "reason": "敦煌《十王经》写卷、宝卷与戏曲异文文献群直连抄本异文、文本校勘与版本选择",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-underworld-corpus-lit",
+    "trigger": "node_id",
+    "match": "corpus_cn_underworld_scriptures_opera",
+    "entry": "LIT-3-0009",
+    "reason": "目连仪式鬼戏与公案戏曲唱本群对照演出记录、排演过程与版本比较方法",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-four-pervasiveness-arc",
+    "trigger": "node_id",
+    "match": "theory_zhenwu_four_pervasiveness",
+    "entry": "ARC-3-0010",
+    "reason": "镇物自然与人工载体遍布聚落建筑对照地方民居形制记录、地貌与街区观测",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-four-pervasiveness-soc",
+    "trigger": "node_id",
+    "match": "theory_zhenwu_four_pervasiveness",
+    "entry": "SOC-1-0003",
+    "reason": "镇物“无人不与、无物不用”的社群礼俗规约直连社会规范、角色与制裁分析",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-bureaucratic-proj-soc",
+    "trigger": "node_id",
+    "match": "mech_underworld_bureaucratic_projection",
+    "entry": "SOC-2-0004",
+    "reason": "帝制官僚向冥府城隍与七十六司的制度投影对照官僚组织、执行链条与街头官僚",
+    "propagate_edges": true
+  },
+  {
+    "id": "relay-node-bureaucratic-proj-law",
+    "trigger": "node_id",
+    "match": "mech_underworld_bureaucratic_projection",
+    "entry": "LAW-CN-PUB-001",
+    "reason": "传统“告阴状”司法心理代偿机制对照现代行政复议与行政诉讼法定救济途径",
+    "propagate_edges": true
   }
 ]

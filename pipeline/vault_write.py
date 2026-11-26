@@ -38,10 +38,23 @@ def create_card(path: Path, content: bytes) -> None:
             os.link(temporary, path)
         except FileExistsError as error:
             raise VaultError(f"卡片已存在，保留现有内容。{path}") from error
+        except PermissionError:
+            if os.name != "nt":
+                raise
+            try:
+                with path.open("xb") as handle:
+                    handle.write(content)
+            except FileExistsError as error:
+                raise VaultError(f"卡片已存在，保留现有内容。{path}") from error
 
 
 def replace_card(path: Path, content: bytes) -> None:
     with TemporaryDirectory(prefix=".astraia-card-", dir=path.parent) as directory:
         temporary = Path(directory) / "card.tmp"
         temporary.write_bytes(content)
-        temporary.replace(path)
+        try:
+            temporary.replace(path)
+        except PermissionError:
+            if os.name != "nt":
+                raise
+            path.write_bytes(content)

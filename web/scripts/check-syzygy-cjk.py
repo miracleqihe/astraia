@@ -15,10 +15,20 @@ DATA = (ROOT / 'web/public/data/graph_data.json', ROOT / 'web/public/knowledge/d
         ROOT / 'web/src/syzygy/bridges.json', ROOT / 'web/src/syzygy/matching-rules.json',
         ROOT / 'web/src/syzygy/matching-concepts.json', ROOT / 'web/src/syzygy/matching-relays.json',
         ROOT / 'web/src/syzygy/reading-paths.json')
+TAXONOMY_DATA = [
+    path for path in (
+        ROOT / 'reference/thematic_taxonomy.json',
+        ROOT / 'web/public/syzygy/taxonomy.json',
+        *sorted((ROOT / 'reference/lexicon').glob('*.json')),
+        *sorted((ROOT / 'web/public/syzygy/lexicon').glob('*.json')),
+    )
+    if path.is_file()
+]
 UI = (list((ROOT / 'web/src/syzygy').glob('*.js')) + list((ROOT / 'web/src').glob('*.tsx'))
       + [ROOT / 'web/syzygy/index.html', ROOT / 'web/src/portalNavigation.ts',
          ROOT / 'web/src/engraving.ts'])
-texts = [json.dumps(json.loads(path.read_text(encoding='utf-8')), ensure_ascii=False) for path in DATA]
+texts = [json.dumps(json.loads(path.read_text(encoding='utf-8')), ensure_ascii=False)
+         for path in (*DATA, *TAXONOMY_DATA)]
 texts.extend(path.read_text(encoding='utf-8') for path in UI)
 used = {ord(char) for text in texts for char in text
         if 0x3400 <= ord(char) <= 0x9fff or 0x20000 <= ord(char) <= 0x2fa1f}
@@ -28,7 +38,8 @@ for weight in ('400', '600'):
     if not fonts:
         raise SystemExit('Noto Serif SC is missing. Install the web dependencies first.')
     fonts += [ROOT / f'web/public/fonts/astraia-cjk-supplement-{weight}.woff2',
-              ROOT / f'web/public/fonts/astraia-handbook-{weight}.woff2']
+              ROOT / f'web/public/fonts/astraia-handbook-{weight}.woff2',
+              ROOT / f'web/public/fonts/astraia-cjk-rare-{weight}.woff2']
     covered = set()
     for path in fonts:
         with TTFont(path) as font:

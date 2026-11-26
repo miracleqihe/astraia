@@ -1,0 +1,228 @@
+# 各则均为依据所列公开资料独立撰写的摘要；坐标仅作明示范围的地图参考。
+records:
+- id: case_ba_vares_katarina_white_rider
+  title: 波黑瓦雷什｜白衣骑手与山村访客
+  aliases: [Queen Katarina, 波斯尼亚白衣仙女, Vareš]
+  genre: folktale
+  credibility_tier: B
+  location: {lat: 44.164, lng: 18.329, precision: city, location_name: 波黑 · 瓦雷什地区, culture_region: 欧洲 · 波斯尼亚和黑塞哥维那}
+  location_note: 瓦雷什为数个受访村庄所在地区的参考点，并非故事中一处经过定位的现场。
+  paragraphs:
+  - 山村里有人说，一位身披白衣、骑白马的陌生女子从林中来到牧人身边。她不只问路，还细问村里收成如何、家家是否有足够的冬粮，然后给孩子们留下糖果。
+  - 另一则讲述把这位访客认作王后卡塔琳娜：她走进水磨坊，见到贫困的孩子，便每人赠一枚金币。不同村庄记住的是仙女、王后或善行，并没有共同的可核实目击地点。
+  - 《波斯尼亚精神》2011 年文章汇集了瓦雷什周边传说和不同采集者的版本；王后的历史身份与仙女骑行故事属于不同性质的材料。
+  sources:
+  - {citation: 'Mladen-Anto Molinar, “Legends about Queen Katarina,” Spirit of Bosnia, 2011.', type: research_essay, url: 'https://www.spiritofbosnia.org/volume-6-no-3-2011-july/legends-about-queen-katarina/', locator: '瓦雷什周边村庄两则传说及白衣仙女段落'}
+  bridge: {entry: HIS-6-0002, cluster: sid_myth, trail: all, label: 王后、仙女与地方讲述, rationale: 对读口述记忆与地方人物传说，注意不同讲述者保留的情节。}
+- id: case_ba_sarajevo_seven_brothers_wishes
+  title: 萨拉热窝｜七兄弟墓与许愿之路
+  aliases: [Seven Brothers Tomb, Sarajevo triangle of wishes, 七兄弟墓]
+  genre: folktale
+  credibility_tier: B
+  location: {lat: 43.8563, lng: 18.4131, precision: city, location_name: 波黑 · 萨拉热窝, culture_region: 欧洲 · 波斯尼亚和黑塞哥维那}
+  location_note: 萨拉热窝市中心参考点；许愿路线包含三处不同地点，不表示墓所精确坐标。
+  paragraphs:
+  - 萨拉热窝有一条关于心愿的地方说法：人们先到比斯特里克的七兄弟墓，再前往圣安多尼堂与方济各会修院，最后穿过河流去老东正教堂。回家时换一条路，仔细听路人说的第一句话，它或许能回应心中的疑问。
+  - 这条路线把不同社群的礼拜空间连成城市中的步行记忆。资料介绍了人们如何讲述和体验这一习俗，但并不能验证心愿是否实现，也不能把它当成所有居民共同遵循的规则。
+  sources:
+  - {citation: 'Visit B&H, “Sarajevo’s Triangle of Wishes.”', type: local_cultural_account, url: 'https://visitbih.ba/en/sarajevos-triangle-of-wishes/', locator: '七兄弟墓与三处祈愿路线'}
+  bridge: {entry: REL-5-0001, cluster: sid_myth, trail: all, label: 城市中的祈愿路径, rationale: 对读地方信仰与步行空间，保留不同社群和礼拜地点各自的背景。}
+- id: case_rs_strelac_vampire_fieldwork_2003
+  title: 塞尔维亚斯特雷拉茨｜被叫出名字的夜访者
+  aliases: [Strelac vampire stories, 卢日尼察吸血鬼, Gordana Blagojević]
+  genre: memorate
+  credibility_tier: B
+  location: {lat: 42.9847, lng: 22.4625, precision: city, location_name: 塞尔维亚 · 斯特雷拉茨村, culture_region: 欧洲 · 塞尔维亚}
+  location_note: 地图使用村庄参考点；受访家庭和叙事中的住宅未定位。
+  temporal: {year_start: 2003, year_end: 2003, era_label: 2003 年田野采录, uncertainty_note: 采录年不等于讲述中事件的发生年。}
+  paragraphs:
+  - 在塞尔维亚东南部斯特雷拉茨村，研究者记录到人们讲述一种会在夜里扰动家人和牲畜的吸血鬼。村民说，它可能发出响声、跳到亲属背上；有人主张转身面对它，把它做过的事说出来。
+  - 在这些说法里，疾病与家人照料也常被提起：有受访者认为，病人受到忽视会带来日后的纠缠。研究者于 2003 年田野访问后刊文，论文摘要呈现的是村民的解释，不是对超自然成因的证实。
+  sources:
+  - {citation: 'Gordana Blagojević, “A Contribution to the Vampire Studies among Serbs or Vampire Stories from Luznica,” Glasnik Etnografskog Instituta SANU, 2004, pp. 235–242.', type: academic_article, url: 'https://www.ceeol.com/search/article-detail?id=747169', locator: '公开英文摘要：斯特雷拉茨田野访问及应对方式；论文全文访问条件可能受限'}
+  - {citation: 'GeoNames, Strelac, Babušnica.', type: geographic_reference, url: 'https://www.geonames.org/search.html?country=RS&q=Strelac', locator: '村庄地区参考坐标'}
+  compare: [case_rs_kisiljevo_petar_vampire]
+  bridge: {entry: HIS-6-0002, cluster: sid_crypt, trail: all, label: 田野里的夜访故事, rationale: 将村民的口述、研究者的整理与事件证据分别阅读。}
+- id: case_pl_warsaw_black_volga_rumor
+  title: 华沙｜黑色伏尔加的街头传闻
+  aliases: [Black Volga, Czarna Wołga, 黑色伏尔加]
+  genre: urban_legend
+  credibility_tier: B
+  location: {lat: 52.2297, lng: 21.0122, precision: city, location_name: 波兰 · 华沙, culture_region: 欧洲 · 波兰}
+  location_note: 华沙市区参考点；这类说法在多处流传，不对应某一辆车或可核实的街口。
+  temporal: {year_start: 1960, year_end: 1979, era_label: 二十世纪六七十年代的传闻, uncertainty_note: 所写年代为报道对流传时期的概述，并非某次传闻事件的证实日期。}
+  paragraphs:
+  - 传闻中的黑色伏尔加车开得很慢，司机会向路人问路或问时间，然后突然把人带走。有人说司机是神职人员，也有人说是魔鬼；最令人担忧的版本把儿童说成目标。
+  - 故事后来又加进车内抽血等细节。波兰亚当·密茨凯维奇研究所介绍了这一都市传说及其流传版本，也提到研究者对真实绑架报道与传闻形成关系的一种解释；车内设备与超自然司机并无由此得到的证据。
+  sources:
+  - {citation: 'Marek Kępa, “8 Curious Urban Legends from Warsaw,” Culture.pl / Adam Mickiewicz Institute.', type: cultural_institution, url: 'https://culture.pl/en/article/8-curious-urban-legends-from-warsaw', locator: 'The Black Volga 一节'}
+  compare: [case_cn_shanghai_vampire_school_rumors]
+  bridge: {entry: SOC-5-0002, cluster: sid_liminal, trail: all, label: 传闻怎样获得具体形象, rationale: 对读都市传闻与事实核查，区分真实案件报道、后续转述和无法证实的细节。}
+- id: case_pl_warsaw_palace_hidden_station
+  title: 华沙｜文化宫地下的秘密车站
+  aliases: [Palace of Culture and Science tunnels, 文化科学宫地下通道]
+  genre: urban_legend
+  credibility_tier: B
+  location: {lat: 52.2297, lng: 21.0122, precision: city, location_name: 波兰 · 华沙市中心, culture_region: 欧洲 · 波兰}
+  location_note: 华沙市中心参考点，不标示建筑内部无法核对的通道。
+  paragraphs:
+  - 华沙文化科学宫建成后，关于地下室的说法不断增加：有人说那里有通向党政建筑的秘密通道，有人讲成连接中央火车站的地下车站。
+  - 另一种更沉重的传闻把施工中死去的工人说成被埋进墙内。Culture.pl 介绍这些说法时明确指出，地下秘密车站和埋墙情节并不属实；施工死亡与后来附着其上的故事应分别辨认。
+  sources:
+  - {citation: 'Marek Kępa, “8 Curious Urban Legends from Warsaw,” Culture.pl / Adam Mickiewicz Institute.', type: cultural_institution, url: 'https://culture.pl/en/article/8-curious-urban-legends-from-warsaw', locator: 'The Palace of Culture & Science 一节'}
+  bridge: {entry: ARC-4-0009, cluster: sid_liminal, trail: all, label: 大型建筑与城市记忆, rationale: 将建筑的可查历史与围绕地下空间形成的传闻并读。}
+- id: case_pl_warsaw_czerniakow_lake_ufo_1982
+  title: 华沙｜切尔尼亚库夫湖旁的光
+  aliases: [Czerniaków Lake UFO, Jeziorko Czerniakowskie, 华沙湖边飞碟传闻]
+  genre: memorate
+  credibility_tier: C
+  location: {lat: 52.204, lng: 21.080, precision: city, location_name: 波兰 · 华沙切尔尼亚库夫湖地区, culture_region: 欧洲 · 波兰}
+  location_note: 使用湖区附近参考点；资料仅称湖的北侧，不代表目击者所站的准确位置。
+  temporal: {year_start: 1982, year_end: 1982, era_label: 叙述所称 1982 年, uncertainty_note: 日期来自转述，未独立证实观测本身。}
+  paragraphs:
+  - 一篇关于华沙都市传闻的文章转述，1982 年秋天，一名男子与儿子在切尔尼亚库夫湖附近看到橙色光和形状奇异的物体。这个故事后来被列入当地不明飞行物传闻。
+  - 文章说，消息经由不明飞行物研究者转述，原讲述者没有公开身份；它也提醒读者不要把叙述本身当成外星来访的证明。湖边的电厂和夜间城市景观，是理解这个版本传播环境的背景。
+  sources:
+  - {citation: 'Marek Kępa, “8 Curious Urban Legends from Warsaw,” Culture.pl / Adam Mickiewicz Institute.', type: cultural_institution, url: 'https://culture.pl/en/article/8-curious-urban-legends-from-warsaw', locator: 'Aliens at Czerniaków Lake 一节；转述匿名目击'}
+  bridge: {entry: FOR-5-0005, cluster: sid_liminal, trail: all, label: 匿名目击与转述, rationale: 对读目击报告的记录链及不确定性，不把主题相似当作共同成因。}
+- id: case_pl_wegrow_twardowski_mirror
+  title: 波兰文格鲁夫｜被称作术士之镜的金属镜
+  aliases: [Twardowski’s mirror, Węgrów mirror, 特瓦尔多夫斯基的镜子]
+  genre: folktale
+  credibility_tier: B
+  location: {lat: 52.400, lng: 22.017, precision: city, location_name: 波兰 · 文格鲁夫, culture_region: 欧洲 · 波兰}
+  location_note: 文格鲁夫镇区参考点；坐标不对应镜子所在室内位置。
+  paragraphs:
+  - 波兰关于术士特瓦尔多夫斯基的许多故事里，他曾借镜子为思念亡妻的国王召见逝者。民间传说还说，他与魔鬼交换了知识和法术。
+  - 文格鲁夫教堂保存一面被称为他的镜子的金属镜。研究资料介绍，这面镜子的制作时间尚不明确，镜框可能制作于十八世纪；实物存在，并不证明传说中的召魂发生过。
+  sources:
+  - {citation: 'Marek Kępa, “7 Magical Artefacts from Poland,” Culture.pl / Adam Mickiewicz Institute, 2020.', type: cultural_institution, url: 'https://culture.pl/en/article/7-magical-artefacts-from-poland', locator: 'Twardowski’s mirror 一节'}
+  compare: [case_cn_dict2_guizhou_zhijin_banishing_mirror]
+  bridge: {entry: PHY-4-0004, cluster: sid_witch, trail: all, label: 镜子、实物与传说, rationale: 比较镜子的反射和两地叙事中的用途，主题相似不表示存在传播关系。}
+- id: case_pl_liw_yellow_lady_ring
+  title: 波兰利夫｜喜鹊巢里的两枚戒指
+  aliases: [Yellow Lady of Liw, Żółta Dama, 利夫黄衣夫人]
+  genre: folktale
+  credibility_tier: B
+  location: {lat: 52.385, lng: 21.971, precision: city, location_name: 波兰 · 利夫地区, culture_region: 欧洲 · 波兰}
+  location_note: 利夫地区参考点，不代表故事里建筑内的具体房间。
+  paragraphs:
+  - 传说城堡主人赠给妻子一枚戒指，戒指不见后他又补送一枚，第二枚也消失了。主人听信旁人的猜疑，将妻子视为背叛者并下令处死。
+  - 后来，人们在喜鹊巢中发现两枚戒指。故事说，悔恨的丈夫无法挽回妻子，而她的身影仍穿着黄色衣裙在城堡中徘徊。这是地方叙事的情节，人物遭遇与鬼魂现身没有被此文独立证实。
+  sources:
+  - {citation: 'Anna Cymer, “Nawiedzone miejsca. Gdzie w Polsce straszy?”, Culture.pl / Adam Mickiewicz Institute.', type: cultural_institution, url: 'https://culture.pl/pl/artykul/nawiedzone-miejsca-gdzie-w-polsce-straszy', locator: 'Zamek w Liwie 一节'}
+  bridge: {entry: HIS-6-0007, cluster: sid_liminal, trail: all, label: 城堡、冤情与纪念, rationale: 从建筑的地方讲述进入集体记忆，区分传说与可查档案。}
+- id: case_pl_plock_wodnica_star_necklace
+  title: 波兰普沃茨克｜水边索要星星的姑娘
+  aliases: [Płock Wodnica, 沃德尼察, 水妖星星项链]
+  genre: folktale
+  credibility_tier: B
+  location: {lat: 52.5468, lng: 19.7064, precision: city, location_name: 波兰 · 普沃茨克, culture_region: 欧洲 · 波兰}
+  location_note: 普沃茨克市区作为故事流传地参考；维斯瓦河畔具体河段未定位。
+  paragraphs:
+  - 一位年轻渔夫在维斯瓦河岸遇见美丽女子，向她求婚。女子答应，却先后要求琥珀项链、珍珠项链，最后又提出要一串天上的星星。
+  - 渔夫说自己无法摘下星辰，女子于是显露另一副可怖面貌，在水里掀起怒涛，河岸一角坍落。Culture.pl 将它介绍为普沃茨克地方水灵传说的一种版本，而非一次地貌事件记录。
+  sources:
+  - {citation: 'Marek Kępa, “8 Magical Depictions of Polish Legends,” Culture.pl / Adam Mickiewicz Institute.', type: cultural_institution, url: 'https://culture.pl/en/article/8-magical-depictions-of-polish-legends', locator: 'Him & Her 一节，普沃茨克 Wodnica 版本'}
+  compare: [case_cn_dict_zhuhua]
+  bridge: {entry: REL-5-0005, cluster: sid_myth, trail: all, label: 不同河流中的水边故事, rationale: 对读波兰与广西的水边叙事，比较人物关系而不推定传播。}
+- id: case_bo_lapaz_jaen_green_cross_widow
+  title: 拉巴斯｜哈恩街的绿十字与无脚寡妇
+  aliases: [Calle Jaén, Viuda de la calle Jaén, 哈恩街鬼故事]
+  genre: urban_legend
+  credibility_tier: B
+  location: {lat: -16.4897, lng: -68.1336, precision: city, location_name: 玻利维亚 · 拉巴斯市中心, culture_region: 南美 · 玻利维亚}
+  location_note: 拉巴斯市中心参考点；街上各版本对应的位置不完全一致。
+  temporal: {year_start: 2023, year_end: 2023, era_label: 2023 年媒体采访, uncertainty_note: 2023 年为采访报道时间，不是传闻起源或目击发生的确定日期。}
+  paragraphs:
+  - 拉巴斯的哈恩街有一座绿色十字，周围流传着不同解释。有人说它是为了让徘徊的亡灵安息，有人说是为了阻止一位没有脚、穿着长裙的寡妇拦住独行男子。
+  - 2023 年记者访问街区时，居民和警员讲述了脚步、金属声与旧人物身影的不同版本；其中也有人明确表示自己没有见过，只听过转述。真实街道与当地口述是可查资料，鬼魂和传说中的伤亡仍是未经证实的叙事。
+  sources:
+  - {citation: 'Iván Alejandro Paredes, “Historias tenebrosas de la calle Jaén en La Paz,” El Deber, 12 July 2023.', type: press_interview, url: 'https://eldeber.com.bo/la-paz/historias-tenebrosas-de-la-calle-jaen-en-la-paz_331696/', locator: '街坊采访、绿色十字与无脚寡妇'}
+  - {citation: 'Gobierno Autónomo Municipal de La Paz, “Alcaldía revive leyendas urbanas…”, 19 July 2023.', type: institutional_account, url: 'https://lapaz.bo/alcaldia-revive-leyendas-urbanas-con-un-recorrido-gratuito-por-vias-simbolicas-del-centro-paceno/', locator: '市政活动中的哈恩街都市传说路线'}
+  bridge: {entry: HIS-6-0002, cluster: sid_liminal, trail: all, label: 街访中的多种声音, rationale: 比较直接感受和转述，理解一条街如何积累不同的都市故事。}
+- id: case_bo_lapaz_pura_pura_duende_house
+  title: 拉巴斯｜树林里的小精灵屋
+  aliases: [Casa del Duende, Pura Pura, 普拉普拉精灵屋]
+  genre: urban_legend
+  credibility_tier: B
+  location: {lat: -16.4897, lng: -68.1336, precision: city, location_name: 玻利维亚 · 拉巴斯, culture_region: 南美 · 玻利维亚}
+  location_note: 拉巴斯市区参考点；不把具体建筑或可能的私人活动空间标为精确坐标。
+  paragraphs:
+  - 普拉普拉树林附近留有旧铁路设施。一座被称作“小精灵屋”的建筑曾与煤炭和苗木储存有关，如今人们把它与小个子精灵和夜间奇遇联系起来。
+  - 2025 年一篇本地报道采访历史研究者，转述了精灵名称与一名自称发现小人者的故事。废弃建筑及其用途有地方资料可查，精灵现身和商业吉凶则是传闻中的解释。
+  sources:
+  - {citation: 'Jhovana Cahuasa, “El secreto de Pura Pura: la Casa del Duende,” Red Uno, 30 October 2025.', type: press_interview, url: 'https://www.reduno.com.bo/noticias/video-el-secreto-de-pura-pura-conozca-la-misteriosa-casa-del-duende-en-la-paz-20251030112135', locator: '旧铁路设施及当地名称的采访'}
+  - {citation: 'Municipio de La Paz, “Pura Pura” conservación.', type: geographic_reference, url: 'https://sitservicios.lapaz.bo/biodiversidad/pig-pura-pura/', locator: '树林所在行政地区'}
+  bridge: {entry: ARC-4-0009, cluster: sid_liminal, trail: all, label: 城市遗址与故事, rationale: 对读旧铁路设施的用途与后来的地点传闻，不把传闻视作建筑史证据。}
+- id: case_bo_lapaz_choqueyapu_gold_hermit
+  title: 拉巴斯｜乔克亚普河旁的隐士和金子
+  aliases: [El Tesoro del Choqueyapu, 乔克亚普宝藏]
+  genre: folktale
+  credibility_tier: B
+  location: {lat: -16.4897, lng: -68.1336, precision: city, location_name: 玻利维亚 · 拉巴斯地区, culture_region: 南美 · 玻利维亚}
+  location_note: 拉巴斯市区参考点；隐士住处和传说中的地下室没有可核地点。
+  paragraphs:
+  - 河边传说有位独居者，平时用金沙换取生活所需。等他病倒，一群人来到住处寻找财富，只有两个孤儿留下照料他，后来被他收为孩子。
+  - 故事说，地下室藏着守卫般排列的古老遗骸与许多黄金。贪婪的村人最终为了财物互相争斗，而隐士带着孩子离开。玻利维亚通讯社转载的这个版本保留了完整情节；它不证明河边存在这样的宝库。
+  sources:
+  - {citation: 'Agencia Boliviana de Información, “Las leyendas que envuelven ... a La Paz,” 2022.', type: institutional_account, url: 'https://historico.abi.bo/index.php/reportajes/24460-las-leyendas-que-envuelven-en-un-manto-de-misterio-y-riqueza-cultural-a-la-paz', locator: 'El Tesoro del Choqueyapu 一节'}
+  bridge: {entry: HIS-6-0010, cluster: sid_myth, trail: all, label: 宝藏与道德故事, rationale: 将流传的宝藏叙事放回地方地理与叙述传统，避免由相似情节推断共同起源。}
+- id: case_cl_chiloe_pincoya_shellfish
+  title: 智利奇洛埃｜海边播撒贝类的平科亚
+  aliases: [Pincoya, Pincoy, 平科亚与平科伊]
+  genre: myth
+  credibility_tier: B
+  location: {lat: -42.60, lng: -73.90, precision: culture_region, location_name: 智利 · 奇洛埃群岛, culture_region: 南美 · 智利奇洛埃}
+  location_note: 群岛地区参考点；故事没有指向一处可核实的海滩。
+  paragraphs:
+  - 奇洛埃的一种说法里，海灵平科亚与伴侣平科伊照看近岸鱼贝。她面朝大海，在沙地上播撒贝类时，意味着那片水域会有丰收；若她转向内陆，贝类则可能变得稀少。
+  - 同一份采录还说，过于频繁地在同一处捕捞会让她离开。这个版本把海边生计、资源起伏与对海灵的敬重连在一起；它是文化叙事，不能直接作为渔业变化的测量结果。
+  sources:
+  - {citation: 'Julio Vicuña Cifuentes, Mitos y supersticiones, Santiago, 1915, p. 83; Biblioteca Nacional de Chile, Memoria Chilena.', type: archival_book, url: 'https://www.memoriachilena.gob.cl/archivos2/pdfs/MC0008702.pdf', locator: '印页 83，La Pincoya；该书转引 Francisco J. Cavada'}
+  - {citation: 'Biblioteca Nacional de Chile, “Religiosidad, mito e identidad chilota.”', type: cultural_archive, url: 'https://www.memoriachilena.gob.cl/602/w3-article-3672.html', locator: '群岛宗教与海洋信仰的背景介绍'}
+  compare: [case_cn_dict_zhuhua]
+  bridge: {entry: REL-5-0001, cluster: sid_myth, trail: all, label: 海灵与沿岸生活, rationale: 对读水域叙事与地方生计，尊重群岛文化语境及版本差异。}
+- id: case_br_auati_parana_curupira_whistle
+  title: 巴西奥阿蒂河｜林间小溪边的哨声
+  aliases: [Auati-Paraná Curupira, 阿马孙守林者哨声]
+  genre: folktale
+  credibility_tier: B
+  location: {lat: -2.39, lng: -66.70, precision: culture_region, location_name: 巴西 · 奥阿蒂—巴拉那保护区地区, culture_region: 南美 · 巴西亚马孙州}
+  location_note: 亚马孙州保护区的粗略区域参考，不标示任何具体社区或溪流；保护区横跨较大范围。
+  paragraphs:
+  - 奥阿蒂—巴拉那保护区的地方材料说，森林中的库鲁皮拉守护猎物，夜里可能出现在水边。更多时候，人们听到的只是哨声；循着声音走，猎人就可能离开熟悉的道路。
+  - 巴西保护区管理计划把这一讲述放在当地人的交谈、劳作与跨代记忆中。它与其他地方的库鲁皮拉版本有相似处，也各有不同，不宜把所有亚马孙社群说成只有一种故事。
+  sources:
+  - {citation: 'ICMBio, Plano de Manejo Participativo da Reserva Extrativista Auati-Paraná, p. 98.', type: institutional_field_record, url: 'https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/unidade-de-conservacao/unidades-de-biomas/amazonia/lista-de-ucs/resex-auati-parana/arquivos/plano_de_manejo_da_resex_do_auati-parana.pdf', locator: '印页 98，3.5.4 Folclore e Lendas Populares'}
+  - {citation: 'Câmara dos Deputados, Decreto de 7 de agosto de 2001, Reserva Extrativista Auatí-Paraná.', type: geographic_reference, url: 'https://www2.camara.leg.br/legin/fed/decret_sn/2001/decreto-164-7-agosto-2001-388946-publicacaooriginal-1-pe.html', locator: '第 2 条，保护区边界第一点附近的区域参考'}
+  compare: [case_br_sao_paulo_curupira]
+  bridge: {entry: HIS-6-0002, cluster: sid_crypt, trail: all, label: 同一人物的地方版本, rationale: 并读保护区记录与其他地区的守林者叙事，保留其采集背景。}
+- id: case_ls_sehlabathebe_water_serpent_mist
+  title: 莱索托塞赫拉巴特贝｜山顶雾中的水蛇
+  aliases: [Sehlabathebe water serpent, noha ea metsi, Moren’a Maliba]
+  genre: memorate
+  credibility_tier: B
+  location: {lat: -29.9167, lng: 29.1333, precision: culture_region, location_name: 莱索托 · 塞赫拉巴特贝国家公园地区, culture_region: 非洲 · 莱索托}
+  location_note: 国家公园范围的中心参考点，不代表特定水潭或受访者住处。
+  paragraphs:
+  - 在莱索托东部的山地与深潭旁，一些巴索托讲述者把水蛇与泉水、云雾和降雨联系起来。有人说，山顶聚起的雾意味着水蛇正在移动，或表达它的不悦。
+  - 联合国教科文组织资料保留了当地受访者关于水潭、雾和保护水源植被的说法，也记录大型水利工程如何引起对河流的讨论。这里呈现的是有具体语境的信仰与记忆，并不把雾或风暴归因于水蛇。
+  sources:
+  - {citation: 'UNESCO World Heritage Centre, Maloti-Drakensberg cultural documentation, pp. 24–26.', type: institutional_field_record, url: 'https://whc.unesco.org/document/156441', locator: '印页 24–26，水蛇、当地采访与塞赫拉巴特贝山雾'}
+  - {citation: 'Key Biodiversity Areas, Sehlabathebe site factsheet.', type: geographic_reference, url: 'https://www.keybiodiversityareas.org/en/site/factsheet/6468', locator: '保护区中心参考坐标'}
+  compare: [case_zw_mashonaland_kariba_nyaminyami]
+  bridge: {entry: GEO-RES-0011, cluster: sid_myth, trail: all, label: 水源叙事与环境变化, rationale: 并读社区讲述和风险沟通，保留地方信仰与可测的环境过程之间的区别。}
+- id: case_nz_wairoa_hine_korako_waterfall
+  title: 新西兰怀罗阿｜瀑布前停下的独木舟
+  aliases: [Hine-kōrako, Te Reinga waterfall taniwha, 希内科拉科]
+  genre: myth
+  credibility_tier: B
+  location: {lat: -39.039, lng: 177.420, precision: city, location_name: 新西兰 · 怀罗阿地区, culture_region: 大洋洲 · 毛利传统}
+  location_note: 怀罗阿地区参考点；特雷因加瀑布在更广的河流区域，并非此坐标处。
+  paragraphs:
+  - 毛利传统中的水灵希内科拉科曾与人结为伴侣，受到亲属冒犯后离开，来到特雷因加瀑布一带。她与当地人之间的联系并没有因此终止。
+  - 一个版本说，河水暴涨时，一条独木舟险些被冲向瀑布，她挡住船并救了船上旅人。新西兰百科全书将其作为塔尼瓦既可能令人畏惧、也可能守护人的例子；这一传统对不同社群有各自的意义。
+  sources:
+  - {citation: 'Basil Keane, “Taniwha,” Te Ara: The Encyclopedia of New Zealand.', type: cultural_encyclopedia, url: 'https://teara.govt.nz/en/taniwha', locator: 'Famous taniwha 段落，Hine-kōrako 与 Te Rēinga 瀑布'}
+  bridge: {entry: REL-5-0001, cluster: sid_myth, trail: all, label: 守护者与地方关系, rationale: 将水灵的保护角色放回毛利传统与具体河流语境，避免把所有水灵视为同一类怪物。}
