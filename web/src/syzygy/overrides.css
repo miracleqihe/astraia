@@ -1068,7 +1068,6 @@ body[data-observatory-panel='trails'] #observatory-popovers #trail-dock { displa
   .sidera-cluster-tag .plaque-full { display: none; }
   .sidera-cluster-tag .plaque-short { display: inline; }
   .world-tag .vol-plaque .font-serif-sc { font-size: 10.5px; letter-spacing: .03em; }
-  .wormhole-plaque .font-serif-sc > span + span { display: none; }
 }
 
 @media (max-width: 400px) {
