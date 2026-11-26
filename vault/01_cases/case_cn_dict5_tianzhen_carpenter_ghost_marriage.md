@@ -1,0 +1,67 @@
+---
+id: case_cn_dict5_tianzhen_carpenter_ghost_marriage
+title: 山西天镇｜夜宿荒野与坟前的婚事
+aliases:
+- 鬼婚
+node_type: case
+z_layer: 1
+genre: folktale
+credibility_tier: B
+is_fictional_quarantine: false
+spatial:
+  lat: 40.4195159
+  lng: 114.0840915
+  precision: city
+  location_name: 山西天镇
+  culture_region: 东亚 · 中国
+temporal: null
+standards:
+  atu_types: []
+  thompson_motifs: []
+  berezkin_codes: []
+  ocm_codes: []
+  macro_phylogeny: null
+mechanisms: []
+relations: []
+sources:
+- citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+  type: reference_book
+  url: null
+  doi: null
+  locator: “当代鬼话”，印页 511（PDF 第 626 页），条目“鬼婚”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  local_path: null
+  content_sha256: null
+- citation: 山西天镇地理参考。
+  type: geographic_reference
+  url: https://www.openstreetmap.org/relation/3230504
+  doi: null
+  locator: 地区或市县参考点；具体精度见地图说明。
+  local_path: null
+  content_sha256: null
+audit:
+  created_at: '2026-11-26'
+  reviewed_by_human: false
+  ai_confidence: null
+  is_sample: false
+  reviewer: null
+  reviewed_at: null
+  review_note: null
+  public_release: false
+  public_rights_note: null
+  public_content_sha256: null
+---
+
+## 故事梗概
+
+天镇故事里的木匠夜路迷失，看见一户人家，便请求借宿。屋内一位老人和一位年轻女子自称夫妻，他虽觉得不相称，还是住了下来。
+
+天亮后木匠发现自己睡在荒坟上，打听才知道此处曾有人为逝者配阴亲。故事把荒野借宿与地方婚丧观念连在一起。
+
+## 地图与年代
+
+地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+
+## 出处
+
+1. 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。 “当代鬼话”，印页 511（PDF 第 626 页），条目“鬼婚”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+2. 山西天镇地理参考。 地区或市县参考点；具体精度见地图说明。 [来源](https://www.openstreetmap.org/relation/3230504)

@@ -1,0 +1,345 @@
+{
+  "version": 1,
+  "domain_id": "classical_zhiguai_opera",
+  "title": "中国鬼文化大辞典：地方故事续编",
+  "entries": [
+    {
+      "id": "lex_dict5_changsha_opera_appeal",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "鬼告状",
+      "aliases": [],
+      "category": "地方故事与当代编目",
+      "region": "湖南长沙（辞典所记流传范围）",
+      "era": "辞典“当代鬼话”类目；发生与采录年代未注明",
+      "summary": "长沙一带的故事把场景放在一场庙会：包公戏正要开演，一名自称蒙冤而死的女子拉住扮演包公的戏子，向他倾诉遭丈夫杀害的经过。\n\n她带着戏子来到坟地；故事说，戏子查验后向官府告发，涉案者受到惩办。戏台上的审案角色，在叙事中越过舞台，成了替人申冤的人。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "“当代鬼话”，印页 484（PDF 第 599 页），条目“鬼告状”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。"
+        }
+      ],
+      "secondary_ref": "辞典转引文彦生《中国鬼话》（上海文艺出版社，1991）；未独立核查该书原件。",
+      "case_id": "case_cn_dict5_changsha_opera_appeal",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读庙会、戏台和坟地如何推动情节。"
+    },
+    {
+      "id": "lex_dict5_dengta_teacher_petition",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "鬼状",
+      "aliases": [],
+      "category": "地方故事与当代编目",
+      "region": "辽宁灯塔（辞典所记流传范围）",
+      "era": "辞典“当代鬼话”类目；发生与采录年代未注明",
+      "summary": "一则流传于灯塔的故事里，教书先生深夜遇见抱着孩子的女子。女子讲述自己受到丈夫诬陷并遇害，希望有人帮她说出冤情。\n\n先生连夜写下诉状，后来戏班又将此事编成戏，消息传到了县衙。故事将书写、表演和申诉连在一起，并未留下可核实的当事人住址。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "“当代鬼话”，印页 484（PDF 第 599 页），条目“鬼状”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。"
+        }
+      ],
+      "secondary_ref": "辞典转引文彦生《中国鬼话》（上海文艺出版社，1991）；未独立核查该书原件。",
+      "case_id": "case_cn_dict5_dengta_teacher_petition",
+      "knowledge_id": "LIT-2-0004",
+      "knowledge_note": "对读受害者如何借书写和表演获得诉说冤情的机会。"
+    },
+    {
+      "id": "lex_dict5_puning_zhongkui_swapped_face",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "丑鬼戏钟馗",
+      "aliases": [],
+      "category": "地方故事与当代编目",
+      "region": "广东普宁（辞典所记流传范围）",
+      "era": "辞典“当代鬼话”类目；发生与采录年代未注明",
+      "summary": "普宁地方故事说，钟馗原本相貌英俊，附近山洞里的丑鬼却想与他交换面容。丑鬼来到寺里，反而被钟馗吞下。\n\n丑鬼在腹中施展换脸的本领，钟馗被迫答应并放他离开。故事借一次出人意料的交换解释钟馗后来为何以异貌捉鬼。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "“当代鬼话”，印页 485（PDF 第 600 页），条目“丑鬼戏钟馗”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。"
+        }
+      ],
+      "secondary_ref": "辞典转引文彦生《中国鬼话》（上海文艺出版社，1991）；未独立核查该书原件。",
+      "case_id": "case_cn_dict5_puning_zhongkui_swapped_face",
+      "knowledge_id": "LIT-2-0001",
+      "knowledge_note": "对读人物外貌变化在地方叙事中的作用。"
+    },
+    {
+      "id": "lex_dict5_taicang_flatterer_underworld",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "马屁鬼",
+      "aliases": [],
+      "category": "地方故事与当代编目",
+      "region": "江苏太仓（辞典所记流传范围）",
+      "era": "辞典“当代鬼话”类目；发生与采录年代未注明",
+      "summary": "太仓故事中，阎王摆出阴差和牛头马面，准备审问一个善于逢迎的鬼，想用森严阵势使他害怕。\n\n受审者却反复称赞阎王公正无私，令其十分得意，最终被放过。故事把一场审讯写成对奉承与权力的讽刺。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "“当代鬼话”，印页 489（PDF 第 604 页），条目“马屁鬼”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。"
+        }
+      ],
+      "secondary_ref": "辞典转引文彦生《中国鬼话》（上海文艺出版社，1991）；未独立核查该书原件。",
+      "case_id": "case_cn_dict5_taicang_flatterer_underworld",
+      "knowledge_id": "LIT-2-0004",
+      "knowledge_note": "对读审讯者如何在奉承中放弃公正，以及叙事的讽刺立场。"
+    },
+    {
+      "id": "lex_dict5_lanxi_niu_ma_officials",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "牛备和马飞",
+      "aliases": [],
+      "category": "地方故事与当代编目",
+      "region": "浙江兰溪（辞典所记流传范围）",
+      "era": "辞典“当代鬼话”类目；发生与采录年代未注明",
+      "summary": "兰溪版本让牛备、马飞两名书生一同赴考：马飞擅长钻营而得志，牛备落第后又以梦境作说辞，谋得高位。\n\n二人后来结为同党，横行人间。故事让他们死后继续在阴间听差，借此讲述牛头马面的另一种来历。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "“当代鬼话”，印页 490（PDF 第 605 页），条目“牛备和马飞”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。"
+        }
+      ],
+      "secondary_ref": "辞典转引文彦生《中国鬼话》（上海文艺出版社，1991）；未独立核查该书原件。",
+      "case_id": "case_cn_dict5_lanxi_niu_ma_officials",
+      "knowledge_id": "LIT-2-0004",
+      "knowledge_note": "对读科举、权势和因果报应在叙事中的组合。"
+    },
+    {
+      "id": "lex_dict5_taicang_wandering_ghost_king",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "野鬼王",
+      "aliases": [],
+      "category": "地方故事与当代编目",
+      "region": "江苏太仓（辞典所记流传范围）",
+      "era": "辞典“当代鬼话”类目；发生与采录年代未注明",
+      "summary": "太仓地方故事说，秀才陈剑秋因不满考场舞弊而郁郁而终；由于阳寿未尽，他在阴间成了一名不受约束的野鬼。\n\n众鬼推举他为首，一同对付不平之事。故事最后让当年的考官当众承认罪行，并说此事后来得到处理。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "“当代鬼话”，印页 496（PDF 第 611 页），条目“野鬼王”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。"
+        }
+      ],
+      "secondary_ref": "辞典转引文彦生《中国鬼话》（上海文艺出版社，1991）；未独立核查该书原件。",
+      "case_id": "case_cn_dict5_taicang_wandering_ghost_king",
+      "knowledge_id": "LIT-2-0004",
+      "knowledge_note": "对读考试不公、死亡和伸冤如何构成故事。"
+    },
+    {
+      "id": "lex_dict5_linqing_ghost_brother_mud",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "人鬼兄弟",
+      "aliases": [],
+      "category": "地方故事与当代编目",
+      "region": "山东临清（辞典所记流传范围）",
+      "era": "辞典“当代鬼话”类目；发生与采录年代未注明",
+      "summary": "临清的故事里，一位老人在车水时遇见愿意帮忙的鬼，两者结成兄弟，一同对付欺压乡人的恶霸。后来鬼要去做阎王，两人依约再见。\n\n阎王送老人一个能化为姑娘的泥娃；恶霸把她抢走后，她又变回泥。官员在泥里发现诉状，故事以恶霸受惩结束。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "“当代鬼话”，印页 497（PDF 第 612 页），条目“人鬼兄弟”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。"
+        }
+      ],
+      "secondary_ref": "辞典转引文彦生《中国鬼话》（上海文艺出版社，1991）；未独立核查该书原件。",
+      "case_id": "case_cn_dict5_linqing_ghost_brother_mud",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读农田、阴间与泥娃如何推动叙事。"
+    },
+    {
+      "id": "lex_dict5_wuning_yaksha_gratitude",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "报恩夜叉",
+      "aliases": [],
+      "category": "地方故事与当代编目",
+      "region": "江西武宁（辞典所记流传范围）",
+      "era": "辞典“当代鬼话”类目；发生与采录年代未注明",
+      "summary": "武宁一则故事中，一位寡妇在打柴路上发现无人掩埋的遗体，便脱下衣物包裹并安葬。许多年后，她的孩子梦见有人承诺帮助他赴考。\n\n母亲说明当年的事，孩子后来考中并以立碑纪念这份善意。辞典将梦中的帮助写作被安葬者的报恩，而不是可核验的科举档案。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "“当代鬼话”，印页 499（PDF 第 614 页），条目“报恩夜叉”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。"
+        }
+      ],
+      "secondary_ref": "辞典转引文彦生《中国鬼话》（上海文艺出版社，1991）；未独立核查该书原件。",
+      "case_id": "case_cn_dict5_wuning_yaksha_gratitude",
+      "knowledge_id": "LIT-2-0004",
+      "knowledge_note": "对读陌生人之间的善意如何连接两个世代。"
+    },
+    {
+      "id": "lex_dict5_shanyin_gambler_straw_hut",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "李二鬼",
+      "aliases": [],
+      "category": "地方故事与当代编目",
+      "region": "山西山阴（辞典所记流传范围）",
+      "era": "辞典“当代鬼话”类目；发生与采录年代未注明",
+      "summary": "山阴故事中的李二鬼输了钱，夜间游荡时听见草屋里喧哗，进去发现有人聚赌。他向人借钱加入，起初赢了不少。\n\n赌徒们后来钻圈上吊，他才意识到自己遇见的是吊死鬼；一番惊险后他决定戒赌。草屋与赌局只属于地方故事中的场景。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "“当代鬼话”，印页 501（PDF 第 616 页），条目“李二鬼”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。"
+        }
+      ],
+      "secondary_ref": "辞典转引文彦生《中国鬼话》（上海文艺出版社，1991）；未独立核查该书原件。",
+      "case_id": "case_cn_dict5_shanyin_gambler_straw_hut",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读从夜行到草屋赌局的悬念转换。"
+    },
+    {
+      "id": "lex_dict5_kaihua_river_money_bag",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "还债",
+      "aliases": [],
+      "category": "地方故事与当代编目",
+      "region": "浙江开化（辞典所记流传范围）",
+      "era": "辞典“当代鬼话”类目；发生与采录年代未注明",
+      "summary": "开化地方故事里，商人将钱袋放在河边后失窃，误以为是一名路过女子拿走。两人争执时都跌入河中，故事让他们继续在阴间理论。\n\n阎王翻阅生死簿，将他们眼下的遭遇解释为前世的债。这里呈现的是地方叙事中的报应观，并非可据此核定的失窃案件。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "“当代鬼话”，印页 505（PDF 第 620 页），条目“还债”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。"
+        }
+      ],
+      "secondary_ref": "辞典转引文彦生《中国鬼话》（上海文艺出版社，1991）；未独立核查该书原件。",
+      "case_id": "case_cn_dict5_kaihua_river_money_bag",
+      "knowledge_id": "LIT-2-0004",
+      "knowledge_note": "比较不同角色如何解释责任，以及故事如何安排听者的判断。"
+    },
+    {
+      "id": "lex_dict5_shangyu_trader_wine_ghost",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "酒鬼",
+      "aliases": [],
+      "category": "地方故事与当代编目",
+      "region": "浙江上虞（辞典所记流传范围）",
+      "era": "辞典“当代鬼话”类目；发生与采录年代未注明",
+      "summary": "上虞流传的故事里，贩布人王大兴途经江山，在一座古庙投宿；他独自饮酒时遇到一位自称酒鬼的来客，两人连续三夜相伴对饮。\n\n临别时，来客请他代为向家人传话，并告知藏酒所在。贩布人回乡后照办，故事以家人找到陈酒作为回应。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "“当代鬼话”，印页 506（PDF 第 621 页），条目“酒鬼”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。"
+        }
+      ],
+      "secondary_ref": "辞典转引文彦生《中国鬼话》（上海文艺出版社，1991）；未独立核查该书原件。",
+      "case_id": "case_cn_dict5_shangyu_trader_wine_ghost",
+      "knowledge_id": "LIT-2-0006",
+      "knowledge_note": "对读古庙、夜间相遇与归乡如何构成叙事空间。"
+    },
+    {
+      "id": "lex_dict5_feicheng_midnight_flute",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "半夜不准吹奏乐器",
+      "aliases": [],
+      "category": "地方故事与当代编目",
+      "region": "山东肥城（辞典所记流传范围）",
+      "era": "辞典“当代鬼话”类目；发生与采录年代未注明",
+      "summary": "肥城地方故事中，瓜农王大胆夜里自制笛子，吹奏时招来一名要争吹笛子的鬼。他设法将来客赶走，对方却又回来报复。\n\n王大胆躲进豆秸堆，鬼没找到人，误以为自己已经得手。故事用这次夜间遭遇解释不在半夜吹奏的告诫。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "“当代鬼话”，印页 528（PDF 第 643 页），条目“半夜不准吹奏乐器”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。"
+        }
+      ],
+      "secondary_ref": "辞典转引文彦生《中国鬼话》（上海文艺出版社，1991）；未独立核查该书原件。",
+      "case_id": "case_cn_dict5_feicheng_midnight_flute",
+      "knowledge_id": "REL-5-0001",
+      "knowledge_note": "对读地方故事如何讲述夜间声音与行为禁忌。"
+    },
+    {
+      "id": "lex_dict5_zhuji_inn_bagua",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "门上贴八卦",
+      "aliases": [],
+      "category": "地方故事与当代编目",
+      "region": "浙江诸暨（辞典所记流传范围）",
+      "era": "辞典“当代鬼话”类目；发生与采录年代未注明",
+      "summary": "诸暨故事中，一名旅人住进黑店，察觉屋内气味异常，便按家传办法在门前布置八卦。店主养的鬼夜里试图进屋，直到鸡鸣也没能得逞。\n\n旅人随后报官，故事以黑店被处理结束；它将门上八卦解释为一种护身做法，不能由此推定具体历史案件。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "“当代鬼话”，印页 530（PDF 第 645 页），条目“门上贴八卦”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。"
+        }
+      ],
+      "secondary_ref": "辞典转引文彦生《中国鬼话》（上海文艺出版社，1991）；未独立核查该书原件。",
+      "case_id": "case_cn_dict5_zhuji_inn_bagua",
+      "knowledge_id": "REL-5-0001",
+      "knowledge_note": "对读护门符号如何进入夜宿与旅途叙事。"
+    },
+    {
+      "id": "lex_dict5_suzhou_umbrella_barber",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "撑伞避鬼",
+      "aliases": [],
+      "category": "地方故事与当代编目",
+      "region": "江苏（辞典所记流传范围）；苏州娄门为故事场景",
+      "era": "辞典“当代鬼话”类目；发生与采录年代未注明",
+      "summary": "故事将场景放在苏州，一位能看见阴间事物的剃头师傅为顾客理发时，说出米店老板将被鬼带走。恰巧顾客正是老板本人。\n\n老板后来请师傅喝酒，问出传说中鬼怕雨伞的办法，从此雨伞不离身。辞典用这一情节讲述撑伞避鬼说法的来历。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "“当代鬼话”，印页 530（PDF 第 645 页），条目“撑伞避鬼”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。"
+        }
+      ],
+      "secondary_ref": "辞典转引文彦生《中国鬼话》（上海文艺出版社，1991）；未独立核查该书原件。",
+      "case_id": "case_cn_dict5_suzhou_umbrella_barber",
+      "knowledge_id": "REL-5-0001",
+      "knowledge_note": "对读日常物件如何在地方叙事里获得护身意义。"
+    },
+    {
+      "id": "lex_dict5_honghu_wedding_lights",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "结婚习俗的由来",
+      "aliases": [],
+      "category": "地方故事与当代编目",
+      "region": "湖北洪湖（辞典所记流传范围）",
+      "era": "辞典“当代鬼话”类目；发生与采录年代未注明",
+      "summary": "洪湖故事说，银凤与保贵成婚，在迎亲回府途中，银凤的魂被鬼夺走，鬼冒作新娘进入新房，而保贵尚不知道。\n\n故事让银凤到阴间申冤，阴差赶来救下保贵。它又借此解释火把、舞龙和热闹新房等婚礼习俗；这是一种故事化的由来。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "“当代鬼话”，印页 532（PDF 第 647 页），条目“结婚习俗的由来”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。"
+        }
+      ],
+      "secondary_ref": "辞典转引文彦生《中国鬼话》（上海文艺出版社，1991）；未独立核查该书原件。",
+      "case_id": "case_cn_dict5_honghu_wedding_lights",
+      "knowledge_id": "REL-3-0007",
+      "knowledge_note": "对读迎亲、婚礼热闹与人生礼仪的联系。"
+    },
+    {
+      "id": "lex_dict5_wheel_yama_longs_to_go",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "阎王还去呢",
+      "aliases": [],
+      "category": "地方故事与当代编目",
+      "region": "辞典未注明明确流传地点，未设置地图点",
+      "era": "辞典“当代鬼话”类目；发生与采录年代未注明",
+      "summary": "这则无明确流传地点的鬼话描绘了阴间转生的程序：鬼在阴间停留后，要经大轮转往投生之处。一个鬼担心投到穷苦地方，向阎王询问有没有既富足又长生的去处。\n\n阎王答道，若真有这样的地方，自己也想前去，哪里轮得到别人。故事用问答和最后一句自嘲，把对富贵长生的愿望写成了一则讽刺小品。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "“当代鬼话”，印页 489（PDF 第 604 页），条目“阎王还去呢”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。"
+        }
+      ],
+      "secondary_ref": "辞典转引文彦生《中国鬼话》（上海文艺出版社，1991）；未独立核查该书原件。",
+      "knowledge_id": "LIT-2-0001",
+      "knowledge_note": "对读问答结构及末句反转怎样形成幽默。"
+    },
+    {
+      "id": "lex_dict5_rice_against_ghost_story",
+      "hub_id": "corpus_chinese_tale_catalogues",
+      "term": "出门不带刀，白米别忘袋中装",
+      "aliases": [],
+      "category": "地方故事与当代编目",
+      "region": "辞典未注明明确流传地点，未设置地图点",
+      "era": "辞典“当代鬼话”类目；发生与采录年代未注明",
+      "summary": "辞典转引的一则故事里，米三抓听从仙人指点，带上白米，长途跋涉寻找群鬼藏身的地方。他趁鬼昼间躺倒时抛出米粒，故事让众鬼随之消失。\n\n结尾又说，阎王因此告诫众鬼避开带米的人，进山者便随身带米。它是用日常谷物解释护身观念的一则缘起叙事；辞典没有标出明确流传地点。",
+      "primary_sources": [
+        {
+          "citation": "徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。",
+          "locator": "“当代鬼话”，印页 528、529（PDF 第 643、644 页），条目“出门不带刀，白米别忘袋中装”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。"
+        }
+      ],
+      "secondary_ref": "辞典转引文彦生《中国鬼话》（上海文艺出版社，1991）；未独立核查该书原件。",
+      "knowledge_id": "REL-5-0001",
+      "knowledge_note": "对读生活中易取得的物品如何进入地方知识和讲述。"
+    }
+  ]
+}

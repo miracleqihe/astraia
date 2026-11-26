@@ -1,0 +1,1926 @@
+records:
+- id: case_cn_dict5_changsha_opera_appeal
+  title: 湖南长沙｜庙会戏台前的诉冤
+  aliases:
+  - 鬼告状
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 28.19874
+    lng: 112.97087
+    precision: city
+    location_name: 湖南长沙
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 长沙一带的故事把场景放在一场庙会：包公戏正要开演，一名自称蒙冤而死的女子拉住扮演包公的戏子，向他倾诉遭丈夫杀害的经过。
+  - 她带着戏子来到坟地；故事说，戏子查验后向官府告发，涉案者受到惩办。戏台上的审案角色，在叙事中越过舞台，成了替人申冤的人。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 484（PDF 第 599 页），条目“鬼告状”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 湖南长沙地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1815577/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 戏台与申冤
+    rationale: 对读庙会、戏台和坟地如何推动情节。
+- id: case_cn_dict5_dengta_teacher_petition
+  title: 辽宁灯塔｜夜访书斋的抱孩女子
+  aliases:
+  - 鬼状
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 41.4244866
+    lng: 123.3335139
+    precision: city
+    location_name: 辽宁灯塔
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 一则流传于灯塔的故事里，教书先生深夜遇见抱着孩子的女子。女子讲述自己受到丈夫诬陷并遇害，希望有人帮她说出冤情。
+  - 先生连夜写下诉状，后来戏班又将此事编成戏，消息传到了县衙。故事将书写、表演和申诉连在一起，并未留下可核实的当事人住址。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 484（PDF 第 599 页），条目“鬼状”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 辽宁灯塔地理参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/2769640
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0004
+    cluster: sid_liminal
+    trail: all
+    label: 讲述与申冤
+    rationale: 对读受害者如何借书写和表演获得诉说冤情的机会。
+- id: case_cn_dict5_puning_zhongkui_swapped_face
+  title: 广东普宁｜钟馗与被换走的面容
+  aliases:
+  - 丑鬼戏钟馗
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 23.31072
+    lng: 116.16869
+    precision: city
+    location_name: 广东普宁
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 普宁地方故事说，钟馗原本相貌英俊，附近山洞里的丑鬼却想与他交换面容。丑鬼来到寺里，反而被钟馗吞下。
+  - 丑鬼在腹中施展换脸的本领，钟馗被迫答应并放他离开。故事借一次出人意料的交换解释钟馗后来为何以异貌捉鬼。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 485（PDF 第 600 页），条目“丑鬼戏钟馗”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 广东普宁地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1802940/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0001
+    cluster: sid_liminal
+    trail: all
+    label: 容貌变化与角色
+    rationale: 对读人物外貌变化在地方叙事中的作用。
+- id: case_cn_dict5_yantai_pengzu_three_visits
+  title: 山东烟台｜彭祖三次躲过阴差
+  aliases:
+  - 彭祖三气阎罗王
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 37.47649
+    lng: 121.44081
+    precision: city
+    location_name: 山东烟台
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 烟台一带的故事让彭祖先后面对前来捉拿他的阴差：第一次他将来客赶走，第二次又识破茶水中的毒计，以假死脱身。
+  - 许多年后，阎王化作游方郎中亲自前来，仍未得逞。辞典把这段长寿与斗智的想象列为地方鬼话，并非人物寿命记录。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 489（PDF 第 604 页），条目“彭祖三气阎罗王”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 山东烟台地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1787093/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0001
+    cluster: sid_liminal
+    trail: all
+    label: 三次来访与反转
+    rationale: 对读三次来访的重复结构如何推动故事节奏。
+- id: case_cn_dict5_taicang_flatterer_underworld
+  title: 江苏太仓｜阴间审讯中的逢迎者
+  aliases:
+  - 马屁鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 31.44778
+    lng: 121.09389
+    precision: city
+    location_name: 江苏太仓
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 太仓故事中，阎王摆出阴差和牛头马面，准备审问一个善于逢迎的鬼，想用森严阵势使他害怕。
+  - 受审者却反复称赞阎王公正无私，令其十分得意，最终被放过。故事把一场审讯写成对奉承与权力的讽刺。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 489（PDF 第 604 页），条目“马屁鬼”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 江苏太仓地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1793703/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0004
+    cluster: sid_liminal
+    trail: all
+    label: 审判与权力
+    rationale: 对读审讯者如何在奉承中放弃公正，以及叙事的讽刺立场。
+- id: case_cn_dict5_lanxi_niu_ma_officials
+  title: 浙江兰溪｜两个书生与牛头马面的来历
+  aliases:
+  - 牛备和马飞
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 29.21588
+    lng: 119.47156
+    precision: city
+    location_name: 浙江兰溪
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 兰溪版本让牛备、马飞两名书生一同赴考：马飞擅长钻营而得志，牛备落第后又以梦境作说辞，谋得高位。
+  - 二人后来结为同党，横行人间。故事让他们死后继续在阴间听差，借此讲述牛头马面的另一种来历。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 490（PDF 第 605 页），条目“牛备和马飞”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 浙江兰溪地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1804442/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0004
+    cluster: sid_liminal
+    trail: all
+    label: 仕途与叙事伦理
+    rationale: 对读科举、权势和因果报应在叙事中的组合。
+- id: case_cn_dict5_taicang_wandering_ghost_king
+  title: 江苏太仓｜落第书生与野鬼王
+  aliases:
+  - 野鬼王
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 31.44778
+    lng: 121.09389
+    precision: city
+    location_name: 江苏太仓
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 太仓地方故事说，秀才陈剑秋因不满考场舞弊而郁郁而终；由于阳寿未尽，他在阴间成了一名不受约束的野鬼。
+  - 众鬼推举他为首，一同对付不平之事。故事最后让当年的考官当众承认罪行，并说此事后来得到处理。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 496（PDF 第 611 页），条目“野鬼王”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 江苏太仓地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1793703/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0004
+    cluster: sid_liminal
+    trail: all
+    label: 科场舞弊与报偿
+    rationale: 对读考试不公、死亡和伸冤如何构成故事。
+- id: case_cn_dict5_linqing_ghost_brother_mud
+  title: 山东临清｜车水结义与泥娃
+  aliases:
+  - 人鬼兄弟
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 36.84092
+    lng: 115.71087
+    precision: city
+    location_name: 山东临清
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 临清的故事里，一位老人在车水时遇见愿意帮忙的鬼，两者结成兄弟，一同对付欺压乡人的恶霸。后来鬼要去做阎王，两人依约再见。
+  - 阎王送老人一个能化为姑娘的泥娃；恶霸把她抢走后，她又变回泥。官员在泥里发现诉状，故事以恶霸受惩结束。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 497（PDF 第 612 页），条目“人鬼兄弟”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 山东临清地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1803367/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 车水与再会
+    rationale: 对读农田、阴间与泥娃如何推动叙事。
+- id: case_cn_dict5_wuning_yaksha_gratitude
+  title: 江西武宁｜荒路掩埋与梦中的来信
+  aliases:
+  - 报恩夜叉
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 29.2777525
+    lng: 115.0476181
+    precision: city
+    location_name: 江西武宁
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 武宁一则故事中，一位寡妇在打柴路上发现无人掩埋的遗体，便脱下衣物包裹并安葬。许多年后，她的孩子梦见有人承诺帮助他赴考。
+  - 母亲说明当年的事，孩子后来考中并以立碑纪念这份善意。辞典将梦中的帮助写作被安葬者的报恩，而不是可核验的科举档案。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 499（PDF 第 614 页），条目“报恩夜叉”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 江西武宁地理参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3190448
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0004
+    cluster: sid_liminal
+    trail: all
+    label: 安葬与报恩
+    rationale: 对读陌生人之间的善意如何连接两个世代。
+- id: case_cn_dict5_shanyin_gambler_straw_hut
+  title: 山西山阴｜草屋赌局里的吊死鬼
+  aliases:
+  - 李二鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 39.52038
+    lng: 112.81684
+    precision: city
+    location_name: 山西山阴
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 山阴故事中的李二鬼输了钱，夜间游荡时听见草屋里喧哗，进去发现有人聚赌。他向人借钱加入，起初赢了不少。
+  - 赌徒们后来钻圈上吊，他才意识到自己遇见的是吊死鬼；一番惊险后他决定戒赌。草屋与赌局只属于地方故事中的场景。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 501（PDF 第 616 页），条目“李二鬼”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 山西山阴地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1814208/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 夜路与赌局
+    rationale: 对读从夜行到草屋赌局的悬念转换。
+- id: case_cn_dict5_tongshan_two_debt_spirits
+  title: 湖北通山｜两个托生者的不同境遇
+  aliases:
+  - 讨债鬼与还债鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 29.6081986
+    lng: 114.4775062
+    precision: city
+    location_name: 湖北通山
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 通山故事说，商人张甲听见两个鬼准备托生，其中一个将来到自己家。孩子出生后，他因先入为主地认定孩子是讨债鬼，对孩子十分苛刻。
+  - 多年后两鬼相遇，张家的孩子满腹怨气，另一个却在善待中生活得好。故事用相反境遇反讽人们对讨债与还债的预设。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 505（PDF 第 620 页），条目“讨债鬼与还债鬼”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 湖北通山地理参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3210408
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0004
+    cluster: sid_liminal
+    trail: all
+    label: 预设与待遇
+    rationale: 对读故事如何让先入为主的判断影响亲子关系。
+- id: case_cn_dict5_kaihua_river_money_bag
+  title: 浙江开化｜河边失物与阴间争讼
+  aliases:
+  - 还债
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 29.14586
+    lng: 118.40903
+    precision: city
+    location_name: 浙江开化
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 开化地方故事里，商人将钱袋放在河边后失窃，误以为是一名路过女子拿走。两人争执时都跌入河中，故事让他们继续在阴间理论。
+  - 阎王翻阅生死簿，将他们眼下的遭遇解释为前世的债。这里呈现的是地方叙事中的报应观，并非可据此核定的失窃案件。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 505（PDF 第 620 页），条目“还债”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 浙江开化地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1804873/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0004
+    cluster: sid_liminal
+    trail: all
+    label: 归责与前世债
+    rationale: 比较不同角色如何解释责任，以及故事如何安排听者的判断。
+- id: case_cn_dict5_shilin_official_servant_silver
+  title: 云南石林｜旧衙门的银子与书童
+  aliases:
+  - 杨其良
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 24.81878
+    lng: 103.33237
+    precision: city
+    location_name: 云南石林（旧称路南）
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。 旧称路南对应今石林县；旧辖域与现今行政边界可能不同。
+  paragraphs:
+  - 辞典记云南路南流传的故事：县官杨其良在衙门里发现前任留下的银钱，离任时为了隐瞒此事，杀害知情的书童。
+  - 故事说，书童的魂后来投生到杨家，杨其良最终不得善终。路南是辞典所记地名，地图以今石林县作区域参考。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 505（PDF 第 620 页），条目“杨其良”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 云南石林（旧称路南）地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/6825277/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0004
+    cluster: sid_liminal
+    trail: all
+    label: 财富与报偿
+    rationale: 对读财富、隐瞒与报应在地方故事中的安排。
+- id: case_cn_dict5_shangyu_trader_wine_ghost
+  title: 浙江上虞｜古庙里三夜对饮
+  aliases:
+  - 酒鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 30.01556
+    lng: 120.87111
+    precision: city
+    location_name: 浙江上虞
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。 书中另提江山为故事场景，不能把两处地点混同。
+  paragraphs:
+  - 上虞流传的故事里，贩布人王大兴途经江山，在一座古庙投宿；他独自饮酒时遇到一位自称酒鬼的来客，两人连续三夜相伴对饮。
+  - 临别时，来客请他代为向家人传话，并告知藏酒所在。贩布人回乡后照办，故事以家人找到陈酒作为回应。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 506（PDF 第 621 页），条目“酒鬼”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 浙江上虞地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1817720/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 古庙里的相遇
+    rationale: 对读古庙、夜间相遇与归乡如何构成叙事空间。
+- id: case_cn_dict5_shulan_returning_mother
+  title: 吉林舒兰｜归来的母亲与舅舅的怀疑
+  aliases:
+  - 儿悠
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 44.41134
+    lng: 126.94827
+    precision: city
+    location_name: 吉林舒兰
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 舒兰故事里，王山根在路上遇见已经去世的母亲，便把她接回家。母亲归来后的举止与从前不同，亲属逐渐感到疑惑。
+  - 舅舅察觉危险后试图阻止，最后一位道人出现，故事以妖异被制伏、受害者获救收尾。辞典记载的是一种地方讲法。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 509（PDF 第 624 页），条目“儿悠”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 吉林舒兰地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/2034761/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0004
+    cluster: sid_liminal
+    trail: all
+    label: 亲属关系与怀疑
+    rationale: 对读故事如何利用熟悉的家庭关系制造悬念。
+- id: case_cn_dict5_yiyuan_ghost_wife_return
+  title: 山东沂源｜荒山再遇与两位张氏
+  aliases:
+  - 还魂
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 36.18478
+    lng: 118.15486
+    precision: city
+    location_name: 山东沂源
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 沂源故事中，张生失去妻子，又在赴考失利后心情低落；他在荒山中见到熟悉的身影，便将她带回家。亲属试探后认为她并非活人。
+  - 张生放走她并约定再见，后来得知阴差原先抓错了另一位张氏；妻子最终还阳。故事借重名和误认完成团圆的转折。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 509（PDF 第 624 页），条目“还魂”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 山东沂源地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1799897/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0001
+    cluster: sid_liminal
+    trail: all
+    label: 重名与误认
+    rationale: 对读重名、错认和结尾反转的叙事手法。
+- id: case_cn_dict5_tianzhen_carpenter_ghost_marriage
+  title: 山西天镇｜夜宿荒野与坟前的婚事
+  aliases:
+  - 鬼婚
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 40.4195159
+    lng: 114.0840915
+    precision: city
+    location_name: 山西天镇
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 天镇故事里的木匠夜路迷失，看见一户人家，便请求借宿。屋内一位老人和一位年轻女子自称夫妻，他虽觉得不相称，还是住了下来。
+  - 天亮后木匠发现自己睡在荒坟上，打听才知道此处曾有人为逝者配阴亲。故事把荒野借宿与地方婚丧观念连在一起。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 511（PDF 第 626 页），条目“鬼婚”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 山西天镇地理参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3230504
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: REL-3-0007
+    cluster: sid_liminal
+    trail: all
+    label: 婚丧礼俗与叙事
+    rationale: 对读地方故事所呈现的婚丧观念，不推断具体墓址。
+- id: case_cn_dict5_linan_cheng_black_thread
+  title: 浙江杭州临安｜凤凰庙里的黑线
+  aliases:
+  - 程咬金镇鬼记
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 30.2371364
+    lng: 119.7192631
+    precision: city
+    location_name: 浙江杭州临安
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 临安流传的故事让程咬金夜宿凤凰庙，听见异响又看见黑影。旁人说，附近自从来了怪道之后便屡有异事。
+  - 次夜他与现身者搏斗，趁机将一根黑线系在对方衣上。众人顺线找到藏身处并合力制服怪物；庙名是故事场景，未据此定位实址。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 517（PDF 第 632 页），条目“程咬金镇鬼记”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 浙江杭州临安地理参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/3221181
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 追踪线索与庙宇
+    rationale: 对读庙宇、黑线和追踪如何组织一则夜宿故事。
+- id: case_cn_dict5_xiantao_xu_tricks_yama
+  title: 湖北仙桃｜徐苟三与阴间来客
+  aliases:
+  - 徐苟三智斗阎王爷
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 30.3708
+    lng: 113.44294
+    precision: city
+    location_name: 湖北仙桃
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 仙桃故事里，徐苟三在山上割草时与阎王结怨，接连遇到被派来捉拿自己的阴间来客。他利用对方的喜好与弱点，设法使他们退走。
+  - 最后阎王亲自出马，又中了徐苟三预先布置的圈套。故事以戏谑的方式描绘普通人与阴间权力之间的较量。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 518（PDF 第 633 页），条目“徐苟三智斗阎王爷”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 湖北仙桃地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1790371/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0001
+    cluster: sid_liminal
+    trail: all
+    label: 机智与喜剧反转
+    rationale: 对读重复来访和反转如何形成民间故事的喜剧节奏。
+- id: case_cn_dict5_yongji_yanwu_yama
+  title: 吉林永吉｜阎五识破三次来使
+  aliases:
+  - 阎五
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 43.6691488
+    lng: 126.4923091
+    precision: city
+    location_name: 吉林永吉
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 永吉一带的故事说，为人厚道的阎五寿数将尽，接连有阴间差役前来。他借口能替其中一位种出头发，又以计应对后来的来客。
+  - 狱帝亲自出面后，阎五骗得官服和坐骑，前往阴间。故事还把“阎五”和“阎王”联系起来，解释后者称谓的来历。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 523（PDF 第 638 页），条目“阎五”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 吉林永吉地理参考。
+    type: geographic_reference
+    url: https://www.openstreetmap.org/relation/2764054
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0001
+    cluster: sid_liminal
+    trail: all
+    label: 姓名与传说
+    rationale: 对读名字、误认与称谓缘起在故事中的作用。
+- id: case_cn_dict5_daming_red_stone_bridge
+  title: 河北大名｜造桥人再回故乡
+  aliases:
+  - 红石桥
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 36.28509
+    lng: 115.14454
+    precision: city
+    location_name: 河北大名
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 大名地方故事说，王和发出资修桥，后来不幸身亡。叙事让他投生到黄河南岸的一户人家，长大后又来到大名做生意。
+  - 他暗中接济王家的母子，家人追问之下才将他认作亡夫转世。故事以再次相认作结，辞典未提供桥的确切位置。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 524（PDF 第 639 页），条目“红石桥”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 河北大名地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1813915/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 桥梁与归乡
+    rationale: 对读桥梁、离散和再相认如何组织故事。
+- id: case_cn_dict5_donglan_soul_mountain
+  title: 广西东兰｜两块山石与勾魂山
+  aliases:
+  - 勾魂山
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 24.51367
+    lng: 107.37295
+    precision: city
+    location_name: 广西东兰
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 东兰故事里，一对夫妇外出后，家中发生了孩子受伤的事故；夫妇迁怒于照看孩子的老人，致使老人死去。
+  - 故事将老人的报复写成魂魄追索：夫妇后来化为两块巨石，逐渐成为山峰。它以一则悲剧叙事解释当地所说的山名。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 526（PDF 第 641 页），条目“勾魂山”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 广西东兰地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1812092/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0004
+    cluster: sid_liminal
+    trail: all
+    label: 家庭冲突与地名
+    rationale: 对读家庭悲剧与地名缘起在叙事中的联系。
+- id: case_cn_dict5_feicheng_midnight_flute
+  title: 山东肥城｜半夜笛声与豆秸堆
+  aliases:
+  - 半夜不准吹奏乐器
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 36.24861
+    lng: 116.76583
+    precision: city
+    location_name: 山东肥城
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 肥城地方故事中，瓜农王大胆夜里自制笛子，吹奏时招来一名要争吹笛子的鬼。他设法将来客赶走，对方却又回来报复。
+  - 王大胆躲进豆秸堆，鬼没找到人，误以为自己已经得手。故事用这次夜间遭遇解释不在半夜吹奏的告诫。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 528（PDF 第 643 页），条目“半夜不准吹奏乐器”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 山东肥城地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1789176/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: REL-5-0001
+    cluster: sid_liminal
+    trail: all
+    label: 声音与生活禁忌
+    rationale: 对读地方故事如何讲述夜间声音与行为禁忌。
+- id: case_cn_dict5_zhuji_inn_bagua
+  title: 浙江诸暨｜黑店房门上的八卦
+  aliases:
+  - 门上贴八卦
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 29.71877
+    lng: 120.24233
+    precision: city
+    location_name: 浙江诸暨
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 诸暨故事中，一名旅人住进黑店，察觉屋内气味异常，便按家传办法在门前布置八卦。店主养的鬼夜里试图进屋，直到鸡鸣也没能得逞。
+  - 旅人随后报官，故事以黑店被处理结束；它将门上八卦解释为一种护身做法，不能由此推定具体历史案件。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 530（PDF 第 645 页），条目“门上贴八卦”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 浙江诸暨地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1783940/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: REL-5-0001
+    cluster: sid_liminal
+    trail: all
+    label: 门前符号与故事
+    rationale: 对读护门符号如何进入夜宿与旅途叙事。
+- id: case_cn_dict5_suzhou_umbrella_barber
+  title: 江苏苏州｜剃头师傅泄露的雨伞秘密
+  aliases:
+  - 撑伞避鬼
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 31.30408
+    lng: 120.59538
+    precision: city
+    location_name: 江苏苏州
+    culture_region: 东亚 · 中国
+  location_note: 辞典所记流传范围为江苏，故事场景提到苏州娄门；地图以苏州市区作参考，不是具体街址。栏目名称不表示已知实际发生或采录年代。
+  paragraphs:
+  - 故事将场景放在苏州，一位能看见阴间事物的剃头师傅为顾客理发时，说出米店老板将被鬼带走。恰巧顾客正是老板本人。
+  - 老板后来请师傅喝酒，问出传说中鬼怕雨伞的办法，从此雨伞不离身。辞典用这一情节讲述撑伞避鬼说法的来历。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 530（PDF 第 645 页），条目“撑伞避鬼”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 江苏苏州地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1886760/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: REL-5-0001
+    cluster: sid_liminal
+    trail: all
+    label: 日用器物与禁忌
+    rationale: 对读日常物件如何在地方叙事里获得护身意义。
+- id: case_cn_dict5_honghu_wedding_lights
+  title: 湖北洪湖｜迎亲路上的替身
+  aliases:
+  - 结婚习俗的由来
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 29.81667
+    lng: 113.46667
+    precision: city
+    location_name: 湖北洪湖
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 洪湖故事说，银凤与保贵成婚，在迎亲回府途中，银凤的魂被鬼夺走，鬼冒作新娘进入新房，而保贵尚不知道。
+  - 故事让银凤到阴间申冤，阴差赶来救下保贵。它又借此解释火把、舞龙和热闹新房等婚礼习俗；这是一种故事化的由来。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 532（PDF 第 647 页），条目“结婚习俗的由来”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 湖北洪湖地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1789137/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: REL-3-0007
+    cluster: sid_liminal
+    trail: all
+    label: 婚礼与地方讲法
+    rationale: 对读迎亲、婚礼热闹与人生礼仪的联系。
+- id: case_cn_dict5_yichun_ghost_valley
+  title: 江西宜春｜鬼谷冲与财主家的钱柜
+  aliases:
+  - 鬼谷庙
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 27.83333
+    lng: 114.4
+    precision: city
+    location_name: 江西宜春
+    culture_region: 东亚 · 中国
+  location_note: 地图点是辞典所记流传地的市县或区域参考，并非故事中的住宅、道路、寺庙、墓地或事件的精确位置。“当代鬼话”是辞典栏目名称，不表示已知实际发生或采录年代。
+  paragraphs:
+  - 宜春故事里，盗窃成性的王家破坏山林，鬼谷冲的鬼取走了他家的财物。王家试图报复，先要毁掉鬼的藏身处，随后又准备放火烧山。
+  - 传说中的鬼两次反击，王家受到惩罚；辞典把这一则归入善鬼为民除害的故事。地图只表示宜春范围，不标出鬼谷冲实址。
+  sources:
+  - citation: 徐华龙主编：《中国鬼文化大辞典》，南宁：广西民族出版社，1994。
+    type: reference_book
+    locator: “当代鬼话”，印页 526（PDF 第 641 页），条目“鬼谷庙”。辞典明示转引文彦生《中国鬼话》（上海文艺出版社 1991 年版）；本次未独立核对该书原件或原始采录。
+  - citation: 江西宜春地理参考。
+    type: geographic_reference
+    url: https://www.geonames.org/1786746/
+    locator: 地区或市县参考点；具体精度见地图说明。
+  bridge:
+    entry: LIT-2-0004
+    cluster: sid_liminal
+    trail: all
+    label: 山林与惩恶故事
+    rationale: 对读山林、财物与惩恶如何组成地方故事。
+- id: case_cn_wugu_w3_lijiang_stones
+  title: 云南丽江｜飞来的石子与未兑现的修桥诺言
+  aliases: []
+  genre: memorate
+  credibility_tier: B
+  note_kind: legend
+  location:
+    lat: 26.8721
+    lng: 100.2299
+    precision: city
+    location_name: 云南丽江
+    culture_region: 东亚 · 中国
+  location_note: 坐标采用云南丽江的市县或区域参照点，用于浏览分布；不表示叙事、拍摄或仪式发生于该点，地点范围以正文和出处为准。
+  paragraphs:
+  - 一位老人向邓启耀回忆，丽江曾有一户人家不时遭遇飞石。石子仿佛从屋内飞出，围观的人越聚越多；传说连贴在门楼上的旗子也被打落。讲述者把这一切归到“小神子”身上，称它既会带来财运，也会戏弄主人。
+  - 这段口述又把怪事和一笔意外之财连在一起：家人从修桥现场获得财物，曾说发家后要修桥庙，却没有兑现。后来家人归还财物，并集资修桥盖庙；讲述者说，事情这才平息。故事里的还愿与飞石使人联想到公共承诺、财富和邻里议论。作者于1993年采访，老人所称发生时间是1939至1941年；两者不是同一时间，也不能据此证明飞石具有超自然原因。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025年4月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第三章第三节“役魂盗财”，丽江小神子飞石与修桥口述，1993年10月访谈；核读用户提供的流式电子书，按章节及叙事锚点定位，未核纸书页码；链接仅为书目，不是正文。
+  bridge:
+    entry: HIS-6-0002
+    cluster: sid_witch
+    trail: all
+    label: 回忆中的飞石
+    rationale: 对读口述史如何区分讲述时间、所忆时间与独立证据。此为主题对读，不表示因果、传播或科学验证。
+  temporal:
+    year_start: 1939
+    year_end: 1941
+    era_label: 受访者回忆1939—1941年；1993年采访
+    uncertainty_note: 所忆年代及事件未独立核实。
+- id: case_cn_wugu_w3_lijiang_red_snake
+  title: 云南丽江｜桥下红蛇与归还的财物
+  aliases: []
+  genre: memorate
+  credibility_tier: B
+  note_kind: legend
+  location:
+    lat: 26.8721
+    lng: 100.2299
+    precision: city
+    location_name: 云南丽江
+    culture_region: 东亚 · 中国
+  location_note: 坐标采用云南丽江的市县或区域参照点，用于浏览分布；不表示叙事、拍摄或仪式发生于该点，地点范围以正文和出处为准。
+  paragraphs:
+  - 同一位丽江讲述者还说，几位行路人来到木桥附近，看见桥下有一条红蛇，随后在桥下发现了首饰。他们将财物带回，传说红蛇也跟着进了家门。此后邻里纷纷送来象征性物件：在当地的讲述中，这表示人们已怀疑这家获得了会招财的东西。
+  - 得到财物的人最终将它送回原处。故事说，蛇又现身离去，家里才重新安宁。这里值得读的不只是蛇的奇异形象，还有财富如何通过邻里议论变成一件需要解释的事；这是作者1993年记录的一则口述，不是经独立证实的寻宝事件。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025年4月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第三章第三节“役魂盗财”，桥下红蛇与失物归还口述，1993年10月访谈；核读用户提供的流式电子书，按章节及叙事锚点定位，未核纸书页码；链接仅为书目，不是正文。
+  bridge:
+    entry: HIS-6-0002
+    cluster: sid_witch
+    trail: all
+    label: 桥边的财富传闻
+    rationale: 对读口述故事中的记忆与社区视角。此为主题对读，不表示因果、传播或科学验证。
+  compare:
+  - case_cn_wugu_w3_lijiang_stones
+- id: case_cn_wugu_w3_tonghai_fenghuang
+  title: 云南通海｜凤凰山地脉与挖不完的沟
+  aliases: []
+  genre: memorate
+  credibility_tier: B
+  note_kind: legend
+  location:
+    lat: 24.1122
+    lng: 102.76
+    precision: city
+    location_name: 云南通海
+    culture_region: 东亚 · 中国
+  location_note: 坐标采用云南通海的市县或区域参照点，用于浏览分布；不表示叙事、拍摄或仪式发生于该点，地点范围以正文和出处为准。
+  paragraphs:
+  - 通海兴蒙一带流传一则关于凤凰山和河西的故事：山势像为幼鸟觅食的母凤凰，山下人的辛劳被讲成一场地势与命运的较量。一个懂风水的人设计改变道路、牌坊与地沟，想让原来的权势格局逆转。
+  - 传说中，地沟总在一夜之间重新填满，故事后来出现了令人不安的牺牲情节，最后又以建桥阻止地脉合拢、施术者遇害收束。邓启耀在1980年通海采访中记录此说；故事所述久远年代、暴力和风水效应均不能当作已证实事件。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025年4月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第四章第一节“营造魇镇”，通海凤凰山与河西地脉传说，1980年2月采访；核读用户提供的流式电子书，按章节及叙事锚点定位，未核纸书页码；链接仅为书目，不是正文。
+  - citation: 通海县人民政府：《凤凰山下的蒙古族兴建“四位一体”项目》。
+    type: geographic_reference
+    url: https://www.tonghai.gov.cn/thxzfxxgk/czgz/20181022/970463.html
+    locator: 确认兴蒙乡邻凤凰山；不证明传说事件。
+  bridge:
+    entry: HIS-6-0002
+    cluster: sid_witch
+    trail: all
+    label: 山水里的社会记忆
+    rationale: 以口述史方法阅读一则以地貌表达地方权力的传说。此为主题对读，不表示因果、传播或科学验证。
+  temporal:
+    year_start: 1980
+    year_end: 1980
+    era_label: 1980年口述采访
+    uncertainty_note: 故事置于更早年代，未独立核验。
+- id: case_cn_wugu_w3_dongguan_hanjing
+  title: 广东东莞｜漳澎“喊惊”：叫一个人回家
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  note_kind: research
+  location:
+    lat: 23.0207
+    lng: 113.7518
+    precision: city
+    location_name: 广东东莞
+    culture_region: 东亚 · 中国
+  location_note: 坐标采用广东东莞的市县或区域参照点，用于浏览分布；不表示叙事、拍摄或仪式发生于该点，地点范围以正文和出处为准。
+  paragraphs:
+  - 在《巫蛊》所引东莞漳澎调查里，家人会用“受惊、魂离开了”的说法解释一些不安和病痛；被称为“喊惊”的仪式以呼唤名字为中心，盼望离散的魂重新归来。家庭成员、仪式主持者与受惊的人共同参与，仪式也成为家人表达关切的场景。
+  - 作者并列提到鲁迅所藏《叫惊》木刻，它记录的是另一历史时期的相关风俗，两者不能视为同一次田野观察。本节有项目组2014年的调查注，但该注与这段记录的确切对应关系待进一步核对；这里所记是地方信念和社会实践，不代表疾病原因或疗效已被证实。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025年4月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第七章第三节“叫魂”，东莞漳澎“喊惊”段；该节的2014年调查注与本段的对应关系待核；核读用户提供的流式电子书，按章节及叙事锚点定位，未核纸书页码；链接仅为书目，不是正文。
+  - citation: 东莞市农业农村局转载：《莞邑地名说｜麻涌镇：香飘四季的魅力水乡小镇》，2025。
+    type: geographic_reference
+    url: https://nyncj.dg.gov.cn/nyncj/gfgs/content/post_4472546.html
+    locator: 介绍麻涌及漳澎村，为地域旁证，不独立证明仪式细节。
+  bridge:
+    entry: REL-5-0005
+    cluster: sid_witch
+    trail: all
+    label: 呼唤与家庭照护
+    rationale: 对读叫魂叙述与口述传统的仪式语境。此为主题对读，不表示因果、传播或科学验证。
+  compare:
+  - case_cn_wugu_dongguan_shaoshu_village
+- id: case_cn_wugu_w3_honghe_yiche_calling
+  title: 云南红河｜贝玛的叫魂词与归家的路
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  note_kind: research
+  location:
+    lat: 23.396
+    lng: 103.385
+    precision: culture_region
+    location_name: 云南红河州
+    culture_region: 东亚 · 中国
+  location_note: 坐标采用云南红河州的市县或区域参照点，用于浏览分布；不表示叙事、拍摄或仪式发生于该点，地点范围以正文和出处为准。
+  paragraphs:
+  - 邓启耀记录红河哈尼族奕车人的叫魂活动：主持仪式的贝玛在门外念诵，呼唤失散的魂回到人身。书中的叫魂词想象魂走过沟坎、荆棘和各方道路，家人的声音则为它指向回家的方向。
+  - 作者拍摄的相关照片标注为1992年云南红河。它呈现的是特定语境下的关切与语言传统，并不能证明魂魄离身或仪式具有医疗效果。红河州地域广阔，地图点仅用州府蒙自作区域参照，不定位为拍摄村庄。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025年4月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第七章第三节“叫魂”，红河哈尼族奕车贝玛段及图7-21，照片标注1992年；核读用户提供的流式电子书，按章节及叙事锚点定位，未核纸书页码；链接仅为书目，不是正文。
+  bridge:
+    entry: REL-5-0005
+    cluster: sid_witch
+    trail: all
+    label: 归途与仪式语言
+    rationale: 对读仪式语言中道路、家与记忆的组织方式。此为主题对读，不表示因果、传播或科学验证。
+  temporal:
+    year_start: 1992
+    year_end: 1992
+    era_label: 1992年照片
+    uncertainty_note: 图注给出照片年代；叙述未精确到村寨。
+- id: case_cn_wugu_w3_weining_cuotaiji
+  title: 贵州威宁｜撮泰吉：戏里的扫寨与迎新
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  note_kind: research
+  location:
+    lat: 26.859
+    lng: 104.286
+    precision: city
+    location_name: 贵州威宁
+    culture_region: 东亚 · 中国
+  location_note: 坐标采用贵州威宁的市县或区域参照点，用于浏览分布；不表示叙事、拍摄或仪式发生于该点，地点范围以正文和出处为准。
+  paragraphs:
+  - 正月里，贵州威宁的撮泰吉把祭祀、耕作、喜庆与扫寨串成一场表演。面具人物在集体场地上行动，农事与迁徙记忆被转化为动作；到“扫火星”时，戏又走向村寨，寄托新年的平安愿望。
+  - 邓启耀将撮泰吉放在具有傩祭性质的节日活动中讨论。中国非物质文化遗产网的项目资料另说明它的表演地点、结构与传承背景；对于起源年代，资料明确说尚无定论。地图使用威宁县城参照，并非具体演出现场。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025年4月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第九章第三节“变身‘节日’的魇术”，贵州威宁撮泰吉及扫火星段；核读用户提供的流式电子书，按章节及叙事锚点定位，未核纸书页码；链接仅为书目，不是正文。
+  - citation: 中国非物质文化遗产网：中国非物质文化遗产数字博物馆，“彝族撮泰吉”。
+    type: website
+    url: https://www.ihchina.cn/project_details/13368
+    locator: 项目简介，表演的四个部分及起源尚无定论。
+  bridge:
+    entry: REL-3-0005
+    cluster: sid_witch
+    trail: all
+    label: 仪式如何成为戏
+    rationale: 对读身体、表演与仪式语境。此为主题对读，不表示因果、传播或科学验证。
+- id: case_cn_wugu_w3_huazhou_huapeng
+  title: 广东化州｜秋收后的跳花棚
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  note_kind: research
+  location:
+    lat: 21.6657
+    lng: 110.6396
+    precision: city
+    location_name: 广东化州
+    culture_region: 东亚 · 中国
+  location_note: 坐标采用广东化州的市县或区域参照点，用于浏览分布；不表示叙事、拍摄或仪式发生于该点，地点范围以正文和出处为准。
+  paragraphs:
+  - 秋收之后，化州部分地方的人们搭起棚，组织演员戴面具表演。吟唱与舞蹈穿插着农事、生活和祈愿：有接神、锄田、钓鱼，也有人物与戏谑，让一个祭仪空间同时成为村落的舞台。
+  - 《巫蛊》把“跳花棚”列入具有傩祭性质的节日表演；中国非物质文化遗产网则记载它在化州的流传、表演角色和内容。地图点是化州市区的地理参照，并非任一具体村庄或某场演出的定位。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025年4月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第九章第三节“变身‘节日’的魇术”，广东化州跳花棚列举；核读用户提供的流式电子书，按章节及叙事锚点定位，未核纸书页码；链接仅为书目，不是正文。
+  - citation: 中国非物质文化遗产网：中国非物质文化遗产数字博物馆，“跳花棚”。
+    type: website
+    url: https://www.ihchina.cn/art/detail/id/13100.html
+    locator: 项目简介，流传地域、表演环节与吟唱内容。
+  bridge:
+    entry: REL-3-0005
+    cluster: sid_witch
+    trail: all
+    label: 棚里的仪式与生活
+    rationale: 对读节日舞蹈与地方社会的表演。此为主题对读，不表示因果、传播或科学验证。
+- id: case_cn_wugu_w3_zhanjiang_kaobing
+  title: 广东湛江｜雷州半岛的“考兵”傩舞
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  note_kind: research
+  location:
+    lat: 21.2707
+    lng: 110.3589
+    precision: culture_region
+    location_name: 广东湛江
+    culture_region: 东亚 · 中国
+  location_note: 坐标采用广东湛江的市县或区域参照点，用于浏览分布；不表示叙事、拍摄或仪式发生于该点，地点范围以正文和出处为准。
+  paragraphs:
+  - 在湛江及雷州半岛若干地方，名为“考兵”等的傩舞以角色、面具和身体动作组成节日表演。它既与地方祭祀及祈安愿望有关，也留下了围绕雷神、将领等形象形成的表演传统。
+  - 《巫蛊》在讨论节日中的傩祭时提到湛江“考兵”；国家级非遗项目资料进一步列出多个流传地区，因此这里用湛江市作为区域参照，而不是把所有演出合并为一件具体事件。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025年4月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第九章第三节“变身‘节日’的魇术”，广东湛江“考兵”列举；核读用户提供的流式电子书，按章节及叙事锚点定位，未核纸书页码；链接仅为书目，不是正文。
+  - citation: 中国非物质文化遗产网：中国非物质文化遗产数字博物馆，“傩舞（湛江傩舞）”。
+    type: website
+    url: https://www.ihchina.cn/project_details/12896.html
+    locator: 项目简介，俗称“考兵”及湛江、雷州、吴川等流传区域。
+  bridge:
+    entry: REL-3-0005
+    cluster: sid_witch
+    trail: all
+    label: 面具与地方舞蹈
+    rationale: 对读身体实践与集体仪式中的角色。此为主题对读，不表示因果、传播或科学验证。
+- id: case_cn_wugu_w3_kunming_lanyao
+  title: 云南昆明｜“撒烂药”：一句旧话背后的路
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  note_kind: research
+  location:
+    lat: 25.0389
+    lng: 102.7183
+    precision: city
+    location_name: 云南昆明
+    culture_region: 东亚 · 中国
+  location_note: 坐标采用云南昆明的市县或区域参照点，用于浏览分布；不表示叙事、拍摄或仪式发生于该点，地点范围以正文和出处为准。
+  paragraphs:
+  - 老昆明话里，“撒烂药”被用来指背后坏人或暗中说坏话。邓启耀解释，这句骂人的话与一种转移病祸的旧观念相连：人们把不愿留下的东西放在路上，想象过路的人会替自己带走厄运。
+  - 从路边弃物到日常语言，故事把对病痛的无助与对损害他人的责怪折叠在同一个词里。书中提出的是对地方俗语的解释，不能视为已证实的疾病传播或医疗方法；具体年代和地点未确定。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025年4月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第二章第三节“蛊的传承与转移”，四“转蛊嫁祸”，老昆明话“撒烂药”段；核读用户提供的流式电子书，按章节及叙事锚点定位，未核纸书页码；链接仅为书目，不是正文。
+  bridge:
+    entry: LIT-6-0006
+    cluster: sid_witch
+    trail: all
+    label: 俗语里的隐喻
+    rationale: 对读文化词语如何承载地方经验和转义。此为主题对读，不表示因果、传播或科学验证。
+- id: case_cn_wugu_w3_yanshi_transfer_note
+  title: 河南偃师｜路上的帖子与转病传闻
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  note_kind: history
+  location:
+    lat: 34.728
+    lng: 112.787
+    precision: city
+    location_name: 河南洛阳偃师
+    culture_region: 东亚 · 中国
+  location_note: 坐标采用河南洛阳偃师的市县或区域参照点，用于浏览分布；不表示叙事、拍摄或仪式发生于该点，地点范围以正文和出处为准。
+  paragraphs:
+  - 书中转述一则关于偃师的旧传闻：有人把写着话的纸包留在路上，希望拾取它的陌生人带走家人的疟疾。故事中，路口连接着两个互不认识的家庭，也让人看到人们如何为久病寻找解释。
+  - 作者称此俗在1930年代仍有传闻，并援引1988年文章；我们实际核读的是邓启耀的转述，没有独立查到当年现场或逐份核验他所引文章。纸包与疾病转移属于民俗观念，不是对疟疾传播方式的科学说明。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025年4月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第二章第三节“蛊的传承与转移”，四“转蛊嫁祸”，偃师纸帖段；作者列邵燕祥、詹鄞鑫1988年文章，未独立核原文；核读用户提供的流式电子书，按章节及叙事锚点定位，未核纸书页码；链接仅为书目，不是正文。
+  bridge:
+    entry: SOC-5-0005
+    cluster: sid_witch
+    trail: all
+    label: 纸帖与证据层次
+    rationale: 对读转引报道与现场证据之间的差别。此为主题对读，不表示因果、传播或科学验证。
+  temporal:
+    year_start: 1930
+    year_end: 1939
+    era_label: 书中转述1930年代
+    uncertainty_note: 年代与习俗由二手材料转述，未独立核验。
+- id: case_cn_wugu_w3_guangshun_marriage
+  title: 贵州广顺｜在婚约之外被议论的女子
+  aliases: []
+  genre: folktale
+  credibility_tier: B
+  note_kind: legend
+  location:
+    lat: 26.0223
+    lng: 106.448
+    precision: city
+    location_name: 贵州长顺
+    culture_region: 东亚 · 中国
+  location_note: 坐标采用贵州长顺的市县或区域参照点，用于浏览分布；不表示叙事、拍摄或仪式发生于该点，地点范围以正文和出处为准。
+  paragraphs:
+  - 《巫蛊》转录一则贵州广顺的故事：一个年轻女子因母亲被邻人怀疑，自己也被传说带有能够害人的力量。她后来出嫁，男方家人仍因为这些流言而谨慎对待婚礼往来；故事最后说，人们担心的事并没有发生。
+  - 这则讲述让超自然传言之外的社会后果变得清楚：被指认的人可能首先失去的是婚姻选择和邻里信任。作者同节列举了旧调查和文章，但本次尚未确认每一则引文与原刊的对应关系；它不能用来概括任何民族或当代社区。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025年4月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第二章第三节“蛊的传承与转移”，广顺婚姻传闻；邻近段落列李植人、展宏文章，具体原刊对应待核；核读用户提供的流式电子书，按章节及叙事锚点定位，未核纸书页码；链接仅为书目，不是正文。
+  - citation: 黔南州生态环境部门公开的长顺县项目环境影响报告。
+    type: geographic_reference
+    url: https://www.qiannan.gov.cn/zwgk/zdlygk/sthj/sthjaqjg/202107/P020220529233732955512.pdf
+    locator: 确认长顺县广顺镇的行政位置；不证明婚姻传说。
+  bridge:
+    entry: SOC-1-0009
+    cluster: sid_witch
+    trail: all
+    label: 传言如何成为污名
+    rationale: 对读社会标签对婚姻与个人处境的影响。此为主题对读，不表示因果、传播或科学验证。
+- id: case_cn_wugu_w3_zhenning_needle
+  title: 贵州镇宁｜“清针线”与婚姻中的猜疑
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  note_kind: research
+  location:
+    lat: 26.0566
+    lng: 105.7706
+    precision: city
+    location_name: 贵州镇宁
+    culture_region: 东亚 · 中国
+  location_note: 坐标采用贵州镇宁的市县或区域参照点，用于浏览分布；不表示叙事、拍摄或仪式发生于该点，地点范围以正文和出处为准。
+  paragraphs:
+  - 邓启耀转述关于镇宁革利地区的一项旧调查：有的家庭在议亲前打听对方家族，使用“针线”之类隐语判断是否符合自己的忌讳。亲事在这种判断中可能反复搁置，私人生活也被邻里的怀疑裹挟。
+  - 这里所称“清针线”是书中记录的地方表述，背后是具体时代与地域的婚姻观念，不是对任何群体的本质描述。书中引用了旧调查，但这段与各篇原刊的对应关系尚待核对，不能断言其现在仍普遍存在。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025年4月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第二章第三节“蛊的传承与转移”，镇宁“清针线”与婚姻忌讳段；该节列有1985年调查，具体原刊对应待核；核读用户提供的流式电子书，按章节及叙事锚点定位，未核纸书页码；链接仅为书目，不是正文。
+  bridge:
+    entry: SOC-1-0009
+    cluster: sid_witch
+    trail: all
+    label: 被传闻塑造的婚约
+    rationale: 对读污名、社会分类和私人选择。此为主题对读，不表示因果、传播或科学验证。
+- id: case_cn_wugu_w3_dali_crying_paper
+  title: 云南大理｜纸马上的哭神与城墙
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  note_kind: research
+  location:
+    lat: 25.6065
+    lng: 100.2676
+    precision: city
+    location_name: 云南大理
+    culture_region: 东亚 · 中国
+  location_note: 坐标采用云南大理的市县或区域参照点，用于浏览分布；不表示叙事、拍摄或仪式发生于该点，地点范围以正文和出处为准。
+  paragraphs:
+  - 大理一类纸马画上，女人带着雨伞等行装，身后还有一个小人。《巫蛊》图4-1、4-2把这类形象称为“哭神”，并将她与妇女为亡夫痛哭的故事放在一起阅读。她的远行与眼泪，让纸上的小小图像带出了漫长的路。
+  - 作者推测身后的形象或许与被筑入城墙的丈夫有关，并没有给出可以确定身份的证据；孟姜女等故事也有不同版本。这里呈现的是纸马及研究者的解释，不把推测直接当作画面的确定含义。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025年4月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第四章第一节“营造魇镇”，云南大理哭神纸马图4-1、4-2与孟姜女比较；核读用户提供的流式电子书，按章节及叙事锚点定位，未核纸书页码；链接仅为书目，不是正文。
+  bridge:
+    entry: HIS-4-0002
+    cluster: sid_witch
+    trail: all
+    label: 一张纸马的图像
+    rationale: 对读器物图像、使用语境和研究者解释之间的差别。此为主题对读，不表示因果、传播或科学验证。
+- id: case_cn_wugu_w3_jianchuan_masters
+  title: 云南剑川｜张班、鲁班与木匠的纸马
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  note_kind: research
+  location:
+    lat: 26.537
+    lng: 99.9053
+    precision: city
+    location_name: 云南剑川
+    culture_region: 东亚 · 中国
+  location_note: 坐标采用云南剑川的市县或区域参照点，用于浏览分布；不表示叙事、拍摄或仪式发生于该点，地点范围以正文和出处为准。
+  paragraphs:
+  - 建房之前，剑川白族木匠在所记传统中会纪念地方木匠之神张班与鲁班。邓启耀把“张鲁二班”纸马与营造建筑的担忧并置：屋子尚未成形，工匠、主人与地方神灵的关系已经被放进仪式中。
+  - 书中图4-8至4-10展示的是大理、祥云的同类纸马，不能直接说它们全部来自剑川。剑川的叙述与其他地点的实物是相互对读的材料；本条没有记录具体住宅或建房者。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025年4月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第四章第一节“营造魇镇”，剑川木匠张班鲁班段及图4-8至4-10的大理、祥云纸马；核读用户提供的流式电子书，按章节及叙事锚点定位，未核纸书页码；链接仅为书目，不是正文。
+  bridge:
+    entry: REL-5-0009
+    cluster: sid_witch
+    trail: all
+    label: 手艺与工匠神
+    rationale: 对读仪式物制作和工艺传承的社会语境。此为主题对读，不表示因果、传播或科学验证。
+- id: case_cn_wugu_w3_jinping_toad_embroidery
+  title: 云南金平｜孩子衣背上的蟾蜍纹
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  note_kind: research
+  location:
+    lat: 22.7772
+    lng: 103.226
+    precision: city
+    location_name: 云南金平
+    culture_region: 东亚 · 中国
+  location_note: 坐标采用云南金平的市县或区域参照点，用于浏览分布；不表示叙事、拍摄或仪式发生于该点，地点范围以正文和出处为准。
+  paragraphs:
+  - 邓启耀回忆在云南金平调查时，看到一些孩子的衣背绣着圆形的蟾蜍图案。询问孩子的母亲后，他记录下她们对图案的解释：希望借蟾蜍的象征意义，让孩子远离危险。另一些衣服还绣有猫头鹰。
+  - 书中图7-15标注为1993年云南红河拍摄的哈尼族儿童衣背纹样；它与作者的金平记录互相呼应，但单凭图注不能确定照片就是同一场景。图案中的“保护”是受访者表达的愿望，不能当作实际防护效果。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025年4月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第七章第二节“巫蛊破解”，六“以蛊制蛊”，金平儿童服饰及图7-15，1993年红河照片；核读用户提供的流式电子书，按章节及叙事锚点定位，未核纸书页码；链接仅为书目，不是正文。
+  - citation: 金平县人民政府：《金平苗族瑶族傣族自治县国土空间生态修复规划（2021—2035年）》。
+    type: geographic_reference
+    url: https://hhjp.gov.cn/info/51041/378051.htm
+    locator: 确认金平的州县位置及县城；不证明所述纹样细节。
+  bridge:
+    entry: HIS-4-0002
+    cluster: sid_witch
+    trail: all
+    label: 纹样中的照护愿望
+    rationale: 从物质文化角度读儿童服饰及其解释。此为主题对读，不表示因果、传播或科学验证。
+  temporal:
+    year_start: 1993
+    year_end: 1993
+    era_label: 1993年相关照片
+    uncertainty_note: 照片图注为红河；不得推定与金平访谈场景完全相同。
+- id: case_cn_wugu_w3_ninglang_bottle
+  title: 云南宁蒗｜旅途中遇见的一桶“怪药”
+  aliases: []
+  genre: memorate
+  credibility_tier: B
+  note_kind: research
+  location:
+    lat: 27.282
+    lng: 100.852
+    precision: city
+    location_name: 云南宁蒗
+    culture_region: 东亚 · 中国
+  location_note: 坐标采用云南宁蒗的市县或区域参照点，用于浏览分布；不表示叙事、拍摄或仪式发生于该点，地点范围以正文和出处为准。
+  paragraphs:
+  - 1992年夏末，作者参加纪录片拍摄，在宁蒗永宁乡（今永宁镇）住宿时遇到一位自称懂得秘传技艺的人。对方展示一桶浸有多种动物和植物的液体，并声称可以处理身体不适；同行者尝试后，作者留下的是惊异与疑问，而不是确定的结果。
+  - 这一段和书中有关“蛊坛”的传闻被并置，是作者的联想，不能证明两者相同。叙述不提供私人地址、人物身份或制作方法，也不采信对方宣称的效果；地图以宁蒗县城为参照，并非住宿地点。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025年4月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第二章第五节“蛊的种类”，1992年永宁乡纪录片拍摄期间见闻；核读用户提供的流式电子书，按章节及叙事锚点定位，未核纸书页码；链接仅为书目，不是正文。
+  - citation: 行政区划网：宁蒗彝族自治县行政区划（2019 年）。
+    type: geographic_reference
+    url: https://xzqh.org/show/china/2019/53/530724.html
+    locator: 确认2019年永宁乡撤乡设镇；不证明所述见闻。
+  bridge:
+    entry: HIS-6-0002
+    cluster: sid_witch
+    trail: all
+    label: 现场观察与作者联想
+    rationale: 对读亲见材料、被观察者主张与研究者推测。此为主题对读，不表示因果、传播或科学验证。
+  temporal:
+    year_start: 1992
+    year_end: 1992
+    era_label: 1992年夏末见闻
+    uncertainty_note: 地点仅到永宁乡，地图采用县城参照。
+- id: case_cn_wugu_w3_guangzhou_dolls
+  title: 广东广州｜2006年前后的“巫毒娃娃”商品热
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  note_kind: research
+  location:
+    lat: 23.1291
+    lng: 113.2644
+    precision: city
+    location_name: 广东广州
+    culture_region: 东亚 · 中国
+  location_note: 坐标采用广东广州的市县或区域参照点，用于浏览分布；不表示叙事、拍摄或仪式发生于该点，地点范围以正文和出处为准。
+  paragraphs:
+  - 2006年前后，一种被商家称作“巫毒娃娃”的小人偶出现在网络店铺与城市商品市场。邓启耀回忆广州电视节目曾就这一话题联系他，书中也转述当时学生佩戴和商店销售的报道：恐怖外观、护身愿望与商品故事被包装在一起。
+  - 商品名、商家宣称的来历与宗教传统不能直接画等号；销售神话也不等于功效证据。这里依据的是作者回忆及其书中转述，未独立核看原电视节目或当年全部销售数据。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025年4月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第九章第四节“被时尚化的巫蛊”，2006年广州媒体采访与商品流行段；核读用户提供的流式电子书，按章节及叙事锚点定位，未核纸书页码；链接仅为书目，不是正文。
+  bridge:
+    entry: SOC-5-0005
+    cluster: sid_witch
+    trail: all
+    label: 都市商品与传闻
+    rationale: 对读商品宣传、媒介转述与独立证据的区别。此为主题对读，不表示因果、传播或科学验证。
+  temporal:
+    year_start: 2006
+    year_end: 2006
+    era_label: 2006年前后的作者回忆与媒体转述
+    uncertainty_note: 电视节目及销售数据未独立核验。
+- id: case_cn_wugu_w3_kaili_fengshui_story
+  title: 贵州凯里｜木匠讲述的风水先生与街道
+  aliases: []
+  genre: memorate
+  credibility_tier: B
+  note_kind: legend
+  location:
+    lat: 26.5783
+    lng: 107.9773
+    precision: city
+    location_name: 贵州凯里
+    culture_region: 东亚 · 中国
+  location_note: 坐标采用贵州凯里的市县或区域参照点，用于浏览分布；不表示叙事、拍摄或仪式发生于该点，地点范围以正文和出处为准。
+  paragraphs:
+  - 2006年，邓启耀在凯里采访木匠时，听到一则关于清水江流域富户和风水先生的故事。传说先有一位老人帮助宅主选择地方，后来又有客人改动街道与台阶，让原本的好运转向；离奇的夜间见闻也被织进了情节。
+  - 采访者追问后，讲述者又说那家后代其实并未像故事中所说的那样衰败。这句补充使传说和现实并排出现。凯里是书中采访地点，并不代表故事中老屋、道路或墓地的实际位置；它与已有老屋修复条目可作背景对照。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》，桂林：广西师范大学出版社，2025年4月，ISBN 9787559879943。
+    type: monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第四章第二节“风水魇镇”，清水江富户风水口述及2006年10月凯里采访；核读用户提供的流式电子书，按章节及叙事锚点定位，未核纸书页码；链接仅为书目，不是正文。
+  bridge:
+    entry: HIS-6-0002
+    cluster: sid_witch
+    trail: all
+    label: 故事与采访追问
+    rationale: 对读同一访谈中传说讲述与现实信息的差异。此为主题对读，不表示因果、传播或科学验证。
+  temporal:
+    year_start: 2006
+    year_end: 2006
+    era_label: 2006年采访
+    uncertainty_note: 故事发生年代未确定；地图标记采访城市。
+  compare:
+  - case_cn_wugu_kaili_wood_house_2006
+- id: case_cn_tao_w3_dantu_dogs
+  title: 江苏镇江丹徒｜月出时的泥狗与面狗
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 32.13374
+    lng: 119.42852
+    precision: city
+    location_name: 江苏镇江丹徒
+    culture_region: 东亚 · 中国
+  location_note: 书中为旧称丹徒县；地图为镇江丹徒一带区域参考，非村庄或仪式地址。旧县与现区边界可能有变化。
+  paragraphs:
+  - 书中以当时“丹徒县”记四月八的驱天狗习俗。人们预先捏泥狗、做面狗；月亮升起时，有妇女把泥狗倒进河塘并燃放爆竹，随后回家蒸食面狗。
+  - 这些小狗是节日食品，也是回应天狗吞食日月传闻的象征物。书中将其视为护日月、求平安的民俗，不能据此判断天象或灾害真的受仪式影响。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 316（PDF 第 346 页）；直接查阅《中国镇物》，其中所引旧志、故事集或调查未作独立核验。
+  - citation: 江苏民建：丹徒县革命委员会机关旧址；2002 年撤县设区。
+    type: geographic_reference
+    url: https://www.mjjssw.org.cn/show/34982
+    locator: 行政沿革参照；地图为区域点。
+  - citation: DBpedia：丹徒区地理坐标。
+    type: geographic_reference
+    url: https://fr.dbpedia.org/page/District_de_Dantu
+    locator: 丹徒区区域参考坐标；并非仪式地点。
+  bridge:
+    entry: REL-5-0008
+    cluster: sid_myth
+    trail: all
+    label: 节日与天象想象
+    rationale: 从节令、食物与地方生态知识阅读这一习俗，仪式愿望与天象成因分开。
+  lexicon_ids:
+  - lex_tao_w3_dantu_dogs
+- id: case_cn_tao_w3_huaian_flour_child
+  title: 河北张家口怀安｜七月半孩子抱面人
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 40.66874
+    lng: 114.41571
+    precision: city
+    location_name: 河北张家口怀安
+    culture_region: 东亚 · 中国
+  location_note: 怀安县县城柴沟堡镇一带的参考点，并非记录中的具体村落。
+  paragraphs:
+  - 《中国镇物》引旧时怀安一带的记载：七月半蒸制面人，让孩子抱在怀里；当地传说“天狗”会伤害婴孩，面人因此被当作象征性的替身。
+  - 这一小小的人形把家人对孩子的担忧转化成可以制作、可以抱持的东西。书中注释转引《怀安县志》，本次没有独立查阅该县志，也不把传说当作现实危险。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 316–317（PDF 第 346–347 页）；注释参见光绪《怀安县志》，未独立核验原件。
+  - citation: 柴沟堡镇地名参考，怀安县政府驻地。
+    type: geographic_reference
+    url: https://zh.wikipedia.org/wiki/%E6%9F%B4%E6%B2%9F%E5%A0%A1%E9%95%87
+    locator: 县城代表点，不是书中面人习俗的具体采录点。
+  bridge:
+    entry: REL-3-0007
+    cluster: sid_myth
+    trail: all
+    label: 儿童与节令护佑
+    rationale: 对读家庭如何通过仪式表达对儿童的关切；替身是信俗解释。
+  lexicon_ids:
+  - lex_tao_w3_huaian_flour_child
+- id: case_cn_tao_w3_xingyang_baizui_iron_ox
+  title: 河南荥阳｜柏嘴渡口的两只铁牛
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 34.78
+    lng: 113.35
+    precision: city
+    location_name: 河南荥阳
+    culture_region: 东亚 · 中国
+  location_note: 荥阳市城市代表点，不是柏嘴渡口或铁牛实物的位置。
+  paragraphs:
+  - 书中说，旧荥阳县的广武山脚、黄河岸边柏嘴渡口，原有两只镇河铁牛，人们寄望它们能够制服水中怪物，使河水不再泛滥。
+  - 作者记其中一件当时仍存于孤柏口村，卧牛身上有难以辨读的残字和纪年。这里记录的是 1998 年书中所述状况；实物是否仍在原处及其现状另需核查。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 316（PDF 第 346 页）；直接查阅《中国镇物》，其中所引旧志、故事集或调查未作独立核验。
+  - citation: 联合国地名专家组城市地名资料：荥阳。
+    type: geographic_reference
+    url: https://ungegn.un.org/dashboard/cities/details?id=2461
+    locator: 市级代表点纬度 34.78、经度 113.35，不是铁牛位置。
+  bridge:
+    entry: REL-5-0001
+    cluster: sid_myth
+    trail: all
+    label: 水患与铁牛
+    rationale: 比较河岸器物及地方防洪信俗，不把镇物等同可验证的防洪工程。
+  lexicon_ids:
+  - lex_tao_w3_xingyang_baizui_iron_ox
+  compare:
+  - case_cn_puzhou_iron_ox_flood_ward
+- id: case_cn_tao_w3_hongze_iron_ox
+  title: 江苏淮安洪泽｜高良涧闸下的两只铁牛
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 33.29498
+    lng: 118.8679
+    precision: city
+    location_name: 江苏淮安洪泽
+    culture_region: 东亚 · 中国
+  location_note: 洪泽城区代表点，不是实物所在点。原书使用洪泽县旧称，2016 年撤县设区。
+  paragraphs:
+  - 洪泽湖与运河沿岸的居民长期面对水患。书中记，旧洪泽县高良涧闸下放着两只铁牛，身形敦实、昂首张角；它们腹部所铸铭文把镇水愿望与当地水利环境连在一起。
+  - 书中图 281 展示同类镇水铁牛，并记铸造和监造文字。这是洪泽的实物记录，与山西蒲津渡的铁牛是不同对象；本条不判断两地形制之间存在直接传承。
+  - 王磊 2019 年调查记管理所及其东侧各有一牛。两次记载所涉实物是否完全对应、位置变化经过仍待核实。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 317（PDF 第 347 页）；直接查阅《中国镇物》，其中所引旧志、故事集或调查未作独立核验。
+  - citation: 淮安市洪泽区人民政府：洪泽区概况。
+    type: geographic_reference
+    url: https://www.hongze.gov.cn/?index=main
+    locator: 2016 年撤销洪泽县、设立洪泽区；地图为区域点。
+  - citation: 王磊：《淮扬镇水铁牛的视觉形式及其传播》，《故宫博物院院刊》2021 年第 10 期（总第 234 期）。
+    type: academic_paper
+    url: https://img.dpm.org.cn/Uploads/File/2021/10/09/u616150b9953c8.pdf
+    locator: 第 122 页：2019 年实地调查的铁牛位置与形态；第 125–126 页：蒲津桥与镇水物。
+  bridge:
+    entry: REL-5-0001
+    cluster: sid_myth
+    trail: all
+    label: 水患与铁牛
+    rationale: 以河湖环境与器物信仰作对读，区分地方解释与工程功效。
+  lexicon_ids:
+  - lex_tao_w3_hongze_iron_ox
+  compare:
+  - case_cn_puzhou_iron_ox_flood_ward
+- id: case_cn_tao_w3_gaoyou_iron_ox
+  title: 江苏高邮｜马棚湾出土的运河铁牛
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 32.781
+    lng: 119.441
+    precision: city
+    location_name: 江苏高邮
+    culture_region: 东亚 · 中国
+  location_note: 高邮市城区代表点，不是发现、存放铁牛的具体地点。
+  paragraphs:
+  - 《中国镇物》记载，高邮运河边马棚湾出土过一件铁牛。作者说，写作时它存放在市内文游台；书中的铁牛呈普通水牛形，而不是独角犀牛。
+  - 这件器物与洪泽高良涧的铁牛都在书中作为治水镇物讨论，却有各自的发现地点。存放地点是 1998 年书中信息，不等于今天的展陈位置。
+  - 王磊 2019 年调查另记马棚湾西堤有一件铁牛，并将淮扬铁牛判断为黄牛形；与陶书所记存放地点和形态不同。两条记载是否指同一实物、迁移经过仍待核实。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 317（PDF 第 347 页）；直接查阅《中国镇物》，其中所引旧志、故事集或调查未作独立核验。
+  - citation: 王磊：《淮扬镇水铁牛的视觉形式及其传播》，《故宫博物院院刊》2021 年第 10 期（总第 234 期）。
+    type: academic_paper
+    url: https://img.dpm.org.cn/Uploads/File/2021/10/09/u616150b9953c8.pdf
+    locator: 第 122 页：2019 年实地调查的铁牛位置与形态；第 125–126 页：蒲津桥与镇水物。
+  bridge:
+    entry: REL-5-0001
+    cluster: sid_myth
+    trail: all
+    label: 水患与铁牛
+    rationale: 把出土器物与运河水患记忆并读，避免据相似形制推定传播。
+  lexicon_ids:
+  - lex_tao_w3_gaoyou_iron_ox
+  compare:
+  - case_cn_puzhou_iron_ox_flood_ward
+- id: case_cn_tao_w3_yanggu_iron_ox
+  title: 山东聊城阳谷｜张秋镇的镇水铁牛
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 36.1134
+    lng: 115.7843
+    precision: city
+    location_name: 山东聊城阳谷
+    culture_region: 东亚 · 中国
+  location_note: 阳谷县城区域参考点，不是张秋镇铁牛的具体位置。
+  paragraphs:
+  - 书中提到，山东阳谷县张秋镇因屡遭黄河水患而铸造镇水铁牛。对生活在河流附近的人而言，铁牛既是可见的器物，也寄托着不再受水灾侵扰的愿望。
+  - 作者把它与黄河、淮河沿岸的其他铁牛并列讨论；这不是说铁牛本身能够替代堤防，书中亦未交代本件铁牛今天的保存位置。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 317（PDF 第 347 页）；直接查阅《中国镇物》，其中所引旧志、故事集或调查未作独立核验。
+  bridge:
+    entry: REL-5-0001
+    cluster: sid_myth
+    trail: all
+    label: 水患与铁牛
+    rationale: 将地方治水愿望与实际防洪工作区分后阅读。
+  lexicon_ids:
+  - lex_tao_w3_yanggu_iron_ox
+  compare:
+  - case_cn_puzhou_iron_ox_flood_ward
+- id: case_cn_tao_w3_hongze_stone_rooster
+  title: 江苏淮安洪泽｜湖边昂首向东的石鸡
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 33.29498
+    lng: 118.8679
+    precision: city
+    location_name: 江苏淮安洪泽
+    culture_region: 东亚 · 中国
+  location_note: 洪泽城区代表点，不是实物所在点。原书使用洪泽县旧称，2016 年撤县设区。
+  paragraphs:
+  - 书中记洪泽旧县城中有一只高高站立、朝东昂首的石鸡。作者将它放在水患地区的镇物传统中讨论，并在次页图 283 标注“江苏洪泽”。
+  - 鸡鸣报晓的形象在作者解释中连到光明与驱除灾厄的愿望。石鸡和高良涧的铁牛是不同的器物，书中照片记录的是当时所见，当前位置需要另查。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 318–319（PDF 第 348–349 页），图 283“江苏洪泽”；直接查阅《中国镇物》。
+  - citation: 淮安市洪泽区人民政府：洪泽区概况。
+    type: geographic_reference
+    url: https://www.hongze.gov.cn/?index=main
+    locator: 2016 年撤销洪泽县、设立洪泽区；地图为区域点。
+  bridge:
+    entry: REL-5-0001
+    cluster: sid_myth
+    trail: all
+    label: 水患与动物镇物
+    rationale: 从地方象征和器物解释看鸡的形象，不把保护功能当作实证。
+  lexicon_ids:
+  - lex_tao_w3_hongze_stone_rooster
+- id: case_cn_tao_w3_jingzhou_xirang
+  title: 湖北荆州｜荆州南门与息壤
+  aliases: []
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 30.335
+    lng: 112.24
+    precision: city
+    location_name: 湖北荆州
+    culture_region: 东亚 · 中国
+  location_note: 荆州市城区参考点，不代表书中南门或堤坝的位置。
+  paragraphs:
+  - 书中转述清代《香祖笔记》：荆州南门有一处被称作“息壤”的地方，相传擅动会招来雷雨。康熙初年大旱时，有人掘开堤旁土层，见到一件来历难明、带有文字的物体。
+  - 叙事称人们急忙重新掩埋，而后连降大雨、江水泛滥。旱灾、发掘与暴雨在笔记中被串成传闻；本次未独立核验原书，故事不证明发掘导致降雨。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 319（PDF 第 349 页）；转引《香祖笔记》卷三，未独立核验原件。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 水患传说与地方记忆
+    rationale: 对读堤坝、地下物和暴雨如何串联成传奇场景，不将情节认作气象因果。
+  lexicon_ids:
+  - lex_tao_w3_jingzhou_xirang
+- id: case_cn_tao_w3_tianjin_paper_turtle
+  title: 天津｜求雨队伍里的纸龟与泥龙
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 39.0842
+    lng: 117.2009
+    precision: city
+    location_name: 天津
+    culture_region: 东亚 · 中国
+  location_note: 天津市中心区域参考点；引文未明确具体乡村或仪式地点。
+  paragraphs:
+  - 书中引《中华全国风俗志》描述天津农人遇旱求雨：队伍中有人披绿色纸制龟壳，随从戴柳圈、持柳枝；孩子们抬着以贝壳装饰鳞片的泥龙沿街唱歌。
+  - 街市居民迎接队伍，门前也插上柳枝。纸龟、柳枝与泥龙在这里共同承载盼雨的愿望；本次核到的是《中国镇物》的转引，并未另核原始调查地点。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 319–320（PDF 第 349–350 页）；转引胡朴安《中华全国风俗志》，未独立核验原件。
+  bridge:
+    entry: GEO-CLIM-0005
+    cluster: sid_myth
+    trail: all
+    label: 求雨仪式与节令
+    rationale: 将求雨传统与天气、气候尺度区别并读；仪式表达愿望，不说明降雨机制。
+  lexicon_ids:
+  - lex_tao_w3_tianjin_paper_turtle
+- id: case_cn_tao_w3_huzhou_red_cloth_brides
+  title: 浙江湖州｜红幔上的真假新娘
+  aliases: []
+  genre: folktale
+  credibility_tier: B
+  location:
+    lat: 30.894
+    lng: 120.086
+    precision: city
+    location_name: 浙江湖州
+    culture_region: 东亚 · 中国
+  location_note: 湖州市城区代表点；流传地区不等于故事中的宅院或采录点。
+  paragraphs:
+  - 湖州一则传说讲，一家嫁女，迎亲队伍途中遭遇狂风。轿子抵达夫家后，轿帘掀开，里面竟坐着两个一模一样的新娘，连父亲也无法分辨。
+  - 县令令人架起红幔，让两人依次走过：一个哭着踩下布幔，另一个轻轻走过却不见布动。县令识破后者，妖怪化作风逃走。书中以此解释当地踩红幔的婚俗，本次未独立查阅其所引《湖州市故事卷》。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 245（PDF 第 275 页）；脚注引《浙江省民间文学集成·湖州市故事卷》，未独立核验转引原件。
+  bridge:
+    entry: LIT-2-0006
+    cluster: sid_liminal
+    trail: all
+    label: 婚礼传说与仪式
+    rationale: 阅读风、花轿和红幔如何推动真假身份的故事反转；它是地方传说。
+  lexicon_ids:
+  - lex_tao_w3_huzhou_red_cloth_brides
+- id: case_cn_tao_w3_sanming_wedding_lamp
+  title: 福建三明｜山村迎亲队伍前的火与灯
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 26.24861
+    lng: 117.61861
+    precision: city
+    location_name: 福建三明
+    culture_region: 东亚 · 中国
+  location_note: 三明城区参考点；原书称三元区山村，没有给出具体村名和年代。
+  paragraphs:
+  - 书中记福建三明市三元区一些山村的迎亲队伍，走在前方的是火把；另有手提的半圆形吊灯，灯面开孔，灯中燃松明，夜里望去像一团移动的火。
+  - 当地说法将灯火视为压住山间精怪的保护。书只指出区域和用途，未提供确切村名与采录日期；其脚注所引婚俗材料本次未独立查核。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 245（PDF 第 275 页）；直接查阅《中国镇物》，其中所引旧志、故事集或调查未作独立核验。
+  - citation: GeoNames：Sanming 地名参考点。
+    type: geographic_reference
+    url: https://www.geonames.org/1796663/sanming.html
+    locator: 三明市区地名坐标；不是书中三元区具体山村位置。
+  bridge:
+    entry: REL-3-0007
+    cluster: sid_myth
+    trail: all
+    label: 迎亲灯火
+    rationale: 把婚礼灯火与人生转折中的仪式秩序并读，不推断某群体今天仍普遍使用。
+  lexicon_ids:
+  - lex_tao_w3_sanming_wedding_lamp
+- id: case_cn_tao_w3_xiangxi_wedding_rooster
+  title: 湖南湘西｜迎亲门前的解煞鸡
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 28.3117
+    lng: 109.7383
+    precision: culture_region
+    location_name: 湖南湘西
+    culture_region: 东亚 · 中国
+  location_note: 以吉首作为湘西宽区域参考，书中未记具体村落，不能视为吉首现场。
+  paragraphs:
+  - 书中引湘西苗族婚礼材料：花轿到了男方家，主持者先用祝语迎接新人，又手持雄鸡念唱，表达驱除不祥、迎接吉兆的愿望。
+  - 记录还提到鸡冠取血等仪式细节。这里呈现的是作者引用的特定历史材料，不把它推广为所有苗族或湘西家庭的共同习俗，也不推定仪式有效。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 246–247（PDF 第 276–277 页）；书中引《湘西苗族调查报告》，未独立核验转引原件。
+  bridge:
+    entry: REL-3-0007
+    cluster: sid_myth
+    trail: all
+    label: 迎亲动物镇物
+    rationale: 对读婚礼仪式如何标示进入新家庭的阶段，避免把地域群体描绘成单一习俗。
+  lexicon_ids:
+  - lex_tao_w3_xiangxi_wedding_rooster
+- id: case_cn_tao_w3_mojiang_wedding_baimu
+  title: 云南墨江｜墨江迎亲中的白母
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 23.4319
+    lng: 101.687
+    precision: city
+    location_name: 云南墨江
+    culture_region: 东亚 · 中国
+  location_note: 墨江县城区域参考点；书中只写墨江一带，未给出具体村落。
+  paragraphs:
+  - 书中记载，墨江一带一则哈尼族迎亲材料中，请被称为“白母”的仪式主持者，为将入门的新娘举行除秽仪式。记述提到饭水、鸡和祝念等要素。
+  - 这是一条有地域范围的书面记录，具体村落与采录时间未明；它不能概括全部哈尼族婚礼，也不等于对仪式效果的证明。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 247（PDF 第 277 页）；直接查阅《中国镇物》，其中所引旧志、故事集或调查未作独立核验。
+  bridge:
+    entry: REL-3-0007
+    cluster: sid_myth
+    trail: all
+    label: 迎亲仪式与主持者
+    rationale: 比较仪式主持者如何组织婚礼过渡环节，不推断群体内部习俗一致。
+  lexicon_ids:
+  - lex_tao_w3_mojiang_wedding_baimu
+- id: case_cn_tao_w3_changzhou_wangshai
+  title: 江苏常州｜轿后的旺筛与一盏灯
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 31.8107
+    lng: 119.9741
+    precision: city
+    location_name: 江苏常州
+    culture_region: 东亚 · 中国
+  location_note: 常州市城区参考点；所记旧俗未给出具体街村或年代。
+  paragraphs:
+  - 《中国镇物》记常州旧时迎亲，花轿后面有人把米筛用红布绑在竹竿上，再悬上一盏灯，称作“旺筛”。它随着迎亲队伍移动，既是一件器物，也被赋予保护新人的含义。
+  - 书中与杭州、泉州的持筛习俗并列举例，表明相似物件可以出现在不同的迎亲场面，并不说明各地是同一个故事或来自同一次采录。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 248（PDF 第 278 页）；直接查阅《中国镇物》，其中所引旧志、故事集或调查未作独立核验。
+  bridge:
+    entry: REL-3-0007
+    cluster: sid_myth
+    trail: all
+    label: 婚礼中的筛具
+    rationale: 对读日常筛具如何在婚礼场景中获得仪式意义。
+  lexicon_ids:
+  - lex_tao_w3_changzhou_wangshai
+- id: case_cn_tao_w3_quanzhou_wedding_sieve
+  title: 福建泉州｜泉州迎亲时撑起的米筛
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 24.908
+    lng: 118.5858
+    precision: city
+    location_name: 福建泉州
+    culture_region: 东亚 · 中国
+  location_note: 泉州市城区参考点；书中所记迎亲习俗没有精确地名。
+  paragraphs:
+  - 书中提到泉州迎亲时，用米筛遮护新人的头部和面部，并由送嫁者专门持筛。家常筛具因此进入婚礼队伍，成为人们认作可以护佑新人的器物。
+  - 作者把这类观念与筛孔、网眼的形象联系起来；这是书中提出的解释，不是可以独立验证的防护机制。记述并未指出某场婚礼的时间或地址。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 248（PDF 第 278 页）；直接查阅《中国镇物》，其中所引旧志、故事集或调查未作独立核验。
+  bridge:
+    entry: REL-3-0007
+    cluster: sid_myth
+    trail: all
+    label: 婚礼中的筛具
+    rationale: 对读器物在礼仪中的身份与功能，不将象征解释视为自然效应。
+- id: case_cn_tao_w3_beijing_wedding_carriage
+  title: 北京｜花轿外绕行的香火与镜子
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 39.9042
+    lng: 116.4074
+    precision: city
+    location_name: 北京
+    culture_region: 东亚 · 中国
+  location_note: 北京城区参考点，不指具体婚礼现场；记录年代及辖域未详。
+  paragraphs:
+  - 在书中介绍的北京旧时迎亲习俗里，人们绕着花轿用香火熏照，又以镜子和书中所称“宪书”向轿内照看，期望驱散不祥。
+  - 这一段被放在“暖轿、亮轿或熏轿”的讨论中。它描述的是未经单独田野复核的旧俗材料，不说明每个时代的北京婚礼都如此。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 245（PDF 第 275 页）；直接查阅《中国镇物》，其中所引旧志、故事集或调查未作独立核验。
+  bridge:
+    entry: REL-3-0007
+    cluster: sid_myth
+    trail: all
+    label: 迎亲灯火
+    rationale: 比较进入婚礼空间前的准备与象征性保护，不泛化为整座城市的统一传统。
+- id: case_cn_tao_w3_nanjing_wedding_carriage
+  title: 江苏南京｜南京发轿前的暖轿
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 32.0603
+    lng: 118.7969
+    precision: city
+    location_name: 江苏南京
+    culture_region: 东亚 · 中国
+  location_note: 南京城区参考点，不指具体婚礼现场；记录年代及辖域未详。
+  paragraphs:
+  - 书中记南京旧时在发轿前点燃纸张，并在轿内移动火光，用以“暖轿”。轿子即将载新人出发时，仪式为即将开始的旅程增添了祈安的意义。
+  - 这与书中北京绕轿用香火、杭州预备烛火的写法并列，属于作者所收集的不同地区材料；它们不能自动视为互相传播的证据。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 245（PDF 第 275 页）；直接查阅《中国镇物》，其中所引旧志、故事集或调查未作独立核验。
+  bridge:
+    entry: REL-3-0007
+    cluster: sid_myth
+    trail: all
+    label: 迎亲灯火
+    rationale: 从过渡阶段与仪式空间的角度看发轿前的准备。
+- id: case_cn_tao_w3_hangzhou_wedding_candles
+  title: 浙江杭州｜杭州迎亲前的亮轿
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 30.29365
+    lng: 120.16142
+    precision: city
+    location_name: 浙江杭州
+    culture_region: 东亚 · 中国
+  location_note: 杭州市城区参考点，不指具体婚礼现场；记录年代及辖域未详。
+  paragraphs:
+  - 书中记述杭州旧时迎亲前夜以烛火照护花轿，称作“亮轿”；花轿迎亲回来时也点烛，借此防备人们想象中潜入轿内的不祥之物。
+  - 它与北京的熏轿、南京的暖轿都把光带进婚礼，却各有记述细节。年代、采录地点和如今的延续情况，本条所查来源没有交代。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 245（PDF 第 275 页）；直接查阅《中国镇物》，其中所引旧志、故事集或调查未作独立核验。
+  bridge:
+    entry: REL-3-0007
+    cluster: sid_myth
+    trail: all
+    label: 迎亲灯火
+    rationale: 对读婚礼中的光与空间边界，不推定其防护效果。
+- id: case_cn_tao_w3_zhoushan_boat_soul
+  title: 浙江舟山｜舟山渔船里的船灵魂
+  aliases: []
+  genre: historical_archive
+  credibility_tier: B
+  location:
+    lat: 30.016
+    lng: 122.1069
+    precision: city
+    location_name: 浙江舟山
+    culture_region: 东亚 · 中国
+  location_note: 舟山市城区参考点，并非渔船所在港口或船户住址。
+  paragraphs:
+  - 书中记录舟山渔民造船时安置“船灵魂”的说法：一小块木头中放入银元或铜钱，再装进船舱内的木构件。船尚未出海，祝愿已先被安放在船身里。
+  - 当地人把它视为避开海上意外的保护物。作者注释转引金涛《舟山渔民风俗调查》；本次直接查阅的是《中国镇物》，未独立核对该调查，也不推定器物能防止事故。
+  sources:
+  - citation: 陶思炎：《中国镇物》，台北：东大图书，1998。
+    type: reference_book
+    locator: 印页 235（PDF 第 265 页）；书中注释引金涛《舟山渔民风俗调查》（1987 年第 4 期），未独立核验转引原件。
+  bridge:
+    entry: REL-5-0001
+    cluster: sid_myth
+    trail: all
+    label: 航海与船镇
+    rationale: 从造船技艺和海上风险的地方知识阅读，不把信仰与安全技术混为一谈。
+  lexicon_ids:
+  - lex_tao_w3_zhoushan_boat_soul
