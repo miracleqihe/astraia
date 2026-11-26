@@ -58,15 +58,15 @@ function ViewSwitch({ mode, lifeMode, onSwitch }: { mode: ViewMode; lifeMode: bo
   return <nav className="view-switch" aria-label="图谱视图">
     <button type="button" aria-label="UMBRA 坤舆异志" aria-pressed={!lifeMode && mode === 'geo'} onClick={() => onSwitch('geo')}>
       <span className="mode-glyph mode-glyph-umbra" aria-hidden="true">◇</span>
-      <span className="mode-full">UMBRA · 坤舆异志</span><span className="mode-short" aria-hidden="true">UMBRA</span>
+      <span className="mode-full"><span className="mode-latin">UMBRA</span><span className="mode-separator"> · </span><span className="mode-chinese">坤舆异志</span></span><span className="mode-short" aria-hidden="true">UMBRA</span>
     </button>
     <button type="button" aria-label="SIDERA 玄象星络" aria-pressed={!lifeMode && mode === 'graph'} onClick={() => onSwitch('graph')}>
       <span className="mode-glyph mode-glyph-sidera" aria-hidden="true">+</span>
-      <span className="mode-full">SIDERA · 玄象星络</span><span className="mode-short" aria-hidden="true">SIDERA</span>
+      <span className="mode-full"><span className="mode-latin">SIDERA</span><span className="mode-separator"> · </span><span className="mode-chinese">玄象星络</span></span><span className="mode-short" aria-hidden="true">SIDERA</span>
     </button>
     <button type="button" aria-label="OMNIA 万象星枢" aria-pressed={lifeMode} onClick={() => onSwitch('life')}>
       <span className="mode-glyph mode-glyph-omnia" aria-hidden="true">✦</span>
-      <span className="mode-life-full">OMNIA · 万象星枢</span>
+      <span className="mode-life-full"><span className="mode-latin">OMNIA</span><span className="mode-separator"> · </span><span className="mode-chinese">万象星枢</span></span>
       <span className="mode-life-short" aria-hidden="true">OMNIA</span>
     </button>
   </nav>;
@@ -275,7 +275,7 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
       if (drawer === 'collapsed') setDrawer('single');
     }
     setHoveredId(null);
-    if (window.matchMedia('(max-width: 760px)').matches) {
+    if (window.matchMedia('(max-width: 1000px)').matches) {
       window.requestAnimationFrame(() => document.getElementById('node-inspector')?.scrollIntoView({ block: 'start' }));
     }
   }, [graph.byId, comparePicking, selectedId, compareId, drawer, onNeedDetails]);
@@ -302,7 +302,7 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
   function locate(id: string) {
     setMapFocus({ id });
     setMode('geo');
-    if (window.matchMedia('(max-width: 760px)').matches) {
+    if (window.matchMedia('(max-width: 1000px)').matches) {
       window.requestAnimationFrame(() => document.getElementById('visual-stage')?.scrollIntoView({ block: 'start' }));
     }
   }
@@ -312,6 +312,10 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
     onNeedDetails();
     setSelectedId(id); setDrawer('single'); setComparePicking(false); setHoveredId(null);
     setMapFocus(coordinatesOf(node) && mode === 'geo' ? { id } : null);
+    if (window.matchMedia('(max-width: 1000px)').matches) {
+      setDirectoryOpen(false);
+      window.requestAnimationFrame(() => document.getElementById('node-inspector')?.scrollIntoView({ block: 'start' }));
+    }
   }
   function startComparison(left: string, right: string) {
     onNeedDetails();
@@ -343,7 +347,7 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
       <div className="top-actions">
         <SyzygyLink dimension={lifeMode ? 'omnia' : mode === 'geo' ? 'umbra' : 'sidera'} story={lifeMode ? null : selectedId} showFiction={tiers.has('F')} tiers={ALL_TIERS.filter(tier => tiers.has(tier))} />
         {!lifeMode && <>
-          {!publicSite && <a className="review-link" href={`${import.meta.env.BASE_URL}review/index.html`}>资料复核</a>}
+          {!publicSite && <a className="review-link" aria-label="资料复核" href={`${import.meta.env.BASE_URL}review/index.html`}><span className="review-link-full">资料复核</span><span className="review-link-short" aria-hidden="true">复核</span></a>}
           <button className="directory-toggle" type="button" disabled={loading} aria-expanded={directoryOpen && directoryScope !== 'modern'}
             onClick={() => openDirectory('all')}>资料目录 <span>{loading ? '…' : graph.nodes.length}</span></button>
           <button className="fiction-switch" type="button" role="switch" aria-label="隐藏 F 级虚构" aria-checked={!tiers.has('F')} onClick={() => toggle<Tier>(setTiers, 'F')}>
@@ -429,6 +433,9 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
         if (mode === 'geo') setMapFocus({ id });
       }
       setHoveredId(null); setComparePicking(false);
+      if (window.matchMedia('(max-width: 1000px)').matches) {
+        window.requestAnimationFrame(() => document.getElementById('node-inspector')?.scrollIntoView({ block: 'start' }));
+      }
     }} />}
   </div>;
 }

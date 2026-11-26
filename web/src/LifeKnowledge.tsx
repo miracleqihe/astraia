@@ -66,8 +66,9 @@ export default function LifeKnowledge() {
   const [sceneMode, setSceneMode] = useState<'galaxy' | 'astrolabe'>('galaxy');
   const [motionEnabled, setMotionEnabled] = useState(() => !window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   const [dimension, setDimension] = useState<LifeDimension>('all');
-  const [folioOpen, setFolioOpen] = useState(true);
-  const [directoryOpen, setDirectoryOpen] = useState(true);
+  const [folioOpen, setFolioOpen] = useState(() =>
+    !window.matchMedia('(max-width: 1000px)').matches || new URL(window.location.href).searchParams.has('entry'));
+  const [directoryOpen, setDirectoryOpen] = useState(() => !window.matchMedia('(max-width: 1000px)').matches);
   const [folioTheme, setFolioTheme] = useState<'dark' | 'parchment'>(readLifeTheme);
   const [showConnections, setShowConnections] = useState(true);
   const [inquiryIds, setInquiryIds] = useState<string[]>([]);
@@ -86,6 +87,17 @@ export default function LifeKnowledge() {
   useEffect(() => {
     try { localStorage.setItem(LIFE_THEME_KEY, folioTheme === 'parchment' ? 'parchment' : 'obsidian'); } catch { /* ignore */ }
   }, [folioTheme]);
+
+  useEffect(() => {
+    const compact = window.matchMedia('(max-width: 1000px)');
+    const onChange = (event: MediaQueryListEvent) => {
+      if (!event.matches) return;
+      setDirectoryOpen(false);
+      if (!selectedId) setFolioOpen(false);
+    };
+    compact.addEventListener('change', onChange);
+    return () => compact.removeEventListener('change', onChange);
+  }, [selectedId]);
 
   useEffect(() => {
     try { localStorage.setItem(OBSERVATION_KEY, JSON.stringify(observations)); setStorageUnavailable(false); }
@@ -196,7 +208,7 @@ export default function LifeKnowledge() {
     url.hash = anchor ?? '';
     window.history.replaceState({}, '', url);
     if (inspectorRef.current) inspectorRef.current.scrollTop = 0;
-    if (window.matchMedia('(max-width: 760px)').matches) {
+    if (window.matchMedia('(max-width: 1000px)').matches) {
       requestAnimationFrame(() => inspectorRef.current?.scrollIntoView({ block: 'start', behavior: 'smooth' }));
     }
     if (anchor) window.setTimeout(() => document.getElementById(anchor)?.scrollIntoView({ block: 'start' }), 100);
@@ -232,7 +244,16 @@ export default function LifeKnowledge() {
 
   return <div className="life-workspace" data-folio-open={folioOpen} data-directory-open={directoryOpen} data-folio-theme={folioTheme}
     data-low-power={renderer === 'software' ? 'true' : undefined}>
-    <aside className="life-sidebar" aria-label="知识学科" hidden={!directoryOpen}>
+    <div className="life-compact-bar" aria-label="知识星图工具">
+      <button type="button" aria-controls="life-directory" aria-expanded={directoryOpen}
+        onClick={() => setDirectoryOpen((value) => !value)}>☰ {directoryOpen ? '收起目录' : '知识目录'}</button>
+      <button type="button" aria-controls="life-folio" aria-expanded={folioOpen} onClick={() => {
+        const opening = !folioOpen;
+        setFolioOpen(opening);
+        if (opening) requestAnimationFrame(() => inspectorRef.current?.scrollIntoView({ block: 'start', behavior: 'smooth' }));
+      }}>▤ {folioOpen ? '收起卷宗' : '知识卷宗'}</button>
+    </div>
+    <aside id="life-directory" className="life-sidebar" aria-label="知识学科" hidden={!directoryOpen}>
       <PanelCorners />
       <div className="life-side-heading"><div><span>OMNIA / ATLAS</span><strong>知识目录</strong><small>五卷 · 二十门 · {book.entries.length.toLocaleString()} 星点</small></div>
         <button className="life-directory-toggle" type="button" onClick={() => setDirectoryOpen(false)}>◂ 收起</button></div>
@@ -271,7 +292,7 @@ export default function LifeKnowledge() {
       <div className="life-map-footer"><span>{highlightIds.length ? `✦ 点亮 ${highlightIds.length} 项${dimension !== 'all' ? '维度' : observationsOnly ? '观测' : '搜索'}轨迹` : '✦ 五卷异构星系 · 明星为学科'}</span>
         <span>{sceneMode === 'galaxy' ? '拖动旋转' : '拖动平移'} · 滚轮缩放 · 长按聚拢关联</span></div>
     </main>
-    <aside className="life-inspector" ref={inspectorRef} aria-label="知识卷宗">
+    <aside id="life-folio" className="life-inspector" ref={inspectorRef} aria-label="知识卷宗">
       <PanelCorners />
       <div className="life-folio-bar">
         {folioOpen && <div className="life-theme-switch" role="group" aria-label="手卷纸面主题">

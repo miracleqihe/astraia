@@ -68,11 +68,11 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
 
     // 5 Spiritual Consciousness Constellation Clusters for SIDERA (玄象星络)
     const SIDERA_CLUSTERS = [
-      { id: 'sid_myth', name: '创世灾变与天体神话星群', code: 'MYTHOS · I', color: '#f5d487', center: new THREE.Vector3(0, 162, 14) },
-      { id: 'sid_hag', name: '暗夜梦魇与幻影感知星群', code: 'MYTHOS · II', color: '#a3c6ff', center: new THREE.Vector3(-174, 46, 16) },
-      { id: 'sid_witch', name: '妖术恐慌与契约附体星群', code: 'MYTHOS · III', color: '#c8a6ff', center: new THREE.Vector3(-112, -144, -12) },
-      { id: 'sid_crypt', name: '山海精怪与器物骚灵星群', code: 'MYTHOS · IV', color: '#ff5238', center: new THREE.Vector3(112, -144, 12) },
-      { id: 'sid_liminal', name: '现代阈限与规则展演星群', code: 'MYTHOS · V', color: '#e8cf82', center: new THREE.Vector3(174, 46, -14) }
+      { id: 'sid_myth', name: '创世灾变与天体神话星群', shortName: '创世天象', code: 'MYTHOS · I', color: '#f5d487', center: new THREE.Vector3(0, 162, 14) },
+      { id: 'sid_hag', name: '暗夜梦魇与幻影感知星群', shortName: '梦魇幻影', code: 'MYTHOS · II', color: '#a3c6ff', center: new THREE.Vector3(-174, 46, 16) },
+      { id: 'sid_witch', name: '妖术恐慌与契约附体星群', shortName: '妖术附体', code: 'MYTHOS · III', color: '#c8a6ff', center: new THREE.Vector3(-112, -144, -12) },
+      { id: 'sid_crypt', name: '山海精怪与器物骚灵星群', shortName: '山海精怪', code: 'MYTHOS · IV', color: '#ff5238', center: new THREE.Vector3(112, -144, 12) },
+      { id: 'sid_liminal', name: '现代阈限与规则展演星群', shortName: '现代传说', code: 'MYTHOS · V', color: '#e8cf82', center: new THREE.Vector3(174, 46, -14) }
     ];
 
     // Relation Type Color & Label Dictionary
@@ -361,7 +361,9 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 4500);
     function getClearViewportMetrics() {
       const w = Math.max(1, window.innerWidth), h = Math.max(1, window.innerHeight);
-      const topOcc = w <= 760 ? 78 : 56;
+      const compact = w <= 760 || (w <= 1100 && h <= 500);
+      // Reserve room for the title as well as the navigation on short screens.
+      const topOcc = compact ? Math.min(Math.round(h * 0.45), h <= 500 ? (w >= 600 ? 130 : 170) : 220) : 56;
       const bottomOcc = document.body.dataset.observatoryPanel ? 145 : 64;
       if (w >= 768) {
         const leftOpen = leftDrawer && !leftDrawer.classList.contains('drawer-left-hidden');
@@ -373,16 +375,17 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         const shiftX = Math.max(-Math.round(w * 0.24), Math.min(Math.round(w * 0.24), rawShiftX));
         const shiftY = Math.round((bottomOcc - topOcc) / 2);
         const clearW = Math.max(320, w - leftOcc - rightOcc);
-        const clearH = Math.max(300, h - topOcc - bottomOcc);
+        const clearH = Math.max(compact ? 160 : 300, h - topOcc - bottomOcc);
         const originScreenX = w / 2 - shiftX;
         const availHalfW = Math.max(160, Math.min(originScreenX - leftOcc, (w - rightOcc) - originScreenX));
         const originScreenY = h / 2 - shiftY;
-        const availHalfH = Math.max(150, Math.min(originScreenY - topOcc, (h - bottomOcc) - originScreenY));
+        const availHalfH = Math.max(compact ? 80 : 150, Math.min(originScreenY - topOcc, (h - bottomOcc) - originScreenY));
         return { w, h, shiftX, shiftY, clearW, clearH, availHalfW, availHalfH };
       }
       const clearW = Math.max(260, w - 24);
-      const clearH = Math.max(280, h - topOcc - bottomOcc);
-      return { w, h, shiftX: 0, shiftY: 22, clearW, clearH, availHalfW: clearW / 2, availHalfH: clearH / 2 };
+      const clearH = Math.max(160, h - topOcc - bottomOcc);
+      const shiftY = Math.round((bottomOcc - topOcc) / 2);
+      return { w, h, shiftX: 0, shiftY, clearW, clearH, availHalfW: clearW / 2, availHalfH: clearH / 2 };
     }
     function getOverviewPreset(dim) {
       const { h, availHalfW, availHalfH } = getClearViewportMetrics();
@@ -1554,9 +1557,11 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         el.innerHTML = `
           <div class="vol-plaque border-[#b692f6]/40">
             <div class="font-mono-tech text-[9px] tracking-[0.16em] text-[#c4b5fd]">${cl.code}</div>
-            <div class="font-serif-sc text-xs font-semibold text-[#f3eeff] mt-0.5">${cl.name}</div>
+            <div class="font-serif-sc text-xs font-semibold text-[#f3eeff] mt-0.5"><span class="plaque-full">${cl.name}</span><span class="plaque-short">${cl.shortName}</span></div>
           </div>
         `;
+        el.setAttribute('title', cl.name);
+        el.setAttribute('aria-label', cl.name);
         el.addEventListener('click', (e) => {
           e.stopPropagation();
           const b = SYZYGY_BRIDGES.find(x => x.sideraCluster === cl.id);
@@ -2130,9 +2135,11 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
 
     renderer.domElement.addEventListener('pointerdown', (e) => {
       downPt = { x: e.clientX, y: e.clientY };
+      // Touch taps need their own hit test; they do not have a preceding hover.
+      if (e.pointerType !== 'mouse') updateScenePointer(e);
     });
 
-    renderer.domElement.addEventListener('pointermove', (e) => {
+    function updateScenePointer(e) {
       membrane.setPointer(e.clientX, e.clientY, true);
       membraneRefraction.pointer(e.clientX, e.clientY, true, true);
       mouseNDC.x = (e.clientX / window.innerWidth) * 2 - 1;
@@ -2210,25 +2217,39 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         document.getElementById('tt-title').textContent = hitResult.title;
         document.getElementById('tt-sub').textContent = hitResult.sub;
 
-        const tx = Math.min(window.innerWidth - 305, e.clientX + 18);
+        const tx = Math.max(8, Math.min(window.innerWidth - 305, e.clientX + 18));
         const ty = Math.max(66, Math.min(window.innerHeight - 85, e.clientY - 12));
         tooltipEl.style.left = `${tx}px`;
         tooltipEl.style.top = `${ty}px`;
-        tooltipEl.style.opacity = '1';
+        tooltipEl.style.opacity = e.pointerType === 'touch' ? '0' : '1';
       } else {
         renderer.domElement.style.cursor = 'grab';
         tooltipEl.style.opacity = '0';
       }
-    });
+    }
+    renderer.domElement.addEventListener('pointermove', updateScenePointer);
 
-    renderer.domElement.addEventListener('pointerleave', () => {
+    function clearScenePointer() {
       membrane.setPointer(-999, -999, false);
       membraneRefraction.pointer(0, 0, false, false);
       sideraSculpts.setPointer(null, false);
-    });
+      const hadBridge = !!appState.hoveredTarget?.bridge;
+      appState.hoveredTarget = null;
+      tooltipEl.style.opacity = '0';
+      if (hadBridge) syncSpiritualAnchorAttributes();
+    }
+    renderer.domElement.addEventListener('pointerleave', clearScenePointer);
+    renderer.domElement.addEventListener('pointercancel', clearScenePointer);
 
     renderer.domElement.addEventListener('pointerup', (e) => {
-      if (Math.hypot(e.clientX - downPt.x, e.clientY - downPt.y) > 5) return;
+      const clearTouchTarget = () => {
+        if (e.pointerType !== 'touch') return;
+        const hadBridge = !!appState.hoveredTarget?.bridge;
+        appState.hoveredTarget = null;
+        tooltipEl.style.opacity = '0';
+        if (hadBridge) syncSpiritualAnchorAttributes();
+      };
+      if (Math.hypot(e.clientX - downPt.x, e.clientY - downPt.y) > 5) { clearTouchTarget(); return; }
       if (appState.hoveredTarget && appState.hoveredTarget.bridge) {
         selectSyzygyBridge(appState.hoveredTarget.bridge, true);
       } else if (appState.hoveredTarget?.kind === 'graph') {
@@ -2245,6 +2266,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
           membraneAudio.playRipple(false);
         }
       }
+      clearTouchTarget();
     });
 
     // ============================================================================
@@ -2327,6 +2349,24 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       const url = URL.createObjectURL(new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json;charset=utf-8' }));
       const link = document.createElement('a'); link.href = url; link.download = 'astraia-sidera-view.json'; link.click();
       setTimeout(() => URL.revokeObjectURL(url), 1000);
+    });
+
+    // Keep secondary controls available without crowding the compact header.
+    const mobileToolsButton = document.getElementById('btn-mobile-tools');
+    const mobileToolsPanel = document.getElementById('syzygy-extra-tools');
+    const setMobileToolsOpen = (open) => {
+      mobileToolsButton.setAttribute('aria-expanded', String(open));
+      mobileToolsPanel.dataset.open = String(open);
+    };
+    mobileToolsButton.addEventListener('click', () => setMobileToolsOpen(mobileToolsPanel.dataset.open !== 'true'));
+    mobileToolsPanel.addEventListener('click', (event) => {
+      if (event.target.closest('button')) setMobileToolsOpen(false);
+    });
+    document.addEventListener('pointerdown', (event) => {
+      if (!mobileToolsPanel.contains(event.target) && !mobileToolsButton.contains(event.target)) setMobileToolsOpen(false);
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setMobileToolsOpen(false);
     });
 
     // Prominent ◐ 折光星桥 Toggle
@@ -3170,7 +3210,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     const initial = initialParams;
     const dimension = ['umbra','sidera','omnia'].includes(initial.get('dim')) ? initial.get('dim') : 'omnia';
     if (dimension !== 'omnia') switchDimension(dimension, false, true);
-    else updateClassicLink();
+    else { document.body.dataset.dimension = 'omnia'; updateClassicLink(); }
     document.getElementById('syzygy-loading')?.remove();
     requestAnimationFrame(animateLoop);
     setTimeout(() => fullAtlas.start().then(() => {

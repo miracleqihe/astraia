@@ -135,7 +135,7 @@ h1, h2, h3, p { margin-top: 0; }
 h1 { font-size: 23px; margin-bottom: 6px; }
 .heading span, .counts, .queue-meta, .pagination { font-size: 12px; color: #c8c8c3; }
 .counts { margin-bottom: 14px; }
-.field { display: flex; flex-direction: column; gap: 5px; font-size: 12px; }
+.field { display: flex; flex-direction: column; gap: 5px; min-width: 0; font-size: 12px; }
 .field input, .field select { padding: 8px; min-width: 0; border: 1px solid #75808c; background: #192332; color: var(--paper); }
 .filters { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-top: 10px; }
 .queue-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; gap: 8px; }
@@ -213,6 +213,15 @@ h1 { font-size: 23px; margin-bottom: 6px; }
   .workspace { display: block; height: auto; padding: 8px; }
   .queue { height: 65vh; min-height: 480px; }
   .detail { margin-top: 8px; padding: 20px 16px 30px; }
-  .filters { grid-template-columns: 1fr 1fr; }
+  .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .field input, .field select { width: 100%; }
   .detail h2 { font-size: 21px; }
+}
+
+@media (max-width: 1000px) and (max-height: 500px) {
+  .topbar { padding: 10px 14px; flex-wrap: wrap; gap: 8px 14px; }
+  .top-actions { width: 100%; margin-left: 0; }
+  .workspace { display: block; height: auto; padding: 8px; }
+  .queue { height: 65vh; min-height: 480px; }
+  .detail { margin-top: 8px; padding: 20px 16px 30px; }
 }

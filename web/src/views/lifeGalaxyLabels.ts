@@ -38,14 +38,20 @@ export function createLifeGalaxyLabels(host: HTMLElement, layout: ReturnType<typ
         const show = (visible || flatMode || (!selected && row.volume === activeVolume))
           && vector.z < 1 && vector.x > -.98 && vector.x < .98 && vector.y > -.9 && vector.y < .9;
         row.button.hidden = !show;
-        if (show) { row.button.style.left = `${(vector.x + 1) * 50}%`; row.button.style.top = `${(1 - vector.y) * 50}%`; }
+        if (show) {
+          row.button.style.left = `clamp(65px, ${(vector.x + 1) * 50}%, calc(100% - 65px))`;
+          row.button.style.top = `${(1 - vector.y) * 50}%`;
+        }
       }
       for (const row of subjectRows) {
         vector.copy(row.point); vector.y -= 10; vector.project(camera);
         const show = (flatMode || (!selected && (row.subject.volume === volume || row.subject.id === selectedSubject)))
           && vector.z < 1 && Math.abs(vector.x) < .96 && Math.abs(vector.y) < .94;
         row.button.hidden = !show;
-        if (show) { row.button.style.left = `${(vector.x + 1) * 50}%`; row.button.style.top = `${(1 - vector.y) * 50}%`; }
+        if (show) {
+          row.button.style.left = `clamp(78px, ${(vector.x + 1) * 50}%, calc(100% - 78px))`;
+          row.button.style.top = `${(1 - vector.y) * 50}%`;
+        }
       }
     },
     dispose() { layer.remove(); },

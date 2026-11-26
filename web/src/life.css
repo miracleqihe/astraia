@@ -689,3 +689,66 @@
   .life-search { position: static; }
   .life-original iframe { min-height: 480px; }
 }
+
+.life-compact-bar { display: none; }
+
+@media (max-width: 1000px) {
+  .life-workspace { display: flex; flex-direction: column; min-width: 0; overflow: visible; }
+  .life-compact-bar { display: flex; gap: 6px; padding: 9px 9px 0; }
+  .life-compact-bar button {
+    flex: 1;
+    min-height: 40px;
+    padding: 6px 10px;
+    border: 1px solid rgba(207, 169, 98, .4);
+    color: #efe9dc;
+    background: rgba(11, 15, 24, .94);
+    font-size: 12px;
+  }
+  .life-compact-bar button[aria-expanded='true'] { color: var(--brass-bright); border-color: var(--brass-tick); }
+  .life-sidebar, .life-inspector, .life-workspace[data-folio-open='false'] .life-inspector {
+    position: static;
+    width: auto;
+    max-width: 100%;
+    margin: 9px;
+    box-shadow: none;
+  }
+  .life-sidebar { max-height: min(42dvh, 380px); }
+  .life-directory-restore, .life-workspace[data-folio-open='false'] .life-inspector { display: none; }
+  .life-map { position: relative; inset: auto; flex: none; height: clamp(450px, calc(100dvh - 155px), 900px); min-height: 0; overflow: hidden; }
+  .life-map-heading, .life-workspace[data-directory-open='false'] .life-map-heading { left: 18px; top: 18px; }
+  .life-view-controls, .life-workspace[data-folio-open='false'] .life-view-controls {
+    top: 88px;
+    left: 18px;
+    right: 18px;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .life-view-controls button { flex: none; min-height: 38px; }
+  .life-resonance, .life-workspace[data-folio-open='false'] .life-resonance,
+  .life-workspace[data-directory-open='false'] .life-resonance,
+  .life-workspace[data-directory-open='false'][data-folio-open='false'] .life-resonance {
+    left: 14px;
+    right: 14px;
+    bottom: 52px;
+    width: auto;
+    max-width: none;
+    min-width: 0;
+  }
+  .life-resonance-options button { min-height: 34px; }
+  .life-map-footer, .life-workspace[data-folio-open='false'] .life-map-footer,
+  .life-workspace[data-directory-open='false'] .life-map-footer { left: 16px; right: 16px; bottom: 14px; flex-wrap: wrap; }
+  .life-search { position: static; }
+  .life-original iframe { min-height: 480px; }
+  .life-inspector { scroll-margin-top: 110px; overflow: visible; }
+  .life-prose pre { max-width: 100%; overflow-x: auto; }
+}
+
+@media (max-width: 1000px) and (max-height: 500px) {
+  .life-map { height: 360px; }
+  .life-inspector { scroll-margin-top: 8px; }
+}
+
+@media (max-width: 400px) {
+  .life-view-controls button { padding-inline: 5px; font-size: 10.5px; }
+}

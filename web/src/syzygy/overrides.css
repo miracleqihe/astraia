@@ -968,3 +968,124 @@ body[data-observatory-panel='trails'] #observatory-popovers #trail-dock { displa
 @media (min-width: 761px) and (max-width: 820px) {
   #syzygy-header #btn-reset-cam { display: none; }
 }
+
+.syzygy-tools-toggle { display: none; }
+.syzygy-extra-tools { display: flex; align-items: center; gap: 6px; }
+.plaque-short { display: none; }
+
+@media (min-width: 761px) and (max-width: 1000px) and (min-height: 501px) {
+  #syzygy-header > nav .dim-tab { min-height: 36px; }
+  .syzygy-classic, .syzygy-tools-toggle { min-height: 36px; }
+  .syzygy-tools-toggle { display: inline-flex; align-items: center; justify-content: center; }
+  .syzygy-extra-tools {
+    display: none;
+    position: fixed;
+    top: 48px;
+    right: 9px;
+    z-index: 40;
+    width: 210px;
+    padding: 5px;
+    border: 1px solid rgba(207, 169, 98, .42);
+    background: #090e18;
+  }
+  .syzygy-extra-tools[data-open='true'] { display: flex; flex-direction: column; align-items: stretch; }
+  #syzygy-header .syzygy-extra-tools button, #syzygy-header .syzygy-extra-tools #btn-reset-cam {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 40px;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 760px), (max-width: 1100px) and (max-height: 500px) {
+  #syzygy-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: 40px 38px;
+    gap: 3px;
+    height: 92px;
+    padding: 5px 9px;
+  }
+  #syzygy-header > nav { grid-column: 1 / -1; grid-row: 2; width: 100%; max-width: none; justify-content: stretch; }
+  #syzygy-header > div:last-child { grid-column: 2; grid-row: 1; }
+  #syzygy-header > nav .dim-tab { flex: 1; justify-content: center; min-width: 0; min-height: 38px; font-size: clamp(10px, 2.6vw, 12px); }
+  .syzygy-classic, .syzygy-tools-toggle { min-height: 36px; padding: 6px 9px; font-size: 11px; }
+  .syzygy-tools-toggle { display: inline-flex; align-items: center; justify-content: center; }
+  .syzygy-extra-tools {
+    display: none;
+    position: fixed;
+    top: 48px;
+    right: 9px;
+    z-index: 40;
+    width: min(210px, calc(100vw - 18px));
+    padding: 5px;
+    border: 1px solid rgba(207, 169, 98, .42);
+    background: #090e18;
+  }
+  .syzygy-extra-tools[data-open='true'] { display: flex; flex-direction: column; align-items: stretch; }
+  #syzygy-header .syzygy-extra-tools button {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 40px;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 12px;
+  }
+  #btn-syzygy-toggle span:nth-child(2) { display: inline; }
+  .astrolabe-bezel { top: 92px; }
+  #btn-open-left, #btn-open-right { top: 99px; min-height: 36px; }
+  #context-banner { top: 140px; }
+  #left-drawer, #right-drawer { top: 140px; bottom: max(72px, env(safe-area-inset-bottom)); overscroll-behavior: contain; }
+  #observatory-dock { bottom: max(12px, env(safe-area-inset-bottom)); overflow-x: auto; white-space: nowrap; }
+  #observatory-dock button { flex: none; min-height: 36px; }
+  #observatory-popovers { bottom: max(64px, calc(env(safe-area-inset-bottom) + 52px)); }
+  #celestial-tooltip { max-width: calc(100vw - 16px); }
+  #webgl-viewport canvas { touch-action: none; }
+}
+
+@media (max-width: 1100px) and (max-height: 500px) {
+  #left-drawer, #right-drawer { top: 100px; bottom: 58px; }
+  #context-banner { top: 102px; }
+}
+
+@media (min-width: 600px) and (max-width: 1100px) and (max-height: 500px) {
+  #syzygy-header { display: flex; height: 52px; padding: 0 10px; }
+  #syzygy-header > nav { width: auto; flex: 1; justify-content: center; margin: 0 8px; }
+  #syzygy-header > nav .dim-tab { flex: 1; }
+  .astrolabe-bezel { top: 52px; }
+  #btn-open-left, #btn-open-right { top: 60px; }
+  #context-banner { top: 60px; }
+  #left-drawer, #right-drawer { top: 60px; bottom: 58px; }
+}
+
+@media (max-width: 450px), (max-width: 1100px) and (max-height: 500px) {
+  .world-tag .vol-plaque { padding: 4px 6px; }
+  .world-tag .vol-plaque > .font-mono-tech { display: none; }
+  .sidera-cluster-tag .plaque-full { display: none; }
+  .sidera-cluster-tag .plaque-short { display: inline; }
+  .world-tag .vol-plaque .font-serif-sc { font-size: 10.5px; letter-spacing: .03em; }
+  .wormhole-plaque .font-serif-sc > span + span { display: none; }
+}
+
+@media (max-width: 400px) {
+  #syzygy-header { grid-template-rows: 40px 42px; height: 96px; }
+  #syzygy-header > nav .dim-tab {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 0 3px;
+    min-height: 42px;
+    line-height: 1.1;
+  }
+  #syzygy-header > nav .dim-tab > span:first-child { grid-row: 1 / 3; }
+  #syzygy-header > nav .dim-tab .font-cinzel { font-size: 9px; }
+  #syzygy-header > nav .dim-tab > span:last-child { font-size: 10.5px; }
+  .astrolabe-bezel { top: 96px; }
+  #btn-open-left, #btn-open-right { top: 103px; }
+  #observatory-dock { width: calc(100vw - 24px); justify-content: space-around; gap: 0; }
+  #observatory-dock button { padding-inline: 4px; font-size: 10.5px; }
+}

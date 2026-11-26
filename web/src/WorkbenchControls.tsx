@@ -30,7 +30,15 @@ interface RailProps {
 }
 
 export function ControlRail(props: RailProps) {
-  return <aside className="control-rail" data-layers={props.mode === 'graph'} aria-label="图层与信源筛选">
+  const [expanded, setExpanded] = useState(false);
+  return <aside className="control-rail" data-layers={props.mode === 'graph'} data-expanded={expanded}
+    aria-label="图层与信源筛选" onKeyDown={(event) => { if (event.key === 'Escape') setExpanded(false); }}>
+    <div className="rail-mobile-actions">
+      <button type="button" onClick={() => { setExpanded(false); props.onSearch(); }} aria-label="搜索节点">⌕ 检索</button>
+      <button type="button" aria-expanded={expanded} aria-controls="control-rail-panel"
+        onClick={() => setExpanded((value) => !value)}>筛选 <span aria-hidden="true">{expanded ? '−' : '+'}</span></button>
+    </div>
+    <div className="rail-content" id="control-rail-panel">
     <button type="button" className="rail-search" onClick={props.onSearch} title="搜索节点 (Ctrl/⌘ K)" aria-label="搜索节点">⌕ 检索 <small>⌘K</small></button>
     {props.mode === 'graph' && <>
       <span className="rail-caption">图层 · LAYERS</span>
@@ -55,6 +63,7 @@ export function ControlRail(props: RailProps) {
         <span className="rail-seal" dangerouslySetInnerHTML={{ __html: tierSeal(tier) }} />
       </button>;
     })}</div>
+    </div>
   </aside>;
 }
 

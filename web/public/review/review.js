@@ -212,7 +212,7 @@
         showingUnmatched = false;
         renderList();
         renderDetail(record);
-        if (matchMedia('(max-width: 760px)').matches) detail.scrollIntoView({behavior:'smooth', block:'start'});
+        if (matchMedia('(max-width: 760px), (max-width: 1000px) and (max-height: 500px)').matches) detail.scrollIntoView({behavior:'smooth', block:'start'});
       });
       fragment.append(button);
     }
@@ -342,7 +342,7 @@
             issue.value = 'all'; status.value = 'all'; page = 0;
             selectedId = entry.id; showingUnmatched = false;
             renderList(); renderDetail(target);
-            if (matchMedia('(max-width: 760px)').matches) detail.scrollIntoView({behavior:'smooth', block:'start'});
+            if (matchMedia('(max-width: 760px), (max-width: 1000px) and (max-height: 500px)').matches) detail.scrollIntoView({behavior:'smooth', block:'start'});
           });
           links.append(button);
         }
@@ -373,7 +373,7 @@
             issue.value = 'all'; status.value = 'all'; page = 0;
             selectedId = entry.node_id; showingUnmatched = false;
             renderList(); renderDetail(target);
-            if (matchMedia('(max-width: 760px)').matches) detail.scrollIntoView({behavior:'smooth', block:'start'});
+            if (matchMedia('(max-width: 760px), (max-width: 1000px) and (max-height: 500px)').matches) detail.scrollIntoView({behavior:'smooth', block:'start'});
           });
           links.append(button);
         }
