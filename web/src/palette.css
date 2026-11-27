@@ -40,8 +40,22 @@
   --obsidian-vermilion: #e0766c;
 
   --radius-none: 0px;
-  --border-crisp: 1px solid rgba(27, 39, 64, 0.36);
+  --radius-sm: 8px;
+  --radius-chip: 11px;
+  --radius-card: 16px;
+  --radius-panel: 22px;
+  --radius-sheet: 24px;
+  --radius-pill: 999px;
+
+  --glass-obsidian: linear-gradient(165deg, rgba(16, 23, 40, 0.84) 0%, rgba(7, 11, 21, 0.90) 100%);
+  --glass-capsule: rgba(9, 14, 26, 0.76);
+  --glass-rim: rgba(226, 194, 134, 0.24);
+  --glass-rim-strong: rgba(240, 215, 156, 0.48);
+  --glass-specular: inset 0 1px 0 rgba(255, 246, 224, 0.18);
+  --glass-shadow: 0 22px 54px rgba(2, 5, 14, 0.66), inset 0 1px 0 rgba(255, 246, 224, 0.16);
+
+  --border-crisp: 1px solid rgba(27, 39, 64, 0.28);
   --border-crisp-strong: 1px solid #1b2740;
-  --border-plate: 1px solid rgba(207, 169, 98, 0.28);
-  --border-plate-subtle: 1px solid rgba(239, 236, 230, 0.18);
+  --border-plate: 1px solid rgba(207, 169, 98, 0.24);
+  --border-plate-subtle: 1px solid rgba(239, 236, 230, 0.16);
 }

@@ -1,17 +1,49 @@
 import { isCompactViewport } from '../compactViewport';
+import { applyUIScheme, initUIScheme, subscribeUIScheme } from '../uiScheme';
 
 // Wire the small, useful parts of the observatory before the 3D scene loads.
 let shell;
 
 export function initSyzygyShell() {
   if (shell) return shell;
+  let currentScheme = initUIScheme();
   const left = document.getElementById('left-drawer');
   const right = document.getElementById('right-drawer');
   const openLeft = document.getElementById('btn-open-left');
   const openRight = document.getElementById('btn-open-right');
+  const dockLeft = document.getElementById('btn-dock-left');
+  const dockRight = document.getElementById('btn-dock-right');
+  const schemeBtn = document.getElementById('btn-ui-scheme');
+  const viewport = document.getElementById('webgl-viewport');
   const toolsButton = document.getElementById('btn-mobile-tools');
   const toolsPanel = document.getElementById('syzygy-extra-tools');
+
+  function syncSchemeButton() {
+    if (!schemeBtn) return;
+    const label = schemeBtn.querySelector('[data-scheme-label]');
+    if (label) label.textContent = currentScheme === '2' ? '方案二' : '方案一';
+    schemeBtn.dataset.scheme = currentScheme;
+    schemeBtn.setAttribute('aria-label', currentScheme === '2' ? '当前为方案二（浑天星盘），点击切换至方案一' : '当前为方案一（流光胶囊），点击切换至方案二');
+  }
+  syncSchemeButton();
+  schemeBtn?.addEventListener('click', () => {
+    currentScheme = applyUIScheme(currentScheme === '2' ? '1' : '2');
+    syncSchemeButton();
+    const toast = document.getElementById('status-toast');
+    if (toast) {
+      toast.textContent = currentScheme === '2' ? '已切换至 方案二 · 浑天星盘' : '已切换至 方案一 · 星轨胶囊';
+      toast.style.opacity = '1';
+      clearTimeout(schemeBtn._toastTimer);
+      schemeBtn._toastTimer = setTimeout(() => { toast.style.opacity = '0'; }, 1800);
+    }
+    onChange();
+  });
   let onChange = () => {};
+  subscribeUIScheme(scheme => {
+    currentScheme = scheme;
+    syncSchemeButton();
+    onChange();
+  });
   let ready = false;
   const pending = [];
   const initialParams = new URL(window.location.href).searchParams;
@@ -47,6 +79,8 @@ export function initSyzygyShell() {
     button.classList.toggle('hidden', !collapsed);
     button.classList.toggle('inline-flex', collapsed);
     button.setAttribute('aria-expanded', String(!collapsed));
+    const dockBtn = side === 'left' ? dockLeft : dockRight;
+    if (dockBtn) dockBtn.setAttribute('aria-expanded', String(!collapsed));
     if (side === 'left') document.body.dataset.leftOpen = String(!collapsed);
   }
   function setLeftCollapsed(collapsed) {
@@ -69,8 +103,15 @@ export function initSyzygyShell() {
   apply(right, openRight, 'right', right.classList.contains('drawer-right-hidden'));
   openLeft.addEventListener('click', () => setLeftCollapsed(false));
   openRight.addEventListener('click', () => setRightCollapsed(false));
+  dockLeft?.addEventListener('click', () => setLeftCollapsed(!left.classList.contains('drawer-left-hidden')));
+  dockRight?.addEventListener('click', () => setRightCollapsed(!right.classList.contains('drawer-right-hidden')));
   document.getElementById('btn-close-left').addEventListener('click', () => setLeftCollapsed(true));
   document.getElementById('btn-close-right').addEventListener('click', () => setRightCollapsed(true));
+  viewport?.addEventListener('pointerdown', () => {
+    if (!isCompactViewport()) return;
+    if (!left.inert) setLeftCollapsed(true);
+    if (!right.inert) setRightCollapsed(true);
+  });
   toolsButton.addEventListener('click', () => setToolsOpen(toolsPanel.dataset.open !== 'true'));
   toolsPanel.addEventListener('click', event => {
     if (event.target.closest('button')) setToolsOpen(false);

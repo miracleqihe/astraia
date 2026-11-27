@@ -73,49 +73,50 @@ body[data-engraving-theme] {
   --seal-ground: #f2ece1;
 }
 
-body[data-engraving-theme] #syzygy-header {
-  border-bottom: 1px solid rgba(207, 169, 98, 0.32);
-  background: rgba(9, 14, 24, 0.95);
-}
+/* Header stays unified dark spatial glass via overrides.css */
 
 body[data-engraving-theme] .engraving-panel,
 body[data-engraving-theme] .engraving-codex {
-  border: 1px solid var(--engrave-line);
-  border-radius: 0 !important;
-  background: var(--engrave-surface);
+  border: 1px solid rgba(214, 182, 120, 0.24);
+  background: linear-gradient(165deg, rgba(15, 21, 37, 0.88) 0%, rgba(8, 12, 22, 0.93) 100%);
   color: var(--engrave-ink);
-  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.62), inset 0 0 0 3px var(--engrave-surface), inset 0 0 0 4px var(--engrave-line);
+}
+body[data-engraving-theme] .engraving-panel {
+  border-radius: var(--radius-panel, 22px);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(2, 5, 14, 0.70), inset 0 1px 0 rgba(255, 246, 224, 0.16);
 }
 body[data-engraving-theme] .engraving-codex {
   position: relative;
-  box-shadow: inset 0 0 0 3px var(--engrave-surface), inset 0 0 0 4px var(--engrave-line);
+  border-radius: var(--radius-card, 16px);
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 246, 224, 0.12);
 }
 body[data-engraving-theme] .engraving-panel.astrolabe-corners::before,
 body[data-engraving-theme] .engraving-panel.astrolabe-corners::after { content: none; }
 .engraving-panel > .corner-bl, .engraving-panel > .corner-br { display: none; }
 
-.engraving-corner { position: absolute; width: 16px; height: 16px; z-index: 8; color: var(--engrave-gold, #d6b46e); pointer-events: none; }
-.engraving-corner-nw { left: -1px; top: -1px; }
-.engraving-corner-ne { right: -1px; top: -1px; transform: scaleX(-1); }
-.engraving-corner-sw { left: -1px; bottom: -1px; transform: scaleY(-1); }
-.engraving-corner-se { right: -1px; bottom: -1px; transform: scale(-1); }
+.engraving-corner { display: none; }
 
 .engraving-panel-heading { position: relative; overflow: hidden; }
-.engraving-panel-frieze { position: absolute; inset: 0; color: var(--engrave-gold); opacity: 0.09; pointer-events: none; }
+.engraving-panel-frieze { position: absolute; inset: 0; color: var(--engrave-gold); opacity: 0.07; pointer-events: none; }
 
 .engraving-theme-btn {
-  padding: 4px 8px;
+  padding: 4px 10px;
   color: var(--engrave-muted);
   border: 1px solid transparent;
+  border-radius: var(--radius-pill, 999px);
   background: transparent;
   font-size: 11px;
   white-space: nowrap;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 .engraving-theme-btn:hover { color: var(--engrave-ink); }
 .engraving-theme-btn[aria-pressed='true'] {
   color: var(--engrave-bright);
-  border-color: var(--engrave-line);
-  background: var(--engrave-inset);
+  border-color: rgba(214, 182, 120, 0.38);
+  background: linear-gradient(135deg, rgba(207, 169, 98, 0.24), rgba(126, 102, 214, 0.14));
+  box-shadow: inset 0 1px 0 rgba(255, 246, 224, 0.18);
 }
 
 /* Syzygy left drawer tier seal rail */
@@ -125,10 +126,11 @@ body[data-engraving-theme] .engraving-panel.astrolabe-corners::after { content: 
   width: 31px;
   height: 31px;
   min-width: 0;
-  padding: 1px;
+  padding: 2px;
   border: 1px solid transparent;
+  border-radius: 10px;
   background: transparent;
-  transition: opacity 150ms ease, border-color 150ms ease, background-color 150ms ease;
+  transition: opacity 150ms ease, border-color 150ms ease, background-color 150ms ease, transform 150ms ease;
 }
 .syzygy-tier-rail button[aria-pressed='true'] {
   border-color: rgba(207, 169, 98, 0.34);

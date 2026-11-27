@@ -13,6 +13,7 @@ import {
 } from './graph';
 import { loadOverviewMapFonts } from './views/geoFonts';
 import { portalHref, type PortalDimension } from './portalNavigation';
+import { applyUIScheme, initUIScheme, subscribeUIScheme, type UIScheme } from './uiScheme';
 import { announceViewReady } from './viewRouter';
 
 let geoPromise: Promise<typeof import('./views/GeoView')> | undefined;
@@ -45,6 +46,15 @@ function Brand() {
   </div>;
 }
 
+function SchemeSwitch({ scheme, onToggle }: { scheme: UIScheme; onToggle: () => void }) {
+  return <button type="button" className="scheme-toggle" onClick={onToggle}
+    title="切换视觉方案：方案一（星轨胶囊） ⇄ 方案二（浑天星盘）"
+    aria-label={scheme === '2' ? '当前为方案二（浑天星盘），点击切换至方案一' : '当前为方案一（星轨胶囊），点击切换至方案二'}>
+    <span aria-hidden="true">✦</span>
+    <span>{scheme === '2' ? '方案二' : '方案一'}</span>
+  </button>;
+}
+
 function SyzygyLink({ dimension, story, showFiction, tiers }: { dimension: PortalDimension; story?: string | null; showFiction?: boolean; tiers?: readonly string[] }) {
   return <a className="syzygy-entry" href={portalHref(dimension, story, undefined, showFiction, tiers)} aria-label="切换到朔望叠影视图" onClick={(event) => {
     event.currentTarget.href = portalHref(dimension, story, undefined, showFiction, tiers);
@@ -73,8 +83,9 @@ function ViewSwitch({ mode, lifeMode, onSwitch }: { mode: ViewMode; lifeMode: bo
   </nav>;
 }
 
-function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetryDetails, onEnterLifeWhileLoading }: {
+function Atlas({ snapshot, loading, details, detailsError, uiScheme, onToggleScheme, onNeedDetails, onRetryDetails, onEnterLifeWhileLoading }: {
   snapshot: GraphSnapshot; loading: boolean; details: GraphDetails | null; detailsError: string;
+  uiScheme: UIScheme; onToggleScheme: () => void;
   onNeedDetails: () => void; onRetryDetails: () => void; onEnterLifeWhileLoading: () => void;
 }) {
   const [entry] = useState(() => {
@@ -346,6 +357,7 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
       <Brand />
       <ViewSwitch mode={mode} lifeMode={lifeMode} onSwitch={switchView} />
       <div className="top-actions">
+        <SchemeSwitch scheme={uiScheme} onToggle={onToggleScheme} />
         <SyzygyLink dimension={lifeMode ? 'omnia' : mode === 'geo' ? 'umbra' : 'sidera'} story={lifeMode ? null : selectedId} showFiction={tiers.has('F')} tiers={ALL_TIERS.filter(tier => tiers.has(tier))} />
         {!lifeMode && <>
           {!publicSite && <a className="review-link" aria-label="资料复核" href={`${import.meta.env.BASE_URL}review/index.html`}><span className="review-link-full">资料复核</span><span className="review-link-short" aria-hidden="true">复核</span></a>}
@@ -442,6 +454,11 @@ function Atlas({ snapshot, loading, details, detailsError, onNeedDetails, onRetr
 }
 
 export function App() {
+  const [uiScheme, setUIScheme] = useState<UIScheme>(() => initUIScheme());
+  useEffect(() => subscribeUIScheme(setUIScheme), []);
+  const toggleScheme = useCallback(() => {
+    setUIScheme((prev) => applyUIScheme(prev === '2' ? '1' : '2'));
+  }, []);
   const [directLife, setDirectLife] = useState(() => new URL(window.location.href).searchParams.get('view') === 'life');
   const [lifeRouteVersion, setLifeRouteVersion] = useState(0);
   const [pendingMode, setPendingMode] = useState<ViewMode>(() => new URL(window.location.href).searchParams.get('view') === 'graph' ? 'graph' : 'geo');
@@ -504,17 +521,18 @@ export function App() {
       }
       url.searchParams.set('view', next === 'geo' ? 'map' : 'graph'); url.searchParams.delete('entry'); url.hash = '';
       window.history.replaceState({}, '', url); setPendingMode(next); setDirectLife(false);
-    }} /><div className="top-actions"><SyzygyLink dimension="omnia" /></div></header>
+    }} /><div className="top-actions"><SchemeSwitch scheme={uiScheme} onToggle={toggleScheme} /><SyzygyLink dimension="omnia" /></div></header>
     <Suspense fallback={<div className="life-status">正在载入知识星图…</div>}><LifeKnowledge key={lifeRouteVersion} /></Suspense>
   </div>;
   if (snapshot || !error) return <Atlas snapshot={snapshot ?? EMPTY_SNAPSHOT} loading={!snapshot} details={details} detailsError={detailsError}
+    uiScheme={uiScheme} onToggleScheme={toggleScheme}
     onNeedDetails={needDetails} onRetryDetails={retryDetails} onEnterLifeWhileLoading={() => setDirectLife(true)} />;
   return <div className="app-shell"><header className="topbar"><Brand /><ViewSwitch mode={pendingMode} lifeMode={false} onSwitch={(next) => {
     const url = new URL(window.location.href); url.searchParams.set('view', next === 'geo' ? 'map' : next);
     if (next !== 'life') url.searchParams.delete('entry');
     window.history.replaceState({}, '', url);
     if (next === 'life') setDirectLife(true); else setPendingMode(next);
-  }} /><div className="top-actions"><SyzygyLink dimension={pendingMode === 'geo' ? 'umbra' : 'sidera'} /></div></header><main className="loading-shell"><div className="loading-message" role={error ? 'alert' : 'status'}>
+  }} /><div className="top-actions"><SchemeSwitch scheme={uiScheme} onToggle={toggleScheme} /><SyzygyLink dimension={pendingMode === 'geo' ? 'umbra' : 'sidera'} /></div></header><main className="loading-shell"><div className="loading-message" role={error ? 'alert' : 'status'}>
     <h1>{error ? '图谱暂未加载' : '正在读取图谱'}</h1>{error && <p>{error}</p>}
     {error && <button type="button" className="quiet-button" onClick={() => { setError(null); setAttempt((value) => value + 1); }}>重试</button>}
   </div></main></div>;

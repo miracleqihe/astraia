@@ -342,9 +342,11 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     function getClearViewportMetrics() {
       const w = Math.max(1, window.innerWidth), h = Math.max(1, window.innerHeight);
       const compact = w <= 760 || (w <= 1100 && h <= 500);
+      const isSchemeTwo = document.documentElement.dataset.uiScheme === '2';
       // Reserve room for the title as well as the navigation on short screens.
-      const topOcc = compact ? Math.min(Math.round(h * 0.45), h <= 500 ? (w >= 600 ? 130 : 170) : 220) : 56;
-      const bottomOcc = document.body.dataset.observatoryPanel ? 145 : 64;
+      const portraitTop = isSchemeTwo ? 146 : 168;
+      const topOcc = compact ? Math.min(Math.round(h * 0.38), h <= 500 ? (w >= 600 ? 114 : 142) : portraitTop) : (isSchemeTwo ? 136 : 58);
+      const bottomOcc = document.body.dataset.observatoryPanel ? 152 : (isSchemeTwo ? 82 : 68);
       if (w >= 768) {
         const leftOpen = leftDrawer && !leftDrawer.classList.contains('drawer-left-hidden');
         const rightOpen = rightDrawer && !rightDrawer.classList.contains('drawer-right-hidden');
@@ -1467,13 +1469,14 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         const el = document.createElement('div');
         el.className = 'world-tag';
         el.innerHTML = `
-          <div class="vol-plaque ${vol.isWormhole ? 'wormhole-plaque' : ''}">
+          <div class="vol-plaque ${vol.isWormhole ? 'wormhole-plaque' : ''}" style="--plaque-accent:${vol.color}">
             <div class="font-mono-tech text-[9px] tracking-[0.16em]" style="color:${vol.color}">
               ${vol.num} / ${vol.en}
             </div>
-            <div class="font-serif-sc text-xs font-semibold text-[#f7f0e2] tracking-widest mt-0.5 flex items-center justify-center gap-1">
+            <div class="font-serif-sc text-xs font-semibold text-[#f7f0e2] tracking-widest mt-0.5 flex items-center justify-center gap-1.5">
+              <span class="plaque-orb" aria-hidden="true"></span>
               <span>${vol.name}</span>
-              ${vol.isWormhole ? '<span class="text-[10px] text-[#b692f6]">⇄ 穿界星门</span>' : ''}
+              ${vol.isWormhole ? '<span class="text-[10px] text-[#d6bcff]">⇄ 穿界星门</span>' : ''}
             </div>
           </div>
         `;
@@ -1497,9 +1500,9 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         const el = document.createElement('div');
         el.className = 'world-tag sidera-cluster-tag';
         el.innerHTML = `
-          <div class="vol-plaque border-[#b692f6]/40">
+          <div class="vol-plaque" style="--plaque-accent:#c4b5fd">
             <div class="font-mono-tech text-[9px] tracking-[0.16em] text-[#c4b5fd]">${cl.code}</div>
-            <div class="font-serif-sc text-xs font-semibold text-[#f3eeff] mt-0.5"><span class="plaque-full">${cl.name}</span><span class="plaque-short">${cl.shortName}</span></div>
+            <div class="font-serif-sc text-xs font-semibold text-[#f3eeff] mt-0.5 flex items-center justify-center gap-1.5"><span class="plaque-orb" aria-hidden="true"></span><span class="plaque-full">${cl.name}</span><span class="plaque-short">${cl.shortName}</span></div>
           </div>
         `;
         el.setAttribute('title', cl.name);
@@ -2554,6 +2557,10 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       if (scope === 'volumes' && appState.dimension !== 'omnia') switchDimension('omnia');
       if (scope === 'taxonomy') {
         setObservatoryPanel('');
+        if (isCompactViewport()) {
+          setLeftDrawerCollapsed(true);
+          setRightDrawerCollapsed(true);
+        }
         void ensureTaxonomyData();
         renderTaxonomyExplorer();
       } else if (taxonomyExplorer) {
@@ -2585,7 +2592,25 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       document.querySelectorAll('#observatory-dock [data-observatory-panel]').forEach(button => {
         button.setAttribute('aria-expanded', String(button.dataset.observatoryPanel === panel));
       });
+      if (panel && isCompactViewport()) {
+        setLeftDrawerCollapsed(true);
+        setRightDrawerCollapsed(true);
+        if (appState.scopeTab === 'taxonomy') setScopeTab(appState.lastNonTaxonomyScope || 'all');
+      }
     }
+
+    document.getElementById('btn-dock-left')?.addEventListener('click', () => {
+      setObservatoryPanel('');
+      if (isCompactViewport() && appState.scopeTab === 'taxonomy') {
+        setScopeTab(appState.lastNonTaxonomyScope || 'all');
+      }
+    });
+    document.getElementById('btn-dock-right')?.addEventListener('click', () => {
+      setObservatoryPanel('');
+      if (isCompactViewport() && appState.scopeTab === 'taxonomy') {
+        setScopeTab(appState.lastNonTaxonomyScope || 'all');
+      }
+    });
 
     document.querySelectorAll('#observatory-dock [data-observatory-panel]').forEach(button => {
       button.addEventListener('click', () => {
@@ -2643,9 +2668,24 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     }
 
     function syncContextBannerOffset() {
+      if (document.documentElement.dataset.uiScheme === '2') {
+        if (isCompactViewport()) {
+          contextBanner.style.left = '';
+        } else {
+          const { w, shiftX } = getClearViewportMetrics();
+          contextBanner.style.left = `${Math.round(w / 2 - shiftX)}px`;
+        }
+        return;
+      }
       const collapsed = leftDrawer.classList.contains('drawer-left-hidden');
       contextBanner.style.left = collapsed && !isCompactViewport() ? '128px' : '';
     }
+
+    window.addEventListener('astraia:ui-scheme', () => {
+      syncContextBannerOffset();
+      updateCameraOffset();
+      syncOverviewCameraIfActive(true);
+    });
 
     drawerShell.setOnChange(() => {
       syncContextBannerOffset();
@@ -2653,13 +2693,27 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       syncOverviewCameraIfActive(true);
     });
 
+    let pendingSpread = false;
+    function finishPendingSpread() {
+      if (!pendingSpread) return;
+      pendingSpread = false;
+      btnSpreadCodex?.removeAttribute('aria-busy');
+      if (rightDrawer.inert) return;
+      if (rightDrawer.querySelector('.syzygy-dual-body')) btnSpreadCodex?.click();
+      else flashToast('请先选择一条心物对读。');
+    }
+
     if (btnSpreadCodex) {
       let leftWasOpenBeforeSpread = false;
       btnSpreadCodex.addEventListener('click', () => {
         const nextSpread = !rightDrawer.classList.contains('codex-spread');
         const compact = isCompactViewport();
         if (nextSpread && compact && !rightDrawer.querySelector('.syzygy-dual-body')) {
-          if (appState.restoringDeepLink) flashToast('正在载入对读，请稍候。');
+          if (appState.restoringDeepLink) {
+            pendingSpread = !pendingSpread;
+            btnSpreadCodex.setAttribute('aria-busy', String(pendingSpread));
+            flashToast(pendingSpread ? '正在载入对读，完成后自动展开。' : '已取消自动展开。');
+          }
           else { setLeftDrawerCollapsed(false); flashToast('先从目录选择一条心物对读。'); }
           return;
         }
@@ -3274,7 +3328,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         if (sequence !== routeSequence) return;
         appState.restoringDeepLink=false;
         const storyId=params.get('story'), entryId=params.get('entry'), node=storyId && fullAtlas.getNode(storyId);
-        const missing=message=>{appState.pendingRoute=null;document.getElementById('syzygy-card-container').textContent=message;updateClassicLink();flashToast(message);};
+        const missing=message=>{pendingSpread=false;btnSpreadCodex?.removeAttribute('aria-busy');appState.pendingRoute=null;document.getElementById('syzygy-card-container').textContent=message;updateClassicLink();flashToast(message);};
         if (node && !fullAtlas.isVisible(node)) { missing('该条目被当前筛选隐藏。'); return; }
         if (node && entryId && book.entries.some(entry=>entry.id === entryId)) fullAtlas.openPortal(node,entryId);
         else if (node && entryId) {fullAtlas.select(node,true);flashToast('未找到该知识条目，请重新选择对读。');}
@@ -3286,8 +3340,8 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
           appState.pendingRoute=null;
           renderDualPaneSyzygyCard(null);
         } else missing('未找到对应资料，请从目录重新选择。');
-        renderLeftAtlasTree(); updateClassicLink(); syncViewURL();
-      }).catch(error=>flashToast(`图谱载入失败：${error.message}`));
+        renderLeftAtlasTree(); updateClassicLink(); syncViewURL(); finishPendingSpread();
+      }).catch(error=>{pendingSpread=false;btnSpreadCodex?.removeAttribute('aria-busy');flashToast(`图谱载入失败：${error.message}`);});
     });
     renderLeftAtlasTree();
     renderDualPaneSyzygyCard(appState.selectedBridge);
@@ -3312,6 +3366,8 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       const entryId = initial.get('entry');
       appState.restoringDeepLink = false;
       const missing = message => {
+        pendingSpread = false;
+        btnSpreadCodex?.removeAttribute('aria-busy');
         appState.pendingRoute=null;
         appState.selectedBridge=null; appState.selectedGraph=null; appState.selectedBook=null;
         clearPersonalPortal(); fullAtlas.clearNeighborhood(); updateHighlightsAndFilters(); updateClassicLink();
@@ -3330,7 +3386,10 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         if (book.entries.some(entry=>entry.id === entryId)) fullAtlas.selectBook(entryId);
         else missing('未找到该知识条目，请从目录重新选择。');
       }
+      finishPendingSpread();
     }).catch(error => {
+      pendingSpread = false;
+      btnSpreadCodex?.removeAttribute('aria-busy');
       console.error('完整图谱载入失败',error);
       const container = document.getElementById('atlas-tree');
       container.textContent = `完整图谱载入失败：${error.message}，请刷新后重试。`;
