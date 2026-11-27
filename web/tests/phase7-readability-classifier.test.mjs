@@ -346,7 +346,7 @@ test('compiled live taxonomy.json and all 7 shards satisfy full-corpus coverage 
 
   for (const domain of taxonomy.domains) {
     assert.ok(domain.classified_node_count >= domain.node_count, `${domain.id}: classified_node_count < node_count`);
-    assert.ok(Array.isArray(domain.sample_classified_nodes) && domain.sample_classified_nodes.length === 16);
+    assert.ok(Array.isArray(domain.sample_classified_nodes) && domain.sample_classified_nodes.length === Math.min(16, domain.classified_node_count - domain.node_count));
     const curatedIds = new Set(
       domain.groups.flatMap((g) => [...(g.hub_ids ?? []), ...(g.featured_nodes ?? [])]),
     );

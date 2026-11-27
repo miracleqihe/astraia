@@ -1804,6 +1804,8 @@ body[data-left-open='true'] .taxonomy-explorer {
 }
 
 @media (max-width: 760px), (max-width: 1100px) and (max-height: 500px) {
+  /* Keep drawer controls immediately reachable while the scene initializes. */
+  .drawer-anim { transition: none; }
   #syzygy-header {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;

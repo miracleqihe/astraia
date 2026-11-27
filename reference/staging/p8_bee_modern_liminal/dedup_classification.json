@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "bee_id": "bee-p8-modern-liminal",
+  "domain_id": "modern_liminal",
+  "note": "对 web/public/data/graph_data.json 中尚未列入 reference/thematic_taxonomy.json 任何专题 featured_nodes 或 hub_ids 的 36 个现代都市传说、数字示现、校园奇谈与感知科学实验既有节点进行去重归类（already_exists: true，不重复新建节点）。",
+  "classifications": [
+    {
+      "node_id": "case_jp_hamamatsu_hanako_1998",
+      "domain_id": "modern_liminal",
+      "group_id": "liminal_architecture_and_backrooms",
+      "rationale": "日本静冈县滨松市校园厕所第三格禁忌田野采录（1998），呈现学校卫生间这一半封闭日常阈限空间如何滋生东亚校园奇谈。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_jp_yokohama_yosuke_hanako_1990",
+      "domain_id": "modern_liminal",
+      "group_id": "liminal_architecture_and_backrooms",
+      "rationale": "1990 年横滨校园“洋介与花子”口述采录，与滨松案例并读男女厕对称隔间边界在学生群体中的认知投射。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_jp_hamamatsu_kisaragi_station_2004",
+      "domain_id": "modern_liminal",
+      "group_id": "liminal_architecture_and_backrooms",
+      "rationale": "2004 年 2channel 实时连载“如月车站”原初数字文本（F 级隔离），以深夜无人通勤列车与虚构废弃站台重构现代交通阈限失向体验。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_jp_aomori_sugisawa_village_2000",
+      "domain_id": "modern_liminal",
+      "group_id": "liminal_architecture_and_backrooms",
+      "rationale": "2000 年走红的日本青森“杉泽村”消失村落传说，展现废弃遗迹、鸟居意象与电视综艺拼贴共同制造的探灵废墟地标。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_cn_beijing_ghost_bus",
+      "domain_id": "modern_liminal",
+      "group_id": "liminal_architecture_and_backrooms",
+      "rationale": "北京 375/330 路等末班公交失踪传闻口述档案，反映深夜城市公交线网、站台交替与陌生共乘者带来的空间不安。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_cn_shanghai_westgate_stairwell",
+      "domain_id": "modern_liminal",
+      "group_id": "liminal_architecture_and_backrooms",
+      "rationale": "上海南京西路商圈“走不出去的楼梯间”都市传闻，捕捉大型现代商业综合体内部无窗消防通道引发的“鬼打墙”阈限焦虑。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_cn_shenzhen_bank_tower_floor_21",
+      "domain_id": "modern_liminal",
+      "group_id": "liminal_architecture_and_backrooms",
+      "rationale": "深圳福田高层写字楼夜间二十一楼不明水声传闻，典型呈现现代化办公塔楼夜晚空置时的声景异化与传说附会。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_cn_hk_tat_tak_old_school",
+      "domain_id": "modern_liminal",
+      "group_id": "liminal_architecture_and_backrooms",
+      "rationale": "香港元朗屏山达德旧校舍废弃建筑红衣传闻，是香港本地探灵寻幽与城市废墟传说反复交织的代表地点。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_cn_hk_choi_hung_middle_track_2024",
+      "domain_id": "modern_liminal",
+      "group_id": "liminal_architecture_and_backrooms",
+      "rationale": "香港港铁彩虹站中间备用轨道传说，以当代轨道交通少见的三轨站台布局作为城市地下空间神秘叙事的触发点。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_cn_tw_minxiong_liu_mansion",
+      "domain_id": "modern_liminal",
+      "group_id": "liminal_architecture_and_backrooms",
+      "rationale": "台湾嘉义民雄刘家古厝“鬼屋”传闻，见证闲置洋楼建筑群如何随地方口述、探险观光与媒体传播演变为经典废墟异闻场域。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_tw_taipei_daren_elevator_2015",
+      "domain_id": "modern_liminal",
+      "group_id": "liminal_architecture_and_backrooms",
+      "rationale": "台北阳明山校园教学楼“每层都停的电梯”传闻，展现高层建筑电梯井作为封闭垂直过渡空间与数字仪式想象的接合。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_dishisanceng_elevator_campus",
+      "domain_id": "modern_liminal",
+      "group_id": "liminal_architecture_and_backrooms",
+      "rationale": "中文网络“第十三层”校园空电梯失踪虚构档案（F 级隔离），以楼层数禁忌与电梯密闭空间直接衔接规则异界叙事。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_jp_hachinohe_kuchisake_1990",
+      "domain_id": "modern_liminal",
+      "group_id": "rule_horror_and_wiki_ostension",
+      "rationale": "1990 年日文研采录“八户裂口女与红色轿车”档案，示范 1979 年后日本经典都市传说如何在口传与媒传中演化固定问答规则。",
+      "already_exists": true
+    },
+    {
+      "node_id": "text_vanishing_hitchhiker_1981",
+      "domain_id": "modern_liminal",
+      "group_id": "rule_horror_and_wiki_ostension",
+      "rationale": "布伦范德 1981 年《消失的搭车人》核心比较语料，奠定当代都市传说“近距离证言结构”与地域化改写研究的理论基石。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_us_justice_resurrection_mary",
+      "domain_id": "modern_liminal",
+      "group_id": "rule_horror_and_wiki_ostension",
+      "rationale": "芝加哥阿彻大道“复活玛丽”公路幽灵传说，展现“消失的搭车人”母题如何在二十世纪美国公路与公墓边界落地并诱发实境探访。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_us_cicada_3301_2012",
+      "domain_id": "modern_liminal",
+      "group_id": "rule_horror_and_wiki_ostension",
+      "rationale": "2012–2014 年“蝉 3301”跨国密码谜题与实地海报追踪档案，呈现交替实境游戏（ARG）式的线上解谜与线下城市示现联动。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_marble_hornets_2009",
+      "domain_id": "modern_liminal",
+      "group_id": "rule_horror_and_wiki_ostension",
+      "rationale": "2009 年《大理石黄蜂》伪纪录片（F 级隔离），标志着 Slender Man 从论坛静态图片向 YouTube 连续伪Vlog 与 ARG 互动跨媒体的关键跃迁。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_dead_internet_theory_2021",
+      "domain_id": "modern_liminal",
+      "group_id": "rule_horror_and_wiki_ostension",
+      "rationale": "2021 年兴起的“死互联网假说”（F 级隔离），揭示当代网民如何以阴谋论与幽灵叙事隐喻算法机器人主导平台流量的异化感。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_polybius_arcade_legend_2000",
+      "domain_id": "modern_liminal",
+      "group_id": "rule_horror_and_wiki_ostension",
+      "rationale": "2000 年前后诞生于网络百科的“波利比乌斯”虚构秘密街机档案（F 级隔离），典型展示早期网生“反向示现”如何编造八十年代复古阴谋记忆。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_cn_tw_dakeng_red_girl",
+      "domain_id": "modern_liminal",
+      "group_id": "rule_horror_and_wiki_ostension",
+      "rationale": "台湾台中大坑步道家用 DV 录像“红衣小女孩”档案，呈现在灵异电视节目逐帧放大与电影系列再造下地方传说向全岛媒体叙事的演进。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_cn_hk_cuhk_braid",
+      "domain_id": "modern_liminal",
+      "group_id": "rule_horror_and_wiki_ostension",
+      "rationale": "香港中文大学“辫子姑娘”校园传说，体现高校轨道小径边界如何与夜间禁忌问答和学生代际口耳相传紧扣。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_cn_four_corner_extra_player_2019",
+      "domain_id": "modern_liminal",
+      "group_id": "rule_horror_and_wiki_ostension",
+      "rationale": "中国校园流传的“四角游戏第五人”夜间熄灯仪式传闻，集中反映青少年宿舍规则游戏与数字示现自我惊吓的心理互动。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_cn_chengdu_zombie_rumor",
+      "domain_id": "modern_liminal",
+      "group_id": "rule_horror_and_wiki_ostension",
+      "rationale": "1995 年成都“清朝僵尸”集体传闻档案，是影视视觉符号借口耳相传诱发区域校园恐慌与家长接送连锁反应的社会传染标本。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_kr_seoul_bongcheon_webtoon_2011",
+      "domain_id": "modern_liminal",
+      "group_id": "rule_horror_and_wiki_ostension",
+      "rationale": "2011 年韩国首尔“奉天洞鬼故事”互动条漫（F 级隔离），利用网页滚屏自动触发突变动画与尖叫音效开创交互式数字怪谈先河。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_cy_lincolnshire_poacher_radio",
+      "domain_id": "modern_liminal",
+      "group_id": "analog_signal_and_sensory_mechanisms",
+      "rationale": "冷战时期塞浦路斯转播 suspected“林肯郡偷猎者”短波数字电台档案，补充 UVB-76 之外的冷战加密广播声景与民间解码想象。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_us_chicago_max_headroom_1987",
+      "domain_id": "modern_liminal",
+      "group_id": "analog_signal_and_sensory_mechanisms",
+      "rationale": "1987 年芝加哥电视台遭“麦克斯·海德鲁姆”面具信号劫持的真实历史悬案，构成当代“模拟电视恐怖”信号入侵叙事的现实技术原型。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_us_taos_hum_1993",
+      "domain_id": "modern_liminal",
+      "group_id": "analog_signal_and_sensory_mechanisms",
+      "rationale": "1993 年新墨西哥州陶斯低频环境嗡鸣科学调查档案，呈现人类对低频声波与不明环境振动产生持续感官警觉的实证边界。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_us_point_pleasant_mothman_1966",
+      "domain_id": "modern_liminal",
+      "group_id": "analog_signal_and_sensory_mechanisms",
+      "rationale": "1966 年波因特普莱森特“天蛾人”目击与 1967 年银桥金属裂纹坍塌“叙事劫持”档案，剖析事后归因偏误如何将工程事故缝合为灾异预兆。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_cn_hk_ghost_oppression_wing_1994",
+      "domain_id": "modern_liminal",
+      "group_id": "analog_signal_and_sensory_mechanisms",
+      "rationale": "1994 年香港“鬼压床”与睡眠瘫痪流行病学调查，提供高密度都市语境下快速眼动期肌张力抑制与文化归因的定量对照。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_blanke_robot_presence_2014",
+      "domain_id": "modern_liminal",
+      "group_id": "analog_signal_and_sensory_mechanisms",
+      "rationale": "布兰克团队 2014 年洛桑机器人触觉延迟实验，实证感觉运动信号错配即可在实验室可控条件下诱发“身后有人”的在场错觉。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_tpj_shadow_stimulation_2006",
+      "domain_id": "modern_liminal",
+      "group_id": "analog_signal_and_sensory_mechanisms",
+      "rationale": "2006 年日内瓦颞顶联合区电刺激诱发“影子人”伴随者错觉临床报告，为现代夜间“隐形同行者”体验提供精准神经定位对照。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_granqvist_field_replication_2005",
+      "domain_id": "modern_liminal",
+      "group_id": "analog_signal_and_sensory_mechanisms",
+      "rationale": "2005 年乌普萨拉双盲弱磁场实验，证明在消除暗示线索后经颅弱磁场本身并不产生显著灵异在场感，突显预期暗示的决定作用。",
+      "already_exists": true
+    },
+    {
+      "node_id": "mech_haunt_infrasound_field_hypothesis",
+      "domain_id": "modern_liminal",
+      "group_id": "analog_signal_and_sensory_mechanisms",
+      "rationale": "L4 理论机制节点，并置 1998 年 Vic Tandy 次声波观察与 2009 年 French“Haunt”项目双盲对照反证，确立物理环境假说的检验标准。",
+      "already_exists": true
+    },
+    {
+      "node_id": "mech_suggestibility_bias",
+      "domain_id": "modern_liminal",
+      "group_id": "analog_signal_and_sensory_mechanisms",
+      "rationale": "L4 核心认知机制节点，阐明暗示易感性、前期预期与同伴提示如何左右人对模糊光影与噪点声响的超常报告率。",
+      "already_exists": true
+    },
+    {
+      "node_id": "mech_tpj_body_signal_integration",
+      "domain_id": "modern_liminal",
+      "group_id": "analog_signal_and_sensory_mechanisms",
+      "rationale": "L4 神经感知机制节点，解释颞顶联合区在身体信号整合失调时何以生成外部“他者在场”的主观体验。",
+      "already_exists": true
+    },
+    {
+      "node_id": "mech_co_poisoning",
+      "domain_id": "modern_liminal",
+      "group_id": "analog_signal_and_sensory_mechanisms",
+      "rationale": "L4 环境医学机制节点，记录冬季供暖故障引发一氧化碳中毒导致室内幻视幻听与窒息压迫感被误作“闹鬼”的临床鉴别案例。",
+      "already_exists": true
+    }
+  ]
+}

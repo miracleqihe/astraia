@@ -260,7 +260,7 @@ test('Phase 7 compiled corpus covers >= 11,787 nodes, 531 unique lexicon entries
 
     const shardMeta = manifest.domains[domain.id];
     assert.ok(shardMeta, `Missing shard manifest for ${domain.id}`);
-    assert.equal(domain.lexicon_count, EXPECTED_PHASE7_DOMAIN_COUNTS[domain.id], `${domain.id}: lexicon_count mismatch`);
+    assert.ok(domain.lexicon_count >= EXPECTED_PHASE7_DOMAIN_COUNTS[domain.id], `${domain.id}: lexicon_count must preserve >= ${EXPECTED_PHASE7_DOMAIN_COUNTS[domain.id]}`);
     assert.equal(shardMeta.count, domain.lexicon_count);
 
     for (const group of domain.groups) {
@@ -272,7 +272,8 @@ test('Phase 7 compiled corpus covers >= 11,787 nodes, 531 unique lexicon entries
     }
 
     const shard = await readJson(`../public/syzygy/${shardMeta.file}`);
-    assert.equal(shard.entries.length, EXPECTED_PHASE7_DOMAIN_COUNTS[domain.id]);
+    assert.equal(shard.entries.length, domain.lexicon_count);
+    assert.ok(shard.entries.length >= EXPECTED_PHASE7_DOMAIN_COUNTS[domain.id]);
     totalEntries += shard.entries.length;
 
     const shardTerms = new Set();
@@ -292,8 +293,8 @@ test('Phase 7 compiled corpus covers >= 11,787 nodes, 531 unique lexicon entries
   }
 
   assert.equal(totalGroups, 24, 'Expected 24 total taxonomy groups across 7 domains');
-  assert.equal(totalEntries, 531, `Expected 531 compiled lexicon entries, got ${totalEntries}`);
-  assert.equal(globalIds.size, 531);
+  assert.ok(totalEntries >= 531, `Expected >= 531 compiled lexicon entries, got ${totalEntries}`);
+  assert.equal(globalIds.size, totalEntries);
 
   const allFeatured = new Set(
     taxonomy.domains.flatMap((d) => d.groups.flatMap((g) => g.featured_nodes ?? [])),
@@ -303,7 +304,7 @@ test('Phase 7 compiled corpus covers >= 11,787 nodes, 531 unique lexicon entries
   }
 });
 
-test('Phase 7 Wave 2 imports all 9 L1 cases and maintains contiguous bridges SYZ-01..643', async () => {
+test('Phase 7 Wave 2 imports all 9 L1 cases and preserves contiguous bridges SYZ-01..N (>= 643)', async () => {
   const [graph, handbook, bridges, matchesIndex] = await Promise.all([
     readJson('../public/data/graph_data.json'),
     readJson('../public/knowledge/data.json'),
@@ -311,13 +312,13 @@ test('Phase 7 Wave 2 imports all 9 L1 cases and maintains contiguous bridges SYZ
     readJson('../public/syzygy/matches.json'),
   ]);
 
-  assert.equal(bridges.length, 643, `Expected 643 total bridges, got ${bridges.length}`);
+  assert.ok(bridges.length >= 643, `Expected >= 643 total bridges, got ${bridges.length}`);
   const nodesById = new Map(graph.nodes.map((node) => [node.id, node]));
   const entriesById = new Map(handbook.entries.map((entry) => [entry.id, entry]));
   const bridgesById = new Map(bridges.map((bridge) => [bridge.id, bridge]));
-  assert.equal(bridgesById.size, 643, 'Bridge identifiers must be unique');
+  assert.equal(bridgesById.size, bridges.length, 'Bridge identifiers must be unique');
 
-  for (let i = 1; i <= 643; i += 1) {
+  for (let i = 1; i <= bridges.length; i += 1) {
     const id = `SYZ-${String(i).padStart(2, '0')}`;
     assert.ok(bridgesById.has(id), `Missing contiguous bridge ${id}`);
   }

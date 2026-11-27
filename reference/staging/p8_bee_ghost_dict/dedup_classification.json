@@ -1,0 +1,316 @@
+{
+  "version": 1,
+  "bee_id": "bee-p8-ghost-dict",
+  "aligned_reference": "徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994，ISBN 978-7-5363-2780-1）",
+  "audit_note": "核对 web/public/data/graph_data.json（11,787 节点）、reference/thematic_taxonomy.json 及全部既有 staging 列表，遴选 44 个尚未接入任何专题 featured_nodes 或 hub_ids、且具备完整双段叙事正文的中文鬼文化与民俗节点（already_exists: true），均衡分派至 Domain 2（12）、Domain 3（10）、Domain 4（10）、Domain 5（12）全部 13 个子类目。",
+  "classifications": [
+    {
+      "node_id": "case_cn_dict_w2_zhongxian_ghost_city",
+      "domain_id": "underworld_bureaucracy",
+      "group_id": "chenghuang_and_fengdu",
+      "already_exists": true,
+      "rationale": "重庆忠县“抢先修鬼城”传说，展现地方地望与阎君鬼城地治选址想象，补足城隍与酆都冥府地治谱系。"
+    },
+    {
+      "node_id": "case_cn_dict2_laoshan_magistrate_ghost_clerks",
+      "domain_id": "underworld_bureaucracy",
+      "group_id": "chenghuang_and_fengdu",
+      "already_exists": true,
+      "rationale": "青岛崂山除夕夜周县令听闻旧捕头死后仍充阴间差役奉票勾魂，生动呈现阳间捕快与幽冥吏役的制度同构。"
+    },
+    {
+      "node_id": "case_cn_dict2_handan_misjudged_fate",
+      "domain_id": "underworld_bureaucracy",
+      "group_id": "chenghuang_and_fengdu",
+      "already_exists": true,
+      "rationale": "河北邯郸王三死后任阴间差官并预泄生死期限的故事，补强地方冥吏在阴间差务与生人情义之间的张力。"
+    },
+    {
+      "node_id": "case_cn_dict2_shaanxi_lintong_qin_ghost_market",
+      "domain_id": "underworld_bureaucracy",
+      "group_id": "chenghuang_and_fengdu",
+      "already_exists": true,
+      "rationale": "陕西临潼秦陵鬼市及冤魂逐级从阴司申诉至天庭的叙事，凸显传统鬼神观念中的地方幽冥层级。"
+    },
+    {
+      "node_id": "case_cn_dict2_qitaihe_judge_head_swap",
+      "domain_id": "underworld_bureaucracy",
+      "group_id": "ten_courts_and_karma",
+      "already_exists": true,
+      "rationale": "黑龙江七台河“判官换头”民俗故事以阴间判官私改簿籍人伦为核心冲突，反映民间对冥司审裁权越界的讽喻。"
+    },
+    {
+      "node_id": "case_cn_dict4_sheqi_hungry_rebirth",
+      "domain_id": "underworld_bureaucracy",
+      "group_id": "ten_courts_and_karma",
+      "already_exists": true,
+      "rationale": "河南社旗“饿死鬼挑选来世”记述饿鬼在判官面前权衡投生福地与畜道之苦，紧扣十殿转轮与宿业审判。"
+    },
+    {
+      "node_id": "case_cn_dict4_linzhou_bullhorse_banquet",
+      "domain_id": "underworld_bureaucracy",
+      "group_id": "ten_courts_and_karma",
+      "already_exists": true,
+      "rationale": "河南林州“庙中棋局与添寿”以供奉牛头马面博取改判增寿，补充牛头马面差役形象与冥籍添算母题。"
+    },
+    {
+      "node_id": "case_cn_dict_w2_dunhua_yanluo_relocates",
+      "domain_id": "underworld_bureaucracy",
+      "group_id": "ten_courts_and_karma",
+      "already_exists": true,
+      "rationale": "吉林敦化“阎罗殿搬迁”以讽喻口吻描写阎王因医门冤鬼群聚而迁署，呈现民间鬼话对阎罗司法的调侃视角。"
+    },
+    {
+      "node_id": "case_cn_dict2_haiyan_boat_passenger",
+      "domain_id": "underworld_bureaucracy",
+      "group_id": "spirit_contracts_and_comparative",
+      "already_exists": true,
+      "rationale": "浙江海盐“年夜船上的查账人”表现除夕赠银济困改写正月十五阴间死账，典型体现阳间善行与冥籍代偿机制。"
+    },
+    {
+      "node_id": "case_cn_dict4_lingbi_flatbread_ghost",
+      "domain_id": "underworld_bureaucracy",
+      "group_id": "spirit_contracts_and_comparative",
+      "already_exists": true,
+      "rationale": "安徽灵璧“烧饼铺的纸钱”记亡灵持纸钱赴阳间市肆易物，直接展示冥币跨越幽明两界的等价物叙事。"
+    },
+    {
+      "node_id": "case_cn_dict_w2_yangquan_ghost_money",
+      "domain_id": "underworld_bureaucracy",
+      "group_id": "spirit_contracts_and_comparative",
+      "already_exists": true,
+      "rationale": "山西阳泉“鬼票”传闻围绕铺面多次收到纸钱并追踪至墓地展开，补足华北地区冥币交易故事变体。"
+    },
+    {
+      "node_id": "case_cn_dict5_tongshan_two_debt_spirits",
+      "domain_id": "underworld_bureaucracy",
+      "group_id": "spirit_contracts_and_comparative",
+      "already_exists": true,
+      "rationale": "湖北通山“两个托生者的不同境遇”聚焦民间“讨债鬼/还债鬼”宿债托生观念对亲子伦理期待的投影。"
+    },
+    {
+      "node_id": "case_cn_dict_niba_ghost_dance",
+      "domain_id": "ghost_rituals_nuo",
+      "group_id": "nuo_exorcism_masks",
+      "already_exists": true,
+      "rationale": "重庆“泥巴鬼舞的来历”以当地驱傩游演般的“泥巴鬼舞”为依托，将地方惩恶记忆纳入假面驱祟表演谱系。"
+    },
+    {
+      "node_id": "case_cn_lianghe_paper_horse_dispute_2001",
+      "domain_id": "ghost_rituals_nuo",
+      "group_id": "nuo_exorcism_masks",
+      "already_exists": true,
+      "rationale": "云南梁河2001年访谈记录失主与被疑者共携甲马纸赴寺庙向神灵陈誓明志，体现西南村落借民间祭仪与神前誓约裁断疑虑。"
+    },
+    {
+      "node_id": "case_cn_chaozhou_guangjiqiao_hanxiangzi",
+      "domain_id": "ghost_rituals_nuo",
+      "group_id": "nuo_exorcism_masks",
+      "already_exists": true,
+      "rationale": "广东潮州韩愈投猪羊入恶溪宣读〈祭鳄鱼文〉驱害与仙佛造桥传说，展示古代官吏祭文驱祟仪典向地方民俗的演进。"
+    },
+    {
+      "node_id": "case_cn_meizhou_mazu_tideng",
+      "domain_id": "ghost_rituals_nuo",
+      "group_id": "zhongyuan_pudu_lanterns",
+      "already_exists": true,
+      "rationale": "福建湄洲岛林默燃屋引航与提灯救难传说，反映东南沿海海难亡魂救渡、火光引航祈安仪轨与节庆灯火民俗的关联。"
+    },
+    {
+      "node_id": "case_cn_qinan_nuwa_festival",
+      "domain_id": "ghost_rituals_nuo",
+      "group_id": "zhongyuan_pudu_lanterns",
+      "already_exists": true,
+      "rationale": "甘肃秦安女娲岁时祭典将远古始祖记忆转化为庙会集体迎送与社群祭祀礼俗，充实节庆迎送祖灵维度。"
+    },
+    {
+      "node_id": "case_cn_tw_lantern_chair_aunt_sanggu",
+      "domain_id": "ghost_rituals_nuo",
+      "group_id": "zhongyuan_pudu_lanterns",
+      "already_exists": true,
+      "rationale": "台湾元宵“椅仔姑”敷纸衣竹椅请孤女“三姑”降乩问卜旧俗，是节庆夜间迎慰无依孤魂的代表性民间仪俗。"
+    },
+    {
+      "node_id": "case_cn_dict2_guangxi_baise_mosquito_net",
+      "domain_id": "ghost_rituals_nuo",
+      "group_id": "soul_recall_and_funerary",
+      "already_exists": true,
+      "rationale": "广西百色守灵夜闻亡妻洗碗声的地方口述，具体展现丧葬停灵守夜阈限期内的丧亲听幻觉与返魂体验。"
+    },
+    {
+      "node_id": "case_cn_tw_lieyu_skeleton_tofu",
+      "domain_id": "ghost_rituals_nuo",
+      "group_id": "soul_recall_and_funerary",
+      "already_exists": true,
+      "rationale": "金门烈屿“古厝里买豆腐的骷髅”聚焦骸骨久未入土安葬而与阳间发生接触，反衬闽台地区重安葬捡骨礼俗的仪式意义。"
+    },
+    {
+      "node_id": "case_cn_xiaogan_dongyong_qixiannv",
+      "domain_id": "ghost_rituals_nuo",
+      "group_id": "soul_recall_and_funerary",
+      "already_exists": true,
+      "rationale": "湖北孝感董永“卖身葬父”传说将丧葬安亲尽孝置为叙事核心，展现中国民间殡葬义务高于一切的伦理规范。"
+    },
+    {
+      "node_id": "case_cn_dict_w2_taizhou_doubt",
+      "domain_id": "ghost_rituals_nuo",
+      "group_id": "soul_recall_and_funerary",
+      "already_exists": true,
+      "rationale": "江苏泰州“智破讨债计”讲述路人听闻二鬼趁丧家办丧事找替身并及时入户劝解婆媳，直击丧期守忌与辟煞民俗。"
+    },
+    {
+      "node_id": "case_cn_shanhai_kuafu",
+      "domain_id": "ethnic_spirit_lexicon",
+      "group_id": "shanhai_marvels_cosmography",
+      "already_exists": true,
+      "rationale": "《山海经·海外北经》夸父逐日与弃杖化邓林神话，补强上古博物志宇宙异人与自然物候转化母题。"
+    },
+    {
+      "node_id": "case_cn_shannan_samye_padmasambhava",
+      "domain_id": "ethnic_spirit_lexicon",
+      "group_id": "southwest_ethnic_epics_rituals",
+      "already_exists": true,
+      "rationale": "西藏山南桑耶寺莲花生降伏藏地山神并为护法神传说，是西南民族本土神灵谱系与佛教护法融合的核心节点。"
+    },
+    {
+      "node_id": "case_cn_shilin_ashima",
+      "domain_id": "ethnic_spirit_lexicon",
+      "group_id": "southwest_ethnic_epics_rituals",
+      "already_exists": true,
+      "rationale": "云南石林彝族撒尼支系叙事长诗《阿诗玛》抗婚化作回声石峰传说，直接归属西南民族史诗与山川圣灵。"
+    },
+    {
+      "node_id": "case_cn_nantou_sunmoonlake_whitedeer",
+      "domain_id": "ethnic_spirit_lexicon",
+      "group_id": "southwest_ethnic_epics_rituals",
+      "already_exists": true,
+      "rationale": "台湾南投日月潭邵族帕达木追白鹿寻获祖居圣湖传说，补充台湾原住民族神兽引路与圣地起源叙事。"
+    },
+    {
+      "node_id": "case_cn_sanya_luhuitou_deer",
+      "domain_id": "ethnic_spirit_lexicon",
+      "group_id": "southwest_ethnic_epics_rituals",
+      "already_exists": true,
+      "rationale": "海南三亚黎族坡鹿回首化女起源神话，丰富华南少数民族物灵化形与族群始祖传说谱系。"
+    },
+    {
+      "node_id": "case_cn_tw_mosina_missing_walkers",
+      "domain_id": "ethnic_spirit_lexicon",
+      "group_id": "regional_folklore_spirits",
+      "already_exists": true,
+      "rationale": "台湾山野精魅“魔神仔”引路致山客迷途讲法，与大陆山魈、鬼打墙经验构成东南山地精魅比较样本。"
+    },
+    {
+      "node_id": "case_cn_yongzhou_liuzijie_snake",
+      "domain_id": "ethnic_spirit_lexicon",
+      "group_id": "regional_folklore_spirits",
+      "already_exists": true,
+      "rationale": "湖南永州愚溪“中秋夜的三座桥”以化缘老僧原为蛇精及水月异象为核心，典型归属南方水怪蛇灵与物怪谱系。"
+    },
+    {
+      "node_id": "case_cn_hangzhou_leifeng_white_snake",
+      "domain_id": "ethnic_spirit_lexicon",
+      "group_id": "regional_folklore_spirits",
+      "already_exists": true,
+      "rationale": "明代《警世通言》与杭州西湖《白蛇传》白蛇化形镇塔叙事，是中国动植物化形与常仙蛇灵谱系中最具影响力的典范。"
+    },
+    {
+      "node_id": "case_cn_poyang_laoyemiao_waterway",
+      "domain_id": "ethnic_spirit_lexicon",
+      "group_id": "regional_folklore_spirits",
+      "already_exists": true,
+      "rationale": "鄱阳湖老爷庙险水巨鼋与行船传说，展现内陆湖泊航道险境与水族精怪信仰之间的交互生成。"
+    },
+    {
+      "node_id": "case_cn_tw_lantan_human_face_fish",
+      "domain_id": "ethnic_spirit_lexicon",
+      "group_id": "regional_folklore_spirits",
+      "already_exists": true,
+      "rationale": "嘉义兰潭“人面鱼”当代水产口述传闻，延续传统物怪开口发声母题至现代媒体语境。"
+    },
+    {
+      "node_id": "case_cn_yueyang_liuyi_dragon_letter",
+      "domain_id": "classical_zhiguai_opera",
+      "group_id": "six_dynasties_to_song_zhiguai",
+      "already_exists": true,
+      "rationale": "唐代李朝威《柳毅传》（载《太平广记》卷四一九）作为唐传奇顶峰代表，补足六朝志怪向唐宋传奇演进的文类轴线。"
+    },
+    {
+      "node_id": "case_cn_laoshan_daoshi_chuanqiang",
+      "domain_id": "classical_zhiguai_opera",
+      "group_id": "qing_biji_zibuyu_liaozhai",
+      "already_exists": true,
+      "rationale": "蒲松龄《聊斋志异·崂山道士》穿墙碰壁叙事与太清宫影壁地方传说，夯实清代志怪短篇与地方风物互文。"
+    },
+    {
+      "node_id": "case_cn_zibuyu_v08_s038",
+      "domain_id": "classical_zhiguai_opera",
+      "group_id": "qing_biji_zibuyu_liaozhai",
+      "already_exists": true,
+      "rationale": "清代袁枚《子不语》卷八“道士作祟自毙”（具完整双段正文）记录杭州棋客遇假炼师弄鬼火反自取祸的笔记文本。"
+    },
+    {
+      "node_id": "case_cn_zibuyu_v10_s008",
+      "domain_id": "classical_zhiguai_opera",
+      "group_id": "qing_biji_zibuyu_liaozhai",
+      "already_exists": true,
+      "rationale": "清代袁枚《子不语》卷十“张大帝”（具完整双段正文）呈现道士以羊角厌胜扰坟风水的笔记案例。"
+    },
+    {
+      "node_id": "case_cn_dict2_guangdong_gaozhou_redress_temple",
+      "domain_id": "classical_zhiguai_opera",
+      "group_id": "ghost_opera_and_judicial",
+      "already_exists": true,
+      "rationale": "广东高州“古庙里诉冤的花香”写包公夜宿古庙受女鬼泣诉昭雪，深化包公阴间断案传统在粤西的演变。"
+    },
+    {
+      "node_id": "case_cn_dict5_changsha_opera_appeal",
+      "domain_id": "classical_zhiguai_opera",
+      "group_id": "ghost_opera_and_judicial",
+      "already_exists": true,
+      "rationale": "湖南长沙“庙会戏台前的诉冤”让冤鬼直趋庙会戏台拦住扮包公艺人鸣冤，典型体现“鬼戏舞台与司法公案”联动结构。"
+    },
+    {
+      "node_id": "case_cn_dict_ghost_fears_bao",
+      "domain_id": "classical_zhiguai_opera",
+      "group_id": "ghost_opera_and_judicial",
+      "already_exists": true,
+      "rationale": "浙江杭州“鬼怕包公”记山中夜演包公戏令鬼魅畏缩至天明方散，体现戏曲剧目在民间信仰中的镇邪功能。"
+    },
+    {
+      "node_id": "case_cn_tw_tainan_chen_shouniang_record",
+      "domain_id": "classical_zhiguai_opera",
+      "group_id": "ghost_opera_and_judicial",
+      "already_exists": true,
+      "rationale": "台南“陈守娘”女鬼鸣冤公案及其闽南歌仔唱片传唱史料，连接地方冤鬼复仇传说与近代有声戏曲媒介。"
+    },
+    {
+      "node_id": "case_cn_dict4_gongyi_bao_bridge",
+      "domain_id": "classical_zhiguai_opera",
+      "group_id": "ghost_opera_and_judicial",
+      "already_exists": true,
+      "rationale": "河南巩义“夜里造桥与鸡鸣”写冤魂托梦求助包公揭露恶僧害命，补充中原地区托梦伸冤与清官判鬼交织案例。"
+    },
+    {
+      "node_id": "case_cn_dict2_xingning_competition",
+      "domain_id": "classical_zhiguai_opera",
+      "group_id": "regional_ghosts_compiled_1994",
+      "already_exists": true,
+      "rationale": "广东兴宁“农夫与鬼的比赛”以捏萝卜骗鬼、唤熊兔代赛取胜，是《中国鬼文化大辞典》机智斗鬼型地方故事代表。"
+    },
+    {
+      "node_id": "case_cn_dict3_weining_flower_shoes",
+      "domain_id": "classical_zhiguai_opera",
+      "group_id": "regional_ghosts_compiled_1994",
+      "already_exists": true,
+      "rationale": "贵州威宁“客栈里的一双花鞋”写商旅趁鬼取牙拜月戴其獠牙反吓走鬼魅，展现辞典西南幽默斗鬼话语特色。"
+    },
+    {
+      "node_id": "case_cn_dict4_cixi_pawn_ghost",
+      "domain_id": "classical_zhiguai_opera",
+      "group_id": "regional_ghosts_compiled_1994",
+      "already_exists": true,
+      "rationale": "浙江慈溪“当铺里的会跳葫芦”记灾荒年间捉吊死鬼化作葫芦典当济贫，体现江南民间故事对鬼怪叙事的谐谑转化。"
+    }
+  ]
+}

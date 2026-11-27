@@ -1,0 +1,191 @@
+{
+  "version": 1,
+  "domain_id": "wugu_talisman",
+  "aligned_book": {
+    "id": "tao_1998",
+    "title": "中国镇物",
+    "author": "陶思炎",
+    "publisher": "东大图书公司“沧海美术·艺术特辑”",
+    "year": 1998,
+    "isbn": "957-19-2210-2"
+  },
+  "note": "对 graph_data.json（11,787 个节点）中在 Phase 5–7 之后仍未列入 reference/thematic_taxonomy.json 的既有镇物、建筑厌胜、护路水神与岁时祈禳节点进行诚实去重核查与归类（already_exists: true，不重复新建节点）。经核，第 7 期已合入 40 条镇物核心节点，现存未挂接的 Tao 1998 相关及建筑护镇池共计 24 条（含余留全部 17 条 case_cn_tao_*、3 条高淳《中国镇物》引用个案与 4 条工匠/锁龙/城门镇护节点；主动避让留待巫蛊专题的邓启耀 2025 访谈节点、鬼文化大辞典 case_cn_dict* 及现代都市怪谈节点）。",
+  "audit_summary": {
+    "graph_nodes_checked": 11787,
+    "already_wired_in_taxonomy": 302,
+    "remaining_case_cn_tao_classified": 17,
+    "remaining_gaochun_tao_linked_classified": 3,
+    "remaining_architectural_guardian_classified": 4,
+    "total_classified": 24
+  },
+  "classifications": [
+    {
+      "node_id": "case_cn_tao_w3_jingzhou_xirang",
+      "domain_id": "wugu_talisman",
+      "group_id": "yansheng_architecture_seals",
+      "already_exists": true,
+      "rationale": "《中国镇物》转述荆州南门堤防“息壤”禁动镇灾传闻，连接城门基址厌胜禁忌与江堤水患防护心理。"
+    },
+    {
+      "node_id": "corpus_cn_ich_2008_0531",
+      "domain_id": "wugu_talisman",
+      "group_id": "yansheng_architecture_seals",
+      "already_exists": true,
+      "rationale": "2008 年国家级非遗“鲁班传说”L2 文献群，统摄营造木作工匠祖师信仰与《鲁班经》厌胜解厌谱系。"
+    },
+    {
+      "node_id": "case_cn_beixinqiao_dragon_well",
+      "domain_id": "wugu_talisman",
+      "group_id": "yansheng_architecture_seals",
+      "already_exists": true,
+      "rationale": "北京北新桥“锁龙井”铁链镇龙传说与井桥地名厌胜叙事，对应都市水井桥梁镇煞与水患压胜传统。"
+    },
+    {
+      "node_id": "case_cn_shanghai_dragon_pillar",
+      "domain_id": "wugu_talisman",
+      "group_id": "yansheng_architecture_seals",
+      "already_exists": true,
+      "rationale": "上海延安高架盘龙桥柱口述传说与桩基施工困难并读案例，呈现当代大型城市营造工程中“龙纹镇柱”观念的延续。"
+    },
+    {
+      "node_id": "case_cn_changle_fangshan_city_gate",
+      "domain_id": "wugu_talisman",
+      "group_id": "yansheng_architecture_seals",
+      "already_exists": true,
+      "rationale": "山东昌乐县志“砖石封堵西城门”及拐杖巨石封洞传说，反映传统城池门户封闭与路洞镇妖防御结构。"
+    },
+    {
+      "node_id": "case_cn_tao_w3_beijing_wedding_carriage",
+      "domain_id": "wugu_talisman",
+      "group_id": "household_apotropaic_guardians",
+      "already_exists": true,
+      "rationale": "北京旧时迎亲绕花轿熏香、照镜与照《宪书》仪俗，属于《中国镇物》目次六·一“亲迎镇物”（印页 243–249 范围）婚俗挡煞典型个案。"
+    },
+    {
+      "node_id": "case_cn_tao_w3_hangzhou_wedding_candles",
+      "domain_id": "wugu_talisman",
+      "group_id": "household_apotropaic_guardians",
+      "already_exists": true,
+      "rationale": "杭州迎亲前夜“亮轿”点烛护轿习俗，体现火光辟邪与婚嫁路途守护仪轨（目次六·一“亲迎镇物”，印页 243–249 范围）。"
+    },
+    {
+      "node_id": "case_cn_tao_w3_huzhou_red_cloth_brides",
+      "domain_id": "wugu_talisman",
+      "group_id": "household_apotropaic_guardians",
+      "already_exists": true,
+      "rationale": "湖州踩红幔辨真假新娘传说，以叙事解释婚俗红布铺地避煞功能（目次六·一“婚嫁镇物”，印页 242–260 范围）。"
+    },
+    {
+      "node_id": "case_cn_tao_w3_mojiang_wedding_baimu",
+      "domain_id": "wugu_talisman",
+      "group_id": "household_apotropaic_guardians",
+      "already_exists": true,
+      "rationale": "云南墨江哈尼族迎亲请“白母”持鸡水除秽仪俗记录，拓展西南多民族婚嫁挡煞礼俗比较视野（目次六·一，印页 243–249 范围）。"
+    },
+    {
+      "node_id": "case_cn_tao_w3_nanjing_wedding_carriage",
+      "domain_id": "wugu_talisman",
+      "group_id": "household_apotropaic_guardians",
+      "already_exists": true,
+      "rationale": "南京发轿前点纸火移动照亮“暖轿”礼俗，与北京熏轿、杭州亮轿构成江南华北婚轿辟邪对比链（目次六·一，印页 243–249 范围）。"
+    },
+    {
+      "node_id": "case_cn_tao_w3_sanming_wedding_lamp",
+      "domain_id": "wugu_talisman",
+      "group_id": "household_apotropaic_guardians",
+      "already_exists": true,
+      "rationale": "福建三明山村迎亲前导火把与孔洞松明吊灯镇山精习俗，体现夜行婚队以火灯护路防煞（目次六·一，印页 243–249 范围）。"
+    },
+    {
+      "node_id": "case_cn_tao_fenghua_two_paper_monks",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhenwu_material_taxonomy",
+      "already_exists": true,
+      "rationale": "浙江奉化剪贴“两个纸和尚”以竹枝抽打替龙受罚祈晴习俗，与扫晴娘同列《中国镇物》目次七·二“抗天镇物”（印页 313–322 范围）。"
+    },
+    {
+      "node_id": "case_cn_tao_suzhou_seven_paper_monk_heads",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhenwu_material_taxonomy",
+      "already_exists": true,
+      "rationale": "苏州水缸脚边倒贴七个黄纸和尚头焚香祈晴俗录，展示纸偶数量与水缸空间在抗天止雨中的细微差异（目次七·二，印页 313–322 范围）。"
+    },
+    {
+      "node_id": "case_cn_tao_lanxi_rain_lantern_hat",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhenwu_material_taxonomy",
+      "already_exists": true,
+      "rationale": "浙江兰溪竹竿系旧灯笼与破箬帽焚化祈晴旧俗，典型印证结语印页 334“无物不用”日用旧器转作镇物原则（目次七·二，印页 313–322 范围）。"
+    },
+    {
+      "node_id": "case_cn_tao_w3_tianjin_paper_turtle",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhenwu_material_taxonomy",
+      "already_exists": true,
+      "rationale": "天津求雨队列披绿纸龟壳、戴柳圈与抬泥龙民俗记录，与北方求雨“抗天镇物”自然植物及泥纸载体相呼应（目次七·二，印页 313–322 范围）。"
+    },
+    {
+      "node_id": "case_cn_tao_gaotang_roasted_beans_scorpion",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhenwu_material_taxonomy",
+      "already_exists": true,
+      "rationale": "山东高唐二月二炒黄豆以蝎名之避蝎俗信，展现岁时“饮膳除虫”语言隐喻镇护（目次七·二“除虫镇物”，印页 323–331 范围）。"
+    },
+    {
+      "node_id": "case_cn_tao_ningyuan_yellow_paper_insects",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhenwu_material_taxonomy",
+      "already_exists": true,
+      "rationale": "湖南宁远四月八张贴文字黄纸驱虫符俗，与凤翔神鸡蝎符、苏南蜒蚰榜共构文字纸镇除虫谱（目次七·二“除虫镇物”，印页 323–331 范围）。"
+    },
+    {
+      "node_id": "case_cn_tao_nanjing_qixi_grass_needle",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhenwu_material_taxonomy",
+      "already_exists": true,
+      "rationale": "南京《金陵岁时记》七夕截草作针浮水观影习俗，补充铁针以外的自然植物材质岁时小镇对比样本（目次二·三，印页 106–135 范围）。"
+    },
+    {
+      "node_id": "case_cn_tao_wujin_qixi_mixed_water",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhenwu_material_taxonomy",
+      "already_exists": true,
+      "rationale": "武进七夕午时取河水井水合晒浮针习俗，凸显自然水体阴阳合用观念在岁时镇物中的细化表现（目次二·三，印页 106–135 范围）。"
+    },
+    {
+      "node_id": "case_cn_tao_gaoyou_gengqigong_lake_robe",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhenwu_material_taxonomy",
+      "already_exists": true,
+      "rationale": "江苏高邮水神耿七公蒲席行水与火浣锦袍传说，直接对应图版目次图214“耿七公公（民间纸马）”（印页 239）及水行镇物脉络。"
+    },
+    {
+      "node_id": "case_cn_tao_yunnan_paper_horse_two_forms",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhenwu_material_taxonomy",
+      "already_exists": true,
+      "rationale": "云南甲马“无骑神马”与“有骑精神甲马”图样分辨档案，深化材料与图像组中版画神祃构图识别精度。"
+    },
+    {
+      "node_id": "case_cn_gaochun_road_stone_grandmother",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhenwu_material_taxonomy",
+      "already_exists": true,
+      "rationale": "直接引据陶思炎《中国镇物》高淳双塔乡“石婆婆”石像（图版目次图196“护路医病的石婆婆”，印页 216），系路桥镇物核心个案。"
+    },
+    {
+      "node_id": "case_cn_gaochun_wei_bagong_lake",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhenwu_material_taxonomy",
+      "already_exists": true,
+      "rationale": "直接引据陶思炎《中国镇物》高淳石臼湖魏八公水神护航信仰，对应目次五·二“水行镇物”（印页 234–241 范围）。"
+    },
+    {
+      "node_id": "case_cn_gaochun_danhu_bridge_ghost_1987",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhenwu_material_taxonomy",
+      "already_exists": true,
+      "rationale": "直接引据陶思炎《中国镇物》1987 年高淳丹湖乡“桥上借路与鬼畏桥梁”田野采录，对应目次五·一“路桥镇物”（印页 214–219 范围）。"
+    }
+  ]
+}

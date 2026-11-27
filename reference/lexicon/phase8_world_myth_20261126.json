@@ -1,0 +1,830 @@
+{
+  "version": 1,
+  "domain_id": "world_mythology",
+  "title": "世界神话与跨文化比较专题增补辞条（Wave 2）",
+  "description": "面向第六专题（world_mythology）增补 24 条跨文化神话、冥界地理、古代护符镇物与早期近代巫术比较辞条，涵盖古希腊、古埃及、美索不达米亚、古波斯、中美洲、北欧、凯尔特、芬兰、波利尼西亚、印度、黎凡特及撒哈拉以南非洲文献与田野研究；严格区分神话叙事、历史档案与学术结论，跨文化主题并读不预设直接传播或因果关系。",
+  "entries": [
+    {
+      "id": "lex_p8_world_hesiod_theogony_chaos",
+      "domain_id": "world_mythology",
+      "hub_id": "corpus_theme_creation_worlds",
+      "term": "古希腊赫西俄德《神谱》混沌分化",
+      "aliases": [
+        "卡俄斯创世",
+        "盖亚与乌拉诺斯分离",
+        "Theogony"
+      ],
+      "category": "原初水域与天地分离",
+      "region": "古希腊玻俄提亚与爱琴海世界",
+      "era": "古风时期（约前 8—前 7 世纪）",
+      "gist": "《神谱》开篇讲述卡俄斯、大地与天神的谱系",
+      "reading_tag": "世界神话",
+      "summary": "古希腊诗人赫西俄德的《神谱》讲述众神谱系：开端出现卡俄斯、大地盖亚、塔耳塔罗斯与厄洛斯；盖亚又生出天穹乌拉诺斯。乌拉诺斯将子女藏于盖亚体内，盖亚为此苦恼，便制成镰刀，请求孩子们反抗。克罗诺斯在父亲靠近时从藏身处伸手，割去其生殖器；之后血滴与被抛入海中的身体部分又带来新的神话谱系。\n\n这一段常与其他文化中的天地关系、神代更替故事比较。哈佛希腊研究中心的文本分析指出，赫西俄德在这一段并未直接说出天空与大地从此物理分离；将它概括成“镰刀割裂天地”会超出诗句本身。跨文化对读应标明各自文本，不能单凭主题相似断言传播或共同起源。",
+      "primary_sources": [
+        {
+          "citation": "Hesiod, Theogony, translated by Hugh G. Evelyn-White, Center for Hellenic Studies.",
+          "url": "https://chs.harvard.edu/primary-source/hesiod-theogony-sb/",
+          "locator": "第 116–210 行，创生谱系及乌拉诺斯遭克罗诺斯袭击。"
+        },
+        {
+          "citation": "The Narrative Sequence of the Hesiodic Theogony, Center for Hellenic Studies.",
+          "url": "https://www-current.chs.harvard.edu/3-the-narrative-sequence-of-the-hesiodic-theogony/",
+          "locator": "讨论阉割段落与天空、大地物理分离没有被原文直接陈述。"
+        }
+      ],
+      "secondary_ref": "可与其他天地关系和神代更替叙事对读，具体差别及传播主张须逐项核实。",
+      "case_id": "case_gr_caucasus_prometheus_fire",
+      "knowledge_id": "PHI-6-0001",
+      "knowledge_note": "主题对读：结合古希腊早期宇宙叙事向自然哲学“本原（Archē）”追问的语境迁移，辨析神话谱系与论证传统的差异。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_mesoamerican_feathered_serpent_twins",
+      "domain_id": "world_mythology",
+      "hub_id": "corpus_theme_creation_worlds",
+      "term": "纳瓦传统中的羽蛇神与冥界取骨",
+      "aliases": [
+        "克察尔科亚特尔与索洛特尔",
+        "羽蛇神下冥界",
+        "Quetzalcoatl and Xolotl"
+      ],
+      "category": "原初水域与天地分离",
+      "region": "中美洲墨西哥谷地纳瓦文献传统",
+      "era": "古典期神庙浮雕至 16 世纪殖民抄本",
+      "gist": "纳瓦文献以不同版本讲述羽蛇神或索洛特尔下冥界取骨",
+      "reading_tag": "世界神话",
+      "summary": "羽蛇神克察尔科亚特尔（Quetzalcoatl）与索洛特尔（Xolotl）在纳瓦传统中有双生关系。十六世纪文献保存了有关冥界取骨、重造人类的不同叙事：有的版本由克察尔科亚特尔前往米克特兰，另有版本由索洛特尔执行此行。研究者比较这些文献时，会分别注明叙事的来源及细节，而非把它们当作一部情节完全一致的原典。\n\n特奥蒂瓦坎羽蛇神庙的雕刻，显示羽蛇意象在更早的中美洲艺术中已有重要地位；玛雅地区也有被称作库库尔坎的羽蛇神传统。不同地区的名称、年代与神话体系需要各自考察，不能直接把纳瓦双生神的全部情节套在玛雅传统之上。与《波波尔·乌》英雄双子的比较可作为主题对读，不能单凭相似推断直接传播。",
+      "primary_sources": [
+        {
+          "citation": "Elena Mazzetto, Nuevas reflexiones sobre el origen y el contenido de las fiestas del año solar en el Códice Borbónico, Estudios de Cultura Náhuatl 67, 2024, pp. 15–52.",
+          "url": "https://www.scielo.org.mx/scielo.php?pid=S0071-16752024000100015&script=sci_arttext",
+          "locator": "比较十六世纪文献中由 Xolotl 或 Ehecatl-Quetzalcoatl 下冥界取骨的版本。"
+        },
+        {
+          "citation": "Secretaría de Cultura de México, El dios perro Xólotl.",
+          "url": "https://www.gob.mx/cultura/es/articulos/el-dios-perro-xolotl?idiom=es",
+          "locator": "Xólotl 与 Quetzalcóatl 的双生关系及犬形象。"
+        },
+        {
+          "citation": "Instituto Nacional de Antropología e Historia, Feathered Serpent Temple, Teotihuacan.",
+          "url": "https://visitateotihuacan.inah.gob.mx/en/explore/feathered-serpent-temple/",
+          "locator": "特奥蒂瓦坎羽蛇神庙与雕刻。"
+        }
+      ],
+      "secondary_ref": "可与相关纳瓦个案及《波波尔·乌》的英雄双子作主题对读；各地区文本、年代与情节应分开说明。",
+      "case_id": "case_mx_mictlan_quetzalcoatl_bones",
+      "knowledge_id": "HIS-2-0018",
+      "knowledge_note": "主题对读：将特奥蒂瓦坎城市神庙轴线与中美洲羽蛇神再生象征并置，观察礼仪建筑如何物化宇宙秩序。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_kalevala_ilmarinen_forge",
+      "domain_id": "world_mythology",
+      "hub_id": "theory_witzel_mythology_phylogeny",
+      "term": "芬兰《卡勒瓦拉》铁匠伊尔玛里宁三界炉",
+      "aliases": [
+        "伊尔玛里宁锻天",
+        "卡勒瓦拉铁匠神话",
+        "Ilmarinen"
+      ],
+      "category": "原初水域与天地分离",
+      "region": "芬兰与卡累利阿乌拉尔语区",
+      "era": "口述史诗传统至 1835—1849 年《卡勒瓦拉》编纂",
+      "gist": "铁匠伊尔玛里宁铸造桑波，也曾尝试锻造日月",
+      "reading_tag": "世界神话",
+      "summary": "在芬兰史诗《卡勒瓦拉》第十歌中，铁匠伊尔玛里宁受波赫约拉主人请求，用天鹅羽尖、不孕母牛的乳汁、大麦和羊毛等材料打造宝物桑波。铸造途中，炉中先后出现不合他心意的弓、船、牛和犁，最后才制成能磨出谷物、盐与钱财的桑波；波赫约拉的主人将它藏进山中。\n\n史诗第四十九歌讲到太阳和月亮失踪后，伊尔玛里宁试图以金子锻月、银子造日。但这两件作品升起后并未发光，无法取代真正的日月，直到后来被藏起的天体重新出现。埃利亚斯·伦罗特在十九世纪根据芬兰及卡累利阿口述歌谣编定史诗；文学汇编的情节应与各地口传版本分别考察。",
+      "primary_sources": [
+        {
+          "citation": "The Kalevala, Runo X, translated by W. F. Kirby, 1907.",
+          "url": "https://en.wikisource.org/wiki/Kalevala_(Kirby_1907)/Runo_10",
+          "locator": "第 260–432 行，材料、试铸与桑波成形。"
+        },
+        {
+          "citation": "The Kalevala, Runo XLIX, translated by W. F. Kirby, 1907.",
+          "url": "https://en.wikisource.org/wiki/Kalevala_(Kirby_1907)/Runo_49",
+          "locator": "第 1–74 行，人造金月银日未能照亮大地。"
+        }
+      ],
+      "secondary_ref": "史诗与更早的口传歌谣可比较阅读；不同采录版本不得视作完全一致。",
+      "case_id": "case_fi_karelia_kalevala_sampo",
+      "knowledge_id": "LIT-1-0010",
+      "knowledge_note": "主题对读：结合口传诗歌的表演格律与变体特征，辨析民间吟唱本与十九世纪民族史诗整理本之间的编辑层次。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_polynesian_maui_fire_theft",
+      "domain_id": "world_mythology",
+      "hub_id": "theory_witzel_mythology_phylogeny",
+      "term": "波利尼西亚毛伊偷火神话",
+      "aliases": [
+        "毛伊向马胡伊卡盗火",
+        "大洋洲盗火神话",
+        "Maui fire theft"
+      ],
+      "category": "原初水域与天地分离",
+      "region": "毛利口述传统及其书面记录，新西兰奥特亚罗瓦",
+      "era": "跨岛群口述传统（19 世纪起记录）",
+      "gist": "在毛利叙事中，毛伊向马胡伊卡求火，火种留在树木里",
+      "reading_tag": "世界神话",
+      "summary": "在新西兰毛利的一支叙事中，毛伊想知道火从哪里来，于是去找掌火的马胡伊卡。她送给毛伊一枚带火的指甲，他却将火熄灭，回去再要；如此反复，马胡伊卡发觉受骗，投下最后的火种，引发大火。火后来留在凯科马科等树木之中，人们可以利用合适的木材摩擦取火。\n\n毛伊在波利尼西亚不同岛群的故事并非完全相同。将这支毛利叙事与其他取火故事并读，可以比较文化英雄、火种与地方生态知识如何进入故事，但不同版本需要分别查证，也不能仅据题材相似认定它们具有同一起源。",
+      "primary_sources": [
+        {
+          "citation": "Rāwiri Taonui, Te ngahere – forest lore, The great trees, Te Ara – the Encyclopedia of New Zealand, 2012.",
+          "url": "https://teara.govt.nz/en/te-ngahere-forest-lore/page-2",
+          "locator": "Making fire 段，毛伊、马胡伊卡、火种与取火树木。"
+        },
+        {
+          "citation": "Te Ahukaramū Charles Royal, Hawaiki, Māui, Te Ara – the Encyclopedia of New Zealand, 2009.",
+          "url": "https://teara.govt.nz/en/document/3802/maui",
+          "locator": "毛伊向祖母马胡伊卡取火的版本说明及所附故事文本。"
+        }
+      ],
+      "secondary_ref": "可与毛伊钓起北岛的不同叙事及其他地区取火故事作主题对读；不得将各岛群版本混为单一情节。",
+      "case_id": "case_nz_aotearoa_maui_fishing",
+      "knowledge_id": "REL-5-0005",
+      "knowledge_note": "主题对读：着重观察口述史诗与地方生态语境如何决定英雄盗火叙事的具体植物细节与仪式表达。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_prose_edda_jormungandr",
+      "domain_id": "world_mythology",
+      "hub_id": "corpus_theme_creation_worlds",
+      "term": "冰岛《散文埃达》世界之蛇耶梦加得",
+      "aliases": [
+        "尘世巨蟒",
+        "米德加德巨蛇",
+        "Jörmungandr"
+      ],
+      "category": "宇宙树神山与末世再生",
+      "region": "冰岛与斯堪的纳维亚文化区",
+      "era": "维京时期至 13 世纪《散文埃达》",
+      "gist": "环绕中庭大海自咬尾部的巨蟒耶梦加得标定末世海域",
+      "reading_tag": "世界神话",
+      "summary": "据十三世纪冰岛学者斯诺里·斯图鲁松编撰的《散文埃达·欺骗古鲁菲》（Gylfaginning）及《诗体埃达·希米尔之歌》，巨蟒耶梦加得（Jörmungandr）乃洛基与女巨人安格尔波达所生三孽之一，被众神之父奥丁抛入环绕人类居所“米德加德（Midgard）”的无垠大洋。它在深海不断生长，终至身躯盘绕整个尘世并能自咬尾部，因而又被称作“尘世巨蟒（Midgard Serpent）”。\n\n在北欧末世预言中，耶梦加得既是维持陆海边界张力的宇宙怪兽（托尔曾借牛头作饵几乎将其钓出深渊，见于阿杜纳图腾刻石与埃达诗篇），也是“诸神黄昏”释放灭世毒潮的关键力量——最终它与雷神托尔搏杀并同归于尽。学术界提醒，耶梦加得常与古代近东衔尾蛇（Ouroboros）及印度阿难陀龙王在图像学上并置讨论，但这种“环海边界巨蛇”共鸣并不足以证明跨越欧亚的直接借用关系。",
+      "primary_sources": [
+        {
+          "citation": "Wikipedia, \"Jörmungandr\" (Norse Prose Edda, Thor's fishing expedition, and Ragnarök).",
+          "url": "https://en.wikipedia.org/wiki/J%C3%B6rmungandr",
+          "locator": "《欺骗古鲁菲》第 34、48、51 节及维京时期石雕图像考证"
+        },
+        {
+          "citation": "Internet Sacred Text Archive, Arthur Gilchrist Brodeur (trans.), \"The Prose Edda: Gylfaginning\".",
+          "url": "https://www.sacred-texts.com/neu/pre/pre04.htm",
+          "locator": "《欺骗古鲁菲》洛基子女抛海与托尔垂钓巨蛇段落"
+        }
+      ],
+      "secondary_ref": "参见既有案例《世界树尤格德拉西尔与诸神黄昏末世神话》及《散文埃达》第 48 节托尔出海垂钓巨蛇章节。",
+      "case_id": "case_is_snorra_yggdrasil_ragnarok",
+      "knowledge_id": "LIT-1-0002",
+      "knowledge_note": "主题对读：借“环海巨蛇”意象分析神话诗歌如何将未知深海风涛与世界边界恐惧具象化。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_sumerian_lugal_stone_tablets",
+      "domain_id": "world_mythology",
+      "hub_id": "motif_global_comparative_myth_complex",
+      "term": "《卢加尔》中的尼努尔塔与石头判词",
+      "aliases": [
+        "卢加尔-埃史诗",
+        "尼努尔塔的功业",
+        "Lugale"
+      ],
+      "category": "宇宙树神山与末世再生",
+      "region": "古代美索不达米亚",
+      "era": "古代美索不达米亚苏美尔语文学",
+      "gist": "尼努尔塔战胜阿萨格后，在神话中裁定不同石头的命运。",
+      "reading_tag": "史料档案",
+      "summary": "《卢加尔》是一首苏美尔语神话诗。牛津大学苏美尔文学电子语料库的译文讲述尼努尔塔进军山地、战胜阿萨格，随后逐一对石头发表裁定。\n\n在译文中，神祇对战时与他作对和未曾攻击他的石头作出不同安排；有的石头被描述为研磨材料，有的则被赋予价值。石材名称与残损诗句在译文中有不确定之处。将这些判词与其他地区的护身石传统并读，只是主题比较，不构成传播关系或实际效力的证明。",
+      "primary_sources": [
+        {
+          "citation": "University of Oxford, Electronic Text Corpus of Sumerian Literature, “The exploits of Ninurta”, c.1.6.2.",
+          "url": "https://etcsl.orinst.ox.ac.uk/section1/tr162.htm",
+          "locator": "约第 416–533 行的石头判词；译文标示若干释读不确定。"
+        }
+      ],
+      "secondary_ref": "可与东亚关于石材的神话、佩饰传统进行主题比较；传播关系未证实。",
+      "knowledge_id": "HIS-4-0002",
+      "knowledge_note": "以神话文本对读物质文化，注意译名和史料保存状况的限制。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_celtic_samhain_threshold",
+      "domain_id": "world_mythology",
+      "hub_id": "corpus_theme_creation_worlds",
+      "term": "凯尔特万圣夜（Samhain）边界祭典",
+      "aliases": [
+        "萨温节",
+        "凯尔特新年边界夜",
+        "Samhain"
+      ],
+      "category": "宇宙树神山与末世再生",
+      "region": "爱尔兰、苏格兰及凯尔特诸地",
+      "era": "中世纪爱尔兰抄本记载至近代民俗",
+      "gist": "冬夏交替夜熄灭旧火并设界防卫彼世仙丘群灵跨界",
+      "reading_tag": "世界神话",
+      "summary": "据十世纪以后编定的中世纪爱尔兰文献（如《库利牛群争夺战》前传及《阿尔斯特故事集》）及爱尔兰民俗委员会“Dúchas 学校采录档案”，凯尔特历法中的“萨温夜（Samhain，约当公历 10 月 31 日至 11 月 1 日，意为夏末）”标记着光明收成季的结束与严酷寒冬的开启。古爱尔兰传统认为此夜乃时间与空间的交界裂隙：塔拉圣山与各地古墓“仙丘（Sídhe）”洞门微启，退居地下的神族与亡亲得以越界游走于人间。\n\n为应对此阈限时刻的失序风险，聚落普遍实行旧灶熄火再自圣山取回新火、于门前放置食物酬谢归灵，甚至佩戴伪装面具、在路口燃起双篝火以避驱不祥异灵。历史民俗学者明确分辨了中世纪前基督教“冬夏边界祭”、基督教万圣节（All Hallows' Eve）历法叠合以及近代商业化变装游行这三重演进阶段，避免把现代节日形式简单等同于古代德鲁伊仪轨。",
+      "primary_sources": [
+        {
+          "citation": "Wikipedia, \"Samhain\" (Medieval Irish texts, Sídhe mounds, and seasonal threshold customs).",
+          "url": "https://en.wikipedia.org/wiki/Samhain",
+          "locator": "中世纪爱尔兰史料及近世熄火、设食迎灵、防鬼伪装民俗条目"
+        },
+        {
+          "citation": "Encyclopaedia Britannica, \"Samhain\" (Celtic festival).",
+          "url": "https://www.britannica.com/topic/Samhain",
+          "locator": "凯尔特岁时二分法、牲畜归栏与基督教历法重塑分析"
+        }
+      ],
+      "secondary_ref": "可与既有案例《爱尔兰塔拉达努神族神话》及东亚岁时送火、中元安灵仪俗作跨文化节期对比（仅属结构对照）。",
+      "case_id": "case_ie_tara_tuatha_de_danann",
+      "knowledge_id": "REL-3-0006",
+      "knowledge_note": "主题对读：观察岁时交替历法节点如何在农牧周期断层中衍生出周期性重划人鬼边界的社群礼仪。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_zoroastrian_chinvat_bridge",
+      "domain_id": "world_mythology",
+      "hub_id": "motif_global_comparative_myth_complex",
+      "term": "琐罗亚斯德教钦瓦特判决之桥",
+      "aliases": [
+        "钦瓦特桥",
+        "集聚者之桥",
+        "Chinvat Bridge"
+      ],
+      "category": "降临冥界与亡者考验",
+      "region": "古波斯伊朗高原与中亚祆教区",
+      "era": "《阿维斯陀》伽萨圣诗至中古波斯语《创世记》",
+      "gist": "亡魂死后第四日黎明渡过随善恶宽窄变化的分界审判桥",
+      "reading_tag": "冥界地理",
+      "summary": "在古波斯琐罗亚斯德教（祆教）最古老核心圣典《阿维斯陀·伽萨》（Gathas，如《亚斯纳》第 46、51 章）以及萨珊时期中古波斯语文献《奔达希申》（Bundahišn）中，人死后灵魂将在尸身旁守候三夜，至第四日黎明随风前往横跨深渊的“钦瓦特之桥（Činwad Puhl，意为拣选者或判决者之桥）”，接受密特拉、斯拉欧沙与拉什努三神按行为天平展开的公正复核。\n\n极具象征张力的是桥梁本身的“变形机制”：凡生前践行善思、善言、善行者，桥面自会化作九支矛宽（约如康庄大道），并由代表其本人清净良知（Daēnā）的明媚少女牵引直入光明歌咏之殿；反之，若属妄语作恶者，所见则是丑陋恶妇，且桥面骤然竖立如剃刀锋刃（宽度难容足趾），令其失足坠入阴暗寒冷的谎言深渊。此桥虽常与东亚奈何桥作死亡边界对读，但二者神学前提与伦理结构截然不同，研究时应严守历史文本语境。",
+      "primary_sources": [
+        {
+          "citation": "Wikipedia, \"Chinvat Bridge\" (Avesta Gathas and Pahlavi Zoroastrian eschatology).",
+          "url": "https://en.wikipedia.org/wiki/Chinvat_Bridge",
+          "locator": "《亚斯纳》第 46 章及中古波斯语《阿尔达·维拉兹书》桥梁变形描述"
+        },
+        {
+          "citation": "Encyclopaedia Britannica, \"Dualism (religion)\" (Zoroastrian eschatology and Chinvat Bridge).",
+          "url": "https://www.britannica.com/topic/dualism-religion",
+          "locator": "琐罗亚斯德教善恶二元论与死后审判天平对照"
+        }
+      ],
+      "secondary_ref": "参见既有案例《波斯阿维斯陀光明与黑暗双元宇宙论及钦瓦特之桥》；经文出处见《亚斯纳》第 46、51 章。",
+      "case_id": "case_ir_avesta_ahura_angra_dualism",
+      "knowledge_id": "REL-2-0007",
+      "knowledge_note": "主题对读：分辨《阿维斯陀》圣诗的字面审判意象、象征性良知显现与中古波斯注疏的寓言展开。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_aztec_mictlan_nine_levels",
+      "domain_id": "world_mythology",
+      "hub_id": "motif_global_comparative_myth_complex",
+      "term": "阿兹特克九重冥界米克特兰（Mictlan）",
+      "aliases": [
+        "米克特兰九重关卡",
+        "索洛斯犬涉渡冥河",
+        "Mictlān"
+      ],
+      "category": "降临冥界与亡者考验",
+      "region": "墨西哥谷地与特诺奇蒂特兰文化圈",
+      "era": "14—16 世纪纳瓦传统与《佛罗伦萨抄本》",
+      "gist": "16 世纪纳瓦文献记述亡者通往米克特兰的旅程与伴行犬",
+      "reading_tag": "冥界地理",
+      "summary": "《佛罗伦萨抄本》第三卷附录记录了十六世纪纳瓦人对死亡去处、葬仪和随葬物的叙述。按这部文献中的说法，不同死亡方式与不同目的地有关，一些亡者将踏上通往米克特兰的旅程，那里是米克特兰特库特利及其配偶的领域。\n\n冥途在不同文献中的次序并不完全相同。墨西哥国家人类学与历史研究所期刊的一项研究对照了《佛罗伦萨抄本》和《梵蒂冈 A 抄本》：前者记有相撞的山、寒冷荒地、锋利之风与河流，后者将渡水安排在较早位置，也列出遭箭袭击与被兽食心等关卡。犬帮助亡者渡水以及四年旅程是相关传统与研究中的重要内容。两部殖民时期抄本反映各自编纂语境，不能合并成所有纳瓦社群共享的一条固定路线；与其他文化冥途叙事的比较，也不等于已经证明彼此传播。",
+      "primary_sources": [
+        {
+          "citation": "Florentine Codex, Book 3, Appendix, folio 23v, Digital Florentine Codex, Getty Research Institute.",
+          "url": "https://florentinecodex.getty.edu/book/3/folio/23v?nhTexts=&spTexts=",
+          "locator": "第三卷附录第一章，亡者去处与葬仪；原文及译文可并读。"
+        },
+        {
+          "citation": "Mónica Luna López, El camino al Mictlán: ¿ruta al tormento o al origen?, Vita Brevis 6(11), 2017.",
+          "url": "https://revistas.inah.gob.mx/index.php/vitabrevis/article/download/11698/12466/",
+          "locator": "第 163–165 页表 1 对照两部抄本中的路径，第 169–170 页讨论四年旅程。"
+        }
+      ],
+      "secondary_ref": "参见个案 case_mx_aztec_mictlan_nine_realms；各抄本的关卡与次序应分别表述。",
+      "case_id": "case_mx_mictlan_quetzalcoatl_bones",
+      "knowledge_id": "REL-3-0010",
+      "knowledge_note": "主题对读：将阿兹特克四年渡冥与伴行犬丧葬礼俗同全球丧葬哀悼规范并读，体会过渡周期与社群送行职能。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_greek_harpies_cerberus",
+      "domain_id": "world_mythology",
+      "hub_id": "motif_global_comparative_myth_complex",
+      "term": "古希腊哈尔庇亚与冥府守门犬刻耳柏洛斯",
+      "aliases": [
+        "刻耳柏洛斯",
+        "地狱三头犬",
+        "哈尔庇亚疾风女妖"
+      ],
+      "category": "降临冥界与亡者考验",
+      "region": "古希腊与罗马古典文学世界",
+      "era": "荷马、赫西俄德至维吉尔时期",
+      "gist": "疾风攫夺鸟女哈尔庇亚与多首冥犬刻耳柏洛斯司死界关隘",
+      "reading_tag": "冥界地理",
+      "summary": "在古希腊早期史诗与葬墓浮雕中，冥界边缘由性质各异却同司“生死阻隔”的异形守卫看管。《神谱》（第 311 行）记述冥府守门犬刻耳柏洛斯（Cerberus）生有五十首（后世绘画多定型为三首）并饰以蛇尾蛇鬣，伏于斯堤克斯冥河岸口；它对踏入冥府的新魂摇尾迎入，却对企图私逃或擅闯返阳的生魂与闯关者狂吠撕咬——赫拉克勒斯降伏它、俄耳甫斯借琴声催眠、埃涅阿斯投喂安神蜜饼方得越关。\n\n与之相应，哈尔庇亚（Harpies，意为“攫夺者”）在《奥德赛》里本是暴风急卷的化身，凡突遭暴毙或失踪之人皆被喻为遭其骤然掳走；古典陶绘与吕基亚“哈尔庇亚墓”石雕又常将人面鸟身意象用以象征承载亡魂飞离墓地的风灵，后来才在文学化改写中降格为污秽抢食之怪。学者借此区分早期葬礼挽歌象征、风暴拟人隐喻与后世戏剧怪兽修饰。",
+      "primary_sources": [
+        {
+          "citation": "Wikipedia, \"Cerberus\" (Hesiod Theogony, Vergil Aeneid Book VI, and Heracles' twelfth labor).",
+          "url": "https://en.wikipedia.org/wiki/Cerberus",
+          "locator": "《神谱》第 311 行、第 769 行及古典陶器画谱梳理"
+        },
+        {
+          "citation": "Wikipedia, \"Harpy\" (Homeric storm-winds, Apollonius Argonautica, and Xanthos tomb reliefs).",
+          "url": "https://en.wikipedia.org/wiki/Harpy",
+          "locator": "《奥德赛》卷一、卷二十及克桑托斯墓雕人首鸟身形象考辨"
+        }
+      ],
+      "secondary_ref": "可对照既有案例《俄耳甫斯琴声下冥界与回望禁忌》及《神谱》冥界守门犬章节、东亚墓葬“打狗饼”风俗（跨文化并读不作因果关联）。",
+      "case_id": "case_gr_thrace_orpheus_underworld",
+      "knowledge_id": "LIT-1-0009",
+      "knowledge_note": "主题对读：结合古希腊挽歌、葬墓浮雕与冥府游历叙事，观察暴毙失踪恐惧如何凝结为具象的边界守卫兽。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_egyptian_heart_scarab",
+      "domain_id": "world_mythology",
+      "hub_id": "motif_global_comparative_myth_complex",
+      "term": "古埃及圣甲虫护心符（Heart Scarab）",
+      "aliases": [
+        "护心圣甲虫",
+        "亡灵书第30B章护符",
+        "Heart Scarab"
+      ],
+      "category": "降临冥界与亡者考验",
+      "region": "古埃及尼罗河流域；具体馆藏对象的出土地须分别核实",
+      "era": "第二中间期至晚期王朝（约前 1600—前 332 年）",
+      "gist": "古埃及护心圣甲虫与《亡灵书》第 30B 章的丧葬祈愿",
+      "reading_tag": "跨文化镇物",
+      "summary": "古埃及丧葬中，圣甲虫护符常被安置在亡者胸前，其象征与新生观念有关。大都会艺术博物馆藏一件新王国时期的人首护心圣甲虫（馆藏号 30.8.1080），以玄武岩、青铜和残留金箔制成，平底刻有十行《亡灵书》第 30B 章文字；馆方将它的地理来源记为埃及。该网页链接中的 550986 是网页编号，不是馆藏号。\n\n大英博物馆 EA 7876 是绿色碧玉、金座和铭文构成的另一件王室实例，铭文带有 Sobekemsaf 王名；研究者对它属于哪位同名国王及其发现背景有不同判断。护心咒向亡者的心祈愿，盼望它在审判中不要作不利证言。将这些护符与其他地区墓葬器物并读，可以比较各社会表达死亡与护佑的方式，但形式相似本身并不能证明直接传播。",
+      "primary_sources": [
+        {
+          "citation": "The Metropolitan Museum of Art, Heart Scarab with a Human Head, object number 30.8.1080.",
+          "url": "https://www.metmuseum.org/art/collection/search/550986",
+          "locator": "馆藏信息、材质、来源及平底十行第 30B 章铭文。"
+        },
+        {
+          "citation": "British Museum, Green jasper heart scarab of King Sobekemsaf.",
+          "url": "https://artsandculture.google.com/asset/green-jasper-heart-scarab-of-king-sobekemsaf/dwFJGxLHmHtYxw?hl=en",
+          "locator": "馆方提供的 EA 7876 器物说明及材料信息。"
+        },
+        {
+          "citation": "Susan La Niece, Gianluca Miniaci, Marei Hacke and Maria F. Guerra, Second Intermediate Period jewellery in the collection of the British Museum.",
+          "url": "https://api.repository.cam.ac.uk/server/api/core/bitstreams/f40ab65e-74da-4d37-bcf6-e936fa36df1d/content",
+          "locator": "第 9.3 节，第 327–328 页，EA 7876 的铭文、归属与发现背景疑点。"
+        }
+      ],
+      "secondary_ref": "参见个案 case_eg_thebes_heart_scarab_amulet；馆藏号、推定归属及出土地应分对象核查。",
+      "case_id": "case_eg_thebes_weighing_heart",
+      "knowledge_id": "REL-1-0003",
+      "knowledge_note": "主题对读：将墓葬护心符的材质选择与第 30B 章铭文放回古埃及王权、神学与家庭丧葬的立体实践语境。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_egyptian_shabti_substitute",
+      "domain_id": "world_mythology",
+      "hub_id": "motif_global_comparative_myth_complex",
+      "term": "古埃及沙布提替身俑",
+      "aliases": [
+        "乌沙布提",
+        "古埃及墓葬代役俑",
+        "Ushabti"
+      ],
+      "category": "双元宇宙与生死周期",
+      "region": "古埃及尼罗河谷历代墓葬群",
+      "era": "中王国至托勒密时期（约前 2000—前 30 年）",
+      "gist": "陪葬《亡灵书》第六章铭文雕俑代亡者在芦苇原应役耕作",
+      "reading_tag": "跨文化镇物",
+      "summary": "沙布提（Shabti / Ushabti，意为“应答者”）是古埃及中王国以来置于墓室木匣内的木乃伊状微型雕俑，材质涵盖泥胎蓝釉费昂斯彩陶、木雕、雪花石膏与青铜，双臂交叉胸前手执锄头、镐头与背负装满沙土的谷袋。亡者进入奥西里斯统治的“芦苇原（Field of Reeds）”后仍须承担疏浚灌溉与耕作徭役，沙布提胸前或通身所刻《亡灵书》第 6 章咒语（“当某人被点名劳作之际，汝当应声道：我在此！”）便旨在令俑替身代为应役。\n\n在跨文化比较研究中，古埃及沙布提与东亚古代陶俑、镇墓替身人形或纸扎冥仆常被并置观察，呈现了不同文明如何以可置入坟茔的微型器物替代真人殉葬并延续来世生活秩序；但考古学必须严明界线：两者起源与神学架构完全独立，不可将“冥世替役俑”主题并读视作传播论证。",
+      "primary_sources": [
+        {
+          "citation": "Wikipedia, \"Ushabti\" (Ancient Egyptian funerary figurines and Book of the Dead Spell 6).",
+          "url": "https://en.wikipedia.org/wiki/Ushabti",
+          "locator": "中王国至新王国 365+36 监督俑编制与《亡灵书》第 6 章铭文"
+        },
+        {
+          "citation": "Internet Sacred Text Archive, E. A. Wallis Budge (trans.), \"The Egyptian Book of the Dead: Chapter VI\".",
+          "url": "https://www.sacred-texts.com/egy/ebd/",
+          "locator": "《亡灵书》第 6 章（令沙布提代亡者在冥界耕作之咒文）"
+        }
+      ],
+      "secondary_ref": "参见既有案例《奥西里斯受难与复活神话》及《亡灵书》第 6 章；与东亚墓葬替身器物仅作平行比较。",
+      "case_id": "case_eg_abydos_osiris_myth",
+      "knowledge_id": "HIS-4-0002",
+      "knowledge_note": "主题对读：从器物材质演变（蜡泥木石至批量费昂斯陶模）读取古埃及丧葬制度从王室向庶民普及的社会史线索。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_egyptian_wedjat_eye_horus",
+      "domain_id": "world_mythology",
+      "hub_id": "motif_global_comparative_myth_complex",
+      "term": "古埃及乌贾特荷鲁斯之眼",
+      "aliases": [
+        "乌贾特之眼",
+        "荷鲁斯左眼护符",
+        "Eye of Horus"
+      ],
+      "category": "双元宇宙与生死周期",
+      "region": "古埃及上下埃及神庙与墓葬区",
+      "era": "古王国《金字塔铭文》至罗马时期",
+      "gist": "以伤愈左眼造型铸制护符象征修复完满与王室墓葬辟邪",
+      "reading_tag": "跨文化镇物",
+      "summary": "“乌贾特（Wedjat）”，古埃及语意为“完好无损者”，形象融合人眼、眉弓与游隼颊下泪斑纹饰。溯自《金字塔铭文》与《赫里奥波利斯争王位记》神话：天空隼神荷鲁斯在替父奥西里斯复仇、与破坏神塞特激战期间左眼（象征月亮）惨遭撕碎，后经智慧神图特以法力与圣乳拼合治愈，荷鲁斯随即将其献予亡父奥西里斯令其重获生机。由此，“乌贾特之眼”既喻示月相盈亏复圆的自然周期，亦成为神圣供奉与完满修复的至高符印。\n\n在实物与考古层面，古埃及工匠以天青石、红玉髓、绿松石和蓝釉彩陶精制出无数乌贾特眼珠护符，既被缝缀于木乃伊剖腹封口金属片上以求肉体“愈合完好”，也广泛绘饰于灵棺外板、护身项链与尼罗河航船船首。考古学者强调：荷鲁斯之眼在古代语境中多强调“献祭修复与神圣完整”，现代流行文化对其附加的神秘学分数拆解或秘密结社联想，往往偏离埃及学原初铭文实证。",
+      "primary_sources": [
+        {
+          "citation": "Wikipedia, \"Eye of Horus\" (Wedjat mythological origin, funerary amulets, and mummy incision plates).",
+          "url": "https://en.wikipedia.org/wiki/Eye_of_Horus",
+          "locator": "《金字塔铭文》至晚期木乃伊护身符形制及现代分数误读辨析"
+        },
+        {
+          "citation": "The British Museum, \"Hieroglyphs: unlocking ancient Egypt\" (Wedjat amulet and protective symbolism).",
+          "url": "https://www.britishmuseum.org/sites/default/files/2022-10/Hieroglyphs_unlocking_ancient_Egypt_large_print_guide_The_British_Museum.pdf",
+          "locator": "大英博物馆展览导览乌贾特眼（Wedjat Eye）护身符功能说明页"
+        }
+      ],
+      "secondary_ref": "可对照既有案例《菲莱神庙伊西斯寻骸神话》与东南沿海船首绘眼民俗（仅作平行象征对照，非传播链条）。",
+      "case_id": "case_eg_aswan_philae_isis_tears",
+      "knowledge_id": "REL-5-0071",
+      "knowledge_note": "主题对读：记录器物时须同时核查所在部位（如木乃伊切口、棺壁、船首）与伴随铭文，避免脱离语境臆断含义。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_hindu_yaksha_pisacha_spirits",
+      "domain_id": "world_mythology",
+      "hub_id": "motif_global_comparative_myth_complex",
+      "term": "印度夜叉（Yakṣa）与毗舍遮（Piśāca）精怪分类",
+      "aliases": [
+        "雅克沙与毗舍遮",
+        "印度吠陀山林地灵谱",
+        "Yaksha and Pishacha"
+      ],
+      "category": "双元宇宙与生死周期",
+      "region": "南亚印度次大陆吠陀—往世书区",
+      "era": "晚期吠陀《阿闼婆吠陀》至史诗往世书时期",
+      "gist": "印度古典文献区分守林财宝护法夜叉与坟墓嗜血毗舍遮",
+      "reading_tag": "世界神话",
+      "summary": "在古印度吠陀、印度教往世书及早期佛教经典精细的自然灵体谱系中，“夜叉（Yakṣa）”与“毗舍遮（Piśāca）”代表了两种职能与道德面向截然分化的边境精灵。夜叉系大雪山财神俱毗罗（Kubera）属下，多居于古树、泉眼、城门与宝藏所在，在巴尔胡特与桑奇早期的石雕栏楯上常呈大腹持财之姿——虽有时脾性暴烈考验旅人（如《摩诃婆罗多》池畔问答），总体仍可借供养转为护城护法之善神。\n\n相对地，“毗舍遮”自《梨俱吠陀》与《阿闼婆吠陀》起即与黑暗、战火荒野和火葬场紧密相连，在梵语词源上常释为“啖食生肉者”，古籍称其栖身荒冢岔路、趁夜侵扰失仪或虚弱之人引发热病谵妄，且传统音韵学甚至将一种西北部方言（Paisaci）附会为其语调。宗教学者指出，汉译佛典后将“夜叉”与“毗舍遮”引入东亚并促成“路旁夜叉”等本土化改编，对照其南亚原始分类有助于理清跨文化翻译过程中的神鬼品级流变。",
+      "primary_sources": [
+        {
+          "citation": "Wikipedia, \"Yaksha\" (Vedic, Hindu, Jain, and Buddhist nature-spirit taxonomy).",
+          "url": "https://en.wikipedia.org/wiki/Yaksha",
+          "locator": "巴尔胡特—桑奇石雕护宝夜叉像及史诗问答母题章节"
+        },
+        {
+          "citation": "Wikipedia, \"Pishacha\" (Atharvaveda, Mahabharata, and cremation-ground demonology).",
+          "url": "https://en.wikipedia.org/wiki/Pishacha",
+          "locator": "《阿闼婆吠陀》驱祟咒词及印度诸派文献对毗舍遮分类的演变"
+        }
+      ],
+      "secondary_ref": "可对照中国语境下《佛典汉译》后衍生的“夜叉”“鬼名”分类体系，参见印度教历史文本与经典翻译章节。",
+      "knowledge_id": "REL-1-0007",
+      "knowledge_note": "主题对读：审视梵语文献中的地方树灵、护宝神与尸林鬼怪如何经由不同宗教教派重编而分化。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_azande_witchcraft_poison_oracle",
+      "domain_id": "world_mythology",
+      "hub_id": "motif_global_comparative_myth_complex",
+      "term": "撒哈拉以南赞德人（Azande）巫术神谕",
+      "aliases": [
+        "阿赞德毒鸡神谕",
+        "埃文斯-普里查德赞德研究",
+        "Azande Benge Oracle"
+      ],
+      "category": "跨文化附体与巫术审判",
+      "region": "南苏丹、刚果（金）北部与中非赞德区",
+      "era": "1926—1930 年田野考察与 1937 年专著",
+      "gist": "赞德民族志以巫术和神谕讨论不幸归因与社会关系",
+      "reading_tag": "人类学田野",
+      "summary": "人类学家 E. E. 埃文斯-普里查德的《阿赞德人的巫术、神谕与魔法》依据二十世纪的田野材料，讨论赞德社群如何理解不幸、巫术、仪式和社会关系。书中著名的本盖（benge）毒鸡神谕涉及向鸡施用毒物并解释结果；有关程序、决策和争议须放回作者记录的具体场景理解，不能把它等同于现代意义上能够可靠验证指控的科学实验。\n\n这一民族志曾引发长期讨论，包括人们如何区分事件发生的物质过程与不幸为何落在特定人物身上的解释。2024 年人类学研究还记录了赞德地区神谕实践及公共巫术指控随社会局势变化的情况。历史民族志不是对所有赞德人、所有时期的固定描述；跨文化对读也不应将任何群体描绘成缺乏概率观念或赋予其单一的行为模式。",
+      "primary_sources": [
+        {
+          "citation": "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, Oxford: Clarendon Press, 1937.",
+          "url": "https://www.si.edu/object/witchcraft-oracles-and-magic-among-azande-e-e-evans-pritchard-foreword-professor-c-g-seligman%3Asiris_sil_24382",
+          "locator": "史密森尼图书馆书目及章节目录；包括巫术、不幸归因和毒物神谕。"
+        },
+        {
+          "citation": "Ferenc Dávid Markó, Deaths by guns will never outnumber magic: New oracles among the Azande, HAU: Journal of Ethnographic Theory 14(3), 2024, pp. 629–646.",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/732910",
+          "locator": "摘要讨论 benge、后来出现的 dabaya 及神谕与社会动荡的关系。"
+        }
+      ],
+      "secondary_ref": "上述专著通过图书馆目录核对书目信息；具体田野细节如需进一步引用，应注明可核验的版本和页码。",
+      "case_id": "case_ss_azande_witchcraft_oracle",
+      "knowledge_id": "PHI-5-0005",
+      "knowledge_note": "主题对读：比较自然机制解释（因果模型）与社会道德归因（意义系统）在面对偶发灾厄时的各自解释边界。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_north_berwick_witch_trials_1590",
+      "domain_id": "world_mythology",
+      "hub_id": "corpus_early_modern_witch_hunts",
+      "term": "近世苏格兰北贝里克猎巫案",
+      "aliases": [
+        "1590年北贝里克审巫案",
+        "詹姆斯六世与魔鬼协约",
+        "North Berwick witch trials"
+      ],
+      "category": "跨文化附体与巫术审判",
+      "region": "苏格兰东洛锡安北贝里克与爱丁堡",
+      "era": "1590—1591 年（1597 年《鬼神学》出版前奏）",
+      "gist": "1590年詹姆斯六世亲审海上风浪咒案开启苏格兰猎巫潮",
+      "reading_tag": "史料档案",
+      "summary": "1590 年至 1591 年发生在苏格兰东海岸北贝里克的审巫案，是欧洲大陆“恶魔契约+撒旦聚会”神学首次大规模导入苏格兰司法体系的转折事件。起因是苏格兰国王詹姆斯六世迎娶丹麦安娜公主渡海返国期间屡遇狂风巨浪，丹麦与苏格兰廷臣将风暴归咎于妖术阻挠；涉案女草药师吉莉丝·邓肯、艾格尼丝·桑普森及学校教师约翰·菲安博士等逾七十人在严酷刑讯下“供述”曾于万圣夜在北贝里克教堂与魔鬼集会，并以浸海死猫、熔化蜡像祈风诅咒国王。\n\n爱丁堡大学《苏格兰巫术调查（1563–1736）》历史档案与《苏格兰新闻（Newes from Scotland, 1591）》小册子揭示：詹姆斯六世不仅亲临审讯，更受此案启发于 1597 年撰写《鬼神学（Daemonologie）》鼓吹猎巫。现代史学明确指出，“猫咒兴风”系刑讯诱导下的恶魔学话语建构，并非真正气象成因；该案直接诱发苏格兰此后一个半世纪逾三千八百余人受审的惨烈司法迫害潮。",
+      "primary_sources": [
+        {
+          "citation": "University of Edinburgh, \"The Survey of Scottish Witchcraft, 1563–1736\".",
+          "url": "https://witches.hca.ed.ac.uk/sources/",
+          "locator": "1590–1591 年北贝里克案庭审卷宗与司法档案来源目录"
+        },
+        {
+          "citation": "Wikipedia, \"North Berwick witch trials\" (1590–1591 trials, James VI, and Agnes Sampson).",
+          "url": "https://en.wikipedia.org/wiki/North_Berwick_witch_trials",
+          "locator": "1591 年小册子《Newes from Scotland》记载及刑讯口供历史批判"
+        }
+      ],
+      "secondary_ref": "参见既有节点《苏格兰北贝里克猎巫案（1590–1591）》与《爱丁堡大学苏格兰猎巫调查库（1563–1736）》。",
+      "case_id": "case_north_berwick_1590",
+      "knowledge_id": "HIS-6-0001",
+      "knowledge_note": "主题对读：实践史料批判方法，识别经刑讯逼供与王权政治渲染后写入法庭卷宗的诱导证词。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_yoruba_orisha_ordeal_rites",
+      "domain_id": "world_mythology",
+      "hub_id": "motif_global_comparative_myth_complex",
+      "term": "西非约鲁巴奥里沙神判仪式",
+      "aliases": [
+        "奥贡铁器立誓",
+        "约鲁巴奥里沙契约裁断",
+        "Yoruba Orisha Oath Ordeal"
+      ],
+      "category": "跨文化附体与巫术审判",
+      "region": "西非尼日利亚奥孙州、奥约州及贝宁约鲁巴区",
+      "era": "前殖民城邦习惯法至当代民族志记录",
+      "gist": "伊法占卜诗与奥贡铁器立誓仲裁社群争端与越界猜疑",
+      "reading_tag": "人类学田野",
+      "summary": "在西非约鲁巴（Yoruba）传统城邦秩序里，神圣神灵“奥里沙（Orisha）”并非高悬天外，而是透过口传“伊法（Ifá）”占卜诗篇与习惯法神判参与日常争议调解。在遇盗窃疑案、邻里恶意诅咒纠纷或王室盟誓之际，除由巴巴拉沃祭司掷棕榈仁或卜链（Opele）诵读对应诗段（Odu）以辨析人伦失衡外，当事双方亦常前往掌管冶铁、正道与誓言的神灵奥贡（Ogun）神龛，在铁刃、长刀或铁链前执掌宣誓，或由奥格博尼（Ogboni）长老会监督以圣水及土地誓约裁定真伪。\n\n非洲人类学与宗教史学者强调，约鲁巴传统的“奥里沙神判”把对铁器、大地和雷电神灵尚戈（Shango）的集体敬畏转化为非正式民事法庭，借“违誓必受惩罚”的心理震慑促使争议双方坦白和解或赔偿息讼；这种借助社群公开立誓消弭疑忌的方式，在当代部分西非社区仍与现代成文司法形成某种双轨并存与功能磨合。",
+      "primary_sources": [
+        {
+          "citation": "Wikipedia, \"Orisha\" (Yoruba pantheon, Ifá divination, Ogun, and social justice roles).",
+          "url": "https://en.wikipedia.org/wiki/Orisha",
+          "locator": "约鲁巴奥里沙神谱与伊法占卜、奥贡铁誓传统章节"
+        },
+        {
+          "citation": "Encyclopaedia Britannica, \"Orisha\" (West African Yoruba religious traditions).",
+          "url": "https://www.britannica.com/topic/orisha",
+          "locator": "奥里沙与伊法诗律、社群仪式裁断及非洲离散演变"
+        }
+      ],
+      "secondary_ref": "可对照既有案例《西非伊费创世金链与奥巴塔拉神话》及《约鲁巴伊法》条目，并与跨文化习惯法神判比较（仅限结构并读）。",
+      "case_id": "case_ng_ife_obatala_oduduwa",
+      "knowledge_id": "REL-5-0083",
+      "knowledge_note": "主题对读：观察口传占卜诗篇与铁器神圣信物如何在前现代城邦中充当争端仲裁与契约证言工具。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_norse_runic_apotropaic_inscriptions",
+      "domain_id": "world_mythology",
+      "hub_id": "motif_global_comparative_myth_complex",
+      "term": "北欧卢恩护身铭文",
+      "aliases": [
+        "卢恩驱邪铜牌",
+        "里伯颅骨卢恩铭文",
+        "锡格蒂纳卢恩护符"
+      ],
+      "category": "跨文化附体与巫术审判",
+      "region": "丹麦里伯、瑞典锡格蒂纳、挪威卑尔根",
+      "era": "约 8—14 世纪维京至中世纪早期",
+      "gist": "里伯头骨片等铭文展示北欧文字与护身观念的联系",
+      "reading_tag": "跨文化镇物",
+      "summary": "丹麦里伯出土的人骨片刻有卢恩铭文；它于 1973 年发现，根据同一地层物件的年代，通常约定为公元 725 至 750 年。铭文使用由古弗萨克向新弗萨克过渡的形式，提及奥丁等名字，并被多位研究者解读为针对疼痛或异灵的祈助文字。文字释读和骨片是否曾被佩戴仍有讨论，不能把推测的使用方式当作已直接证实的事实。\n\n北欧其他卢恩铭文见于石、木、骨和金属等载体，功能也不尽相同。对照具体出土环境和逐字释文，才可以判断某件器物是否涉及纪念、祈助或其他用途；后世现代神秘学中的图案与历史铭文也需要区分。",
+      "primary_sources": [
+        {
+          "citation": "Jackie Nordström, Dvärgen på Ribekraniet, Arkiv för nordisk filologi 136, 2021, pp. 5–24.",
+          "url": "https://journals.lub.lu.se/anf/article/download/27870/24279/74217",
+          "locator": "第 5 页记录发现、年代和新旧弗萨克过渡；全文讨论铭文释读。"
+        },
+        {
+          "citation": "Simon Nygaard, A Ritual and Contextual Approach to Runic Poetry from Viking-Age Denmark, Aarhus University Press, 2025.",
+          "url": "https://pure.au.dk/ws/files/443786413/Nygaard_2025_A_Ritual_and_Contextual_Approach_to_Runic_Poetry_from_Viking-Age_Denmark._Some_Analytical_Examples._In_Ritual_Performance_in_the_Viking_Age_ed._Simon_Nygaard_Sarah_Croix_and_S_ren_M._Sindb_k._Aarhus_University_Press.pdf",
+          "locator": "Ribe skull fragment 一节，年代、出土语境与护符用途的不同解释。"
+        }
+      ],
+      "secondary_ref": "对照具体出土器物与铭文研究，不能将某一件作品的用途推广到所有卢恩铭文。",
+      "case_id": "case_is_snorra_yggdrasil_ragnarok",
+      "knowledge_id": "HIS-4-0002",
+      "knowledge_note": "主题对读：从考古实物材质、刻写笔迹与出土地层还原卢恩护符的真实历史用途，区别于近现代神秘学附会。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_rajasthan_folk_protective_yantras",
+      "domain_id": "world_mythology",
+      "hub_id": "motif_global_comparative_myth_complex",
+      "term": "印度拉贾斯坦民间去邪符印",
+      "aliases": [
+        "曼达纳地画护宅纹",
+        "塔维兹护符匣",
+        "拉贾斯坦厌胜符印"
+      ],
+      "category": "跨文化附体与巫术审判",
+      "region": "印度西北部拉贾斯坦与中央邦",
+      "era": "中世纪塔特里克仪轨至当代乡土民俗",
+      "gist": "以曼达纳地画门饰、数宫护身符与神庙祈福护持家宅",
+      "reading_tag": "跨文化镇物",
+      "summary": "在印度拉贾斯坦邦城乡聚落中，家庭防卫灾厄与驱邪祈福形成了结合“门槛地画”“便携符匣”与神庙仪式的立体民间镇护体系。世世代代由拉贾斯坦妇女以红赭泥糊（Geru）与白垩粉在庭院门口、灶台和门槛绘制的“曼达纳（Mandana）”几何纹样——融合莲花、孔雀、象神足印及万字吉祥符——既美化岁时节庆居所，更被乡民视作迎纳吉祥、阻挡灾疫与“恶意凝视（Buri Nazar）”越过门限的象征屏障。\n\n同时，当地在民间宗教交融下亦流行佩戴或门挂银铜制“塔维兹（Ta'wiz）”护身符匣、数宫曼荼罗护符（Yantra）以及将绿柠檬串联七枚辣椒悬于店铺门框，或赴梅亨迪布尔·巴拉吉（Mehandipur Balaji）等神庙行仪以求宽慰心悸失眠。南亚民俗学者指出，这种阈值彩绘、辣果镇门与护身铜匣把不可见的生活风险与健康焦虑具象化为每日可维护的家宅仪式；现代社会亦须将传统空间祈福与科学疾控和心理卫生区分开来。",
+      "primary_sources": [
+        {
+          "citation": "Wikipedia, \"Mandana painting\" (Rajasthani threshold and courtyard protective folk art).",
+          "url": "https://en.wikipedia.org/wiki/Mandana_painting",
+          "locator": "拉贾斯坦与中央邦红赭白垩门庭地画构图、节日用途及象征释义"
+        },
+        {
+          "citation": "Wikipedia, \"Nazar (amulet)\" (Evil-eye wards including South Asian nimbu-mirchi and protective charms).",
+          "url": "https://en.wikipedia.org/wiki/Nazar_(amulet)",
+          "locator": "南亚与地中海恶眼防卫门饰及地区性护符比较章节"
+        }
+      ],
+      "secondary_ref": "可对照既有节点《拉贾斯坦班加尔古堡》民俗语境及东亚门庭彩绘镇护习俗，参阅南亚民俗与宗教实践文献（平行比较非因果）。",
+      "case_id": "case_in_alwar_bhangarh_curse",
+      "knowledge_id": "REL-5-0071",
+      "knowledge_note": "主题对读：观察门庭彩绘纹样与门框挂饰在社区日常空间中的具体位置，辨析装饰美术与护宅祈愿的叠合。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_greek_gorgoneion_apotropaic",
+      "domain_id": "world_mythology",
+      "hub_id": "motif_global_comparative_myth_complex",
+      "term": "古希腊戈尔工护符（Gorgoneion）辟邪比较",
+      "aliases": [
+        "戈尔工护符",
+        "美杜莎辟邪面具",
+        "Gorgoneion"
+      ],
+      "category": "夜间压迫与边境异灵比较",
+      "region": "古希腊、伊特鲁里亚与地中海盆地",
+      "era": "古风时期（前 7 世纪）至罗马帝国时期",
+      "gist": "戈尔工面部造像与科孚神庙山花体现古希腊守护意象",
+      "reading_tag": "跨文化镇物",
+      "summary": "古希腊艺术中的戈尔工涅翁（Gorgoneion）是戈尔工的头部或面部形象，可见于装饰、盾牌和护符；具体作品的造型与含义随时代、载体而变。大都会艺术博物馆藏有一枚古典时期的金质戈尔工面形吊坠，馆方也介绍了盾面与雅典娜埃癸斯上的相关图像。\n\n科孚岛阿尔忒弥斯神庙的古风时期山花则呈现一组完整雕刻，中央不仅是头部，还有作奔跑姿态的戈尔工身体与周围人物。1911 年起发现的山花现藏科孚考古博物馆，馆方年代约为公元前 585 年。它与面具式头像都可放进戈尔工图像传统讨论，但不应把整个山花称作单独的面部护符。将它们与其他地区的门庭守护造像对读，是可供检验的主题比较，不能由外形相似推定彼此传播或相互独立发明。",
+      "primary_sources": [
+        {
+          "citation": "Madeleine Glennon, Medusa in Ancient Greek Art, The Metropolitan Museum of Art, 2017.",
+          "url": "https://www.metmuseum.org/essays/medusa-in-ancient-greek-art",
+          "locator": "戈尔工面部造像、陶器、盾面和雅典娜埃癸斯。"
+        },
+        {
+          "citation": "The Metropolitan Museum of Art, Gold pendant in the form of a gorgoneion.",
+          "url": "https://www.metmuseum.org/art/collection/search/242831",
+          "locator": "古典时期戈尔工面形金质吊坠馆藏信息。"
+        },
+        {
+          "citation": "Corfu Municipality, Archaeological Museum of Corfu.",
+          "url": "https://visit.corfu.gr/museums/archaeological-museum/",
+          "locator": "科孚阿尔忒弥斯神庙山花、约公元前 585 年及 1911 年发掘信息。"
+        }
+      ],
+      "secondary_ref": "参见个案 case_gr_corfu_gorgoneion_apotropaic；需区分完整山花雕像与戈尔工面部护符。",
+      "knowledge_id": "ARC-3-0002",
+      "knowledge_note": "主题对读：将古希腊多立克神庙山花三角形构图与石构檐部语序，同戈尔工辟邪护界雕像的空间功能并置分析。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_mediterranean_evil_eye_nazar",
+      "domain_id": "world_mythology",
+      "hub_id": "motif_global_comparative_myth_complex",
+      "term": "地中海“恶眼”蓝珠与交叉文化镇物比较",
+      "aliases": [
+        "纳扎尔恶眼珠",
+        "玛蒂蓝眼护符",
+        "Evil eye charm"
+      ],
+      "category": "夜间压迫与边境异灵比较",
+      "region": "安纳托利亚、希腊、黎凡特与地中海沿岸",
+      "era": "古代近东至当代地中海—西亚民俗",
+      "gist": "借同心圆蓝玻璃珠模拟凝视并反思人际嫉妒与避邪心理",
+      "reading_tag": "跨文化镇物",
+      "summary": "从土耳其“纳扎尔（Nazar boncuğu）”、希腊“玛蒂（Mati）”到古代叙利亚泰勒布拉克出土的新石器眼形石偶像，地中海与近东漫长历史中持续流传着“嫉妒或过度艳羡的目光会伤及幼童、新婚夫妇、牲畜与丰产生意”的俗信（所谓“恶眼”）。对应防御做法是在胸襟、门楣、车镜与婴孩摇篮悬挂深蓝、白、浅蓝同心圆玻璃珠，借“以眼还眼”的视觉吸纳隐喻阻断有害注视。\n\n在跨文化民俗与人类学视野下，恶眼信仰常被分析为前现代农牧与市镇聚落调解“财富不均、赞美焦虑与邻里羡慕”的社会安全阀——当幼童突恙或玻璃珠因温差碎裂时，社群便借“护符替人挡煞”给出情绪出口而不必直接撕破邻里关系。与东亚“吞口”“照妖镜反射邻里煞气”比较时，学者着重识别“邻里目光—门户反照”的跨文化社会心理相似性，同时明确各自历史渊源独立。",
+      "primary_sources": [
+        {
+          "citation": "Encyclopaedia Britannica, \"Evil eye (superstition)\" (Mediterranean, Near Eastern, and comparative charms).",
+          "url": "https://www.britannica.com/topic/evil-eye-superstition",
+          "locator": "地中海恶眼观念史、蓝珠材质及反嫉妒社会心理分析"
+        },
+        {
+          "citation": "Wikipedia, \"Nazar (amulet)\" (Anatolian glass-bead craft and cross-Mediterranean parallels).",
+          "url": "https://en.wikipedia.org/wiki/Nazar_(amulet)",
+          "locator": "伊兹密尔玻璃窑传统工艺、同心圆眼状构型与跨宗教共用情况"
+        }
+      ],
+      "secondary_ref": "参见既有案例《安纳托利亚蓝色恶眼珠与避邪习俗》及比较宗教学恶眼护符章节，并与东亚八卦反照镜之邻里厌胜纠纷作平行对比。",
+      "case_id": "case_tr_anatolia_nazar_amulet",
+      "knowledge_id": "REL-5-0009",
+      "knowledge_note": "主题对读：跟踪蓝玻璃珠从乡村护儿俗物到当代手工艺与旅游纪念市场的形制保存与意味转译。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_assyrian_lamassu_gate_guardian",
+      "domain_id": "world_mythology",
+      "hub_id": "motif_global_comparative_myth_complex",
+      "term": "亚述拉玛苏门庭守护神兽",
+      "aliases": [
+        "舍杜人首翼牛",
+        "亚述宫门护卫神兽",
+        "Lamassu"
+      ],
+      "category": "夜间压迫与边境异灵比较",
+      "region": "古代新亚述帝国（尼姆鲁德、杜尔舍鲁金、尼尼微）",
+      "era": "公元前 9—前 7 世纪（新亚述帝国盛期）",
+      "gist": "人首翼牛石雕护卫王宫门阙并与石敢当门神作主题并读",
+      "reading_tag": "跨文化镇物",
+      "summary": "耸立于古代新亚述帝国王宫（如杜尔舍鲁金与尼姆鲁德）城门及殿堂门洞两侧的巨型整石雕像“拉玛苏（Lamassu，又称舍杜 Šēdu）”，通常呈人首（蓄须并戴角冠）、公牛或雄狮健躯兼备双翼的复合圣兽形态，正侧两面雕出五条腿以令来访者无论正面瞻仰抑或侧身穿过门洞，皆感其凛然驻立或迈步迎护。楔形文字地基铭文记述王室安放此类神兽乃为驱逐邪灵、护卫君主宫室永固。\n\n将亚述拉玛苏与中国传统门庭“石敢当”“门神”“屋前石狮”并置阅读，可见不同农耕与帝国文明面对建筑进出口（门阙阈限）时，均倾向借融合猛兽体魄与神明威仪的实体镇石守护户内安宁。必须严格依据史学准则指明：这种主题对读揭示的是跨文化“门户防御象征”的收敛演进，绝非古代亚述造像向东亚门神或泰山石敢当传播的因果证明。",
+      "primary_sources": [
+        {
+          "citation": "Wikipedia, \"Lamassu\" (Neo-Assyrian Khorsabad, Nimrud, and Nineveh protective portal sculptures).",
+          "url": "https://en.wikipedia.org/wiki/Lamassu",
+          "locator": "新亚述王宫五足人首翼牛石雕建筑门洞布置、阿卡德语铭文及现藏卢浮宫与大英博物馆详情"
+        },
+        {
+          "citation": "The British Museum, \"Human-headed winged bull (lamassu) from Nimrud / Khorsabad context\".",
+          "url": "https://www.britishmuseum.org/collection",
+          "locator": "大英博物馆藏亚述王宫门阙拉玛苏石灰岩巨雕档案（对照尼姆鲁德与豪尔萨巴德遗址）"
+        }
+      ],
+      "secondary_ref": "与第一专题泰山石敢当、门神秦琼敬德及照壁石狮并行对读，参见大英博物馆及卢浮宫亚述雕刻馆藏目录与“相似不等于影响”比较章节（严禁虚构跨文明传播链）。",
+      "knowledge_id": "LIT-5-0003",
+      "knowledge_note": "主题对读：严格践行“相似不等于影响”比较方法，对照近东宫门镇兽与东亚门庭镇石在建筑门槛上的共同功能而各守独立史源。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_sumerian_humbaba_guardian_mask",
+      "domain_id": "world_mythology",
+      "hub_id": "motif_global_comparative_myth_complex",
+      "term": "美索不达米亚胡瓦瓦陶面与内脏占卜",
+      "aliases": [
+        "洪巴巴护身面具",
+        "两河肠纹鬼面",
+        "Humbaba mask"
+      ],
+      "category": "夜间压迫与边境异灵比较",
+      "region": "古代美索不达米亚西帕尔、乌尔及玛里",
+      "era": "古巴比伦至新亚述时期（约前 19—前 7 世纪）",
+      "gist": "胡瓦瓦陶面背部铭文将形象与占卜兆象联系起来",
+      "reading_tag": "跨文化镇物",
+      "summary": "在《吉尔伽美什史诗》相关叙事中，胡瓦瓦（Huwawa，亦称 Humbaba）是香柏林的守卫，最终被吉尔伽美什和恩奇都击败。大英博物馆藏一件古巴比伦时期陶面（馆藏号 1883,0118,AH.2598），发现于阿布哈巴即古代西帕尔，年代约为公元前 1800—1600 年。\n\n馆方说明指出，陶面上的盘曲形状让人联想到羊的肠道；背面的楔形文字由占卜师 Warad-Marduk 署名，记下肠道形状与胡瓦瓦面容、萨尔贡王兆象之间的关联。这件器物提供了观看神话人物与占卜知识如何相接的线索；馆方说明本身不能证明它曾悬在门楣，也不足以将它的具体用途确定为家户驱邪。",
+      "primary_sources": [
+        {
+          "citation": "British Museum, Clay mask of the demon Huwawa, object 1883,0118,AH.2598.",
+          "url": "https://artsandculture.google.com/asset/clay-mask-of-the-demon-huwawa/SgHAuZSsS_5E-A?hl=en",
+          "locator": "馆方对发现地点、年代、陶面盘肠图像及 Warad-Marduk 铭文的说明。"
+        },
+        {
+          "citation": "University of Oxford, Electronic Text Corpus of Sumerian Literature, Gilgamesh and Huwawa, Version A.",
+          "url": "https://etcsl.orinst.ox.ac.uk/section1/tr1815.htm",
+          "locator": "吉尔伽美什、恩奇都与胡瓦瓦的苏美尔语叙事译文。"
+        }
+      ],
+      "secondary_ref": "陶面可与其他地区的威猛面具作主题比较；具体用途和历史联系须另有证据。",
+      "case_id": "case_iq_uruk_gilgamesh_flood",
+      "knowledge_id": "REL-5-0071",
+      "knowledge_note": "主题对读：考察同一形象如何依文字记录或占卜面具实物位置而同时承担“史诗阻路怪”与“辟邪护符”双重职能。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_world_hamsa_hand_amulet",
+      "domain_id": "world_mythology",
+      "hub_id": "motif_global_comparative_myth_complex",
+      "term": "犹太与地中海哈姆萨（Hamsa）手形护符",
+      "aliases": [
+        "犹太哈姆萨（Hamsa）手形护符",
+        "米利暗之手",
+        "法蒂玛之手"
+      ],
+      "category": "夜间压迫与边境异灵比较",
+      "region": "黎凡特、北非马格里布及地中海离散社群",
+      "era": "古代迦太基遗风至中世纪至今多宗教共用",
+      "gist": "犹太米利暗之手与伊斯兰法蒂玛之手共用的掌眼护身佩饰",
+      "reading_tag": "跨文化镇物",
+      "summary": "“哈姆萨（Hamsa，闪米特语根意为‘五’）”是一种五指并拢或对称伸展的掌形护身饰物，掌心往往嵌绘一只睁开的蓝色或黑白眼睛，有时附带鱼纹或庇佑祝词，数百年来广泛流行于中东、北非与地中海各地门楣、车挂与银饰之中。在北非和黎凡特的犹太社群（尤其是塞法迪与米兹拉希传统）里，它常刻有希伯来文“Shaddai”（全能者）或祝福祷文并称作“米利暗之手（Hand of Miriam）”；而在伊斯兰民间传统中则多呼为“法蒂玛之手”。\n\n考古图像与宗教史研究显示，竖掌拒斥伤害的手势早见于古代美索不达米亚及腓尼基—迦太基女神塔尼特（Tanit）石碑纹饰，后来才被犹太、伊斯兰与部分东地中海基督徒社群各自重新诠释并纳入家庭抗拒“恶眼”嫉妒和祈求居家平安的日常符号。宗教学者强调，多宗教共用同一种手形护符印证了地中海区域民间保护物件高度流动、却由各教派赋予独立圣典故事的共生格局。",
+      "primary_sources": [
+        {
+          "citation": "Wikipedia, \"Hamsa\" (Hand of Miriam in Jewish tradition, Hand of Fatima, and ancient Punic/Mesopotamian roots).",
+          "url": "https://en.wikipedia.org/wiki/Hamsa",
+          "locator": "塔尼特石碑手势溯源、犹太塞法迪“米利暗之手”祷词及跨宗教共用史"
+        },
+        {
+          "citation": "Encyclopaedia Britannica, \"Evil eye (superstition)\" (Hand amulets and Mediterranean protective symbolism).",
+          "url": "https://www.britannica.com/topic/evil-eye-superstition",
+          "locator": "地中海手掌辟邪符号对抗恶眼凝视的比较民俗条目"
+        }
+      ],
+      "secondary_ref": "可对照既有案例《安纳托利亚蓝色恶眼珠与避邪习俗》及《门框上的经文盒：识别犹太梅祖扎》（REL-5-0074）章节，辨析日常门护与经盒制度边界。",
+      "case_id": "case_tr_anatolia_nazar_amulet",
+      "knowledge_id": "REL-5-0071",
+      "knowledge_note": "主题对读：记录跨宗教共用的掌形护符时，须逐一核查掌心铭文语种与悬挂门庭语境，区分民间佩饰与正统礼法。",
+      "reviewed_by_human": false
+    }
+  ]
+}

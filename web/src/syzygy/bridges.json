@@ -7071,5 +7071,170 @@
     "entry": "REL-5-0062",
     "relation": "THEMATIC",
     "rationale": "将陕西凤翔民间把泥塑挂虎与木版门画悬于门楣床头祈求“噬鬼镇宅、护幼压惊”的传统，与“陕西凤翔泥塑：泥货里的虎头和生肖”条目中泥坯彩绘工序及观察辨识方法对读。"
+  },
+  {
+    "id": "SYZ-644",
+    "trail": "all",
+    "label": "范缜形神之辩与中国哲学传统",
+    "cluster": "sid_crypt",
+    "case": "case_cn_fan_zhen_shenmielun_debate",
+    "related": null,
+    "entry": "PHI-6-0002",
+    "relation": "THEMATIC",
+    "rationale": "把《梁书》所载范缜对形体与精神关系的论辩，与中国哲学传统的知识条目并置阅读，属于主题对读。"
+  },
+  {
+    "id": "SYZ-645",
+    "trail": "all",
+    "label": "增城“买水”与丧礼告别",
+    "cluster": "sid_hag",
+    "case": "case_cn_lingnan_maishui_yankou_rite",
+    "related": null,
+    "entry": "REL-3-0010",
+    "relation": "THEMATIC",
+    "rationale": "将增城记载的买水净身礼俗，与丧葬仪式、哀悼规范和不同地区做法的知识条目作主题对读。"
+  },
+  {
+    "id": "SYZ-646",
+    "trail": "all",
+    "label": "定伯卖鬼与志怪叙事的反转",
+    "cluster": "sid_crypt",
+    "case": "case_cn_soushen_song_dingbo_ghost",
+    "related": null,
+    "entry": "LIT-2-0001",
+    "relation": "THEMATIC",
+    "rationale": "将定伯假称同类、套问禁忌并将鬼变羊的叙事，与小说叙事中的视角和喜剧反转作主题对读。"
+  },
+  {
+    "id": "SYZ-647",
+    "trail": "all",
+    "label": "凉山“晓补”与仪式口传",
+    "cluster": "sid_witch",
+    "case": "case_cn_liangshan_yi_xiaobu_rite",
+    "related": null,
+    "entry": "REL-5-0005",
+    "relation": "THEMATIC",
+    "rationale": "将凉山田野记录中的春季反咒、经文与仪式物，与口述传统和仪式语境作主题对读。"
+  },
+  {
+    "id": "SYZ-648",
+    "trail": "all",
+    "label": "古代蛊毒记述与现代中毒救治",
+    "cluster": "sid_witch",
+    "case": "case_cn_tang_qianjin_gu_antidotes",
+    "related": null,
+    "entry": "HEA-TOPIC-0002",
+    "relation": "THEMATIC",
+    "rationale": "将唐代医书中的症状、方药和鬼魅观念，与现代疑似中毒的处理原则并读；这种主题比较不证明古方有效。"
+  },
+  {
+    "id": "SYZ-649",
+    "trail": "all",
+    "label": "怒江峡谷箐沟禁忌与地方知识",
+    "cluster": "sid_hag",
+    "case": "case_cn_nujiang_cliff_spirit_rite",
+    "related": null,
+    "entry": "REL-5-0001",
+    "relation": "THEMATIC",
+    "rationale": "将怒江地区关于崖神、箐沟和行路的田野口述，与民俗实践及地方知识作主题对读，不推定超自然因果。"
+  },
+  {
+    "id": "SYZ-650",
+    "trail": "all",
+    "label": "黄神越章印与印信文化",
+    "cluster": "sid_witch",
+    "case": "case_cn_han_huangshen_yuezhang_seal",
+    "related": null,
+    "entry": "HIS-4-0002",
+    "relation": "THEMATIC",
+    "rationale": "将陶思炎书中的印章图版与《抱朴子》中的护身叙述，同物质文化和器物用途作主题对读。"
+  },
+  {
+    "id": "SYZ-651",
+    "trail": "all",
+    "label": "玉琀、蝉形与丧葬观念",
+    "cluster": "sid_crypt",
+    "case": "case_cn_shangzhou_jade_cicada_yuhan",
+    "related": null,
+    "entry": "REL-3-0010",
+    "relation": "THEMATIC",
+    "rationale": "把玉琀器物和蝉蜕象征与丧葬、哀悼和生命延续观念作主题对读。"
+  },
+  {
+    "id": "SYZ-652",
+    "trail": "all",
+    "label": "张仙护儿图像与民间年画",
+    "cluster": "sid_myth",
+    "case": "case_cn_sichuan_zhangxian_tiangou_ward",
+    "related": null,
+    "entry": "REL-5-0034",
+    "relation": "THEMATIC",
+    "rationale": "将张仙以弹弓驱逐天狗、护佑儿童的图像，与传统木版图像和民俗传承作主题对读。"
+  },
+  {
+    "id": "SYZ-653",
+    "trail": "all",
+    "label": "多立克山花与戈尔工护界雕像",
+    "cluster": "sid_myth",
+    "case": "case_gr_corfu_gorgoneion_apotropaic",
+    "related": null,
+    "entry": "ARC-3-0002",
+    "relation": "THEMATIC",
+    "rationale": "将科孚古风时期神庙的石构山花与“西方古典建筑语序”中的檐部与三角形山花并置，观察宗教造像与建筑空间的结合；此处是主题对读。"
+  },
+  {
+    "id": "SYZ-654",
+    "trail": "all",
+    "label": "护心圣甲虫与古埃及丧葬文本",
+    "cluster": "sid_crypt",
+    "case": "case_eg_thebes_heart_scarab_amulet",
+    "related": null,
+    "entry": "REL-1-0003",
+    "relation": "THEMATIC",
+    "rationale": "将古埃及护心圣甲虫与《亡灵书》第 30B 章，同古埃及宗教、王权与丧葬实践的知识条目并读；馆藏器物及其归属按各自证据说明。"
+  },
+  {
+    "id": "SYZ-655",
+    "trail": "all",
+    "label": "米克特兰四年渡冥与哀悼周期",
+    "cluster": "sid_crypt",
+    "case": "case_mx_aztec_mictlan_nine_realms",
+    "related": null,
+    "entry": "REL-3-0010",
+    "relation": "THEMATIC",
+    "rationale": "将十六世纪纳瓦文献中关于亡者旅程与葬仪的记载，同丧葬仪式和哀悼规范的知识条目并读；不同抄本的路线分别说明。"
+  },
+  {
+    "id": "SYZ-656",
+    "trail": "all",
+    "label": "血腥玛丽与镜前感知研究",
+    "cluster": "sid_hag",
+    "case": "case_us_bloody_mary_mirror_troxler",
+    "related": null,
+    "entry": "BIO-3-0004",
+    "relation": "THEMATIC",
+    "rationale": "将“血腥玛丽”镜前游戏的口传版本与感官适应、镜像面孔观察研究并置，讨论感知条件与文化解释；不把实验结果直接当作个别游戏经历的因果证明。"
+  },
+  {
+    "id": "SYZ-657",
+    "trail": "all",
+    "label": "考文垂驻波假说与物理声学",
+    "cluster": "sid_liminal",
+    "case": "case_uk_coventry_infrasound_189hz_lab",
+    "related": null,
+    "entry": "PHY-4-0005",
+    "relation": "THEMATIC",
+    "rationale": "将剑条振动、由房间长度推算的低频驻波与后续“Haunt”实验，同物理学驻波和共振知识并读；个案对异常体验的解释仍属假设。"
+  },
+  {
+    "id": "SYZ-658",
+    "trail": "all",
+    "label": "电影伪档案与网络宣传",
+    "cluster": "sid_liminal",
+    "case": "case_us_blair_witch_1999_viral_ostension",
+    "related": null,
+    "entry": "LIT-4-0009",
+    "relation": "THEMATIC",
+    "rationale": "将电影与官网中的虚构失踪档案，与非虚构写作中的材料拼贴与证据核查并读；虚构文本与真实制作档案分别标识。"
   }
 ]

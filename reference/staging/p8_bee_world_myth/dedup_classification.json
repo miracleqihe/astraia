@@ -1,0 +1,316 @@
+{
+  "version": 1,
+  "bee_id": "bee-p8-world-myth",
+  "domain_id": "world_mythology",
+  "audit_note": "核对 web/public/data/graph_data.json（11,787 节点）与 reference/thematic_taxonomy.json（7 专题 238 既有 featured_nodes 及 64 hubs），精选 44 个尚未接入任何专题 featured_nodes 的高价值跨文化神话、古代冥界旅程、跨文化厌胜护符与近世猎巫档案节点（already_exists: true，零重复新建），均衡归入 Domain 6（world_mythology）三大分组。",
+  "classifications": [
+    {
+      "node_id": "case_ir_avesta_ahura_angra_dualism",
+      "domain_id": "world_mythology",
+      "group_id": "cosmogony_and_world_axis",
+      "rationale": "古波斯琐罗亚斯德教《阿维斯陀》阿胡拉·马兹达与安格拉·曼纽双元宇宙论，兼涉终末净化与钦瓦特判决之桥（Chinvat Bridge），是欧亚双元创世谱系核心对比节点。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_iq_babylon_enuma_elish",
+      "domain_id": "world_mythology",
+      "group_id": "cosmogony_and_world_axis",
+      "rationale": "古巴比伦七泥板创世史诗《埃努玛·埃利什》，展现马尔杜克剖分提阿玛特躯体建构天地与阿基图新年祭仪，是近东原初水域与剖兽创世代表文本。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_iq_eridu_adapa_wind",
+      "domain_id": "world_mythology",
+      "group_id": "cosmogony_and_world_axis",
+      "rationale": "美索不达米亚埃里都圣贤阿达帕折断南风之翼并错失“生命之食”神话，与吉尔伽美什共同构成两河凡人必死性起源命题。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_in_purana_samudra_manthana",
+      "domain_id": "world_mythology",
+      "group_id": "cosmogony_and_world_axis",
+      "rationale": "古印度往世书“乳海搅拌”神话以曼陀罗神山作搅拌轴、婆苏吉巨蛇作绳索，直接体现南亚宇宙轴心与再生甘露主题。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_in_vedic_manu_matsya_flood",
+      "domain_id": "world_mythology",
+      "group_id": "cosmogony_and_world_axis",
+      "rationale": "古印度《百道梵书》摩奴与摩蹉神鱼大洪水叙事，可与美索不达米亚洪水泥板及共工洪水系并置对照，充实南亚宇宙周期分支。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_mx_teotihuacan_five_suns",
+      "domain_id": "world_mythology",
+      "group_id": "cosmogony_and_world_axis",
+      "rationale": "中美洲纳瓦—阿兹特克特奥蒂瓦坎“五太阳”创世纪元神话，呈现众神投火化生日月与宇宙多轮毁灭再生观，对应美洲宇宙论核心坐标。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_pe_titicaca_viracocha_creation",
+      "domain_id": "world_mythology",
+      "group_id": "cosmogony_and_world_axis",
+      "rationale": "南美安第斯的的喀喀湖维拉科查石雕创世与远行神话，补足南美高原创世神格与水陆秩序叙事。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_bo_isla_del_sol_manco_capac",
+      "domain_id": "world_mythology",
+      "group_id": "cosmogony_and_world_axis",
+      "rationale": "玻利维亚太阳岛印加太阳神因蒂遣曼科·卡帕克与玛玛·奥克略出水试杖建城传说，连结安第斯创世水域与圣城起源神话。",
+      "already_exists": true
+    },
+    {
+      "node_id": "corpus_huarochiri_manuscript",
+      "domain_id": "world_mythology",
+      "group_id": "cosmogony_and_world_axis",
+      "rationale": "秘鲁《瓦罗奇里手稿》（L2）克丘亚语原生记录，保存安第斯洪水、山神帕里亚卡卡与地方宇宙观第一手文献语境。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_ml_mopti_bandiagara_nommo",
+      "domain_id": "world_mythology",
+      "group_id": "cosmogony_and_world_axis",
+      "rationale": "西非马里邦贾加拉悬崖多贡人双生水神诺莫与苍白狐狸创世神话，为非洲撒哈拉以南创世比较提供不可缺的田野谱系坐标。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_gh_ashanti_anansi_stories",
+      "domain_id": "world_mythology",
+      "group_id": "cosmogony_and_world_axis",
+      "rationale": "西非加纳阿坎—阿散蒂蜘蛛智者阿南西向天父尼亚美夺取世间故事之神话，呈现非洲口述传统中机智文化英雄重塑人间叙事秩序的结构。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_nz_aotearoa_maui_fishing",
+      "domain_id": "world_mythology",
+      "group_id": "cosmogony_and_world_axis",
+      "rationale": "波利尼西亚与新西兰毛利半神毛伊用祖母颚骨鱼钩钓起北岛巨鱼、套日缓行与偷火神话，是太平洋文化英雄创世及偷火母题核心节点。",
+      "already_exists": true
+    },
+    {
+      "node_id": "corpus_hawaiian_kumulipo",
+      "domain_id": "world_mythology",
+      "group_id": "cosmogony_and_world_axis",
+      "rationale": "夏威夷长达两千余行的创世谱系颂歌《库穆利波》（L2），以深海珊瑚向陆地与人间繁衍的演化长诗丰富大洋洲创世谱系。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_fi_karelia_kalevala_sampo",
+      "domain_id": "world_mythology",
+      "group_id": "cosmogony_and_world_axis",
+      "rationale": "芬兰卡累利阿史诗《卡勒瓦拉》铁匠伊尔玛里宁锻造并争夺宇宙奇物“桑波”神磨神话，连结乌拉尔语系铁匠创世与世界支柱母题。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_gr_caucasus_prometheus_fire",
+      "domain_id": "world_mythology",
+      "group_id": "cosmogony_and_world_axis",
+      "rationale": "古希腊普罗米修斯于高加索盗火赋予人类技艺并受神罚神话，是欧亚“盗火与文明起源”母题关键对照锚点。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_ru_novgorod_perun_veles",
+      "domain_id": "world_mythology",
+      "group_id": "cosmogony_and_world_axis",
+      "rationale": "东斯拉夫诺夫哥罗德雷神佩伦与地下牛神维列斯对峙神话，体现印欧语系“天界雷神—地下蛇水神”宇宙二元结构。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_eg_heliopolis_ra_apophis",
+      "domain_id": "world_mythology",
+      "group_id": "underworld_katabasis_myths",
+      "rationale": "古埃及赫利奥波利斯太阳神拉每夜乘船穿越十二时辰杜阿特（Duat）冥界并击败黑暗巨蛇阿波菲斯神话，完整展现埃及昼夜循环与冥府地理。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_eg_aswan_philae_isis_tears",
+      "domain_id": "world_mythology",
+      "group_id": "underworld_katabasis_myths",
+      "rationale": "古埃及菲莱神庙伊西斯哀悼奥西里斯致尼罗河泛滥再生神话，补足死后复生信仰与水文季节历法的仪式关联。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_mx_mictlan_quetzalcoatl_bones",
+      "domain_id": "world_mythology",
+      "group_id": "underworld_katabasis_myths",
+      "rationale": "中美洲阿兹特克羽蛇神克察尔科亚特尔与犬首神索洛特尔共下米克特兰冥府盗取宝玉枯骨造人神话，与两河、希腊冥界行形成跨洋对照。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_mx_michoacan_day_dead",
+      "domain_id": "world_mythology",
+      "group_id": "underworld_katabasis_myths",
+      "rationale": "墨西哥米却肯亡灵节供桌、万寿菊路径与亡魂归返记忆传统，呈现中美洲冥界观向当代社区追思礼俗的延续。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_is_edda_baldr_mistletoe",
+      "domain_id": "world_mythology",
+      "group_id": "underworld_katabasis_myths",
+      "rationale": "冰岛《散文埃达》光明神巴德尔陨落及赫尔莫德骑八足马赴赫尔冥界赎魂遭拒神话，构成北欧版“冥界不可逆还阳”核心案例。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_gb_dyfed_mabinogion_annwn",
+      "domain_id": "world_mythology",
+      "group_id": "underworld_katabasis_myths",
+      "rationale": "威尔士中世纪《马比诺吉昂》迪费德亲王普伊斯与彼世“安温（Annwn）”之王阿劳恩易位统治一年神话，代表凯尔特人神界与彼世互通原型。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_ie_tara_tuatha_de_danann",
+      "domain_id": "world_mythology",
+      "group_id": "underworld_katabasis_myths",
+      "rationale": "爱尔兰塔拉山达努神族携魔法四宝退入地下仙丘（Sídhe）神话，连结凯尔特万圣夜丘墓境界开启与彼世居住想象。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_nz_southland_piopiotahi_milford_sound",
+      "domain_id": "world_mythology",
+      "group_id": "underworld_katabasis_myths",
+      "rationale": "新西兰毛利冥界女神辛妮努伊特波（Hine-nui-te-pō）与毛伊求永生陨落传说，为大洋洲死亡起源与冥界边界提供核心个案。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_it_rome_romulus_remus",
+      "domain_id": "world_mythology",
+      "group_id": "underworld_katabasis_myths",
+      "rationale": "古罗马罗穆卢斯与雷穆斯弃婴获母狼哺育、建城划界与同胞血祭边界禁忌神话，对照跨文化双生子建城与神圣城垣厌胜界碑母题。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_is_edda_odin_mead",
+      "domain_id": "world_mythology",
+      "group_id": "underworld_katabasis_myths",
+      "rationale": "北欧奥丁潜入地底巨岩洞窟夺取诗神蜜酒并化鹰飞返神话，呈现与冥府试炼、萨满变身求智密切相关的地下历险谱系。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_tr_anatolia_nazar_amulet",
+      "domain_id": "world_mythology",
+      "group_id": "possession_witchcraft_comparative",
+      "rationale": "土耳其安纳托利亚蓝色“恶眼珠”（Nazar boncuğu）与嫉妒注视辟邪习俗，是地中海—近东跨文化厌胜护符（Apotropaic）最典型活态代表。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_ss_azande_witchcraft_oracle",
+      "domain_id": "world_mythology",
+      "group_id": "possession_witchcraft_comparative",
+      "rationale": "南苏丹阿赞德人埃文斯-普里查德《巫术、神谕与魔法》（1937）田野档案，以毒鸡神谕与“谷仓倒塌双重因果”成为比较巫术人类学基石。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_north_berwick_1590",
+      "domain_id": "world_mythology",
+      "group_id": "possession_witchcraft_comparative",
+      "rationale": "1590–1591 年苏格兰北贝里克猎巫案档案（詹姆斯六世亲审海上风暴巫咒），标示欧陆恶魔学向不列颠群岛司法猎巫跨海扩散的转折点。",
+      "already_exists": true
+    },
+    {
+      "node_id": "corpus_scottish_witchcraft_survey",
+      "domain_id": "world_mythology",
+      "group_id": "possession_witchcraft_comparative",
+      "rationale": "爱丁堡大学《苏格兰猎巫调查库（1563–1736）》（L2），为近世早期欧洲猎巫定量史学与女性受审比例分析提供核心档案语料。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_es_zugarramurdi_trials_1610",
+      "domain_id": "world_mythology",
+      "group_id": "possession_witchcraft_comparative",
+      "rationale": "1610 年西班牙纳瓦拉苏加拉穆尔迪猎巫案与裁判官萨拉查实地勘验反驳档案，展示宗教裁判所内部对集体巫魔幻象的理性纠偏。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_fr_loudun_possessions_1634",
+      "domain_id": "world_mythology",
+      "group_id": "possession_witchcraft_comparative",
+      "rationale": "1634 年法国卢丹修道院集体附体风波与格兰迪耶火刑案档案，结合教派冲突与群体模仿揭示近世魔鬼附体指控的政治社会语境。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_it_friuli_benandanti_1575",
+      "domain_id": "world_mythology",
+      "group_id": "possession_witchcraft_comparative",
+      "rationale": "1575 年意大利弗留利“善行者”夜战审判档案（金兹堡经典研究），记录民间护稼神游民俗如何被宗教裁判所逐步改写为巫魔集会。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_cl_chiloe_recta_provincia",
+      "domain_id": "world_mythology",
+      "group_id": "possession_witchcraft_comparative",
+      "rationale": "1880 年智利奇洛埃“正直行省”秘密巫社与世俗司法审判档案，提供南美殖民后期巫术习惯法与现代法院冲突的跨大陆比照。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_rs_medvedja_paole_commission",
+      "domain_id": "world_mythology",
+      "group_id": "possession_witchcraft_comparative",
+      "rationale": "1732 年塞尔维亚梅德韦贾哈布斯堡军医实地尸检与“吸血鬼”调查档案，呈现近世东欧疫病恐慌与开棺验尸报告的跨文化档案。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_tr_karabasan_sleep_lore",
+      "domain_id": "world_mythology",
+      "group_id": "possession_witchcraft_comparative",
+      "rationale": "土耳其安纳托利亚“卡拉巴桑”（黑压者）夜间压迫体验传说，与东亚鬼压床及欧陆夜魔共享睡眠瘫痪生理基础而呈各自文化转译。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_ma_maghreb_bou_kebbaz",
+      "domain_id": "world_mythology",
+      "group_id": "possession_witchcraft_comparative",
+      "rationale": "北非马格里布“布凯巴兹”夜压灵体口述传说，拓展睡眠瘫痪与精灵信仰比较在北非阿拉伯—柏柏尔语区的地理分布。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_italy_pandafeche_sleep_paralysis",
+      "domain_id": "world_mythology",
+      "group_id": "possession_witchcraft_comparative",
+      "rationale": "意大利阿布鲁佐地区“潘达费切”（Pandafeche）睡眠瘫痪田野访谈研究，直接实证“女巫夜压”民俗叙述与 REM 肌张力抑制的对应机制。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_egypt_jinn_sleep_paralysis",
+      "domain_id": "world_mythology",
+      "group_id": "possession_witchcraft_comparative",
+      "rationale": "开罗与丹麦跨文化睡眠瘫痪对比调查（Jalal 2014），揭示同一生理发作在“精灵攻击”与“神经生理模型”下截然不同的恐惧体验。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_old_hag_sleep_paralysis_1982",
+      "domain_id": "world_mythology",
+      "group_id": "possession_witchcraft_comparative",
+      "rationale": "加拿大纽芬兰“老巫婆（Old Hag）”夜访与孤立性睡眠瘫痪经典民俗—医学研究，确立近代科学界命名夜间压迫症候的基准档案。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_se_scandinavia_mara_nightmare",
+      "domain_id": "world_mythology",
+      "group_id": "possession_witchcraft_comparative",
+      "rationale": "北欧瑞典“玛拉（Mara）”夜骑压胸与英语 nightmare 词源传统，追溯日耳曼—斯堪的纳维亚夜间压迫灵体与家畜保护符禁。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_cz_prague_josefov_clay_golem",
+      "domain_id": "world_mythology",
+      "group_id": "possession_witchcraft_comparative",
+      "rationale": "布拉格约瑟夫城拉比洛伊捏泥造魔像“哥连（Golem）”护社传说，提供犹太神秘字母圣名护持社区与跨文化护身傀儡比较视角。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_gh_ashanti_kumasi_golden_stool",
+      "domain_id": "world_mythology",
+      "group_id": "possession_witchcraft_comparative",
+      "rationale": "西非阿散蒂王国库马西“纯金凳子”神圣护国礼器传说，展示非文字社群借神圣物化器物凝聚群体边界与驱厄秩序的比较案例。",
+      "already_exists": true
+    },
+    {
+      "node_id": "case_contemporary_exorcism_icd11",
+      "domain_id": "world_mythology",
+      "group_id": "possession_witchcraft_comparative",
+      "rationale": "当代宗教驱魔礼典修订与世界卫生组织 ICD-11“附体恍惚障碍”诊断分类，明确宗教仪式照护与现代精神医学鉴别的制度边界。",
+      "already_exists": true
+    }
+  ]
+}

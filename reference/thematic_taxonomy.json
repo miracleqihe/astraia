@@ -138,7 +138,16 @@
             "corpus_cn_yongning_na_pangloss",
             "case_cn_eastern_han_dou_song_wugu",
             "case_cn_zhouli_shushi_chugu",
-            "case_cn_southwest_gu_ordeal_judgment"
+            "case_cn_southwest_gu_ordeal_judgment",
+            "case_cn_zibuyu_v05_s017",
+            "case_cn_zibuyu_v21_s031",
+            "case_cn_zibuyu_v03_s016",
+            "case_cn_zibuyu_v08_s026",
+            "case_cn_yongning_na_0004943",
+            "case_cn_yongning_na_0004616",
+            "case_tw_sinica_oral_306",
+            "case_tw_sinica_oral_307",
+            "case_cn_tang_qianjin_gu_antidotes"
           ],
           "lexicon_categories": [
             "蛊毒源流与虫蛊",
@@ -183,7 +192,18 @@
             "case_cn_tao_dantu_roof_beam_food_song",
             "case_cn_tao_wan_south_beast_eaves_tile",
             "case_cn_wugu_changshu_roof_papers",
-            "case_cn_dict2_guizhou_zhijin_banishing_mirror"
+            "case_cn_dict2_guizhou_zhijin_banishing_mirror",
+            "case_cn_tengchong_paper_horse_interview_2001",
+            "case_jp_kifune_ushinokoku_mairi",
+            "case_cn_zibuyu_v14_s020",
+            "case_cn_zibuyu_v13_s002",
+            "case_cn_zibuyu_v19_s019",
+            "case_cn_tao_w3_jingzhou_xirang",
+            "corpus_cn_ich_2008_0531",
+            "case_cn_beixinqiao_dragon_well",
+            "case_cn_shanghai_dragon_pillar",
+            "case_cn_changle_fangshan_city_gate",
+            "case_cn_han_huangshen_yuezhang_seal"
           ],
           "lexicon_categories": [
             "厌胜钱与护身镇物",
@@ -225,7 +245,25 @@
             "case_cn_wugu_w3_honghe_yiche_calling",
             "case_cn_wugu_ninglang_forest_cloth",
             "case_cn_wugu_dongguan_shaoshu_village",
-            "case_cn_yongning_na_0004540"
+            "case_cn_yongning_na_0004540",
+            "case_cn_zibuyu_v14_s013",
+            "case_cn_zibuyu_v19_s033",
+            "case_cn_zibuyu_v20_s009",
+            "case_asia_taiwan_tongshi_wuxi",
+            "case_cn_pumi_wolp_12",
+            "case_cn_pumi_wolp_21",
+            "case_cn_minyag_wolp_38",
+            "case_cn_japhug_0003363",
+            "case_cn_yongning_na_0004584",
+            "case_cn_yongning_na_0004586",
+            "case_cn_yongning_na_0004603",
+            "case_cn_yongning_na_0004629",
+            "case_tw_sinica_oral_208",
+            "case_tw_sinica_oral_223",
+            "case_tw_sinica_oral_251",
+            "case_tw_sinica_oral_539",
+            "case_cn_liangshan_yi_xiaobu_rite",
+            "case_cn_nujiang_cliff_spirit_rite"
           ],
           "lexicon_categories": [
             "祝由医制与符禁",
@@ -273,7 +311,15 @@
             "case_cn_tao_w3_changzhou_wangshai",
             "case_cn_tao_w3_quanzhou_wedding_sieve",
             "case_cn_tao_w3_xiangxi_wedding_rooster",
-            "case_cn_fengxiang_clay_tiger_guardian"
+            "case_cn_fengxiang_clay_tiger_guardian",
+            "case_tw_sinica_oral_173",
+            "case_cn_tao_w3_beijing_wedding_carriage",
+            "case_cn_tao_w3_hangzhou_wedding_candles",
+            "case_cn_tao_w3_huzhou_red_cloth_brides",
+            "case_cn_tao_w3_mojiang_wedding_baimu",
+            "case_cn_tao_w3_nanjing_wedding_carriage",
+            "case_cn_tao_w3_sanming_wedding_lamp",
+            "case_cn_sichuan_zhangxian_tiangou_ward"
           ],
           "lexicon_categories": [
             "门神桃符与宅镇神将",
@@ -318,7 +364,21 @@
             "case_cn_tao_w3_dantu_dogs",
             "case_cn_tao_xiangfen_jin_tomb_handprint",
             "case_cn_dujiangyan_libing_stone_rhino",
-            "case_cn_minzhe_boat_eye_dotting"
+            "case_cn_minzhe_boat_eye_dotting",
+            "case_cn_tao_fenghua_two_paper_monks",
+            "case_cn_tao_suzhou_seven_paper_monk_heads",
+            "case_cn_tao_lanxi_rain_lantern_hat",
+            "case_cn_tao_w3_tianjin_paper_turtle",
+            "case_cn_tao_gaotang_roasted_beans_scorpion",
+            "case_cn_tao_ningyuan_yellow_paper_insects",
+            "case_cn_tao_nanjing_qixi_grass_needle",
+            "case_cn_tao_wujin_qixi_mixed_water",
+            "case_cn_tao_gaoyou_gengqigong_lake_robe",
+            "case_cn_tao_yunnan_paper_horse_two_forms",
+            "case_cn_gaochun_road_stone_grandmother",
+            "case_cn_gaochun_wei_bagong_lake",
+            "case_cn_gaochun_danhu_bridge_ghost_1987",
+            "case_cn_shangzhou_jade_cicada_yuhan"
           ],
           "lexicon_categories": [
             "门庭家宅与护儿",
@@ -386,7 +446,11 @@
             "case_cn_zibuyu_v03_s023",
             "case_asia_liaozhai_kaochenghuang",
             "case_cn_tw_tainan_chenghuang_night_patrol",
-            "case_cn_taishan_dongyue_76_bureaus"
+            "case_cn_taishan_dongyue_76_bureaus",
+            "case_cn_dict_w2_zhongxian_ghost_city",
+            "case_cn_dict2_laoshan_magistrate_ghost_clerks",
+            "case_cn_dict2_handan_misjudged_fate",
+            "case_cn_dict2_shaanxi_lintong_qin_ghost_market"
           ],
           "lexicon_categories": [
             "城隍与地方冥吏",
@@ -414,7 +478,11 @@
             "case_cn_zibuyu_v09_s018",
             "case_cn_dict_yama_judges_ghost",
             "case_cn_dict2_jiangsu_yangzhou_butcher_yama",
-            "case_cn_dict_impermanence_straw_shoes"
+            "case_cn_dict_impermanence_straw_shoes",
+            "case_cn_dict2_qitaihe_judge_head_swap",
+            "case_cn_dict4_sheqi_hungry_rebirth",
+            "case_cn_dict4_linzhou_bullhorse_banquet",
+            "case_cn_dict_w2_dunhua_yanluo_relocates"
           ],
           "lexicon_categories": [
             "十殿阎王与审判",
@@ -437,7 +505,12 @@
             "case_gr_eleusis_persephone_cycle",
             "case_cn_tw_taipei_xinhai_taxi",
             "case_cn_eastern_wu_hunping_maidiquan",
-            "case_cn_dict4_zhangjiakou_liver_gambling"
+            "case_cn_dict4_zhangjiakou_liver_gambling",
+            "case_cn_dict2_haiyan_boat_passenger",
+            "case_cn_dict4_lingbi_flatbread_ghost",
+            "case_cn_dict_w2_yangquan_ghost_money",
+            "case_cn_dict5_tongshan_two_debt_spirits",
+            "case_cn_fan_zhen_shenmielun_debate"
           ],
           "lexicon_categories": [
             "冥契冥币与阳间代偿",
@@ -503,7 +576,10 @@
             "case_cn_han_taofu_shentu_yulei",
             "case_cn_han_danuo_fangxiangshi_exorcism",
             "case_cn_guizhou_dixi_nuo_masks",
-            "case_cn_wugu_w3_zhanjiang_kaobing"
+            "case_cn_wugu_w3_zhanjiang_kaobing",
+            "case_cn_dict_niba_ghost_dance",
+            "case_cn_lianghe_paper_horse_dispute_2001",
+            "case_cn_chaozhou_guangjiqiao_hanxiangzi"
           ],
           "lexicon_categories": [
             "宫廷大傩与方相氏",
@@ -527,7 +603,10 @@
             "case_cn_qimen_mulian_opera",
             "case_cn_shantou_nansha_shigu",
             "case_cn_minnan_wangchuan_plague_ship",
-            "case_cn_hanyi_festival_winter_robes"
+            "case_cn_hanyi_festival_winter_robes",
+            "case_cn_meizhou_mazu_tideng",
+            "case_cn_qinan_nuwa_festival",
+            "case_cn_tw_lantern_chair_aunt_sanggu"
           ],
           "lexicon_categories": [
             "中元普度与盂兰斋会",
@@ -552,7 +631,12 @@
             "case_cn_red_sash_huasha_wedding",
             "case_cn_han_mawangdui_feiyi_soul_banner",
             "case_cn_tang_zhongkui_meng_expel",
-            "case_cn_dict5_tianzhen_carpenter_ghost_marriage"
+            "case_cn_dict5_tianzhen_carpenter_ghost_marriage",
+            "case_cn_dict2_guangxi_baise_mosquito_net",
+            "case_cn_tw_lieyu_skeleton_tofu",
+            "case_cn_xiaogan_dongyong_qixiannv",
+            "case_cn_dict_w2_taizhou_doubt",
+            "case_cn_lingnan_maishui_yankou_rite"
           ],
           "lexicon_categories": [
             "招魂丧仪与墓葬镇护",
@@ -618,7 +702,8 @@
             "case_cn_kunlun_xiwangmu",
             "case_cn_shanhai_xingtian",
             "case_cn_baize_shanxiao_spirit_lore",
-            "case_cn_zhangzi_fajiushan_jingwei"
+            "case_cn_zhangzi_fajiushan_jingwei",
+            "case_cn_shanhai_kuafu"
           ],
           "lexicon_categories": [
             "山海异兽与祥瑞灾异",
@@ -645,7 +730,11 @@
             "case_cn_meigu_ghost_boards_1992",
             "case_cn_xiangxi_luodong_nu_ritual",
             "case_cn_naxi_dongba_spirit_scrolls",
-            "case_cn_dict_mountain_spirit_ziche"
+            "case_cn_dict_mountain_spirit_ziche",
+            "case_cn_shannan_samye_padmasambhava",
+            "case_cn_shilin_ashima",
+            "case_cn_nantou_sunmoonlake_whitedeer",
+            "case_cn_sanya_luhuitou_deer"
           ],
           "lexicon_categories": [
             "西南民族神鬼与仪典文献",
@@ -673,7 +762,12 @@
             "case_cn_dict_w2_shangqiu_water_ghost",
             "case_cn_wuwei_hairy_water_ghost_1953",
             "case_cn_zibuyu_v02_s032",
-            "case_cn_yijian_changgui_tiger_ghost"
+            "case_cn_yijian_changgui_tiger_ghost",
+            "case_cn_tw_mosina_missing_walkers",
+            "case_cn_yongzhou_liuzijie_snake",
+            "case_cn_hangzhou_leifeng_white_snake",
+            "case_cn_poyang_laoyemiao_waterway",
+            "case_cn_tw_lantan_human_face_fish"
           ],
           "lexicon_categories": [
             "狐仙水怪与地方妖异",
@@ -737,7 +831,9 @@
             "case_cn_soushen_ganjiang_moye",
             "case_cn_yijian_night_lantern",
             "case_cn_zhubing_mengyan",
-            "case_cn_zigu_divination"
+            "case_cn_zigu_divination",
+            "case_cn_yueyang_liuyi_dragon_letter",
+            "case_cn_soushen_song_dingbo_ghost"
           ],
           "lexicon_categories": [
             "六朝志怪与博物灵异",
@@ -761,7 +857,10 @@
             "case_cn_zibuyu_v01_s012",
             "case_cn_jiangshi_huangfu_seal",
             "case_cn_zibuyu_v01_s002",
-            "case_cn_zibuyu_v01_s008"
+            "case_cn_zibuyu_v01_s008",
+            "case_cn_laoshan_daoshi_chuanqiang",
+            "case_cn_zibuyu_v08_s038",
+            "case_cn_zibuyu_v10_s008"
           ],
           "lexicon_categories": [
             "聊斋志异与狐鬼人情",
@@ -789,7 +888,12 @@
             "case_cn_wupenji_talking_basin_opera",
             "case_cn_mudanting_soul_return_opera",
             "case_cn_zibuyu_v01_s024",
-            "case_cn_quanzhou_dachengxi_soul_rescue"
+            "case_cn_quanzhou_dachengxi_soul_rescue",
+            "case_cn_dict2_guangdong_gaozhou_redress_temple",
+            "case_cn_dict5_changsha_opera_appeal",
+            "case_cn_dict_ghost_fears_bao",
+            "case_cn_tw_tainan_chen_shouniang_record",
+            "case_cn_dict4_gongyi_bao_bridge"
           ],
           "lexicon_categories": [
             "目连救母与仪式鬼戏",
@@ -813,7 +917,10 @@
             "case_cn_dict_mountain_spirit_ziche",
             "case_cn_dict_ghost_and_butcher",
             "case_cn_dict2_shandong_chengwu_night_watch_ghosts",
-            "case_cn_dict4_hangzhou_bao_hell"
+            "case_cn_dict4_hangzhou_bao_hell",
+            "case_cn_dict2_xingning_competition",
+            "case_cn_dict3_weining_flower_shoes",
+            "case_cn_dict4_cixi_pawn_ghost"
           ],
           "lexicon_categories": [
             "地方故事与当代编目"
@@ -881,7 +988,23 @@
             "case_nz_maori_ranginui_papa",
             "case_mn_altai_tengri_creation",
             "case_ng_ife_obatala_oduduwa",
-            "case_iq_uruk_gilgamesh_flood"
+            "case_iq_uruk_gilgamesh_flood",
+            "case_ir_avesta_ahura_angra_dualism",
+            "case_iq_babylon_enuma_elish",
+            "case_iq_eridu_adapa_wind",
+            "case_in_purana_samudra_manthana",
+            "case_in_vedic_manu_matsya_flood",
+            "case_mx_teotihuacan_five_suns",
+            "case_pe_titicaca_viracocha_creation",
+            "case_bo_isla_del_sol_manco_capac",
+            "corpus_huarochiri_manuscript",
+            "case_ml_mopti_bandiagara_nommo",
+            "case_gh_ashanti_anansi_stories",
+            "case_nz_aotearoa_maui_fishing",
+            "corpus_hawaiian_kumulipo",
+            "case_fi_karelia_kalevala_sampo",
+            "case_gr_caucasus_prometheus_fire",
+            "case_ru_novgorod_perun_veles"
           ],
           "lexicon_categories": [
             "原初水域与天地分离",
@@ -906,7 +1029,19 @@
             "case_in_katha_nachiketa_yama",
             "case_gt_quiche_popol_vuh_twins",
             "case_jp_izumo_izanagi_yomi",
-            "case_gr_thrace_orpheus_underworld"
+            "case_gr_thrace_orpheus_underworld",
+            "case_eg_heliopolis_ra_apophis",
+            "case_eg_aswan_philae_isis_tears",
+            "case_mx_mictlan_quetzalcoatl_bones",
+            "case_mx_michoacan_day_dead",
+            "case_is_edda_baldr_mistletoe",
+            "case_gb_dyfed_mabinogion_annwn",
+            "case_ie_tara_tuatha_de_danann",
+            "case_nz_southland_piopiotahi_milford_sound",
+            "case_it_rome_romulus_remus",
+            "case_is_edda_odin_mead",
+            "case_eg_thebes_heart_scarab_amulet",
+            "case_mx_aztec_mictlan_nine_realms"
           ],
           "lexicon_categories": [
             "降临冥界与亡者考验",
@@ -931,7 +1066,26 @@
             "case_in_ujjain_vetala_cycle",
             "case_ca_ontario_windigo_lore",
             "case_salem_1692",
-            "case_eu_malleus_maleficarum_1487"
+            "case_eu_malleus_maleficarum_1487",
+            "case_tr_anatolia_nazar_amulet",
+            "case_ss_azande_witchcraft_oracle",
+            "case_north_berwick_1590",
+            "corpus_scottish_witchcraft_survey",
+            "case_es_zugarramurdi_trials_1610",
+            "case_fr_loudun_possessions_1634",
+            "case_it_friuli_benandanti_1575",
+            "case_cl_chiloe_recta_provincia",
+            "case_rs_medvedja_paole_commission",
+            "case_tr_karabasan_sleep_lore",
+            "case_ma_maghreb_bou_kebbaz",
+            "case_italy_pandafeche_sleep_paralysis",
+            "case_egypt_jinn_sleep_paralysis",
+            "case_old_hag_sleep_paralysis_1982",
+            "case_se_scandinavia_mara_nightmare",
+            "case_cz_prague_josefov_clay_golem",
+            "case_gh_ashanti_kumasi_golden_stool",
+            "case_contemporary_exorcism_icd11",
+            "case_gr_corfu_gorgoneion_apotropaic"
           ],
           "lexicon_categories": [
             "跨文化附体与巫术审判",
@@ -996,7 +1150,19 @@
             "case_r_place_liminal_poolrooms_2020",
             "case_global_dreamcore_weirdcore_2020",
             "case_cn_chaonei_81",
-            "case_cn_hk_high_street_haunted_house"
+            "case_cn_hk_high_street_haunted_house",
+            "case_jp_hamamatsu_hanako_1998",
+            "case_jp_yokohama_yosuke_hanako_1990",
+            "case_jp_hamamatsu_kisaragi_station_2004",
+            "case_jp_aomori_sugisawa_village_2000",
+            "case_cn_beijing_ghost_bus",
+            "case_cn_shanghai_westgate_stairwell",
+            "case_cn_shenzhen_bank_tower_floor_21",
+            "case_cn_hk_tat_tak_old_school",
+            "case_cn_hk_choi_hung_middle_track_2024",
+            "case_cn_tw_minxiong_liu_mansion",
+            "case_tw_taipei_daren_elevator_2015",
+            "case_dishisanceng_elevator_campus"
           ],
           "lexicon_categories": [
             "阈限建筑与后室叙事",
@@ -1019,7 +1185,20 @@
             "case_ghq_ghost_protocol_2026",
             "case_slender_man_2009",
             "case_jp_hasshakusama_2008",
-            "case_cn_digital_wugu_cloud_rumor"
+            "case_cn_digital_wugu_cloud_rumor",
+            "case_jp_hachinohe_kuchisake_1990",
+            "text_vanishing_hitchhiker_1981",
+            "case_us_justice_resurrection_mary",
+            "case_us_cicada_3301_2012",
+            "case_marble_hornets_2009",
+            "case_dead_internet_theory_2021",
+            "case_polybius_arcade_legend_2000",
+            "case_cn_tw_dakeng_red_girl",
+            "case_cn_hk_cuhk_braid",
+            "case_cn_four_corner_extra_player_2019",
+            "case_cn_chengdu_zombie_rumor",
+            "case_kr_seoul_bongcheon_webtoon_2011",
+            "case_us_blair_witch_1999_viral_ostension"
           ],
           "lexicon_categories": [
             "规则怪谈与伪官方档案",
@@ -1043,7 +1222,21 @@
             "case_mandela_catalogue_2021",
             "case_mystery_flesh_pit_2019",
             "case_house_of_leaves_ergodic_2000",
-            "case_ru_uvb76_buzzer_station"
+            "case_ru_uvb76_buzzer_station",
+            "case_cy_lincolnshire_poacher_radio",
+            "case_us_chicago_max_headroom_1987",
+            "case_us_taos_hum_1993",
+            "case_us_point_pleasant_mothman_1966",
+            "case_cn_hk_ghost_oppression_wing_1994",
+            "case_blanke_robot_presence_2014",
+            "case_tpj_shadow_stimulation_2006",
+            "case_granqvist_field_replication_2005",
+            "mech_haunt_infrasound_field_hypothesis",
+            "mech_suggestibility_bias",
+            "mech_tpj_body_signal_integration",
+            "mech_co_poisoning",
+            "case_us_bloody_mary_mirror_troxler",
+            "case_uk_coventry_infrasound_189hz_lab"
           ],
           "lexicon_categories": [
             "模拟电视恐怖与超文本",

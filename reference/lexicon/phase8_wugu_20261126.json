@@ -1,0 +1,617 @@
+{
+  "version": 1,
+  "domain_id": "wugu_talisman",
+  "title": "巫蛊文化与信仰辞海增补（Phase 8 · 邓启耀《巫蛊：中国文化的历史暗流》专题扩展）",
+  "entries": [
+    {
+      "id": "lex_p8_wugu_miao_caoguipo_exclusion",
+      "domain_id": "wugu_talisman",
+      "hub_id": "motif_cn_wugu_poison_complex",
+      "term": "湘黔苗疆“草鬼婆”放蛊猜忌与嫁娶界域",
+      "aliases": [
+        "苗疆草鬼传说",
+        "放蛊污名边界",
+        "草鬼婆村寨回避"
+      ],
+      "category": "放蛊流言与社会污名",
+      "gist": "揭秘苗疆草鬼婆流言如何重塑村寨内婚与邻里避忌边界",
+      "reading_tag": "田野口述",
+      "region": "中国湘黔桂西南山地",
+      "era": "明清地方志至二十世纪民族志田野调查",
+      "summary": "在湘西、黔东南等西南山地民间传闻中，被指认为“草鬼婆”或“放蛊之家”的女性及其家庭，往往承受着代际绵延的社会污名。当地流言常称此类妇人夜间会令蛊灵或虫蛇离体觅食，或借招待茶饭之机向过路客商与邻舍暗投微末致病。人类学田野记录揭示，这类说法多属基于病痛猜疑、邻里积怨或经济落差的口头归因，既与真性毒物投毒缺乏客观因果证据，也常把体弱寡居女性或外来边缘户推向替罪羊位置。\n\n此类口述谣传最直接的现实后果，在于划出森严的通婚隔离与日常避忌界域。受访村民不仅在饮食投宿时对所谓“有蛊村寨”严加戒备，在嫁娶议亲时更反复打听女方母系门风，一旦牵涉“草鬼婆”传闻便宁可退婚或仅限圈内联姻，从而把原本流动的流言固着为持久的村寨社会区隔结构。",
+      "primary_sources": [
+        {
+          "citation": "（唐）魏征等撰：《隋书·地理志下》（荆州风俗记述江南数郡“蓄蛊毒”及传世猜忌旧俗），公版正史，维基文库。",
+          "url": "https://zh.wikisource.org/wiki/%E9%9A%8B%E6%9B%B8/%E5%8D%B731",
+          "locator": "卷三十一地理志下荆州条（记录早期南方畜蛊流传谣传与婚姻猜忌之史料源流）"
+        },
+        {
+          "citation": "（宋）周去非撰：《岭外代答》（卷十“蛊毒”记广西民间避蛊试食与防忌），公版古籍，中国哲学书电子化计划（ctext）。",
+          "url": "https://ctext.org/ling-wai-dai-da",
+          "locator": "卷十“蛊毒”门（记述宋代岭南西南饮食试蛊与人际防备之俗）"
+        },
+        {
+          "citation": "Han-yi Feng & John K. Shryock (1935), \"The Black Magic in China Known as Ku\", Journal of the American Oriental Society 55(1), 1–30.",
+          "url": "https://doi.org/10.2307/594297",
+          "locator": "pp. 1–30（20世纪初对西南民族蓄蛊谣言与女性污名之早期英文民俗学综述）"
+        }
+      ],
+      "secondary_ref": "邓启耀《巫蛊：中国文化的历史暗流》（广西师范大学出版社，2025年，ISBN 978-7-5598-7994-3）第二章第二节“蛊界”与第十二章“非常意识状态的社会症候”（按章节与叙事锚点定位，未核纸书页码）。",
+      "knowledge_id": "SOC-1-0009",
+      "knowledge_note": "社会污名与标签化过程：传闻中的“放蛊之家”标签如何在缺乏物证时借通婚圈排斥完成代际固化。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_wugu_liangshan_yi_xiaobu",
+      "domain_id": "wugu_talisman",
+      "hub_id": "motif_cn_zhuyou_incantation_craft",
+      "term": "凉山彝族毕摩“晓补”反咒仪式",
+      "aliases": [
+        "消补反咒仪典",
+        "毕摩咒鬼解怨仪",
+        "凉山反咒调停术"
+      ],
+      "category": "收惊解秽与避煞方术",
+      "gist": "凉山田野记录中的春季反咒仪式",
+      "reading_tag": "反咒仪轨",
+      "region": "中国四川凉山彝族聚居区",
+      "era": "当代民族志田野调查（1980年代至今）",
+      "summary": "巴莫曲布嫫在凉山彝族鬼灵信仰的田野手记中，将“晓补”列为春季反咒仪式，也记下毕摩经籍中的反咒类别。她描述一次围绕遭雷击房屋举行的“初几”仪式：部分参与户于前一夜举行小型晓补，次日共同参加驱逐病鬼的仪式。\n\n这些记述展示了当地仪式如何组织时间、人物与宗教观念，但不足以证明所有晓补都用于调解家族争端，也不能推断它必然替代暴力冲突。对于具体做法，应继续结合不同地区和时期的田野材料阅读。",
+      "primary_sources": [
+        {
+          "citation": "巴莫曲布嫫：《彝族鬼灵信仰田野调查手记》，中国非物质文化遗产网。",
+          "url": "https://www.ihchina.cn/Article/Index/detail?id=8251",
+          "locator": "“晓补”春季反咒分类及觉洛村“初几”仪式的田野记述。"
+        },
+        {
+          "citation": "巴莫阿依：《凉山彝族的“晓补”反咒仪式》，《世界宗教研究》1989 年第 3 期。",
+          "locator": "据后续文献著录；此处未独立核读该刊原文。"
+        }
+      ],
+      "secondary_ref": "以已公开的田野手记讨论仪式；1989 年论文仅作为书目线索。",
+      "knowledge_id": "REL-5-0005",
+      "knowledge_note": "主题对读：将毕摩经籍、季节和村落仪式与口述传统及社会记忆并读。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_wugu_dai_pipagui_expulsion",
+      "domain_id": "wugu_talisman",
+      "hub_id": "motif_cn_wugu_poison_complex",
+      "term": "“琵琶鬼”指控与社群排斥的报道",
+      "aliases": [
+        "西双版纳琵琶鬼猜忌",
+        "摆夷琵琶鬼替罪俗",
+        "傣族驱鬼迁徙现象"
+      ],
+      "category": "放蛊流言与社会污名",
+      "gist": "云南傣族地区的指控和排斥报道",
+      "reading_tag": "历史报道",
+      "region": "中国云南西双版纳（具体报道涉及勐海县）",
+      "era": "1973 年事件的 1987 年报道及 2013 年新闻记录",
+      "summary": "“琵琶鬼”是部分傣族地区流传的鬼怪称谓，也曾被用来指称具体的人。1987 年《人民日报》报道，云南勐海县曼岗村一对夫妇在 1973 年因疾病与牲畜死亡引发的传言而遭到排斥，被迫离开村寨；报道还叙述了后来帮助他们返回的过程。\n\n2013 年新华网报道另一起勐海县案件：有人以“撵鬼”为由传播指控，受害者家庭遭到驱赶和财产损害，法院对相关行为作出判决。两则报道反映不同时间和地点的具体事件，不应据此概括整个族群，也不能断言此类排斥已经消失。",
+      "primary_sources": [
+        {
+          "citation": "彭朝智、李祖承：《“琵琶鬼”获新生》，《人民日报》1987 年 8 月 18 日第 4 版。",
+          "url": "https://cn.govopendata.com/renminribao/1987/08/18/4/",
+          "locator": "1987 年报道回述 1973 年勐海县曼岗村事件。"
+        },
+        {
+          "citation": "陶剑波、黄占啊：云南西双版纳一老人声称“撵鬼”致他人房屋被打砸获刑 4 年，新华网报道，搜狐转载，2013。",
+          "url": "https://news.sohu.com/20130901/n385575988.shtml",
+          "locator": "2012 年勐海县曼缅村事件及后续判决报道。"
+        },
+        {
+          "citation": "Wikipedia, Pop (ghost), comparison of related regional narratives.",
+          "url": "https://en.wikipedia.org/wiki/Pop_(ghost)",
+          "locator": "区域叙事比较；不能证明具体传播关系。"
+        }
+      ],
+      "secondary_ref": "邓启耀《巫蛊：中国文化的历史暗流》为相关书目参考；两起报道与该书具体章节的对应未逐项核实。",
+      "knowledge_id": "SOC-1-0003",
+      "knowledge_note": "主题对读：将具体报道中的指控和排斥与社会规范、角色和制裁的研究并读。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_wugu_nujiang_cliff_spirit",
+      "domain_id": "wugu_talisman",
+      "hub_id": "motif_cn_zhuyou_incantation_craft",
+      "term": "怒江田野中的“崖神箐鬼”禁忌",
+      "aliases": [
+        "怒江峡谷山鬼禁忌",
+        "崖神箐鬼",
+        "峡谷空间避忌"
+      ],
+      "category": "收惊解秽与避煞方术",
+      "gist": "怒江田野回忆中的崖神、箐鬼和地方禁忌",
+      "reading_tag": "田野口述",
+      "region": "中国云南怒江峡谷（区域参照）",
+      "era": "1995—1996 年田野观察回忆",
+      "summary": "邓启耀回忆 1995 至 1996 年在怒江流域的田野经历，提到受访村民谈及崖神与箐鬼，以及对村北箐沟的地方避忌。相关描述涉及怒族、傈僳族等当地居民，但公开文字并未提供足以定位具体村庄的信息。\n\n这些叙述让读者看到村落居民怎样用神灵与禁忌理解周围环境；不能仅据这段田野回忆推定所有怒江村寨具有相同习俗，也不能将未经来源支持的共食解煞仪式并入该材料。",
+      "primary_sources": [
+        {
+          "citation": "邓启耀：《巫蛊：中国文化的历史暗流》，绪论中的怒江田野回忆；公开节录。",
+          "url": "https://www.sohu.com/a/892016870_121124727",
+          "locator": "绪论；1995—1996 年怒江田野经历及村北箐沟记述。"
+        }
+      ],
+      "secondary_ref": "依作者公开的绪论节录；地图位置仅作怒江地区参照。",
+      "knowledge_id": "REL-5-0001",
+      "knowledge_note": "主题对读：把田野口述中的地点与禁忌作为地方知识来理解，不推断统一的跨村仪式。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_wugu_qianjin_yaofang_antidotes",
+      "domain_id": "wugu_talisman",
+      "hub_id": "motif_cn_wugu_poison_complex",
+      "term": "《备急千金要方》的蛊毒记载",
+      "aliases": [
+        "千金方解百蛊毒",
+        "孙思邈治蛊方略",
+        "中古蛊病临床化转型"
+      ],
+      "category": "蛊毒源流与虫蛊",
+      "gist": "唐代医籍中的蛊毒症候、方药与禁忌记载",
+      "reading_tag": "本草毒理",
+      "region": "中国陕西长安与中原医籍传世区",
+      "era": "初唐永徽三年（652年）至唐玄宗时期",
+      "summary": "《备急千金要方》在“蛊毒”条下记载了多种当时被归入蛊毒的症状，也汇集药方、灸法和辟恶等做法。四库全书本将有关文字收入卷七十四；不同版本的编排和卷次并不完全一致。\n\n这类文献反映了中古社会交织的医学知识和民俗观念，不能直接换算为现代毒物诊断或证明古方有效。个别记载涉及有毒成分和高风险操作，应作为医学史材料阅读。",
+      "primary_sources": [
+        {
+          "citation": "孙思邈：《备急千金要方》，四库全书本卷七十四“蛊毒第四”，维基文库。",
+          "url": "https://zh.wikisource.org/wiki/%E5%8D%83%E9%87%91%E8%A6%81%E6%96%B9_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B774",
+          "locator": "四库全书本卷七十四“解毒杂治方·蛊毒第四”；不同版本卷次有差异。"
+        },
+        {
+          "citation": "Wikipedia, \"Beiji qianjin yaofang\" (compilation date c. 652 CE and clinical encyclopedia structure).",
+          "url": "https://en.wikipedia.org/wiki/Beiji_qianjin_yaofang",
+          "locator": "History and contents 章节"
+        }
+      ],
+      "secondary_ref": "独立唐代传世医籍文献源流；主题呼应邓启耀《巫蛊：中国文化的历史暗流》（广西师范大学出版社，2025年，ISBN 978-7-5598-7994-3）第七章第二节“巫蛊破解”及第十章“心病心治”相关历史医疗对照（按章节与叙事锚点定位，未核纸书页码）。",
+      "knowledge_id": "HEA-TOPIC-0002",
+      "knowledge_note": "主题对读：比较古代症候分类与现代诊疗知识，不将古方视为经过现代验证的治疗。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_wugu_gancao_ranghe_toxicology",
+      "domain_id": "wugu_talisman",
+      "hub_id": "motif_cn_wugu_poison_complex",
+      "term": "古籍中的甘草、蘘荷与蛊毒叙述",
+      "aliases": [
+        "蘘荷驱蛊说",
+        "甘草吐蛊毒法",
+        "本草纲目蘘荷主蛊"
+      ],
+      "category": "蛊毒源流与虫蛊",
+      "gist": "本草、礼制和志怪文献中的植物与蛊毒",
+      "reading_tag": "本草毒理",
+      "region": "中国江南至岭南古代医书流传区",
+      "era": "汉晋六朝至明代《本草纲目》（1596年）",
+      "summary": "若干本草和志怪文献将甘草、蘘荷等植物与蛊毒、防蛊或解蛊叙述联系起来；《周礼》庶氏条又记载以“嘉草”应对毒蛊，后世注家对其所指提出解释。不同作品的记载各有语境，不能都当作同一来源或同一种实践。\n\n将这些材料并置可以观察古人如何理解植物与疾病，但古籍记载不等于证明植物能够识别毒物或治疗中毒。相关传言、物种名称和注释之间仍需逐条对勘。",
+      "primary_sources": [
+        {
+          "citation": "（明）李时珍撰：《本草纲目·百病主治药下》（蛊毒专目及甘草、蘘荷各条引文），公版古籍，维基文库。",
+          "url": "https://zh.wikisource.org/wiki/%E6%9C%AC%E8%8D%89%E7%B6%B1%E7%9B%AE/%E7%99%BE%E7%97%85%E4%B8%BB%E6%B2%BB%E8%97%A5%E4%B8%8B",
+          "locator": "百病主治药下“蛊毒”条及草部甘草、蘘荷诸条引据"
+        },
+        {
+          "citation": "（晋）干宝撰：《搜神记》（卷十二记庭植蘘荷制蛊异闻），公版古籍，中国哲学书电子化计划（ctext）。",
+          "url": "https://ctext.org/soushenji/zh",
+          "locator": "卷十二蘘荷治蛊条"
+        },
+        {
+          "citation": "《周礼·秋官·庶氏》（“以嘉草攻之”经文与注疏），公版古籍，中国哲学书电子化计划（ctext）。",
+          "url": "https://ctext.org/rites-of-zhou/qiu-guan-si-kou/zh",
+          "locator": "秋官司寇·庶氏条"
+        }
+      ],
+      "secondary_ref": "独立传世先秦至明代古籍文献；可对照邓启耀《巫蛊：中国文化的历史暗流》（广西师范大学出版社，2025年，ISBN 978-7-5598-7994-3）第二章与第七章对嘉草避蛊方俗之考述（按章节与叙事锚点定位，未核纸书页码）。",
+      "knowledge_id": "BIO-6-0006",
+      "knowledge_note": "主题对读：考察古文献对植物的不同解释，不据此推断现代毒理效果。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_wugu_jiegeng_suanchi_emesis",
+      "domain_id": "wugu_talisman",
+      "hub_id": "motif_cn_wugu_poison_complex",
+      "term": "《外台秘要》中的蛊毒诸方",
+      "aliases": [
+        "外台秘要蛊毒蒜豉方",
+        "桔梗宣肺下蛊汤",
+        "古代催吐解毒配伍"
+      ],
+      "category": "蛊毒源流与虫蛊",
+      "gist": "唐代医籍对蛊毒症候与各类方术的汇录",
+      "reading_tag": "本草毒理",
+      "region": "中国唐宋医籍流传核心区",
+      "era": "唐代（《外台秘要方》752年）至明代（《本草纲目》）",
+      "summary": "唐代王焘编纂的《外台秘要》目录在卷二十八列有“中蛊毒”“蛊吐血”“蛊下血”等门类，反映了古代医书对疾病与蛊毒记述的分类。\n\n目录与医方原文属于历史材料，不能据此证明方药的疗效或生理机制；不同版本及药名还需逐项核对。",
+      "primary_sources": [
+        {
+          "citation": "（唐）王焘辑：《外台秘要方》（蛊毒门所引诸解蛊吐下草药方），公版古籍，维基文库。",
+          "url": "https://zh.wikisource.org/wiki/%E5%A4%96%E8%87%BA%E7%A7%98%E8%A6%81",
+          "locator": "卷二十八目录列有“中蛊毒”“蛊吐血”等门类；此处据目录核对。"
+        },
+        {
+          "citation": "（明）李时珍撰：《本草纲目》（草部桔梗、菜部大蒜与造酿类豆豉解百毒诸引），公版古籍，维基文库。",
+          "url": "https://zh.wikisource.org/wiki/%E6%9C%AC%E8%8D%89%E7%B6%B1%E7%9B%AE",
+          "locator": "草部、菜部及谷部相应药物“主治”“附方”解蛊毒条"
+        }
+      ],
+      "secondary_ref": "独立唐宋至明代医籍原本整理；与邓启耀《巫蛊：中国文化的历史暗流》（广西师范大学出版社，2025年，ISBN 978-7-5598-7994-3）第一章、第七章关于古代毒药与蛊病交叠论断互参（按章节与叙事锚点定位，未核纸书页码）。",
+      "knowledge_id": "BIO-2-0104",
+      "knowledge_note": "主题对读：对照古代医籍与现代毒理知识，避免将古方视为现实诊疗建议。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_wugu_du_semantics_medical_shift",
+      "domain_id": "wugu_talisman",
+      "hub_id": "motif_cn_wugu_poison_complex",
+      "term": "古代医籍中的蛊毒与病候",
+      "aliases": [
+        "蛊注候",
+        "古医籍蛊毒观念"
+      ],
+      "category": "蛊毒源流与虫蛊",
+      "gist": "隋代医籍将蛊毒观念和相关病候纳入疾病分类。",
+      "reading_tag": "本草毒理",
+      "region": "中国古代医学思想流传域",
+      "era": "隋代医学文献",
+      "summary": "《巢氏诸病源候总论》四库本卷四十七的“蠱注候”记述了当时关于蛊的想象与疾病症状，放在小儿杂病的条目中。它把病痛纳入古代医学解释体系，也保留了虫蛊致病等历史观念。\n\n这是一份认识古人如何描述疾病的文本，不能据此确定某个现代病例的病因或药物疗效，也不能推断所有“中蛊”传闻都源于某一种中毒。",
+      "primary_sources": [
+        {
+          "citation": "〔隋〕巢元方等：《巢氏诸病源候总论》（四库全书本）卷四十七。",
+          "url": "https://zh.wikisource.org/wiki/%E5%B7%A2%E6%B0%8F%E8%AB%B8%E7%97%85%E6%BA%90%E5%80%99%E7%B8%BD%E8%AB%96_%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29/%E5%8D%B747",
+          "locator": "小儿杂病诸候三，“蛊注候”。"
+        }
+      ],
+      "secondary_ref": "邓启耀《巫蛊：中国文化的历史暗流》可作为进一步检索线索，尚未逐页核对本条。",
+      "knowledge_id": "BIO-2-0119",
+      "knowledge_note": "历史病候描述与现代疾病诊断属于不同知识框架，不宜直接等同。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_wugu_han_jin_zuodao_law",
+      "domain_id": "wugu_talisman",
+      "hub_id": "motif_cn_wugu_poison_complex",
+      "term": "汉晋“左道”禁令与礼法镇巫之变",
+      "aliases": [
+        "执左道以乱政禁条",
+        "汉晋妖言巫道科罪",
+        "正统礼制排斥民间方术"
+      ],
+      "category": "巫蛊刑狱与禁律",
+      "gist": "分析汉晋国家如何借“左道”名义界定合法祀典与非法巫术",
+      "reading_tag": "史料档案",
+      "region": "中国中原汉晋政区",
+      "era": "先秦礼制记述至两汉魏晋（前2世纪–4世纪）",
+      "summary": "从《礼记·王制》提出“执左道以乱政，杀”，到汉律严惩“巫蛊、祝诅”与曹魏吴晋之际反复打击私设淫祀妖道，古代国家对巫术的镇压从来不是基于现代意义上的无神论否认，而是着眼于垄断“何者为正祀、何者为左道”的政治合法性边界。官僚或皇族内部的方士占卜、军中厌胜、以及民间借符水聚众疗疾，一旦游离于官方太常礼制监控之外，便随时可能被扣上“以左道惑众”的死罪标签。\n\n对比两汉至唐宋律令演变可见，这一法律话语长期保留高度伸缩性：《三国志》及裴松之注记载的吴主孙策斩于吉等史事，与汉宫“巫蛊大狱”共同表明，在“正统天命—民间私祈”的张力格局里，“左道巫蛊”常常兼具治安防控借口与政争清除工具的双重性质。",
+      "primary_sources": [
+        {
+          "citation": "《礼记·王制》（“假于鬼神、时日、卜筮以疑众，杀；执左道以乱政，杀”），公版经籍，中国哲学书电子化计划（ctext）。",
+          "url": "https://ctext.org/liji",
+          "locator": "王制篇禁左道诸条"
+        },
+        {
+          "citation": "（晋）陈寿撰、（南朝宋）裴松之注：《三国志·卷二十九·方技传》（汉末魏晋方士方术与政治忌惮记载），公版正史，维基文库。",
+          "url": "https://zh.wikisource.org/wiki/%E4%B8%89%E5%9C%8B%E5%BF%97/%E5%8D%B729",
+          "locator": "卷二十九方技传及相关裴注引书"
+        },
+        {
+          "citation": "（汉）班固撰：《汉书·卷六十三·武五子传》（戾太子据巫蛊诏狱记事），公版正史，ctext。",
+          "url": "https://ctext.org/han-shu/wu-wu-zi-zhuan/zh",
+          "locator": "卷六十三戾太子传"
+        }
+      ],
+      "secondary_ref": "独立先秦至汉晋正史文献；可对照邓启耀《巫蛊：中国文化的历史暗流》（广西师范大学出版社，2025年，ISBN 978-7-5598-7994-3）第五章“巫术与权术”及第八章第二节“官法对巫蛊的惩治”（按章节与叙事锚点定位，未核纸书页码）。",
+      "knowledge_id": "HIS-1-0001",
+      "knowledge_note": "秦汉国家整合与制度延续：官方法典如何借划定“正祀”与“左道”界线强化意识形态与基层治安垄断。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_wugu_zhenghe_wooden_effigy_proof",
+      "domain_id": "wugu_talisman",
+      "hub_id": "motif_cn_wugu_poison_complex",
+      "term": "征和巫蛊案中的掘地得偶",
+      "aliases": [
+        "江充掘蛊木人疑案",
+        "汉武帝巫蛊案"
+      ],
+      "category": "巫蛊刑狱与禁律",
+      "gist": "史书记录了宫中掘得木人与巫蛊指控引发的政治危机。",
+      "reading_tag": "史料档案",
+      "region": "中国陕西长安（西汉未央宫与长安城）",
+      "era": "西汉征和二年（公元前91年）",
+      "summary": "西汉征和年间，宫廷巫蛊指控逐渐扩大。《前汉纪》记述，江充搜查后宫，搜及太子宫时称得桐木人；太子刘据随后起兵，事态演变为严重的政治与军事冲突。\n\n史书提供了后世理解这场案件的重要材料，但其中的指控与叙事不能自动等同于木人确由被指控者埋藏，也不能据此确认每一件器物的来源。对案件的证据与权力关系进行讨论时，仍须区分史书记载和后人的解释。",
+      "primary_sources": [
+        {
+          "citation": "〔东汉〕荀悦：《前汉纪》孝武皇帝纪六卷第十五。",
+          "url": "https://zh.wikisource.org/wiki/%E5%89%8D%E6%BC%A2%E7%B4%80/%E5%AD%9D%E6%AD%A6%E7%9A%87%E5%B8%9D%E7%B4%80%E5%85%AD%E5%8D%B7%E7%AC%AC%E5%8D%81%E4%BA%94",
+          "locator": "征和二年江充搜宫、称得桐木人及太子起兵。"
+        },
+        {
+          "citation": "〔东汉〕班固：《汉书》卷六十三〈武五子传〉。",
+          "url": "https://zh.wikisource.org/wiki/%E6%BC%A2%E6%9B%B8/%E5%8D%B7063",
+          "locator": "戾太子事迹与赞文。"
+        }
+      ],
+      "secondary_ref": "邓启耀《巫蛊：中国文化的历史暗流》有关巫蛊之祸的章节为后续对读线索，尚未逐页核对。",
+      "knowledge_id": "PHI-2-0007",
+      "knowledge_note": "从史料与证据的区别出发，讨论指控、物证来源和历史叙述。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_wugu_cursing_warfare_to_1768_scare",
+      "domain_id": "wugu_talisman",
+      "hub_id": "motif_cn_zhuyou_incantation_craft",
+      "term": "乾隆年间的剪辫叫魂风潮",
+      "aliases": [
+        "1768年叫魂案",
+        "剪辫夺魂传闻"
+      ],
+      "category": "巫蛊刑狱与禁律",
+      "gist": "1768年剪发夺魂的传闻扩散，引发民间恐慌与官方追查。",
+      "reading_tag": "史料档案",
+      "region": "清代中国多省",
+      "era": "清乾隆三十三年（1768年）",
+      "summary": "1768年，清代多地流传有人剪取辫发、以妖术夺魂的说法。孔飞力研究这场“叫魂”风潮时，追踪了传闻如何从地方进入官府与朝廷的视野，成为一场牵连多个省份的社会事件。\n\n这段历史涉及人们对陌生人、身体与名誉的恐惧，也涉及调查和政治压力。夺魂属于当时的指控与信念；研究事件的传播和处置，并不意味着证实妖术本身。",
+      "primary_sources": [
+        {
+          "citation": "Philip A. Kuhn, Soulstealers: The Chinese Sorcery Scare of 1768, Harvard University Press, 1990.",
+          "url": "https://www.jstor.org/stable/j.ctv125js8t",
+          "locator": "作品介绍与第一章书目页；部分全文可能需要机构权限。"
+        },
+        {
+          "citation": "Harvard University, Memorial Minute for Philip A. Kuhn.",
+          "url": "https://officeofthesecretary.fas.harvard.edu/sites/g/files/omnuum2291/files/2024-11/Kuhn_Memorial%20Minute.pdf",
+          "locator": "对《叫魂》研究对象、社会恐慌及调查压力的概述。"
+        }
+      ],
+      "secondary_ref": "邓启耀《巫蛊：中国文化的历史暗流》为进一步检索线索；其具体论述及本条对应页码尚未核对。",
+      "knowledge_id": "HIS-6-0010",
+      "knowledge_note": "可与其他时代的妖术指控作主题对读；相似性不等于共同源流。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_wugu_wang_chong_lunheng_critique",
+      "domain_id": "wugu_talisman",
+      "hub_id": "motif_cn_zhuyou_incantation_craft",
+      "term": "王充《论衡》对厌祟与“鬼神施蛊”的经验祛魅",
+      "aliases": [
+        "订鬼篇心念致祟论",
+        "解除篇反祭祀驳议",
+        "东汉自然主义巫术批判"
+      ],
+      "category": "祝由医制与符禁",
+      "gist": "剖析王充如何以生理精气与经验观察反驳鬼神厌祟及解除之术",
+      "reading_tag": "史料档案",
+      "region": "中国东汉会稽与洛阳思想史域",
+      "era": "东汉建初至永元年间（1世纪后期）",
+      "summary": "针对东汉社会盛行的桃梗画虎、大傩逐疫与各种解除避祟方术，思想家王充在其代表作《论衡》中专辟《订鬼》《解除》《言毒》等篇发起尖锐哲学批判。王充在《订鬼》开篇即指出“凡天地之间有鬼，非人死精神为之也，皆人思念存想之所致也”，认为人在疾痛惊惧之下“畏惧存想”，才会将恍惚心影投射为鬼魅现身或神鬼迫害，本质上属于病体意识错觉而非亡灵作祟。\n\n在《解除》篇中，王充进一步从逻辑经验诘难世俗“驱鬼解蛊”仪轨：倘若鬼神果真有知且欲害人，以刀杖祝词驱赶适足激怒对方；若鬼神本属无形无知，再盛大的解煞仪式亦是徒劳空费。相较同时代官方重灾异谴告的经学主流，王充在东汉即已提出基于生理状态、自然毒气与心理期望的理性解释雏形，在思想史上构成罕见的古代祛魅坐标。",
+      "primary_sources": [
+        {
+          "citation": "（东汉）王充撰：《论衡·订鬼篇第六十五》，公版子部典籍，中国哲学书电子化计划（ctext）。",
+          "url": "https://ctext.org/lunheng/ding-gui/zh",
+          "locator": "订鬼篇全文（论人病畏惧存想致鬼之心理与感知成因）"
+        },
+        {
+          "citation": "（东汉）王充撰：《论衡·解除篇第七十五》，公版子部典籍，中国哲学书电子化计划（ctext）。",
+          "url": "https://ctext.org/lunheng/jie-chu",
+          "locator": "解除篇全文（驳世俗解除祭祀与刀杖逐疫虚妄）"
+        }
+      ],
+      "secondary_ref": "独立东汉哲学典籍文献；呼应邓启耀《巫蛊：中国文化的历史暗流》（广西师范大学出版社，2025年，ISBN 978-7-5598-7994-3）第一章及第十一章关于“鬼由心生”与心理投射之溯源（按章节与叙事锚点定位，未核纸书页码）。",
+      "knowledge_id": "HIS-6-0001",
+      "knowledge_note": "史料批判与来源评估：区分汉代主流礼仪神道观与王充个人自然主义怀疑论的不同思想立场。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_wugu_counter_curse_symbolic_reversal",
+      "domain_id": "wugu_talisman",
+      "hub_id": "motif_cn_zhuyou_incantation_craft",
+      "term": "反咒仪轨中的“以毒攻毒”象征逆转",
+      "aliases": [
+        "以子之矛攻子之盾咒术观",
+        "咒语反噬与压胜返还逻辑",
+        "仪式中的象征逆转结构"
+      ],
+      "category": "收惊解秽与避煞方术",
+      "gist": "考察民间反咒如何在语言与仪轨上构筑逆转加害力的象征机制",
+      "reading_tag": "反咒仪轨",
+      "region": "中国西南及多地民间仪式区",
+      "era": "传统民俗仪轨至当代田野个案",
+      "summary": "民间应对怀疑中蛊、犯煞或被人下咒时的解救策略，常常显现出弗雷泽所论“交感巫术”之外更精密的反向操作逻辑——即人类学者所归纳的“以子之矛，攻子之盾”式象征逆转。无论是工匠暗埋倒置木人遭拆穿后反向贴符令“法反施者”，或民俗中倒插桃柳枝、倒穿鞋子、将疑似恶物丢弃于十字路口并诵念“谁害归谁”，仪轨操作的核心皆是通过空间颠倒、物件替身与镜像语言，将想象中的伤害原路返还。\n\n这种结构化反转机制对信从者的焦虑控制极具安慰效力：原本不可见、不可测、只能被动挨打的恐惧，瞬间被转化为可操作、可指认、可封存逆转的具体行动清单。虽然仪式语言本身并不产生现代物理辐射般的反噬效力，但在群体信念框架之内，反咒程序能够让当事人在心理博弈上重获能动感与边界安全感。",
+      "primary_sources": [
+        {
+          "citation": "巴莫曲布嫫：《彝族鬼灵信仰田野调查手记》，中国非物质文化遗产网专题报道。",
+          "url": "https://www.ihchina.cn/Article/Index/detail?id=8251",
+          "locator": "田野手记全文（记述西南民间祭司仪式符号转换与鬼灵应对机制）"
+        },
+        {
+          "citation": "（东汉）王充撰：《论衡·解除篇》（所记古俗逐疫、反制驱祟逻辑背景），公版典籍，ctext。",
+          "url": "https://ctext.org/lunheng/jie-chu",
+          "locator": "解除篇记汉代民间辟祟方术节"
+        }
+      ],
+      "secondary_ref": "邓启耀《巫蛊：中国文化的历史暗流》（广西师范大学出版社，2025年，ISBN 978-7-5598-7994-3）第七章第二节“巫蛊破解”与第十章第三节“以子之矛、攻子之盾”（按章节与叙事锚点定位，未核纸书页码）。",
+      "knowledge_id": "REL-5-0002",
+      "knowledge_note": "民间信仰的分类、混融与历史语境：分析民间仪式如何利用颠倒符号完成情绪防御与风险外推。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_wugu_nocebo_somatic_mechanism",
+      "domain_id": "wugu_talisman",
+      "hub_id": "motif_cn_zhuyou_incantation_craft",
+      "term": "反安慰剂效应（Nocebo）与“中蛊”躯体化机制",
+      "aliases": [
+        "负面预期引发真实病痛",
+        "恶咒预期下的植物神经反应",
+        "文化暗示与心身恐惧链条"
+      ],
+      "category": "魅合拆姻与非常意识状态",
+      "gist": "负向预期可能影响症状，但不能单独确定具体病因",
+      "reading_tag": "精神医学",
+      "region": "全球临床医学及中国当代都市门诊比较域",
+      "era": "现代生理心理学至21世纪神经医学研究（1942–2011+）",
+      "summary": "反安慰剂效应指负向预期或语境可能影响某些体验及治疗中的症状报告。Colloca 和 Miller 的临床综述讨论了这一现象及沟通中的伦理问题；Cannon 的“巫术致死”文章则提出过与文化恐惧相关的历史性生理假说。\n\n这些研究可以帮助讨论信念、期待与痛苦体验的关系，但不能仅凭“中蛊”自述推断某个人的症状由反安慰剂造成。具体情况仍需结合病史、身体检查及其他可能因素理解。",
+      "primary_sources": [
+        {
+          "citation": "Luana Colloca & Franklin G. Miller (2011), \"The Nocebo Effect and Its Relevance for Clinical Practice\", Psychosomatic Medicine 73(7), 598–603.",
+          "url": "https://doi.org/10.1097/PSY.0b013e3182294a50",
+          "locator": "pp. 598–603（负向期待触发神经化学反应与真实临床症状机制综述）"
+        },
+        {
+          "citation": "Walter B. Cannon (1942; repr. 2002), \"'Voodoo' death\", American Anthropologist 44(2) / American Journal of Public Health 92(10), 1593–1596.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/12356599/",
+          "locator": "PMID 12356599（交感-肾上腺持续过度亢奋导致文化诅咒恐惧引发严重生理衰竭假说）"
+        }
+      ],
+      "secondary_ref": "国际同行评审身心医学文献；主题对话邓启耀《巫蛊：中国文化的历史暗流》（广西师范大学出版社，2025年，ISBN 978-7-5598-7994-3）第十章第一节“中蛊的人”及第十一章（按章节与叙事锚点定位，未核纸书页码）。",
+      "knowledge_id": "HEA-009",
+      "knowledge_note": "主题对读：负向期待和症状的研究可作比较线索，不能代替具体个案的评估。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_wugu_placebo_context_healing",
+      "domain_id": "wugu_talisman",
+      "hub_id": "motif_cn_zhuyou_incantation_craft",
+      "term": "安慰剂效应与祝由仪式的语境疗愈机制",
+      "aliases": [
+        "仪式安慰剂效应",
+        "象征性疗愈与希望预期",
+        "医患权威建构下的症状缓解"
+      ],
+      "category": "祝由医制与符禁",
+      "gist": "治疗语境与期待的研究，与祝由文献作对读",
+      "reading_tag": "精神医学",
+      "region": "中医祝由文献及当代语境临床医学比较区",
+      "era": "先秦《内经》祝由说至当代专家共识（2018）",
+      "summary": "《黄帝内经·素问》提及“祝由”与“移精变气”，为理解古代医学观念提供了文献线索。现代临床研究则讨论治疗语境、医患沟通和期待如何影响部分症状体验；Evers 等人的专家共识梳理了安慰剂与反安慰剂研究的临床含义。\n\n将两者并读可以提出关于仪式、照护和期待的问题，但结构相似不能证明某项传统仪式的疗效，也不能证明所有效果都来自同一机制。",
+      "primary_sources": [
+        {
+          "citation": "Andrea W. M. Evers et al. (2018), \"Implications of Placebo and Nocebo Effects for Clinical Practice: Expert Consensus\", Psychotherapy and Psychosomatics 87(4), 204–210.",
+          "url": "https://doi.org/10.1159/000490354",
+          "locator": "pp. 204–210（临床语境信号、期望塑造与安慰/反安慰效应国际专家共识）"
+        },
+        {
+          "citation": "《黄帝内经·素问·移精变气论》（“古之治病……可祝由而已”原典），公版医籍，ctext。",
+          "url": "https://ctext.org/huangdi-neijing/suwen/yi-jing-bian-qi-lun/zh",
+          "locator": "移精变气论首段（传统医学祝由移易心气之早期论述）"
+        }
+      ],
+      "secondary_ref": "国际医学专家共识与独立传统医典；可与邓启耀《巫蛊：中国文化的历史暗流》（广西师范大学出版社，2025年，ISBN 978-7-5598-7994-3）第十章第二节“心病心治、以玄治玄”并置讨论（按章节与叙事锚点定位，未核纸书页码）。",
+      "knowledge_id": "REL-5-0004",
+      "knowledge_note": "主题对读：将古典医籍与现代临床研究并置，区分文献类比和具体疗效证据。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_wugu_suggestive_therapy_ethics",
+      "domain_id": "wugu_talisman",
+      "hub_id": "motif_cn_zhuyou_incantation_craft",
+      "term": "暗示疗愈的临床伦理与循证医疗边界",
+      "aliases": [
+        "知情同意与欺骗性安慰边界",
+        "以玄治玄的现代临床伦理争议",
+        "民俗解咒与现代精神科转介"
+      ],
+      "category": "魅合拆姻与非常意识状态",
+      "gist": "民俗求助叙事与临床沟通中的知情同意问题",
+      "reading_tag": "精神医学",
+      "region": "当代中国精神医学及全球生物伦理学讨论场域",
+      "era": "二十一世纪现代医疗伦理争议（2018–2025）",
+      "summary": "民俗故事中有时会出现借助来访者熟悉的语言或仪式安抚其忧虑的情节。这类叙事可以与现代医疗伦理中的知情同意、诚实沟通与对个人文化背景的尊重一起阅读，但不能据此判定某种传统仪式的疗效。\n\n2018 年的专家共识讨论了临床情境中安慰剂与反安慰剂效应的沟通问题；2024 年的综述讨论告知治疗风险时的伦理考量。它们提供临床沟通的参考，并非对特定“中蛊”个案的诊断，也未建立一套适用于所有民俗求助叙事的检查清单。",
+      "primary_sources": [
+        {
+          "citation": "American Journal of Therapeutics (2024), \"The Nocebo Effect: A Bias in Clinical Practice—An Ethical Approach\", Am J Ther (DOI 10.1097/MJT.0000000000001730).",
+          "url": "https://doi.org/10.1097/MJT.0000000000001730",
+          "locator": "Ethical management and transparent clinical framing 章节"
+        },
+        {
+          "citation": "Andrea W. M. Evers et al. (2018), \"Implications of Placebo and Nocebo Effects for Clinical Practice: Expert Consensus\", Psychotherapy and Psychosomatics 87(4), 204–210.",
+          "url": "https://doi.org/10.1159/000490354",
+          "locator": "pp. 206–209（关于避免欺骗性安慰剂与规范知情沟通的专家建议）"
+        }
+      ],
+      "secondary_ref": "以民俗求助叙事与临床沟通伦理作主题对照，不将案例叙事视为疗效或病因证据。",
+      "knowledge_id": "PHI-3-0010",
+      "knowledge_note": "主题对读：比较知情同意、尊重个人与临床沟通中的伦理考量。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_wugu_festival_carnival_commodification",
+      "domain_id": "wugu_talisman",
+      "hub_id": "motif_cn_wugu_poison_complex",
+      "term": "节日狂欢化巫俗与商业符号重塑",
+      "aliases": [
+        "傩仪巫风的文旅节庆转化",
+        "巫术禁忌消解与青年消费符号",
+        "仪式脱域与民俗表演化"
+      ],
+      "category": "放蛊流言与社会污名",
+      "gist": "审视地方防蛊驱祟巫俗如何在当代转为观光庆典与潮玩消费",
+      "reading_tag": "田野口述",
+      "region": "中国城乡文旅街区与节庆展演场",
+      "era": "二十世纪九十年代末至今（1990s–2025）",
+      "summary": "随着现代社会流动性增强与消费文化兴起，原本隐秘而令人避讳的“巫蛊”“魇术”及村寨逐疫傩礼，正经历显著的公开化、喜剧化与狂欢化重塑。正如邓启耀在2025年增订版第九章第三节“变身‘节日’的魇术”与第四节“被时尚化的巫蛊”中所追踪的，昔日背人行持的草人厌胜或驱鬼面具，如今在部分景区、节庆庙会乃至都市夜市里被改造成幽默打卡表演、装饰工艺品和情绪减压消费符号。\n\n在民俗学者看来，这种“去敬畏化”的展演既意味着传统严厉禁忌约束力的退潮与大众自我娱乐空间的扩展，但也潜伏另一重文化张力：当商业文创将特定少数民族历史上的敏感“巫蛊”词汇抽离原境打包为奇观卖点时，倘若缺乏必要的背景说明与尊重边界，依然可能重新制造刻板猎奇印象。",
+      "primary_sources": [
+        {
+          "citation": "Wikipedia, \"Nuo folk religion\" & \"Nuo opera\" (transformation of apotropaic exorcism rituals into staged heritage festivals).",
+          "url": "https://en.wikipedia.org/wiki/Nuo_folk_religion",
+          "locator": "History, rituals and modern performance heritage 章节"
+        },
+        {
+          "citation": "Wikipedia, \"Nuo opera\" (masked folk ritual theatre and tourism heritage revival).",
+          "url": "https://en.wikipedia.org/wiki/Nuo_opera",
+          "locator": "Contemporary revival and stage adaptation 章节"
+        },
+        {
+          "citation": "广西师范大学出版社：《巫蛊：中国文化的历史暗流》豆瓣官方书目简介页（供核查2025年增订版第九章新增“变身‘节日’的魇术”与“被时尚化的巫蛊”目录题名，非正文全文）。",
+          "url": "https://book.douban.com/subject/37310453/",
+          "locator": "出版信息与目录第九章第3–4节标题清单"
+        }
+      ],
+      "secondary_ref": "邓启耀《巫蛊：中国文化的历史暗流》（广西师范大学出版社，2025年，ISBN 978-7-5598-7994-3）第九章“巫蛊现象的当代认知与文化时疫”第三节、第四节（按章节与叙事锚点定位，未核纸书页码）。",
+      "knowledge_id": "REL-5-0006",
+      "knowledge_note": "节庆展示、旅游与传统再创造：原本带禁忌色彩的地方仪式进入文旅展演与流行符号后如何发生语义转向。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p8_wugu_culture_bound_dissociation",
+      "domain_id": "wugu_talisman",
+      "hub_id": "motif_cn_zhuyou_incantation_craft",
+      "term": "巫术归因与跨文化精神医学研究",
+      "aliases": [
+        "文化相关精神综合征",
+        "鬼神附体态的跨文化临床鉴别",
+        "中蛊叙述与解离障碍区分"
+      ],
+      "category": "魅合拆姻与非常意识状态",
+      "gist": "比较巫术归因、痛苦表达与跨文化临床研究",
+      "reading_tag": "精神医学",
+      "region": "跨文化精神病学及现代临床评估比较域",
+      "era": "1968年跨文化精神病学经典考察至现代诊断标准",
+      "summary": "人们可能用地方信仰中的巫术、附体或诅咒来表达和解释痛苦。跨文化精神医学研究关注这些说法与个人处境、社会环境以及临床评估之间的关系；历史上“文化绑定症候群”等术语的适用范围也在不断讨论。\n\nRisso 与 Böker 在 1968 年研究了瑞士精神医疗机构中的意大利移民与巫术妄想；2016 年的五国调查则询问医疗人员对巫术与精神疾病成因的看法，调查对象是医务人员，不能直接代表患者体验。类似民俗叙述并不自动等同于任何一项诊断，特定个案需要结合当事人的具体情况理解。",
+      "primary_sources": [
+        {
+          "citation": "M. Risso & W. Böker (1968), \"Delusions of Witchcraft: A Cross Cultural Study\", The British Journal of Psychiatry 114(513), 963–972.",
+          "url": "https://doi.org/10.1192/bjp.114.513.963",
+          "locator": "pp. 963–972（跨文化迁徙群体中“受巫蛊迫害”主诉的临床表现与社会压力分析）"
+        },
+        {
+          "citation": "The Journal of Nervous and Mental Disease (2016), \"Witchcraft and Biopsychosocial Causes of Mental Illness: Attitudes and Beliefs Among Health Professionals in Five Countries\" (PMID 26745309).",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26745309/",
+          "locator": "PMID 26745309（五国医疗专业人员对巫术归因与生物-心理-社会成因认知比较）"
+        },
+        {
+          "citation": "Wikipedia, \"Culture-bound syndrome\" (historical evolution toward DSM cultural concepts of distress).",
+          "url": "https://en.wikipedia.org/wiki/Culture-bound_syndrome",
+          "locator": "Concept, examples and psychiatric classification shifts 章节"
+        }
+      ],
+      "secondary_ref": "与民俗中对巫蛊和附体的描述作主题比较；研究文献并未对具体民俗个案进行诊断。",
+      "knowledge_id": "REL-6-0001",
+      "knowledge_note": "主题对读：比较不同文化中对痛苦的命名与跨文化临床研究，区分信仰叙事、调查对象和个案诊断。",
+      "reviewed_by_human": false
+    }
+  ]
+}

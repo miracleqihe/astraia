@@ -1,0 +1,238 @@
+{
+  "version": 1,
+  "agent": "bee-p8-wugu",
+  "domain_id": "wugu_talisman",
+  "aligned_reference": {
+    "title": "巫蛊：中国文化的历史暗流",
+    "author": "邓启耀",
+    "publisher": "桂林：广西师范大学出版社",
+    "year": 2025,
+    "isbn": "978-7-5598-7994-3"
+  },
+  "audit_basis": {
+    "total_graph_nodes": 11787,
+    "total_bridges": 643,
+    "already_wired_all_domains": 302,
+    "already_wired_domain1_wugu_talisman": 149,
+    "remaining_unwired_case_cn_wugu_prefix": 0,
+    "eligible_unwired_domain1_mapped": 30,
+    "excluded_overlap_notes": [
+      "严格避让已被 reference/thematic_taxonomy.json 七大专题收录的 302 个节点，以及 Wave 2 同批 bee 认领节点（如 p8_bee_ghost_dict 已认领 case_cn_zibuyu_v08_s038、case_cn_zibuyu_v10_s008 与 case_cn_lianghe_paper_horse_dispute_2001；p8_bee_zhenwu 已认领 corpus_cn_ich_2008_0531；p8_bee_modern_liminal 已认领 case_cn_hk_cuhk_braid；p8_bee_world_myth 已认领域外巫术与恶眼节点 case_ss_azande_witchcraft_oracle、case_north_berwick_1590、case_es_zugarramurdi_trials_1610、case_tr_anatolia_nazar_amulet、case_it_friuli_benandanti_1575、case_cl_chiloe_recta_provincia）。",
+      "严格剔除标题关键词伪阳性（如嘉绒语录音 case_cn_japhug_0003950 Histoire : wugui 系拼音‘乌龟’故事，非‘巫蛊’）。",
+      "graph_data.json 中尚余 103 条大英图书馆云南彝文档案单件目录（case_cn_bl_eap081_*），因全宗已由第2层 corpus_cn_bl_eap081_project 接入且单卷尚缺经文逐页转录校释，本轮暂不勉强硬挂。"
+    ],
+    "honest_conclusion": "经第5至第7期大规模入库与专题汇编，全库 11,787 个节点中前缀为 case_cn_wugu_* 的节点已全部完成挂载（剩余 0 条）；排除跨专题与同批并行认领节点后，尚可稳妥归入 Domain 1（wugu_talisman）且无跨专题冲突的现存未挂接节点共计 30 条（含邓启耀 2025 滇西腾冲纸马店田野访谈 1 条、清代《子不语》厌魅/禁法/煞忌志怪 8 条、《台湾通史》巫觋 1 条、日本贵船丑时钉偶比较 1 条，及滇川台民族口语祝由占卜禁忌档案 19 条）。"
+  },
+  "mappings": [
+    {
+      "node_id": "case_cn_zibuyu_v05_s017",
+      "domain_id": "wugu_talisman",
+      "group_id": "wugu_poison_and_law",
+      "already_exists": true,
+      "rationale": "清代《子不语》卷五《藏魂罈》志怪故事，围绕“害命谋财、关魂入坛”之邪术想象展开，可与邓 2025 第三章第二节“关魂禁魇”互参。"
+    },
+    {
+      "node_id": "case_cn_zibuyu_v21_s031",
+      "domain_id": "wugu_talisman",
+      "group_id": "wugu_poison_and_law",
+      "already_exists": true,
+      "rationale": "清代《子不语》卷二十一《禁魘婆》记录民间“女巫禁魇”施害叙事与官方/民间反制想象，归入放蛊厌胜污名与惩治分组。"
+    },
+    {
+      "node_id": "case_cn_zibuyu_v03_s016",
+      "domain_id": "wugu_talisman",
+      "group_id": "wugu_poison_and_law",
+      "already_exists": true,
+      "rationale": "清代《子不语》卷三《披麻煞》聚焦凶煞冲犯与民间辟忌猜忌，补全清代笔记中的涉煞社会恐慌文献样本。"
+    },
+    {
+      "node_id": "case_cn_zibuyu_v08_s026",
+      "domain_id": "wugu_talisman",
+      "group_id": "wugu_poison_and_law",
+      "already_exists": true,
+      "rationale": "清代《子不语》卷八《黑煞神》记载厌祟加害与官绅纠葛，映照清代社会对恶神咒诅与厌魅风险的文化心理。"
+    },
+    {
+      "node_id": "case_cn_yongning_na_0004943",
+      "domain_id": "wugu_talisman",
+      "group_id": "wugu_poison_and_law",
+      "already_exists": true,
+      "rationale": "CNRS Pangloss 永宁纳语口述录音档案（Taboos v2），记录传统村落如何按禁忌与边界规范处置狂乱、失常越界行为，关涉地方习惯法隔离机制。"
+    },
+    {
+      "node_id": "case_cn_yongning_na_0004616",
+      "domain_id": "wugu_talisman",
+      "group_id": "wugu_poison_and_law",
+      "already_exists": true,
+      "rationale": "CNRS Pangloss 永宁纳语口述档案（Les champignons de Yongning），记录山林野生菌的食用经验、毒性警戒与文化避忌，印证民族植物毒理与“蛊毒”防忌重叠语境。"
+    },
+    {
+      "node_id": "case_tw_sinica_oral_306",
+      "domain_id": "wugu_talisman",
+      "group_id": "wugu_poison_and_law",
+      "already_exists": true,
+      "rationale": "中研院民族所台湾口语档案《蘭嶼紅頭23 ‧ si yapen ovayan》，记录达悟族地方巫师法力传闻与社区避忌认知。"
+    },
+    {
+      "node_id": "case_tw_sinica_oral_307",
+      "domain_id": "wugu_talisman",
+      "group_id": "wugu_poison_and_law",
+      "already_exists": true,
+      "rationale": "中研院民族所台湾口语档案《蘭嶼紅頭24 ‧ 巫婆 si Nan Tazazyaw》，展现岛屿社群对特定女性施术者之敬畏、猜防与叙事标签。"
+    },
+    {
+      "node_id": "case_cn_tengchong_paper_horse_interview_2001",
+      "domain_id": "wugu_talisman",
+      "group_id": "yansheng_architecture_seals",
+      "already_exists": true,
+      "rationale": "2001年邓启耀云南腾冲和顺纸马店访谈实录：失窃者供奉甲马纸以震慑窃贼不敢再犯，系纸符图像充当道德厌胜震慑器的罕见田野见证。"
+    },
+    {
+      "node_id": "case_jp_kifune_ushinokoku_mairi",
+      "domain_id": "wugu_talisman",
+      "group_id": "yansheng_architecture_seals",
+      "already_exists": true,
+      "rationale": "日本京都贵船神社“丑时参拜”草人钉树诅咒民俗，按《build-taxonomy-lexicon.mjs》既有规划作为东亚“偶人钉击厌镇”跨文化比较参照（注明并读不代表同源传播）。"
+    },
+    {
+      "node_id": "case_cn_zibuyu_v14_s020",
+      "domain_id": "wugu_talisman",
+      "group_id": "yansheng_architecture_seals",
+      "already_exists": true,
+      "rationale": "清代《子不语》卷十四《拘忌》记录宅舍陈设与日常厌忌规避故事，展现厌胜观念如何渗入世俗生活细节。"
+    },
+    {
+      "node_id": "case_cn_zibuyu_v13_s002",
+      "domain_id": "wugu_talisman",
+      "group_id": "yansheng_architecture_seals",
+      "already_exists": true,
+      "rationale": "清代《子不语》卷十三《遇太歲煞神禍福各異》关涉太岁方煞避忌与营建动土厌胜心理。"
+    },
+    {
+      "node_id": "case_cn_zibuyu_v19_s019",
+      "domain_id": "wugu_talisman",
+      "group_id": "yansheng_architecture_seals",
+      "already_exists": true,
+      "rationale": "清代《子不语》卷十九《忌火日》反映时日方隅禁忌与厌火避凶民俗。"
+    },
+    {
+      "node_id": "case_cn_zibuyu_v14_s013",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhuyou_incantation_healing",
+      "already_exists": true,
+      "rationale": "清代《子不语》卷十四《鬼受禁》直接围绕传统“禁咒法”制伏鬼祟的叙事展开，呼应祝由禁科传统。"
+    },
+    {
+      "node_id": "case_cn_zibuyu_v19_s033",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhuyou_incantation_healing",
+      "already_exists": true,
+      "rationale": "清代《子不语》卷十九《東醫寶鑒有法治狐》将医学典籍方药引入治魅驱祟叙事，体现医药与方术互渗。"
+    },
+    {
+      "node_id": "case_cn_zibuyu_v20_s009",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhuyou_incantation_healing",
+      "already_exists": true,
+      "rationale": "清代《子不语》卷二十《神和病》描写祈祷问神消解疫病与心理慰藉之俗，对照心身疗愈机制。"
+    },
+    {
+      "node_id": "case_asia_taiwan_tongshi_wuxi",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhuyou_incantation_healing",
+      "already_exists": true,
+      "rationale": "连横《台湾通史》卷二十二《巫觋》专门梳理闽台民间扶乩、符水、祈禳与祝由治病旧俗，属重要地方志史料。"
+    },
+    {
+      "node_id": "case_cn_pumi_wolp_12",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhuyou_incantation_healing",
+      "already_exists": true,
+      "rationale": "剑桥 WOLP 云南王家沟普米语目录档案（Mountain God Sacrifice and Soul-calling Rituals），记录山地族群招魂叫魂仪轨。"
+    },
+    {
+      "node_id": "case_cn_pumi_wolp_21",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhuyou_incantation_healing",
+      "already_exists": true,
+      "rationale": "剑桥 WOLP 云南普米语目录档案（Ghost Exorcism Ritual），记录普米族驱鬼禳煞仪式口述材料。"
+    },
+    {
+      "node_id": "case_cn_minyag_wolp_38",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhuyou_incantation_healing",
+      "already_exists": true,
+      "rationale": "剑桥 WOLP 四川木雅语目录档案（Folk Beliefs and Local Remedies），记录康区木雅民俗疗愈方剂与信仰处置经验。"
+    },
+    {
+      "node_id": "case_cn_japhug_0003363",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhuyou_incantation_healing",
+      "already_exists": true,
+      "rationale": "CNRS Pangloss 四川嘉绒语录音目录（La divination），记录传统占卜决疑与病因探问仪俗。"
+    },
+    {
+      "node_id": "case_cn_yongning_na_0004584",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhuyou_incantation_healing",
+      "already_exists": true,
+      "rationale": "CNRS Pangloss 永宁纳语录音档案（Chicken divination），记录纳人以鸡骨占卜诊疾断祟之口述传统。"
+    },
+    {
+      "node_id": "case_cn_yongning_na_0004586",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhuyou_incantation_healing",
+      "already_exists": true,
+      "rationale": "CNRS Pangloss 永宁纳语录音档案（Choosing a Daba），反映村寨延请达巴祭师主持疗疾祈禳仪式时的资格选择。"
+    },
+    {
+      "node_id": "case_cn_yongning_na_0004603",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhuyou_incantation_healing",
+      "already_exists": true,
+      "rationale": "CNRS Pangloss 永宁纳语录音档案（Dumb children ritual），记录孩童迟语时社区通过祝由祈福仪式介入安慰之俗。"
+    },
+    {
+      "node_id": "case_cn_yongning_na_0004629",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhuyou_incantation_healing",
+      "already_exists": true,
+      "rationale": "CNRS Pangloss 永宁纳语录音档案（Taking charge of rituals），以本土祭师自述呈现主持日常禳解仪式之职责规范。"
+    },
+    {
+      "node_id": "case_tw_sinica_oral_208",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhuyou_incantation_healing",
+      "already_exists": true,
+      "rationale": "中研院民族所口语档案《台東小馬48 ‧ Mi'edaw misaga'to adada（占卜治病）》，记录阿美族传统占卜断病与祈禳疗愈口述。"
+    },
+    {
+      "node_id": "case_tw_sinica_oral_223",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhuyou_incantation_healing",
+      "already_exists": true,
+      "rationale": "中研院民族所口语档案《台東真柄02 ‧ 舊式治病法》，呈现台湾东海岸传统民俗疗愈与仪式共存史料。"
+    },
+    {
+      "node_id": "case_tw_sinica_oral_251",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhuyou_incantation_healing",
+      "already_exists": true,
+      "rationale": "中研院民族所口语档案《台東東河13 ‧ O pi sair no Cikawasay To'adadaay（巫師治病法）》，记录阿美族 Cikawasay 祭司主持治病法事。"
+    },
+    {
+      "node_id": "case_tw_sinica_oral_539",
+      "domain_id": "wugu_talisman",
+      "group_id": "zhuyou_incantation_healing",
+      "already_exists": true,
+      "rationale": "中研院民族所口语档案《蘭嶼朗島30 ‧ 去毒魚》，结合海洋鱼类生物禁忌、祛晦除毒仪俗与食物分类观。"
+    },
+    {
+      "node_id": "case_tw_sinica_oral_173",
+      "domain_id": "wugu_talisman",
+      "group_id": "household_apotropaic_guardians",
+      "already_exists": true,
+      "rationale": "中研院民族所口语档案《台東小馬13 ‧ 禁忌日》，记录岁时与居家日常避煞护宅禁忌日俗，补充多元族群岁时护宅样本。"
+    }
+  ]
+}
