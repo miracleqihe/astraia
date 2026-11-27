@@ -11,6 +11,8 @@ import './utilities.css';
 import './overrides.css';
 import { createSyzygyRenderer } from './renderer';
 import { createFullAtlas } from './fullAtlas';
+import { initSyzygyShell } from './shell';
+import { isCompactViewport } from '../compactViewport';
 import { genreContract, genreLabels } from './narrativeMetadata';
 import { announceViewReady } from '../viewRouter';
 import { TIER_META, engravingFrieze, engravingPatternForVolume, syncEngravingBeam, tierSeal } from '../engraving';
@@ -385,7 +387,8 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
 
     const renderer = initialRenderer;
     document.body.dataset.renderer = renderer.isSoftware ? 'software' : 'webgl';
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    const renderPixelRatio = () => Math.min(window.devicePixelRatio || 1, isCompactViewport() ? 1.25 : 2);
+    renderer.setPixelRatio(renderPixelRatio());
     renderer.setSize(window.innerWidth, window.innerHeight);
     viewportEl.appendChild(renderer.domElement);
     renderer.domElement.setAttribute('aria-label', '朔望叠影星图，可拖动旋转、滚轮缩放');
@@ -482,7 +485,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
 
     const starUniforms = {
       uTime: { value: 0 },
-      uPixelRatio: { value: Math.min(window.devicePixelRatio || 1, 2) },
+      uPixelRatio: { value: renderPixelRatio() },
       uGlobeMode: { value: 0 }
     };
 
@@ -530,7 +533,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     cosmosGroup.add(primaryStarPoints);
 
     // Build 3,000 Nebula Micro-Dust Particles (Morphing across all 3 dimensions!)
-    const DUST_COUNT = 3000;
+    const DUST_COUNT = isCompactViewport() ? 1800 : 3000;
     const dustParticles = [];
     const dPosArr = new Float32Array(DUST_COUNT * 3);
     const dColArr = new Float32Array(DUST_COUNT * 3);
@@ -631,7 +634,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     cosmosGroup.add(spiritualAnchorPoints);
 
     // Deep-Space Background Starfield (1,600 static distant stars)
-    const BG_COUNT = 1600;
+    const BG_COUNT = isCompactViewport() ? 1000 : 1600;
     const bgGeo = new THREE.BufferGeometry();
     const bgPos = new Float32Array(BG_COUNT * 3);
     const bgCol = new Float32Array(BG_COUNT * 3);
@@ -879,7 +882,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
 
     const sideraSculpts = createSideraV3Sculpts(SIDERA_CLUSTERS, {
       software: renderer.isSoftware,
-      pixelRatio: Math.min(window.devicePixelRatio || 1, 2),
+      pixelRatio: renderPixelRatio(),
     });
     sideraSculpts.setFade(0);
     sideraFilamentGroup.add(sideraSculpts.group);
@@ -1171,7 +1174,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     const membraneRefraction = createMembraneRefraction(renderer, {
       reducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
     });
-    membraneRefraction.resize(window.innerWidth, window.innerHeight, window.devicePixelRatio || 1);
+    membraneRefraction.resize(window.innerWidth, window.innerHeight, renderPixelRatio());
     const membrane = createMembraneLayer({
       canvas: document.getElementById('membrane-canvas'),
       whisperHost: document.getElementById('membrane-whispers'),
@@ -1181,7 +1184,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         membraneAudio.playCross(intoSpirit);
       },
     });
-    membrane.resize(window.innerWidth, window.innerHeight, Math.min(window.devicePixelRatio || 1, 1.5));
+    membrane.resize(window.innerWidth, window.innerHeight, Math.min(renderPixelRatio(), 1.5));
     membrane.setDepth(appState.membraneDepth, { silent: true });
     membraneAudio.setDepth(appState.membraneDepth);
 
@@ -2309,24 +2312,6 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       setTimeout(() => URL.revokeObjectURL(url), 1000);
     });
 
-    // Keep secondary controls available without crowding the compact header.
-    const mobileToolsButton = document.getElementById('btn-mobile-tools');
-    const mobileToolsPanel = document.getElementById('syzygy-extra-tools');
-    const setMobileToolsOpen = (open) => {
-      mobileToolsButton.setAttribute('aria-expanded', String(open));
-      mobileToolsPanel.dataset.open = String(open);
-    };
-    mobileToolsButton.addEventListener('click', () => setMobileToolsOpen(mobileToolsPanel.dataset.open !== 'true'));
-    mobileToolsPanel.addEventListener('click', (event) => {
-      if (event.target.closest('button')) setMobileToolsOpen(false);
-    });
-    document.addEventListener('pointerdown', (event) => {
-      if (!mobileToolsPanel.contains(event.target) && !mobileToolsButton.contains(event.target)) setMobileToolsOpen(false);
-    });
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') setMobileToolsOpen(false);
-    });
-
     // Prominent ◐ 折光星桥 Toggle
     const btnSyzygy = document.getElementById('btn-syzygy-toggle');
     btnSyzygy.addEventListener('click', () => {
@@ -2589,8 +2574,9 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     });
 
     // Collapsible Left & Right Panels + Dynamic Drawer-Aware Camera Framing
-    const btnOpenLeft = document.getElementById('btn-open-left');
-    const btnOpenRight = document.getElementById('btn-open-right');
+    const drawerShell = initSyzygyShell();
+    const setLeftDrawerCollapsed = drawerShell.setLeftCollapsed;
+    const setRightDrawerCollapsed = drawerShell.setRightCollapsed;
     const btnSpreadCodex = document.getElementById('btn-spread-codex');
     const contextBanner = document.getElementById('context-banner');
 
@@ -2658,52 +2644,31 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
 
     function syncContextBannerOffset() {
       const collapsed = leftDrawer.classList.contains('drawer-left-hidden');
-      contextBanner.style.left = collapsed && window.innerWidth >= 768 ? '128px' : '';
+      contextBanner.style.left = collapsed && !isCompactViewport() ? '128px' : '';
     }
 
-    function setLeftDrawerCollapsed(collapsed) {
-      if (!collapsed && window.innerWidth < 768 && !rightDrawer.classList.contains('drawer-right-hidden')) {
-        setRightDrawerCollapsed(true);
-      }
-      document.body.dataset.leftOpen = String(!collapsed);
-      leftDrawer.classList.toggle('drawer-left-hidden', collapsed);
-      leftDrawer.inert = collapsed;
-      btnOpenLeft.classList.toggle('hidden', !collapsed);
-      btnOpenLeft.classList.toggle('inline-flex', collapsed);
-      btnOpenLeft.setAttribute('aria-expanded', String(!collapsed));
+    drawerShell.setOnChange(() => {
       syncContextBannerOffset();
       updateCameraOffset();
       syncOverviewCameraIfActive(true);
-    }
-
-    function setRightDrawerCollapsed(collapsed) {
-      if (!collapsed && window.innerWidth < 768 && !leftDrawer.classList.contains('drawer-left-hidden')) {
-        setLeftDrawerCollapsed(true);
-      }
-      rightDrawer.classList.toggle('drawer-right-hidden', collapsed);
-      rightDrawer.inert = collapsed;
-      btnOpenRight.classList.toggle('hidden', !collapsed);
-      btnOpenRight.classList.toggle('inline-flex', collapsed);
-      btnOpenRight.setAttribute('aria-expanded', String(!collapsed));
-      updateCameraOffset();
-      syncOverviewCameraIfActive(true);
-    }
-
-    document.getElementById('btn-close-left').addEventListener('click', () => setLeftDrawerCollapsed(true));
-    btnOpenLeft.addEventListener('click', () => setLeftDrawerCollapsed(false));
-    document.getElementById('btn-close-right').addEventListener('click', () => setRightDrawerCollapsed(true));
-    btnOpenRight.addEventListener('click', () => setRightDrawerCollapsed(false));
+    });
 
     if (btnSpreadCodex) {
       let leftWasOpenBeforeSpread = false;
       btnSpreadCodex.addEventListener('click', () => {
         const nextSpread = !rightDrawer.classList.contains('codex-spread');
+        const compact = isCompactViewport();
+        if (nextSpread && compact && !rightDrawer.querySelector('.syzygy-dual-body')) {
+          if (appState.restoringDeepLink) flashToast('正在载入对读，请稍候。');
+          else { setLeftDrawerCollapsed(false); flashToast('先从目录选择一条心物对读。'); }
+          return;
+        }
         rightDrawer.classList.toggle('codex-spread', nextSpread);
         btnSpreadCodex.setAttribute('aria-pressed', String(nextSpread));
-        btnSpreadCodex.textContent = nextSpread ? '单卷阅读' : '展卷并读';
+        btnSpreadCodex.textContent = nextSpread ? (compact ? '收起对读' : '单卷阅读') : '展卷并读';
         if (nextSpread) {
           if (rightDrawer.classList.contains('drawer-right-hidden')) setRightDrawerCollapsed(false);
-          if (window.innerWidth >= 768 && !leftDrawer.classList.contains('drawer-left-hidden')) {
+          if (!compact && !leftDrawer.classList.contains('drawer-left-hidden')) {
             leftWasOpenBeforeSpread = true;
             setLeftDrawerCollapsed(true);
           } else {
@@ -2715,6 +2680,11 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         }
         updateCameraOffset();
         syncOverviewCameraIfActive(true);
+        if (nextSpread && compact) {
+          rightDrawer.querySelector('.syzygy-dual-body')?.scrollIntoView({
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start',
+          });
+        }
       });
     }
 
@@ -2770,17 +2740,15 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       }
     });
 
-    // Keep the starfield clear until a visitor opens a directory or a dossier.
-    setLeftDrawerCollapsed(true);
-    setRightDrawerCollapsed(true);
+    // Preserve a directory or dossier opened while the scene was loading.
     syncContextBannerOffset();
     updateCameraOffset();
     syncOverviewCameraIfActive(false);
 
     window.addEventListener('resize', () => {
-      if (window.innerWidth < 768 && !leftDrawer.classList.contains('drawer-left-hidden')
+      if (isCompactViewport() && !leftDrawer.classList.contains('drawer-left-hidden')
         && !rightDrawer.classList.contains('drawer-right-hidden')) setLeftDrawerCollapsed(true);
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const dpr = renderPixelRatio();
       syncContextBannerOffset();
       updateCameraOffset();
       syncOverviewCameraIfActive(false);
@@ -3321,7 +3289,6 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         renderLeftAtlasTree(); updateClassicLink(); syncViewURL();
       }).catch(error=>flashToast(`图谱载入失败：${error.message}`));
     });
-    announceViewReady();
     renderLeftAtlasTree();
     renderDualPaneSyzygyCard(appState.selectedBridge);
     if (appState.restoringDeepLink) document.getElementById('syzygy-card-container').innerHTML='<p class="syzygy-reference" role="status">正在定位资料…</p>';
@@ -3333,6 +3300,8 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     if (dimension !== 'omnia') switchDimension(dimension, false, true);
     else { document.body.dataset.dimension = 'omnia'; updateClassicLink(); }
     document.getElementById('syzygy-loading')?.remove();
+    drawerShell.markReady();
+    announceViewReady();
     requestAnimationFrame(animateLoop);
     setTimeout(() => fullAtlas.start().then(() => {
       renderLeftAtlasTree();

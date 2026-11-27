@@ -1,4 +1,5 @@
 import { publicAssetUrl } from '../publicAssetUrl.js';
+import { isCompactViewport } from '../compactViewport';
 import * as THREE from 'three';
 import { loadGraph, matchesGraph } from './graphBridge';
 import { loadPortalMatches } from './portalMatches';
@@ -48,6 +49,7 @@ const matchReason = (row, byId) => {
 
 /** The second view uses the same public catalogue as the original atlas. */
 export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starMaterial, latLonToVec3, focusNode, onSelection, onPortal, onBrowseFolklore, audio, getMembraneDepth, onObserve, onMatchesReady, onMatchesUpdated, software = false }) {
+  const deferMatches = isCompactViewport();
   let graph = null, byId = new Map(), indexById = new Map(), adjacency = new Map(), shards = null;
   const detailedNodes = new Map();
   let matchIndex = null, matchPromise = null, matchError = '';
@@ -570,7 +572,7 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
 
   function start() {
     if (!startPromise) startPromise = (async () => {
-      if (!prefetchedMatchBytes && /^[a-f0-9]{64}$/.test(dataset.matches_sha256 ?? '')) {
+      if (!deferMatches && !prefetchedMatchBytes && /^[a-f0-9]{64}$/.test(dataset.matches_sha256 ?? '')) {
         const url = `${publicAssetUrl(root, 'syzygy/matches.json')}?v=${dataset.matches_sha256}`;
         prefetchedMatchBytes = fetch(url).then(r => r.ok ? r.arrayBuffer() : null).catch(() => null);
       }
@@ -582,7 +584,7 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
       graph.nodes.forEach((node,i) => semanticPositions.push(layerPosition(node,i)));
       geoPoints = makePoints('geo'); semanticPoints = makePoints('semantic'); updateDimension();
       rendererCount();
-      ensureMatches().catch(error => { console.warn('Automatic portal matches unavailable:', error); });
+      if (!deferMatches) ensureMatches().catch(error => { console.warn('Automatic portal matches unavailable:', error); });
       return graph;
     })().catch(error=>{startPromise=null;throw error;});
     return startPromise;

@@ -1,5 +1,6 @@
 import { lazy, Suspense, useCallback, useEffect, useMemo, useState, type CSSProperties, type Dispatch, type SetStateAction } from 'react';
 import { CollectionGuide } from './CollectionGuide';
+import { isCompactViewport } from './compactViewport';
 import { nodeContentGroup, type ContentGroup, type Region } from './catalogueBrowse';
 import { DossierComparison } from './DossierComparison';
 import { BRAND_MARK_SVG } from './engraving';
@@ -478,6 +479,9 @@ export function App() {
   }, [attempt, directLife, pendingMode]);
   useEffect(() => {
     if (!snapshot?.details_file || detailsRequested) return;
+    // On phones the full text is substantial; fetch it when a reader asks for
+    // a story or source search, not while the initial map is still loading.
+    if (!new URL(window.location.href).searchParams.has('story') && isCompactViewport()) return;
     const timer = window.setTimeout(() => setDetailsRequested(true),
       new URL(window.location.href).searchParams.has('story') ? 0 : 4000);
     return () => window.clearTimeout(timer);

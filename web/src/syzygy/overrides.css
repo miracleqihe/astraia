@@ -42,6 +42,7 @@
   border: 1px solid rgba(207, 169, 98, 0.34);
   font-size: 12px;
 }
+.syzygy-loading-retry { padding: 5px 9px; border: 1px solid rgba(207, 169, 98, .55); color: #f6e3b9; }
 
 /* Rock-solid Fixed Observatory Shell Geometry (independent of static Tailwind subset) */
 #context-banner {
@@ -1889,4 +1890,32 @@ body[data-left-open='true'] .taxonomy-explorer {
   #btn-open-left, #btn-open-right { top: 103px; }
   #observatory-dock { width: calc(100vw - 24px); justify-content: space-around; gap: 0; }
   #observatory-dock button { padding-inline: 4px; font-size: 10.5px; }
+}
+
+@media (max-width: 760px) and (min-height: 501px) {
+  #syzygy-header { grid-template-rows: 40px 44px; height: 98px; }
+  #syzygy-header > nav .dim-tab { min-height: 44px; }
+  .astrolabe-bezel { top: 98px; }
+  #btn-open-left, #btn-open-right { top: 106px; min-height: 44px; touch-action: manipulation; }
+  #left-drawer, #right-drawer { top: 156px; }
+  #btn-close-left, #btn-close-right { min-height: 44px; padding-inline: 9px; touch-action: manipulation; }
+  #observatory-dock button { min-height: 44px; touch-action: manipulation; }
+  #context-banner { top: 156px; }
+  .syzygy-loading { top: auto; bottom: max(68px, calc(env(safe-area-inset-bottom) + 56px)); max-width: calc(100vw - 32px); text-align: center; pointer-events: none; }
+  .syzygy-loading[role='alert'] { pointer-events: auto; }
+}
+
+@media (max-width: 760px), (max-width: 1100px) and (max-height: 500px) and (pointer: coarse) {
+  /* Two readable stacked leaves are more useful than two narrow columns. */
+  #btn-open-left, #btn-open-right, #btn-close-left, #btn-close-right { min-height: 40px; padding-inline: 9px; touch-action: manipulation; }
+  .syzygy-loading { pointer-events: none; }
+  .syzygy-loading[role='alert'] { pointer-events: auto; }
+  #right-drawer > div:first-of-type { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  #right-drawer > div:first-of-type > div:first-child { justify-content: space-between; min-width: 0; }
+  #right-drawer > div:first-of-type > div:last-child { justify-content: flex-end; }
+  .syzygy-spread-btn { display: inline-flex; align-items: center; min-height: 40px; touch-action: manipulation; }
+  .codex-theme-switch button { min-height: 36px; touch-action: manipulation; }
+  #right-drawer.codex-spread .syzygy-dual-body { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  #right-drawer.codex-spread .syzygy-dual-body > .physis-pane { border-left: 0; border-top: 1px solid var(--engrave-line, rgba(207, 169, 98, .34)); }
+  .syzygy-jump-tabs button { min-height: 40px; touch-action: manipulation; }
 }

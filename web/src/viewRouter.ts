@@ -1,6 +1,8 @@
+import { isCompactViewport } from './compactViewport';
+
 /** Keep the existing classic and Syzygy renderers alive while switching views. */
 type Mode = 'classic' | 'syzygy';
-type RouteMessage = { type: 'astraia:navigate' | 'astraia:state' | 'astraia:ready' | 'astraia:visibility'; url?: string; active?: boolean };
+type RouteMessage = { type: 'astraia:navigate' | 'astraia:state' | 'astraia:ready' | 'astraia:visibility' | 'astraia:ping'; url?: string; active?: boolean };
 const origin = window.location.origin;
 const base = new URL(import.meta.env.BASE_URL, origin).pathname.replace(/\/?$/, '/');
 const embedded = window.parent !== window && window.name === 'astraia-view';
@@ -42,12 +44,18 @@ export function initViewRouter() {
     frame = document.createElement('iframe'); frame.name = 'astraia-view'; frame.title = 'Astraia 图谱视图';
     Object.assign(frame.style, {position:'fixed',inset:'0',width:'100%',height:'100%',border:'0',zIndex:'10000',background:'#080d18'});
     frame.src=url;
-    frame.addEventListener('load',()=>{frameReady=false;});
+    frame.addEventListener('load',()=>{frameReady=false; sendFrame({type:'astraia:ping'});});
     document.body.append(frame);
   };
   const switchTo = (href: string, addHistory: boolean) => {
     const target=new URL(href,location.href), mode=modeOf(target);
     if (!mode) return;
+    // A phone should not keep two full 3D scenes and their large downloads
+    // alive at once. The URL already carries the selected story and filters.
+    if (!embedded && mode !== hostMode && isCompactViewport()) {
+      if (addHistory) location.assign(target.href); else location.replace(target.href);
+      return;
+    }
     if (addHistory) push({astraiaView:true},'',target.href);
     if (mode === hostMode) {
       shown=false; desired=null;
@@ -74,6 +82,7 @@ export function initViewRouter() {
     const message=event.data as RouteMessage | null;
     if (event.origin !== origin || !message || typeof message.type !== 'string') return;
     if (embedded && event.source === window.parent) {
+      if (message.type === 'astraia:ping' && ready) sendParent({type:'astraia:ready'});
       if (message.type === 'astraia:visibility') active(message.active === true);
       if (message.type === 'astraia:navigate' && typeof message.url === 'string') {
         const target=new URL(message.url,location.href);
@@ -93,7 +102,7 @@ export function initViewRouter() {
         const target=new URL(message.url,location.href);
         if (modeOf(target) === hostMode) switchTo(target.href,true);
       }
-      if (message.type === 'astraia:state' && shown && typeof message.url === 'string') {
+      if (message.type === 'astraia:state' && shown && frameReady && typeof message.url === 'string') {
         const target=new URL(message.url,location.href);
         if (modeOf(target) && modeOf(target) !== hostMode) { desired=target.href; replace(history.state,'',target.href); }
       }
