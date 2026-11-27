@@ -1,0 +1,491 @@
+# Phase 7: source-linked cases and curated thematic bridges.
+records:
+- id: case_cn_hanyi_festival_winter_robes
+  title: 辽宁丹东与华北｜十月朝寒衣节“送寒衣”焚纸祭祖仪俗
+  aliases:
+  - 十月朝送寒衣
+  - 寒衣节烧寒衣
+  - 十月初一烧衣节
+  - 鬼节寒衣俗
+  genre: historical_archive
+  credibility_tier: A
+  note_kind: history
+  location:
+    lat: 40.1273
+    lng: 124.3849
+    precision: city
+    location_name: 中国辽宁丹东（并参华北及江南岁时传统）
+    culture_region: 中国 · 东北与华北岁时祭祀区
+  location_note: 地图以丹东市区为地域参考。辞典序一转引的报道涉及东北多个城市，并未给出丹东具体街口；纸衣形制需另据其他资料核对。
+  temporal:
+    year_start: 1127
+    year_end: 1990
+    era_label: 南宋《梦粱录》十月朔祭先至当代田野延续
+    uncertainty_note: 《梦粱录》记南宋十月朔习俗；辞典转引的报纸日期为 1990 年 3 月 9 日，未记明某次丹东焚纸活动的具体发生年份。
+  paragraphs:
+  - 《中国鬼文化大辞典》序一第 9 页转引《上海文化艺术报》1990 年 3 月 9 日的报道，称沈阳、大连、鞍山、本溪、丹东等地在正月十五、清明、七月十五和十月初一等日子可见焚烧黄包装纸的现象。书中这一段是对报纸的转引，并非明确记载 1990 年十月初一的一次实地观察；原报版面尚未独立核对。
+  - 农历十月初一在一些地区有祭祖、送寒衣的习俗。清代《燕京岁时记》记载北京送寒衣的风俗；《梦粱录》卷六则记十月初朝廷授衣及士庶扫墓。两者可作为不同时代的文献对读，不应将其细节直接套入丹东的转引报道。
+  sources:
+  - citation: 徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994），序一转引《上海文化艺术报》1990 年 3 月 9 日第 4 版。
+    type: folklore_compilation
+    locator: 序一，印页 9；仅核对辞典中的转引，尚未独立查验原报版面。
+  - citation: 清·富察敦崇《燕京岁时记》（十月初一“送寒衣”北京风俗条目）
+    type: primary_text
+    url: https://zh.wikisource.org/wiki/%E7%87%95%E4%BA%AC%E6%AD%B2%E6%99%82%E8%A8%98
+    locator: 十月初一送寒衣条
+  - citation: 南宋·吴自牧《梦粱录》（十月朔岁时祭先与冬服旧例）
+    type: primary_text
+    url: https://zh.wikisource.org/wiki/%E5%A4%A2%E7%B2%B1%E9%8C%84/%E5%8D%B706
+    locator: 卷六·十月朔条
+  - citation: Wikipedia, "Joss paper" (Chinese paper offerings and winter clothing offerings background)
+    type: reference
+    url: https://en.wikipedia.org/wiki/Joss_paper
+    locator: Traditional paper garments / Ghost festival and October 1st seasonal burning overview
+  motifs:
+  - motif_cn_nuo_funeral_liminal_rites
+  - index_ocm_776
+  compare:
+  - case_cn_tw_keelung_zhongyuan
+  - case_cn_zhongyuan_lantern_traditions
+  - corpus_theme_ancestor_returns
+  - theory_liminality_rites_passage
+  bridge:
+    entry: REL-5-0003
+    cluster: sid_hag
+    trail: all
+    label: 岁时御寒：从十月朝剪纸焚衣到祖先纪念的季节节律
+    rationale: 主题对读将华北与丹东十月初一焚送纸衣的岁时实践，与世界宗教学“祖先纪念、祭祀实践与家庭记忆”并置参看，观察气候转寒如何通过物质供品延续家庭照料感，并不等同于直接因果推论。
+    id: SYZ-635
+- id: case_cn_quanzhou_dachengxi_soul_rescue
+  title: 福建泉州｜打城戏“打地下城破狱”宗教法事戏剧体系
+  aliases:
+  - 泉州打城戏
+  - 闽南法事戏
+  - 和尚戏与道士戏
+  genre: historical_archive
+  credibility_tier: A
+  note_kind: history
+  location:
+    lat: 24.9075
+    lng: 118.5858
+    precision: city
+    location_name: 中国福建泉州（鲤城、晋江、南安一带）
+    culture_region: 中国 · 闽南沿海法事戏俗区
+  location_note: 泉州打城戏发源于清代咸丰至光绪年间的泉州府及晋江、南安、厦门一带僧道普度超度道场，2008 年列入国家级非物质文化遗产代表性项目名录，现存传习所设于泉州市区。
+  temporal:
+    year_start: 1851
+    year_end: 2012
+    era_label: 清咸丰道场演变、光绪十七年成班至今传承
+    uncertainty_note: 其科仪底本与傀儡法乐远承宋元闽南“做功德”与目连戏传统；目前地方档案与戏曲史可确证的独立“打城戏”班社史实大约在清咸丰至光绪十七年（1891）前后渐趋定型。
+  paragraphs:
+  - 泉州打城戏又称法事戏、和尚戏或道士戏，是在僧道法事仪式基础上发展起来的地方戏曲，流行于泉州、晋江等地。演出与“做功德”等民间仪式有关，也有叠桌翻跳、吃火吐火和鬼舞等表演。
+  - 泉州市人民政府资料将其发端归于清代咸丰年间，并称光绪十七年形成戏班；相关研究对形成过程仍有讨论。2008 年，打城戏列入第二批国家级非物质文化遗产代表性项目名录。此处与《中国鬼文化大辞典》的鬼戏分类作主题对读，不能据此认定字典记载了本条所有地方戏细节。
+  sources:
+  - citation: 中国非物质文化遗产网：国家级代表性项目“打城戏”。
+    type: institutional_record
+    url: https://www.ihchina.cn/project_details/13512
+    locator: 项目编号Ⅳ-114；2008年第二批名录及项目介绍。
+  - citation: 泉州市人民政府，泉州打城戏。
+    type: institutional_record
+    url: https://quanzhou.gov.cn/lyb/lswh/dfxj/201510/t20151029_181675.htm
+    locator: 地方戏剧资料：起源与戏班形成的说法。
+  - citation: 徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994）。
+    type: folklore_compilation
+    locator: 鬼戏分类作书目对读；本次未逐条核实相关辞条。
+  motifs:
+  - motif_cn_zhiguai_ghost_opera
+  - motif_cn_nuo_funeral_liminal_rites
+  compare:
+  - case_cn_qimen_mulian_opera
+  - case_cn_minnan_wangchuan_plague_ship
+  - corpus_cn_underworld_scriptures_opera
+  - corpus_cn_ich_2006_08
+  bridge:
+    entry: REL-3-0005
+    cluster: sid_hag
+    trail: all
+    label: 破狱声景：打城戏法乐、高桌扑跌与仪式的身体动员
+    rationale: 主题对读将泉州打城戏借佛道法乐、假面“开大笼”与高难度南少林翻扑来模拟地府破狱的现场，与“宗教仪式的音乐与身体实践”并置对照，呈现声音节奏与身体绝活如何共同组织信仰注意力。
+    id: SYZ-636
+- id: case_cn_yijian_changgui_tiger_ghost
+  title: 唐代宣州｜《太平广记》〈宣州儿〉与伥鬼故事
+  aliases:
+  - 为虎作伥
+  - 宣州儿虎伥故事
+  - 虎伥鬼传说
+  genre: folktale
+  credibility_tier: A
+  note_kind: story
+  location:
+    lat: 30.9407
+    lng: 118.7587
+    precision: city
+    location_name: 中国安徽宣城（唐代宣州治所，并及江南与巴蜀多虎山区）
+    culture_region: 中国 · 江南皖南与巴蜀山地志怪区
+  location_note: 《宣州儿》叙事地点为唐代宣州；地图采用今安徽宣城市区作区域参考，并不表示故事发生在该市区的具体地点。
+  temporal:
+    year_start: 713
+    year_end: 978
+    era_label: 唐代《广异记》故事，收入北宋《太平广记》
+    uncertainty_note: 虽先秦两汉已有畏虎言说，但“人死化鬼反为虎前导”的定型叙事主要见于盛唐至北宋《太平广记》卷四二八前后所辑笔记，并经明清熟语凝固为“为虎作伥”。
+  paragraphs:
+  - 《太平广记》卷四百二十八〈宣州儿〉注明出自《广异记》。故事说，宣州一名孩子多次看见鬼引虎追赶，预料自己若被虎吃掉也会成为伥，于是请家人在路上设陷阱。后来他果然死于虎口，并托梦提示父亲设阱；父亲与村人最终捉到老虎。这是志怪叙事，不能据此证实故事人物或事件。
+  - 同书卷四百三十〈马拯〉另有一群伥鬼走在虎前、触发猎人弩机的情节；它与〈宣州儿〉是不同故事，不应合并为同一情节。伥鬼母题后来也常用来讨论受害者被迫帮助施害者的处境，但各文本的结局并不相同。
+  sources:
+  - citation: 李昉等编《太平广记》卷四百二十八〈宣州儿〉，注明出《广异记》。
+    type: primary_text
+    url: https://zh.wikisource.org/zh-hans/%E5%A4%AA%E5%B9%B3%E5%BB%A3%E8%A8%98/%E5%8D%B7%E7%AC%AC428
+    locator: 卷四百二十八·虎三·宣州儿。
+  - citation: 李昉等编《太平广记》卷四百三十〈马拯〉。
+    type: primary_text
+    url: https://zh.wikisource.org/zh-hans/%E5%A4%AA%E5%B9%B3%E5%BB%A3%E8%A8%98/%E5%8D%B7%E7%AC%AC430
+    locator: 卷四百三十·虎五·马拯；另一则伥鬼叙事。
+  - citation: 徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994）。
+    type: folklore_compilation
+    locator: 鬼名分类作书目对读；具体词条页码尚待核对。
+  motifs:
+  - motif_cn_ethnic_spirits_marvels
+  - motif_cn_zhiguai_ghost_opera
+  compare:
+  - case_cn_yijian_night_lantern
+  - case_cn_soushen_ganjiang_moye
+  - corpus_chinese_tale_catalogues
+  - theory_bascom_prose_genres
+  bridge:
+    entry: LIT-2-0004
+    cluster: sid_myth
+    trail: all
+    label: 受害与附从：由宣州伥鬼传说读“叙事伦理与读者契约”
+    rationale: 主题对读将唐宋笔记里虎噬死魂被迫充当向导、在服役与报信间挣扎的“伥鬼”结构，与“小说——叙事伦理与读者契约”并置阅读，探讨民间故事如何安排发言位置与道德审判（仅作主题参照，不作直接传播证明）。
+    id: SYZ-637
+- id: case_cn_eastern_han_dou_song_wugu
+  title: 东汉洛阳｜建初七年窦皇后与宋贵人巫蛊宫禁狱案（82 CE）
+  aliases:
+  - 东汉宋贵人挟邪媚道案
+  - 建初七年窦后构陷案
+  - 生菟厌魅东宫易储狱
+  genre: historical_archive
+  credibility_tier: A
+  note_kind: history
+  location:
+    lat: 34.725
+    lng: 112.596
+    precision: city
+    location_name: 中国河南洛阳（东汉洛阳南宫掖庭及北寺狱史料参照）
+    culture_region: 中国 · 汉魏宫廷巫蛊政争与外戚狱案区
+  location_note: 东汉章帝朝洛阳宫城与北寺狱发生此案，坐标取汉魏洛阳故城区域作都城史料参照。
+  temporal:
+    year_start: 82
+    year_end: 82
+    era_label: 东汉建初七年（82 CE）
+    uncertainty_note: 《后汉书·皇后纪上》与《清河孝王庆传》均明载汉章帝建初七年六月案发、废太子庆而宋贵人姊妹自杀，年月精确。
+  paragraphs:
+  - 《后汉书·清河孝王庆传》记载，宋贵人病中写信让家人求取“生菟”，信被窦皇后截获。窦后据此诬称她以此施行蛊道祝诅，宋氏母子逐渐失宠。建初七年（82 年），太子刘庆被废为清河王，宋贵人姐妹经审讯后服药自尽。原文所称“生菟”在此保留原字，不将其解释为未经核实的食物或药材。
+  - 邓启耀《巫蛊》第五章第二节在讨论权争与巫蛊时引述这段《后汉书》材料。可将其作为史书所记宫廷指控与权力竞争的案例；文献中的指控不等于宋贵人确有施蛊行为。
+  sources:
+  - citation: 范晔《后汉书·卷五十五·清河孝王庆传》，维基文库校本。
+    type: primary_text
+    url: https://zh.wikisource.org/wiki/%E5%BE%8C%E6%BC%A2%E6%9B%B8/%E5%8D%B755
+    locator: 清河孝王庆传，宋贵人“病思生菟”及废太子记载。
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》（桂林：广西师范大学出版社，2025）。
+    type: scholarly_monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第五章第二节“权争与巫蛊之祸”，引《后汉书·清河王庆传》；电子版无固定纸书页码，链接为书目介绍。
+  motifs:
+  - motif_cn_wugu_poison_complex
+  - index_ocm_754
+  compare:
+  - corpus_cn_imperial_wugu_statutes
+  - mech_gu_sorcery_social_scapegoat
+  - case_cn_han_wugu_91bce
+  - case_cn_sui_dugu_tuo_maogui
+  bridge:
+    id: SYZ-638
+    entry: HIS-6-0006
+    cluster: sid_witch
+    trail: all
+    label: 东汉窦后诬宋贵人巫蛊案与史料沉默
+    rationale: 观察宫禁内廷外戚权争如何借不可证伪的“挟邪媚道”清洗储位，以及正史胜负叙事下失声者的留痕结构。
+- id: case_cn_zhouli_shushi_chugu
+  title: 东周洛邑｜《周礼·秋官·庶氏》“除毒蛊”官制与先秦祛蛊双轨源流
+  aliases:
+  - 周礼庶氏掌除毒蛊
+  - 攻说禬之嘉草攻之
+  - 先秦祛蛊官职典制
+  genre: historical_archive
+  credibility_tier: A
+  note_kind: history
+  location:
+    lat: 34.62
+    lng: 112.454
+    precision: city
+    location_name: 中国河南洛阳（东周成周王畿《周礼》礼制史料参照）
+    culture_region: 中国 · 先秦王制礼典与除毒蛊官制区
+  location_note: 《周礼》礼制构想与成书渊源多系于东周王室与齐鲁礼学，地图取东周王畿洛邑区域作典制参照。
+  temporal:
+    year_start: -475
+    year_end: -221
+    era_label: 战国时期（《周礼》定型编纂年代下限参照，约前475—前221年）
+    uncertainty_note: 《周礼》所载官制兼具历史制度遗存与战国理想化政典重构属性，成书于战国中晚期至汉代显传，此处按战国典章区间标定。
+  paragraphs:
+  - 《周礼·秋官司寇》记有“庶氏”掌除毒蛊，并列出“攻说”和“嘉草”等做法。邓启耀《巫蛊》第二章第一节引用此条及郑玄注释，讨论祈祭和药草熏治的不同解释。
+  - 《周礼》是一部礼制文本；其中职官安排并不能单独证明这些制度在每个时期都按文本实际运行。把它与《左传》中的论蛊段落并读，可以看到古代文本对虫、病与蛊的不同表述，但不宜直接认定后世法律和医疗传统都由这一官职演化而来。
+  sources:
+  - citation: 《周礼·秋官司寇》（“庶氏掌除毒蛊”及相关除虫驱祟下士职掌），中国哲学书电子化计划（CText）。
+    type: primary_text
+    url: https://ctext.org/rites-of-zhou/qiu-guan-si-kou/zh
+    locator: 秋官司寇·庶氏／剪氏／赤犮氏／壶涿氏条
+  - citation: 《春秋左传·昭公元年》（晋侯求医与秦医和论“皿虫为蛊、谷之飞亦为蛊”），中国哲学书电子化计划（CText）。
+    type: primary_text
+    url: https://ctext.org/chun-qiu-zuo-zhuan/zhao-gong-yuan-nian
+    locator: 昭公元年·医和论蛊
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》（桂林：广西师范大学出版社，2025），ISBN 978-7-5598-7994-3。
+    type: scholarly_monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第二章第一节“残阙断片话巫蛊”，引《周礼·秋官》及郑玄注；电子版无固定纸书页码，链接为书目介绍。
+  motifs:
+  - motif_cn_wugu_poison_complex
+  - motif_cn_zhuyou_incantation_craft
+  compare:
+  - corpus_cn_imperial_wugu_statutes
+  - case_cn_qin_zuchu_wen_curse
+  - case_cn_tang_code_gu_statute
+  bridge:
+    id: SYZ-639
+    entry: SOC-2-0002
+    cluster: sid_witch
+    trail: all
+    label: 先秦“庶氏”除蛊官制与后世医律分流
+    rationale: 追踪先秦国家官制如何在同一职掌内兼蓄“攻说祈禳”与“嘉草攻毒”，又如何在秦汉以后分化为临床医方与十恶重刑两条制度脉络。
+- id: case_cn_southwest_gu_ordeal_judgment
+  title: 云南怒江｜口述中的捞油锅神判与村社纠纷
+  aliases:
+  - 怒江神判口述
+  - 捞油锅与村社纠纷
+  - 巫蛊指控与习惯法
+  genre: memorate
+  credibility_tier: B
+  note_kind: research
+  location:
+    lat: 25.8176
+    lng: 98.8565
+    precision: culture_region
+    location_name: 中国云南怒江州（区域参考）
+    culture_region: 中国 · 云南怒江
+  location_note: 书中转述云南怒江文史资料中的村庄口述；地图点取怒江州府附近作为区域参考，不代表所述村庄的具体位置。
+  temporal:
+    year_start: 1929
+    year_end: 1929
+    era_label: 口述资料所述 1929 年
+    uncertainty_note: 时间据邓启耀转引的地方文史口述，原始采访记录尚未独立核对。
+  paragraphs:
+  - 邓启耀《巫蛊》第八章第一节转引云南怒江文史资料中的傈僳族口述：1929 年，一场关于“杀魂”的指控引发村社纠纷，被指控者被要求以捞油锅接受神判；书中说其手被烫伤，随后产生赔偿和驱逐争议。这里记录的是书中转述的口述材料，不把指控当成事实。
+  - 这则材料呈现了以身体伤害和集体压力处理争议的危险，也说明口述者如何回忆当地纠纷。它不能证明某种神异力量，也不足以推断西南所有村寨都采用相同程序；具体地点、当事人口述及原始文史材料仍待进一步核对。
+  sources:
+  - citation: 邓启耀：《巫蛊：中国文化的历史暗流》（桂林：广西师范大学出版社，2025）。
+    type: scholarly_monograph
+    url: https://book.douban.com/subject/37310453/
+    locator: 第八章第一节“习惯法对巫蛊的惩治”，转引云南怒江文史资料及马提口述；电子版无固定纸书页码，原始文史记录未独立核对。
+  - citation: 怒江傈僳族自治州，地区位置参考。
+    type: reference
+    url: https://zh.wikipedia.org/wiki/%E6%80%92%E6%B1%9F%E5%82%88%E5%83%B3%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E
+    locator: 州府附近坐标，仅为区域显示，不是具体村庄。
+  motifs:
+  - motif_cn_wugu_poison_complex
+  - motif_cn_zhuyou_incantation_craft
+  - index_ocm_754
+  compare:
+  - corpus_cn_imperial_wugu_statutes
+  - mech_gu_sorcery_social_scapegoat
+  - case_cn_southwest_village_gu_stigma_asc
+  - case_cn_kunming_gungu_egg_rite
+  bridge:
+    id: SYZ-640
+    entry: REL-2-0010
+    cluster: sid_witch
+    trail: all
+    label: 口述中的神判与村社纠纷
+    rationale: 将书中转述的怒江口述材料与社会压力、指控及纠纷的知识条目并读；主题关联不等于已经证实事件的因果机制。
+  map_label: 云南怒江（州府附近作区域参考）
+- id: case_cn_dujiangyan_libing_stone_rhino
+  title: 四川都江堰｜李冰“五石犀”镇水厌胜仪制与成都考古石犀考
+  aliases:
+  - 李冰石犀镇水
+  - 五石犀厌水精
+  - 成都天府广场石犀
+  - 都江堰水则石犀
+  - Li Bing Stone Rhinoceroses
+  genre: historical_archive
+  credibility_tier: A
+  note_kind: history
+  location:
+    lat: 31.0005
+    lng: 103.6105
+    precision: city
+    location_name: 中国四川成都都江堰（战国秦蜀守李冰“石犀镇水”与鱼嘴分水古堰参照区）
+    culture_region: 中国 · 川西岷江冲积扇治水工程与镇水信仰区
+  location_note: 古籍记李冰于蜀郡修都江堰并刻立石犀五头厌镇水精、分置石犀渠与府市石牛门；坐标取都江堰鱼嘴古堰参照点，成都天府广场考古遗址亦同属成都平原岷江水系文化带。
+  temporal:
+    year_start: -256
+    year_end: 2013
+    era_label: 战国秦昭王后期李冰治蜀（约前 256 年）至 2012–2013 年成都天府广场石犀发掘期
+    uncertainty_note: 《华阳国志》《水经注》追述战国秦李冰作五石犀厌水精事；2012 年底成都天府广场东侧出土重逾八吨红砂岩圆雕石犀，地层与风格断代多系于秦汉至西晋间。
+  paragraphs:
+  - 《华阳国志》记述李冰治水时制作五头石犀以“厌水精”。这一叙述属于古人对治水与镇护的记载；另有石人测水位的文献线索，不能把石人的水位标记直接说成每头石犀的功能。
+  - 2012 年底至 2013 年初，成都天府广场东北侧出土一尊巨型红砂岩石犀，现藏成都博物馆。博物馆研究者提出它可能是文献所记石犀之一；由于缺少决定性证据，其确切年代及与李冰五石犀的关系仍应保留讨论空间。出土实物不能单独证明当地持续存在沉水石犀的习俗。
+  - 都江堰工程与石犀叙述可以分别作为水利工程和象征性镇护的阅读线索。两者并置不等于证明石犀具有控制洪水的作用。
+  sources:
+  - citation: 〔东晋〕常璩撰，《华阳国志·卷三·蜀志》，维基文库校本。
+    type: historical_text_transcription
+    url: https://zh.wikisource.org/wiki/%E8%8F%AF%E9%99%BD%E5%9C%8B%E5%BF%97
+    locator: 《蜀志》李冰壅江作堋与“外作石犀五头，以厌水精”原文
+  - citation: 〔北魏〕郦道元注，《水经注·卷三十三·江水》，中国哲学书电子化计划（CText）。
+    type: primary_text
+    url: https://ctext.org/shui-jing-zhu
+    locator: 《江水》石犀渊、石牛门及都江堰渠系引述旧闻
+  - citation: 成都博物馆：两千多年前蜀人为何雕刻石犀。
+    type: museum_record
+    url: https://cdmuseum.com/xinwen/202305/3181.html
+    locator: 出土地点、文献对读及研究者对石犀身份的判断。
+  - citation: 陶思炎：《中国镇物》，台北：东大图书公司“沧海美术·艺术特辑”，1998，ISBN 957-19-2210-2。
+    type: academic_monograph
+    locator: 目次第五章第一节“一、路桥镇物”（印页 214–219 范围）及第七章第二节“一、抗天镇物”（印页 313–322 范围）；目录经扫描图核对，具体内页未逐页核对
+  compare:
+  - theory_zhenwu_four_pervasiveness
+  - mech_zhenwu_symbolic_materialization
+  - case_cn_puzhou_iron_ox_flood_ward
+  - case_cn_tao_w3_hongze_iron_ox
+  - case_cn_tao_w3_xingyang_baizui_iron_ox
+  motifs:
+  - motif_cn_yansheng_talisman_seal
+  - motif_cn_zhenwu_material_taxonomy
+  - index_ocm_776
+  bridge:
+    id: SYZ-641
+    entry: GEO-LAND-0011
+    cluster: sid_myth
+    trail: all
+    label: 石犀镇水叙述与都江堰工程
+    rationale: 将古籍中的石犀镇水叙述与都江堰水利及河流地貌知识并置；实物身份和象征意义均不预设为已证实的工程因果。
+- id: case_cn_minzhe_boat_eye_dotting
+  title: 闽浙沿海｜传统木船“画眼点睛”礼仪与行船镇风辟蛟民俗
+  aliases:
+  - 木船画眼点睛
+  - 安船眼
+  - 福船点睛开光
+  - 舟眼辟蛟民俗
+  - Boat Eye Dotting Ritual
+  genre: folktale
+  credibility_tier: A
+  note_kind: story
+  location:
+    lat: 26.0745
+    lng: 119.2965
+    precision: culture_region
+    location_name: 中国福建福州及泉州、浙南沿海（传统福船造船与木船“画眼点睛”礼仪核心区）
+    culture_region: 中国 · 闽浙东南沿海造船民俗与行船镇物区
+  location_note: 福船“画眼点睛”开光礼与船眼朝向规制流传于福建福州、泉州晋江、宁德蕉城及浙江温州、台州玉环等沿海造船港湾，坐标取福州闽江口作东南造船民俗参照区。
+  temporal:
+    year_start: 1178
+    year_end: 2010
+    era_label: 宋明闽浙远洋海舟兴盛期至 2010 年水密隔舱福船技艺列入联合国急需保护非遗
+    uncertainty_note: 宋明文献《岭外代答》《天工开物》《东西洋考》详记福船远航形制与船工祭海信俗；近现代民俗采录（参照《中国镇物》水行镇物及浙闽沿海民间传说）完整保留了点睛开光仪节细节。
+  paragraphs:
+  - 在福建与浙江沿海的传统木质海船、福船及渔船建造工坊里，船体合龙、水密隔舱砌缝竣工而尚未滑轨下水之际，必举行庄重严谨的“画眼点睛”（又称“安船眼”“开光点龙睛”）仪礼。造船匠首依据船型功能严格设定船首两侧凸雕木眼的瞳孔朝向：远洋商船与福船须将黑睛画作平视正前方，取“瞭望风信、明辨航道暗礁”之意；近海作业渔船则令黑睛微斜向下俯视，寄寓“洞见海底鱼群虾蟹”；而地方口述（如浙江玉环《船眼的传说》）更衍生出渔家孝女捐眼指引父亲避礁的动人母题。
+  - 这场点睛仪礼构成整套水行镇物链条的最终激活环节：待船身内部先依序封入钱币、镜片或“船灵魂”木块后，未点睛的船眼暂以红绸遮覆，寓意尚待通灵。下水吉时一到，船主与掌墨师先备三牲糕果敬拜妈祖与水府龙神，随即用新毛笔蘸朱砂墨或雄鸡冠血点亮眼仁、揭落红布并鸣放鞭炮敲锣催船入海，期盼新船由此获得“自辨危途、震慑风浪蛟龙”的生灵感知（行旅水神镇物线索参照陶思炎 1998 书目）。
+  - 将“画眼点睛”仪式与 2010 年列入联合国教科文组织急需保护名录的“水密隔舱福船制造技艺”并置阅读，能够清楚区分航海信心仪轨与造船物理科学：福船之所以在宋元以来远航南洋抗击风浪，依靠的是横置水密隔舱板阻断局部破损进水、樟松木榫接与桐油灰麻绳捻缝密闭，以及罗盘、牵星板与季风经验；船首木眼并无光学探鱼或物理驱蛟之功，但它作为完工验收、敬海戒慎与全船船员出海前的集体安全动员，长期发挥着稳固海员心理定力与协作纪律的作用。
+  sources:
+  - citation: 〔明〕宋应星撰，《天工开物·卷九·舟车》，维基文库校本。
+    type: historical_text_transcription
+    url: https://zh.wikisource.org/wiki/%E5%A4%A9%E5%B7%A5%E9%96%8B%E7%89%A9/%E8%88%9F%E8%BB%8A
+    locator: 《舟车》海舟、福船构造形制及风信操舟记载
+  - citation: 〔明〕张燮撰，《东西洋考》，维基文库校本。
+    type: historical_text_transcription
+    url: https://zh.wikisource.org/wiki/%E6%9D%B1%E8%A5%BF%E6%B4%8B%E8%80%83
+    locator: 卷九《舟师考》航海针路、祭海祈风与闽海船东旧俗
+  - citation: 中国非物质文化遗产网：水密隔舱福船。
+    type: institutional_record
+    url: https://www.ihchina.cn/project_details/10729
+    locator: 福船龙目形式、造船技艺和仪式介绍。
+  - citation: 陶思炎：《中国镇物》，台北：东大图书公司“沧海美术·艺术特辑”，1998，ISBN 957-19-2210-2。
+    type: academic_monograph
+    locator: 目次第五章第二节行旅镇物“二、水行镇物”（印页 234–241 范围）；目录经扫描图核对，具体内页未逐页核对
+  compare:
+  - theory_zhenwu_four_pervasiveness
+  - mech_zhenwu_symbolic_materialization
+  - case_cn_yuhuan_2008_p056
+  - case_cn_tao_w3_zhoushan_boat_soul
+  - case_cn_tao_jiangsu_anhui_yangsi_water_god
+  - case_cn_meizhou_mazu_tideng
+  motifs:
+  - motif_cn_zhenwu_material_taxonomy
+  - motif_cn_household_apotropaic_guardians
+  - index_ocm_776
+  bridge:
+    id: SYZ-642
+    entry: REL-5-0043
+    cluster: sid_myth
+    trail: all
+    label: 舟眼开光仪式与福船水密隔舱
+    rationale: 将闽浙木船下水“画眼点睛”避蛟辟浪的开光镇护仪式，与非遗“水密隔舱福船制造技艺”中靠横壁分舱限制进水的真实船舶工程构造并读。
+- id: case_cn_fengxiang_clay_tiger_guardian
+  title: 陕西凤翔｜六营村彩绘泥塑“镇宅神虎”与木版门画护宅习俗
+  aliases:
+  - 凤翔泥塑镇宅神虎
+  - 凤翔挂虎
+  - 镇宅泥虎
+  - 凤翔木版神虎门画
+  - Fengxiang Clay Guardian Tiger
+  genre: folktale
+  credibility_tier: A
+  note_kind: story
+  location:
+    lat: 34.525
+    lng: 107.435
+    precision: city
+    location_name: 中国陕西宝鸡凤翔区城关镇六营村（凤翔彩绘泥塑与民间木版镇宅神虎核心区）
+    culture_region: 中国 · 关中秦陇民间彩绘泥塑与门画镇物区
+  location_note: 陕西凤翔彩绘泥塑（当地称“泥货”）及木版年画镇宅虎长期集中制作于宝鸡凤翔城关镇六营村一带，坐标取凤翔六营村一带作非遗民间工艺地理参照点。
+  temporal:
+    year_start: 1644
+    year_end: 2006
+    era_label: 明清关中泥塑与木版年画兴盛期至 2006 年凤翔泥塑列入首批国家级非遗名录
+    uncertainty_note: 凤翔泥塑的起源有不同说法；2006 年列入首批国家级非物质文化遗产名录。
+  paragraphs:
+  - 在陕西关中凤翔（古称雍州）城关镇六营村一带世代传承的彩绘泥塑（俗称“泥货”“泥耍货”）与木版年画体系中，最受乡民珍视的并非单纯陈设玩赏，而是兼负护宅与护幼之职的“镇宅神虎”（包括墙面悬挂的彩绘虎头“挂虎”、立座“坐虎”以及木版套印的“下山虎”门画）。匠人取当地板板黄土揉入纸筋与棉花絮，以石膏或泥模压坯阴干后通体刷敷白粉底，再以大红、明绿、黑墨与金黄重彩勾绘火焰双眉、额前大“王”字及莲花石榴暗纹，使威猛山兽呈露出既庄严威吓又饱满喜庆的视觉张力。
+  - 这种户内悬虎传统上承东汉应劭《风俗通义·祀典》所论“虎者，阳物，百兽之长也，能执搏挫锐，噬食鬼魅”。昔日关中农家每遇新屋落成、春节岁换或新生儿满月、周岁之际，亲友常购置凤翔泥塑挂虎或木版镇宅神虎挂于大门门楣、中堂中柱或婴儿床头，既祈求猛虎阻拦疫鬼与邻里邪煞入户，亦祝愿幼童免受夜惊而如虎健壮；此外当地亦配有谷雨“神鸡蝎符”等木版驱虫镇纸，构成由大到小、从屋室至童稚的关中镇物网（参照陶思炎 1998 书目对人工、护儿及岁时镇物的系统梳理）。
+  - 结合 2006 年国家级非遗“凤翔泥塑”保护档案与物质文化史观察，镇宅神虎在当代已实现从“威慑驱鬼厌胜”向“乡土造型艺术与生肖喜庆信物”的温和转型：悬于客厅的虎头挂片本身并无物理防盗或超自然辟邪之力，其真正生命力植根于黄土泥坯加麻絮防裂的朴素材料智慧、关中女性与泥塑世家的手工协作，以及亲友馈赠“泥虎”时传递的护佑亲情；同时当代工艺传承亦强调选用环保安全水彩颜料，避免传统铅白、矿石色料对幼儿日常接触产生安全隐患。
+  sources:
+  - citation: 〔东汉〕应劭撰，《风俗通义·祀典》，中国哲学书电子化计划（CText）。
+    type: primary_text
+    url: https://ctext.org/fengsutongyi/si-dian/zh
+    locator: 《祀典》“虎者，阳物，百兽之长也，能执搏挫锐，噬食鬼魅”原文
+  - citation: 陕西省非物质文化遗产网：凤翔泥塑。
+    type: institutional_record
+    url: https://www.sxfycc.com/home/Index/library_detail.html?id=97
+    locator: 泥塑品类、工艺及 2006 年国家级名录。
+  - citation: Wikipedia, "Fengxiang clay sculpture".
+    type: encyclopedia
+    url: https://en.wikipedia.org/wiki/Fengxiang_clay_sculpture
+    locator: 凤翔泥塑艺术源流、动物护宅造形及非遗保护概述
+  - citation: 陶思炎：《中国镇物》，台北：东大图书公司“沧海美术·艺术特辑”，1998，ISBN 957-19-2210-2。
+    type: academic_monograph
+    locator: 目次第三章第一节“护儿镇物”（印页 136–149 范围）与第四章第二节“宅室镇物”（印页 185–213 范围）；目录经扫描图核对，具体内页未逐页核对
+  compare:
+  - theory_zhenwu_four_pervasiveness
+  - mech_apotropaic_boundary_seal
+  - case_cn_tao_fengxiang_rooster_scorpion_charm
+  - case_cn_duanwu_wudu_tiger_charm
+  - case_cn_han_taofu_shentu_yulei
+  - case_cn_wugu_panyu_tree_tiger_2019
+  motifs:
+  - motif_cn_household_apotropaic_guardians
+  - motif_cn_yansheng_talisman_seal
+  - index_ocm_776
+  bridge:
+    id: SYZ-643
+    entry: REL-5-0062
+    cluster: sid_myth
+    trail: all
+    label: 凤翔镇宅神虎与六营泥货工艺
+    rationale: 将陕西凤翔民间把泥塑挂虎与木版门画悬于门楣床头祈求“噬鬼镇宅、护幼压惊”的传统，与“陕西凤翔泥塑：泥货里的虎头和生肖”条目中泥坯彩绘工序及观察辨识方法对读。

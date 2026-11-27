@@ -6972,5 +6972,104 @@
     "entry": "REL-5-0001",
     "relation": "THEMATIC",
     "rationale": "从造船技艺和海上风险的地方知识阅读，不把信仰与安全技术混为一谈。"
+  },
+  {
+    "id": "SYZ-635",
+    "trail": "all",
+    "label": "岁时御寒：从十月朝剪纸焚衣到祖先纪念的季节节律",
+    "cluster": "sid_hag",
+    "case": "case_cn_hanyi_festival_winter_robes",
+    "related": null,
+    "entry": "REL-5-0003",
+    "relation": "THEMATIC",
+    "rationale": "主题对读将华北与丹东十月初一焚送纸衣的岁时实践，与世界宗教学“祖先纪念、祭祀实践与家庭记忆”并置参看，观察气候转寒如何通过物质供品延续家庭照料感，并不等同于直接因果推论。"
+  },
+  {
+    "id": "SYZ-636",
+    "trail": "all",
+    "label": "破狱声景：打城戏法乐、高桌扑跌与仪式的身体动员",
+    "cluster": "sid_hag",
+    "case": "case_cn_quanzhou_dachengxi_soul_rescue",
+    "related": null,
+    "entry": "REL-3-0005",
+    "relation": "THEMATIC",
+    "rationale": "主题对读将泉州打城戏借佛道法乐、假面“开大笼”与高难度南少林翻扑来模拟地府破狱的现场，与“宗教仪式的音乐与身体实践”并置对照，呈现声音节奏与身体绝活如何共同组织信仰注意力。"
+  },
+  {
+    "id": "SYZ-637",
+    "trail": "all",
+    "label": "受害与附从：由宣州伥鬼传说读“叙事伦理与读者契约”",
+    "cluster": "sid_myth",
+    "case": "case_cn_yijian_changgui_tiger_ghost",
+    "related": null,
+    "entry": "LIT-2-0004",
+    "relation": "THEMATIC",
+    "rationale": "主题对读将唐宋笔记里虎噬死魂被迫充当向导、在服役与报信间挣扎的“伥鬼”结构，与“小说——叙事伦理与读者契约”并置阅读，探讨民间故事如何安排发言位置与道德审判（仅作主题参照，不作直接传播证明）。"
+  },
+  {
+    "id": "SYZ-638",
+    "trail": "all",
+    "label": "东汉窦后诬宋贵人巫蛊案与史料沉默",
+    "cluster": "sid_witch",
+    "case": "case_cn_eastern_han_dou_song_wugu",
+    "related": null,
+    "entry": "HIS-6-0006",
+    "relation": "THEMATIC",
+    "rationale": "观察宫禁内廷外戚权争如何借不可证伪的“挟邪媚道”清洗储位，以及正史胜负叙事下失声者的留痕结构。"
+  },
+  {
+    "id": "SYZ-639",
+    "trail": "all",
+    "label": "先秦“庶氏”除蛊官制与后世医律分流",
+    "cluster": "sid_witch",
+    "case": "case_cn_zhouli_shushi_chugu",
+    "related": null,
+    "entry": "SOC-2-0002",
+    "relation": "THEMATIC",
+    "rationale": "追踪先秦国家官制如何在同一职掌内兼蓄“攻说祈禳”与“嘉草攻毒”，又如何在秦汉以后分化为临床医方与十恶重刑两条制度脉络。"
+  },
+  {
+    "id": "SYZ-640",
+    "trail": "all",
+    "label": "口述中的神判与村社纠纷",
+    "cluster": "sid_witch",
+    "case": "case_cn_southwest_gu_ordeal_judgment",
+    "related": null,
+    "entry": "REL-2-0010",
+    "relation": "THEMATIC",
+    "rationale": "将书中转述的怒江口述材料与社会压力、指控及纠纷的知识条目并读；主题关联不等于已经证实事件的因果机制。"
+  },
+  {
+    "id": "SYZ-641",
+    "trail": "all",
+    "label": "石犀镇水叙述与都江堰工程",
+    "cluster": "sid_myth",
+    "case": "case_cn_dujiangyan_libing_stone_rhino",
+    "related": null,
+    "entry": "GEO-LAND-0011",
+    "relation": "THEMATIC",
+    "rationale": "将古籍中的石犀镇水叙述与都江堰水利及河流地貌知识并置；实物身份和象征意义均不预设为已证实的工程因果。"
+  },
+  {
+    "id": "SYZ-642",
+    "trail": "all",
+    "label": "舟眼开光仪式与福船水密隔舱",
+    "cluster": "sid_myth",
+    "case": "case_cn_minzhe_boat_eye_dotting",
+    "related": null,
+    "entry": "REL-5-0043",
+    "relation": "THEMATIC",
+    "rationale": "将闽浙木船下水“画眼点睛”避蛟辟浪的开光镇护仪式，与非遗“水密隔舱福船制造技艺”中靠横壁分舱限制进水的真实船舶工程构造并读。"
+  },
+  {
+    "id": "SYZ-643",
+    "trail": "all",
+    "label": "凤翔镇宅神虎与六营泥货工艺",
+    "cluster": "sid_myth",
+    "case": "case_cn_fengxiang_clay_tiger_guardian",
+    "related": null,
+    "entry": "REL-5-0062",
+    "relation": "THEMATIC",
+    "rationale": "将陕西凤翔民间把泥塑挂虎与木版门画悬于门楣床头祈求“噬鬼镇宅、护幼压惊”的传统，与“陕西凤翔泥塑：泥货里的虎头和生肖”条目中泥坯彩绘工序及观察辨识方法对读。"
   }
 ]

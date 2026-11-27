@@ -1,0 +1,313 @@
+{
+  "version": 1,
+  "domain_id": "ghost_rituals_nuo",
+  "title": "Phase 7 鬼文化辞条增补：傩仪·中元与招魂丧葬（8 条）",
+  "aligned_reference": "徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994，ISBN 978-7-5363-2780-1）",
+  "entries": [
+    {
+      "id": "lex_p7_ghost_dachengxi_fashi",
+      "domain_id": "ghost_rituals_nuo",
+      "hub_id": "motif_cn_nuo_funeral_liminal_rites",
+      "term": "打城戏（法事救亡戏）",
+      "aliases": [
+        "泉州打城戏",
+        "法事戏",
+        "和尚戏",
+        "道士戏"
+      ],
+      "category": "地方傩舞与五猖祭仪",
+      "gist": "泉州宗教法事与地方戏曲交织的打城戏",
+      "reading_tag": "民间戏俗",
+      "region": "福建泉州、晋江、南安等闽南地区",
+      "era": "清咸丰至光绪成班传承至今（国家级非遗）",
+      "summary": "打城戏又称法事戏、和尚戏或道士戏，在僧道法事基础上发展为泉州、晋江等地的地方戏曲，兼有仪式与舞台表演性质。2008 年列入第二批国家级非物质文化遗产代表性项目名录。\n\n泉州市资料将其发端归于清咸丰年间，称光绪十七年形成戏班；关于具体形成过程仍有研究讨论。",
+      "primary_sources": [
+        {
+          "citation": "中国非物质文化遗产网：国家级代表性项目“打城戏”。",
+          "url": "https://www.ihchina.cn/project_details/13512",
+          "locator": "项目编号Ⅳ-114；2008年第二批名录及项目介绍。"
+        },
+        {
+          "citation": "泉州市人民政府，泉州打城戏。",
+          "url": "https://quanzhou.gov.cn/lyb/lswh/dfxj/201510/t20151029_181675.htm",
+          "locator": "地方戏剧资料：起源与戏班形成的说法。"
+        }
+      ],
+      "secondary_ref": "参见案例《福建泉州｜打城戏“打地下城破狱”宗教法事戏剧体系》（case_cn_quanzhou_dachengxi_soul_rescue），并与徽州目连戏对读。",
+      "case_id": "case_cn_quanzhou_dachengxi_soul_rescue",
+      "knowledge_id": "REL-3-0005",
+      "knowledge_note": "主题对读：将泉州打城戏佛道法乐、假面扑跌与仪式声景，置入“宗教仪式的音乐与身体实践”分析框架。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p7_ghost_yujia_yankou",
+      "domain_id": "ghost_rituals_nuo",
+      "hub_id": "motif_cn_nuo_funeral_liminal_rites",
+      "term": "瑜伽焰口施食仪",
+      "aliases": [
+        "放焰口",
+        "瑜伽焰口",
+        "焰口施食",
+        "放蒙山"
+      ],
+      "category": "中元普度与盂兰斋会",
+      "gist": "汉传密教以手印真言加持甘露济度饿鬼法会",
+      "reading_tag": "民俗仪轨",
+      "region": "汉传佛教寺院与城乡丧葬中元普度",
+      "era": "唐代译经至宋元明清定型至今",
+      "summary": "“放焰口”全称“瑜伽焰口施食仪轨”，起源于《佛说救拔焰口饿鬼陀罗尼经》所记阿难尊者在林间遇面燃大士（焰口饿鬼王）告以三日将尽、向佛求取救度法门之本生缘起。法会通常选在夜幕降临之后举行，坛场分设主坛与面燃大士坛（孤魂台），主法金刚上师头戴毗卢帽、手结印契、心作观想、口诵真言，借召请幽冥众生赴坛闻法。\n\n核心科仪中，僧众依“开咽喉真言”清净饿鬼焦枯细咽，复以“变食真言”“甘露水真言”加持少量水米化作无量醍醐饮食，使五趣十类无祀孤魂饱餐法味、受三皈依而后超生。在明清以降民间丧俗与七月中元普度里，放焰口既体现佛教大悲济苦教义，也切实回应了生者妥善安顿非正常死亡孤魂的集体心理需要。",
+      "primary_sources": [
+        {
+          "citation": "唐·三藏沙门不空奉诏译《佛说救拔焰口饿鬼陀罗尼经》",
+          "url": "https://cbetaonline.dila.edu.tw/zh/T21n1313",
+          "locator": "大正藏第 21 册 No. 1313"
+        },
+        {
+          "citation": "唐·不空译《瑜伽集要救阿难陀罗尼焰口轨仪经》",
+          "url": "https://cbetaonline.dila.edu.tw/zh/T21n1318",
+          "locator": "大正藏第 21 册 No. 1318"
+        },
+        {
+          "citation": "徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994）",
+          "locator": "〈鬼俗〉类综述范围第 638–688 页；〈鬼名〉类第 576–637 页（具体词条页码待原书逐页复核）"
+        }
+      ],
+      "secondary_ref": "参见既有词目《中元节与盂兰盆会》《水陆法会》及民国《水陆仪轨》研究，辨析佛道超度科仪如何共享“施食安魂”文化语法。",
+      "case_id": "case_cn_tw_keelung_zhongyuan",
+      "knowledge_id": "REL-3-0005",
+      "knowledge_note": "主题对读：从梵呗诵持、手印观想与夜坛声学节律，切入“宗教仪式的音乐与身体实践”。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p7_ghost_shigu_qianggu",
+      "domain_id": "ghost_rituals_nuo",
+      "hub_id": "motif_cn_nuo_funeral_liminal_rites",
+      "term": "施孤与抢孤仪典",
+      "aliases": [
+        "抢孤",
+        "施孤棚",
+        "孤棚普度",
+        "拔头筹抢孤"
+      ],
+      "category": "水灯孤魂与祖灵迎送",
+      "gist": "闽台潮汕普度设孤棚祭孤并借攀棚分福禳灾",
+      "reading_tag": "民俗仪轨",
+      "region": "福建闽南、广东潮汕、台湾宜兰恒春及港澳",
+      "era": "明清至当代地方中元普度",
+      "summary": "在闽南、潮汕及台湾宜兰头城、屏东恒春一带，农历七月中元普度常设规模宏大的“施孤”场域：乡民集资募集米粮、粿品、全猪、鸭鱼，并在广场立起涂满牛油或猪油的数丈高大“孤柱”与“孤棚”，顶端插“顺风旗”并悬满祭品，先由道士或僧众延请孤魂“普度受食”，此即“施孤”。\n\n当夜子时法事宣告“收孤”、鸣锣撤帐之际，场下青壮健儿分组竞攀油滑高柱，抢夺棚上供物与顶端顺风旗，称为“抢孤”。各地民俗传说不一：有人称此举模仿孤魂争食之迅猛，可令滞留孤魂惊避离境；也有人认为攀夺神坛余福与顺风旗能祈来年海事顺遂与社群消灾，体现了祭祀庄严与民间身体竞技的奇妙并存。",
+      "primary_sources": [
+        {
+          "citation": "文化部文化资产局，宜兰县政府文化局：头城抢孤。",
+          "url": "https://nchdb.boch.gov.tw/city/ILN/assets/overview/folklore/20061227000002/",
+          "locator": "头城抢孤沿革与不同解释。"
+        },
+        {
+          "citation": "吴自牧：《梦粱录》。",
+          "url": "https://zh.wikisource.org/wiki/%E5%A4%A2%E7%B2%B1%E9%8C%84",
+          "locator": "南宋岁时风俗资料；与现代头城抢孤作背景对读。"
+        },
+        {
+          "citation": "徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994）",
+          "locator": "〈鬼俗〉类综述范围第 638–688 页（具体词条页码待原书逐页复核）"
+        }
+      ],
+      "secondary_ref": "参见既有案例广东《汕头南砂｜为无主之魂摆出的供桌》（case_cn_shantou_nansha_shigu）与台湾基隆中元祭。",
+      "case_id": "case_cn_shantou_nansha_shigu",
+      "knowledge_id": "REL-6-0009",
+      "knowledge_note": "主题对读：将“抢孤”的团队协力攀柱与全村募粮施食，作为观察“仪式参与、社会凝聚与因果证据”的社区样本。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p7_ghost_jiesan_songsan",
+      "domain_id": "ghost_rituals_nuo",
+      "hub_id": "motif_cn_nuo_funeral_liminal_rites",
+      "term": "接三与送三（三日礼）",
+      "aliases": [
+        "接三",
+        "送三",
+        "报庙",
+        "辞三"
+      ],
+      "category": "招魂丧仪与墓葬镇护",
+      "gist": "丧后第三日迎魂返宅并焚纸车送归的古礼",
+      "reading_tag": "民俗仪轨",
+      "region": "北京、华北及全国汉地传统丧葬区",
+      "era": "明清民国至今丧俗",
+      "summary": "在传统汉地民间丧礼中，人死后第三日往往被视作亡魂初次确知己身离开阳世、回望眷属的紧要节点。“接三”又常与“送三”连称：据老北京与华北地方风俗志载，丧家于是日傍晚在门外焚纸牛、纸马、纸车及“倒头舆”，由孝眷举哀跪接亡魂回家诀别；僧道同时唪诵接三经忏，并在大门或土地庙焚化阴司文牒。\n\n仪式尾声，孝属送至村口或岔路焚烧纸扎轿马及路引纸钱，意即“送三”，祝愿亡魂告别阳宅、顺畅前往阴曹而不致迷途逗留。民俗学家常将此三日仪节视为古礼《礼记》“三日而殡”后世民间化的缩影，兼有心理哀悼缓冲与“送鬼离开生者居住空间”的隔离功能。",
+      "primary_sources": [
+        {
+          "citation": "清·富察敦崇《燕京岁时记》（参照旧京风俗三日丧礼与岁时送终记录）",
+          "url": "https://zh.wikisource.org/wiki/%E7%87%95%E4%BA%AC%E6%AD%B2%E6%99%82%E8%A8%98",
+          "locator": "北京旧俗丧葬与送冥具记录"
+        },
+        {
+          "citation": "先秦《仪礼·士丧礼》与《礼记》三日敛殡礼文源流",
+          "url": "https://ctext.org/yi-li",
+          "locator": "《仪礼·士丧礼》三日成服及殡敛条"
+        },
+        {
+          "citation": "徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994）",
+          "locator": "〈鬼俗〉类综述范围第 638–688 页（具体词条页码待原书逐页复核）"
+        }
+      ],
+      "secondary_ref": "可与既有的“烧七（头七回魂）”“招魂复礼”并观，完整勾勒中国民间从初终三日至七七四十九日的离魂过渡仪轨。",
+      "knowledge_id": "REL-3-0010",
+      "knowledge_note": "主题对读：以“接三—送三”的三日哀悼缓冲程序，对照“丧葬仪式、哀悼规范与社群差异”中生者与死者的空间界线重划。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p7_ghost_daotoufan_dagoubing",
+      "domain_id": "ghost_rituals_nuo",
+      "hub_id": "motif_cn_nuo_funeral_liminal_rites",
+      "term": "倒头饭与打狗饼",
+      "aliases": [
+        "倒头饭",
+        "打狗饼",
+        "打狗干粮",
+        "脚尾饭"
+      ],
+      "category": "招魂丧仪与墓葬镇护",
+      "gist": "初终供奉死者的末餐与途经恶狗村的辟路馍",
+      "reading_tag": "民俗仪轨",
+      "region": "华北、江南及闽台等全国汉地传统丧葬区",
+      "era": "明清民国至今丧俗",
+      "summary": "在传统初终（人刚断气）之际，家属会迅速在死者灵床头侧或脚尾（闽台称“脚尾饭”）摆一碗半熟白饭，上插一双竖直筷子，往往还伴一枚硬煮鸭蛋与粗面面饼，民间谓之“倒头饭”与“打狗饼”（又称打狗干粮）。在多地口述解释里，这碗饭既是亡者上路前最后一顿“饱饭”，以免作鬼沦为饥饿游魂；而那枚面饼或面棒则专供死者攥在手中。\n\n民间之所以重“打狗饼”，缘于阴间行程中的普遍传闻：亡魂赴阴曹途中须经“恶狗村”，若无饼饵投喂恶犬，便会被撕咬阻路。礼制史研究者则指出，俗语虽以“恶狗村”戏解，其原型或上承古礼《仪礼·士丧礼》初终“饭含（含玉米）”与《礼记》“始死奠脯醢”不忍死者空腹绝食的孝亲古意。",
+      "primary_sources": [
+        {
+          "citation": "先秦《仪礼·士丧礼》饭含与始死奠祭仪节",
+          "url": "https://ctext.org/yi-li",
+          "locator": "《仪礼·士丧礼》饭含与奠脯醢条"
+        },
+        {
+          "citation": "荷兰·高延（J. J. M. de Groot）《中国宗教系统》（The Religious System of China）闽南初终供食与葬具调查",
+          "url": "https://archive.org/details/religioussystemofchina06degruoft",
+          "locator": "First Days After Death / Food Offerings & Mortuary Provisions"
+        },
+        {
+          "citation": "徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994）",
+          "locator": "〈鬼俗〉类综述范围第 638–688 页（具体词条页码待原书逐页复核）"
+        }
+      ],
+      "secondary_ref": "参见既有《玉历宝钞》《十殿阎罗与奈何桥孟婆》，可将“打狗饼”“迷魂汤”同看作阳间亲属代亡魂提前预付阴途过关资粮的食物隐喻。",
+      "case_id": "case_cn_shidian_yanluo_mengpo_bridge",
+      "knowledge_id": "REL-3-0007",
+      "knowledge_note": "主题对读：将“倒头饭与打狗饼”视为死亡初期标记身份转换的物质媒介，对应“生命礼仪、人生阶段与社会身份”框架。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p7_ghost_dianzhu_shenzhu",
+      "domain_id": "ghost_rituals_nuo",
+      "hub_id": "motif_cn_nuo_funeral_liminal_rites",
+      "term": "点主与神主牌位",
+      "aliases": [
+        "点主",
+        "点神主",
+        "大宾点主",
+        "题主"
+      ],
+      "category": "招魂丧仪与墓葬镇护",
+      "gist": "请尊长朱笔加点“主”字迎亡魂入宗族祠堂",
+      "reading_tag": "民俗仪轨",
+      "region": "华北、江南、福建、广东及台湾宗族社会",
+      "era": "宋朱熹《家礼》定型至明清民国至今",
+      "summary": "“神主”（俗称木主、牌位）是中国丧葬中寄托先人灵魄、供奉祠堂或家龛的核心木质礼器。“点主”礼通常在安葬落土之际或既葬返宅“反哭”前举行：孝属预先刻好栗木神主，在铭文末尾故意写成缺一点的“王”字（如“先考某某府君之神王”），再敦请地方名望最重、德高望重或有功名的“点主大宾”登坛。\n\n在宣读祝文后，大宾执蘸满朱砂或鸡冠血的新毛笔，对日呵气，先点神主背隐字，继而一笔将正面“王”字上方加点为“主”，寓意神灵既聚、祖魄正式归附牌位，成为可安居宗庙的“祖先神明”而非游荡孤鬼。这一仪节清晰划出了“散乱之鬼”转化成“受祀之祖”的最后一道礼俗门坎。",
+      "primary_sources": [
+        {
+          "citation": "先秦《礼记》与《仪礼》桑木、栗木立主及虞祭安神源流",
+          "url": "https://ctext.org/liji",
+          "locator": "《礼记·檀弓》及《曲礼》立主安神相关章句"
+        },
+        {
+          "citation": "杨庆堃（C. K. Yang）《中国社会中的宗教》（Religion in Chinese Society）论祖先崇拜与神主牌位机制",
+          "url": "https://archive.org/details/religioninchines0000yang_p2q9",
+          "locator": "Chapter on Ancestor Worship & Kinship Spirit Tablets"
+        },
+        {
+          "citation": "徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994）",
+          "locator": "〈鬼俗〉类综述范围第 638–688 页（具体词条页码待原书逐页复核）"
+        }
+      ],
+      "secondary_ref": "与“伯有为厉”“无祀孤魂”对读可发现：朱笔一点“王”作“主”，正是在宗族仪式层面宣告“鬼有所归”。",
+      "knowledge_id": "REL-5-0007",
+      "knowledge_note": "主题对读：将点主牌位安置家堂供桌的日常空间布局，与“家庭神龛、圣像与日常宗教空间”相参研。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p7_ghost_zhengyue_songqiong",
+      "domain_id": "ghost_rituals_nuo",
+      "hub_id": "motif_cn_nuo_funeral_liminal_rites",
+      "term": "正月晦日送穷鬼",
+      "aliases": [
+        "送穷鬼",
+        "送穷神",
+        "晦日送穷",
+        "破五送穷"
+      ],
+      "category": "水灯孤魂与祖灵迎送",
+      "gist": "六朝至唐宋正月晦日焚帚送穷祈求丰稔岁俗",
+      "reading_tag": "民俗仪轨",
+      "region": "中原、江南及全国汉地新年岁俗",
+      "era": "六朝至唐宋晦日送穷，明清后渐汇入正月初五",
+      "summary": "在民俗鬼名与岁时仪俗的交叉地带，“穷鬼”（又称穷子）常被描绘成高阳氏瘦弱好穿破衣的顽劣子孙，正月晦日死于巷陌，此后人间遂于每岁正月晦日（后世多与正月初三或初五“破五”合并）清扫屋舍积尘，剪纸作穷鬼小人或捆扎破旧扫帚、盛装作糜粥，一并送往门外十字路口焚烧弃置，号曰“送穷鬼”。\n\n从《荆楚岁时记》《风俗通义》到唐代韩愈著名的《送穷文》，历代士人笔记与诗文反复记述此俗：唐代长安士庶甚至以柳车草船送穷赴水，既驱除贫困晦气之象征性“鬼怪”，亦借全宅春初大扫除完成卫生更始。正因如此，“送穷”成为中国岁俗把生活贫瘠人格化为鬼灵、并以轻微诙谐仪轨驱逐出去的代表性例子。",
+      "primary_sources": [
+        {
+          "citation": "南朝梁·宗懔《荆楚岁时记》“元日至晦日”条（正月晦日送穷俗）",
+          "url": "https://zh.wikisource.org/wiki/%E8%8D%8A%E6%A5%9A%E6%AD%B2%E6%99%82%E8%A8%98",
+          "locator": "《荆楚岁时记》正月晦日送穷条"
+        },
+        {
+          "citation": "唐宋汇编及岁时源流：《事物纪原》与清·富察敦崇《燕京岁时记》破五条",
+          "url": "https://zh.wikisource.org/wiki/%E4%BA%8B%E7%89%A9%E7%B4%80%E5%8E%9F",
+          "locator": "《事物纪原》岁时风俗部送穷条目"
+        },
+        {
+          "citation": "徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994）",
+          "locator": "〈鬼俗〉类综述范围第 638–688 页；〈鬼名〉类第 576–637 页（具体词条页码待原书逐页复核）"
+        }
+      ],
+      "secondary_ref": "与除夕大傩、初五迎财神对比，可见新春月内“送穷鬼—迎富神”的一体两面岁时结构。",
+      "knowledge_id": "REL-5-0001",
+      "knowledge_note": "主题对读：将送穷日历节奏与家庭分工清扫习俗，对照“民俗实践、地方知识与传承”中的岁时秩序安排。",
+      "reviewed_by_human": false
+    },
+    {
+      "id": "lex_p7_ghost_nuotangxi_yangxi",
+      "domain_id": "ghost_rituals_nuo",
+      "hub_id": "motif_cn_nuo_funeral_liminal_rites",
+      "term": "傩堂戏与阳戏驱祟",
+      "aliases": [
+        "傩堂戏",
+        "傩愿戏",
+        "湘黔阳戏",
+        "冲傩还愿"
+      ],
+      "category": "地方傩舞与五猖祭仪",
+      "gist": "西南巴渝黔北傩坛先请神祈福再演戏逐疫",
+      "reading_tag": "民间戏俗",
+      "region": "贵州铜仁德江、重庆秀山酉阳、湘西及鄂西",
+      "era": "明清成型传承至今（多地列入国家级非遗）",
+      "summary": "在黔东北（如德江土家族）、渝东南与湘鄂西武陵山区，“傩堂戏”（多与“傩愿”合流）是在家宅堂屋或村寨神坛为病家冲傩、为丰年还愿而举行的仪式戏剧。“傩坛”以木雕神像面具（俗称“脸子”，通常分二十四戏神及先锋、开山猛将等）布设法场，由掌坛师“内坛”焚香开路、勾愿请神、造桥度关、退祟赶鬼；随后才转为戴面具演剧娱神的“外坛”戏剧。\n\n西南部分地区俗把前段纯科仪称为“阴戏”，后段劝世滑稽科白连台剧目称为“阳戏”。这种“阴司坛场请神驱祟”与“阳间木面戏曲演史谐谑”同堂共构的格局，与池州五猖傩、安顺地戏军傩形成鲜明地域呼应，展现了地方宗族及多民族村寨在家庭安宅语境中运用面具戏曲调解人鬼关系的独特传统。",
+      "primary_sources": [
+        {
+          "citation": "周汉傩礼经典本源：《周礼·夏官司马》方相氏与《后汉书·志第五》大傩仪",
+          "url": "https://zh.wikisource.org/wiki/%E5%BE%8C%E6%BC%A2%E6%9B%B8/%E5%BF%97%E7%AC%AC%E4%BA%94",
+          "locator": "《后汉书·礼仪志中/下》季冬大傩逐疫条"
+        },
+        {
+          "citation": "西南及汉地民间傩信仰比较概览（Wikipedia: Nuo folk religion & Nuo opera）",
+          "url": "https://en.wikipedia.org/wiki/Nuo_folk_religion",
+          "locator": "Nuo altar, Nuotangxi, and wooden mask exorcism sections"
+        },
+        {
+          "citation": "徐华龙主编《中国鬼文化大辞典》（南宁：广西民族出版社，1994）",
+          "locator": "〈鬼戏〉类综述范围第 689–713 页；〈鬼俗〉类第 638–688 页（具体词条页码待原书逐页复核）"
+        }
+      ],
+      "secondary_ref": "参见既有案例皖南池州《五猖驱疫傩仪》（case_cn_chizhou_wuchang_nuo）与贵州安顺《屯堡地戏木雕脸子》（case_cn_guizhou_dixi_nuo_masks）。",
+      "case_id": "case_cn_guizhou_dixi_nuo_masks",
+      "knowledge_id": "REL-5-0058",
+      "knowledge_note": "主题对读：将武陵山区傩堂戏的面具角色分工、内坛法事与外坛锣鼓戏演，与“江西万载傩戏：面具、锣鼓与地方戏”并观互参。",
+      "reviewed_by_human": false
+    }
+  ]
+}

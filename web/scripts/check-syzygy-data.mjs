@@ -196,6 +196,11 @@ function assertNonEmptyString(value, message) {
   assert.ok(typeof value === 'string' && value.trim().length > 0, message);
 }
 
+const normalizeLexiconTerm = value => {
+  const compact = String(value ?? '').normalize('NFKC').trim().toLocaleLowerCase().replace(/[\s\p{P}\p{S}]+/gu, '');
+  return compact || String(value ?? '').normalize('NFKC').trim().toLocaleLowerCase();
+};
+
 function validateEditorialPreface(preface) {
   assert.ok(preface && typeof preface === 'object' && !Array.isArray(preface),
     'taxonomy.editorial_preface must be an object');
@@ -274,6 +279,21 @@ if (taxonomyBytes) {
   for (const domain of taxonomy.domains) {
     assert.ok(domain.id && domain.name && Array.isArray(domain.groups), `Invalid domain ${domain?.id}`);
     assert.ok(Number.isInteger(domain.node_count) && domain.node_count >= 0, `Invalid node_count on ${domain.id}`);
+    assert.ok(
+      Number.isInteger(domain.classified_node_count) && domain.classified_node_count >= domain.node_count,
+      `classified_node_count (${domain.classified_node_count}) must be >= node_count (${domain.node_count}) on ${domain.id}`,
+    );
+    if (domain.sample_classified_nodes != null) {
+      assert.ok(
+        Array.isArray(domain.sample_classified_nodes) && domain.sample_classified_nodes.length <= 16,
+        `${domain.id}: sample_classified_nodes must be an array of at most 16 items`,
+      );
+      for (const sample of domain.sample_classified_nodes) {
+        assertNonEmptyString(sample?.id, `${domain.id}: sample_classified_nodes item missing id`);
+        assert.ok(nodes.has(sample.id), `${domain.id}: unknown sample_classified_nodes id ${sample.id}`);
+        assertNonEmptyString(sample?.title, `${domain.id}: sample_classified_nodes ${sample.id} missing title`);
+      }
+    }
     assert.ok(Number.isInteger(domain.lexicon_count) && domain.lexicon_count >= 0, `Invalid lexicon_count on ${domain.id}`);
     if (domain.editorial_intro != null || requireEditorial) {
       validateEditorialIntro(domain.editorial_intro, domain.id);
@@ -299,6 +319,17 @@ if (taxonomyBytes) {
     }
   }
 
+  if (taxonomy.corpus_classification_coverage != null) {
+    const cov = taxonomy.corpus_classification_coverage;
+    assert.equal(cov.total_graph_nodes, graph.nodes.length, 'corpus_classification_coverage.total_graph_nodes mismatch');
+    assert.ok(
+      Number.isInteger(cov.total_classified_unique)
+        && cov.total_classified_unique >= 0
+        && cov.total_classified_unique <= graph.nodes.length,
+      'Invalid corpus_classification_coverage.total_classified_unique',
+    );
+  }
+
   let totalLexiconEntries = 0;
   const seenLexiconIds = new Set();
   for (const [domainId, shardMeta] of manifestEntries) {
@@ -315,11 +346,18 @@ if (taxonomyBytes) {
 
     const shardCategories = [];
     const seenShardCategories = new Set();
+    const seenShardTerms = new Set();
     const shardHubCounts = new Map();
     for (const entry of shard.entries) {
       assert.match(entry?.id ?? '', /^lex_[a-z0-9_]+$/, `Invalid lexicon entry id: ${entry?.id}`);
       assertNonEmptyString(entry.hub_id, `Invalid hub_id on ${entry.id}`);
       assertNonEmptyString(entry.term, `Invalid term on ${entry.id}`);
+      const normTerm = normalizeLexiconTerm(entry.term);
+      assert.ok(!seenShardTerms.has(normTerm), `Duplicate normalized term "${entry.term}" in shard ${shardMeta.file}`);
+      seenShardTerms.add(normTerm);
+      assertNonEmptyString(entry.gist, `Missing non-empty gist on ${entry.id}`);
+      assert.ok(entry.gist.length <= 36, `gist exceeds 36 chars on ${entry.id}: ${entry.gist}`);
+      assertNonEmptyString(entry.reading_tag, `Missing non-empty reading_tag on ${entry.id}`);
       assertNonEmptyString(entry.summary, `Invalid summary on ${entry.id}`);
       assert.ok(Array.isArray(entry.primary_sources) && entry.primary_sources.length > 0,
         `Missing primary_sources on ${entry.id}`);

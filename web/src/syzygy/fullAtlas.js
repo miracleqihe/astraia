@@ -359,14 +359,30 @@ export function createFullAtlas({ root, book, dataset, state, cosmosGroup, starM
             ? `<p class="syzygy-reference">别称：${escape(entry.aliases.join('、'))}</p>`
             : '';
           const meta = [entry.category, entry.region, entry.era].filter(Boolean).join(' · ');
+          const readingTagHTML = entry.reading_tag
+            ? `<span class="taxonomy-reading-tag">${escape(entry.reading_tag)}</span>`
+            : '';
+          const gistHTML = entry.gist
+            ? `<span class="taxonomy-lexicon-gist">${escape(entry.gist)}</span>`
+            : '';
           const sources = (entry.primary_sources ?? []).map(src => {
             const url = safeLexiconUrl(src?.url);
-            const label = escape([src?.citation || src?.url || '原典出处', src?.locator].filter(Boolean).join(' · '));
-            return url ? `<li><a href="${escape(url)}" target="_blank" rel="noopener noreferrer">${label} ↗</a></li>` : `<li>${label}</li>`;
+            const citation = String(src?.citation || src?.url || '原典出处').trim();
+            const locator = String(src?.locator ?? '').trim();
+            if (url) {
+              return `<li><span class="taxonomy-source-kind is-public">来源链接</span> <a href="${escape(url)}" target="_blank" rel="noopener noreferrer">${escape(citation)} ↗</a>${locator ? `<span class="taxonomy-locator-note">定位：${escape(locator)}</span>` : ''}</li>`;
+            }
+            return `<li><span class="taxonomy-source-kind">出处信息</span> ${escape(citation)}${locator ? `<span class="taxonomy-locator-note">定位：${escape(locator)}</span>` : ''}</li>`;
           }).join('');
-          const secondary = entry.secondary_ref ? `<p class="syzygy-reference" style="margin-top:6px">书目参照：${escape(entry.secondary_ref)}</p>` : '';
+          const secondary = entry.secondary_ref ? `<p class="syzygy-reference" style="margin-top:6px">参考资料：${escape(entry.secondary_ref)}</p>` : '';
           return `<details class="syzygy-lexicon-card">
-            <summary><span>${escape(entry.term)}</span><small>${escape(meta)}</small></summary>
+            <summary>
+              <div class="taxonomy-lexicon-summary-main">
+                <div class="taxonomy-lexicon-title-row"><span>${escape(entry.term)}</span>${readingTagHTML}${entry.reviewed_by_human === false ? '<span class="taxonomy-reading-tag">待人工复核</span>' : ''}</div>
+                ${gistHTML}
+              </div>
+              <small>${escape(meta)}</small>
+            </summary>
             <div class="syzygy-lexicon-card-body">
               ${aliases}
               ${entry.summary.split(/\n\s*\n/).filter(Boolean).map(paragraph => `<p>${escape(paragraph)}</p>`).join('')}

@@ -29,7 +29,15 @@ import {
   animateOmniaGalaxies,
 } from './constellationSculpts';
 import { SIDERA_V3_DESIGN, sampleV3Anchor, sampleV3Dust, createSideraV3Sculpts } from './sideraV3Sculpts';
-import { filterLexiconEntries, loadLexiconShard, loadTaxonomy } from './lexiconShards.js';
+import { loadLexiconShard, loadTaxonomy } from './lexiconShards.js';
+import {
+  computeZodiacBridgeLayout,
+  buildLeadAsterismSegments,
+  selectVisibleOmniaCurves,
+  selectVisibleSideraCurves,
+  computeAdaptiveAnchorStyle,
+} from './bridgeLayout.js';
+import { renderTaxonomyExplorerView } from './taxonomyExplorer.js';
 
 const THREE = { ...THREECore, OrbitControls };
 const root = import.meta.env.BASE_URL;
@@ -291,17 +299,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       });
     });
 
-    // Attach coordinates in all three dimensions, distributing outer zodiac anchors by parent-galaxy angle.
-    const leadBridgeIds = new Set();
-    SIDERA_CLUSTERS.forEach(cl => {
-      const lead = SYZYGY_BRIDGES.find(item => item.sideraCluster === cl.id);
-      if (lead) leadBridgeIds.add(lead.id);
-    });
-    ['trail1', 'trail2', 'trail3', 'trail4', 'trail5'].forEach(trailId => {
-      const lead = SYZYGY_BRIDGES.find(item => item.trail === trailId);
-      if (lead) leadBridgeIds.add(lead.id);
-    });
-
+    // Attach coordinates in all three dimensions, distributing outer zodiac anchors across 5 stratified orbital lanes.
     SYZYGY_BRIDGES.forEach(bridge => {
       const targetHub = PRIMARY_NODES.find(node => node.code === bridge.physis.code);
       if (!targetHub) throw new Error(`找不到关联知识条目：${bridge.physis.code}`);
@@ -312,33 +310,12 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     const orderedBridges = [...SYZYGY_BRIDGES].sort((a, b) =>
       a.parentAng - b.parentAng || a.sideraCluster.localeCompare(b.sideraCluster) || a.id.localeCompare(b.id)
     );
-    orderedBridges.forEach((item, rank) => {
-      if (rank % 10 === 0) leadBridgeIds.add(item.id);
+    computeZodiacBridgeLayout(orderedBridges, {
+      sideraClusters: SIDERA_CLUSTERS,
+      volumes: VOLUMES,
     });
-    const sortedRank = new Map(orderedBridges.map((item, idx) => [item.id, idx]));
 
     SYZYGY_BRIDGES.forEach(bridge => {
-      let bHash = 2166136261;
-      for (const ch of bridge.id) bHash = Math.imul(bHash ^ ch.charCodeAt(0), 16777619);
-      const u1 = (bHash >>> 0) / 4294967296;
-      const u2 = ((Math.imul(bHash, 2246822519) >>> 0) / 4294967296);
-      const rank = sortedRank.get(bridge.id) ?? 0;
-      const band = rank % 3;
-      const baseAng = -Math.PI + ((rank + 0.5) / SYZYGY_BRIDGES.length) * Math.PI * 2;
-      const ang = baseAng + (u1 - 0.5) * 0.06;
-      const ringR = 236 + band * 18 + (u2 - 0.5) * 12;
-      const z = 22 + band * 12 + Math.sin(ang * 3 + u1 * 6.283) * 8;
-
-      bridge.zodiacRank = rank;
-      bridge.zodiacBand = band;
-      bridge.omniaAngle = ang;
-      bridge.posOmniaSyzygy = new THREE.Vector3(Math.cos(ang) * ringR, Math.sin(ang) * ringR, z);
-      bridge.isLeadAnchor = leadBridgeIds.has(bridge.id);
-      const isMidTier = !bridge.isLeadAnchor && rank % 3 === 1;
-      bridge.baseSizeOmnia = bridge.isLeadAnchor ? (15.8 + u2 * 1.8) : (isMidTier ? (11.4 + u2 * 1.8) : (8.6 + u2 * 1.6));
-      bridge.baseSpikeOmnia = bridge.isLeadAnchor ? (0.68 + u1 * 0.12) : (isMidTier ? (0.24 + u1 * 0.10) : 0.08);
-      bridge.baseHighOmnia = bridge.isLeadAnchor ? (1.32 + u1 * 0.10) : (isMidTier ? (1.06 + u1 * 0.12) : (0.86 + u1 * 0.12));
-
       // Exact Geographic Lat/Lon Pin on UMBRA 3D Globe
       bridge.posUmbraPin = bridge.hasCoordinates ? latLonToVec3(bridge.umbraGeo.lat, bridge.umbraGeo.lon, EARTH_RADIUS + 4.5) : new THREE.Vector3();
 
@@ -630,7 +607,8 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       sPosArr[i * 3 + 1] = b.curAnchorPos.y;
       sPosArr[i * 3 + 2] = b.curAnchorPos.z;
       const relCol = new THREE.Color(anchorSpectralHex(b));
-      if (b.isLeadAnchor) relCol.lerp(leadCoreWhite, 0.18);
+      if (b.isLeadAnchor) relCol.lerp(leadCoreWhite, 0.22);
+      else if (b.isSecondaryAnchor) relCol.lerp(leadCoreWhite, 0.08);
       sColArr[i * 3] = relCol.r;
       sColArr[i * 3 + 1] = relCol.g;
       sColArr[i * 3 + 2] = relCol.b;
@@ -785,28 +763,11 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     zodiacTicks.userData.lineWidth = 0.7;
     syzygyUpperRing.add(zodiacTicks);
 
-    const asterismPts = [];
-    for (let i = 0; i < orderedBridges.length; i++) {
-      const a = orderedBridges[i];
-      const nextAdj = orderedBridges[(i + 1) % orderedBridges.length];
-      if (i % 2 === 0 && a.posOmniaSyzygy.distanceTo(nextAdj.posOmniaSyzygy) < 36) {
-        asterismPts.push(a.posOmniaSyzygy, nextAdj.posOmniaSyzygy);
-      }
-      if (i % 4 !== 3) {
-        for (let off = 1; off <= 3; off++) {
-          const b = orderedBridges[(i + off) % orderedBridges.length];
-          if (a.posOmniaSyzygy.distanceTo(b.posOmniaSyzygy) < 48
-            && (a.sideraCluster === b.sideraCluster || (off === 2 && a.zodiacBand === b.zodiacBand))) {
-            asterismPts.push(a.posOmniaSyzygy, b.posOmniaSyzygy);
-            break;
-          }
-        }
-      }
-    }
+    const asterismPts = buildLeadAsterismSegments(orderedBridges);
     if (asterismPts.length) {
       const asterismLines = new THREE.LineSegments(
         new THREE.BufferGeometry().setFromPoints(asterismPts),
-        new THREE.LineBasicMaterial({ color: '#dcc79a', transparent: true, opacity: 0.17, depthWrite: false })
+        new THREE.LineBasicMaterial({ color: '#dcc79a', transparent: true, opacity: 0.22, depthWrite: false })
       );
       asterismLines.userData.strokeColor = '#dcc79a';
       asterismLines.userData.lineWidth = 0.65;
@@ -1019,7 +980,9 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       activeBridgeCurves = [];
 
       if (!appState.syzygyOn) {
+        appState.bridgeBundleStats = null;
         renderer.domElement.dataset.bridgeCount = '0';
+        updateBannerPill(appState.matchingBridgeIds?.size ?? 0);
         return;
       }
 
@@ -1027,111 +990,70 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         const sideraVisible = SYZYGY_BRIDGES.filter(b =>
           bridgeAllowed(b) && (!appState.matchingBridgeIds || appState.matchingBridgeIds.has(b.id))
         );
-        if (appState.sideraBridgeMode !== 'minimal' && appState.activeTrail !== 'all') {
-          const trailBridges = sideraVisible
-            .filter(b => b.trail === appState.activeTrail)
-            .sort((a, b) => a.sideraCluster.localeCompare(b.sideraCluster) || a.id.localeCompare(b.id));
-          for (let k = 0; k < trailBridges.length - 1; k++) {
-            const bA = trailBridges[k], bB = trailBridges[k + 1];
+        const sideraSelection = selectVisibleSideraCurves(sideraVisible, SIDERA_CLUSTERS, appState);
+        for (const spec of sideraSelection.curves) {
+          if (spec.kind === 'cluster_trunk' || spec.kind === 'selected') {
+            const fromB = spec.fromBridge;
+            const cl = spec.cluster;
+            addPhotonCurve({
+              pStart: fromB.curAnchorPos.clone(),
+              pEnd: cl.center.clone(),
+              idx: spec.idx,
+              relMeta: spec.kind === 'selected'
+                ? (RELATION_META[fromB.relation] || RELATION_META.THEMATIC)
+                : RELATION_META.THEMATIC,
+              baseOpacity: spec.baseOpacity,
+              pulseCount: spec.pulseCount,
+              spriteScale: spec.spriteScale,
+              startFn: () => fromB.curAnchorPos,
+              endFn: () => cl.center,
+            });
+          } else {
+            const bA = spec.fromBridge;
+            const bB = spec.toBridge;
             addPhotonCurve({
               pStart: bA.curAnchorPos.clone(),
               pEnd: bB.curAnchorPos.clone(),
-              idx: k,
+              idx: spec.idx,
               relMeta: RELATION_META[bA.relation] || RELATION_META.THEMATIC,
-              baseOpacity: 0.72,
-              pulseCount: 1,
-              spriteScale: 9.5,
+              baseOpacity: spec.baseOpacity,
+              pulseCount: spec.pulseCount,
+              spriteScale: spec.spriteScale,
               startFn: () => bA.curAnchorPos,
               endFn: () => bB.curAnchorPos,
             });
           }
         }
-        if (appState.sideraBridgeMode === 'bundled' && appState.activeTrail === 'all') {
-          for (const cl of SIDERA_CLUSTERS) {
-            const first = sideraVisible.find(item => item.sideraCluster === cl.id);
-            if (!first) continue;
-            addPhotonCurve({
-              pStart: first.curAnchorPos.clone(), pEnd: cl.center.clone(), idx: cl.code.length,
-              relMeta: RELATION_META.THEMATIC, baseOpacity: .27, pulseCount: 1, spriteScale: 6,
-              startFn: () => first.curAnchorPos, endFn: () => cl.center,
-            });
-          }
-        }
-        if (appState.sideraBridgeMode === 'full') {
-          const byEntry = new Map();
-          for (const bridge of sideraVisible) {
-            const key = bridge.physis.id;
-            if (!byEntry.has(key)) byEntry.set(key, []);
-            byEntry.get(key).push(bridge);
-          }
-          let count = 0;
-          for (const rows of byEntry.values()) {
-            if (count >= 24) break;
-            const first = rows[0], other = rows.find(item => item.sideraCluster !== first.sideraCluster);
-            if (!other) continue;
-            addPhotonCurve({
-              pStart: first.curAnchorPos.clone(), pEnd: other.curAnchorPos.clone(), idx: count++,
-              relMeta: RELATION_META.THEMATIC, baseOpacity: .35, pulseCount: 1, spriteScale: 7,
-              startFn: () => first.curAnchorPos, endFn: () => other.curAnchorPos,
-            });
-          }
-        }
-        const sel = appState.selectedBridge;
-        if (sel && sideraVisible.some(b => b.id === sel.id)) {
-          const cl = SIDERA_CLUSTERS.find(c => c.id === sel.sideraCluster);
-          if (cl) {
-            addPhotonCurve({
-              pStart: sel.curAnchorPos.clone(),
-              pEnd: cl.center.clone(),
-              idx: 0,
-              relMeta: RELATION_META[sel.relation] || RELATION_META.THEMATIC,
-              baseOpacity: 0.85,
-              pulseCount: 2,
-              spriteScale: 12,
-              startFn: () => sel.curAnchorPos,
-              endFn: () => cl.center,
-            });
-          }
-        }
+        appState.bridgeBundleStats = {
+          shown: sideraSelection.shownCount,
+          total: sideraSelection.totalMatching,
+          truncatedCount: sideraSelection.truncatedCount,
+        };
         renderer.domElement.dataset.bridgeMode = appState.sideraBridgeMode;
         renderer.domElement.dataset.bridgeCount = String(activeBridgeCurves.length);
+        updateBannerPill(appState.matchingBridgeIds?.size ?? 0);
         return;
       }
 
-      const overviewBridgeIds = new Set();
-      if (appState.activeTrail === 'all' && !appState.searchQuery && !appState.selectedBook && appState.dimension !== 'umbra') {
-        const angularDiff = (a, b) => Math.abs(Math.atan2(Math.sin(a - b), Math.cos(a - b)));
-        for (const vol of VOLUMES) {
-          const volBridges = SYZYGY_BRIDGES
-            .filter(b => b.physis.volId === vol.id && bridgeAllowed(b)
-              && (!appState.matchingBridgeIds || appState.matchingBridgeIds.has(b.id)))
-            .sort((a, b) => angularDiff(a.omniaAngle ?? 0, a.parentAng ?? 0) - angularDiff(b.omniaAngle ?? 0, b.parentAng ?? 0) || a.id.localeCompare(b.id));
-          const take = Math.min(2, volBridges.length);
-          for (let k = 0; k < take; k++) {
-            const pickIdx = take === 1 ? 0 : Math.floor((k * Math.min(volBridges.length, 6)) / take);
-            if (volBridges[pickIdx]) overviewBridgeIds.add(volBridges[pickIdx].id);
-          }
-        }
-      }
-
       const bridges = appState.portalBridge && appState.dimension === 'omnia' ? [...SYZYGY_BRIDGES, appState.portalBridge] : SYZYGY_BRIDGES;
-      bridges.forEach((bridge, idx) => {
-        const personal = bridge === appState.portalBridge;
-        if ((!personal && !bridgeAllowed(bridge)) || (personal && bridge.fiction && !appState.showF) || (appState.dimension === 'umbra' && !bridge.hasCoordinates)
-          || (!personal && appState.matchingBridgeIds && !appState.matchingBridgeIds.has(bridge.id) && appState.selectedBridge?.id !== bridge.id)) return;
-        const isTrailActive = appState.activeTrail === 'all' || bridge.trail === appState.activeTrail;
-        const isSelected = personal || (appState.selectedBridge && appState.selectedBridge.id === bridge.id);
-        if (appState.activeTrail !== 'all' && !isTrailActive && !isSelected) return;
-        if (appState.dimension === 'umbra' && !isSelected) return;
-        if (appState.activeTrail === 'all' && !appState.searchQuery && !isSelected && !personal && !overviewBridgeIds.has(bridge.id)) return;
+      const omniaSelection = selectVisibleOmniaCurves(bridges, {
+        ...appState,
+        volumes: VOLUMES,
+        bridgeAllowed,
+      });
+      const overviewBridgeIds = omniaSelection.overviewBridgeIds;
+      const isTrailOrFilter = appState.activeTrail !== 'all' || appState.searchQuery.trim().length > 0;
 
+      omniaSelection.curves.forEach((bridge, idx) => {
+        const personal = bridge === appState.portalBridge;
+        const isSelected = personal || (appState.selectedBridge && appState.selectedBridge.id === bridge.id);
         addPhotonCurve({
           pStart: bridge.curAnchorPos.clone(),
           pEnd: bridge.materialNode.curPos.clone(),
           idx,
-          relMeta: RELATION_META[bridge.relation],
-          baseOpacity: isSelected ? 0.88 : (appState.activeTrail !== 'all' ? 0.78 : 0.32),
-          pulseCount: isSelected || appState.activeTrail !== 'all' ? 2 : 1,
+          relMeta: RELATION_META[bridge.relation] || RELATION_META.THEMATIC,
+          baseOpacity: isSelected ? 0.88 : (isTrailOrFilter ? 0.78 : (overviewBridgeIds.has(bridge.id) ? 0.34 : 0.42)),
+          pulseCount: isSelected || isTrailOrFilter ? 2 : 1,
           spriteScale: isSelected ? 12 : 8.5,
           bridge,
         });
@@ -1164,6 +1086,14 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
           });
         }
       }
+
+      appState.bridgeBundleStats = {
+        shown: omniaSelection.shownCount,
+        total: omniaSelection.totalMatching,
+        truncatedCount: omniaSelection.truncatedCount,
+      };
+      renderer.domElement.dataset.bridgeCount = String(activeBridgeCurves.length);
+      updateBannerPill(appState.matchingBridgeIds?.size ?? 0);
     }
 
     const bridgeMid = new THREE.Vector3(), bridgeC1 = new THREE.Vector3(), bridgeC2 = new THREE.Vector3(), bridgePoint = new THREE.Vector3();
@@ -1208,6 +1138,8 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       taxonomyLexiconQuery: '',
       taxonomyLexiconCategory: '',
       taxonomyShardState: new Map(),
+      taxonomyExpandedGroups: new Set(),
+      bridgeBundleStats: null,
       activeVolId: null,
       activeDiscId: null,
       activeTrail: 'all',
@@ -1219,8 +1151,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       showF: initialShowF,
       tiers: new Set(initialTiers),
       genre: Object.hasOwn(genreLabels,initialParams.get('genre')) ? initialParams.get('genre') : 'ALL',
-      selectedBridge: initialParams.has('story') || initialParams.has('entry') ? null : SYZYGY_BRIDGES.find(b=>initialTiers.has(b.mythos.credibility_tier) && (!b.fiction || initialShowF)
-        && (!Object.hasOwn(genreLabels,initialParams.get('genre')) || genreContract(b.mythos) === initialParams.get('genre'))) ?? null,
+      selectedBridge: null,
       selectedGraph: null,
       selectedBook: null,
       pendingBook: null,
@@ -1608,35 +1539,23 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       const trailActive = appState.activeTrail !== 'all' || appState.searchQuery.trim().length > 0;
 
       SYZYGY_BRIDGES.forEach((b, i) => {
-        if (!showSpiritualPoints || !bridgeAllowed(b) || (appState.dimension === 'umbra' && !b.hasCoordinates)) {
-          sHigh.array[i] = -1;
-          return;
-        }
+        const visible = showSpiritualPoints && bridgeAllowed(b) && (appState.dimension !== 'umbra' || b.hasCoordinates);
         const isSel = appState.selectedBridge?.id === b.id;
         const isHover = appState.hoveredTarget?.bridge?.id === b.id;
         const ok = appState.matchingBridgeIds?.has(b.id) ?? true;
-
-        if (appState.dimension === 'umbra') {
-          sSize.array[i] = isSel ? 18.5 : (isHover ? 15.5 : 10.2);
-          sSpike.array[i] = isSel ? 0.95 : (isHover ? 0.65 : 0.0);
-          sHigh.array[i] = isSel ? 2.15 : (isHover ? 1.8 : (ok ? 1.05 : 0.14));
-        } else if (appState.dimension === 'sidera') {
-          sSize.array[i] = isSel ? 22.5 : (isHover ? 18.5 : (!ok ? Math.min(8.5, b.baseSizeOmnia) : (trailActive ? Math.max(13.5, b.baseSizeOmnia * 1.08) : b.baseSizeOmnia * 1.05)));
-          sSpike.array[i] = isSel ? 1.15 : (isHover ? 0.88 : (!ok ? 0.0 : (trailActive ? Math.max(0.5, b.baseSpikeOmnia) : b.baseSpikeOmnia)));
-          sHigh.array[i] = isSel ? 2.2 : (isHover ? 1.85 : (!ok ? 0.14 : (trailActive ? 1.38 : b.baseHighOmnia * 1.05)));
-          if (appState.sideraFocus !== 'all') {
-            if (b.sideraCluster !== appState.sideraFocus && !isSel && !isHover) sHigh.array[i] *= .2;
-            else if (b.sideraCluster === appState.sideraFocus && !isHover) {
-              sSize.array[i] = isSel ? 14 : Math.min(6.5, sSize.array[i] * .52);
-              sSpike.array[i] = isSel ? .7 : .12;
-              sHigh.array[i] = isSel ? 1.55 : Math.min(.55, sHigh.array[i]);
-            }
-          }
-        } else {
-          sSize.array[i] = isSel ? 24.0 : (isHover ? 20.0 : (!ok ? Math.min(8.0, b.baseSizeOmnia) : (trailActive ? Math.max(14.0, b.baseSizeOmnia * 1.15) : b.baseSizeOmnia)));
-          sSpike.array[i] = isSel ? 1.20 : (isHover ? 0.95 : (!ok ? 0.0 : (trailActive ? Math.max(0.58, b.baseSpikeOmnia) : b.baseSpikeOmnia)));
-          sHigh.array[i] = isSel ? 2.2 : (isHover ? 1.9 : (!ok ? 0.14 : (trailActive ? 1.45 : (beyondMembrane ? Math.min(1.5, b.baseHighOmnia + 0.16) : b.baseHighOmnia))));
-        }
+        const style = computeAdaptiveAnchorStyle(b, {
+          dimension: appState.dimension,
+          visible,
+          isSelected: isSel,
+          isHovered: isHover,
+          isMatching: ok,
+          trailActive,
+          beyondMembrane,
+          sideraFocus: appState.sideraFocus,
+        });
+        sSize.array[i] = style.size;
+        sSpike.array[i] = style.spike;
+        sHigh.array[i] = style.highlight;
       });
       sSize.needsUpdate = true;
       sSpike.needsUpdate = true;
@@ -1711,8 +1630,12 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       const curRealm = realmForDepth(appState.membraneDepth);
       const subCount = appState.substantiveMatchCount ?? bridgeDataset.match_summary?.stats?.substantive_nodes ?? matchingCount;
       const discCount = VOLUMES.reduce((sum, v) => sum + v.disciplines.filter(d => d.connectedEntries > 0 || d.isSupplement).length, 0);
+      const bundle = appState.bridgeBundleStats;
+      const bundleSuffix = bundle && bundle.truncatedCount > 0
+        ? ` · 星桥束流 ${bundle.shown} / ${bundle.total} · 点选星点展开专属连线`
+        : '';
       bannerPill.textContent = appState.syzygyOn
-        ? `${curRealm.rank} ${curRealm.char} · ${subCount.toLocaleString()} 实质星桥 · ${matchingCount} 精选 · ${discCount}/${book.subjects.length} 学科${appState.portalBridge ? ' · 1 自选' : ''}`
+        ? `${curRealm.rank} ${curRealm.char} · ${subCount.toLocaleString()} 实质星桥 · ${matchingCount} 精选 · ${discCount}/${book.subjects.length} 学科${bundleSuffix}${appState.portalBridge ? ' · 1 自选' : ''}`
         : `○ 单界纯净观测模式 · ${curRealm.rank} ${curRealm.char}`;
     }
 
@@ -2496,8 +2419,6 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     // Left Scope Filter Tabs & Thematic Taxonomy Explorer
     const taxonomyExplorer = document.getElementById('taxonomy-explorer');
     const taxonomyDockBtn = document.getElementById('btn-taxonomy-dock');
-    const safeAccent = value => (/^#[0-9a-fA-F]{3,8}$/.test(String(value ?? '').trim()) ? String(value).trim() : '#cfa962');
-    const safeExtUrl = value => (/^https?:\/\//i.test(value ?? '') ? value : null);
     const taxonomyNodeLabel = id => {
       const node = fullAtlas.getNode(id);
       if (node) return { title: node.title, layer: `L${node.z_layer ?? '—'}` };
@@ -2511,7 +2432,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       const citations = items
         .map(item => (typeof item === 'string' ? item : (item?.citation || item?.title || '')))
         .filter(Boolean);
-      const baseNote = '辞条释义依据传世典籍与公版史料原创编纂，原始出处均可核验。';
+      const baseNote = '辞条按所列资料整理；出处与定位见各条，部分材料仍待进一步核对。';
       return citations.length ? `${baseNote} 书目参照：${citations.join('；')}。` : baseNote;
     }
 
@@ -2565,86 +2486,6 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       else fullAtlas.select(node, true);
     }
 
-    function renderTaxonomyLexiconEntries(domain) {
-      if (!taxonomyExplorer) return;
-      const listSlot = taxonomyExplorer.querySelector('[data-taxonomy-lexicon-list]');
-      const countSlot = taxonomyExplorer.querySelector('[data-taxonomy-lexicon-count]');
-      if (!listSlot) return;
-
-      const shardState = appState.taxonomyShardState.get(domain.id);
-      if (!domain.lexicon_shard) return;
-      if (!shardState || shardState.loading) {
-        listSlot.innerHTML = '<p class="syzygy-reference">正在校验 SHA-256 并载入专题辞条分片…</p>';
-        return;
-      }
-      if (shardState.error) {
-        listSlot.innerHTML = `<p class="syzygy-reference">辞条分片载入失败：${escapeHTML(shardState.error)} <button type="button" class="syzygy-inline-button" data-taxonomy-retry>重试</button></p>`;
-        listSlot.querySelector('[data-taxonomy-retry]')?.addEventListener('click', () => {
-          appState.taxonomyShardState.delete(domain.id);
-          openTaxonomyDomain(domain.id, true);
-        });
-        return;
-      }
-
-      const entries = shardState.data?.entries ?? [];
-      const filtered = filterLexiconEntries(entries, appState.taxonomyLexiconQuery, appState.taxonomyLexiconCategory);
-      if (countSlot) {
-        countSlot.textContent = filtered.length === entries.length
-          ? `${entries.length} 辞条`
-          : `${filtered.length} / ${entries.length} 辞条`;
-      }
-
-      if (!filtered.length) {
-        listSlot.innerHTML = '<p class="syzygy-reference">没有匹配当前筛选条件的辞条。</p>';
-        return;
-      }
-
-      listSlot.innerHTML = filtered.map(entry => {
-        const meta = [entry.category, entry.region, entry.era].filter(Boolean).join(' · ');
-        const aliases = Array.isArray(entry.aliases) && entry.aliases.length
-          ? `<div class="taxonomy-lexicon-aliases">别称：${escapeHTML(entry.aliases.join('、'))}</div>`
-          : '';
-        const sources = (entry.primary_sources ?? []).map(src => {
-          const url = safeExtUrl(src?.url);
-          const label = escapeHTML([src?.citation || src?.url || '原典出处', src?.locator].filter(Boolean).join(' · '));
-          return url
-            ? `<a href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">${label} ↗</a>`
-            : `<span>${label}</span>`;
-        }).join('');
-        const hubChip = entry.hub_id
-          ? `<button type="button" class="taxonomy-node-chip" data-taxonomy-node="${escapeHTML(entry.hub_id)}"><span>关联枢纽：${escapeHTML(taxonomyNodeLabel(entry.hub_id).title)}</span><small>定位</small></button>`
-          : '';
-        const storyChip = entry.case_id
-          ? `<a class="taxonomy-node-chip" href="${root}?view=map&amp;story=${encodeURIComponent(entry.case_id)}"><span>地图故事</span><small>查看 ↗</small></a>`
-          : '';
-        const relatedBook = entry.knowledge_id ? book.entries.find(item => item.id === entry.knowledge_id) : null;
-        const knowledgeChip = relatedBook
-          ? `<button type="button" class="taxonomy-node-chip" data-taxonomy-node="${escapeHTML(entry.knowledge_id)}"><span>知识对读：${escapeHTML(relatedBook.title)}</span><small>主题关联</small></button>`
-          : '';
-        const secondary = entry.secondary_ref
-          ? `<div class="taxonomy-lexicon-secondary">书目参照：${escapeHTML(entry.secondary_ref)}</div>`
-          : '';
-        return `<details class="taxonomy-lexicon-card">
-          <summary>
-            <span class="taxonomy-lexicon-term">${escapeHTML(entry.term)}</span>
-            <span class="taxonomy-lexicon-meta">${escapeHTML(meta)}</span>
-          </summary>
-          <div class="taxonomy-lexicon-body">
-            ${aliases}
-            ${entry.summary.split(/\n\s*\n/).filter(Boolean).map(paragraph => `<p>${escapeHTML(paragraph)}</p>`).join('')}
-            ${hubChip || storyChip || knowledgeChip ? `<div class="taxonomy-node-chips">${hubChip}${storyChip}${knowledgeChip}</div>` : ''}
-            ${entry.knowledge_note ? `<div class="taxonomy-lexicon-secondary">${escapeHTML(entry.knowledge_note)}</div>` : ''}
-            ${sources ? `<div class="taxonomy-lexicon-sources">${sources}</div>` : ''}
-            ${secondary}
-          </div>
-        </details>`;
-      }).join('');
-
-      listSlot.querySelectorAll('[data-taxonomy-node]').forEach(btn => {
-        btn.addEventListener('click', () => navigateToTaxonomyNode(btn.dataset.taxonomyNode));
-      });
-    }
-
     function openTaxonomyDomain(domainId, forceReload = false) {
       appState.taxonomySelectedDomainId = domainId;
       if (!forceReload) {
@@ -2684,245 +2525,35 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
       const hidden = appState.scopeTab !== 'taxonomy';
       taxonomyExplorer.hidden = hidden;
       if (hidden) return;
-
-      const taxonomy = appState.taxonomyData;
-      const domains = Array.isArray(taxonomy?.domains) ? [...taxonomy.domains].sort((a, b) => (a.order ?? 0) - (b.order ?? 0)) : [];
-      const selectedDomain = domains.find(item => item.id === appState.taxonomySelectedDomainId) ?? null;
-
-      const headHTML = `<header class="taxonomy-explorer-head">
-        <div>
-          <div class="taxonomy-explorer-eyebrow">THEMATIC TAXONOMY · 七大专题谱系</div>
-          <h2 class="taxonomy-explorer-title">中国鬼神与跨文化民俗专题谱系总览</h2>
-        </div>
-        <button type="button" id="btn-close-taxonomy" class="ctl-btn px-2.5 py-1 text-xs">✕ 返回星图</button>
-      </header>`;
-
-      if (!taxonomy && appState.taxonomyLoading) {
-        taxonomyExplorer.innerHTML = `${headHTML}<div class="taxonomy-detail-pane"><p class="syzygy-reference">正在载入七大专题谱系索引…</p></div>`;
-        taxonomyExplorer.querySelector('#btn-close-taxonomy')?.addEventListener('click', () => setScopeTab(appState.lastNonTaxonomyScope || 'all'));
-        return;
-      }
-
-      if (!taxonomy || !domains.length) {
-        taxonomyExplorer.innerHTML = `${headHTML}<div class="taxonomy-detail-pane"><p class="syzygy-reference">专题谱系索引暂不可用或尚未编译，请稍后重试，或继续在星图与典籍中浏览。</p></div>`;
-        taxonomyExplorer.querySelector('#btn-close-taxonomy')?.addEventListener('click', () => setScopeTab(appState.lastNonTaxonomyScope || 'all'));
-        return;
-      }
-
-      const domainCardsHTML = domains.map(domain => {
-        const isSel = selectedDomain?.id === domain.id;
-        const accent = safeAccent(domain.accent);
-        const groupTags = (domain.groups ?? []).map(group => `<span class="taxonomy-tag">${escapeHTML(group.title)}</span>`).join('');
-        const lexBadge = domain.lexicon_shard
-          ? `<span class="taxonomy-metric-pill">${escapeHTML(String(domain.lexicon_count ?? domain.lexicon_shard.count))} 辞条</span>`
-          : `<span class="taxonomy-metric-pill is-planned">规划分片 · 待编纂</span>`;
-        return `<button type="button" class="taxonomy-domain-card${isSel ? ' is-selected' : ''}" data-taxonomy-domain="${escapeHTML(domain.id)}">
-          <span class="taxonomy-domain-accent" style="background:${accent}"></span>
-          <div class="taxonomy-domain-top">
-            <span class="taxonomy-domain-order">${String(domain.order ?? '').padStart(2, '0')} · ${escapeHTML(domain.english_name)}</span>
-          </div>
-          <div class="taxonomy-domain-name">${escapeHTML(domain.name)}</div>
-          <div class="taxonomy-domain-en">${escapeHTML(domain.subtitle)}</div>
-          <p class="taxonomy-domain-summary">${escapeHTML(domain.summary)}</p>
-          ${groupTags ? `<div class="taxonomy-domain-tags">${groupTags}</div>` : ''}
-          <div class="taxonomy-domain-metrics">
-            <span class="taxonomy-metric-pill">${escapeHTML(String(domain.node_count ?? 0))} 节点</span>
-            ${lexBadge}
-          </div>
-        </button>`;
-      }).join('');
-
-      let detailHTML = '';
-      if (!selectedDomain) {
-        const preface = taxonomy.editorial_preface && typeof taxonomy.editorial_preface === 'object'
-          ? taxonomy.editorial_preface
-          : null;
-        let prefaceHTML = '';
-        if (preface && (preface.title || (Array.isArray(preface.paragraphs) && preface.paragraphs.length))) {
-          const prefaceParagraphsHTML = (Array.isArray(preface.paragraphs) ? preface.paragraphs : [])
-            .filter(p => typeof p === 'string' && p.trim())
-            .map(p => `<p>${escapeHTML(p.trim())}</p>`)
-            .join('');
-          const principlesHTML = (Array.isArray(preface.principles) ? preface.principles : [])
-            .filter(item => item && typeof item === 'object' && (item.label || item.text))
-            .map(item => `<div class="taxonomy-principle-card">
-              <div class="taxonomy-principle-label">${escapeHTML(item.label ?? '')}</div>
-              <p class="taxonomy-principle-text">${escapeHTML(item.text ?? '')}</p>
-            </div>`)
-            .join('');
-          prefaceHTML = `<article class="taxonomy-preface-card">
-            <div class="taxonomy-explorer-eyebrow">EDITORIAL PREFACE · 编纂总序与方法论</div>
-            ${preface.title ? `<h3 class="taxonomy-preface-title">${escapeHTML(preface.title)}</h3>` : ''}
-            ${preface.subtitle ? `<p class="taxonomy-preface-subtitle">${escapeHTML(preface.subtitle)}</p>` : ''}
-            ${prefaceParagraphsHTML ? `<div class="taxonomy-preface-prose">${prefaceParagraphsHTML}</div>` : ''}
-            ${principlesHTML ? `<div class="taxonomy-principles-grid">${principlesHTML}</div>` : ''}
-          </article>`;
-        }
-        detailHTML = `${prefaceHTML}
-        <div class="taxonomy-detail-hero">
-          <div class="taxonomy-explorer-eyebrow">SELECT A DOMAIN · 择域观览</div>
-          <h3>七大专题谱系与按需辞条分片</h3>
-          <p>请点击左侧任意专题域，检视其谱系分组、核心图谱枢纽与典范个案；具备专题辞条分片的领域将在打开时按需载入并校验 SHA-256 摘要，不影响星图首屏渲染。</p>
-        </div>
-        <div class="taxonomy-bibliography">${escapeHTML(formatBibliographyNote(taxonomy))}</div>`;
-      } else {
-        const accent = safeAccent(selectedDomain.accent);
-        const discPills = (selectedDomain.disciplines ?? []).map(disc => `<span class="taxonomy-tag">${escapeHTML(disc)}</span>`).join('');
-        const intro = selectedDomain.editorial_intro && typeof selectedDomain.editorial_intro === 'object'
-          ? selectedDomain.editorial_intro
-          : null;
-        let editorialIntroHTML = '';
-        if (intro && (intro.heading || intro.epigraph_thesis || (Array.isArray(intro.paragraphs) && intro.paragraphs.length))) {
-          const introParagraphsHTML = (Array.isArray(intro.paragraphs) ? intro.paragraphs : [])
-            .filter(p => typeof p === 'string' && p.trim())
-            .map(p => `<p>${escapeHTML(p.trim())}</p>`)
-            .join('');
-          const lensesHTML = (Array.isArray(intro.lenses) ? intro.lenses : [])
-            .filter(tag => typeof tag === 'string' && tag.trim())
-            .map(tag => `<span class="taxonomy-lens-pill">${escapeHTML(tag.trim())}</span>`)
-            .join('');
-          editorialIntroHTML = `<details class="taxonomy-editorial-card" open>
-            <summary class="taxonomy-editorial-summary">
-              <div>
-                <div class="taxonomy-explorer-eyebrow">METHODOLOGICAL INTRO · 导言与方法论总论</div>
-                <h4 class="taxonomy-editorial-heading">${escapeHTML(intro.heading || `${selectedDomain.name}导言`)}</h4>
-              </div>
-              <span class="taxonomy-editorial-toggle" aria-hidden="true">
-                <span class="is-open">收起 ▴</span>
-                <span class="is-closed">展开导言 ▾</span>
-              </span>
-            </summary>
-            <div class="taxonomy-editorial-body">
-              ${intro.epigraph_thesis ? `<blockquote class="taxonomy-editorial-epigraph" style="border-left-color:${accent}">${escapeHTML(intro.epigraph_thesis)}</blockquote>` : ''}
-              ${introParagraphsHTML ? `<div class="taxonomy-editorial-prose">${introParagraphsHTML}</div>` : ''}
-              ${lensesHTML ? `<div class="taxonomy-editorial-lenses"><span class="taxonomy-editorial-lenses-label">理论视域</span>${lensesHTML}</div>` : ''}
-            </div>
-          </details>`;
-        }
-        const groupsHTML = (selectedDomain.groups ?? []).map(group => {
-          const nodeIds = [...new Set([...(group.hub_ids ?? []), ...(group.featured_nodes ?? [])])];
-          const chipsHTML = nodeIds.map(id => {
-            const info = taxonomyNodeLabel(id);
-            return `<button type="button" class="taxonomy-node-chip" data-taxonomy-node="${escapeHTML(id)}">
-              <small>${escapeHTML(info.layer)}</small>
-              <span>${escapeHTML(info.title)}</span>
-            </button>`;
-          }).join('');
-          const catsHTML = (group.lexicon_categories ?? []).map(cat => `<span class="taxonomy-tag">${escapeHTML(cat)}</span>`).join('');
-          const chapterIntroHTML = typeof group.chapter_intro === 'string' && group.chapter_intro.trim()
-            ? `<div class="taxonomy-group-lead" style="border-left-color:${accent}">${escapeHTML(group.chapter_intro.trim())}</div>`
-            : '';
-          return `<article class="taxonomy-group-card">
-            <h4>${escapeHTML(group.title)}</h4>
-            ${chapterIntroHTML}
-            <p>${escapeHTML(group.description)}</p>
-            ${catsHTML ? `<div class="taxonomy-domain-tags" style="margin-top:6px">${catsHTML}</div>` : ''}
-            ${chipsHTML ? `<div class="taxonomy-node-chips">${chipsHTML}</div>` : ''}
-          </article>`;
-        }).join('');
-
-        let lexiconSectionHTML = '';
-        if (!selectedDomain.lexicon_shard) {
-          lexiconSectionHTML = `<section class="taxonomy-lexicon-panel">
-            <div class="taxonomy-lexicon-head">
-              <div>
-                <div class="taxonomy-explorer-eyebrow">LEXICON SHARD · 专题辞条分片</div>
-                <h4 class="text-sm font-semibold text-[#f5eedc] mt-0.5">规划中波次 · 暂未载入分片</h4>
-              </div>
-              <span class="taxonomy-metric-pill is-planned">后续波次编纂</span>
-            </div>
-            <p class="syzygy-reference" style="margin-top:8px">本专题域的辞条分片尚未发布；您仍可通过上方「谱系分组」点击核心节点芯片直接跳转星图与卷宗研读。</p>
-          </section>`;
-        } else {
-          const shardState = appState.taxonomyShardState.get(selectedDomain.id);
-          const loadedEntries = shardState?.data?.entries ?? [];
-          const rawCategories = selectedDomain.lexicon_shard.categories?.length
-            ? selectedDomain.lexicon_shard.categories
-            : [...new Set(loadedEntries.map(item => item.category).filter(Boolean))];
-          const catChipsHTML = rawCategories.length
-            ? `<div class="taxonomy-category-bar" role="group" aria-label="辞条分类筛选">
-                <button type="button" class="taxonomy-cat-chip" data-taxonomy-cat="" aria-pressed="${appState.taxonomyLexiconCategory === ''}">全部</button>
-                ${rawCategories.map(cat => `<button type="button" class="taxonomy-cat-chip" data-taxonomy-cat="${escapeHTML(cat)}" aria-pressed="${appState.taxonomyLexiconCategory === cat}">${escapeHTML(cat)}</button>`).join('')}
-              </div>`
-            : '';
-          const shaShort = (shardState?.data?.sha256 || selectedDomain.lexicon_shard.sha256 || '').slice(0, 12);
-          lexiconSectionHTML = `<section class="taxonomy-lexicon-panel">
-            <div class="taxonomy-lexicon-head">
-              <div>
-                <div class="taxonomy-explorer-eyebrow">LEXICON SHARD · 专题辞条分片</div>
-                <h4 class="text-sm font-semibold text-[#f5eedc] mt-0.5">${escapeHTML(selectedDomain.name)} · 辞条检索</h4>
-              </div>
-              <div class="flex items-center gap-1.5">
-                ${shaShort ? `<span class="taxonomy-tag font-mono-tech">SHA ${escapeHTML(shaShort)}</span>` : ''}
-                <span class="taxonomy-metric-pill" data-taxonomy-lexicon-count>${escapeHTML(String(selectedDomain.lexicon_count ?? selectedDomain.lexicon_shard.count))} 辞条</span>
-              </div>
-            </div>
-            <div class="taxonomy-lexicon-controls">
-              <input id="taxonomy-lexicon-search" class="syzygy-portal-search" type="search" value="${escapeHTML(appState.taxonomyLexiconQuery)}" placeholder="检索辞条、别名、地域、时代或释义..." autocomplete="off">
-              ${catChipsHTML}
-            </div>
-            <div class="taxonomy-lexicon-list" data-taxonomy-lexicon-list></div>
-            <div class="taxonomy-bibliography">${escapeHTML(formatBibliographyNote(taxonomy))}</div>
-          </section>`;
-        }
-
-        detailHTML = `<div class="taxonomy-detail-hero" style="border-left-color:${accent}">
-          <div class="taxonomy-explorer-eyebrow">${String(selectedDomain.order ?? '').padStart(2, '0')} · ${escapeHTML(selectedDomain.english_name)}</div>
-          <h3>${escapeHTML(selectedDomain.name)}</h3>
-          <div class="taxonomy-domain-tags" style="margin-top:6px">
-            <span class="taxonomy-metric-pill">${escapeHTML(String(selectedDomain.node_count ?? 0))} 节点</span>
-            ${discPills}
-            ${selectedDomain.sidera_id ? `<button type="button" class="taxonomy-node-chip" data-taxonomy-sidera="${escapeHTML(selectedDomain.sidera_id)}">定位玄象星群 ↗</button>` : ''}
-          </div>
-          <p>${escapeHTML(selectedDomain.summary)}</p>
-        </div>
-        ${editorialIntroHTML}
-        <section>
-          <div class="taxonomy-explorer-eyebrow mb-2">SPECTRAL GROUPS · 谱系分组与核心节点</div>
-          <div class="taxonomy-group-grid">${groupsHTML}</div>
-        </section>
-        ${lexiconSectionHTML}`;
-      }
-
-      taxonomyExplorer.innerHTML = `${headHTML}
-        <div class="taxonomy-explorer-body">
-          <div class="taxonomy-domain-list astro-scroll">${domainCardsHTML}</div>
-          <div class="taxonomy-detail-pane astro-scroll">${detailHTML}</div>
-        </div>`;
-
-      taxonomyExplorer.querySelector('#btn-close-taxonomy')?.addEventListener('click', () => setScopeTab(appState.lastNonTaxonomyScope || 'all'));
-      taxonomyExplorer.querySelectorAll('[data-taxonomy-domain]').forEach(btn => {
-        btn.addEventListener('click', () => openTaxonomyDomain(btn.dataset.taxonomyDomain));
+      renderTaxonomyExplorerView({
+        container: taxonomyExplorer,
+        taxonomy: appState.taxonomyData,
+        state: appState,
+        root,
+        bookEntries: book.entries,
+        onClose: () => setScopeTab(appState.lastNonTaxonomyScope || 'all'),
+        onSelectDomain: (domainId) => openTaxonomyDomain(domainId),
+        onSelectNode: (nodeId) => navigateToTaxonomyNode(nodeId),
+        onSearchQuery: (query) => {
+          appState.taxonomyLexiconQuery = query;
+        },
+        onSelectCategory: (category) => {
+          appState.taxonomyLexiconCategory = category;
+        },
+        onFocusSidera: (sideraId) => {
+          setScopeTab(appState.lastNonTaxonomyScope || 'all');
+          switchDimension('sidera', false);
+          const focusBtn = document.querySelector(`[data-v3-focus="${sideraId}"]`);
+          focusBtn?.click();
+        },
+        onRetryShard: (domainId) => {
+          appState.taxonomyShardState.delete(domainId);
+          openTaxonomyDomain(domainId, true);
+        },
+        resolveNodeLabel: taxonomyNodeLabel,
+        escapeHTML,
+        formatBibliographyNote,
       });
-      taxonomyExplorer.querySelectorAll('[data-taxonomy-node]').forEach(btn => {
-        btn.addEventListener('click', () => navigateToTaxonomyNode(btn.dataset.taxonomyNode));
-      });
-      taxonomyExplorer.querySelector('[data-taxonomy-sidera]')?.addEventListener('click', btnEvent => {
-        const sideraId = btnEvent.currentTarget.dataset.taxonomySidera;
-        setScopeTab(appState.lastNonTaxonomyScope || 'all');
-        switchDimension('sidera', false);
-        const focusBtn = document.querySelector(`[data-v3-focus="${sideraId}"]`);
-        focusBtn?.click();
-      });
-
-      if (selectedDomain?.lexicon_shard) {
-        const searchEl = taxonomyExplorer.querySelector('#taxonomy-lexicon-search');
-        searchEl?.addEventListener('input', () => {
-          appState.taxonomyLexiconQuery = searchEl.value;
-          renderTaxonomyLexiconEntries(selectedDomain);
-        });
-        taxonomyExplorer.querySelectorAll('[data-taxonomy-cat]').forEach(btn => {
-          btn.addEventListener('click', () => {
-            const nextCat = btn.dataset.taxonomyCat ?? '';
-            appState.taxonomyLexiconCategory = appState.taxonomyLexiconCategory === nextCat ? '' : nextCat;
-            taxonomyExplorer.querySelectorAll('[data-taxonomy-cat]').forEach(chip => {
-              chip.setAttribute('aria-pressed', String((chip.dataset.taxonomyCat ?? '') === appState.taxonomyLexiconCategory));
-            });
-            renderTaxonomyLexiconEntries(selectedDomain);
-          });
-        });
-        renderTaxonomyLexiconEntries(selectedDomain);
-      }
     }
 
     function setScopeTab(nextScope) {
@@ -3467,9 +3098,8 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         || (appState.selectedGraph && (!appState.tiers.has(appState.selectedGraph.credibility_tier)
           || (!appState.showF && appState.selectedGraph.is_fictional_quarantine)));
       if (selectedHidden) {
-        const next = SYZYGY_BRIDGES.find(bridgeAllowed);
-        if (next) selectSyzygyBridge(next,false);
-        else { appState.selectedBridge=null; appState.selectedGraph=null; appState.selectedBook=null; clearPersonalPortal(); fullAtlas.clearNeighborhood(); renderDualPaneSyzygyCard(null); }
+        appState.selectedBridge=null; appState.selectedGraph=null; appState.selectedBook=null;
+        clearPersonalPortal(); fullAtlas.clearNeighborhood(); renderDualPaneSyzygyCard(null);
       } else if (appState.selectedBridge) renderDualPaneSyzygyCard(appState.selectedBridge);
       document.querySelectorAll('#syzygy-card-container a[href]').forEach(link=>{
         const target=new URL(link.href,window.location.href);
@@ -3686,9 +3316,7 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
         } else if (entryId && book.entries.some(entry=>entry.id === entryId)) fullAtlas.selectBook(entryId);
         else if (!storyId && !entryId) {
           appState.pendingRoute=null;
-          const bridge=SYZYGY_BRIDGES.find(bridgeAllowed);
-          if (bridge) selectSyzygyBridge(bridge,false);
-          else {appState.selectedBridge=null;appState.selectedGraph=null;appState.selectedBook=null;renderDualPaneSyzygyCard(null);}
+          renderDualPaneSyzygyCard(null);
         } else missing('未找到对应资料，请从目录重新选择。');
         renderLeftAtlasTree(); updateClassicLink(); syncViewURL();
       }).catch(error=>flashToast(`图谱载入失败：${error.message}`));

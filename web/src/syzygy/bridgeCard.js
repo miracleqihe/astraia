@@ -18,7 +18,7 @@ const paragraphs = node => (node?.reading?.paragraphs ?? []).map(p=>`<p>${esc(p)
 
 export function renderBridgeCard(bridge, { root, onJump, onSelectRelated, onReadBook, onOpenBook, book, bookEntries, confidence, relation, showF, tiers, genre, membraneDepth = 0.5, audio }) {
   const wrap = document.getElementById('syzygy-card-container');
-  if (!bridge) { wrap.innerHTML = ''; return; }
+  if (!bridge) { wrap.innerHTML = '<p class="syzygy-reference">从星图或目录选择一条内容，查看对读卷宗。</p>'; return; }
   const node = bridge.mythos, knowledge = bridge.physis;
   const prism = resolvePrismForPair({ node, entry: knowledge, bridge, depth: membraneDepth });
   const classic = view => {

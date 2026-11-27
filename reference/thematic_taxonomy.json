@@ -120,14 +120,33 @@
             "case_cn_yongning_na_0004928",
             "case_cn_yongning_na_0004929",
             "case_cn_yongning_na_0004930",
-            "case_cn_digital_wugu_cloud_rumor"
+            "case_cn_digital_wugu_cloud_rumor",
+            "case_cn_fuqing_gold_silkworm_hedgehogs",
+            "case_cn_kaifeng_banqiao_inn_donkeys",
+            "case_cn_wugu_w3_guangshun_marriage",
+            "case_cn_wugu_w3_zhenning_needle",
+            "case_cn_wugu_w3_kunming_lanyao",
+            "case_cn_wugu_w3_yanshi_transfer_note",
+            "case_cn_wugu_w3_lijiang_stones",
+            "case_cn_wugu_w3_lijiang_red_snake",
+            "case_cn_wugu_w3_ninglang_bottle",
+            "case_cn_wugu_yuanjiang_wood_leg",
+            "case_cn_wugu_w3_guangzhou_dolls",
+            "case_cn_yongning_na_0004857",
+            "case_cn_yongning_na_0004628",
+            "case_cn_pumi_wolp_41",
+            "corpus_cn_yongning_na_pangloss",
+            "case_cn_eastern_han_dou_song_wugu",
+            "case_cn_zhouli_shushi_chugu",
+            "case_cn_southwest_gu_ordeal_judgment"
           ],
           "lexicon_categories": [
             "蛊毒源流与虫蛊",
             "放蛊流言与社会污名",
             "巫蛊刑狱与禁律",
             "巫蛊双轨法制与蛊界"
-          ]
+          ],
+          "tldr": "聚焦先秦“皿虫为蛊”到唐明清“造畜蛊毒”官法重刑与乡土“蛊界”习惯法，解析未知灾病如何转化为排斥边缘他者的双轨机制。"
         },
         {
           "id": "yansheng_architecture_seals",
@@ -146,13 +165,32 @@
             "case_cn_taishan_shigandang",
             "case_cn_fengshui_yansheng_dispute",
             "case_cn_guangzhou_chunyangguan_villain_hitting_2017",
-            "case_cn_hk_canal_road_villain_hitting_2025"
+            "case_cn_hk_canal_road_villain_hitting_2025",
+            "case_cn_wugu_w3_kaili_fengshui_story",
+            "case_cn_wugu_w3_tonghai_fenghuang",
+            "case_cn_wugu_weishan_city_dragon_temple",
+            "case_cn_wugu_weishan_paperhorse_interview_2009",
+            "case_cn_wugu_shijiazhuang_lions_dispute_1993",
+            "case_cn_wugu_wenling_roof_dispute_1994",
+            "case_cn_wugu_kaili_wood_house_2006",
+            "case_cn_wugu_w3_jianchuan_masters",
+            "case_cn_tao_dunhuang_house_stone_mixture",
+            "case_cn_tao_gaochun_handprint_brick",
+            "case_cn_tao_xuzhou_building_stone_song",
+            "case_cn_tao_yangzhou_taian_beam_rice",
+            "case_cn_tao_huzhou_roof_beam_red_green",
+            "case_cn_tao_jurong_roof_beam_red_green",
+            "case_cn_tao_dantu_roof_beam_food_song",
+            "case_cn_tao_wan_south_beast_eaves_tile",
+            "case_cn_wugu_changshu_roof_papers",
+            "case_cn_dict2_guizhou_zhijin_banishing_mirror"
           ],
           "lexicon_categories": [
             "厌胜钱与护身镇物",
             "营造木作与工匠厌镇",
             "屋脊门庭镇煞之器"
-          ]
+          ],
+          "tldr": "宅舍营造和邻里往来中，人们用石碑、铜镜、木契与压梁符把边界、安全感与施工矛盾固定下来。"
         },
         {
           "id": "zhuyou_incantation_healing",
@@ -174,14 +212,28 @@
             "case_cn_mawangdui_zajin_love_charm",
             "case_cn_kunming_gungu_egg_rite",
             "case_cn_xiangxi_luodong_nu_ritual",
-            "case_cn_southwest_village_gu_stigma_asc"
+            "case_cn_southwest_village_gu_stigma_asc",
+            "case_cn_jingzhou_monk_huizong_dream",
+            "case_cn_weihui_du_xuan_cup_bow",
+            "case_cn_wugu_kunming_hospital_moth",
+            "case_cn_wugu_lijiang_dongba_ghost_effigy",
+            "case_cn_wugu_dali_soul_call_bridge_road",
+            "case_cn_wugu_weishan_soul_horses",
+            "case_cn_wugu_wanding_bridge_soul",
+            "case_cn_wugu_lanping_stove_call",
+            "case_cn_wugu_w3_dongguan_hanjing",
+            "case_cn_wugu_w3_honghe_yiche_calling",
+            "case_cn_wugu_ninglang_forest_cloth",
+            "case_cn_wugu_dongguan_shaoshu_village",
+            "case_cn_yongning_na_0004540"
           ],
           "lexicon_categories": [
             "祝由医制与符禁",
             "步罡掐诀与敕符仪轨",
             "收惊解秽与避煞方术",
             "魅合拆姻与非常意识状态"
-          ]
+          ],
+          "tldr": "打通马王堆《杂禁方》情魅、太医院祝由十三科与收惊叫魂仪轨，以非常意识状态（ASC）与暗示心理阐释符禁疗愈的双重面向。"
         },
         {
           "id": "household_apotropaic_guardians",
@@ -201,13 +253,34 @@
             "case_cn_red_sash_huasha_wedding",
             "case_cn_chizhou_wuchang_nuo",
             "case_cn_minnan_wangchuan_plague_ship",
-            "case_cn_duanwu_wudu_tiger_charm"
+            "case_cn_duanwu_wudu_tiger_charm",
+            "case_cn_wugu_w3_weining_cuotaiji",
+            "case_cn_wugu_w3_huazhou_huapeng",
+            "case_cn_wugu_chengjiang_guansuo_1991",
+            "case_cn_wugu_shuangbai_tiger_1991",
+            "case_cn_wugu_huaning_huadeng_troupe_2002",
+            "case_cn_wugu_puning_yingge_2014",
+            "case_cn_wugu_guandu_new_year_shoes_2003",
+            "case_cn_tao_subei_fish_door_paper",
+            "case_cn_tao_nanjing_bed_gods_new_year",
+            "case_cn_tao_suzhou_bed_gods_tea_wine",
+            "case_cn_tao_lishui_child_protection_banner",
+            "case_cn_tao_w3_huaian_flour_child",
+            "case_cn_tao_seoul_yagwang_ghost_shoes",
+            "case_cn_tw_lukang_night_procession_2006",
+            "case_cn_wugu_panyu_tree_tiger_2019",
+            "case_cn_wugu_w3_jinping_toad_embroidery",
+            "case_cn_tao_w3_changzhou_wangshai",
+            "case_cn_tao_w3_quanzhou_wedding_sieve",
+            "case_cn_tao_w3_xiangxi_wedding_rooster",
+            "case_cn_fengxiang_clay_tiger_guardian"
           ],
           "lexicon_categories": [
             "门神桃符与宅镇神将",
             "岁时辟邪与幼童护符",
             "墓葬婚俗挡煞仪物"
-          ]
+          ],
+          "tldr": "从门楣、床头到婚嫁礼俗，家户借门神、护儿保书、米筛和巡境驱傩把守护落到生活关口。"
         },
         {
           "id": "zhenwu_material_taxonomy",
@@ -225,16 +298,46 @@
             "case_cn_puzhou_iron_ox_flood_ward",
             "case_cn_han_mawangdui_feiyi_soul_banner",
             "case_cn_eastern_wu_hunping_maidiquan",
-            "case_cn_jiangnan_liumeng_locust_ward"
+            "case_cn_jiangnan_liumeng_locust_ward",
+            "case_cn_wugu_w3_dali_crying_paper",
+            "case_cn_wugu_dali_three_lady_dragon",
+            "case_cn_wugu_dali_zhou_cheng_hougong",
+            "case_cn_yongning_na_0004627",
+            "case_cn_tao_w3_hongze_iron_ox",
+            "case_cn_tao_w3_gaoyou_iron_ox",
+            "case_cn_tao_w3_xingyang_baizui_iron_ox",
+            "case_cn_tao_w3_yanggu_iron_ox",
+            "case_cn_tao_w3_hongze_stone_rooster",
+            "case_cn_tao_w3_zhoushan_boat_soul",
+            "case_cn_tao_jiangsu_anhui_yangsi_water_god",
+            "case_cn_tao_sunan_road_millstones",
+            "case_cn_tao_danyang_qixi_floating_needle",
+            "case_cn_tao_suzhou_sweeping_sun_woman",
+            "case_cn_tao_fengxiang_rooster_scorpion_charm",
+            "case_cn_tao_sunan_insect_notice",
+            "case_cn_tao_w3_dantu_dogs",
+            "case_cn_tao_xiangfen_jin_tomb_handprint",
+            "case_cn_dujiangyan_libing_stone_rhino",
+            "case_cn_minzhe_boat_eye_dotting"
           ],
           "lexicon_categories": [
             "门庭家宅与护儿",
             "路道与水乡镇物",
             "岁时与自然",
             "材料与图像"
-          ]
+          ],
+          "tldr": "陶思炎《中国镇物》按自然、身之、人工三类载体与岁时、护身、家宅、路道、婚丧、御凶六域梳理镇物全谱。"
         }
-      ]
+      ],
+      "quick_overview": {
+        "three_book_anchor": "紧扣邓启耀《巫蛊》双轨法制与非常意识状态，并入陶思炎《中国镇物》三载体六维谱系。",
+        "core_question": "隐秘的诅咒恐慌、祝由巫医与有形的厌胜器物，如何在官法与日常空间中画下秩序边界？",
+        "key_takeaways": [
+          "官俗双轨：唐明清“造畜蛊毒”重刑与乡土“蛊界”排斥并行，替罪压力常落向边缘他者。",
+          "祝由解缚：步罡掐诀、收惊叫魂与群体仪轨借心理暗示与仪式期待调适非常意识状态（ASC）。",
+          "有形镇物：以自然、身之、人工三类载体护持岁时、家宅、路道与水乡，将不安具象化为界碑。"
+        ]
+      }
     },
     {
       "order": 2,
@@ -288,7 +391,8 @@
           "lexicon_categories": [
             "城隍与地方冥吏",
             "酆都冥府地治"
-          ]
+          ],
+          "tldr": "从汉魏泰山治鬼、明清城隍出巡到四川酆都阴治想象，看中国冥界如何照搬州县衙署与里甲户籍运作。"
         },
         {
           "id": "ten_courts_and_karma",
@@ -306,12 +410,17 @@
             "case_cn_qimen_mulian_opera",
             "case_cn_zibuyu_v02_s020",
             "case_cn_zibuyu_v03_s008",
-            "case_cn_shidian_yanluo_mengpo_bridge"
+            "case_cn_shidian_yanluo_mengpo_bridge",
+            "case_cn_zibuyu_v09_s018",
+            "case_cn_dict_yama_judges_ghost",
+            "case_cn_dict2_jiangsu_yangzhou_butcher_yama",
+            "case_cn_dict_impermanence_straw_shoes"
           ],
           "lexicon_categories": [
             "十殿阎王与审判",
             "善恶簿籍与地狱刑名"
-          ]
+          ],
+          "tldr": "梳理《佛说十王经》至《玉历宝钞》的十殿审判、功过簿籍、奈何桥孟婆汤与各色“鬼名”因果归类。"
         },
         {
           "id": "spirit_contracts_and_comparative",
@@ -326,14 +435,26 @@
             "case_eg_thebes_weighing_heart",
             "case_in_katha_nachiketa_yama",
             "case_gr_eleusis_persephone_cycle",
-            "case_cn_tw_taipei_xinhai_taxi"
+            "case_cn_tw_taipei_xinhai_taxi",
+            "case_cn_eastern_wu_hunping_maidiquan",
+            "case_cn_dict4_zhangjiakou_liver_gambling"
           ],
           "lexicon_categories": [
             "冥契冥币与阳间代偿",
             "跨文化亡灵审判"
-          ]
+          ],
+          "tldr": "透过汉晋买地券、青瓷魂瓶、冥币纸钱与他文明冥判对比，理解阳间如何以契约与财帛与阴司交涉。"
         }
-      ]
+      ],
+      "quick_overview": {
+        "three_book_anchor": "以徐华龙《中国鬼文化大辞典》鬼名、鬼俗与鬼话谱系为经，串联东亚阴司文书与冥契传统。",
+        "core_question": "中国人为何把死后世界想象成一座有州县城隍、七十六司判官与十殿簿籍的帝国衙门？",
+        "key_takeaways": [
+          "幽明共治：泰山治鬼、都邑城隍夜巡与厉坛祭孤，把州县辖区与官吏考课延伸到冥界。",
+          "十殿勘审：生死簿、孽镜台、速报司与奈何桥把抽象因果拆解为可核验的文书审判程序。",
+          "冥契代偿：买地券、魂瓶、纸钱与跨文化称心、阎摩试炼对读，凸显人间伦理与司法正义的跨界修补。"
+        ]
+      }
     },
     {
       "order": 3,
@@ -381,12 +502,14 @@
             "case_cn_grave_zhenmushou_tomb",
             "case_cn_han_taofu_shentu_yulei",
             "case_cn_han_danuo_fangxiangshi_exorcism",
-            "case_cn_guizhou_dixi_nuo_masks"
+            "case_cn_guizhou_dixi_nuo_masks",
+            "case_cn_wugu_w3_zhanjiang_kaobing"
           ],
           "lexicon_categories": [
             "宫廷大傩与方相氏",
             "地方傩舞与五猖祭仪"
-          ]
+          ],
+          "tldr": "追踪先秦宫廷方相氏大傩、五猖驱疫、军傩地戏到乡间阳戏，看木雕面具与神兵队形如何替人界立界驱祟。"
         },
         {
           "id": "zhongyuan_pudu_lanterns",
@@ -401,12 +524,16 @@
             "case_cn_tw_keelung_zhongyuan",
             "case_cn_zhongyuan_lantern_traditions",
             "case_cn_yuhuan_2008_p068",
-            "case_cn_qimen_mulian_opera"
+            "case_cn_qimen_mulian_opera",
+            "case_cn_shantou_nansha_shigu",
+            "case_cn_minnan_wangchuan_plague_ship",
+            "case_cn_hanyi_festival_winter_robes"
           ],
           "lexicon_categories": [
             "中元普度与盂兰斋会",
             "水灯孤魂与祖灵迎送"
-          ]
+          ],
+          "tldr": "从七月中元普度、放水灯、瑜伽焰口到沿海王船与十月朝送寒衣，串联社群如何以定期仪典安抚孤魂。"
         },
         {
           "id": "soul_recall_and_funerary",
@@ -422,14 +549,27 @@
             "case_cn_hunan_yuanling_corpse_inn",
             "case_cn_xiangxi_gan_shi_ritual",
             "case_cn_jiangshi_huangfu_seal",
-            "case_cn_red_sash_huasha_wedding"
+            "case_cn_red_sash_huasha_wedding",
+            "case_cn_han_mawangdui_feiyi_soul_banner",
+            "case_cn_tang_zhongkui_meng_expel",
+            "case_cn_dict5_tianzhen_carpenter_ghost_marriage"
           ],
           "lexicon_categories": [
             "招魂丧仪与墓葬镇护",
             "赶尸传说与婚丧辟煞"
-          ]
+          ],
+          "tldr": "考察马王堆非衣帛画、接三倒头饭、点主牌位与婚丧避煞禁忌，看生者如何在死亡裂隙中引导魂魄归位。"
         }
-      ]
+      ],
+      "quick_overview": {
+        "three_book_anchor": "贯通《中国鬼文化大辞典》鬼俗与鬼戏实录，并合《中国镇物》婚丧辟煞与岁时除祟器物。",
+        "core_question": "面对疫疠恐慌与至亲离世，社群怎样通过大傩面具、中元施食与丧葬过渡礼仪重划生死界线？",
+        "key_takeaways": [
+          "面具驱疫：从宫廷方相氏大傩到池州五猖、安顺地戏与傩堂阳戏，集体鼓角巡游将无形戾气公开驱离。",
+          "中元安魂：七月普度、瑜伽焰口、抢孤、放水灯与十月朝送寒衣，将无主孤魂纳入社区公共慈悲。",
+          "过渡缓冲：招魂复礼、接三送三、倒头饭、点主立牌与婚丧挡煞，帮助生者在可控节律中安顿哀恸。"
+        ]
+      }
     },
     {
       "order": 4,
@@ -477,12 +617,14 @@
             "case_cn_shanhai_bifang",
             "case_cn_kunlun_xiwangmu",
             "case_cn_shanhai_xingtian",
-            "case_cn_baize_shanxiao_spirit_lore"
+            "case_cn_baize_shanxiao_spirit_lore",
+            "case_cn_zhangzi_fajiushan_jingwei"
           ],
           "lexicon_categories": [
             "山海异兽与祥瑞灾异",
             "山精木客与物候妖异"
-          ]
+          ],
+          "tldr": "回到《山海经》《白泽精怪图》《神异经》，辨识上古博物体系怎样把疫疾、火灾与失常山川编成精怪图谱。"
         },
         {
           "id": "southwest_ethnic_epics_rituals",
@@ -502,12 +644,14 @@
             "case_cn_ashma_yi_epic",
             "case_cn_meigu_ghost_boards_1992",
             "case_cn_xiangxi_luodong_nu_ritual",
-            "case_cn_naxi_dongba_spirit_scrolls"
+            "case_cn_naxi_dongba_spirit_scrolls",
+            "case_cn_dict_mountain_spirit_ziche"
           ],
           "lexicon_categories": [
             "西南民族神鬼与仪典文献",
             "创世古歌与山川圣灵"
-          ]
+          ],
+          "tldr": "走进东巴象形《神路图》、毕摩仪式与西南山神古歌，参照多民族对自然神灵与亡魂归途的独特分类。"
         },
         {
           "id": "regional_folklore_spirits",
@@ -522,14 +666,31 @@
           "featured_nodes": [
             "case_cn_tw_liyutan_fanpo_recollection",
             "case_cn_penglai_baxian_guohai",
-            "case_jp_kyoto_tsukumogami_lore"
+            "case_jp_kyoto_tsukumogami_lore",
+            "case_cn_jiangshi_huangfu_seal",
+            "case_cn_dict_chestnuts_defeat_zombie",
+            "case_cn_dict2_zhejiang_xianju_invisible_cap",
+            "case_cn_dict_w2_shangqiu_water_ghost",
+            "case_cn_wuwei_hairy_water_ghost_1953",
+            "case_cn_zibuyu_v02_s032",
+            "case_cn_yijian_changgui_tiger_ghost"
           ],
           "lexicon_categories": [
             "狐仙水怪与地方妖异",
             "动植物化形与物怪谱"
-          ]
+          ],
+          "tldr": "汇聚伥鬼、僵尸、水鬼替身、夜叉与三尸疫鬼等民间精魅传说，还原日常空间暗藏的风险警讯。"
         }
-      ]
+      ],
+      "quick_overview": {
+        "three_book_anchor": "参互《中国鬼文化大辞典》鬼名与精魅分类、《山海经》博物志及西南多民族口述与非遗档案。",
+        "core_question": "山精、水鬼、虎伥与西南神灵图谱，如何把自然生态风险与人群边界编码为可辨识的精灵博物？",
+        "key_takeaways": [
+          "辨名制祟：《山海经》与《白泽精怪图》借命名与图绘驯化山林瘴疠、火灾与未知疫病恐惧。",
+          "西南灵谱：纳西东巴《神路图》署神、彝族毕摩经卷与创世古歌，把山川水源纳入人神生态契约。",
+          "物怪警讯：伥鬼、僵尸八变、水鬼替身、井魅与东亚付丧神，在危险水域、林莽与老器物边缘设立警戒。"
+        ]
+      }
     },
     {
       "order": 5,
@@ -581,7 +742,8 @@
           "lexicon_categories": [
             "六朝志怪与博物灵异",
             "唐宋传奇与笔记异闻"
-          ]
+          ],
+          "tldr": "从魏晋《搜神记》《幽明录》到南宋洪迈《夷坚志》，追踪文言志怪怎样从博物异闻演变为具名实录笔记。"
         },
         {
           "id": "qing_biji_zibuyu_liaozhai",
@@ -597,12 +759,15 @@
             "case_asia_liaozhai_qingfeng",
             "case_cn_laoshan_wall_illusion",
             "case_cn_zibuyu_v01_s012",
-            "case_cn_jiangshi_huangfu_seal"
+            "case_cn_jiangshi_huangfu_seal",
+            "case_cn_zibuyu_v01_s002",
+            "case_cn_zibuyu_v01_s008"
           ],
           "lexicon_categories": [
             "聊斋志异与狐鬼人情",
             "子不语及清代笔记志怪"
-          ]
+          ],
+          "tldr": "对比《聊斋志异》的狐鬼抒情、《子不语》的谐谑除魅与《阅微草堂笔记》的借鬼说理。"
         },
         {
           "id": "ghost_opera_and_judicial",
@@ -622,12 +787,15 @@
             "case_cn_tw_lintoujie_gezaixi",
             "case_cn_dou_e_yuan_ghost_redress",
             "case_cn_wupenji_talking_basin_opera",
-            "case_cn_mudanting_soul_return_opera"
+            "case_cn_mudanting_soul_return_opera",
+            "case_cn_zibuyu_v01_s024",
+            "case_cn_quanzhou_dachengxi_soul_rescue"
           ],
           "lexicon_categories": [
             "目连救母与仪式鬼戏",
             "冤鬼鸣冤与公案断狱"
-          ]
+          ],
+          "tldr": "贯穿目连戏、泉州打城戏、冥判公案与《牡丹亭》还魂传统，看戏台既娱人亦度鬼的仪俗双面性。"
         },
         {
           "id": "regional_ghosts_compiled_1994",
@@ -643,13 +811,25 @@
             "case_cn_dict_carpenter_ghost",
             "case_cn_dict_shuanghunpo",
             "case_cn_dict_mountain_spirit_ziche",
-            "case_cn_dict_ghost_and_butcher"
+            "case_cn_dict_ghost_and_butcher",
+            "case_cn_dict2_shandong_chengwu_night_watch_ghosts",
+            "case_cn_dict4_hangzhou_bao_hell"
           ],
           "lexicon_categories": [
             "地方故事与当代编目"
-          ]
+          ],
+          "tldr": "收录 1994 年《中国鬼文化大辞典》等当代编目辑录的城乡鬼话，留存地方口述幽默与伦理劝戒。"
         }
-      ]
+      ],
+      "quick_overview": {
+        "three_book_anchor": "对照《中国鬼文化大辞典》鬼话与鬼戏编目，贯通六朝志怪、唐宋笔记、清代说部与戏曲公案。",
+        "core_question": "鬼魂故事离开口头田野进入文人笔记与城乡戏台后，如何承担社会讽喻与幽冥鸣冤的公共功能？",
+        "key_takeaways": [
+          "文体演进：从《搜神记》博物实录到《夷坚志》具名闻见，建立兼顾奇异与史料笔法的志怪档案。",
+          "清代讽喻：《聊斋》狐鬼抒情、《子不语》谐谑除魅与《阅微》借鬼说理，将鬼故事化作世态镜鉴。",
+          "鬼戏鸣冤：目连戏、泉州打城戏、《窦娥冤》《乌盆记》与《牡丹亭》，在舞台上重构人间缺失的正义。"
+        ]
+      }
     },
     {
       "order": 6,
@@ -706,7 +886,8 @@
           "lexicon_categories": [
             "原初水域与天地分离",
             "宇宙树神山与末世再生"
-          ]
+          ],
+          "tldr": "并读盘古、共工、北欧世界树、毛利天地分离、阿尔泰水潜取土与美索不达米亚洪水神话，检验跨大陆创世宇宙观与谱系假说。"
         },
         {
           "id": "underworld_katabasis_myths",
@@ -730,7 +911,8 @@
           "lexicon_categories": [
             "降临冥界与亡者考验",
             "双元宇宙与生死周期"
-          ]
+          ],
+          "tldr": "追踪伊南娜、奥西里斯、俄耳甫斯、珀耳塞福涅、那奇凯塔、玛雅双子与伊邪那岐的冥界历险，看各文明如何刻画生死边界与不可回望律。"
         },
         {
           "id": "possession_witchcraft_comparative",
@@ -754,9 +936,19 @@
           "lexicon_categories": [
             "跨文化附体与巫术审判",
             "夜间压迫与边境异灵比较"
-          ]
+          ],
+          "tldr": "对比非洲扎尔灵、海地伏都教的仪式附体疗愈与欧陆《女巫之锤》、塞勒姆猎巫司法灾变，并以睡眠瘫痪生理机制厘清跨文化夜压经验。"
         }
-      ]
+      ],
+      "quick_overview": {
+        "three_book_anchor": "作为跨文化比较对照组，将三书所涉华夏创世、冥界、附体与祛邪传统置入全球神话与猎巫档案视野。",
+        "core_question": "两河、埃及、希腊、北欧、玛雅、非洲与东亚的创世及冥界试炼，呈现出哪些跨大陆共性与制度分歧？",
+        "key_takeaways": [
+          "创世轴心：盘古、共工对照北欧世界树、毛利天地分离与阿尔泰水潜取土，检验深层神话谱系假说。",
+          "下冥界律：伊南娜、奥西里斯、俄耳甫斯、那奇凯塔与伊邪那岐共写“不可回望”与“禁食冥果”试炼。",
+          "附体与猎巫：对照非洲扎尔灵仪式疗愈与欧陆《女巫之锤》、塞勒姆冤狱，凸显司法制度与睡眠瘫痪机制的差异。"
+        ]
+      }
     },
     {
       "order": 7,
@@ -809,7 +1001,8 @@
           "lexicon_categories": [
             "阈限建筑与后室叙事",
             "城市鬼楼与废墟谣言"
-          ]
+          ],
+          "tldr": "透过“后室”“泳池空间”、梦核视觉与城市空楼传说，观察标准化现代建筑在失去日常人声后如何诱发阈限焦虑。"
         },
         {
           "id": "rule_horror_and_wiki_ostension",
@@ -831,7 +1024,8 @@
           "lexicon_categories": [
             "规则怪谈与伪官方档案",
             "数字示现与网络共创恐怖"
-          ]
+          ],
+          "tldr": "以“数字示现”理论解析 SCP 伪档案、规则怪谈、Slender Man 与云端诅咒如何由协作虚构向线下模仿与社会心理传染溢出。"
         },
         {
           "id": "analog_signal_and_sensory_mechanisms",
@@ -854,9 +1048,19 @@
           "lexicon_categories": [
             "模拟电视恐怖与超文本",
             "短波异声与感官误读机制"
-          ]
+          ],
+          "tldr": "借助空想性错视、听觉模式误读、大气折射与群体心因性反应机制，拆解模拟恐怖、神秘短波电台与现代视听怪谈的造魅根源。"
         }
-      ]
+      ],
+      "quick_overview": {
+        "three_book_anchor": "沿“历史暗流—数字示现”当代延展线，对比三书传统空间禁忌与现代城市空楼、云端流言及 F 级隔离档案。",
+        "core_question": "当后室荧光走廊、SCP 伪档案与规则怪谈取代乡野山魅，现代人的空间焦虑与错觉机制如何改头换面？",
+        "key_takeaways": [
+          "非场所焦虑：后室、泳池空间、梦核与城市空楼传闻，把标准化现代建筑变为当代空间阈限场。",
+          "数字示现：规则怪谈、SCP 共创与社交平台“云端诅咒”，揭示虚拟文本如何经模仿与流言渗入线下心理。",
+          "循证隔离：严格执行 F 级虚构隔离，结合视听空想性错视、海市蜃楼与心因性反应机制拆解媒介造魅。"
+        ]
+      }
     }
   ]
 }
