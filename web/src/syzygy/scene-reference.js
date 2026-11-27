@@ -342,11 +342,8 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     function getClearViewportMetrics() {
       const w = Math.max(1, window.innerWidth), h = Math.max(1, window.innerHeight);
       const compact = w <= 760 || (w <= 1100 && h <= 500);
-      const isSchemeTwo = document.documentElement.dataset.uiScheme === '2';
-      // Reserve room for the title as well as the navigation on short screens.
-      const portraitTop = isSchemeTwo ? 146 : 168;
-      const topOcc = compact ? Math.min(Math.round(h * 0.38), h <= 500 ? (w >= 600 ? 114 : 142) : portraitTop) : (isSchemeTwo ? 136 : 58);
-      const bottomOcc = document.body.dataset.observatoryPanel ? 152 : (isSchemeTwo ? 82 : 68);
+      const topOcc = compact ? Math.min(Math.round(h * 0.40), h <= 500 ? (w >= 600 ? 114 : 142) : 164) : (w <= 1120 ? 100 : 64);
+      const bottomOcc = document.body.dataset.observatoryPanel ? 148 : 68;
       if (w >= 768) {
         const leftOpen = leftDrawer && !leftDrawer.classList.contains('drawer-left-hidden');
         const rightOpen = rightDrawer && !rightDrawer.classList.contains('drawer-right-hidden');
@@ -2668,17 +2665,8 @@ if (!Array.isArray(book.entries) || !Array.isArray(bridgeDataset.bridges)) throw
     }
 
     function syncContextBannerOffset() {
-      if (document.documentElement.dataset.uiScheme === '2') {
-        if (isCompactViewport()) {
-          contextBanner.style.left = '';
-        } else {
-          const { w, shiftX } = getClearViewportMetrics();
-          contextBanner.style.left = `${Math.round(w / 2 - shiftX)}px`;
-        }
-        return;
-      }
       const collapsed = leftDrawer.classList.contains('drawer-left-hidden');
-      contextBanner.style.left = collapsed && !isCompactViewport() ? '128px' : '';
+      contextBanner.style.left = collapsed && !isCompactViewport() ? '118px' : '';
     }
 
     window.addEventListener('astraia:ui-scheme', () => {

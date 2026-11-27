@@ -1921,40 +1921,174 @@ body[data-left-open='true'] .taxonomy-explorer {
 }
 
 /* ============================================================================
-   SPATIAL ASTROLABE GLASS × ORBITAL CAPSULE SYSTEM (Mobile / iPad / Desktop)
+   UNIFIED SILKY GLIDER × DUAL ATMOSPHERE SYSTEM (✦ 星野 / 印 山海)
+   Compatible across Wide Desktop, Compact Laptop, iPad, and Mobile.
    ============================================================================ */
 .dock-mobile-only { display: none; }
+.shanhai-horizon { display: none; }
 
-/* 1. Top Observatory Bar & Segmented 3-Realm Capsule Track */
+/* 1. Shared 2-Mode Sliding Switch (✦ 星野 | 印 山海) */
+.mode-theme-switch {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  gap: 2px;
+  border-radius: 999px;
+  border: 1px solid rgba(214, 182, 120, 0.28);
+  background: rgba(5, 8, 18, 0.78);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.58);
+}
+.mode-theme-switch::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 0;
+  width: var(--glider-w, 0px);
+  transform: translate3d(var(--glider-x, 0px), 0, 0);
+  opacity: var(--glider-opacity, 0);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(218, 182, 110, 0.34) 0%, rgba(126, 102, 214, 0.22) 100%);
+  border: 1px solid rgba(242, 217, 155, 0.48);
+  box-shadow: 0 2px 10px rgba(207, 169, 98, 0.22), inset 0 1px 0 rgba(255, 246, 224, 0.26);
+  pointer-events: none;
+  z-index: 0;
+}
+.mode-theme-switch[data-glider-ready='true']::before {
+  transition: transform 0.36s cubic-bezier(0.22, 1, 0.36, 1), width 0.32s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease, background 0.3s ease, border-color 0.3s ease;
+}
+.mode-theme-switch button {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 30px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(232, 224, 208, 0.72);
+  font-size: 11.5px;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+.mode-theme-switch button:hover {
+  color: #fff8eb;
+}
+.mode-theme-switch button[aria-pressed='true'] {
+  color: #fffdf7;
+  font-weight: 600;
+}
+.mode-theme-switch button > span:first-child {
+  color: #f0d79c;
+  font-size: 10.5px;
+  line-height: 1;
+}
+.mode-seal-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  background: linear-gradient(155deg, #cf4034 0%, #96221a 100%);
+  border: 1px solid rgba(255, 228, 202, 0.62);
+  color: #fff6e8 !important;
+  font-size: 9.5px !important;
+  font-weight: 600;
+  box-shadow: 0 1px 6px rgba(207, 64, 52, 0.42);
+}
+
+/* 2. Top Observatory Header: True 3-Column Centered Grid on Desktop & iPad */
 #syzygy-header {
   height: 56px;
   padding: 0 20px;
-  background: linear-gradient(180deg, rgba(7, 11, 22, 0.88) 0%, rgba(7, 11, 22, 0.66) 100%);
+  background: linear-gradient(180deg, rgba(7, 11, 22, 0.88) 0%, rgba(7, 11, 22, 0.68) 100%);
   backdrop-filter: blur(20px) saturate(145%);
   -webkit-backdrop-filter: blur(20px) saturate(145%);
   border-bottom: 1px solid rgba(214, 182, 120, 0.14);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.30);
 }
+@media (min-width: 761px) {
+  #syzygy-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+  }
+  #syzygy-header .syzygy-brand { justify-self: start; }
+  #syzygy-header > nav { justify-self: center; }
+  #syzygy-header .syzygy-header-actions { justify-self: end; }
+}
+
+/* Silky-Sliding 3-Realm Switcher (#dim-switcher) */
 #syzygy-header > nav {
-  gap: 3px;
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
   padding: 3px;
   border-radius: 999px;
   border: 1px solid rgba(214, 182, 120, 0.24);
   background: rgba(5, 8, 17, 0.78);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.62), 0 6px 20px rgba(0, 0, 0, 0.30);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.62), 0 6px 20px rgba(0, 0, 0, 0.28);
   scrollbar-width: none;
 }
 #syzygy-header > nav::-webkit-scrollbar { display: none; }
-#syzygy-header > nav .dim-tab {
-  border-right: 0;
+#syzygy-header > nav::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 0;
+  width: var(--glider-w, 0px);
+  transform: translate3d(var(--glider-x, 0px), 0, 0);
+  opacity: var(--glider-opacity, 0);
   border-radius: 999px;
+  background: linear-gradient(135deg, rgba(218, 182, 112, 0.34) 0%, rgba(132, 110, 222, 0.22) 100%);
+  border: 1px solid rgba(240, 215, 156, 0.46);
+  box-shadow: 0 3px 14px rgba(207, 169, 98, 0.22), inset 0 1px 0 rgba(255, 246, 224, 0.28);
+  pointer-events: none;
+  z-index: 0;
+}
+body[data-dimension='umbra'] #syzygy-header > nav::before {
+  background: linear-gradient(135deg, rgba(214, 170, 92, 0.36) 0%, rgba(140, 92, 38, 0.22) 100%);
+  border-color: rgba(232, 192, 118, 0.48);
+}
+body[data-dimension='sidera'] #syzygy-header > nav::before {
+  background: linear-gradient(135deg, rgba(164, 138, 248, 0.34) 0%, rgba(86, 118, 218, 0.22) 100%);
+  border-color: rgba(196, 181, 253, 0.48);
+  box-shadow: 0 3px 16px rgba(164, 138, 248, 0.24), inset 0 1px 0 rgba(242, 236, 255, 0.26);
+}
+#syzygy-header > nav[data-glider-ready='true']::before {
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), width 0.34s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.22s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+#syzygy-header > nav .dim-tab {
+  position: relative;
+  z-index: 1;
+  border: 0 !important;
+  border-radius: 999px;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 6px 15px;
+  color: rgba(236, 230, 218, 0.72);
+  transition: color 0.22s ease;
+}
+#syzygy-header > nav .dim-tab:hover {
+  color: #fff8eb;
+}
+#syzygy-header > nav .dim-tab.active {
+  color: #fffdf7;
 }
 
-/* Header Action Pills & Popover */
+/* Header Right Action Pills (keep .syzygy-tools-toggle hidden on wide desktop!) */
 .syzygy-header-actions { gap: 7px; }
 .syzygy-classic,
 .syzygy-fiction,
-.syzygy-tools-toggle,
 #btn-syzygy-toggle,
 #btn-proj-toggle,
 #btn-reset-cam {
@@ -1966,13 +2100,54 @@ body[data-left-open='true'] .taxonomy-explorer {
   justify-content: center;
   gap: 5px;
 }
+.syzygy-tools-toggle {
+  border-radius: 999px;
+  min-height: 34px;
+  padding: 0 12px;
+  gap: 5px;
+}
 .syzygy-classic {
   border-color: rgba(226, 194, 134, 0.34);
   background: linear-gradient(135deg, rgba(207, 169, 98, 0.16) 0%, rgba(16, 23, 42, 0.78) 100%);
 }
-.syzygy-extra-tools { gap: 7px; }
+.syzygy-extra-tools { gap: 6px; }
 
-/* 2. Context Watermark & Stardust Status Badge */
+@media (min-width: 1321px) {
+  .syzygy-tools-toggle { display: none !important; }
+  .syzygy-extra-tools { display: inline-flex; align-items: center; }
+}
+@media (min-width: 761px) and (max-width: 1320px) and (min-height: 501px) {
+  .syzygy-tools-toggle { display: inline-flex; align-items: center; justify-content: center; }
+  .syzygy-extra-tools {
+    display: none;
+    position: fixed;
+    top: 56px;
+    right: 16px;
+    z-index: 40;
+    width: 224px;
+    padding: 8px;
+    gap: 6px;
+    border-radius: 20px;
+    border: 1px solid rgba(214, 182, 120, 0.30);
+    background: rgba(9, 14, 26, 0.94);
+    backdrop-filter: blur(22px) saturate(150%);
+    -webkit-backdrop-filter: blur(22px) saturate(150%);
+    box-shadow: 0 22px 52px rgba(0, 0, 0, 0.72), inset 0 1px 0 rgba(255, 246, 224, 0.16);
+  }
+  .syzygy-extra-tools[data-open='true'] { display: flex; flex-direction: column; align-items: stretch; }
+  #syzygy-header .syzygy-extra-tools button,
+  #syzygy-header .syzygy-extra-tools #btn-reset-cam {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 38px;
+    border-radius: 12px;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+/* 3. Context Watermark & Stardust Status Badge */
 #context-banner { top: 68px; }
 #banner-title { text-shadow: 0 4px 22px rgba(0, 0, 0, 0.75); }
 #banner-pill {
@@ -2002,11 +2177,9 @@ body[data-left-open='true'] .taxonomy-explorer {
   -webkit-backdrop-filter: blur(18px);
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.58), inset 0 1px 0 rgba(255, 246, 224, 0.18);
 }
-#celestial-tooltip {
-  border-radius: 16px;
-}
+#celestial-tooltip { border-radius: 16px; }
 
-/* 3. Desktop & iPad Floating Pill Handles + Sculpted Glass Side Drawers */
+/* 4. Desktop & iPad Floating Pill Handles + Sculpted Side Drawers */
 #btn-open-left,
 #btn-open-right {
   top: 68px;
@@ -2040,7 +2213,7 @@ body[data-left-open='true'] .taxonomy-explorer {
   background: rgba(214, 182, 120, 0.12);
 }
 
-/* 4. Drawer Interior Search Capsules, Scope Pills & Cards */
+/* 5. Drawer Interior Search Capsules, Scope Pills & Cards */
 #codex-search,
 .syzygy-portal-search,
 .syzygy-genre-filter select {
@@ -2104,7 +2277,7 @@ body[data-left-open='true'] .taxonomy-explorer {
 .observer-veil-bar { border-radius: 999px; overflow: visible; }
 #obs-balance-marker { border-radius: 999px; width: 8px; height: 12px; }
 
-/* 5. Thematic Taxonomy Explorer Sculpted Cards & Chips */
+/* 6. Thematic Taxonomy Explorer Sculpted Cards & Chips */
 .taxonomy-explorer {
   top: 68px;
   bottom: 68px;
@@ -2145,42 +2318,70 @@ body[data-left-open='true'] .taxonomy-explorer {
   border-radius: 999px;
 }
 
-/* 6. Floating Bottom Celestial Dock & Instrument Popovers */
+/* 7. Sleek Symmetrical Bottom Observatory Dock with Silky Magnetic Glider */
 #observatory-dock {
-  bottom: max(12px, env(safe-area-inset-bottom));
-  gap: 4px;
-  padding: 5px 7px;
+  position: fixed;
+  isolation: isolate;
+  bottom: max(14px, env(safe-area-inset-bottom));
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
   border-radius: 999px;
-  border: 1px solid rgba(214, 182, 120, 0.28);
-  background: linear-gradient(180deg, rgba(15, 22, 40, 0.86) 0%, rgba(7, 11, 21, 0.92) 100%);
+  border: 1px solid rgba(214, 182, 120, 0.26);
+  background: linear-gradient(180deg, rgba(14, 20, 38, 0.86) 0%, rgba(7, 11, 21, 0.92) 100%);
   backdrop-filter: blur(22px) saturate(150%);
   -webkit-backdrop-filter: blur(22px) saturate(150%);
-  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.68), inset 0 1px 0 rgba(255, 246, 224, 0.18);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.64), inset 0 1px 0 rgba(255, 246, 224, 0.16);
   scrollbar-width: none;
 }
 #observatory-dock::-webkit-scrollbar { display: none; }
-#observatory-dock button {
-  min-height: 34px;
-  padding: 5px 13px;
+#observatory-dock::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+  width: var(--glider-w, 0px);
+  transform: translate3d(var(--glider-x, 0px), 0, 0);
+  opacity: var(--glider-opacity, 0);
   border-radius: 999px;
-  color: rgba(232, 224, 208, 0.84);
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
-#observatory-dock button:hover {
-  color: #fff8eb;
-  border-color: rgba(214, 182, 120, 0.36);
-  background: rgba(214, 182, 120, 0.12);
-}
-#observatory-dock button[aria-expanded='true'] {
-  color: #fff9ec;
-  border-color: rgba(240, 215, 156, 0.54);
   background: linear-gradient(135deg, rgba(214, 178, 106, 0.30) 0%, rgba(132, 110, 220, 0.20) 100%);
-  box-shadow: 0 3px 14px rgba(207, 169, 98, 0.22), inset 0 1px 0 rgba(255, 246, 224, 0.24);
+  border: 1px solid rgba(240, 215, 156, 0.46);
+  box-shadow: 0 2px 12px rgba(207, 169, 98, 0.20), inset 0 1px 0 rgba(255, 246, 224, 0.22);
+  pointer-events: none;
+  z-index: 0;
+}
+#observatory-dock[data-glider-ready='true']::before {
+  transition: transform 0.34s cubic-bezier(0.22, 1, 0.36, 1), width 0.30s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.22s ease, background 0.3s ease, border-color 0.3s ease;
+}
+#observatory-dock button {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 34px;
+  padding: 5px 14px;
+  border: 0 !important;
+  border-radius: 999px;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: rgba(232, 224, 208, 0.82);
+  transition: color 0.2s ease;
+}
+#observatory-dock button span {
+  margin-right: 0;
+}
+#observatory-dock button:hover,
+#observatory-dock button[aria-expanded='true'] {
+  color: #fffdf7;
 }
 
 body > #observatory-popovers,
 .sidera-v3-controls {
-  bottom: max(64px, calc(env(safe-area-inset-bottom) + 52px));
+  bottom: max(66px, calc(env(safe-area-inset-bottom) + 54px));
 }
 .realm-dock,
 #trail-dock,
@@ -2214,29 +2415,180 @@ body > #observatory-popovers,
   padding: 5px 10px;
 }
 
-/* 7. iPad / Tablet Tools Popover (761px – 1000px) */
-@media (min-width: 761px) and (max-width: 1000px) and (min-height: 501px) {
-  .syzygy-extra-tools {
-    top: 58px;
-    right: 12px;
-    width: 220px;
-    padding: 8px;
-    gap: 6px;
-    border-radius: 20px;
-    border: 1px solid rgba(214, 182, 120, 0.30);
-    background: rgba(9, 14, 26, 0.92);
-    backdrop-filter: blur(22px) saturate(150%);
-    -webkit-backdrop-filter: blur(22px) saturate(150%);
-    box-shadow: 0 22px 52px rgba(0, 0, 0, 0.72), inset 0 1px 0 rgba(255, 246, 224, 0.16);
-  }
-  #syzygy-header .syzygy-extra-tools button,
-  #syzygy-header .syzygy-extra-tools #btn-reset-cam {
-    border-radius: 12px;
-    padding: 9px 12px;
-  }
+/* ============================================================================
+   MODE 2: SHAN-HAI CELESTIAL SCROLL (印 山海 · 青绿泥金星图绘卷)
+   Shares 100% symmetrical layout & silky gliders while infusing mineral art!
+   ============================================================================ */
+html[data-ui-scheme='shanhai'],
+html[data-ui-scheme='shanhai'] body {
+  background: radial-gradient(ellipse at 48% 45%, #0d2034 0%, #071220 54%, #040811 100%);
+}
+html[data-ui-scheme='shanhai'] .astrolabe-bezel {
+  background:
+    radial-gradient(circle at 50% 48%, transparent 56%, rgba(3, 8, 16, 0.62) 100%),
+    linear-gradient(180deg, rgba(10, 28, 42, 0.26) 0%, transparent 16%, transparent 82%, rgba(8, 24, 34, 0.36) 100%);
+}
+html[data-ui-scheme='shanhai'] .shanhai-horizon {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  pointer-events: none;
+  overflow: hidden;
+}
+html[data-ui-scheme='shanhai'] .shanhai-svg-top {
+  display: none;
+}
+html[data-ui-scheme='shanhai'] .shanhai-svg-bottom {
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  bottom: 0;
+  width: 104%;
+  height: clamp(92px, 14vh, 148px);
+  opacity: 0.78;
+  filter: drop-shadow(0 -6px 20px rgba(56, 176, 148, 0.14));
+  animation: shanhaiMistBreathe 14s ease-in-out infinite alternate;
+}
+@keyframes shanhaiMistBreathe {
+  from { opacity: 0.70; transform: translateY(2px) scaleX(1); }
+  to { opacity: 0.84; transform: translateY(0) scaleX(1.01); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-ui-scheme='shanhai'] .shanhai-svg-bottom { animation: none !important; }
 }
 
-/* 8. Mobile & Compact Touch Layout: Unified Dock + Bottom Sheets + Unobstructed Starfield */
+html[data-ui-scheme='shanhai'] #syzygy-header {
+  background: linear-gradient(180deg, rgba(6, 16, 28, 0.90) 0%, rgba(8, 22, 34, 0.72) 100%);
+  border-bottom: 1px solid rgba(92, 198, 170, 0.22);
+}
+html[data-ui-scheme='shanhai'] .engraving-brand-mark {
+  color: #6ad0b4;
+  filter: drop-shadow(0 0 8px rgba(90, 198, 170, 0.32));
+}
+html[data-ui-scheme='shanhai'] #syzygy-header > nav,
+html[data-ui-scheme='shanhai'] .mode-theme-switch,
+html[data-ui-scheme='shanhai'] #observatory-dock {
+  border-radius: 13px;
+  border-top: 1px solid rgba(240, 210, 142, 0.42);
+  border-bottom: 1px solid rgba(92, 198, 170, 0.36);
+  border-left: 1px solid rgba(104, 196, 170, 0.22);
+  border-right: 1px solid rgba(104, 196, 170, 0.22);
+  background: rgba(6, 15, 26, 0.82);
+}
+html[data-ui-scheme='shanhai'] #syzygy-header > nav::before,
+html[data-ui-scheme='shanhai'] .mode-theme-switch::before,
+html[data-ui-scheme='shanhai'] #observatory-dock::before {
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(36, 108, 96, 0.62) 0%, rgba(16, 42, 64, 0.84) 55%, rgba(182, 132, 54, 0.42) 100%);
+  border: 1px solid rgba(244, 216, 154, 0.62);
+  box-shadow: 0 3px 14px rgba(34, 102, 90, 0.28), inset 0 1px 0 rgba(255, 246, 220, 0.30);
+}
+html[data-ui-scheme='shanhai'] #observatory-dock button > span {
+  color: #6ed2b6;
+}
+html[data-ui-scheme='shanhai'] #observatory-dock button[aria-expanded='true'] > span {
+  color: #ffe0a8;
+}
+html[data-ui-scheme='shanhai'] .syzygy-classic,
+html[data-ui-scheme='shanhai'] .syzygy-fiction,
+html[data-ui-scheme='shanhai'] .syzygy-tools-toggle,
+html[data-ui-scheme='shanhai'] #btn-syzygy-toggle,
+html[data-ui-scheme='shanhai'] #btn-proj-toggle,
+html[data-ui-scheme='shanhai'] #btn-reset-cam,
+html[data-ui-scheme='shanhai'] #btn-open-left,
+html[data-ui-scheme='shanhai'] #btn-open-right {
+  border-radius: 11px;
+  border-color: rgba(104, 196, 170, 0.30);
+  background: linear-gradient(145deg, rgba(12, 32, 46, 0.80), rgba(7, 15, 26, 0.86));
+}
+html[data-ui-scheme='shanhai'] #btn-syzygy-toggle.active {
+  border-color: rgba(242, 217, 155, 0.62);
+  background: linear-gradient(135deg, rgba(36, 104, 92, 0.54), rgba(168, 124, 50, 0.36));
+}
+html[data-ui-scheme='shanhai'] #banner-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(180deg, #fffdf6 0%, #f5dfab 54%, #c99846 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.88));
+}
+html[data-ui-scheme='shanhai'] #banner-title::after {
+  content: '山海';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 5px;
+  font-family: 'Astraia Handbook Glyphs', 'Astraia CJK Supplemental', 'Noto Serif SC', serif;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.12em;
+  color: #fff5e6;
+  -webkit-text-fill-color: #fff5e6;
+  background: linear-gradient(155deg, #cc3f33 0%, #922018 100%);
+  border: 1px solid rgba(255, 226, 198, 0.62);
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(204, 63, 51, 0.45);
+}
+html[data-ui-scheme='shanhai'] #banner-pill {
+  border-radius: 9px;
+  border-color: rgba(104, 196, 170, 0.34);
+  background: linear-gradient(90deg, rgba(14, 38, 48, 0.72), rgba(8, 18, 30, 0.76));
+}
+html[data-ui-scheme='shanhai'] .vol-plaque {
+  border-radius: 11px;
+  background: linear-gradient(180deg, rgba(12, 30, 44, 0.84) 0%, rgba(7, 15, 26, 0.88) 100%);
+  border-top: 1.5px solid rgba(240, 208, 138, 0.70);
+  border-bottom: 1.5px solid rgba(88, 196, 167, 0.56);
+  border-left: 1px solid rgba(214, 182, 120, 0.22);
+  border-right: 1px solid rgba(214, 182, 120, 0.22);
+}
+html[data-ui-scheme='shanhai'] .vol-plaque.wormhole-plaque {
+  background: linear-gradient(135deg, rgba(36, 24, 48, 0.88) 0%, rgba(16, 40, 52, 0.86) 52%, rgba(56, 26, 22, 0.86) 100%);
+  border-top-color: #f2d99b;
+  border-bottom-color: #cf4034;
+}
+html[data-ui-scheme='shanhai'] .plaque-orb {
+  width: 6.5px;
+  height: 6.5px;
+  border-radius: 2px;
+  background: linear-gradient(145deg, #df4b3e, #9e261d);
+  border: 1px solid rgba(255, 230, 204, 0.68);
+  box-shadow: 0 0 8px rgba(218, 68, 56, 0.72);
+}
+html[data-ui-scheme='shanhai'] #left-drawer,
+html[data-ui-scheme='shanhai'] #right-drawer:not(.parchment-scroll),
+html[data-ui-scheme='shanhai'] .taxonomy-explorer {
+  border-radius: 18px;
+  border: 1px solid rgba(104, 196, 170, 0.28);
+  border-top: 2.5px solid #dfb568;
+  border-bottom: 2px solid #4ab396;
+  background:
+    radial-gradient(95% 155px at 50% 0%, rgba(56, 168, 142, 0.20) 0%, rgba(214, 178, 106, 0.08) 48%, transparent 100%),
+    linear-gradient(175deg, rgba(10, 22, 36, 0.93) 0%, rgba(6, 11, 20, 0.96) 100%);
+}
+html[data-ui-scheme='shanhai'] #right-drawer.parchment-scroll {
+  border-radius: 18px;
+  border-top: 2.5px solid #9e2a2b !important;
+  border-bottom: 2px solid #785520 !important;
+}
+html[data-ui-scheme='shanhai'] .realm-dock,
+html[data-ui-scheme='shanhai'] #trail-dock,
+html[data-ui-scheme='shanhai'] .sidera-v3-row {
+  border-radius: 14px;
+  border-top: 1.5px solid rgba(240, 210, 142, 0.56);
+  border-bottom: 1.5px solid rgba(92, 198, 170, 0.44);
+  background: linear-gradient(160deg, rgba(12, 30, 44, 0.92) 0%, rgba(7, 14, 24, 0.95) 100%);
+}
+
+/* ============================================================================
+   MOBILE & COMPACT TOUCH LAYOUT (Both 星野 & 山海)
+   ============================================================================ */
 @media (max-width: 760px), (max-width: 1100px) and (max-height: 500px) {
   .dock-mobile-only {
     display: inline-flex;
@@ -2247,20 +2599,25 @@ body > #observatory-popovers,
     display: none !important;
   }
   #syzygy-header {
-    height: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
     grid-template-rows: 36px 38px;
-    gap: 7px;
+    height: auto;
+    gap: 6px;
     padding: 8px 12px 6px;
     background: linear-gradient(180deg, rgba(5, 8, 18, 0.92) 0%, rgba(5, 8, 18, 0.70) 78%, rgba(5, 8, 18, 0) 100%);
     border-bottom: 0;
     box-shadow: none;
   }
   #syzygy-header > nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
     padding: 3px;
-    gap: 3px;
-    border-radius: 999px;
+    gap: 2px;
   }
   #syzygy-header > nav .dim-tab {
+    flex: 1;
     min-height: 32px;
     padding: 4px 8px;
     display: inline-flex;
@@ -2270,12 +2627,17 @@ body > #observatory-popovers,
     font-size: 11.5px;
     line-height: 1.2;
   }
+  .mode-theme-switch button {
+    min-height: 28px;
+    padding: 0 8px;
+    font-size: 10.5px;
+  }
   .syzygy-classic,
   .syzygy-tools-toggle {
-    min-height: 33px;
-    padding: 0 11px;
+    display: inline-flex;
+    min-height: 32px;
+    padding: 0 10px;
     font-size: 11px;
-    border-radius: 999px;
   }
   .syzygy-extra-tools {
     top: 48px;
@@ -2305,12 +2667,8 @@ body > #observatory-popovers,
     border-radius: 20px;
     padding: 8px 10px;
   }
-  #trail-dock {
-    border-radius: 999px;
-    padding: 6px 10px;
-  }
 
-  /* Native-feeling Sculpted Spatial Bottom Sheets */
+  /* Native-feeling Sculpted Bottom Sheets */
   #left-drawer,
   #right-drawer,
   .taxonomy-explorer,
@@ -2361,7 +2719,6 @@ body > #observatory-popovers,
   }
 }
 
-/* Crisp single-line Chinese realm capsules on narrow phones */
 @media (max-width: 520px) {
   #syzygy-header > nav .dim-tab {
     display: inline-flex;
@@ -2383,7 +2740,6 @@ body > #observatory-popovers,
 @media (max-width: 450px), (max-width: 1100px) and (max-height: 500px) {
   .world-tag .vol-plaque {
     padding: 5px 11px;
-    border-radius: 999px;
   }
   .plaque-orb {
     width: 5px;
@@ -2391,7 +2747,20 @@ body > #observatory-popovers,
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 400px) {
+  #syzygy-header .syzygy-brand .font-cinzel {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+  }
+  .mode-theme-switch button {
+    padding: 0 6px;
+    font-size: 10px;
+  }
+  .syzygy-classic,
+  .syzygy-tools-toggle {
+    padding: 0 8px;
+    font-size: 10px;
+  }
   #observatory-dock button {
     padding: 5px 8px;
     font-size: 10.5px;
@@ -2400,11 +2769,17 @@ body > #observatory-popovers,
 
 @media (min-width: 600px) and (max-width: 1100px) and (max-height: 500px) {
   #syzygy-header {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     height: 52px;
     padding: 0 12px;
     background: rgba(7, 11, 22, 0.86);
     border-bottom: 1px solid rgba(214, 182, 120, 0.14);
+  }
+  #syzygy-header > nav {
+    grid-column: 2;
+    grid-row: 1;
+    width: auto;
   }
   #context-banner { top: 60px !important; }
   #left-drawer,
@@ -2414,579 +2789,48 @@ body > #observatory-popovers,
   }
 }
 
-/* Scheme Switcher Pill Base (shared by Scheme 1 & Scheme 2) */
-.syzygy-scheme-btn {
-  border-radius: 999px;
-  min-height: 34px;
-  padding: 0 11px;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 11.5px;
-  color: #f6e4bc;
-  border: 1px solid rgba(232, 198, 128, 0.42);
-  background: linear-gradient(135deg, rgba(214, 178, 106, 0.20) 0%, rgba(126, 102, 214, 0.16) 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 246, 224, 0.20);
-}
-.syzygy-scheme-btn > span:first-child {
-  color: #f0d79c;
-  font-size: 11px;
-}
-
-/* ============================================================================
-   SCHEME 2 (方案二): ECLIPSE ASTROLABE · BORDERLESS SKY CROWN & LUNAR DIAL
-   Scoped strictly to html[data-ui-scheme='2'] so Scheme 1 stays 100% intact.
-   ============================================================================ */
-
-/* 1. Dissolve Top Navbar Box -> Open Celestial Sky Crown */
-html[data-ui-scheme='2'] #syzygy-header {
-  height: 70px;
-  align-items: flex-start;
-  padding: 12px 22px 0;
-  background: radial-gradient(ellipse 80% 100% at 50% 0%, rgba(4, 7, 16, 0.72) 0%, rgba(4, 7, 16, 0) 100%) !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  border-bottom: 0 !important;
-  box-shadow: none !important;
-  pointer-events: none;
-}
-html[data-ui-scheme='2'] #syzygy-header > * {
-  pointer-events: auto;
-}
-html[data-ui-scheme='2'] .astrolabe-bezel {
-  top: 0;
-  background: radial-gradient(circle at 50% 50%, transparent 58%, rgba(2, 4, 10, 0.66) 100%);
-}
-html[data-ui-scheme='2'] .bezel-scale-top {
-  display: none;
-}
-
-/* 2. Curved Golden Ecliptic Orbit Switcher (浑天三界弦弧) */
-html[data-ui-scheme='2'] #syzygy-header > nav {
-  position: relative;
-  gap: 12px;
-  padding: 8px 18px 12px;
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0;
-  box-shadow: none !important;
-  overflow: visible !important;
-}
-html[data-ui-scheme='2'] #syzygy-header > nav::before {
-  content: '';
-  position: absolute;
-  left: 4%;
-  right: 4%;
-  top: 6px;
-  height: 36px;
-  border-top: 1px solid rgba(232, 198, 128, 0.42);
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  box-shadow: 0 -6px 24px rgba(214, 178, 106, 0.16);
-  mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
-  pointer-events: none;
-}
-html[data-ui-scheme='2'] #syzygy-header > nav::after {
-  content: '✦';
-  position: absolute;
-  top: -2px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 8.5px;
-  line-height: 1;
-  color: rgba(245, 222, 168, 0.72);
-  text-shadow: 0 0 10px rgba(240, 215, 156, 0.65);
-  pointer-events: none;
-}
-html[data-ui-scheme='2'] #syzygy-header > nav .dim-tab {
-  background: radial-gradient(circle at 50% 30%, rgba(16, 24, 46, 0.64), rgba(5, 8, 17, 0.48));
-  border: 1px solid rgba(214, 182, 120, 0.20);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 6px 14px;
-  color: rgba(232, 224, 208, 0.72);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.42);
-}
-html[data-ui-scheme='2'] #syzygy-header > nav .dim-tab:nth-child(1) {
-  transform: translateY(6px) rotate(-2.4deg);
-}
-html[data-ui-scheme='2'] #syzygy-header > nav .dim-tab:nth-child(2) {
-  transform: translateY(-2px);
-}
-html[data-ui-scheme='2'] #syzygy-header > nav .dim-tab:nth-child(3) {
-  transform: translateY(6px) rotate(2.4deg);
-}
-html[data-ui-scheme='2'] #syzygy-header > nav .dim-tab:hover {
-  color: #fff9ec;
-  border-color: rgba(240, 215, 156, 0.48);
-}
-html[data-ui-scheme='2'] #syzygy-header > nav .dim-tab.active {
-  color: #fffdf6;
-  background: radial-gradient(circle at 50% 30%, rgba(226, 188, 112, 0.36) 0%, rgba(22, 28, 52, 0.86) 76%);
-  border-color: rgba(248, 224, 168, 0.72);
-  outline: 1px dashed rgba(240, 215, 156, 0.48);
-  outline-offset: 3px;
-  box-shadow: 0 0 26px rgba(232, 194, 112, 0.34), 0 8px 22px rgba(0, 0, 0, 0.58), inset 0 0 12px rgba(255, 244, 214, 0.24);
-}
-html[data-ui-scheme='2'] #syzygy-header > nav .dim-tab[data-dim='sidera'].active {
-  background: radial-gradient(circle at 50% 30%, rgba(168, 142, 250, 0.36) 0%, rgba(18, 24, 48, 0.86) 76%);
-  border-color: rgba(212, 198, 255, 0.72);
-  outline-color: rgba(196, 181, 253, 0.50);
-  box-shadow: 0 0 28px rgba(164, 138, 248, 0.38), 0 8px 22px rgba(0, 0, 0, 0.58), inset 0 0 12px rgba(238, 230, 255, 0.24);
-}
-
-/* Corner Lens Medallion Controls in Top Sky */
-html[data-ui-scheme='2'] .syzygy-classic,
-html[data-ui-scheme='2'] .syzygy-fiction,
-html[data-ui-scheme='2'] .syzygy-tools-toggle,
-html[data-ui-scheme='2'] #btn-syzygy-toggle,
-html[data-ui-scheme='2'] #btn-proj-toggle,
-html[data-ui-scheme='2'] #btn-reset-cam,
-html[data-ui-scheme='2'] .syzygy-scheme-btn {
-  background: radial-gradient(circle at 50% 25%, rgba(20, 28, 52, 0.68), rgba(6, 10, 20, 0.56));
-  border: 1px solid rgba(214, 182, 120, 0.24);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 246, 224, 0.16);
-}
-html[data-ui-scheme='2'] .syzygy-scheme-btn {
-  border-color: rgba(245, 220, 162, 0.58);
-  background: radial-gradient(circle at 50% 30%, rgba(214, 176, 98, 0.30), rgba(16, 22, 42, 0.78));
-  box-shadow: 0 0 18px rgba(214, 178, 106, 0.24), inset 0 1px 0 rgba(255, 246, 224, 0.28);
-}
-
-/* 3. Centered Meridian Celestial Frontispiece (#context-banner) */
-html[data-ui-scheme='2'] #context-banner {
-  top: 66px;
-  left: 50%;
-  right: auto;
-  transform: translateX(-50%);
-  width: min(92vw, 660px);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-html[data-ui-scheme='2'] #banner-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 9px;
-  letter-spacing: 0.24em;
-  color: rgba(226, 194, 134, 0.74);
-}
-html[data-ui-scheme='2'] #banner-eyebrow::before,
-html[data-ui-scheme='2'] #banner-eyebrow::after {
-  content: '';
-  width: 26px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(226, 194, 134, 0.56));
-}
-html[data-ui-scheme='2'] #banner-eyebrow::after {
-  background: linear-gradient(90deg, rgba(226, 194, 134, 0.56), transparent);
-}
-html[data-ui-scheme='2'] #context-banner > .flex {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  margin-top: 2px;
-}
-html[data-ui-scheme='2'] #banner-title {
-  font-size: clamp(20px, 2.4vw, 27px);
-  letter-spacing: 0.22em;
-  background: linear-gradient(180deg, #fffefb 0%, #f6e7c6 56%, #cfa458 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: none;
-  filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.92));
-}
-html[data-ui-scheme='2'] #banner-pill {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  padding: 1px 6px;
-  color: rgba(236, 208, 152, 0.88);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
-}
-html[data-ui-scheme='2'] #banner-desc {
-  color: rgba(196, 186, 168, 0.74);
-  font-size: 11px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
-}
-
-/* 4. Desktop & iPad Vertical Gold-Inlaid Scroll Bookmark Slips (竖排金错签条) */
-@media (min-width: 761px) {
-  html[data-ui-scheme='2'] #btn-open-left:not(.hidden),
-  html[data-ui-scheme='2'] #btn-open-right:not(.hidden) {
-    top: 50%;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    letter-spacing: 0.28em;
-    gap: 8px;
-    padding: 18px 9px;
-    background: linear-gradient(180deg, rgba(18, 25, 46, 0.86) 0%, rgba(7, 11, 21, 0.90) 100%);
-    border: 1px solid rgba(226, 194, 134, 0.36);
-    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.68), inset 0 0 16px rgba(214, 182, 120, 0.10);
-  }
-  html[data-ui-scheme='2'] #btn-open-left:not(.hidden) {
-    left: 0;
-    border-left: 0;
-    border-radius: 0 18px 18px 0;
-    transform: translateY(-50%);
-  }
-  html[data-ui-scheme='2'] #btn-open-right:not(.hidden) {
-    right: 0;
-    border-right: 0;
-    border-radius: 18px 0 0 18px;
-    transform: translateY(-50%);
-  }
-  html[data-ui-scheme='2'] #btn-open-left:not(.hidden):hover {
-    transform: translate(3px, -50%);
-    border-color: rgba(245, 220, 162, 0.68);
-  }
-  html[data-ui-scheme='2'] #btn-open-right:not(.hidden):hover {
-    transform: translate(-3px, -50%);
-    border-color: rgba(245, 220, 162, 0.68);
-  }
-}
-
-/* 5. Frameless Copperplate Star-Chart Callouts on 3D Canvas (无框星图刻字) */
-html[data-ui-scheme='2'] .vol-plaque {
-  position: relative;
-  padding: 3px 8px 7px;
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  text-shadow: 0 1px 3px rgba(2, 4, 10, 0.98), 0 3px 14px rgba(2, 4, 10, 0.96), 0 0 24px rgba(4, 8, 20, 0.92);
-}
-html[data-ui-scheme='2'] .vol-plaque::after {
-  content: '';
-  position: absolute;
-  left: 14%;
-  right: 14%;
-  bottom: 1px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, var(--plaque-accent, #cfa962) 50%, transparent 100%);
-  box-shadow: 0 0 8px var(--plaque-accent, #cfa962);
-  opacity: 0.82;
-  transition: left 0.24s ease, right 0.24s ease, opacity 0.24s ease;
-}
-html[data-ui-scheme='2'] .world-tag:hover .vol-plaque {
-  box-shadow: none !important;
-}
-html[data-ui-scheme='2'] .world-tag:hover .vol-plaque::after {
-  left: 0;
-  right: 0;
-  opacity: 1;
-}
-html[data-ui-scheme='2'] .vol-plaque.wormhole-plaque::before {
-  content: '';
-  position: absolute;
-  left: 20%;
-  right: 20%;
-  bottom: -2px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, #c4b5fd 50%, transparent 100%);
-  opacity: 0.75;
-}
-html[data-ui-scheme='2'] .plaque-orb {
-  width: 6px;
-  height: 6px;
-  border-radius: 1px;
-  transform: rotate(45deg);
-  box-shadow: 0 0 10px var(--plaque-accent, #cfa962), 0 0 3px #fff;
-}
-html[data-ui-scheme='2'] .motif-anchor-chip {
-  background: linear-gradient(90deg, rgba(8, 12, 24, 0.72) 0%, rgba(8, 12, 24, 0.28) 100%);
-  border: 0;
-  border-left: 2px solid rgba(232, 198, 128, 0.65);
-  border-radius: 0 999px 999px 0;
-  box-shadow: none;
-  text-shadow: 0 1px 6px rgba(2, 4, 10, 0.95);
-}
-
-/* 6. Nadir Lunar Astrolabe Dial (#observatory-dock 朔望月晷罗盘弧盘) */
-html[data-ui-scheme='2'] #observatory-dock {
-  position: fixed;
-  bottom: max(8px, env(safe-area-inset-bottom));
-  gap: 8px;
-  padding: 10px 18px 6px;
-  overflow: visible;
-  border: 0;
-  border-top: 1px solid rgba(236, 202, 130, 0.46);
-  border-radius: 50% 50% 24px 24px / 36px 36px 14px 14px;
-  background: radial-gradient(ellipse 88% 125% at 50% 115%, rgba(22, 31, 58, 0.94) 0%, rgba(8, 12, 24, 0.80) 64%, rgba(5, 8, 16, 0.16) 100%);
-  box-shadow: 0 -10px 34px rgba(207, 169, 98, 0.14), 0 18px 44px rgba(0, 0, 0, 0.76), inset 0 1px 0 rgba(255, 246, 224, 0.26);
-}
-html[data-ui-scheme='2'] #observatory-dock::before {
-  content: '';
-  position: absolute;
-  left: 8%;
-  right: 8%;
-  top: 4px;
-  height: 22px;
-  border-top: 1px dashed rgba(214, 182, 120, 0.28);
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  pointer-events: none;
-}
-html[data-ui-scheme='2'] #observatory-dock button {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 3px;
-  min-width: 50px;
-  padding: 2px 5px;
-  border: 0 !important;
-  border-radius: 14px;
-  background: transparent !important;
-  box-shadow: none !important;
-  font-size: 10.5px;
-  letter-spacing: 0.04em;
-  color: rgba(226, 216, 198, 0.82);
-  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s ease;
-}
-html[data-ui-scheme='2'] #observatory-dock button > span {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  margin-right: 0 !important;
-  border-radius: 50%;
-  font-size: 13px;
-  color: #e6c680;
-  background: radial-gradient(circle at 50% 30%, rgba(26, 36, 66, 0.92), rgba(7, 11, 21, 0.95));
-  border: 1px solid rgba(214, 182, 120, 0.34);
-  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.58), inset 0 1px 0 rgba(255, 246, 224, 0.20);
-  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, color 0.22s ease;
-}
-/* Stepped Celestial Curve across the Lunar Dial */
-html[data-ui-scheme='2'] #observatory-dock button[data-observatory-panel='trails'],
-html[data-ui-scheme='2'] #observatory-dock #btn-taxonomy-dock,
-html[data-ui-scheme='2'] #observatory-dock button[data-observatory-panel='bridges'] {
-  transform: translateY(-3px);
-}
-html[data-ui-scheme='2'] #observatory-dock #btn-dock-left,
-html[data-ui-scheme='2'] #observatory-dock #btn-dock-right {
-  transform: translateY(3px);
-}
-/* Center Hero Eclipse Core: ◐ 界膜 */
-html[data-ui-scheme='2'] #observatory-dock button[data-observatory-panel='realm'] {
-  transform: translateY(-9px);
-  color: #fff6e0;
-  font-weight: 600;
-}
-html[data-ui-scheme='2'] #observatory-dock button[data-observatory-panel='realm'] > span {
-  width: 39px;
-  height: 39px;
-  font-size: 15px;
-  color: #fff8e6;
-  border-color: rgba(248, 224, 168, 0.72);
-  outline: 1px dashed rgba(240, 215, 156, 0.44);
-  outline-offset: 2.5px;
-  background: radial-gradient(circle at 50% 32%, rgba(224, 184, 104, 0.42) 0%, rgba(16, 23, 44, 0.96) 78%);
-  box-shadow: 0 0 22px rgba(214, 178, 106, 0.36), 0 8px 18px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 248, 228, 0.42);
-}
-html[data-ui-scheme='2'] #observatory-dock button:hover > span,
-html[data-ui-scheme='2'] #observatory-dock button[aria-expanded='true'] > span {
-  color: #fffdf7;
-  border-color: rgba(250, 228, 176, 0.85);
-  background: radial-gradient(circle at 50% 30%, rgba(226, 188, 110, 0.48) 0%, rgba(22, 28, 54, 0.96) 80%);
-  box-shadow: 0 0 20px rgba(232, 196, 118, 0.42), inset 0 1px 0 rgba(255, 248, 230, 0.42);
-  transform: scale(1.07);
-}
-html[data-ui-scheme='2'] #observatory-dock button[aria-expanded='true'] {
-  color: #fff9eb;
-}
-html[data-ui-scheme='2'] body > #observatory-popovers,
-html[data-ui-scheme='2'] .sidera-v3-controls {
-  bottom: max(84px, calc(env(safe-area-inset-bottom) + 72px));
-}
-
-/* 7. Illuminated Celestial Arch Drawers & Golden Meridian Spine */
-html[data-ui-scheme='2'] #left-drawer,
-html[data-ui-scheme='2'] #right-drawer:not(.parchment-scroll),
-html[data-ui-scheme='2'] .taxonomy-explorer {
-  border-radius: 28px 28px 18px 18px;
-  border: 1px solid rgba(226, 194, 134, 0.28);
-  background:
-    radial-gradient(90% 140px at 50% 0%, rgba(214, 178, 106, 0.16) 0%, transparent 100%),
-    linear-gradient(170deg, rgba(13, 18, 34, 0.90) 0%, rgba(6, 9, 18, 0.95) 100%);
-  box-shadow: 0 26px 64px rgba(0, 0, 0, 0.76), inset 0 1px 0 rgba(255, 244, 214, 0.28);
-}
-html[data-ui-scheme='2'] #right-drawer.parchment-scroll {
-  border-radius: 28px 28px 18px 18px;
-}
-html[data-ui-scheme='2'] .syzygy-directory-row,
-html[data-ui-scheme='2'] .syzygy-related {
-  border: 0;
-  border-left: 2px solid rgba(214, 182, 120, 0.24);
-  border-radius: 0 12px 12px 0;
-  background: linear-gradient(90deg, rgba(214, 182, 120, 0.05) 0%, rgba(10, 15, 28, 0.18) 100%);
-  padding: 8px 11px;
-}
-html[data-ui-scheme='2'] .syzygy-directory-row:hover,
-html[data-ui-scheme='2'] .syzygy-directory-row.is-selected,
-html[data-ui-scheme='2'] .syzygy-related:hover {
-  border-left-color: #f0d79c;
-  background: linear-gradient(90deg, rgba(214, 182, 120, 0.18) 0%, rgba(214, 182, 120, 0.03) 100%);
-}
-
-/* 8. Scheme 2 Mobile & Compact Touch Refinements */
-@media (max-width: 760px), (max-width: 1100px) and (max-height: 500px) {
-  html[data-ui-scheme='2'] #syzygy-header {
-    height: auto;
-    align-items: center;
-    grid-template-rows: 36px 44px;
-    gap: 4px;
-    padding: 8px 10px 2px;
-  }
-  html[data-ui-scheme='2'] #syzygy-header > nav {
-    padding: 6px 4px 6px;
-    gap: 6px;
-    justify-content: center;
-  }
-  html[data-ui-scheme='2'] #syzygy-header > nav .dim-tab {
-    flex: 0 1 auto;
-    min-height: 31px;
-    padding: 4px 11px;
-    font-size: 11.5px;
-  }
-  html[data-ui-scheme='2'] .syzygy-scheme-btn,
-  html[data-ui-scheme='2'] .syzygy-classic,
-  html[data-ui-scheme='2'] .syzygy-tools-toggle {
-    min-height: 31px;
-    padding: 0 9px;
-    font-size: 10.5px;
-  }
-  html[data-ui-scheme='2'] #context-banner {
-    top: 90px !important;
-    left: 50% !important;
-    right: auto !important;
-    transform: translateX(-50%);
-    width: calc(100vw - 28px);
-  }
-  html[data-ui-scheme='2'] #banner-eyebrow {
-    font-size: 8px;
-    letter-spacing: 0.16em;
-    max-width: 92vw;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  html[data-ui-scheme='2'] #banner-title {
-    font-size: 19px;
-    letter-spacing: 0.18em;
-  }
-  html[data-ui-scheme='2'] #banner-desc {
-    display: none;
-  }
-  html[data-ui-scheme='2'] #observatory-dock {
-    gap: 4px;
-    padding: 9px 12px 5px;
-    max-width: calc(100vw - 12px);
-  }
-  html[data-ui-scheme='2'] #observatory-dock button {
-    min-width: 48px;
-    padding: 2px 3px;
-    font-size: 10px;
-  }
-  html[data-ui-scheme='2'] body[data-dimension='sidera'] #observatory-dock {
-    gap: 1px;
-    padding: 9px 8px 5px;
-  }
-  html[data-ui-scheme='2'] body[data-dimension='sidera'] #observatory-dock button {
-    min-width: 42px;
-    padding: 2px 1px;
-    font-size: 9.5px;
-  }
-  html[data-ui-scheme='2'] body[data-dimension='sidera'] #observatory-dock button > span {
-    width: 29px;
-    height: 29px;
-    font-size: 12px;
-  }
-  html[data-ui-scheme='2'] body[data-dimension='sidera'] #observatory-dock button[data-observatory-panel='realm'] > span {
-    width: 35px;
-    height: 35px;
-  }
-  html[data-ui-scheme='2'] #left-drawer,
-  html[data-ui-scheme='2'] #right-drawer,
-  html[data-ui-scheme='2'] .taxonomy-explorer,
-  html[data-ui-scheme='2'] body[data-left-open='true'] .taxonomy-explorer {
-    bottom: max(80px, calc(env(safe-area-inset-bottom) + 68px)) !important;
-    height: min(71dvh, calc(100dvh - 118px));
-    border-radius: 32px 32px 20px 20px !important;
-  }
-  html[data-ui-scheme='2'] #left-drawer::before,
-  html[data-ui-scheme='2'] #right-drawer::before,
-  html[data-ui-scheme='2'] .taxonomy-explorer::before {
-    width: 56px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(240, 215, 156, 0.72), transparent);
-    box-shadow: 0 0 10px rgba(214, 178, 106, 0.45);
-  }
-}
-
-@media (max-width: 400px) {
-  html[data-ui-scheme='2'] #syzygy-header .syzygy-brand .font-cinzel {
-    font-size: 12px;
-    letter-spacing: 0.14em;
-  }
-  html[data-ui-scheme='2'] .syzygy-scheme-btn,
-  html[data-ui-scheme='2'] .syzygy-classic,
-  html[data-ui-scheme='2'] .syzygy-tools-toggle {
-    padding: 0 7px;
-    font-size: 10px;
-  }
-}
-
-/* Keep touch controls reachable while the 3D scene is still initializing. */
+/* Preserve the live site's compact touch and tablet accessibility fixes. */
 @media (max-width: 760px), (max-width: 1100px) and (max-height: 500px) and (pointer: coarse) {
   .drawer-anim { transition: none; }
 }
-
-@media (max-width: 760px) and (min-height: 501px) {
-  html[data-ui-scheme='2'] #syzygy-header { grid-template-rows: 42px 44px; }
-  html[data-ui-scheme='2'] #syzygy-header .syzygy-scheme-btn,
-  html[data-ui-scheme='2'] #syzygy-header .syzygy-classic,
-  html[data-ui-scheme='2'] #syzygy-header .syzygy-tools-toggle { min-height: 40px; }
-  html[data-ui-scheme='2'] #context-banner { top: 100px !important; }
-}
-@media (max-width: 1100px) and (max-height: 500px) and (pointer: coarse) {
-  html[data-ui-scheme='2'] #syzygy-header .syzygy-scheme-btn,
-  html[data-ui-scheme='2'] #syzygy-header .syzygy-classic,
-  html[data-ui-scheme='2'] #syzygy-header .syzygy-tools-toggle { min-height: 40px; }
-}
-
-/* A tablet keeps its side bookmarks and a readable, unclipped top bar. */
 @media (min-width: 761px) and (min-height: 501px) {
-  html[data-ui-scheme='2'] #observatory-dock .dock-mobile-only { display: none; }
-}
-@media (min-width: 761px) and (max-width: 900px) and (min-height: 501px) {
-  html[data-ui-scheme='2'] #syzygy-header { padding-inline: 10px; gap: 8px; }
-  html[data-ui-scheme='2'] #syzygy-header > nav {
-    flex: 1 1 auto;
-    min-width: 0;
-    justify-content: center;
-    gap: 5px;
-    padding-inline: 6px;
-  }
-  html[data-ui-scheme='2'] #syzygy-header > nav .font-cinzel { display: none; }
-  html[data-ui-scheme='2'] #syzygy-header > nav .dim-tab { padding-inline: 9px; }
-  html[data-ui-scheme='2'] .syzygy-header-actions { gap: 4px; }
+  #observatory-dock .dock-mobile-only { display: none; }
 }
 @media (min-width: 761px) and (max-width: 1120px) {
   #right-drawer > div:first-of-type { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; }
-  #right-drawer > div:first-of-type > div:first-child { justify-content: space-between; min-width: 0; }
-  #right-drawer > div:first-of-type > div:last-child { justify-content: flex-end; }
-  .syzygy-spread-btn { display: inline-flex; align-items: center; min-height: 36px; }
+  #right-drawer .syzygy-spread-btn { display: inline-flex; align-items: center; min-height: 36px; }
+}
+
+/* Keep the latest mode switch legible at common desktop and tablet sizes. */
+@media (min-width: 1321px) {
+  #syzygy-header { grid-template-columns: minmax(0, 1fr) auto max-content; }
+  #syzygy-header .syzygy-extra-tools button { white-space: nowrap; flex-shrink: 0; }
+}
+@media (min-width: 761px) and (max-width: 1120px) and (min-height: 501px) {
+  #syzygy-header { grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: 40px 38px; height: 92px; padding: 5px 10px; gap: 3px; }
+  #syzygy-header .syzygy-brand { grid-column: 1; grid-row: 1; }
+  #syzygy-header > nav { grid-column: 1 / -1; grid-row: 2; width: min(650px, 100%); justify-content: stretch; }
+  #syzygy-header > nav .dim-tab { flex: 1; justify-content: center; min-height: 36px; }
+  #syzygy-header .syzygy-header-actions { grid-column: 2; grid-row: 1; }
+  .astrolabe-bezel { top: 92px; }
+  #btn-open-left, #btn-open-right { top: 100px; }
+  #left-drawer, #right-drawer { top: 100px; }
+  #context-banner { top: 100px; }
+}
+
+/* A quiet mountain engraving keeps the mode switch in the same palette. */
+.mode-theme-switch .mode-seal-mark {
+  width: 14px; height: 14px; border: 0; border-radius: 0; background: transparent; box-shadow: none;
+}
+.mode-seal-mark svg {
+  width: 14px; height: 14px; fill: none; stroke: #a4c1b3; stroke-width: 1.15;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+
+html[data-ui-scheme='shanhai'] #banner-title::after { content: none; }
+@media (min-width: 1321px) {
+  #syzygy-header .syzygy-header-actions { gap: 5px; }
+  #syzygy-header .syzygy-extra-tools { gap: 4px; }
+  #syzygy-header .syzygy-classic,
+  #syzygy-header .syzygy-extra-tools button { min-height: 30px; padding-inline: 9px; font-size: 11px; }
 }

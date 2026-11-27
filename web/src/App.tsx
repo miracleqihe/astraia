@@ -1,6 +1,7 @@
-import { lazy, Suspense, useCallback, useEffect, useMemo, useState, type CSSProperties, type Dispatch, type SetStateAction } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type Dispatch, type SetStateAction } from 'react';
 import { CollectionGuide } from './CollectionGuide';
 import { isCompactViewport } from './compactViewport';
+import { attachNavGlider } from './navGlider';
 import { nodeContentGroup, type ContentGroup, type Region } from './catalogueBrowse';
 import { DossierComparison } from './DossierComparison';
 import { BRAND_MARK_SVG } from './engraving';
@@ -13,7 +14,7 @@ import {
 } from './graph';
 import { loadOverviewMapFonts } from './views/geoFonts';
 import { portalHref, type PortalDimension } from './portalNavigation';
-import { applyUIScheme, initUIScheme, subscribeUIScheme, type UIScheme } from './uiScheme';
+import { applyUIScheme, initUIScheme, subscribeUIScheme, UI_SCHEME_META, type UIScheme } from './uiScheme';
 import { announceViewReady } from './viewRouter';
 
 let geoPromise: Promise<typeof import('./views/GeoView')> | undefined;
@@ -46,13 +47,21 @@ function Brand() {
   </div>;
 }
 
-function SchemeSwitch({ scheme, onToggle }: { scheme: UIScheme; onToggle: () => void }) {
-  return <button type="button" className="scheme-toggle" onClick={onToggle}
-    title="切换视觉方案：方案一（星轨胶囊） ⇄ 方案二（浑天星盘）"
-    aria-label={scheme === '2' ? '当前为方案二（浑天星盘），点击切换至方案一' : '当前为方案一（星轨胶囊），点击切换至方案二'}>
-    <span aria-hidden="true">✦</span>
-    <span>{scheme === '2' ? '方案二' : '方案一'}</span>
-  </button>;
+function SchemeSwitch({ scheme, onSelect }: { scheme: UIScheme; onSelect: (next: UIScheme) => void }) {
+  const switchRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => attachNavGlider(switchRef.current, {
+    itemSelector: 'button',
+    activeSelector: "button[aria-pressed='true']",
+    followHover: false,
+  }), []);
+  return <div ref={switchRef} className="mode-theme-switch" role="group" aria-label="视界意境切换">
+    <button type="button" aria-pressed={scheme === 'cosmos'} title={UI_SCHEME_META.cosmos.full} onClick={() => onSelect('cosmos')}>
+      <span aria-hidden="true">✦</span><span>星野</span>
+    </button>
+    <button type="button" aria-pressed={scheme === 'shanhai'} title={UI_SCHEME_META.shanhai.full} onClick={() => onSelect('shanhai')}>
+      <span className="mode-seal-mark" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M1.5 12.5 5.7 5.6 8 8.6 10 5.8 14.5 12.5Z" /></svg></span><span>山海</span>
+    </button>
+  </div>;
 }
 
 function SyzygyLink({ dimension, story, showFiction, tiers }: { dimension: PortalDimension; story?: string | null; showFiction?: boolean; tiers?: readonly string[] }) {
@@ -66,7 +75,13 @@ function SyzygyLink({ dimension, story, showFiction, tiers }: { dimension: Porta
 }
 
 function ViewSwitch({ mode, lifeMode, onSwitch }: { mode: ViewMode; lifeMode: boolean; onSwitch: (next: ViewMode | 'life') => void }) {
-  return <nav className="view-switch" aria-label="图谱视图">
+  const navRef = useRef<HTMLElement | null>(null);
+  useEffect(() => attachNavGlider(navRef.current, {
+    itemSelector: 'button',
+    activeSelector: "button[aria-pressed='true']",
+    followHover: false,
+  }), []);
+  return <nav ref={navRef} className="view-switch" aria-label="图谱视图">
     <button type="button" aria-label="UMBRA 坤舆异志" aria-pressed={!lifeMode && mode === 'geo'} onClick={() => onSwitch('geo')}>
       <span className="mode-glyph mode-glyph-umbra" aria-hidden="true">◇</span>
       <span className="mode-full"><span className="mode-latin">UMBRA</span><span className="mode-separator"> · </span><span className="mode-chinese">坤舆异志</span></span><span className="mode-short" aria-hidden="true">UMBRA</span>
@@ -83,9 +98,9 @@ function ViewSwitch({ mode, lifeMode, onSwitch }: { mode: ViewMode; lifeMode: bo
   </nav>;
 }
 
-function Atlas({ snapshot, loading, details, detailsError, uiScheme, onToggleScheme, onNeedDetails, onRetryDetails, onEnterLifeWhileLoading }: {
+function Atlas({ snapshot, loading, details, detailsError, uiScheme, onSelectScheme, onNeedDetails, onRetryDetails, onEnterLifeWhileLoading }: {
   snapshot: GraphSnapshot; loading: boolean; details: GraphDetails | null; detailsError: string;
-  uiScheme: UIScheme; onToggleScheme: () => void;
+  uiScheme: UIScheme; onSelectScheme: (next: UIScheme) => void;
   onNeedDetails: () => void; onRetryDetails: () => void; onEnterLifeWhileLoading: () => void;
 }) {
   const [entry] = useState(() => {
@@ -357,7 +372,7 @@ function Atlas({ snapshot, loading, details, detailsError, uiScheme, onToggleSch
       <Brand />
       <ViewSwitch mode={mode} lifeMode={lifeMode} onSwitch={switchView} />
       <div className="top-actions">
-        <SchemeSwitch scheme={uiScheme} onToggle={onToggleScheme} />
+        <SchemeSwitch scheme={uiScheme} onSelect={onSelectScheme} />
         <SyzygyLink dimension={lifeMode ? 'omnia' : mode === 'geo' ? 'umbra' : 'sidera'} story={lifeMode ? null : selectedId} showFiction={tiers.has('F')} tiers={ALL_TIERS.filter(tier => tiers.has(tier))} />
         {!lifeMode && <>
           {!publicSite && <a className="review-link" aria-label="资料复核" href={`${import.meta.env.BASE_URL}review/index.html`}><span className="review-link-full">资料复核</span><span className="review-link-short" aria-hidden="true">复核</span></a>}
@@ -456,8 +471,8 @@ function Atlas({ snapshot, loading, details, detailsError, uiScheme, onToggleSch
 export function App() {
   const [uiScheme, setUIScheme] = useState<UIScheme>(() => initUIScheme());
   useEffect(() => subscribeUIScheme(setUIScheme), []);
-  const toggleScheme = useCallback(() => {
-    setUIScheme((prev) => applyUIScheme(prev === '2' ? '1' : '2'));
+  const selectScheme = useCallback((next: UIScheme) => {
+    setUIScheme(applyUIScheme(next));
   }, []);
   const [directLife, setDirectLife] = useState(() => new URL(window.location.href).searchParams.get('view') === 'life');
   const [lifeRouteVersion, setLifeRouteVersion] = useState(0);
@@ -521,18 +536,18 @@ export function App() {
       }
       url.searchParams.set('view', next === 'geo' ? 'map' : 'graph'); url.searchParams.delete('entry'); url.hash = '';
       window.history.replaceState({}, '', url); setPendingMode(next); setDirectLife(false);
-    }} /><div className="top-actions"><SchemeSwitch scheme={uiScheme} onToggle={toggleScheme} /><SyzygyLink dimension="omnia" /></div></header>
+    }} /><div className="top-actions"><SchemeSwitch scheme={uiScheme} onSelect={selectScheme} /><SyzygyLink dimension="omnia" /></div></header>
     <Suspense fallback={<div className="life-status">正在载入知识星图…</div>}><LifeKnowledge key={lifeRouteVersion} /></Suspense>
   </div>;
   if (snapshot || !error) return <Atlas snapshot={snapshot ?? EMPTY_SNAPSHOT} loading={!snapshot} details={details} detailsError={detailsError}
-    uiScheme={uiScheme} onToggleScheme={toggleScheme}
+    uiScheme={uiScheme} onSelectScheme={selectScheme}
     onNeedDetails={needDetails} onRetryDetails={retryDetails} onEnterLifeWhileLoading={() => setDirectLife(true)} />;
   return <div className="app-shell"><header className="topbar"><Brand /><ViewSwitch mode={pendingMode} lifeMode={false} onSwitch={(next) => {
     const url = new URL(window.location.href); url.searchParams.set('view', next === 'geo' ? 'map' : next);
     if (next !== 'life') url.searchParams.delete('entry');
     window.history.replaceState({}, '', url);
     if (next === 'life') setDirectLife(true); else setPendingMode(next);
-  }} /><div className="top-actions"><SchemeSwitch scheme={uiScheme} onToggle={toggleScheme} /><SyzygyLink dimension={pendingMode === 'geo' ? 'umbra' : 'sidera'} /></div></header><main className="loading-shell"><div className="loading-message" role={error ? 'alert' : 'status'}>
+  }} /><div className="top-actions"><SchemeSwitch scheme={uiScheme} onSelect={selectScheme} /><SyzygyLink dimension={pendingMode === 'geo' ? 'umbra' : 'sidera'} /></div></header><main className="loading-shell"><div className="loading-message" role={error ? 'alert' : 'status'}>
     <h1>{error ? '图谱暂未加载' : '正在读取图谱'}</h1>{error && <p>{error}</p>}
     {error && <button type="button" className="quiet-button" onClick={() => { setError(null); setAttempt((value) => value + 1); }}>重试</button>}
   </div></main></div>;

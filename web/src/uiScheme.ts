@@ -1,20 +1,31 @@
-export type UIScheme = '1' | '2';
+export type UIScheme = 'cosmos' | 'shanhai';
 
-const UI_SCHEME_KEY = 'astraia-ui-scheme';
+const UI_SCHEME_KEY = 'astraia-ui-mode-v1';
+
+export const UI_SCHEME_META: Record<UIScheme, { short: string; full: string }> = {
+  cosmos: { short: '星野', full: '星野界膜 · 流体星轨玻璃' },
+  shanhai: { short: '山海', full: '山海绘卷 · 青绿泥金星图' },
+};
+
+function normalizeScheme(raw: string | null): UIScheme | null {
+  if (raw === 'cosmos' || raw === '1' || raw === '2') return 'cosmos';
+  if (raw === 'shanhai' || raw === '3') return 'shanhai';
+  return null;
+}
 
 export function readUIScheme(): UIScheme {
   try {
-    const param = new URL(window.location.href).searchParams.get('scheme');
-    if (param === '1' || param === '2') {
+    const param = normalizeScheme(new URL(window.location.href).searchParams.get('scheme'));
+    if (param) {
       localStorage.setItem(UI_SCHEME_KEY, param);
       return param;
     }
-    const stored = localStorage.getItem(UI_SCHEME_KEY);
-    if (stored === '1' || stored === '2') return stored;
+    const stored = normalizeScheme(localStorage.getItem(UI_SCHEME_KEY));
+    if (stored) return stored;
   } catch {
     // Ignore storage or URL errors in non-browser environments.
   }
-  return '2';
+  return 'shanhai';
 }
 
 export function applyUIScheme(scheme: UIScheme): UIScheme {
@@ -42,11 +53,10 @@ export function initUIScheme(): UIScheme {
   return applyUIScheme(readUIScheme());
 }
 
-/** Keep the classic view and its retained Syzygy frame in the same scheme. */
 export function subscribeUIScheme(onChange: (scheme: UIScheme) => void): () => void {
   if (typeof window === 'undefined') return () => {};
   const sync = (event: StorageEvent) => {
-    if (event.key !== UI_SCHEME_KEY || (event.newValue !== '1' && event.newValue !== '2')) return;
+    if (event.key !== UI_SCHEME_KEY || (event.newValue !== 'cosmos' && event.newValue !== 'shanhai')) return;
     onChange(applyUIScheme(event.newValue));
   };
   window.addEventListener('storage', sync);

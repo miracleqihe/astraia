@@ -1,5 +1,6 @@
 import { isCompactViewport } from '../compactViewport';
-import { applyUIScheme, initUIScheme, subscribeUIScheme } from '../uiScheme';
+import { attachNavGlider } from '../navGlider';
+import { applyUIScheme, initUIScheme, subscribeUIScheme, UI_SCHEME_META } from '../uiScheme';
 
 // Wire the small, useful parts of the observatory before the 3D scene loads.
 let shell;
@@ -13,35 +14,43 @@ export function initSyzygyShell() {
   const openRight = document.getElementById('btn-open-right');
   const dockLeft = document.getElementById('btn-dock-left');
   const dockRight = document.getElementById('btn-dock-right');
-  const schemeBtn = document.getElementById('btn-ui-scheme');
+  const modeSwitch = document.getElementById('ui-mode-switch');
   const viewport = document.getElementById('webgl-viewport');
   const toolsButton = document.getElementById('btn-mobile-tools');
   const toolsPanel = document.getElementById('syzygy-extra-tools');
 
-  function syncSchemeButton() {
-    if (!schemeBtn) return;
-    const label = schemeBtn.querySelector('[data-scheme-label]');
-    if (label) label.textContent = currentScheme === '2' ? '方案二' : '方案一';
-    schemeBtn.dataset.scheme = currentScheme;
-    schemeBtn.setAttribute('aria-label', currentScheme === '2' ? '当前为方案二（浑天星盘），点击切换至方案一' : '当前为方案一（流光胶囊），点击切换至方案二');
+  function syncModeSwitch() {
+    if (!modeSwitch) return;
+    modeSwitch.querySelectorAll('[data-ui-mode]').forEach((btn) => {
+      btn.setAttribute('aria-pressed', String(btn.dataset.uiMode === currentScheme));
+    });
   }
-  syncSchemeButton();
-  schemeBtn?.addEventListener('click', () => {
-    currentScheme = applyUIScheme(currentScheme === '2' ? '1' : '2');
-    syncSchemeButton();
+  syncModeSwitch();
+  attachNavGlider(modeSwitch, {
+    itemSelector: '[data-ui-mode]',
+    activeSelector: "[data-ui-mode][aria-pressed='true']",
+    followHover: false,
+  });
+  modeSwitch?.addEventListener('click', (event) => {
+    const btn = event.target.closest?.('[data-ui-mode]');
+    if (!btn) return;
+    const next = btn.dataset.uiMode === 'cosmos' ? 'cosmos' : 'shanhai';
+    if (next === currentScheme) return;
+    currentScheme = applyUIScheme(next);
+    syncModeSwitch();
     const toast = document.getElementById('status-toast');
     if (toast) {
-      toast.textContent = currentScheme === '2' ? '已切换至 方案二 · 浑天星盘' : '已切换至 方案一 · 星轨胶囊';
+      toast.textContent = `已切换至「${UI_SCHEME_META[currentScheme].full}」`;
       toast.style.opacity = '1';
-      clearTimeout(schemeBtn._toastTimer);
-      schemeBtn._toastTimer = setTimeout(() => { toast.style.opacity = '0'; }, 1800);
+      clearTimeout(modeSwitch._toastTimer);
+      modeSwitch._toastTimer = setTimeout(() => { toast.style.opacity = '0'; }, 1800);
     }
     onChange();
   });
   let onChange = () => {};
   subscribeUIScheme(scheme => {
     currentScheme = scheme;
-    syncSchemeButton();
+    syncModeSwitch();
     onChange();
   });
   let ready = false;
@@ -101,6 +110,16 @@ export function initSyzygyShell() {
   // Keep the HTML's initial state; never undo an early tap when the scene is ready.
   apply(left, openLeft, 'left', left.classList.contains('drawer-left-hidden'));
   apply(right, openRight, 'right', right.classList.contains('drawer-right-hidden'));
+  attachNavGlider(document.getElementById('dim-switcher'), {
+    itemSelector: '.dim-tab',
+    activeSelector: '.dim-tab.active',
+    followHover: false,
+  });
+  attachNavGlider(document.getElementById('observatory-dock'), {
+    itemSelector: 'button',
+    activeSelector: "button[aria-expanded='true']",
+    followHover: true,
+  });
   openLeft.addEventListener('click', () => setLeftCollapsed(false));
   openRight.addEventListener('click', () => setRightCollapsed(false));
   dockLeft?.addEventListener('click', () => setLeftCollapsed(!left.classList.contains('drawer-left-hidden')));
