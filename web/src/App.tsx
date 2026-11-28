@@ -59,7 +59,7 @@ function SchemeSwitch({ scheme, onSelect }: { scheme: UIScheme; onSelect: (next:
       <span aria-hidden="true">✦</span><span>星野</span>
     </button>
     <button type="button" aria-pressed={scheme === 'shanhai'} title={UI_SCHEME_META.shanhai.full} onClick={() => onSelect('shanhai')}>
-      <span className="mode-seal-mark" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M1.5 12.5 5.7 5.6 8 8.6 10 5.8 14.5 12.5Z" /></svg></span><span>山海</span>
+      <span className="mode-seal-mark" aria-hidden="true">印</span><span>山海</span>
     </button>
   </div>;
 }

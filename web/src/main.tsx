@@ -1,13 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import '@fontsource/cormorant-garamond/latin-600.css';
-import '@fontsource/inter/latin-400.css';
-import '@fontsource/inter/latin-600.css';
-import '@fontsource/jetbrains-mono/latin-400.css';
-import '@fontsource/noto-sans-sc/400.css';
-import '@fontsource/noto-sans-sc/600.css';
-import '@fontsource/noto-serif-sc/600.css';
-import '@fontsource/noto-sans-thai/thai-400.css';
-import '@fontsource/noto-sans-thai/thai-600.css';
+import './fonts';
 import { App } from './App';
 import { initViewRouter } from './viewRouter';
 import './styles.css';

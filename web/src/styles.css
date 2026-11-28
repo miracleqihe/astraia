@@ -159,9 +159,9 @@
 }
 
 :root {
-  --font-editorial: "Astraia Handbook Glyphs", "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Serif Vietnamese", "Cormorant Garamond", "Noto Serif SC", "Microsoft YaHei", "Malgun Gothic", "Noto Sans Thai", "Noto Sans Lao", Georgia, serif;
-  --font-grotesk: "Astraia Handbook Glyphs", "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Sans Vietnamese", "Inter", "Noto Sans SC", "Microsoft YaHei", "Malgun Gothic", "Noto Sans Thai", "Noto Sans Lao", sans-serif;
-  --font-astrometric: "Astraia Handbook Glyphs", "Astraia CJK Supplemental", "Noto Sans Khmer", "Noto Sans Buginese", "Charis IPA", "Noto Sans Vietnamese", "JetBrains Mono", monospace;
+  --font-editorial: var(--font-heading);
+  --font-grotesk: var(--font-ui);
+  --font-astrometric: var(--font-meta);
 
   color-scheme: dark;
   background: var(--plate-bg);
@@ -1324,67 +1324,26 @@ h1, h2, h3, p, dl, dd { margin: 0; }
   font-weight: 600;
 }
 
-/* 山海绘卷 (shanhai) Harmonization on Classic Workbench */
-html[data-ui-scheme='shanhai'] .topbar {
-  background: linear-gradient(90deg, rgba(8, 22, 34, 0.94) 0%, rgba(12, 34, 44, 0.92) 50%, rgba(8, 22, 34, 0.94) 100%);
-  border-bottom: 1px solid rgba(92, 198, 170, 0.26);
-}
-html[data-ui-scheme='shanhai'] .engraving-brand-mark { color: #6ad0b4; }
+/* 山海绘卷: the workbench shares the observatory's ink and woodblock palette. */
+html[data-ui-scheme='shanhai'] .topbar { background: linear-gradient(90deg, rgba(13, 11, 9, .96), rgba(25, 19, 13, .94) 50%, rgba(13, 11, 9, .96)); border-bottom: 1px solid rgba(216, 176, 100, .26); }
+html[data-ui-scheme='shanhai'] .engraving-brand-mark { color: #d8b064; }
 html[data-ui-scheme='shanhai'] .view-switch,
-html[data-ui-scheme='shanhai'] .mode-theme-switch {
-  border-radius: 12px;
-  border-top: 1px solid rgba(240, 210, 142, 0.42);
-  border-bottom: 1px solid rgba(92, 198, 170, 0.36);
-  background: rgba(6, 16, 28, 0.82);
-}
+html[data-ui-scheme='shanhai'] .mode-theme-switch { border-radius: 8px; border: 1px solid rgba(216, 176, 100, .34); background: rgba(12, 10, 8, .88); }
 html[data-ui-scheme='shanhai'] .view-switch::before,
-html[data-ui-scheme='shanhai'] .mode-theme-switch::before {
-  border-radius: 9px;
-  background: linear-gradient(135deg, rgba(36, 108, 96, 0.62) 0%, rgba(16, 42, 64, 0.84) 55%, rgba(182, 132, 54, 0.42) 100%);
-  border-color: rgba(244, 216, 154, 0.60);
-}
+html[data-ui-scheme='shanhai'] .mode-theme-switch::before { border-radius: 6px; background: linear-gradient(135deg, rgba(162, 112, 54, .44), rgba(38, 29, 21, .90) 54%, rgba(182, 56, 44, .30)); border-color: rgba(240, 211, 148, .64); }
 html[data-ui-scheme='shanhai'] .syzygy-entry,
 html[data-ui-scheme='shanhai'] .directory-toggle,
 html[data-ui-scheme='shanhai'] .fiction-switch,
 html[data-ui-scheme='shanhai'] .modern-shortcut,
-html[data-ui-scheme='shanhai'] .geo-list-toggle {
-  border-radius: 11px;
-}
-html[data-ui-scheme='shanhai'] .stage-heading h1 {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(180deg, #fffdf6 0%, #f5dfab 54%, #c99846 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-html[data-ui-scheme='shanhai'] .stage-heading h1::after {
-  content: '山海';
-  padding: 2px 5px;
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  color: #fff5e6;
-  -webkit-text-fill-color: #fff5e6;
-  background: linear-gradient(155deg, #cc3f33 0%, #922018 100%);
-  border: 1px solid rgba(255, 226, 198, 0.62);
-  border-radius: 3px;
-}
-html[data-ui-scheme='shanhai'] .visual-stage {
-  border-radius: 18px;
-  border-top: 1.5px solid rgba(236, 202, 130, 0.36);
-  border-bottom: 1.5px solid rgba(92, 198, 170, 0.30);
-}
+html[data-ui-scheme='shanhai'] .geo-list-toggle { border-radius: 7px; border-color: rgba(216, 176, 100, .34); }
+html[data-ui-scheme='shanhai'] .stage-heading h1 { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(180deg, #fff9eb, #f0d394 54%, #c79448); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+html[data-ui-scheme='shanhai'] .stage-heading h1::after { content: '山海'; padding: 2px 6px; font: 400 11px/1.2 var(--font-seal); letter-spacing: .1em; color: #fff5e6; -webkit-text-fill-color: #fff5e6; background: linear-gradient(160deg, #b8392d, #862018); border: 1px solid rgba(245, 214, 178, .65); border-radius: 2px; box-shadow: inset 0 0 0 2px rgba(245, 214, 178, .22); }
+html[data-ui-scheme='shanhai'] .visual-stage { border-radius: 6px; border: 1px solid rgba(216, 176, 100, .38); box-shadow: inset 0 0 0 3px rgba(13, 11, 9, .90), inset 0 0 0 4px rgba(216, 176, 100, .16); }
 html[data-ui-scheme='shanhai'] .inspector-drawer,
-html[data-ui-scheme='shanhai'] .inspector {
-  border-radius: 18px;
-  border-top: 2.5px solid #dfb568;
-}
-html[data-ui-scheme='shanhai'] .chronology {
-  border-radius: 13px;
-  border-top: 1px solid rgba(242, 212, 144, 0.50);
-  border-bottom: 1px solid rgba(92, 198, 170, 0.42);
-}
+html[data-ui-scheme='shanhai'] .directory-drawer,
+html[data-ui-scheme='shanhai'] .coverage-drawer { border-radius: 6px; border: 1px solid rgba(216, 176, 100, .48); box-shadow: 0 22px 54px rgba(0, 0, 0, .58), inset 0 0 0 3px rgba(13, 11, 9, .48), inset 0 0 0 4px rgba(216, 176, 100, .20); }
+html[data-ui-scheme='shanhai'] .chronology { border-radius: 8px; border: 1px solid rgba(216, 176, 100, .42); background: rgba(15, 12, 9, .90); }
+
 @media (max-width: 760px) {
   .mode-theme-switch button {
     min-height: 26px;
@@ -1394,13 +1353,12 @@ html[data-ui-scheme='shanhai'] .chronology {
 }
 
 
-/* A quiet mountain engraving keeps the mode switch in the same palette. */
-.mode-theme-switch .mode-seal-mark {
-  width: 14px; height: 14px; border: 0; border-radius: 0; background: transparent; box-shadow: none;
-}
-.mode-seal-mark svg {
-  width: 14px; height: 14px; fill: none; stroke: #a4c1b3; stroke-width: 1.15;
-  stroke-linecap: round; stroke-linejoin: round;
-}
-
-html[data-ui-scheme='shanhai'] .stage-heading h1::after { content: none; }
+/* Editorial type roles shared by the map, dossier and catalogue. */
+.brand-name { font-family: var(--font-brand); }
+.topbar, .topbar button, .topbar a, .control-rail, .chronology { font-family: var(--font-ui); }
+.stage-heading h1, .record-title { font-family: var(--font-display); font-weight: 400; }
+.inspector h2, .inspector h3, .inspector h4, .directory-group h3 { font-family: var(--font-heading); }
+.markdown-body, .reading-section p, .classical-reading p { font-family: var(--font-prose); }
+.markdown-body blockquote { font-family: var(--font-quote); }
+html[data-ui-scheme='shanhai'] .stage-heading h1,
+html[data-ui-scheme='shanhai'] .record-title { font-weight: 400; }

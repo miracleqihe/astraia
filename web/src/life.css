@@ -856,54 +856,24 @@
   .life-map { border-radius: var(--radius-panel, 22px); margin-inline: 9px; }
 }
 
-/* 山海绘卷 (shanhai) Mineral Azurite-Malachite & Cinnabar Scroll Styling on Classic OMNIA */
-html[data-ui-scheme='shanhai'] .life-map {
-  background: radial-gradient(ellipse at 48% 46%, #0d2136 0%, #071220 55%, #040811 100%);
-}
-html[data-ui-scheme='shanhai'] .life-map-heading h1 {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  letter-spacing: 0.14em;
-  background: linear-gradient(180deg, #fffdf6 0%, #f5dfab 54%, #c99846 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-html[data-ui-scheme='shanhai'] .life-map-heading h1::after {
-  content: '山海';
-  padding: 2px 5px;
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  color: #fff5e6;
-  -webkit-text-fill-color: #fff5e6;
-  background: linear-gradient(155deg, #cc3f33 0%, #922018 100%);
-  border: 1px solid rgba(255, 226, 198, 0.62);
-  border-radius: 3px;
-}
-html[data-ui-scheme='shanhai'] .life-galaxy-label {
-  border-radius: 11px;
-  background: linear-gradient(180deg, rgba(12, 30, 44, 0.86) 0%, rgba(7, 15, 26, 0.90) 100%);
-  border-top: 1.5px solid rgba(240, 208, 138, 0.72);
-  border-bottom: 1.5px solid rgba(88, 196, 167, 0.56);
-}
+/* 山海绘卷: restrained woodblock ink, mud gold and cinnabar. */
+html[data-ui-scheme='shanhai'] .life-map { background: radial-gradient(ellipse at 48% 46%, #16130f, #0d0b09 55%, #070605); }
+html[data-ui-scheme='shanhai'] .life-map-heading h1 { display: inline-flex; align-items: center; gap: 8px; letter-spacing: .14em; background: linear-gradient(180deg, #fff9eb, #f0d394 54%, #c79448); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+html[data-ui-scheme='shanhai'] .life-map-heading h1::after { content: '山海'; padding: 2px 6px; font: 400 11px/1.2 var(--font-seal); letter-spacing: .1em; color: #fff5e6; -webkit-text-fill-color: #fff5e6; background: linear-gradient(160deg, #b8392d, #862018); border: 1px solid rgba(245, 214, 178, .65); border-radius: 2px; box-shadow: inset 0 0 0 2px rgba(245, 214, 178, .22); }
+html[data-ui-scheme='shanhai'] .life-galaxy-label { border-radius: 4px; background: linear-gradient(180deg, rgba(24, 19, 14, .90), rgba(11, 10, 9, .92)); border: 1px solid rgba(216, 176, 100, .64); box-shadow: 0 8px 24px rgba(0, 0, 0, .62), inset 0 0 0 2px rgba(13, 11, 9, .94), inset 0 0 0 3px rgba(216, 176, 100, .24); }
 html[data-ui-scheme='shanhai'] .life-sidebar,
-html[data-ui-scheme='shanhai'] .life-inspector {
-  border-radius: 18px;
-  border-top: 2.5px solid #dfb568;
-  border-bottom: 2px solid #4ab396;
-}
+html[data-ui-scheme='shanhai'] .life-inspector { border-radius: 6px; border: 1px solid rgba(216, 176, 100, .50); box-shadow: 0 22px 54px rgba(0, 0, 0, .58), inset 0 0 0 3px rgba(13, 11, 9, .65), inset 0 0 0 4px rgba(216, 176, 100, .20); }
+html[data-ui-scheme='shanhai'] .life-workspace[data-folio-theme='parchment'] .life-inspector { border-color: rgba(158, 42, 43, .62); box-shadow: 0 22px 54px rgba(0, 0, 0, .54), inset 0 0 0 3px #f3ead8, inset 0 0 0 4px rgba(158, 42, 43, .28); }
 html[data-ui-scheme='shanhai'] .life-view-controls,
-html[data-ui-scheme='shanhai'] .life-resonance {
-  border-radius: 13px;
-  border-top: 1px solid rgba(242, 212, 144, 0.52);
-  border-bottom: 1px solid rgba(92, 198, 170, 0.44);
-  background: rgba(8, 18, 30, 0.88);
-}
-html[data-ui-scheme='shanhai'] .life-resonance-options button[aria-pressed='true'] {
-  border-radius: 9px;
-  border-color: rgba(244, 214, 150, 0.64);
-  background: linear-gradient(135deg, rgba(36, 108, 96, 0.58), rgba(176, 128, 52, 0.36));
-}
+html[data-ui-scheme='shanhai'] .life-resonance { border-radius: 8px; border: 1px solid rgba(216, 176, 100, .42); background: rgba(15, 12, 9, .90); }
+html[data-ui-scheme='shanhai'] .life-resonance-options button[aria-pressed='true'] { border-radius: 6px; border-color: rgba(240, 211, 148, .64); background: linear-gradient(135deg, rgba(162, 112, 54, .44), rgba(139, 43, 32, .30)); }
 
-html[data-ui-scheme='shanhai'] .life-map-heading h1::after { content: none; }
+/* Hierarchy for the OMNIA workbench. */
+.life-map-heading h1 { font-family: var(--font-display); font-weight: 400; }
+.life-galaxy-label span, .life-subject-label { font-family: var(--font-plaque); font-weight: 400; }
+.life-sidebar, .life-resonance, .life-view-controls, .life-compact-bar { font-family: var(--font-ui); }
+.life-directory h2, .life-article h2, .life-related h3, .life-original h3 { font-family: var(--font-heading); }
+.life-prose { font-family: var(--font-prose); }
+.life-prose blockquote { font-family: var(--font-quote); }
+html[data-ui-scheme='shanhai'] .life-map-heading h1 { font-size: 27px; font-weight: 400; }
+html[data-ui-scheme='shanhai'] .life-prose { line-height: 1.94; }

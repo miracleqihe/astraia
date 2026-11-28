@@ -13,7 +13,11 @@ export function attachNavGlider(container: HTMLElement | null, options: GliderOp
 
   let hoveredItem: HTMLElement | null = null;
   let ready = false;
+  let disposed = false;
   let rafId = 0;
+  let lastX = '';
+  let lastW = '';
+  let lastOpacity = '';
 
   const isVisible = (el: HTMLElement | null): el is HTMLElement =>
     Boolean(el && el.offsetParent !== null && el.offsetWidth > 0);
@@ -23,16 +27,23 @@ export function attachNavGlider(container: HTMLElement | null, options: GliderOp
     const target = (options.followHover && isVisible(hoveredItem) ? hoveredItem : null)
       ?? (isVisible(activeItem) ? activeItem : null);
 
-    if (!target) {
-      container.style.setProperty('--glider-opacity', '0');
-      return;
+    const nextOpacity = target ? (isVisible(activeItem) ? '1' : '0.62') : '0';
+    if (nextOpacity !== lastOpacity) {
+      container.style.setProperty('--glider-opacity', nextOpacity);
+      lastOpacity = nextOpacity;
     }
+    if (!target) return;
 
-    const x = target.offsetLeft;
-    const w = target.offsetWidth;
-    container.style.setProperty('--glider-x', `${x}px`);
-    container.style.setProperty('--glider-w', `${w}px`);
-    container.style.setProperty('--glider-opacity', isVisible(activeItem) ? '1' : '0.62');
+    const nextX = `${target.offsetLeft}px`;
+    const nextW = `${target.offsetWidth}px`;
+    if (nextX !== lastX) {
+      container.style.setProperty('--glider-x', nextX);
+      lastX = nextX;
+    }
+    if (nextW !== lastW) {
+      container.style.setProperty('--glider-w', nextW);
+      lastW = nextW;
+    }
 
     if (!ready) {
       ready = true;
@@ -60,14 +71,11 @@ export function attachNavGlider(container: HTMLElement | null, options: GliderOp
   container.addEventListener('pointerover', onPointerOver);
   container.addEventListener('pointerleave', onPointerLeave);
 
-  const mutationObserver = new MutationObserver((records) => {
-    // Ignore the CSS properties written by sync itself, otherwise this observer loops.
-    if (records.some((record) => record.target !== container || record.attributeName !== 'style')) sync();
-  });
+  const mutationObserver = new MutationObserver(() => sync());
   mutationObserver.observe(container, {
     subtree: true,
     attributes: true,
-    attributeFilter: ['class', 'aria-pressed', 'aria-expanded', 'hidden', 'style'],
+    attributeFilter: ['class', 'aria-pressed', 'aria-expanded', 'hidden'],
   });
 
   const resizeObserver = typeof ResizeObserver !== 'undefined'
@@ -80,8 +88,10 @@ export function attachNavGlider(container: HTMLElement | null, options: GliderOp
   window.addEventListener('astraia:ui-scheme', onWindowResize);
 
   sync();
+  document.fonts?.ready.then(() => { if (!disposed) sync(); });
 
   return () => {
+    disposed = true;
     if (rafId) window.cancelAnimationFrame(rafId);
     container.removeEventListener('pointerover', onPointerOver);
     container.removeEventListener('pointerleave', onPointerLeave);

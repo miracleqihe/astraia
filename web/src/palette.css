@@ -1,4 +1,16 @@
 :root {
+  /* Semantic typography roles; rare and multilingual characters retain local faces. */
+  --cjk-fallback: 'Astraia Handbook Glyphs', 'Astraia CJK Supplemental', 'Noto Sans Khmer', 'Noto Sans Buginese', 'Charis IPA', 'Noto Serif Vietnamese', 'Noto Sans Thai', 'Noto Sans Lao', 'Noto Serif SC', serif;
+  --font-display: 'Cormorant Garamond', 'ZCOOL XiaoWei', var(--cjk-fallback);
+  --font-brand: 'Cinzel', 'Cormorant SC', 'ZCOOL XiaoWei', var(--cjk-fallback);
+  --font-ui: 'Plus Jakarta Sans', 'Noto Sans SC', var(--cjk-fallback);
+  --font-plaque: 'ZCOOL XiaoWei', var(--cjk-fallback);
+  --font-heading: 'ZCOOL XiaoWei', var(--cjk-fallback);
+  --font-prose: 'Plus Jakarta Sans', 'Noto Serif SC', var(--cjk-fallback);
+  --font-quote: 'Cormorant Garamond', 'LXGW WenKai Screen', var(--cjk-fallback);
+  --font-meta: 'IBM Plex Mono', 'Plus Jakarta Sans', var(--cjk-fallback);
+  --font-seal: 'ZCOOL XiaoWei', var(--cjk-fallback);
+
   /* Unified Astraia Observatory × Engraved Codex Design Tokens */
   --topbar-height: 52px;
   --void-deep: #060a13;
@@ -58,4 +70,17 @@
   --border-crisp-strong: 1px solid #1b2740;
   --border-plate: 1px solid rgba(207, 169, 98, 0.24);
   --border-plate-subtle: 1px solid rgba(239, 236, 230, 0.16);
+}
+
+/* The Shanhai reading voice pairs brush titles with a legible screen Kai. */
+html[data-ui-scheme='shanhai'] {
+  --font-display: 'Cormorant SC', 'Ma Shan Zheng', 'LXGW WenKai Screen', var(--cjk-fallback);
+  --font-brand: 'Cormorant SC', 'Ma Shan Zheng', 'LXGW WenKai Screen', var(--cjk-fallback);
+  --font-ui: 'Cormorant SC', 'LXGW WenKai Screen', var(--cjk-fallback);
+  --font-plaque: 'Long Cang', 'LXGW WenKai Screen', var(--cjk-fallback);
+  --font-heading: 'LXGW WenKai Screen', 'ZCOOL XiaoWei', var(--cjk-fallback);
+  --font-prose: 'LXGW WenKai Screen', var(--cjk-fallback);
+  --font-quote: 'Cormorant Garamond', 'Zhi Mang Xing', 'LXGW WenKai Screen', var(--cjk-fallback);
+  --font-meta: 'Cormorant Garamond', 'LXGW WenKai Screen', var(--cjk-fallback);
+  --font-seal: 'Long Cang', 'Ma Shan Zheng', var(--cjk-fallback);
 }

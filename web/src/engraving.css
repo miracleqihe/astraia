@@ -176,14 +176,14 @@ body[data-engraving-theme] .engraving-panel.astrolabe-corners::after { content: 
 .engraving-codex-heading span {
   display: block;
   color: var(--engrave-gold);
-  font: 10px/1.4 'JetBrains Mono', monospace;
+  font: 10px/1.4 var(--font-meta);
   letter-spacing: 0.13em;
 }
 .engraving-codex-heading strong {
   display: block;
   margin-top: 2px;
   color: var(--engrave-ink);
-  font: 600 15px/1.4 'Astraia Handbook Glyphs', 'Astraia CJK Supplemental', 'Noto Serif SC', serif;
+  font: 400 15px/1.4 var(--font-heading);
 }
 .engraving-codex-heading small {
   display: block;
@@ -234,7 +234,7 @@ body[data-engraving-theme] .engraving-codex .syzygy-code { color: var(--engrave-
   display: block;
   margin: 2px 2px 0;
   color: var(--engrave-muted);
-  font: 10px/1.4 'JetBrains Mono', 'Noto Serif SC', monospace;
+  font: 10px/1.4 var(--font-meta);
 }
 .engraving-beam[aria-pressed='false'] { opacity: 0.55; }
 .engraving-beam[aria-pressed='true'] .engraving-beam-flow { animation: engraving-flow 5s linear infinite; }

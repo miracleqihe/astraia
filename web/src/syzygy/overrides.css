@@ -1,9 +1,9 @@
 @font-face { font-family: Cinzel; src: url('/fonts/cinzel-400.ttf') format('truetype'); font-weight: 400; font-display: swap; }
 @font-face { font-family: Cinzel; src: url('/fonts/cinzel-600.ttf') format('truetype'); font-weight: 600; font-display: swap; }
-.font-serif-sc, html, body { font-family: 'Astraia Handbook Glyphs', 'Astraia CJK Supplemental', 'Noto Serif SC', serif; }
-.font-cormorant { font-family: 'Astraia Handbook Glyphs', 'Astraia CJK Supplemental', 'Cormorant Garamond', 'Noto Serif SC', serif; }
-.font-cinzel { font-family: Cinzel, 'Astraia Handbook Glyphs', 'Astraia CJK Supplemental', 'Noto Serif SC', serif; }
-.font-mono-tech { font-family: 'JetBrains Mono', 'Astraia Handbook Glyphs', 'Astraia CJK Supplemental', 'Noto Serif SC', monospace; font-variant-numeric: tabular-nums; }
+.font-serif-sc, html, body { font-family: var(--font-prose); }
+.font-cormorant { font-family: var(--font-quote); }
+.font-cinzel { font-family: var(--font-brand); }
+.font-mono-tech { font-family: var(--font-meta); font-variant-numeric: tabular-nums; }
 
 #syzygy-header {
   position: fixed;
@@ -193,7 +193,7 @@ body > footer {
 .syzygy-overview-node small {
   display: block;
   color: var(--engrave-gold);
-  font: 9.5px/1.3 'JetBrains Mono', monospace;
+  font: 9.5px/1.3 var(--font-meta);
   letter-spacing: 0.08em;
 }
 .syzygy-overview-node strong {
@@ -268,7 +268,7 @@ body > footer {
   gap: 4px;
   padding: 2px 7px;
   border: 1px solid currentColor;
-  font: 600 10.5px/1.35 'JetBrains Mono', 'Noto Serif SC', monospace;
+  font: 600 10.5px/1.35 var(--font-meta);
   white-space: nowrap;
 }
 .syzygy-badge-confirmed {
@@ -366,7 +366,7 @@ body > footer {
 .syzygy-code { padding: 2px 6px; border: 1px solid rgba(207, 169, 98, 0.38); color: #e6d1a3; font-size: 10.5px; }
 .syzygy-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .syzygy-tier-rail { display: flex; align-items: center; justify-content: space-between; gap: 4px; padding: 6px 9px; border-bottom: 1px solid rgba(207, 169, 98, 0.16); }
-.syzygy-tier-rail span { color: #a89e8c; font: 9px 'JetBrains Mono', monospace; letter-spacing: 0.09em; }
+.syzygy-tier-rail span { color: #a89e8c; font: 9px var(--font-meta); letter-spacing: 0.09em; }
 .syzygy-genre-filter { display: flex; align-items: center; gap: 10px; padding: 6px 9px; border-bottom: 1px solid rgba(207, 169, 98, 0.16); color: #a89e8c; font-size: 10.5px; }
 .syzygy-genre-filter select { flex: 1; min-width: 0; padding: 4px 5px; border: 1px solid rgba(207, 169, 98, 0.28); background: #070b14; color: #efe9dc; font: inherit; }
 [data-scope='reading'] { grid-column: auto; }
@@ -542,7 +542,7 @@ body[data-renderer='software'] .celestial-panel { background-color: rgba(11, 15,
   box-shadow: inset 0 -2px 0 #f0d79c;
 }
 .realm-btn span:first-child {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-meta);
   font-size: 9.5px;
   color: #d6b678;
 }
@@ -569,7 +569,7 @@ body[data-renderer='software'] .celestial-panel { background-color: rgba(11, 15,
   border: 1px solid rgba(207, 169, 98, 0.26);
   background: rgba(6, 9, 16, 0.72);
   color: #e6d5ad;
-  font-family: 'JetBrains Mono', 'Noto Serif SC', monospace;
+  font-family: var(--font-meta);
   font-size: 10px;
   white-space: nowrap;
 }
@@ -637,7 +637,7 @@ body[data-beyond-membrane='true'] #btn-fiction::after {
 .observer-veil-grid strong {
   display: block;
   margin-top: 2px;
-  font-family: 'JetBrains Mono', 'Noto Serif SC', monospace;
+  font-family: var(--font-meta);
   font-size: 11px;
   color: #f0d79c;
   overflow: hidden;
@@ -696,7 +696,7 @@ body[data-beyond-membrane='true'] #btn-fiction::after {
 .syzygy-prism-realm {
   padding: 1px 6px;
   border: 1px solid var(--engrave-line, rgba(207, 169, 98, 0.38));
-  font-family: 'JetBrains Mono', 'Noto Serif SC', monospace;
+  font-family: var(--font-meta);
   font-size: 10px;
   color: var(--engrave-gold, #cfa962);
 }
@@ -800,7 +800,7 @@ body[data-beyond-membrane='true'] #btn-fiction::after {
 }
 .syzygy-afterimage-cross {
   position: relative;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-meta);
   font-size: 18px;
   font-weight: 700;
   color: #050811;
@@ -864,7 +864,7 @@ body[data-beyond-membrane='true'] #btn-fiction::after {
 .sidera-v3-caption {
   padding: 0 4px;
   color: #af9464;
-  font: 10px 'JetBrains Mono', 'Noto Serif SC', monospace;
+  font: 10px var(--font-meta);
   white-space: nowrap;
 }
 .sidera-v3-row button {
@@ -873,7 +873,7 @@ body[data-beyond-membrane='true'] #btn-fiction::after {
   padding: 4px 6px;
   color: #b7b1a4;
   background: transparent;
-  font: 11px 'Noto Serif SC', serif;
+  font: 11px var(--font-ui);
   white-space: nowrap;
   cursor: pointer;
 }
@@ -918,7 +918,7 @@ body[data-beyond-membrane='true'] #btn-fiction::after {
   padding: 4px 11px;
   color: #c6bca9;
   background: transparent;
-  font: 12px 'Noto Serif SC', serif;
+  font: 12px var(--font-ui);
   white-space: nowrap;
   cursor: pointer;
 }
@@ -1015,7 +1015,7 @@ body[data-left-open='true'] .taxonomy-explorer {
   background: rgba(5, 8, 17, 0.82);
 }
 .taxonomy-explorer-eyebrow {
-  font: 9.5px/1.3 'JetBrains Mono', monospace;
+  font: 9.5px/1.3 var(--font-meta);
   letter-spacing: 0.18em;
   color: #cfa962;
   text-transform: uppercase;
@@ -1079,7 +1079,7 @@ body[data-left-open='true'] .taxonomy-explorer {
   gap: 8px;
 }
 .taxonomy-domain-order {
-  font: 10px/1 'JetBrains Mono', monospace;
+  font: 10px/1 var(--font-meta);
   color: #d6b678;
 }
 .taxonomy-domain-name {
@@ -1089,7 +1089,7 @@ body[data-left-open='true'] .taxonomy-explorer {
   line-height: 1.4;
 }
 .taxonomy-domain-en {
-  font: 9.5px/1.3 'JetBrains Mono', monospace;
+  font: 9.5px/1.3 var(--font-meta);
   color: #9e9688;
 }
 .taxonomy-domain-summary {
@@ -1117,7 +1117,7 @@ body[data-left-open='true'] .taxonomy-explorer {
   align-items: center;
   gap: 6px;
   margin-top: 3px;
-  font: 10px/1.3 'JetBrains Mono', 'Noto Serif SC', monospace;
+  font: 10px/1.3 var(--font-meta);
 }
 .taxonomy-metric-pill {
   padding: 2px 6px;
@@ -1347,7 +1347,7 @@ body[data-left-open='true'] .taxonomy-explorer {
 }
 .taxonomy-node-chip small {
   color: #cfa962;
-  font: 9.5px/1 'JetBrains Mono', monospace;
+  font: 9.5px/1 var(--font-meta);
 }
 .taxonomy-lexicon-panel {
   padding: 13px 14px;
@@ -1512,7 +1512,7 @@ body[data-left-open='true'] .taxonomy-explorer {
   border: 1px solid rgba(207, 169, 98, 0.38);
   background: rgba(207, 169, 98, 0.12);
   color: #f0d79c;
-  font: 600 10px/1.35 'JetBrains Mono', monospace;
+  font: 600 10px/1.35 var(--font-meta);
 }
 .taxonomy-tldr-bar {
   margin-top: 8px;
@@ -1924,7 +1924,7 @@ body[data-left-open='true'] .taxonomy-explorer {
    UNIFIED SILKY GLIDER × DUAL ATMOSPHERE SYSTEM (✦ 星野 / 印 山海)
    Compatible across Wide Desktop, Compact Laptop, iPad, and Mobile.
    ============================================================================ */
-.dock-mobile-only { display: none; }
+#observatory-dock .dock-mobile-only, .dock-mobile-only { display: none; }
 .shanhai-horizon { display: none; }
 
 /* 1. Shared 2-Mode Sliding Switch (✦ 星野 | 印 山海) */
@@ -2099,12 +2099,16 @@ body[data-dimension='sidera'] #syzygy-header > nav::before {
   align-items: center;
   justify-content: center;
   gap: 5px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .syzygy-tools-toggle {
   border-radius: 999px;
   min-height: 34px;
   padding: 0 12px;
   gap: 5px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .syzygy-classic {
   border-color: rgba(226, 194, 134, 0.34);
@@ -2112,11 +2116,12 @@ body[data-dimension='sidera'] #syzygy-header > nav::before {
 }
 .syzygy-extra-tools { gap: 6px; }
 
-@media (min-width: 1321px) {
+@media (min-width: 1600px) {
   .syzygy-tools-toggle { display: none !important; }
   .syzygy-extra-tools { display: inline-flex; align-items: center; }
+  .syzygy-classic, .syzygy-fiction, #btn-syzygy-toggle, #btn-proj-toggle, #btn-reset-cam { padding: 0 10px; font-size: 11.5px; }
 }
-@media (min-width: 761px) and (max-width: 1320px) and (min-height: 501px) {
+@media (min-width: 761px) and (max-width: 1599px) and (min-height: 501px) {
   .syzygy-tools-toggle { display: inline-flex; align-items: center; justify-content: center; }
   .syzygy-extra-tools {
     display: none;
@@ -2416,80 +2421,78 @@ body > #observatory-popovers,
 }
 
 /* ============================================================================
-   MODE 2: SHAN-HAI CELESTIAL SCROLL (印 山海 · 青绿泥金星图绘卷)
-   Shares 100% symmetrical layout & silky gliders while infusing mineral art!
+   印 山海 — soot ink, engraved mud gold and cinnabar celestial scroll
    ============================================================================ */
 html[data-ui-scheme='shanhai'],
 html[data-ui-scheme='shanhai'] body {
-  background: radial-gradient(ellipse at 48% 45%, #0d2034 0%, #071220 54%, #040811 100%);
+  background: radial-gradient(ellipse at 48% 45%, #16130f 0%, #0d0b09 54%, #070605 100%);
 }
 html[data-ui-scheme='shanhai'] .astrolabe-bezel {
-  background:
-    radial-gradient(circle at 50% 48%, transparent 56%, rgba(3, 8, 16, 0.62) 100%),
-    linear-gradient(180deg, rgba(10, 28, 42, 0.26) 0%, transparent 16%, transparent 82%, rgba(8, 24, 34, 0.36) 100%);
+  background: radial-gradient(circle at 50% 48%, transparent 55%, rgba(8, 6, 4, .68) 100%), linear-gradient(180deg, rgba(34, 25, 16, .18), transparent 17%, transparent 80%, rgba(22, 15, 9, .32));
 }
-html[data-ui-scheme='shanhai'] .shanhai-horizon {
-  display: block;
-  position: fixed;
-  inset: 0;
-  z-index: 9;
-  pointer-events: none;
-  overflow: hidden;
+html[data-ui-scheme='shanhai'] .shanhai-horizon { display: block; position: fixed; inset: 0; z-index: 9; pointer-events: none; overflow: hidden; }
+.shanhai-scroll-mist {
+  position: absolute; inset: auto 0 0; height: 92px; pointer-events: none;
+  background: linear-gradient(180deg, transparent 0%, rgba(11, 9, 8, .54) 64%, rgba(8, 7, 6, .88) 100%), radial-gradient(52% 44px at 50% 100%, rgba(216, 176, 100, .09), transparent 100%);
 }
-html[data-ui-scheme='shanhai'] .shanhai-svg-top {
-  display: none;
+.shanhai-wing {
+  position: absolute; bottom: 0; pointer-events: none;
+  background-repeat: no-repeat; background-size: contain;
+  opacity: .92;
+  filter: drop-shadow(0 -8px 22px rgba(0, 0, 0, .56));
+  transition: opacity .32s ease;
+  animation: shanhaiMistBreathe 16s ease-in-out infinite alternate;
 }
-html[data-ui-scheme='shanhai'] .shanhai-svg-bottom {
-  position: absolute;
-  left: -2%;
-  right: -2%;
-  bottom: 0;
-  width: 104%;
-  height: clamp(92px, 14vh, 148px);
-  opacity: 0.78;
-  filter: drop-shadow(0 -6px 20px rgba(56, 176, 148, 0.14));
-  animation: shanhaiMistBreathe 14s ease-in-out infinite alternate;
+.shanhai-wing-west {
+  left: 0; width: clamp(240px, 41vw, 620px); aspect-ratio: 929 / 514; max-height: 36vh;
+  background-image: url('./assets/shanhai-west-kunlun.webp'); background-position: left bottom;
 }
-@keyframes shanhaiMistBreathe {
-  from { opacity: 0.70; transform: translateY(2px) scaleX(1); }
-  to { opacity: 0.84; transform: translateY(0) scaleX(1.01); }
+.shanhai-wing-east {
+  right: 0; width: clamp(220px, 37vw, 540px); aspect-ratio: 821 / 655; max-height: 42vh;
+  background-image: url('./assets/shanhai-east-fusang.webp'); background-position: right bottom;
 }
-@media (prefers-reduced-motion: reduce) {
-  html[data-ui-scheme='shanhai'] .shanhai-svg-bottom { animation: none !important; }
+@keyframes shanhaiMistBreathe { from { opacity: .85; } to { opacity: .95; } }
+.shanhai-corners { position: fixed; inset: 60px 10px 10px; pointer-events: none; }
+.shanhai-corner { position: absolute; width: 24px; height: 24px; stroke: #d8b064; stroke-width: .9; opacity: .48; }
+.corner-nw { top: 0; left: 0; }
+.corner-ne { top: 0; right: 0; transform: scaleX(-1); }
+.corner-sw { bottom: 0; left: 0; transform: scaleY(-1); }
+.corner-se { bottom: 0; right: 0; transform: scale(-1); }
+.shanhai-compass-mark { position: absolute; font: 400 13px/1.3 var(--font-plaque); letter-spacing: .28em; color: rgba(232, 200, 134, .50); white-space: nowrap; transition: opacity .25s ease; }
+.compass-north { top: 112px; left: 25px; }
+.compass-south { top: 112px; right: 25px; }
+.compass-west { left: 24px; bottom: clamp(225px, 37vh, 345px); }
+.compass-east { right: 24px; bottom: clamp(255px, 43vh, 395px); }
+body[data-left-open='true'] .compass-north,
+body[data-left-open='true'] .compass-west { opacity: 0; }
+body[data-left-open='true'] .shanhai-wing-west { opacity: .26; animation: none; }
+body:has(#right-drawer:not(.drawer-right-hidden)) .compass-south,
+body:has(#right-drawer:not(.drawer-right-hidden)) .compass-east { opacity: 0; }
+body:has(#right-drawer:not(.drawer-right-hidden)) .shanhai-wing-east { opacity: .26; animation: none; }
+@media (max-width: 1099px) { .shanhai-compass-mark { display: none; } }
+@media (max-width: 760px) {
+  .shanhai-corners { display: none; }
+  .shanhai-wing-west { width: 54vw; max-height: 21vh; opacity: .82; }
+  .shanhai-wing-east { width: 50vw; max-height: 24vh; opacity: .82; }
 }
+@media (prefers-reduced-motion: reduce) { .shanhai-wing { animation: none; } }
 
-html[data-ui-scheme='shanhai'] #syzygy-header {
-  background: linear-gradient(180deg, rgba(6, 16, 28, 0.90) 0%, rgba(8, 22, 34, 0.72) 100%);
-  border-bottom: 1px solid rgba(92, 198, 170, 0.22);
-}
-html[data-ui-scheme='shanhai'] .engraving-brand-mark {
-  color: #6ad0b4;
-  filter: drop-shadow(0 0 8px rgba(90, 198, 170, 0.32));
-}
+html[data-ui-scheme='shanhai'] #syzygy-header { background: linear-gradient(180deg, rgba(13, 11, 9, .92), rgba(11, 9, 8, .76)); border-bottom: 1px solid rgba(216, 176, 100, .24); }
+html[data-ui-scheme='shanhai'] .engraving-brand-mark { color: #d8b064; filter: drop-shadow(0 0 8px rgba(216, 176, 100, .28)); }
 html[data-ui-scheme='shanhai'] #syzygy-header > nav,
 html[data-ui-scheme='shanhai'] .mode-theme-switch,
 html[data-ui-scheme='shanhai'] #observatory-dock {
-  border-radius: 13px;
-  border-top: 1px solid rgba(240, 210, 142, 0.42);
-  border-bottom: 1px solid rgba(92, 198, 170, 0.36);
-  border-left: 1px solid rgba(104, 196, 170, 0.22);
-  border-right: 1px solid rgba(104, 196, 170, 0.22);
-  background: rgba(6, 15, 26, 0.82);
+  border-radius: 8px; border: 1px solid rgba(216, 176, 100, .34); background: rgba(12, 10, 8, .88);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, .68), 0 6px 20px rgba(0, 0, 0, .38);
 }
 html[data-ui-scheme='shanhai'] #syzygy-header > nav::before,
 html[data-ui-scheme='shanhai'] .mode-theme-switch::before,
 html[data-ui-scheme='shanhai'] #observatory-dock::before {
-  border-radius: 10px;
-  background: linear-gradient(135deg, rgba(36, 108, 96, 0.62) 0%, rgba(16, 42, 64, 0.84) 55%, rgba(182, 132, 54, 0.42) 100%);
-  border: 1px solid rgba(244, 216, 154, 0.62);
-  box-shadow: 0 3px 14px rgba(34, 102, 90, 0.28), inset 0 1px 0 rgba(255, 246, 220, 0.30);
+  border-radius: 6px; background: linear-gradient(135deg, rgba(162, 112, 54, .44), rgba(38, 29, 21, .90) 54%, rgba(182, 56, 44, .30));
+  border: 1px solid rgba(240, 211, 148, .64); box-shadow: 0 2px 12px rgba(0, 0, 0, .36), inset 0 1px 0 rgba(255, 240, 206, .28);
 }
-html[data-ui-scheme='shanhai'] #observatory-dock button > span {
-  color: #6ed2b6;
-}
-html[data-ui-scheme='shanhai'] #observatory-dock button[aria-expanded='true'] > span {
-  color: #ffe0a8;
-}
+html[data-ui-scheme='shanhai'] #observatory-dock button > span { color: #d8b064; }
+html[data-ui-scheme='shanhai'] #observatory-dock button[aria-expanded='true'] > span { color: #f6dfa6; }
 html[data-ui-scheme='shanhai'] .syzygy-classic,
 html[data-ui-scheme='shanhai'] .syzygy-fiction,
 html[data-ui-scheme='shanhai'] .syzygy-tools-toggle,
@@ -2498,102 +2501,74 @@ html[data-ui-scheme='shanhai'] #btn-proj-toggle,
 html[data-ui-scheme='shanhai'] #btn-reset-cam,
 html[data-ui-scheme='shanhai'] #btn-open-left,
 html[data-ui-scheme='shanhai'] #btn-open-right {
-  border-radius: 11px;
-  border-color: rgba(104, 196, 170, 0.30);
-  background: linear-gradient(145deg, rgba(12, 32, 46, 0.80), rgba(7, 15, 26, 0.86));
+  border-radius: 7px; border-color: rgba(216, 176, 100, .34); background: linear-gradient(155deg, rgba(24, 19, 14, .88), rgba(12, 10, 8, .92));
 }
-html[data-ui-scheme='shanhai'] #btn-syzygy-toggle.active {
-  border-color: rgba(242, 217, 155, 0.62);
-  background: linear-gradient(135deg, rgba(36, 104, 92, 0.54), rgba(168, 124, 50, 0.36));
-}
+html[data-ui-scheme='shanhai'] #btn-syzygy-toggle.active { border-color: rgba(240, 211, 148, .64); background: linear-gradient(135deg, rgba(148, 100, 46, .45), rgba(139, 43, 32, .32)); }
 html[data-ui-scheme='shanhai'] #banner-title {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(180deg, #fffdf6 0%, #f5dfab 54%, #c99846 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: none;
-  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.88));
+  display: inline-flex; align-items: center; gap: 8px; font-size: clamp(23px, 2.1vw, 29px); font-weight: 400; letter-spacing: .14em;
+  background: linear-gradient(180deg, #fff9eb, #f0d394 54%, #c79448); -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; text-shadow: none; filter: drop-shadow(0 4px 16px rgba(0, 0, 0, .88));
 }
 html[data-ui-scheme='shanhai'] #banner-title::after {
-  content: '山海';
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2px 5px;
-  font-family: 'Astraia Handbook Glyphs', 'Astraia CJK Supplemental', 'Noto Serif SC', serif;
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: 0.12em;
-  color: #fff5e6;
-  -webkit-text-fill-color: #fff5e6;
-  background: linear-gradient(155deg, #cc3f33 0%, #922018 100%);
-  border: 1px solid rgba(255, 226, 198, 0.62);
-  border-radius: 3px;
-  box-shadow: 0 2px 10px rgba(204, 63, 51, 0.45);
+  content: '山海'; display: inline-flex; align-items: center; justify-content: center; padding: 2px 6px;
+  font: 400 11px/1.2 var(--font-seal); letter-spacing: .12em; color: #fff5e6; -webkit-text-fill-color: #fff5e6;
+  background: linear-gradient(160deg, #b8392d, #862018); border: 1px solid rgba(245, 214, 178, .65); border-radius: 2px;
+  box-shadow: 0 2px 10px rgba(154, 34, 24, .48), inset 0 0 0 1.5px rgba(134, 32, 24, .85), inset 0 0 0 2px rgba(245, 214, 178, .32);
 }
-html[data-ui-scheme='shanhai'] #banner-pill {
-  border-radius: 9px;
-  border-color: rgba(104, 196, 170, 0.34);
-  background: linear-gradient(90deg, rgba(14, 38, 48, 0.72), rgba(8, 18, 30, 0.76));
-}
+html[data-ui-scheme='shanhai'] #banner-pill { border-radius: 5px; border: 1px solid rgba(216, 176, 100, .38); background: rgba(16, 13, 10, .80); }
 html[data-ui-scheme='shanhai'] .vol-plaque {
-  border-radius: 11px;
-  background: linear-gradient(180deg, rgba(12, 30, 44, 0.84) 0%, rgba(7, 15, 26, 0.88) 100%);
-  border-top: 1.5px solid rgba(240, 208, 138, 0.70);
-  border-bottom: 1.5px solid rgba(88, 196, 167, 0.56);
-  border-left: 1px solid rgba(214, 182, 120, 0.22);
-  border-right: 1px solid rgba(214, 182, 120, 0.22);
+  border-radius: 4px; background: linear-gradient(180deg, rgba(24, 19, 14, .90), rgba(11, 10, 9, .92)); border: 1px solid rgba(216, 176, 100, .64);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .62), inset 0 0 0 2px rgba(13, 11, 9, .94), inset 0 0 0 3px rgba(216, 176, 100, .24);
 }
 html[data-ui-scheme='shanhai'] .vol-plaque.wormhole-plaque {
-  background: linear-gradient(135deg, rgba(36, 24, 48, 0.88) 0%, rgba(16, 40, 52, 0.86) 52%, rgba(56, 26, 22, 0.86) 100%);
-  border-top-color: #f2d99b;
-  border-bottom-color: #cf4034;
+  border-color: rgba(240, 211, 148, .78); background: linear-gradient(135deg, rgba(38, 22, 16, .92), rgba(14, 12, 10, .94));
+  box-shadow: 0 8px 26px rgba(0, 0, 0, .64), inset 0 0 0 2px rgba(20, 12, 10, .94), inset 0 0 0 3px rgba(186, 58, 46, .56);
 }
-html[data-ui-scheme='shanhai'] .plaque-orb {
-  width: 6.5px;
-  height: 6.5px;
-  border-radius: 2px;
-  background: linear-gradient(145deg, #df4b3e, #9e261d);
-  border: 1px solid rgba(255, 230, 204, 0.68);
-  box-shadow: 0 0 8px rgba(218, 68, 56, 0.72);
-}
+html[data-ui-scheme='shanhai'] .plaque-orb { width: 6px; height: 6px; border-radius: 1.5px; background: linear-gradient(145deg, #c73f32, #8d2219); border-color: rgba(245, 214, 178, .55); box-shadow: none; }
+html[data-ui-scheme='shanhai'] .vol-plaque .font-serif-sc { font-size: 14.5px; letter-spacing: .08em; line-height: 1.25; }
+@media (max-width: 450px) { html[data-ui-scheme='shanhai'] .world-tag .vol-plaque .font-serif-sc { font-size: 12px; } }
 html[data-ui-scheme='shanhai'] #left-drawer,
 html[data-ui-scheme='shanhai'] #right-drawer:not(.parchment-scroll),
-html[data-ui-scheme='shanhai'] .taxonomy-explorer {
-  border-radius: 18px;
-  border: 1px solid rgba(104, 196, 170, 0.28);
-  border-top: 2.5px solid #dfb568;
-  border-bottom: 2px solid #4ab396;
-  background:
-    radial-gradient(95% 155px at 50% 0%, rgba(56, 168, 142, 0.20) 0%, rgba(214, 178, 106, 0.08) 48%, transparent 100%),
-    linear-gradient(175deg, rgba(10, 22, 36, 0.93) 0%, rgba(6, 11, 20, 0.96) 100%);
+html[data-ui-scheme='shanhai'] #taxonomy-explorer {
+  border-radius: 6px; border: 1.5px solid rgba(216, 176, 100, .50);
+  background: radial-gradient(90% 140px at 50% 0%, rgba(182, 134, 62, .14), rgba(158, 107, 59, .05) 55%, transparent), linear-gradient(178deg, rgba(18, 15, 12, .95), rgba(10, 9, 8, .97));
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .78), inset 0 0 0 3px rgba(13, 11, 9, .94), inset 0 0 0 4px rgba(216, 176, 100, .20);
 }
+html[data-ui-scheme='shanhai'] #left-drawer > div:first-child,
+html[data-ui-scheme='shanhai'] #right-drawer > div:first-child {
+  border-bottom-color: rgba(216, 176, 100, .34);
+  background-image: linear-gradient(135deg, transparent 47%, rgba(216, 176, 100, .32) 48%, rgba(216, 176, 100, .32) 52%, transparent 53%), linear-gradient(45deg, transparent 47%, rgba(216, 176, 100, .32) 48%, rgba(216, 176, 100, .32) 52%, transparent 53%);
+  background-size: 8px 8px; background-position: center bottom; background-repeat: no-repeat;
+}
+html[data-ui-scheme='shanhai'] body[data-engraving-theme] .engraving-codex { border-radius: 5px; border: 1px solid rgba(216, 176, 100, .34); background: rgba(16, 13, 10, .88); }
 html[data-ui-scheme='shanhai'] #right-drawer.parchment-scroll {
-  border-radius: 18px;
-  border-top: 2.5px solid #9e2a2b !important;
-  border-bottom: 2px solid #785520 !important;
+  border-radius: 6px; background: #f3ead8 !important; border: 1.5px solid rgba(158, 42, 43, .62) !important;
+  box-shadow: 0 22px 54px rgba(0, 0, 0, .68), inset 0 0 0 3px #f3ead8, inset 0 0 0 4px rgba(158, 42, 43, .28) !important;
 }
+html[data-ui-scheme='shanhai'] .syzygy-extra-tools,
+html[data-ui-scheme='shanhai'] #status-toast,
+html[data-ui-scheme='shanhai'] .syzygy-loading { border-radius: 8px; border-color: rgba(216, 176, 100, .44); background: rgba(16, 13, 10, .95); }
 html[data-ui-scheme='shanhai'] .realm-dock,
 html[data-ui-scheme='shanhai'] #trail-dock,
 html[data-ui-scheme='shanhai'] .sidera-v3-row {
-  border-radius: 14px;
-  border-top: 1.5px solid rgba(240, 210, 142, 0.56);
-  border-bottom: 1.5px solid rgba(92, 198, 170, 0.44);
-  background: linear-gradient(160deg, rgba(12, 30, 44, 0.92) 0%, rgba(7, 14, 24, 0.95) 100%);
+  border-radius: 8px; border: 1px solid rgba(216, 176, 100, .42); background: linear-gradient(160deg, rgba(20, 16, 12, .94), rgba(10, 9, 8, .96));
+  box-shadow: 0 16px 40px rgba(0, 0, 0, .72), inset 0 0 0 2px rgba(12, 10, 8, .92), inset 0 0 0 3px rgba(216, 176, 100, .16);
+}
+@media (max-width: 760px) {
+  html[data-ui-scheme='shanhai'] #left-drawer,
+  html[data-ui-scheme='shanhai'] #right-drawer,
+  html[data-ui-scheme='shanhai'] #taxonomy-explorer { border-radius: 16px !important; }
 }
 
 /* ============================================================================
    MOBILE & COMPACT TOUCH LAYOUT (Both 星野 & 山海)
    ============================================================================ */
 @media (max-width: 760px), (max-width: 1100px) and (max-height: 500px) {
-  .dock-mobile-only {
+  #observatory-dock .dock-mobile-only {
     display: inline-flex;
     align-items: center;
   }
+  #status-toast { top: 96px !important; }
   #btn-open-left,
   #btn-open-right {
     display: none !important;
@@ -2789,48 +2764,28 @@ html[data-ui-scheme='shanhai'] .sidera-v3-row {
   }
 }
 
-/* Preserve the live site's compact touch and tablet accessibility fixes. */
-@media (max-width: 760px), (max-width: 1100px) and (max-height: 500px) and (pointer: coarse) {
-  .drawer-anim { transition: none; }
+/* Role-based typography: names and quotations are distinct from controls and data. */
+#syzygy-header, #syzygy-header button, #syzygy-header a,
+.dim-tab, .ctl-btn, .syzygy-btn, #observatory-dock button,
+.scope-tab, .realm-btn, .trail-pill, .mode-theme-switch button {
+  font-family: var(--font-ui);
+  letter-spacing: .035em;
 }
-@media (min-width: 761px) and (min-height: 501px) {
-  #observatory-dock .dock-mobile-only { display: none; }
-}
-@media (min-width: 761px) and (max-width: 1120px) {
-  #right-drawer > div:first-of-type { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; }
-  #right-drawer .syzygy-spread-btn { display: inline-flex; align-items: center; min-height: 36px; }
-}
-
-/* Keep the latest mode switch legible at common desktop and tablet sizes. */
-@media (min-width: 1321px) {
-  #syzygy-header { grid-template-columns: minmax(0, 1fr) auto max-content; }
-  #syzygy-header .syzygy-extra-tools button { white-space: nowrap; flex-shrink: 0; }
-}
-@media (min-width: 761px) and (max-width: 1120px) and (min-height: 501px) {
-  #syzygy-header { grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: 40px 38px; height: 92px; padding: 5px 10px; gap: 3px; }
-  #syzygy-header .syzygy-brand { grid-column: 1; grid-row: 1; }
-  #syzygy-header > nav { grid-column: 1 / -1; grid-row: 2; width: min(650px, 100%); justify-content: stretch; }
-  #syzygy-header > nav .dim-tab { flex: 1; justify-content: center; min-height: 36px; }
-  #syzygy-header .syzygy-header-actions { grid-column: 2; grid-row: 1; }
-  .astrolabe-bezel { top: 92px; }
-  #btn-open-left, #btn-open-right { top: 100px; }
-  #left-drawer, #right-drawer { top: 100px; }
-  #context-banner { top: 100px; }
-}
-
-/* A quiet mountain engraving keeps the mode switch in the same palette. */
-.mode-theme-switch .mode-seal-mark {
-  width: 14px; height: 14px; border: 0; border-radius: 0; background: transparent; box-shadow: none;
-}
-.mode-seal-mark svg {
-  width: 14px; height: 14px; fill: none; stroke: #a4c1b3; stroke-width: 1.15;
-  stroke-linecap: round; stroke-linejoin: round;
-}
-
-html[data-ui-scheme='shanhai'] #banner-title::after { content: none; }
-@media (min-width: 1321px) {
-  #syzygy-header .syzygy-header-actions { gap: 5px; }
-  #syzygy-header .syzygy-extra-tools { gap: 4px; }
-  #syzygy-header .syzygy-classic,
-  #syzygy-header .syzygy-extra-tools button { min-height: 30px; padding-inline: 9px; font-size: 11px; }
-}
+.syzygy-brand .font-cinzel { font-family: var(--font-brand); letter-spacing: .18em; }
+#banner-title, .taxonomy-preface-title, .taxonomy-detail-hero h3 { font-family: var(--font-display); font-weight: 400; }
+.vol-plaque .font-serif-sc, .motif-anchor-chip { font-family: var(--font-plaque); font-weight: 400; }
+#left-drawer h2, .syzygy-full-card h3, .syzygy-full-card h4,
+.engraving-codex-heading strong, .taxonomy-domain-name,
+.taxonomy-group-card h4, .taxonomy-lexicon-term { font-family: var(--font-heading); }
+.syzygy-prose, .syzygy-book-body, .taxonomy-preface-prose,
+.taxonomy-editorial-prose, .taxonomy-lexicon-body { font-family: var(--font-prose); }
+.observer-veil-quote, .syzygy-prism-question, .syzygy-prism-statement,
+.taxonomy-editorial-epigraph, .taxonomy-group-lead { font-family: var(--font-quote); }
+.font-mono-tech, #banner-eyebrow, #banner-pill, .syzygy-stats, .realm-lunar-pill { font-family: var(--font-meta); }
+html[data-ui-scheme='shanhai'] #banner-title { font-size: clamp(23px, 2.1vw, 29px); font-weight: 400; }
+html[data-ui-scheme='shanhai'] .syzygy-prose,
+html[data-ui-scheme='shanhai'] .syzygy-book-body,
+html[data-ui-scheme='shanhai'] .taxonomy-editorial-prose { line-height: 1.94; }
+html[data-ui-scheme='shanhai'] .observer-veil-quote,
+html[data-ui-scheme='shanhai'] .taxonomy-editorial-epigraph { font-size: 14px; font-weight: 400; }
+html[data-ui-scheme='shanhai'] #banner-title::after, .mode-seal-mark { font-family: var(--font-seal); }

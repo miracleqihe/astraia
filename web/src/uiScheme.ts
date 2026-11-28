@@ -4,7 +4,7 @@ const UI_SCHEME_KEY = 'astraia-ui-mode-v1';
 
 export const UI_SCHEME_META: Record<UIScheme, { short: string; full: string }> = {
   cosmos: { short: '星野', full: '星野界膜 · 流体星轨玻璃' },
-  shanhai: { short: '山海', full: '山海绘卷 · 青绿泥金星图' },
+  shanhai: { short: '山海', full: '山海绘卷 · 古刻泥金星图' },
 };
 
 function normalizeScheme(raw: string | null): UIScheme | null {

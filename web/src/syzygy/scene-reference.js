@@ -42,7 +42,10 @@ import {
 import { renderTaxonomyExplorerView } from './taxonomyExplorer.js';
 
 const THREE = { ...THREECore, OrbitControls };
-const root = import.meta.env.BASE_URL;
+const rawBase = import.meta.env.BASE_URL;
+const root = rawBase === './' || rawBase === '.'
+  ? new URL(window.location.pathname.endsWith('/syzygy') ? './' : '../', window.location.href).pathname
+  : rawBase;
 const initialParams = new URL(window.location.href).searchParams;
 const tierOrder = ['S','A','B','C','F'];
 const initialTiers = initialParams.has('tiers')
